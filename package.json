@@ -1,0 +1,19 @@
+{
+  "name": "to-do-list",
+  "version": "1.0.0",
+  "description": "This project is a ToDo List web application.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CameronTheDeveloper/to-do-list.git"
+  },
+  "author": "Cameron Posey",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CameronTheDeveloper/to-do-list/issues"
+  },
+  "homepage": "https://github.com/CameronTheDeveloper/to-do-list#readme"
+}

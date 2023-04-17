@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/CameronTheDeveloper/to-do-list#readme",
   "devDependencies": {
+    "style-loader": "^3.3.2",
     "webpack": "^5.79.0",
     "webpack-cli": "^5.0.1"
   }

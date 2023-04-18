@@ -1,9 +1,15 @@
 import { addContent } from './page-layout';
+import { getSideBarInput } from './get-user-input';
+
 const sideBar = document.querySelector('#sidebar');
+const sideBarButton = document.createElement('button');
 let sideBarContent = ['Projects', 'Today', 'This Week'];
 
-const addSideBarContent = () => {
 
+
+const addSideBarContent = () => {
+    let sideBarItem = getSideBarInput();
+    addContent(sideBar, sideBarItem, 'sidebar-item');
 };
 
 const renderSideBarContent = () => {
@@ -12,6 +18,9 @@ const renderSideBarContent = () => {
     }
 };
 
+const initSideBar = () => {
+    addContent(sideBar, sideBarButton, 'sidebar-button');
+    renderSideBarContent();
+};
 
-
-export { renderSideBarContent };
+export { initSideBar };

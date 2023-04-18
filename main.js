@@ -499,18 +499,19 @@ const addContent = (parent, item, className) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "addSideBarContent": () => (/* binding */ addSideBarContent)
+/* harmony export */   "renderSideBarContent": () => (/* binding */ renderSideBarContent)
 /* harmony export */ });
 /* harmony import */ var _page_layout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./page-layout */ "./src/modules/page-layout.js");
 
 const sideBar = document.querySelector('#sidebar');
 let sideBarContent = ['Projects', 'Today', 'This Week'];
 
-const addSideBarContent = () => {
+const renderSideBarContent = () => {
     for (let i = 0; i < sideBarContent.length; i++) {
         (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.addContent)(sideBar, sideBarContent[i], 'sidebar-item');
     }
 };
+
 
 
 
@@ -603,7 +604,7 @@ __webpack_require__.r(__webpack_exports__);
 // const content = document.querySelector('#content');
 // const sideBar = document.querySelector('#sidebar');
 
-(0,_modules_sidebar__WEBPACK_IMPORTED_MODULE_1__.addSideBarContent)();
+(0,_modules_sidebar__WEBPACK_IMPORTED_MODULE_1__.renderSideBarContent)();
 })();
 
 /******/ })()

@@ -494,6 +494,7 @@ const getSideBarInput = () => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "addButton": () => (/* binding */ addButton),
 /* harmony export */   "addContent": () => (/* binding */ addContent)
 /* harmony export */ });
 const content = document.querySelector('#content');
@@ -503,6 +504,14 @@ const addContent = (parent, item, className, elementType) => {
     element.textContent = item;
     element.classList.add(className);
     parent.appendChild(element);
+};
+
+const addButton = (parent, item, className) => {
+    const button = document.createElement('button');
+    button.textContent = item;
+    button.classList.add(className);
+    parent.appendChild(button);
+    return button;
 };
 
 
@@ -525,7 +534,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const sideBar = document.querySelector('#sidebar');
-const sideBarButton = document.querySelector('sidebar-button');
 let sideBarContent = ['Projects', 'Today', 'This Week'];
 
 const renderSideBarContent = () => {
@@ -536,7 +544,7 @@ const renderSideBarContent = () => {
 
 const initSideBar = () => {
     renderSideBarContent();
-    (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.addContent)(sideBar, 'Add Folder', 'sidebar-button', 'button');
+    addSideBarButton();
 };
 
 //For when button clicked
@@ -545,6 +553,14 @@ const addSideBarContent = () => {
     (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.addContent)(sideBar, sideBarItem, 'sidebar-item', 'div');
 };
 
+const addSideBarButton = () => {
+    const sideBarButton = (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.addButton)(sideBar, 'Add Folder', 'sidebar-add-button');
+
+    sideBarButton.addEventListener('click', () => {
+        addSideBarContent();
+        //sideBarContent.push(  );
+    });
+};
 // sideBarButton.addEventListener('click', () => {
 //     addSideBarContent();
 //     //sideBarContent.push(  );

@@ -498,11 +498,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 const content = document.querySelector('#content');
 
-const addContent = (parent, item, className) => {
-    const div = document.createElement('div');
-    div.textContent = item;
-    div.classList.add(className);
-    parent.appendChild(div);
+const addContent = (parent, item, className, elementType) => {
+    const element = document.createElement(elementType);
+    element.textContent = item;
+    element.classList.add(className);
+    parent.appendChild(element);
 };
 
 
@@ -525,26 +525,30 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const sideBar = document.querySelector('#sidebar');
-const sideBarButton = document.createElement('button');
+const sideBarButton = document.querySelector('sidebar-button');
 let sideBarContent = ['Projects', 'Today', 'This Week'];
-
-
-
-const addSideBarContent = () => {
-    let sideBarItem = (0,_get_user_input__WEBPACK_IMPORTED_MODULE_1__.getSideBarInput)();
-    (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.addContent)(sideBar, sideBarItem, 'sidebar-item');
-};
 
 const renderSideBarContent = () => {
     for (let i = 0; i < sideBarContent.length; i++) {
-        (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.addContent)(sideBar, sideBarContent[i], 'sidebar-item');
+        (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.addContent)(sideBar, sideBarContent[i], 'sidebar-item', 'div');
     }
 };
 
 const initSideBar = () => {
-    (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.addContent)(sideBar, sideBarButton, 'sidebar-button');
     renderSideBarContent();
+    (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.addContent)(sideBar, 'Add Folder', 'sidebar-button', 'button');
 };
+
+//For when button clicked
+const addSideBarContent = () => {
+    let sideBarItem = (0,_get_user_input__WEBPACK_IMPORTED_MODULE_1__.getSideBarInput)();
+    (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.addContent)(sideBar, sideBarItem, 'sidebar-item', 'div');
+};
+
+// sideBarButton.addEventListener('click', () => {
+//     addSideBarContent();
+//     //sideBarContent.push(  );
+// });
 
 
 

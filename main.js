@@ -21,7 +21,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "* {\n    margin: 0;\n}\n\n#container {\n    display: grid;\n    grid-template-columns: 1fr 5fr;\n    height: 100vh;\n}\n\n#sidebar {\n    grid-column: 1/2;\n    grid-row: 1/-1;\n    background-color: rgb(170, 255, 43)\n}\n\n#content {\n    grid-column: 2/-1;\n    background-color: grey;\n}", "",{"version":3,"sources":["webpack://./src/styles/index.css"],"names":[],"mappings":"AAAA;IACI,SAAS;AACb;;AAEA;IACI,aAAa;IACb,8BAA8B;IAC9B,aAAa;AACjB;;AAEA;IACI,gBAAgB;IAChB,cAAc;IACd;AACJ;;AAEA;IACI,iBAAiB;IACjB,sBAAsB;AAC1B","sourcesContent":["* {\n    margin: 0;\n}\n\n#container {\n    display: grid;\n    grid-template-columns: 1fr 5fr;\n    height: 100vh;\n}\n\n#sidebar {\n    grid-column: 1/2;\n    grid-row: 1/-1;\n    background-color: rgb(170, 255, 43)\n}\n\n#content {\n    grid-column: 2/-1;\n    background-color: grey;\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "* {\n    margin: 0;\n}\n\n#container {\n    display: grid;\n    grid-template-columns: 1fr 5fr;\n    height: 100vh;\n}\n\n#sidebar {\n    grid-column: 1/2;\n    grid-row: 1/-1;\n    background-color: rgb(170, 255, 43);\n    font-size: 2rem;\n    padding: 16px;\n    display: grid;\n    justify-items: center;\n    align-items: center;\n\n}\n\n#content {\n    grid-column: 2/-1;\n    background-color: grey;\n}", "",{"version":3,"sources":["webpack://./src/styles/index.css"],"names":[],"mappings":"AAAA;IACI,SAAS;AACb;;AAEA;IACI,aAAa;IACb,8BAA8B;IAC9B,aAAa;AACjB;;AAEA;IACI,gBAAgB;IAChB,cAAc;IACd,mCAAmC;IACnC,eAAe;IACf,aAAa;IACb,aAAa;IACb,qBAAqB;IACrB,mBAAmB;;AAEvB;;AAEA;IACI,iBAAiB;IACjB,sBAAsB;AAC1B","sourcesContent":["* {\n    margin: 0;\n}\n\n#container {\n    display: grid;\n    grid-template-columns: 1fr 5fr;\n    height: 100vh;\n}\n\n#sidebar {\n    grid-column: 1/2;\n    grid-row: 1/-1;\n    background-color: rgb(170, 255, 43);\n    font-size: 2rem;\n    padding: 16px;\n    display: grid;\n    justify-items: center;\n    align-items: center;\n\n}\n\n#content {\n    grid-column: 2/-1;\n    background-color: grey;\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -504,9 +504,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _page_layout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./page-layout */ "./src/modules/page-layout.js");
 
 const sideBar = document.querySelector('#sidebar');
+let sideBarContent = ['Projects', 'Today', 'This Week'];
 
 const addSideBarContent = () => {
-    (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.addContent)(sideBar, 'Hello', 'Message');
+    for (let i = 0; i < sideBarContent.length; i++) {
+        (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.addContent)(sideBar, sideBarContent[i], 'sidebar-item');
+    }
 };
 
 

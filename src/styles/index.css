@@ -5,11 +5,16 @@
 #container {
     display: grid;
     grid-template-columns: 1fr 5fr;
+    height: 100vh;
 }
 
 #sidebar {
     grid-column: 1/2;
     grid-row: 1/-1;
+    background-color: rgb(170, 255, 43)
 }
 
-#content {}
+#content {
+    grid-column: 2/-1;
+    background-color: grey;
+}

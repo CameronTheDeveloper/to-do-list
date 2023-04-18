@@ -468,6 +468,24 @@ module.exports = styleTagTransform;
 
 /***/ }),
 
+/***/ "./src/modules/get-user-input.js":
+/*!***************************************!*\
+  !*** ./src/modules/get-user-input.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "getSideBarInput": () => (/* binding */ getSideBarInput)
+/* harmony export */ });
+const getSideBarInput = () => {
+    return prompt("Enter side bar info: ");
+};
+
+
+
+/***/ }),
+
 /***/ "./src/modules/page-layout.js":
 /*!************************************!*\
   !*** ./src/modules/page-layout.js ***!
@@ -499,12 +517,23 @@ const addContent = (parent, item, className) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "renderSideBarContent": () => (/* binding */ renderSideBarContent)
+/* harmony export */   "initSideBar": () => (/* binding */ initSideBar)
 /* harmony export */ });
 /* harmony import */ var _page_layout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./page-layout */ "./src/modules/page-layout.js");
+/* harmony import */ var _get_user_input__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./get-user-input */ "./src/modules/get-user-input.js");
+
+
 
 const sideBar = document.querySelector('#sidebar');
+const sideBarButton = document.createElement('button');
 let sideBarContent = ['Projects', 'Today', 'This Week'];
+
+
+
+const addSideBarContent = () => {
+    let sideBarItem = (0,_get_user_input__WEBPACK_IMPORTED_MODULE_1__.getSideBarInput)();
+    (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.addContent)(sideBar, sideBarItem, 'sidebar-item');
+};
 
 const renderSideBarContent = () => {
     for (let i = 0; i < sideBarContent.length; i++) {
@@ -512,6 +541,10 @@ const renderSideBarContent = () => {
     }
 };
 
+const initSideBar = () => {
+    (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.addContent)(sideBar, sideBarButton, 'sidebar-button');
+    renderSideBarContent();
+};
 
 
 
@@ -604,7 +637,7 @@ __webpack_require__.r(__webpack_exports__);
 // const content = document.querySelector('#content');
 // const sideBar = document.querySelector('#sidebar');
 
-(0,_modules_sidebar__WEBPACK_IMPORTED_MODULE_1__.renderSideBarContent)();
+(0,_modules_sidebar__WEBPACK_IMPORTED_MODULE_1__.initSideBar)();
 })();
 
 /******/ })()

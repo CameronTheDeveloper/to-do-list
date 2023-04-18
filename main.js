@@ -21,7 +21,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "* {\n    margin: 0;\n}\n\n#container {\n    display: grid;\n    grid-template-columns: 1fr 5fr;\n}\n\n#sidebar {}\n\n#content {}", "",{"version":3,"sources":["webpack://./src/styles/index.css"],"names":[],"mappings":"AAAA;IACI,SAAS;AACb;;AAEA;IACI,aAAa;IACb,8BAA8B;AAClC;;AAEA,UAAU;;AAEV,UAAU","sourcesContent":["* {\n    margin: 0;\n}\n\n#container {\n    display: grid;\n    grid-template-columns: 1fr 5fr;\n}\n\n#sidebar {}\n\n#content {}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "* {\n    margin: 0;\n}\n\n#container {\n    display: grid;\n    grid-template-columns: 1fr 5fr;\n}\n\n#sidebar {\n    grid-column: 1/2;\n    grid-row: 1/-1;\n}\n\n#content {}", "",{"version":3,"sources":["webpack://./src/styles/index.css"],"names":[],"mappings":"AAAA;IACI,SAAS;AACb;;AAEA;IACI,aAAa;IACb,8BAA8B;AAClC;;AAEA;IACI,gBAAgB;IAChB,cAAc;AAClB;;AAEA,UAAU","sourcesContent":["* {\n    margin: 0;\n}\n\n#container {\n    display: grid;\n    grid-template-columns: 1fr 5fr;\n}\n\n#sidebar {\n    grid-column: 1/2;\n    grid-row: 1/-1;\n}\n\n#content {}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -466,6 +466,29 @@ function styleTagTransform(css, styleElement) {
 }
 module.exports = styleTagTransform;
 
+/***/ }),
+
+/***/ "./src/modules/page-layout.js":
+/*!************************************!*\
+  !*** ./src/modules/page-layout.js ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "addContent": () => (/* binding */ addContent)
+/* harmony export */ });
+const content = document.querySelector('#content');
+
+const addContent = (parent, item, className) => {
+    const div = document.createElement('div');
+    div.textContent = item;
+    div.classList.add(className);
+    parent.appendChild(div);
+};
+
+
+
 /***/ })
 
 /******/ 	});
@@ -549,7 +572,13 @@ var __webpack_exports__ = {};
   \**********************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/index.css */ "./src/styles/index.css");
+/* harmony import */ var _modules_page_layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/page-layout */ "./src/modules/page-layout.js");
 
+
+const content = document.querySelector('#content');
+const sideBar = document.querySelector('#sidebar');
+
+(0,_modules_page_layout__WEBPACK_IMPORTED_MODULE_1__.addContent)(sideBar, 'Hello', 'Message');
 })();
 
 /******/ })()

@@ -7,4 +7,12 @@ const addContent = (parent, item, className, elementType) => {
     parent.appendChild(element);
 };
 
-export { addContent };
+const addButton = (parent, item, className) => {
+    const button = document.createElement('button');
+    button.textContent = item;
+    button.classList.add(className);
+    parent.appendChild(button);
+    return button;
+};
+
+export { addContent, addButton };

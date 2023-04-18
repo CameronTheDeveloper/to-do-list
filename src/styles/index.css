@@ -8,18 +8,6 @@
     height: 100vh;
 }
 
-#sidebar {
-    grid-column: 1/2;
-    grid-row: 1/-1;
-    background-color: rgb(170, 255, 43);
-    font-size: 2rem;
-    padding: 16px;
-    display: grid;
-    justify-items: center;
-    align-items: center;
-
-}
-
 #content {
     grid-column: 2/-1;
     background-color: grey;

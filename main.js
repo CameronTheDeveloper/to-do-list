@@ -616,11 +616,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const sideBar = document.querySelector('#sidebar');
+const sideBarItems = document.querySelector('#sidebar-items');
 let sideBarContent = ['Projects', 'Today', 'This Week'];
 
 const renderSideBarContent = () => {
     for (let i = 0; i < sideBarContent.length; i++) {
-        (0,_page_layout__WEBPACK_IMPORTED_MODULE_1__.addContent)(sideBar, sideBarContent[i], 'sidebar-item', 'div');
+        (0,_page_layout__WEBPACK_IMPORTED_MODULE_1__.addContent)(sideBarItems, sideBarContent[i], 'sidebar-item', 'div');
     }
 };
 
@@ -632,7 +633,8 @@ const initSideBar = () => {
 //For when button clicked
 const addSideBarContent = () => {
     let sideBarItem = (0,_get_user_input__WEBPACK_IMPORTED_MODULE_2__.getSideBarInput)();
-    (0,_page_layout__WEBPACK_IMPORTED_MODULE_1__.addContent)(sideBar, sideBarItem, 'sidebar-item', 'div');
+    (0,_page_layout__WEBPACK_IMPORTED_MODULE_1__.addContent)(sideBarItems, sideBarItem, 'sidebar-item', 'div');
+    //sideBarContent.push(sideBarItem);
 };
 
 const addSideBarButton = () => {
@@ -640,13 +642,8 @@ const addSideBarButton = () => {
 
     sideBarButton.addEventListener('click', () => {
         addSideBarContent();
-        //sideBarContent.push(  );
     });
 };
-// sideBarButton.addEventListener('click', () => {
-//     addSideBarContent();
-//     //sideBarContent.push(  );
-// });
 
 
 

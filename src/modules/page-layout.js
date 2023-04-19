@@ -19,4 +19,4 @@ const removeHTML = (element) => {
     element.innerHTML = '';
 };
 
-export { addContent, addButton };
+export { addContent, addButton, removeHTML };

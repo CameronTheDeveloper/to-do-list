@@ -19,6 +19,8 @@ const clearHTML = (element) => {
     element.innerHTML = '';
 };
 
+const removeHTML = (element) => {
+    element.remove();
+};
 
-
-export { addContent, addButton, clearHTML };
+export { addContent, addButton, clearHTML, removeHTML };

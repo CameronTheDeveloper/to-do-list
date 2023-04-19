@@ -21,7 +21,7 @@ const initSideBar = () => {
 const addSideBarContent = () => {
     let sideBarItem = getSideBarInput();
     addContent(sideBarItems, sideBarItem, 'sidebar-item', 'div');
-    //sideBarContent.push(sideBarItem);
+    sideBarContent.push(sideBarItem);
 };
 
 const addSideBarButton = () => {

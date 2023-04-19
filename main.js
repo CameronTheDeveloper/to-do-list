@@ -639,7 +639,7 @@ const initSideBar = () => {
 const addSideBarContent = () => {
     let sideBarItem = (0,_get_user_input__WEBPACK_IMPORTED_MODULE_2__.getSideBarInput)();
     (0,_page_layout__WEBPACK_IMPORTED_MODULE_1__.addContent)(sideBarItems, sideBarItem, 'sidebar-item', 'div');
-    //sideBarContent.push(sideBarItem);
+    sideBarContent.push(sideBarItem);
 };
 
 const addSideBarButton = () => {

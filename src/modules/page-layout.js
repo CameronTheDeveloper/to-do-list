@@ -15,4 +15,8 @@ const addButton = (parent, item, className) => {
     return button;
 };
 
+const removeHTML = (element) => {
+    element.innerHTML = '';
+};
+
 export { addContent, addButton };

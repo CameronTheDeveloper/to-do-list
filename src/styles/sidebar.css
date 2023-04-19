@@ -5,8 +5,13 @@
     font-size: 2rem;
     padding: 16px;
     display: grid;
+    grid-template-rows: 7fr 1fr;
+
     justify-items: center;
-    align-items: center;
+}
+
+#side-bar-items {
+    display: grid;
 }
 
 #sidebar .sidebar-add-button {
@@ -16,4 +21,11 @@
     font-size: 1.3rem;
     border-radius: 20px;
     font-weight: 700;
+    cursor: pointer;
+}
+
+#sidebar .sidebar-add-button:hover {
+    background-color: rgb(10, 78, 10);
+    color: white;
+    font-weight: 900;
 }

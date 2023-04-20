@@ -7,6 +7,16 @@ const addContent = (parent, item, className, elementType) => {
     parent.appendChild(element);
 };
 
+const addAttributes = (item, className, elementType) => {
+    const element = document.createElement(elementType);
+    element.textContent = item;
+    element.classList.add(className);
+};
+
+const appendAbove = (parent, lowerDiv, item) => {
+    parent.insertBefore(item, lowerDiv);
+};
+
 const addButton = (parent, item, className) => {
     const button = document.createElement('button');
     button.textContent = item;

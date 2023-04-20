@@ -11,10 +11,16 @@ const addAttributes = (item, className, elementType) => {
     const element = document.createElement(elementType);
     element.textContent = item;
     element.classList.add(className);
+    return element;
 };
 
 const appendAbove = (parent, lowerDiv, item) => {
     parent.insertBefore(item, lowerDiv);
+};
+
+const addAbove = (item, className, elementType, parent, lowerDiv) => {
+    const element = addAttributes(item, className, elementType);
+    appendAbove(parent, lowerDiv, element);
 };
 
 const addButton = (parent, item, className) => {
@@ -33,4 +39,4 @@ const removeHTML = (element) => {
     element.remove();
 };
 
-export { addContent, addButton, clearHTML, removeHTML };
+export { addContent, addButton, clearHTML, removeHTML, addAbove };

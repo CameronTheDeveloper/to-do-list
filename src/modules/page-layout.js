@@ -23,10 +23,9 @@ const addAbove = (item, className, elementType, parent, lowerDiv) => {
     appendAbove(parent, lowerDiv, element);
 };
 
+//Use add attributes
 const addButton = (parent, item, className) => {
-    const button = document.createElement('button');
-    button.textContent = item;
-    button.classList.add(className);
+    const button = addAttributes(item, className, 'button');
     parent.appendChild(button);
     return button;
 };

@@ -582,6 +582,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "addAbove": () => (/* binding */ addAbove),
 /* harmony export */   "addButton": () => (/* binding */ addButton),
 /* harmony export */   "addContent": () => (/* binding */ addContent),
+/* harmony export */   "addSideBarForm": () => (/* binding */ addSideBarForm),
 /* harmony export */   "clearHTML": () => (/* binding */ clearHTML),
 /* harmony export */   "removeHTML": () => (/* binding */ removeHTML)
 /* harmony export */ });
@@ -595,14 +596,21 @@ const addContent = (parent, item, className, elementType) => {
 };
 
 const addFormElements = (parent, className, elementType) => {
+    const element = document.createElement(elementType);
 
+    if (elementType == 'form') {
+        console.log('form');
+        element.setAttribute('id', className);
+        parent.appendChild(element);
+        return element;
+    }
+    element.classList.add(className);
+    parent.appendChild(element);        //Parent is formParent
 };
 
 const addSideBarForm = (parent) => {
-    addFormElements(parent, 'sidebar-add-form', 'form');
-    addFormElements();
-    //const form = addAttributes()
-    //addFormElements(form)
+    const form = addFormElements(parent, 'sidebar-add-form', 'form');
+    addFormElements(form, 'sidebar-form-item', 'div'); //Text content
 };
 
 const addAttributes = (item, className, elementType) => {
@@ -682,7 +690,7 @@ const addSideBarButton = () => {
     const sideBarButton = (0,_page_layout__WEBPACK_IMPORTED_MODULE_1__.addButton)(sideBarItems, '+ Add Folder', 'sidebar-add-button');
 
     sideBarButton.addEventListener('click', () => {
-        addSideBarContent(sideBarButton);
+        (0,_page_layout__WEBPACK_IMPORTED_MODULE_1__.addSideBarForm)(sideBarItems);
     });
 
 };

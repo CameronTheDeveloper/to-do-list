@@ -595,26 +595,22 @@ const addContent = (parent, item, className, elementType) => {
     parent.appendChild(element);
 };
 
-//We need this once for form, multiple times for form items
-const addFormElements = (parent, className, elementType) => {
+const addFormElements = (parent, attType, attName, elementType) => {
     const element = document.createElement(elementType);
-
-    if (elementType == 'form') {
+    if (elementType === 'form') {
         parent.appendChild(element);
         return element;
     }
     //element.setAttribute('id', className);
-    element.classList.add(className);
+    element.setAttribute(attType, attName);
     parent.appendChild(element);        //Parent is formParent
+    console.log(parent);   //Parent is the form, not sideBarItems
+    return element;
 };
 
-// const setFormAttributes = (formParent, form) => {
-//     formParent.setAttribute('id', element);
-// };
-
 const addSideBarForm = (parent) => {
-    const formParent = addAttributes(parent, 'id', 'sidebar-add-form', 'div');
-    const form = addFormElements(formParent, 'sidebar-add-form', 'form');
+    const formParent = addFormElements(parent, 'id', 'sidebar-add-form', 'div');
+    const form = addFormElements(formParent, '', 'sidebar-add-form', 'form');
     //setFormAttributes(formParent, form);
     addFormElements(form, 'sidebar-form-item', 'div'); //Text content
 };

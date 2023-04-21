@@ -47,7 +47,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "#sidebar {\n    grid-column: 1/2;\n    grid-row: 1/-1;\n    background-color: rgb(170, 255, 43);\n    font-size: 2rem;\n    padding: 16px;\n    display: grid;\n    grid-template-rows: 7fr 1fr;\n\n    justify-items: center;\n}\n\n#side-bar-items {\n    display: grid;\n}\n\n#sidebar .sidebar-add-button {\n    width: 150px;\n    height: 60px;\n    background-color: rgb(255, 255, 255);\n    font-size: 1.3rem;\n    border-radius: 20px;\n    font-weight: 700;\n    cursor: pointer;\n}\n\n#sidebar .sidebar-add-button:hover {\n    background-color: rgb(10, 78, 10);\n    color: white;\n    font-weight: 900;\n}", "",{"version":3,"sources":["webpack://./src/styles/sidebar.css"],"names":[],"mappings":"AAAA;IACI,gBAAgB;IAChB,cAAc;IACd,mCAAmC;IACnC,eAAe;IACf,aAAa;IACb,aAAa;IACb,2BAA2B;;IAE3B,qBAAqB;AACzB;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI,YAAY;IACZ,YAAY;IACZ,oCAAoC;IACpC,iBAAiB;IACjB,mBAAmB;IACnB,gBAAgB;IAChB,eAAe;AACnB;;AAEA;IACI,iCAAiC;IACjC,YAAY;IACZ,gBAAgB;AACpB","sourcesContent":["#sidebar {\n    grid-column: 1/2;\n    grid-row: 1/-1;\n    background-color: rgb(170, 255, 43);\n    font-size: 2rem;\n    padding: 16px;\n    display: grid;\n    grid-template-rows: 7fr 1fr;\n\n    justify-items: center;\n}\n\n#side-bar-items {\n    display: grid;\n}\n\n#sidebar .sidebar-add-button {\n    width: 150px;\n    height: 60px;\n    background-color: rgb(255, 255, 255);\n    font-size: 1.3rem;\n    border-radius: 20px;\n    font-weight: 700;\n    cursor: pointer;\n}\n\n#sidebar .sidebar-add-button:hover {\n    background-color: rgb(10, 78, 10);\n    color: white;\n    font-weight: 900;\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "#sidebar {\n    grid-column: 1/2;\n    grid-row: 1/-1;\n    background-color: rgb(170, 255, 43);\n    font-size: 2rem;\n    padding: 16px;\n    display: grid;\n    grid-template-rows: 7fr 1fr;\n\n    justify-items: center;\n}\n\n#side-bar-items {\n    display: grid;\n}\n\n#sidebar .sidebar-add-button {\n    width: 150px;\n    height: 60px;\n    background-color: rgb(255, 255, 255);\n    font-size: 1.3rem;\n    border-radius: 20px;\n    font-weight: 700;\n    cursor: pointer;\n}\n\n#sidebar .sidebar-add-button:hover {\n    background-color: rgb(10, 78, 10);\n    color: white;\n    font-weight: 900;\n}\n\n#sidebar .sidebar-add-button:active {\n    color: rgb(187, 159, 0);\n}", "",{"version":3,"sources":["webpack://./src/styles/sidebar.css"],"names":[],"mappings":"AAAA;IACI,gBAAgB;IAChB,cAAc;IACd,mCAAmC;IACnC,eAAe;IACf,aAAa;IACb,aAAa;IACb,2BAA2B;;IAE3B,qBAAqB;AACzB;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI,YAAY;IACZ,YAAY;IACZ,oCAAoC;IACpC,iBAAiB;IACjB,mBAAmB;IACnB,gBAAgB;IAChB,eAAe;AACnB;;AAEA;IACI,iCAAiC;IACjC,YAAY;IACZ,gBAAgB;AACpB;;AAEA;IACI,uBAAuB;AAC3B","sourcesContent":["#sidebar {\n    grid-column: 1/2;\n    grid-row: 1/-1;\n    background-color: rgb(170, 255, 43);\n    font-size: 2rem;\n    padding: 16px;\n    display: grid;\n    grid-template-rows: 7fr 1fr;\n\n    justify-items: center;\n}\n\n#side-bar-items {\n    display: grid;\n}\n\n#sidebar .sidebar-add-button {\n    width: 150px;\n    height: 60px;\n    background-color: rgb(255, 255, 255);\n    font-size: 1.3rem;\n    border-radius: 20px;\n    font-weight: 700;\n    cursor: pointer;\n}\n\n#sidebar .sidebar-add-button:hover {\n    background-color: rgb(10, 78, 10);\n    color: white;\n    font-weight: 900;\n}\n\n#sidebar .sidebar-add-button:active {\n    color: rgb(187, 159, 0);\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -558,8 +558,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "getSideBarInput": () => (/* binding */ getSideBarInput)
 /* harmony export */ });
+const content = document.querySelector('#content');
+
+const openSideBarForm = () => {
+
+};
 const getSideBarInput = () => {
-    return prompt("Enter side bar info: ");
+
 };
 
 
@@ -589,6 +594,17 @@ const addContent = (parent, item, className, elementType) => {
     parent.appendChild(element);
 };
 
+const addFormElements = (parent, className, elementType) => {
+
+};
+
+const addSideBarForm = (parent) => {
+    addFormElements(parent, 'sidebar-add-form', 'form');
+    addFormElements();
+    //const form = addAttributes()
+    //addFormElements(form)
+};
+
 const addAttributes = (item, className, elementType) => {
     const element = document.createElement(elementType);
     element.textContent = item;
@@ -605,7 +621,6 @@ const addAbove = (item, className, elementType, parent, lowerDiv) => {
     appendAbove(parent, lowerDiv, element);
 };
 
-//Use add attributes
 const addButton = (parent, item, className) => {
     const button = addAttributes(item, className, 'button');
     parent.appendChild(button);
@@ -660,7 +675,6 @@ const initSideBar = () => {
 const addSideBarContent = (sideBarButton) => {
     let sideBarItem = (0,_get_user_input__WEBPACK_IMPORTED_MODULE_2__.getSideBarInput)();
     (0,_page_layout__WEBPACK_IMPORTED_MODULE_1__.addAbove)(sideBarItem, 'side-item', 'div', sideBarItems, sideBarButton);
-    //addContent(sideBarItems, sideBarItem, 'sidebar-item', 'div');
     sideBarContent.push(sideBarItem);
 };
 
@@ -670,6 +684,7 @@ const addSideBarButton = () => {
     sideBarButton.addEventListener('click', () => {
         addSideBarContent(sideBarButton);
     });
+
 };
 
 

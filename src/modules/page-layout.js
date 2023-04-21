@@ -8,14 +8,21 @@ const addContent = (parent, item, className, elementType) => {
 };
 
 const addFormElements = (parent, className, elementType) => {
+    const element = document.createElement(elementType);
 
+    if (elementType == 'form') {
+        console.log('form');
+        element.setAttribute('id', className);
+        parent.appendChild(element);
+        return element;
+    }
+    element.classList.add(className);
+    parent.appendChild(element);        //Parent is formParent
 };
 
 const addSideBarForm = (parent) => {
-    addFormElements(parent, 'sidebar-add-form', 'form');
-    addFormElements();
-    //const form = addAttributes()
-    //addFormElements(form)
+    const form = addFormElements(parent, 'sidebar-add-form', 'form');
+    addFormElements(form, 'sidebar-form-item', 'div'); //Text content
 };
 
 const addAttributes = (item, className, elementType) => {
@@ -48,4 +55,11 @@ const removeHTML = (element) => {
     element.remove();
 };
 
-export { addContent, addButton, clearHTML, removeHTML, addAbove };
+export {
+    addContent,
+    addButton,
+    clearHTML,
+    removeHTML,
+    addAbove,
+    addSideBarForm
+};

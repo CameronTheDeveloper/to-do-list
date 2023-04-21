@@ -1,5 +1,5 @@
 import '../styles/sidebar.css';
-import { addContent, addButton, addAbove } from './page-layout';
+import { addContent, addButton, addAbove, addSideBarForm } from './page-layout';
 import { getSideBarInput } from './get-user-input';
 
 const sideBar = document.querySelector('#sidebar');
@@ -21,7 +21,6 @@ const initSideBar = () => {
 const addSideBarContent = (sideBarButton) => {
     let sideBarItem = getSideBarInput();
     addAbove(sideBarItem, 'side-item', 'div', sideBarItems, sideBarButton);
-    //addContent(sideBarItems, sideBarItem, 'sidebar-item', 'div');
     sideBarContent.push(sideBarItem);
 };
 
@@ -29,8 +28,9 @@ const addSideBarButton = () => {
     const sideBarButton = addButton(sideBarItems, '+ Add Folder', 'sidebar-add-button');
 
     sideBarButton.addEventListener('click', () => {
-        addSideBarContent(sideBarButton);
+        addSideBarForm(sideBarItems);
     });
+
 };
 
 export { initSideBar };

@@ -7,6 +7,17 @@ const addContent = (parent, item, className, elementType) => {
     parent.appendChild(element);
 };
 
+const addFormElements = (parent, className, elementType) => {
+
+};
+
+const addSideBarForm = (parent) => {
+    addFormElements(parent, 'sidebar-add-form', 'form');
+    addFormElements();
+    //const form = addAttributes()
+    //addFormElements(form)
+};
+
 const addAttributes = (item, className, elementType) => {
     const element = document.createElement(elementType);
     element.textContent = item;
@@ -23,7 +34,6 @@ const addAbove = (item, className, elementType, parent, lowerDiv) => {
     appendAbove(parent, lowerDiv, element);
 };
 
-//Use add attributes
 const addButton = (parent, item, className) => {
     const button = addAttributes(item, className, 'button');
     parent.appendChild(button);

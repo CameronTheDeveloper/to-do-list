@@ -1,5 +1,10 @@
+const content = document.querySelector('#content');
+
+const openSideBarForm = () => {
+
+};
 const getSideBarInput = () => {
-    return prompt("Enter side bar info: ");
+
 };
 
 export { getSideBarInput };

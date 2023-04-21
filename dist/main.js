@@ -595,28 +595,34 @@ const addContent = (parent, item, className, elementType) => {
     parent.appendChild(element);
 };
 
+//We need this once for form, multiple times for form items
 const addFormElements = (parent, className, elementType) => {
     const element = document.createElement(elementType);
 
     if (elementType == 'form') {
-        console.log('form');
-        element.setAttribute('id', className);
         parent.appendChild(element);
         return element;
     }
+    //element.setAttribute('id', className);
     element.classList.add(className);
     parent.appendChild(element);        //Parent is formParent
 };
 
+// const setFormAttributes = (formParent, form) => {
+//     formParent.setAttribute('id', element);
+// };
+
 const addSideBarForm = (parent) => {
-    const form = addFormElements(parent, 'sidebar-add-form', 'form');
+    const formParent = addAttributes(parent, 'id', 'sidebar-add-form', 'div');
+    const form = addFormElements(formParent, 'sidebar-add-form', 'form');
+    //setFormAttributes(formParent, form);
     addFormElements(form, 'sidebar-form-item', 'div'); //Text content
 };
 
-const addAttributes = (item, className, elementType) => {
+const addAttributes = (item, attType, attName, elementType) => {
     const element = document.createElement(elementType);
     element.textContent = item;
-    element.classList.add(className);
+    element.setAttribute(attType, attName);
     return element;
 };
 
@@ -625,12 +631,12 @@ const appendAbove = (parent, lowerDiv, item) => {
 };
 
 const addAbove = (item, className, elementType, parent, lowerDiv) => {
-    const element = addAttributes(item, className, elementType);
+    const element = addAttributes(item, 'class', className, elementType);
     appendAbove(parent, lowerDiv, element);
 };
 
 const addButton = (parent, item, className) => {
-    const button = addAttributes(item, className, 'button');
+    const button = addAttributes(item, 'class', className, 'button');
     parent.appendChild(button);
     return button;
 };

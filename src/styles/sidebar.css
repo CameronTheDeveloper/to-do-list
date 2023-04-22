@@ -3,11 +3,12 @@
     grid-row: 1/-1;
     background-color: rgb(170, 255, 43);
     font-size: 2rem;
-    padding: 16px;
+    padding: 12px;
     display: grid;
     grid-template-rows: 7fr 1fr;
 
     justify-items: center;
+    justify-content: center;
 }
 
 #side-bar-items {
@@ -39,6 +40,7 @@
     display: grid;
     grid-template-columns: 1fr 3fr;
     font-size: 2rem;
+    position: absolute;
 }
 
 #sidebar form input {

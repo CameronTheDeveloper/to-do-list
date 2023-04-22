@@ -12,16 +12,22 @@ const addFormElements = (parent, attType, attName, elementType) => {
     if (elementType === 'form') {
         parent.appendChild(element);
         return element;
+    } else if (elementType === 'label') {
+        setFormInputAttributes(element, 'label', 'folder-name', 'folder-name');
+    } else if (elementType === 'div') {
+        //Create div parent - Maybe instead do seperate function
+        addAttributes(parent, 'Test',);
+        parent.appendChild(element);
     }
-    if (elementType === 'label') {
+    //Problem: This is being used for form Parent
 
-    }
-    setFormInputAttributes(element, 'label', 'folder-name', 'folder-name');
+    return element;
+};
 
-    // //element.setAttribute('id', className);
-    // element.setAttribute(attType, attName);
-    // parent.appendChild(element);        //Parent is formParent
-
+const addFormParent = (parent, id) => {
+    const element = document.createElement('div');
+    element.setAttribute('id', id);
+    parent.appendChild(element);
     return element;
 };
 
@@ -33,10 +39,10 @@ const setFormInputAttributes = (item, type, id, name) => {
 };
 
 const addSideBarForm = (parent) => {
-    const formParent = addFormElements(parent, 'id', 'sidebar-add-form', 'div');
+    const formParent = addFormParent(parent, 'sidebar-add-form');
     const form = addFormElements(formParent, '', 'sidebar-add-form', 'form');
     //setFormAttributes(formParent, form);
-    addFormElements(form, 'id', 'sidebar-form-title', 'div'); //Text content
+    addFormElements(form, 'id', 'sidebar-form-title', 'label'); //Text content
 };
 
 const addAttributes = (item, attType, attName, elementType) => {

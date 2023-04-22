@@ -714,7 +714,9 @@ const addSideBarButton = () => {
     const sideBarButton = (0,_page_layout__WEBPACK_IMPORTED_MODULE_1__.addButton)(sideBarItems, '+ Folder', 'sidebar-add-button');
 
     sideBarButton.addEventListener('click', () => {
+        sideBarButton.remove();
         (0,_page_layout__WEBPACK_IMPORTED_MODULE_1__.addSideBarForm)(sideBarItems);
+        // Also, addSideBarButton() when form submitted
     });
 
 };

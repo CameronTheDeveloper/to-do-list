@@ -564,7 +564,8 @@ const openSideBarForm = () => {
 
 };
 const getSideBarInput = () => {
-
+    console.log(document.getElementById('folder-title').value);
+    return document.getElementById('folder-title').value;
 };
 
 
@@ -717,6 +718,10 @@ const addSideBarButton = () => {
         sideBarButton.remove();
         (0,_page_layout__WEBPACK_IMPORTED_MODULE_1__.addSideBarForm)(sideBarItems);
         // Also, addSideBarButton() when form submitted
+    });
+
+    sideBarButton.addEventListener('submit', () => {
+        (0,_get_user_input__WEBPACK_IMPORTED_MODULE_2__.getSideBarInput)();
     });
 
 };

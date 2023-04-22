@@ -32,6 +32,10 @@ const addSideBarButton = () => {
         // Also, addSideBarButton() when form submitted
     });
 
+    sideBarButton.addEventListener('submit', () => {
+        getSideBarInput();
+    });
+
 };
 
 export { initSideBar };

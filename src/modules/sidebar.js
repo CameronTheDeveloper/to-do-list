@@ -24,9 +24,9 @@ const addSideBarContent = (sideBarButton) => {
 };
 
 const addSideBarInput = () => {
-    addSideBarForm(sideBarItems);
-    const sideBarButton = addButton(sideBarItems, '+ Folder', 'sidebar-add-button');
-
+    const sideBarForm = addSideBarForm(sideBarItems);
+    const sideBarButton = addButton(sideBarForm, '+ Folder', 'sidebar-add-button');
+    //Add button to form, make it submit type
 
     // sideBarButton.addEventListener('click', () => {
     //     sideBarButton.remove();

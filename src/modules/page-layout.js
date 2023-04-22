@@ -14,6 +14,7 @@ const addForm = (parent) => {
 
 };
 
+//Remember to reorganize this
 const addFormItemElements = (parent, elementType, id) => {
     if (elementType === 'label') {
         const input = document.createElement('input');
@@ -45,6 +46,8 @@ const addSideBarForm = (parent) => {
     const formParent = addFormParent(parent, 'sidebar-add-form');
     const form = addForm(formParent);
     addFormItemElements(form, 'label', 'folder-title'); //Text content
+    console.log(form);
+    return form;
 };
 
 const addAttributes = (item, attType, attName, elementType) => {

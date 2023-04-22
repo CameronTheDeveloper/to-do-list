@@ -47,7 +47,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "#sidebar {\n    grid-column: 1/2;\n    grid-row: 1/-1;\n    background-color: rgb(170, 255, 43);\n    font-size: 2rem;\n    padding: 24px;\n    display: grid;\n    grid-template-rows: 7fr 1fr;\n\n    justify-items: center;\n    justify-content: center;\n}\n\n#side-bar-items {\n    display: grid;\n}\n\n#sidebar .sidebar-add-button {\n    margin: 10px;\n    width: 100px;\n    height: 40px;\n    background-color: rgb(255, 255, 255);\n    font-size: 1.2rem;\n    border-radius: 20px;\n    font-weight: 700;\n    cursor: pointer;\n}\n\n#sidebar .sidebar-add-button:hover {\n    background-color: rgb(10, 78, 10);\n    color: white;\n    font-weight: 900;\n}\n\n#sidebar .sidebar-add-button:active {\n    color: rgb(187, 159, 0);\n}\n\n#sidebar form {\n    display: grid;\n    grid-template-columns: 1fr 3fr;\n    font-size: 2rem;\n    /* position: absolute; */\n}\n\n#sidebar form input {\n    border-radius: 10px;\n    padding: 5px;\n    margin: 5px;\n}\n\n#sidebar form input:focus {\n    border: 4px solid rgba(159, 95, 0, 0.891);\n}", "",{"version":3,"sources":["webpack://./src/styles/sidebar.css"],"names":[],"mappings":"AAAA;IACI,gBAAgB;IAChB,cAAc;IACd,mCAAmC;IACnC,eAAe;IACf,aAAa;IACb,aAAa;IACb,2BAA2B;;IAE3B,qBAAqB;IACrB,uBAAuB;AAC3B;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI,YAAY;IACZ,YAAY;IACZ,YAAY;IACZ,oCAAoC;IACpC,iBAAiB;IACjB,mBAAmB;IACnB,gBAAgB;IAChB,eAAe;AACnB;;AAEA;IACI,iCAAiC;IACjC,YAAY;IACZ,gBAAgB;AACpB;;AAEA;IACI,uBAAuB;AAC3B;;AAEA;IACI,aAAa;IACb,8BAA8B;IAC9B,eAAe;IACf,wBAAwB;AAC5B;;AAEA;IACI,mBAAmB;IACnB,YAAY;IACZ,WAAW;AACf;;AAEA;IACI,yCAAyC;AAC7C","sourcesContent":["#sidebar {\n    grid-column: 1/2;\n    grid-row: 1/-1;\n    background-color: rgb(170, 255, 43);\n    font-size: 2rem;\n    padding: 24px;\n    display: grid;\n    grid-template-rows: 7fr 1fr;\n\n    justify-items: center;\n    justify-content: center;\n}\n\n#side-bar-items {\n    display: grid;\n}\n\n#sidebar .sidebar-add-button {\n    margin: 10px;\n    width: 100px;\n    height: 40px;\n    background-color: rgb(255, 255, 255);\n    font-size: 1.2rem;\n    border-radius: 20px;\n    font-weight: 700;\n    cursor: pointer;\n}\n\n#sidebar .sidebar-add-button:hover {\n    background-color: rgb(10, 78, 10);\n    color: white;\n    font-weight: 900;\n}\n\n#sidebar .sidebar-add-button:active {\n    color: rgb(187, 159, 0);\n}\n\n#sidebar form {\n    display: grid;\n    grid-template-columns: 1fr 3fr;\n    font-size: 2rem;\n    /* position: absolute; */\n}\n\n#sidebar form input {\n    border-radius: 10px;\n    padding: 5px;\n    margin: 5px;\n}\n\n#sidebar form input:focus {\n    border: 4px solid rgba(159, 95, 0, 0.891);\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "#sidebar {\n    grid-column: 1/2;\n    grid-row: 1/-1;\n    background-color: rgb(170, 255, 43);\n    font-size: 2rem;\n    padding: 24px;\n    display: grid;\n    grid-template-rows: 7fr 1fr;\n\n    justify-items: center;\n    justify-content: center;\n}\n\n#side-bar-items {\n    display: grid;\n}\n\n#sidebar .sidebar-add-button {\n    margin: 10px;\n    width: 100px;\n    height: 40px;\n    background-color: rgb(255, 255, 255);\n    font-size: 1.2rem;\n    border-radius: 20px;\n    font-weight: 700;\n    cursor: pointer;\n}\n\n#sidebar .sidebar-add-button:hover {\n    background-color: rgb(10, 78, 10);\n    color: white;\n    font-weight: 900;\n}\n\n#sidebar .sidebar-add-button:active {\n    color: rgb(187, 159, 0);\n}\n\n#sidebar form {\n    display: grid;\n    grid-template-columns: 1fr;\n    font-size: 2rem;\n    /* position: absolute; */\n}\n\n#sidebar form input {\n    border-radius: 10px;\n    padding: 5px;\n    margin: 5px;\n}\n\n#sidebar form input:focus {\n    border: 4px solid rgba(159, 95, 0, 0.891);\n}", "",{"version":3,"sources":["webpack://./src/styles/sidebar.css"],"names":[],"mappings":"AAAA;IACI,gBAAgB;IAChB,cAAc;IACd,mCAAmC;IACnC,eAAe;IACf,aAAa;IACb,aAAa;IACb,2BAA2B;;IAE3B,qBAAqB;IACrB,uBAAuB;AAC3B;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI,YAAY;IACZ,YAAY;IACZ,YAAY;IACZ,oCAAoC;IACpC,iBAAiB;IACjB,mBAAmB;IACnB,gBAAgB;IAChB,eAAe;AACnB;;AAEA;IACI,iCAAiC;IACjC,YAAY;IACZ,gBAAgB;AACpB;;AAEA;IACI,uBAAuB;AAC3B;;AAEA;IACI,aAAa;IACb,0BAA0B;IAC1B,eAAe;IACf,wBAAwB;AAC5B;;AAEA;IACI,mBAAmB;IACnB,YAAY;IACZ,WAAW;AACf;;AAEA;IACI,yCAAyC;AAC7C","sourcesContent":["#sidebar {\n    grid-column: 1/2;\n    grid-row: 1/-1;\n    background-color: rgb(170, 255, 43);\n    font-size: 2rem;\n    padding: 24px;\n    display: grid;\n    grid-template-rows: 7fr 1fr;\n\n    justify-items: center;\n    justify-content: center;\n}\n\n#side-bar-items {\n    display: grid;\n}\n\n#sidebar .sidebar-add-button {\n    margin: 10px;\n    width: 100px;\n    height: 40px;\n    background-color: rgb(255, 255, 255);\n    font-size: 1.2rem;\n    border-radius: 20px;\n    font-weight: 700;\n    cursor: pointer;\n}\n\n#sidebar .sidebar-add-button:hover {\n    background-color: rgb(10, 78, 10);\n    color: white;\n    font-weight: 900;\n}\n\n#sidebar .sidebar-add-button:active {\n    color: rgb(187, 159, 0);\n}\n\n#sidebar form {\n    display: grid;\n    grid-template-columns: 1fr;\n    font-size: 2rem;\n    /* position: absolute; */\n}\n\n#sidebar form input {\n    border-radius: 10px;\n    padding: 5px;\n    margin: 5px;\n}\n\n#sidebar form input:focus {\n    border: 4px solid rgba(159, 95, 0, 0.891);\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -604,6 +604,7 @@ const addForm = (parent) => {
 
 };
 
+//Remember to reorganize this
 const addFormItemElements = (parent, elementType, id) => {
     if (elementType === 'label') {
         const input = document.createElement('input');
@@ -635,6 +636,8 @@ const addSideBarForm = (parent) => {
     const formParent = addFormParent(parent, 'sidebar-add-form');
     const form = addForm(formParent);
     addFormItemElements(form, 'label', 'folder-title'); //Text content
+    console.log(form);
+    return form;
 };
 
 const addAttributes = (item, attType, attName, elementType) => {
@@ -710,9 +713,9 @@ const addSideBarContent = (sideBarButton) => {
 };
 
 const addSideBarInput = () => {
-    (0,_page_layout__WEBPACK_IMPORTED_MODULE_1__.addSideBarForm)(sideBarItems);
-    const sideBarButton = (0,_page_layout__WEBPACK_IMPORTED_MODULE_1__.addButton)(sideBarItems, '+ Folder', 'sidebar-add-button');
-
+    const sideBarForm = (0,_page_layout__WEBPACK_IMPORTED_MODULE_1__.addSideBarForm)(sideBarItems);
+    const sideBarButton = (0,_page_layout__WEBPACK_IMPORTED_MODULE_1__.addButton)(sideBarForm, '+ Folder', 'sidebar-add-button');
+    //Add button to form, make it submit type
 
     // sideBarButton.addEventListener('click', () => {
     //     sideBarButton.remove();

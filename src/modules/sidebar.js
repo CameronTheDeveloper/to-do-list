@@ -24,7 +24,7 @@ const addSideBarContent = (sideBarButton) => {
 };
 
 const addSideBarButton = () => {
-    const sideBarButton = addButton(sideBarItems, '+ Add Folder', 'sidebar-add-button');
+    const sideBarButton = addButton(sideBarItems, '+ Folder', 'sidebar-add-button');
 
     sideBarButton.addEventListener('click', () => {
         addSideBarForm(sideBarItems);

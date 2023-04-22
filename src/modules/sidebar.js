@@ -9,7 +9,7 @@ const renderSideBarContent = () => {
     for (let i = 0; i < sideBarContent.length; i++) {
         addContent(sideBarItems, sideBarContent[i], 'sidebar-item', 'div');
     }
-    addSideBarButton();
+    addSideBarInput();
 };
 
 const initSideBar = () => {
@@ -23,13 +23,14 @@ const addSideBarContent = (sideBarButton) => {
     sideBarContent.push(sideBarItem);
 };
 
-const addSideBarButton = () => {
+const addSideBarInput = () => {
     const sideBarButton = addButton(sideBarItems, '+ Folder', 'sidebar-add-button');
+    addSideBarForm(sideBarItems);
 
     sideBarButton.addEventListener('click', () => {
         sideBarButton.remove();
-        addSideBarForm(sideBarItems);
-        // Also, addSideBarButton() when form submitted
+        getSideBarInput();
+        // Also, addSideBarInput() when form submitted
     });
 
     sideBarButton.addEventListener('submit', () => {

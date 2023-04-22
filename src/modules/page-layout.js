@@ -14,9 +14,10 @@ const addForm = (parent) => {
 
 };
 
-const addFormItemElements = (parent, elementType) => {
+const addFormItemElements = (parent, elementType, id) => {
     if (elementType === 'label') {
-        setFormInputAttributes(element, 'label', 'folder-name', 'folder-name');
+        const element = document.createElement('input');
+        setFormInputAttributes(element, 'text', id, id);
         parent.appendChild(element);
         console.log(element);
     }
@@ -39,7 +40,7 @@ const setFormInputAttributes = (item, type, id, name) => {
 const addSideBarForm = (parent) => {
     const formParent = addFormParent(parent, 'sidebar-add-form');
     const form = addForm(formParent);
-    addFormItemElements(form, 'label'); //Text content
+    addFormItemElements(form, 'label', 'folder-title'); //Text content
 };
 
 const addAttributes = (item, attType, attName, elementType) => {

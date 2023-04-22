@@ -14,14 +14,11 @@ const addForm = (parent) => {
 
 };
 
-const addFormItemElements = (parent, elementType, id, labelText) => {
+const addFormItemElements = (parent, elementType, id) => {
     if (elementType === 'label') {
-        const label = document.createElement('label');
         const input = document.createElement('input');
 
-        setFormLabelAttributes(label, id, labelText);
         setFormInputAttributes(input, 'text', id, id);
-        parent.appendChild(label);
         parent.appendChild(input);
     }
 };
@@ -39,7 +36,7 @@ const setFormInputAttributes = (item, type, id, name) => {
     item.setAttribute('name', name);
 };
 
-const setFormLabelAttributes = (item, forAtt, text) => {
+const setLabelAttributes = (item, forAtt, text) => {
     item.setAttribute('for', forAtt);
     item.innerHTML = text;
 };
@@ -47,7 +44,7 @@ const setFormLabelAttributes = (item, forAtt, text) => {
 const addSideBarForm = (parent) => {
     const formParent = addFormParent(parent, 'sidebar-add-form');
     const form = addForm(formParent);
-    addFormItemElements(form, 'label', 'folder-title', 'Title: '); //Text content
+    addFormItemElements(form, 'label', 'folder-title'); //Text content
 };
 
 const addAttributes = (item, attType, attName, elementType) => {

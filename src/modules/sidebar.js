@@ -24,14 +24,15 @@ const addSideBarContent = (sideBarButton) => {
 };
 
 const addSideBarInput = () => {
-    const sideBarButton = addButton(sideBarItems, '+ Folder', 'sidebar-add-button');
     addSideBarForm(sideBarItems);
+    const sideBarButton = addButton(sideBarItems, '+ Folder', 'sidebar-add-button');
 
-    sideBarButton.addEventListener('click', () => {
-        sideBarButton.remove();
-        getSideBarInput();
-        // Also, addSideBarInput() when form submitted
-    });
+
+    // sideBarButton.addEventListener('click', () => {
+    //     sideBarButton.remove();
+    //     getSideBarInput();
+
+    // });
 
     sideBarButton.addEventListener('submit', () => {
         getSideBarInput();

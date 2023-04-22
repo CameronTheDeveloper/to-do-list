@@ -16,10 +16,10 @@ const addForm = (parent) => {
 
 const addFormItemElements = (parent, elementType, id) => {
     if (elementType === 'label') {
-        const element = document.createElement('input');
-        setFormInputAttributes(element, 'text', id, id);
-        parent.appendChild(element);
-        console.log(element);
+        const label = document.createElement('label');
+        const input = document.createElement('input');
+        setFormInputAttributes(input, 'text', id, id);
+        parent.appendChild(input);
     }
 };
 
@@ -30,11 +30,16 @@ const addFormParent = (parent, id) => {
     return element;
 };
 
-//Need to use for form label and form input
+
 const setFormInputAttributes = (item, type, id, name) => {
     item.setAttribute('type', type);
     item.setAttribute('id', id);
     item.setAttribute('name', name);
+};
+
+const setFormLabelAttributes = (item, forAtt, text) => {
+    item.setAttribute('for', forAtt);
+
 };
 
 const addSideBarForm = (parent) => {

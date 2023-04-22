@@ -16,6 +16,8 @@ const addFormElements = (parent, attType, attName, elementType) => {
     if (elementType === 'label') {
 
     }
+    setFormInputAttributes(element, 'label', 'folder-name', 'folder-name');
+
     // //element.setAttribute('id', className);
     // element.setAttribute(attType, attName);
     // parent.appendChild(element);        //Parent is formParent
@@ -24,7 +26,7 @@ const addFormElements = (parent, attType, attName, elementType) => {
 };
 
 //Need to use for form label and form input
-const setFormLabelAttributes = (item, type, id, name) => {
+const setFormInputAttributes = (item, type, id, name) => {
     item.setAttribute('type', type);
     item.setAttribute('id', id);
     item.setAttribute('name', name);

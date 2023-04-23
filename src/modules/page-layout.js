@@ -46,7 +46,6 @@ const addSideBarForm = (parent) => {
     const formParent = addFormParent(parent, 'sidebar-add-form');
     const form = addForm(formParent);
     addFormItemElements(form, 'label', 'folder-title'); //Text content
-    console.log(form);
     return form;
 };
 
@@ -55,6 +54,10 @@ const addAttributes = (item, attType, attName, elementType) => {
     element.textContent = item;
     element.setAttribute(attType, attName);
     return element;
+};
+
+const addButtonType = (button, type) => {
+    button.setAttribute('type', type);
 };
 
 const appendAbove = (parent, lowerDiv, item) => {
@@ -66,8 +69,9 @@ const addAbove = (item, className, elementType, parent, lowerDiv) => {
     appendAbove(parent, lowerDiv, element);
 };
 
-const addButton = (parent, item, className) => {
+const addButton = (parent, item, className, type) => {
     const button = addAttributes(item, 'class', className, 'button');
+    addButtonType(button, type);
     parent.appendChild(button);
     return button;
 };

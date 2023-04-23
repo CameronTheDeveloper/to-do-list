@@ -1,6 +1,6 @@
 import '../styles/sidebar.css';
 import { addContent, addButton, addAbove, addSideBarForm } from './page-layout';
-import { getSideBarInput } from './get-user-input';
+import { getSideBarInput } from './user-input';
 
 const sideBarItems = document.querySelector('#sidebar-items');
 let sideBarContent = ['Projects', 'Today', 'This Week'];
@@ -25,14 +25,8 @@ const addSideBarContent = (sideBarButton) => {
 
 const addSideBarInput = () => {
     const sideBarForm = addSideBarForm(sideBarItems);
-    const sideBarButton = addButton(sideBarForm, '+ Folder', 'sidebar-add-button');
-    //Add button to form, make it submit type
-
-    // sideBarButton.addEventListener('click', () => {
-    //     sideBarButton.remove();
-    //     getSideBarInput();
-
-    // });
+    const sideBarButton = addButton(sideBarForm, '+ Folder', 'sidebar-add-button', 'submit');
+    // Make sideBarButton a "submit" type
 
     sideBarButton.addEventListener('submit', () => {
         getSideBarInput();

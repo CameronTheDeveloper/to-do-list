@@ -548,31 +548,6 @@ module.exports = styleTagTransform;
 
 /***/ }),
 
-/***/ "./src/modules/get-user-input.js":
-/*!***************************************!*\
-  !*** ./src/modules/get-user-input.js ***!
-  \***************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "getSideBarInput": () => (/* binding */ getSideBarInput)
-/* harmony export */ });
-const content = document.querySelector('#content');
-
-const openSideBarForm = () => {
-
-};
-
-const getSideBarInput = () => {
-    console.log(document.getElementById('folder-title').value);
-    return document.getElementById('folder-title').value;
-};
-
-
-
-/***/ }),
-
 /***/ "./src/modules/page-layout.js":
 /*!************************************!*\
   !*** ./src/modules/page-layout.js ***!
@@ -588,6 +563,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "clearHTML": () => (/* binding */ clearHTML),
 /* harmony export */   "removeHTML": () => (/* binding */ removeHTML)
 /* harmony export */ });
+/* harmony import */ var _user_input__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./user-input */ "./src/modules/user-input.js");
+
+
 const content = document.querySelector('#content');
 
 const addContent = (parent, item, className, elementType) => {
@@ -636,7 +614,7 @@ const addSideBarForm = (parent) => {
     const formParent = addFormParent(parent, 'sidebar-add-form');
     const form = addForm(formParent);
     addFormItemElements(form, 'label', 'folder-title'); //Text content
-    console.log(form);
+    (0,_user_input__WEBPACK_IMPORTED_MODULE_0__.registerSideBarSubmitListener)(form);
     return form;
 };
 
@@ -645,6 +623,10 @@ const addAttributes = (item, attType, attName, elementType) => {
     element.textContent = item;
     element.setAttribute(attType, attName);
     return element;
+};
+
+const addButtonType = (button, type) => {
+    button.setAttribute('type', type);
 };
 
 const appendAbove = (parent, lowerDiv, item) => {
@@ -656,8 +638,9 @@ const addAbove = (item, className, elementType, parent, lowerDiv) => {
     appendAbove(parent, lowerDiv, element);
 };
 
-const addButton = (parent, item, className) => {
+const addButton = (parent, item, className, type) => {
     const button = addAttributes(item, 'class', className, 'button');
+    addButtonType(button, type);
     parent.appendChild(button);
     return button;
 };
@@ -686,7 +669,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _styles_sidebar_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../styles/sidebar.css */ "./src/styles/sidebar.css");
 /* harmony import */ var _page_layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./page-layout */ "./src/modules/page-layout.js");
-/* harmony import */ var _get_user_input__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./get-user-input */ "./src/modules/get-user-input.js");
+/* harmony import */ var _user_input__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./user-input */ "./src/modules/user-input.js");
 
 
 
@@ -707,26 +690,53 @@ const initSideBar = () => {
 
 //For when button clicked
 const addSideBarContent = (sideBarButton) => {
-    let sideBarItem = (0,_get_user_input__WEBPACK_IMPORTED_MODULE_2__.getSideBarInput)();
+    let sideBarItem = (0,_user_input__WEBPACK_IMPORTED_MODULE_2__.getSideBarInput)();
     (0,_page_layout__WEBPACK_IMPORTED_MODULE_1__.addAbove)(sideBarItem, 'side-item', 'div', sideBarItems, sideBarButton);
     sideBarContent.push(sideBarItem);
 };
 
 const addSideBarInput = () => {
     const sideBarForm = (0,_page_layout__WEBPACK_IMPORTED_MODULE_1__.addSideBarForm)(sideBarItems);
-    const sideBarButton = (0,_page_layout__WEBPACK_IMPORTED_MODULE_1__.addButton)(sideBarForm, '+ Folder', 'sidebar-add-button');
-    //Add button to form, make it submit type
-
-    // sideBarButton.addEventListener('click', () => {
-    //     sideBarButton.remove();
-    //     getSideBarInput();
-
-    // });
+    const sideBarButton = (0,_page_layout__WEBPACK_IMPORTED_MODULE_1__.addButton)(sideBarForm, '+ Folder', 'sidebar-add-button', 'submit');
+    // Make sideBarButton a "submit" type
 
     sideBarButton.addEventListener('submit', () => {
-        (0,_get_user_input__WEBPACK_IMPORTED_MODULE_2__.getSideBarInput)();
+        (0,_user_input__WEBPACK_IMPORTED_MODULE_2__.getSideBarInput)();
     });
 
+};
+
+
+
+/***/ }),
+
+/***/ "./src/modules/user-input.js":
+/*!***********************************!*\
+  !*** ./src/modules/user-input.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "registerSideBarSubmitListener": () => (/* binding */ registerSideBarSubmitListener)
+/* harmony export */ });
+const content = document.querySelector('#content');
+
+const openSideBarForm = () => {
+
+};
+
+const getSideBarInput = () => {
+    return document.getElementById('folder-title').value;
+};
+
+const registerSideBarSubmitListener = (form) => {
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const input = getSideBarInput();
+
+        // Add input as folder
+    });
 };
 
 

@@ -635,8 +635,6 @@ const appendAbove = (parent, lowerDiv, item) => {
 
 const addAbove = (item, className, elementType, parent, lowerDiv) => {
     const element = addAttributes(item, 'class', className, elementType);
-    console.log(element);
-    console.log(lowerDiv);
     appendAbove(parent, lowerDiv, element);
 };
 
@@ -741,11 +739,15 @@ const setSideBarInput = (input) => {
     (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.addAbove)(input, 'sidebar-item', 'div', sideBarItems, sideBarForm);
 };
 
+const submitClicked = () => {
+    const input = getSideBarInput();
+    setSideBarInput(input);
+};
+
 const registerSideBarSubmitListener = (form) => {
     form.addEventListener('submit', (event) => {
         event.preventDefault();
-        const input = getSideBarInput();
-        setSideBarInput(input);
+        submitClicked();
     });
 };
 

@@ -720,8 +720,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "registerSideBarSubmitListener": () => (/* binding */ registerSideBarSubmitListener)
 /* harmony export */ });
-const content = document.querySelector('#content');
+/* harmony import */ var _page_layout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./page-layout */ "./src/modules/page-layout.js");
 
+
+const content = document.querySelector('#content');
+const sideBarItems = document.querySelector('#sidebar-items');
+const sideBarForm = document.querySelectorAll('#sidebar-add-form');
 const openSideBarForm = () => {
 
 };
@@ -730,12 +734,15 @@ const getSideBarInput = () => {
     return document.getElementById('folder-title').value;
 };
 
+const setSideBarInput = (input) => {
+    (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.addAbove)(input, 'sidebar-item', 'div', sideBarItems, sideBarForm);
+};
+
 const registerSideBarSubmitListener = (form) => {
     form.addEventListener('submit', (event) => {
         event.preventDefault();
         const input = getSideBarInput();
-
-        // Add input as folder
+        setSideBarInput(input);
     });
 };
 

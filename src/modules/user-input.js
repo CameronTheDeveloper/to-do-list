@@ -7,7 +7,8 @@ const openSideBarForm = () => {
 
 };
 
-const getSideBarInput = () => {
+
+const getInput = () => {
     return document.getElementById('folder-title').value;
 };
 
@@ -17,7 +18,7 @@ const setSideBarInput = (input) => {
 };
 
 const submitClicked = () => {
-    const input = getSideBarInput();
+    const input = getInput();
     setSideBarInput(input);
 };
 

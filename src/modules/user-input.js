@@ -2,7 +2,7 @@ import { addAbove } from "./page-layout";
 
 const content = document.querySelector('#content');
 const sideBarItems = document.querySelector('#sidebar-items');
-const sideBarForm = document.querySelectorAll('#sidebar-add-form');
+const sideBarForm = document.querySelector('#sidebar-add-form');
 
 const openSideBarForm = () => {
 

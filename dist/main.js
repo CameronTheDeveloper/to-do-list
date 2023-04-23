@@ -635,6 +635,8 @@ const appendAbove = (parent, lowerDiv, item) => {
 
 const addAbove = (item, className, elementType, parent, lowerDiv) => {
     const element = addAttributes(item, 'class', className, elementType);
+    console.log(element);
+    console.log(lowerDiv);
     appendAbove(parent, lowerDiv, element);
 };
 
@@ -725,7 +727,8 @@ __webpack_require__.r(__webpack_exports__);
 
 const content = document.querySelector('#content');
 const sideBarItems = document.querySelector('#sidebar-items');
-const sideBarForm = document.querySelectorAll('#sidebar-add-form');
+const sideBarForm = document.querySelector('#sidebar-add-form');
+
 const openSideBarForm = () => {
 
 };

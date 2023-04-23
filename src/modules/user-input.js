@@ -8,8 +8,8 @@ const openSideBarForm = () => {
 };
 
 
-const getInput = () => {
-    return document.getElementById('folder-title').value;
+const getInput = (id) => {
+    return document.getElementById(id).value;
 };
 
 const setSideBarInput = (input) => {
@@ -18,7 +18,7 @@ const setSideBarInput = (input) => {
 };
 
 const submitClicked = () => {
-    const input = getInput();
+    const input = getInput('folder-title');
     setSideBarInput(input);
 };
 

@@ -727,7 +727,6 @@ __webpack_require__.r(__webpack_exports__);
 
 const content = document.querySelector('#content');
 const sideBarItems = document.querySelector('#sidebar-items');
-const sideBarForm = document.querySelector('#sidebar-add-form');
 
 const openSideBarForm = () => {
 
@@ -738,6 +737,7 @@ const getSideBarInput = () => {
 };
 
 const setSideBarInput = (input) => {
+    const sideBarForm = document.querySelector('#sidebar-add-form');
     (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.addAbove)(input, 'sidebar-item', 'div', sideBarItems, sideBarForm);
 };
 

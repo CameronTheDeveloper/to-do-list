@@ -2,7 +2,6 @@ import { addAbove } from "./page-layout";
 
 const content = document.querySelector('#content');
 const sideBarItems = document.querySelector('#sidebar-items');
-const sideBarForm = document.querySelector('#sidebar-add-form');
 
 const openSideBarForm = () => {
 
@@ -13,6 +12,7 @@ const getSideBarInput = () => {
 };
 
 const setSideBarInput = (input) => {
+    const sideBarForm = document.querySelector('#sidebar-add-form');
     addAbove(input, 'sidebar-item', 'div', sideBarItems, sideBarForm);
 };
 

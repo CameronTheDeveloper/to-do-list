@@ -16,11 +16,15 @@ const setSideBarInput = (input) => {
     addAbove(input, 'sidebar-item', 'div', sideBarItems, sideBarForm);
 };
 
+const submitClicked = () => {
+    const input = getSideBarInput();
+    setSideBarInput(input);
+};
+
 const registerSideBarSubmitListener = (form) => {
     form.addEventListener('submit', (event) => {
         event.preventDefault();
-        const input = getSideBarInput();
-        setSideBarInput(input);
+        submitClicked();
     });
 };
 

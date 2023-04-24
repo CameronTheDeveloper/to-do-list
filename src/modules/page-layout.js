@@ -1,4 +1,4 @@
-import { registerSideBarSubmitListener } from "./user-input";
+import { registerSidebarSubmitListener } from "./user-input";
 import { setSidebarInputAttributes } from "./attributes";
 
 const content = document.querySelector('#content');
@@ -40,12 +40,12 @@ const addFormParent = (parent, id) => {
 };
 
 //
-const addSideBarForm = (parent) => {
+const addSidebarForm = (parent) => {
     const formParent = addFormParent(parent, 'sidebar-add-form');
     const form = addForm(formParent);
     addSidebarInputElement(form, 'folder-title'); //Text content
     //setSidebarFormAttributes();
-    registerSideBarSubmitListener(form);
+    registerSidebarSubmitListener(form);
     return form;
 };
 
@@ -91,5 +91,5 @@ export {
     clearHTML,
     removeHTML,
     addAbove,
-    addSideBarForm
+    addSidebarForm
 };

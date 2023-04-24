@@ -1,6 +1,6 @@
 import './styles/index.css';
-import { initSideBar } from './modules/sidebar';
+import { initSidebar } from './modules/sidebar';
 // const content = document.querySelector('#content');
-// const sideBar = document.querySelector('#sidebar');
+// const sidebar = document.querySelector('#sidebar');
 
-initSideBar();
+initSidebar();

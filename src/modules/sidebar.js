@@ -1,37 +1,37 @@
 import '../styles/sidebar.css';
-import { addContent, addButton, addAbove, addSideBarForm } from './page-layout';
+import { addContent, addButton, addAbove, addSidebarForm } from './page-layout';
 import { getInput } from './user-input';
 
-const sideBarItems = document.querySelector('#sidebar-items');
-let sideBarContent = ['Projects', 'Today', 'This Week'];
+const sidebarItems = document.querySelector('#sidebar-items');
+let sidebarContent = ['Projects', 'Today', 'This Week'];
 
-const renderSideBarContent = () => {
-    for (let i = 0; i < sideBarContent.length; i++) {
-        addContent(sideBarItems, sideBarContent[i], 'sidebar-item', 'div');
+const renderSidebarContent = () => {
+    for (let i = 0; i < sidebarContent.length; i++) {
+        addContent(sidebarItems, sidebarContent[i], 'sidebar-item', 'div');
     }
-    addSideBarInput();
+    addSidebarInput();
 };
 
-const initSideBar = () => {
-    renderSideBarContent();
+const initSidebar = () => {
+    renderSidebarContent();
 };
 
 //For when button clicked
-const addSideBarContent = (sideBarButton) => {
-    let sideBarItem = getInput();
-    addAbove(sideBarItem, 'side-item', 'div', sideBarItems, sideBarButton);
-    sideBarContent.push(sideBarItem);
+const addSidebarContent = (sidebarButton) => {
+    let sidebarItem = getInput();
+    addAbove(sidebarItem, 'side-item', 'div', sidebarItems, sidebarButton);
+    sidebarContent.push(sidebarItem);
 };
 
-const addSideBarInput = () => {
-    const sideBarForm = addSideBarForm(sideBarItems);
-    const sideBarButton = addButton(sideBarForm, '+ Folder', 'sidebar-add-button', 'submit');
-    // Make sideBarButton a "submit" type
+const addSidebarInput = () => {
+    const sidebarForm = addSidebarForm(sidebarItems);
+    const sidebarButton = addButton(sidebarForm, '+ Folder', 'sidebar-add-button', 'submit');
+    // Make sidebarButton a "submit" type
 
-    sideBarButton.addEventListener('submit', () => {
+    sidebarButton.addEventListener('submit', () => {
         getInput();
     });
 
 };
 
-export { initSideBar };
+export { initSidebar };

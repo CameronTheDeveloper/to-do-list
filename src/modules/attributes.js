@@ -10,8 +10,8 @@ const setSidebarFormAttributes = (form, action, method) => {
     form.addAttribute('method', method);
 };
 
-const addSidebarFormAttributes = (form, item, type, id, name) => {
-    setSidebarInputAttributes();
+const addSidebarFormAttributes = (form, input) => {
+    setSidebarInputAttributes(input, 'text', 'form-title', 'form-title');
     setSidebarFormAttributes(form, '', 'post');
 };
 

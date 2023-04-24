@@ -45,9 +45,8 @@ const addSidebarForm = (parent) => {
     const formParent = addFormParent(parent, 'sidebar-add-form');
     const form = addForm(formParent);
     const input = addSidebarInputElement(form, 'folder-title');
-    addSidebarFormAttributes(form, input);
 
-    //setSidebarFormAttributes();
+    addSidebarFormAttributes(form, input);
     registerSidebarSubmitListener(form, input);
     return form;
 };
@@ -88,10 +87,12 @@ const removeHTML = (element) => {
     element.remove();
 };
 
-// const addRemoveButton = (parent, text, className) => {
-//     const removeButton = addButton(parent, text, className, 'button');
-//     //add event listener for removeButton
-// };
+const addRemoveButton = (parent, text, className) => {
+    const removeButton = addButton(parent, text, className, 'button');
+    removeButton.appendChild(parent);
+    return removeButton;
+    //add event listener for removeButton
+};
 
 export {
     addContent,

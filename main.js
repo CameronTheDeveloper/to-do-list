@@ -730,13 +730,6 @@ const initSidebar = () => {
     renderSidebarContent();
 };
 
-//For when button clicked
-const addSidebarContent = (sidebarButton) => {
-    let sidebarItem = (0,_user_input__WEBPACK_IMPORTED_MODULE_2__.getInput)();
-    (0,_page_layout__WEBPACK_IMPORTED_MODULE_1__.addAbove)(sidebarItem, 'side-item', 'div', sidebarItems, sidebarButton);
-    sidebarContent.push(sidebarItem);
-};
-
 const addSidebarInput = () => {
     const sidebarForm = (0,_page_layout__WEBPACK_IMPORTED_MODULE_1__.addSidebarForm)(sidebarItems);
     const sidebarButton = (0,_page_layout__WEBPACK_IMPORTED_MODULE_1__.addButton)(sidebarForm, '+ Folder', 'sidebar-add-button', 'submit');

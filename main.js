@@ -655,7 +655,7 @@ const addSidebarForm = (parent) => {
     (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addSidebarFormAttributes)(form, input);
 
     //setSidebarFormAttributes();
-    (0,_user_input__WEBPACK_IMPORTED_MODULE_0__.registerSidebarSubmitListener)(form);
+    (0,_user_input__WEBPACK_IMPORTED_MODULE_0__.registerSidebarSubmitListener)(form, input);
     return form;
 };
 
@@ -695,6 +695,11 @@ const removeHTML = (element) => {
     element.remove();
 };
 
+// const addRemoveButton = (parent, text, className) => {
+//     const removeButton = addButton(parent, text, className, 'button');
+//     //add event listener for removeButton
+// };
+
 
 
 /***/ }),
@@ -711,14 +716,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _styles_sidebar_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../styles/sidebar.css */ "./src/styles/sidebar.css");
 /* harmony import */ var _page_layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./page-layout */ "./src/modules/page-layout.js");
-/* harmony import */ var _user_input__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./user-input */ "./src/modules/user-input.js");
-
 
 
 
 const sidebarItems = document.querySelector('#sidebar-items');
 let sidebarContent = ['Projects', 'Today', 'This Week'];
 
+//Possible remove
 const renderSidebarContent = () => {
     for (let i = 0; i < sidebarContent.length; i++) {
         (0,_page_layout__WEBPACK_IMPORTED_MODULE_1__.addContent)(sidebarItems, sidebarContent[i], 'sidebar-item', 'div');
@@ -733,11 +737,6 @@ const initSidebar = () => {
 const addSidebarInput = () => {
     const sidebarForm = (0,_page_layout__WEBPACK_IMPORTED_MODULE_1__.addSidebarForm)(sidebarItems);
     const sidebarButton = (0,_page_layout__WEBPACK_IMPORTED_MODULE_1__.addButton)(sidebarForm, '+ Folder', 'sidebar-add-button', 'submit');
-    // Make sidebarButton a "submit" type
-
-    sidebarButton.addEventListener('submit', () => {
-        (0,_user_input__WEBPACK_IMPORTED_MODULE_2__.getInput)();
-    });
 
 };
 
@@ -775,15 +774,17 @@ const setSidebarInput = (input) => {
     (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.addAbove)(input, 'sidebar-item', 'div', sidebarItems, sidebarForm);
 };
 
+/* Change this for reuse*/
 const submitClicked = () => {
     const input = getInput('folder-title');
     setSidebarInput(input);
 };
 
-const registerSidebarSubmitListener = (form) => {
+const registerSidebarSubmitListener = (form, input) => {
     form.addEventListener('submit', (event) => {
         event.preventDefault();
         submitClicked();
+        input.value = '';
     });
 };
 

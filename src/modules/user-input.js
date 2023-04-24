@@ -9,8 +9,28 @@ const getInput = (id) => {
 
 const setSidebarInput = (input) => {
     const sidebarForm = document.querySelector('#sidebar-add-form');
-    addAbove(input, 'sidebar-item', 'div', sidebarItems, sidebarForm);
+    const item = addAbove('sidebar-item', 'div', sidebarItems, sidebarForm);
+    addFormItemElements(item, input);
+
 };
+
+//Parent = sidebar-item
+const setFormItemElements = (parent, input) => {
+    const title = document.createElement('div');
+    const removeButton = addRemoveButton();
+
+    title.innerHTML = input;
+    addFormItemElements(parent, title, removeButton);
+};
+
+const addFormItemElements = (title, removeButton) => {
+
+    parent.appendChild(folderTitle);
+    parent.appendChild(removeButton);
+};
+
+//addAbove is creating the sidebar-item and appending above form
+//We need to create the sidebar-item, add title and x button, then add above
 
 /* Change this for reuse*/
 const submitClicked = () => {

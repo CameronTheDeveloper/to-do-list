@@ -14,7 +14,6 @@ const addForm = (parent) => {
     const element = document.createElement('form');
     parent.appendChild(element);
     return element;
-
 };
 
 // //Remember to reorganize this
@@ -72,9 +71,10 @@ const appendAbove = (parent, lowerDiv, item) => {
     parent.insertBefore(item, lowerDiv);
 };
 
-const addAbove = (text, className, elementType, parent, lowerDiv) => {
-    const element = addAttributes(text, 'class', className, elementType);
+const addAbove = (className, elementType, parent, lowerDiv) => {
+    const element = addAttributes('', 'class', className, elementType);
     appendAbove(parent, lowerDiv, element);
+    return element;
 };
 
 const addButton = (parent, text, className, type) => {

@@ -6,8 +6,8 @@ const setSidebarInputAttributes = (item, type, id, name) => {
 };
 
 const setSidebarFormAttributes = (form, action, method) => {
-    form.addAttribute('action', action);
-    form.addAttribute('method', method);
+    form.setAttribute('action', action);
+    form.setAttribute('method', method);
 };
 
 const addSidebarFormAttributes = (form, input) => {

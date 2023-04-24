@@ -599,6 +599,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "addAbove": () => (/* binding */ addAbove),
 /* harmony export */   "addButton": () => (/* binding */ addButton),
 /* harmony export */   "addContent": () => (/* binding */ addContent),
+/* harmony export */   "addRemoveButton": () => (/* binding */ addRemoveButton),
 /* harmony export */   "addSidebarForm": () => (/* binding */ addSidebarForm),
 /* harmony export */   "clearHTML": () => (/* binding */ clearHTML),
 /* harmony export */   "removeHTML": () => (/* binding */ removeHTML)
@@ -647,14 +648,18 @@ const addFormParent = (parent, id) => {
     return element;
 };
 
+const addFormToDOM = (parent, id) => {
+    const formParent = addFormParent(parent, id);
+    const form = addForm(formParent);
+    return form;
+};
+
 //
 const addSidebarForm = (parent) => {
-    const formParent = addFormParent(parent, 'sidebar-add-form');
-    const form = addForm(formParent);
+    const form = addFormToDOM(parent, 'sidebar-add-form');
     const input = addSidebarInputElement(form, 'folder-title');
-    (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addSidebarFormAttributes)(form, input);
 
-    //setSidebarFormAttributes();
+    (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addSidebarFormAttributes)(form, input);
     (0,_user_input__WEBPACK_IMPORTED_MODULE_0__.registerSidebarSubmitListener)(form, input);
     return form;
 };
@@ -695,10 +700,12 @@ const removeHTML = (element) => {
     element.remove();
 };
 
-// const addRemoveButton = (parent, text, className) => {
-//     const removeButton = addButton(parent, text, className, 'button');
-//     //add event listener for removeButton
-// };
+const addRemoveButton = (parent, text, className) => {
+    const removeButton = addButton(parent, text, className, 'button');
+    removeButton.appendChild(parent);
+    return removeButton;
+    //add event listener for removeButton
+};
 
 
 
@@ -759,11 +766,6 @@ __webpack_require__.r(__webpack_exports__);
 
 const content = document.querySelector('#content');
 const sidebarItems = document.querySelector('#sidebar-items');
-
-const openSidebarForm = () => {
-
-};
-
 
 const getInput = (id) => {
     return document.getElementById(id).value;

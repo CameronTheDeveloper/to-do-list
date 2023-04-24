@@ -39,17 +39,18 @@
 #sidebar form {
     display: grid;
     grid-template-columns: 1fr;
-    font-size: 2rem;
     /* position: absolute; */
 }
 
 #sidebar form input {
     background: transparent;
     border-radius: 10px;
+    border: 1px solid rgba(103, 103, 103, 0.5);
     padding: 5px;
     margin: 5px;
+    font-size: 1.8rem;
 }
 
-/* #sidebar form input:focus {
-    border: 1px grey
-} */
+#sidebar form input:hover {
+    border: 2px solid rgb(0, 0, 0);
+}

@@ -1,11 +1,11 @@
-import { registerSidebarSubmitListener } from "./user-input";
+import { registerSidebarSubmitListener, registerRemoveListener } from "./user-input";
 import { addSidebarFormAttributes } from "./attributes";
 
 const content = document.querySelector('#content');
 
-const addContent = (parent, item, className, elementType) => {
+const addContent = (parent, text, className, elementType) => {
     const element = document.createElement(elementType);
-    element.textContent = item;
+    element.textContent = text;
     element.classList.add(className);
     parent.appendChild(element);
 };
@@ -57,9 +57,9 @@ const addSidebarForm = (parent) => {
 };
 
 /* This function */
-const addAttributes = (item, attType, attName, elementType) => {
+const addAttributes = (text, attType, attName, elementType) => {
     const element = document.createElement(elementType);
-    element.textContent = item;
+    element.textContent = text;
     element.setAttribute(attType, attName);
     return element;
 };
@@ -72,13 +72,13 @@ const appendAbove = (parent, lowerDiv, item) => {
     parent.insertBefore(item, lowerDiv);
 };
 
-const addAbove = (item, className, elementType, parent, lowerDiv) => {
-    const element = addAttributes(item, 'class', className, elementType);
+const addAbove = (text, className, elementType, parent, lowerDiv) => {
+    const element = addAttributes(text, 'class', className, elementType);
     appendAbove(parent, lowerDiv, element);
 };
 
-const addButton = (parent, item, className, type) => {
-    const button = addAttributes(item, 'class', className, 'button');
+const addButton = (parent, text, className, type) => {
+    const button = addAttributes(text, 'class', className, 'button');
     addButtonType(button, type);
     parent.appendChild(button);
     return button;
@@ -94,9 +94,9 @@ const removeHTML = (element) => {
 
 const addRemoveButton = (parent, text, className) => {
     const removeButton = addButton(parent, text, className, 'button');
-    removeButton.appendChild(parent);
-    return removeButton;
     //add event listener for removeButton
+    return removeButton;
+
 };
 
 export {

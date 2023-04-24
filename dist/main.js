@@ -611,9 +611,9 @@ __webpack_require__.r(__webpack_exports__);
 
 const content = document.querySelector('#content');
 
-const addContent = (parent, item, className, elementType) => {
+const addContent = (parent, text, className, elementType) => {
     const element = document.createElement(elementType);
-    element.textContent = item;
+    element.textContent = text;
     element.classList.add(className);
     parent.appendChild(element);
 };
@@ -665,9 +665,9 @@ const addSidebarForm = (parent) => {
 };
 
 /* This function */
-const addAttributes = (item, attType, attName, elementType) => {
+const addAttributes = (text, attType, attName, elementType) => {
     const element = document.createElement(elementType);
-    element.textContent = item;
+    element.textContent = text;
     element.setAttribute(attType, attName);
     return element;
 };
@@ -680,13 +680,13 @@ const appendAbove = (parent, lowerDiv, item) => {
     parent.insertBefore(item, lowerDiv);
 };
 
-const addAbove = (item, className, elementType, parent, lowerDiv) => {
-    const element = addAttributes(item, 'class', className, elementType);
+const addAbove = (text, className, elementType, parent, lowerDiv) => {
+    const element = addAttributes(text, 'class', className, elementType);
     appendAbove(parent, lowerDiv, element);
 };
 
-const addButton = (parent, item, className, type) => {
-    const button = addAttributes(item, 'class', className, 'button');
+const addButton = (parent, text, className, type) => {
+    const button = addAttributes(text, 'class', className, 'button');
     addButtonType(button, type);
     parent.appendChild(button);
     return button;
@@ -702,9 +702,9 @@ const removeHTML = (element) => {
 
 const addRemoveButton = (parent, text, className) => {
     const removeButton = addButton(parent, text, className, 'button');
-    removeButton.appendChild(parent);
-    return removeButton;
     //add event listener for removeButton
+    return removeButton;
+
 };
 
 
@@ -759,6 +759,7 @@ const addSidebarInput = () => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "registerRemoveListener": () => (/* binding */ registerRemoveListener),
 /* harmony export */   "registerSidebarSubmitListener": () => (/* binding */ registerSidebarSubmitListener)
 /* harmony export */ });
 /* harmony import */ var _page_layout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./page-layout */ "./src/modules/page-layout.js");
@@ -787,6 +788,12 @@ const registerSidebarSubmitListener = (form, input) => {
         event.preventDefault();
         submitClicked();
         input.value = '';
+    });
+};
+
+const registerRemoveListener = (button, element) => {
+    button.addEventListener('click', () => {
+        element.remove();
     });
 };
 

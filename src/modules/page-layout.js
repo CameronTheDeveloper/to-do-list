@@ -1,4 +1,5 @@
 import { registerSideBarSubmitListener } from "./user-input";
+import { setSidebarInputAttributes } from "./attributes";
 
 const content = document.querySelector('#content');
 
@@ -16,14 +17,19 @@ const addForm = (parent) => {
 
 };
 
-//Remember to reorganize this
-const addFormItemElements = (parent, elementType, id) => {
-    if (elementType === 'label') {
-        const input = document.createElement('input');
+// //Remember to reorganize this
+// const addFormItemElements = (parent, elementType, id) => {
+//     const input = document.createElement('input');
 
-        setFormInputAttributes(input, 'text', id, id);
-        parent.appendChild(input);
-    }
+//     setFormInputAttributes(input, 'text', id, id);
+//     parent.appendChild(input);
+
+// };
+
+const addSidebarInputElement = (parent, id) => {
+    const input = document.createElement('input');
+    setSidebarInputAttributes(input, 'text', id, id);  //attribute function
+    parent.appendChild(input);
 };
 
 const addFormParent = (parent, id) => {
@@ -33,25 +39,17 @@ const addFormParent = (parent, id) => {
     return element;
 };
 
-const setFormInputAttributes = (item, type, id, name) => {
-    item.setAttribute('type', type);
-    item.setAttribute('id', id);
-    item.setAttribute('name', name);
-};
-
-const setLabelAttributes = (item, forAtt, text) => {
-    item.setAttribute('for', forAtt);
-    item.innerHTML = text;
-};
-
+//
 const addSideBarForm = (parent) => {
     const formParent = addFormParent(parent, 'sidebar-add-form');
     const form = addForm(formParent);
-    addFormItemElements(form, 'label', 'folder-title'); //Text content
+    addSidebarInputElement(form, 'folder-title'); //Text content
+    //setSidebarFormAttributes();
     registerSideBarSubmitListener(form);
     return form;
 };
 
+/* This function */
 const addAttributes = (item, attType, attName, elementType) => {
     const element = document.createElement(elementType);
     element.textContent = item;

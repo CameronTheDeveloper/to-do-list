@@ -548,6 +548,37 @@ module.exports = styleTagTransform;
 
 /***/ }),
 
+/***/ "./src/modules/attributes.js":
+/*!***********************************!*\
+  !*** ./src/modules/attributes.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "setSidebarInputAttributes": () => (/* binding */ setSidebarInputAttributes)
+/* harmony export */ });
+const setSidebarInputAttributes = (item, type, id, name) => {
+    item.setAttribute('type', type);
+    item.setAttribute('id', id);
+    item.setAttribute('name', name);
+    //item.required = true;
+};
+
+/* Have function to */
+// const setLabelAttributes = (item, attType, , text) => {
+//     item.setAttribute(attType, att);
+//     item.innerHTML = text;
+// };
+
+//For <form>
+
+
+
+
+
+/***/ }),
+
 /***/ "./src/modules/page-layout.js":
 /*!************************************!*\
   !*** ./src/modules/page-layout.js ***!
@@ -564,6 +595,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "removeHTML": () => (/* binding */ removeHTML)
 /* harmony export */ });
 /* harmony import */ var _user_input__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./user-input */ "./src/modules/user-input.js");
+/* harmony import */ var _attributes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./attributes */ "./src/modules/attributes.js");
+
 
 
 const content = document.querySelector('#content');
@@ -582,14 +615,19 @@ const addForm = (parent) => {
 
 };
 
-//Remember to reorganize this
-const addFormItemElements = (parent, elementType, id) => {
-    if (elementType === 'label') {
-        const input = document.createElement('input');
+// //Remember to reorganize this
+// const addFormItemElements = (parent, elementType, id) => {
+//     const input = document.createElement('input');
 
-        setFormInputAttributes(input, 'text', id, id);
-        parent.appendChild(input);
-    }
+//     setFormInputAttributes(input, 'text', id, id);
+//     parent.appendChild(input);
+
+// };
+
+const addSidebarInputElement = (parent, id) => {
+    const input = document.createElement('input');
+    (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.setSidebarInputAttributes)(input, 'text', id, id);  //attribute function
+    parent.appendChild(input);
 };
 
 const addFormParent = (parent, id) => {
@@ -599,25 +637,17 @@ const addFormParent = (parent, id) => {
     return element;
 };
 
-const setFormInputAttributes = (item, type, id, name) => {
-    item.setAttribute('type', type);
-    item.setAttribute('id', id);
-    item.setAttribute('name', name);
-};
-
-const setLabelAttributes = (item, forAtt, text) => {
-    item.setAttribute('for', forAtt);
-    item.innerHTML = text;
-};
-
+//
 const addSideBarForm = (parent) => {
     const formParent = addFormParent(parent, 'sidebar-add-form');
     const form = addForm(formParent);
-    addFormItemElements(form, 'label', 'folder-title'); //Text content
+    addSidebarInputElement(form, 'folder-title'); //Text content
+    //setSidebarFormAttributes();
     (0,_user_input__WEBPACK_IMPORTED_MODULE_0__.registerSideBarSubmitListener)(form);
     return form;
 };
 
+/* This function */
 const addAttributes = (item, attType, attName, elementType) => {
     const element = document.createElement(elementType);
     element.textContent = item;

@@ -556,7 +556,7 @@ module.exports = styleTagTransform;
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "setSidebarInputAttributes": () => (/* binding */ setSidebarInputAttributes)
+/* harmony export */   "addSidebarFormAttributes": () => (/* binding */ addSidebarFormAttributes)
 /* harmony export */ });
 const setSidebarInputAttributes = (item, type, id, name) => {
     item.setAttribute('type', type);
@@ -566,8 +566,13 @@ const setSidebarInputAttributes = (item, type, id, name) => {
 };
 
 const setSidebarFormAttributes = (form, action, method) => {
-    form.addAttribute('action', action);
-    form.addAttribute('method', method);
+    form.setAttribute('action', action);
+    form.setAttribute('method', method);
+};
+
+const addSidebarFormAttributes = (form, input) => {
+    setSidebarInputAttributes(input, 'text', 'form-title', 'form-title');
+    setSidebarFormAttributes(form, '', 'post');
 };
 
 //
@@ -630,8 +635,9 @@ const addForm = (parent) => {
 
 const addSidebarInputElement = (parent, id) => {
     const input = document.createElement('input');
-    (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.setSidebarInputAttributes)(input, 'text', id, id);  //attribute function
+
     parent.appendChild(input);
+    return input;
 };
 
 const addFormParent = (parent, id) => {
@@ -645,7 +651,9 @@ const addFormParent = (parent, id) => {
 const addSidebarForm = (parent) => {
     const formParent = addFormParent(parent, 'sidebar-add-form');
     const form = addForm(formParent);
-    addSidebarInputElement(form, 'folder-title'); //Text content
+    const input = addSidebarInputElement(form, 'folder-title');
+    (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addSidebarFormAttributes)(form, input);
+
     //setSidebarFormAttributes();
     (0,_user_input__WEBPACK_IMPORTED_MODULE_0__.registerSidebarSubmitListener)(form);
     return form;

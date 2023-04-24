@@ -20,10 +20,6 @@ const addSidebarInput = () => {
     const sidebarForm = addSidebarForm(sidebarItems);
     const sidebarButton = addButton(sidebarForm, '+ Folder', 'sidebar-add-button', 'submit');
 
-    sidebarButton.addEventListener('submit', () => {
-        getInput();
-    });
-
 };
 
 export { initSidebar };

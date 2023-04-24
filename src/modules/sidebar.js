@@ -16,13 +16,6 @@ const initSidebar = () => {
     renderSidebarContent();
 };
 
-//For when button clicked
-const addSidebarContent = (sidebarButton) => {
-    let sidebarItem = getInput();
-    addAbove(sidebarItem, 'side-item', 'div', sidebarItems, sidebarButton);
-    sidebarContent.push(sidebarItem);
-};
-
 const addSidebarInput = () => {
     const sidebarForm = addSidebarForm(sidebarItems);
     const sidebarButton = addButton(sidebarForm, '+ Folder', 'sidebar-add-button', 'submit');

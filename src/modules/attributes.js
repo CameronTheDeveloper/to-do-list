@@ -2,7 +2,7 @@ const setSidebarInputAttributes = (item, type, id, name) => {
     item.setAttribute('type', type);
     item.setAttribute('id', id);
     item.setAttribute('name', name);
-    //item.required = true;
+    item.setAttribute('maxLength', '20');
 };
 
 /* Have function to */
@@ -12,6 +12,5 @@ const setSidebarInputAttributes = (item, type, id, name) => {
 // };
 
 //For <form>
-
 
 export { setSidebarInputAttributes };

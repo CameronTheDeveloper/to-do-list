@@ -47,7 +47,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "#sidebar {\n    grid-column: 1/2;\n    grid-row: 1/-1;\n    background-color: rgb(170, 255, 43);\n    font-size: 2rem;\n    padding: 24px;\n    display: grid;\n    grid-template-rows: 7fr 1fr;\n\n    justify-items: center;\n    justify-content: center;\n}\n\n#side-bar-items {\n    display: grid;\n}\n\n#sidebar .sidebar-add-button {\n    margin: 10px;\n    width: 100px;\n    height: 40px;\n    background-color: rgb(255, 255, 255);\n    font-size: 1.2rem;\n    border-radius: 20px;\n    font-weight: 700;\n    cursor: pointer;\n}\n\n#sidebar .sidebar-add-button:hover {\n    background-color: rgb(10, 78, 10);\n    color: white;\n    font-weight: 900;\n}\n\n#sidebar .sidebar-add-button:active {\n    color: rgb(187, 159, 0);\n}\n\n#sidebar form {\n    display: grid;\n    grid-template-columns: 1fr;\n    /* position: absolute; */\n}\n\n#sidebar form input {\n    background: transparent;\n    border-radius: 10px;\n    border: 1px solid rgba(103, 103, 103, 0.5);\n    padding: 5px;\n    margin: 5px;\n    font-size: 1.8rem;\n}\n\n#sidebar form input:hover {\n    border: 2px solid rgb(0, 0, 0);\n}\n\n#sidebar form input:invalid {\n    border-color: red;\n}", "",{"version":3,"sources":["webpack://./src/styles/sidebar.css"],"names":[],"mappings":"AAAA;IACI,gBAAgB;IAChB,cAAc;IACd,mCAAmC;IACnC,eAAe;IACf,aAAa;IACb,aAAa;IACb,2BAA2B;;IAE3B,qBAAqB;IACrB,uBAAuB;AAC3B;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI,YAAY;IACZ,YAAY;IACZ,YAAY;IACZ,oCAAoC;IACpC,iBAAiB;IACjB,mBAAmB;IACnB,gBAAgB;IAChB,eAAe;AACnB;;AAEA;IACI,iCAAiC;IACjC,YAAY;IACZ,gBAAgB;AACpB;;AAEA;IACI,uBAAuB;AAC3B;;AAEA;IACI,aAAa;IACb,0BAA0B;IAC1B,wBAAwB;AAC5B;;AAEA;IACI,uBAAuB;IACvB,mBAAmB;IACnB,0CAA0C;IAC1C,YAAY;IACZ,WAAW;IACX,iBAAiB;AACrB;;AAEA;IACI,8BAA8B;AAClC;;AAEA;IACI,iBAAiB;AACrB","sourcesContent":["#sidebar {\n    grid-column: 1/2;\n    grid-row: 1/-1;\n    background-color: rgb(170, 255, 43);\n    font-size: 2rem;\n    padding: 24px;\n    display: grid;\n    grid-template-rows: 7fr 1fr;\n\n    justify-items: center;\n    justify-content: center;\n}\n\n#side-bar-items {\n    display: grid;\n}\n\n#sidebar .sidebar-add-button {\n    margin: 10px;\n    width: 100px;\n    height: 40px;\n    background-color: rgb(255, 255, 255);\n    font-size: 1.2rem;\n    border-radius: 20px;\n    font-weight: 700;\n    cursor: pointer;\n}\n\n#sidebar .sidebar-add-button:hover {\n    background-color: rgb(10, 78, 10);\n    color: white;\n    font-weight: 900;\n}\n\n#sidebar .sidebar-add-button:active {\n    color: rgb(187, 159, 0);\n}\n\n#sidebar form {\n    display: grid;\n    grid-template-columns: 1fr;\n    /* position: absolute; */\n}\n\n#sidebar form input {\n    background: transparent;\n    border-radius: 10px;\n    border: 1px solid rgba(103, 103, 103, 0.5);\n    padding: 5px;\n    margin: 5px;\n    font-size: 1.8rem;\n}\n\n#sidebar form input:hover {\n    border: 2px solid rgb(0, 0, 0);\n}\n\n#sidebar form input:invalid {\n    border-color: red;\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "#sidebar {\n    grid-column: 1/2;\n    grid-row: 1/-1;\n    background-color: rgb(170, 255, 43);\n    font-size: 2rem;\n    padding: 24px;\n    display: grid;\n    grid-template-rows: 7fr 1fr;\n\n    justify-items: center;\n    justify-content: center;\n}\n\n#side-bar-items {\n    display: grid;\n}\n\n#sidebar .sidebar-add-button {\n    margin: 10px;\n    width: 100px;\n    height: 40px;\n    background-color: rgb(255, 255, 255);\n    font-size: 1.2rem;\n    border-radius: 20px;\n    font-weight: 700;\n    cursor: pointer;\n}\n\n#sidebar .sidebar-add-button:hover {\n    background-color: rgb(10, 78, 10);\n    color: white;\n    font-weight: 900;\n}\n\n#sidebar .sidebar-add-button:active {\n    color: rgb(187, 159, 0);\n}\n\n#sidebar form {\n    display: grid;\n    grid-template-columns: 1fr;\n    /* position: absolute; */\n}\n\n#sidebar form input {\n    background: transparent;\n    border-radius: 10px;\n    border: 1px solid rgba(103, 103, 103, 0.5);\n    padding: 5px;\n    margin: 5px;\n    font-size: 1.8rem;\n}\n\n#sidebar form input:hover {\n    border: 2px solid rgb(0, 0, 0);\n}", "",{"version":3,"sources":["webpack://./src/styles/sidebar.css"],"names":[],"mappings":"AAAA;IACI,gBAAgB;IAChB,cAAc;IACd,mCAAmC;IACnC,eAAe;IACf,aAAa;IACb,aAAa;IACb,2BAA2B;;IAE3B,qBAAqB;IACrB,uBAAuB;AAC3B;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI,YAAY;IACZ,YAAY;IACZ,YAAY;IACZ,oCAAoC;IACpC,iBAAiB;IACjB,mBAAmB;IACnB,gBAAgB;IAChB,eAAe;AACnB;;AAEA;IACI,iCAAiC;IACjC,YAAY;IACZ,gBAAgB;AACpB;;AAEA;IACI,uBAAuB;AAC3B;;AAEA;IACI,aAAa;IACb,0BAA0B;IAC1B,wBAAwB;AAC5B;;AAEA;IACI,uBAAuB;IACvB,mBAAmB;IACnB,0CAA0C;IAC1C,YAAY;IACZ,WAAW;IACX,iBAAiB;AACrB;;AAEA;IACI,8BAA8B;AAClC","sourcesContent":["#sidebar {\n    grid-column: 1/2;\n    grid-row: 1/-1;\n    background-color: rgb(170, 255, 43);\n    font-size: 2rem;\n    padding: 24px;\n    display: grid;\n    grid-template-rows: 7fr 1fr;\n\n    justify-items: center;\n    justify-content: center;\n}\n\n#side-bar-items {\n    display: grid;\n}\n\n#sidebar .sidebar-add-button {\n    margin: 10px;\n    width: 100px;\n    height: 40px;\n    background-color: rgb(255, 255, 255);\n    font-size: 1.2rem;\n    border-radius: 20px;\n    font-weight: 700;\n    cursor: pointer;\n}\n\n#sidebar .sidebar-add-button:hover {\n    background-color: rgb(10, 78, 10);\n    color: white;\n    font-weight: 900;\n}\n\n#sidebar .sidebar-add-button:active {\n    color: rgb(187, 159, 0);\n}\n\n#sidebar form {\n    display: grid;\n    grid-template-columns: 1fr;\n    /* position: absolute; */\n}\n\n#sidebar form input {\n    background: transparent;\n    border-radius: 10px;\n    border: 1px solid rgba(103, 103, 103, 0.5);\n    padding: 5px;\n    margin: 5px;\n    font-size: 1.8rem;\n}\n\n#sidebar form input:hover {\n    border: 2px solid rgb(0, 0, 0);\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -565,7 +565,12 @@ const setSidebarInputAttributes = (item, type, id, name) => {
     item.setAttribute('maxLength', '20');
 };
 
-/* Have function to */
+const setSidebarFormAttributes = (form, action, method) => {
+    form.addAttribute('action', action);
+    form.addAttribute('method', method);
+};
+
+//
 // const setLabelAttributes = (item, attType, , text) => {
 //     item.setAttribute(attType, att);
 //     item.innerHTML = text;
@@ -589,7 +594,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "addAbove": () => (/* binding */ addAbove),
 /* harmony export */   "addButton": () => (/* binding */ addButton),
 /* harmony export */   "addContent": () => (/* binding */ addContent),
-/* harmony export */   "addSideBarForm": () => (/* binding */ addSideBarForm),
+/* harmony export */   "addSidebarForm": () => (/* binding */ addSidebarForm),
 /* harmony export */   "clearHTML": () => (/* binding */ clearHTML),
 /* harmony export */   "removeHTML": () => (/* binding */ removeHTML)
 /* harmony export */ });
@@ -637,12 +642,12 @@ const addFormParent = (parent, id) => {
 };
 
 //
-const addSideBarForm = (parent) => {
+const addSidebarForm = (parent) => {
     const formParent = addFormParent(parent, 'sidebar-add-form');
     const form = addForm(formParent);
     addSidebarInputElement(form, 'folder-title'); //Text content
     //setSidebarFormAttributes();
-    (0,_user_input__WEBPACK_IMPORTED_MODULE_0__.registerSideBarSubmitListener)(form);
+    (0,_user_input__WEBPACK_IMPORTED_MODULE_0__.registerSidebarSubmitListener)(form);
     return form;
 };
 
@@ -694,7 +699,7 @@ const removeHTML = (element) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "initSideBar": () => (/* binding */ initSideBar)
+/* harmony export */   "initSidebar": () => (/* binding */ initSidebar)
 /* harmony export */ });
 /* harmony import */ var _styles_sidebar_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../styles/sidebar.css */ "./src/styles/sidebar.css");
 /* harmony import */ var _page_layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./page-layout */ "./src/modules/page-layout.js");
@@ -703,33 +708,33 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const sideBarItems = document.querySelector('#sidebar-items');
-let sideBarContent = ['Projects', 'Today', 'This Week'];
+const sidebarItems = document.querySelector('#sidebar-items');
+let sidebarContent = ['Projects', 'Today', 'This Week'];
 
-const renderSideBarContent = () => {
-    for (let i = 0; i < sideBarContent.length; i++) {
-        (0,_page_layout__WEBPACK_IMPORTED_MODULE_1__.addContent)(sideBarItems, sideBarContent[i], 'sidebar-item', 'div');
+const renderSidebarContent = () => {
+    for (let i = 0; i < sidebarContent.length; i++) {
+        (0,_page_layout__WEBPACK_IMPORTED_MODULE_1__.addContent)(sidebarItems, sidebarContent[i], 'sidebar-item', 'div');
     }
-    addSideBarInput();
+    addSidebarInput();
 };
 
-const initSideBar = () => {
-    renderSideBarContent();
+const initSidebar = () => {
+    renderSidebarContent();
 };
 
 //For when button clicked
-const addSideBarContent = (sideBarButton) => {
-    let sideBarItem = (0,_user_input__WEBPACK_IMPORTED_MODULE_2__.getInput)();
-    (0,_page_layout__WEBPACK_IMPORTED_MODULE_1__.addAbove)(sideBarItem, 'side-item', 'div', sideBarItems, sideBarButton);
-    sideBarContent.push(sideBarItem);
+const addSidebarContent = (sidebarButton) => {
+    let sidebarItem = (0,_user_input__WEBPACK_IMPORTED_MODULE_2__.getInput)();
+    (0,_page_layout__WEBPACK_IMPORTED_MODULE_1__.addAbove)(sidebarItem, 'side-item', 'div', sidebarItems, sidebarButton);
+    sidebarContent.push(sidebarItem);
 };
 
-const addSideBarInput = () => {
-    const sideBarForm = (0,_page_layout__WEBPACK_IMPORTED_MODULE_1__.addSideBarForm)(sideBarItems);
-    const sideBarButton = (0,_page_layout__WEBPACK_IMPORTED_MODULE_1__.addButton)(sideBarForm, '+ Folder', 'sidebar-add-button', 'submit');
-    // Make sideBarButton a "submit" type
+const addSidebarInput = () => {
+    const sidebarForm = (0,_page_layout__WEBPACK_IMPORTED_MODULE_1__.addSidebarForm)(sidebarItems);
+    const sidebarButton = (0,_page_layout__WEBPACK_IMPORTED_MODULE_1__.addButton)(sidebarForm, '+ Folder', 'sidebar-add-button', 'submit');
+    // Make sidebarButton a "submit" type
 
-    sideBarButton.addEventListener('submit', () => {
+    sidebarButton.addEventListener('submit', () => {
         (0,_user_input__WEBPACK_IMPORTED_MODULE_2__.getInput)();
     });
 
@@ -747,15 +752,15 @@ const addSideBarInput = () => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "registerSideBarSubmitListener": () => (/* binding */ registerSideBarSubmitListener)
+/* harmony export */   "registerSidebarSubmitListener": () => (/* binding */ registerSidebarSubmitListener)
 /* harmony export */ });
 /* harmony import */ var _page_layout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./page-layout */ "./src/modules/page-layout.js");
 
 
 const content = document.querySelector('#content');
-const sideBarItems = document.querySelector('#sidebar-items');
+const sidebarItems = document.querySelector('#sidebar-items');
 
-const openSideBarForm = () => {
+const openSidebarForm = () => {
 
 };
 
@@ -764,17 +769,17 @@ const getInput = (id) => {
     return document.getElementById(id).value;
 };
 
-const setSideBarInput = (input) => {
-    const sideBarForm = document.querySelector('#sidebar-add-form');
-    (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.addAbove)(input, 'sidebar-item', 'div', sideBarItems, sideBarForm);
+const setSidebarInput = (input) => {
+    const sidebarForm = document.querySelector('#sidebar-add-form');
+    (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.addAbove)(input, 'sidebar-item', 'div', sidebarItems, sidebarForm);
 };
 
 const submitClicked = () => {
     const input = getInput('folder-title');
-    setSideBarInput(input);
+    setSidebarInput(input);
 };
 
-const registerSideBarSubmitListener = (form) => {
+const registerSidebarSubmitListener = (form) => {
     form.addEventListener('submit', (event) => {
         event.preventDefault();
         submitClicked();
@@ -870,9 +875,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 // const content = document.querySelector('#content');
-// const sideBar = document.querySelector('#sidebar');
+// const sidebar = document.querySelector('#sidebar');
 
-(0,_modules_sidebar__WEBPACK_IMPORTED_MODULE_1__.initSideBar)();
+(0,_modules_sidebar__WEBPACK_IMPORTED_MODULE_1__.initSidebar)();
 })();
 
 /******/ })()

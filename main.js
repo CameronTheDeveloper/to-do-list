@@ -679,9 +679,11 @@ const appendAbove = (parent, lowerDiv, item) => {
     parent.insertBefore(item, lowerDiv);
 };
 
+//addAttributes needs changes
 const addAbove = (className, elementType, parent, lowerDiv) => {
     const element = addAttributes('', 'class', className, elementType);
     appendAbove(parent, lowerDiv, element);
+    return element;
 };
 
 const addButton = (parent, text, className, type) => {
@@ -771,15 +773,27 @@ const getInput = (id) => {
     return document.getElementById(id).value;
 };
 
+//Parent = sidebar-item
+const setFormItemElements = (parent, input) => {
+    const title = document.createElement('div');
+    const removeButton = (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.addRemoveButton)(parent, 'X', 'remove-folder');
+
+    title.innerHTML = input;
+    addFormItemElements(parent, title, removeButton);
+};
+
+const addFormItemElements = (parent, title, removeButton) => {
+
+    parent.appendChild(title);
+    parent.appendChild(removeButton);
+};
+
 const setSidebarInput = (input) => {
     const sidebarForm = document.querySelector('#sidebar-add-form');
-    (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.addAbove)('sidebar-item', 'div', sidebarItems, sidebarForm);
-    //input
+    const item = (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.addAbove)('sidebar-item', 'div', sidebarItems, sidebarForm);
+    setFormItemElements(item, input);
 };
 
-const addSidebarItemDiv = () => {
-
-};
 //addAbove is creating the sidebar-item and appending above form
 //We need to create the sidebar-item, add title and x button, then add above
 

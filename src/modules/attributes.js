@@ -5,7 +5,12 @@ const setSidebarInputAttributes = (item, type, id, name) => {
     item.setAttribute('maxLength', '20');
 };
 
-/* Have function to */
+const setSidebarFormAttributes = (form, action, method) => {
+    form.addAttribute('action', action);
+    form.addAttribute('method', method);
+};
+
+//
 // const setLabelAttributes = (item, attType, , text) => {
 //     item.setAttribute(attType, att);
 //     item.innerHTML = text;

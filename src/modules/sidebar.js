@@ -1,10 +1,10 @@
 import '../styles/sidebar.css';
-import { addContent, addButton, addAbove, addSidebarForm } from './page-layout';
-import { getInput } from './user-input';
+import { addContent, addButton, addSidebarForm } from './page-layout';
 
 const sidebarItems = document.querySelector('#sidebar-items');
 let sidebarContent = ['Projects', 'Today', 'This Week'];
 
+//Possible remove
 const renderSidebarContent = () => {
     for (let i = 0; i < sidebarContent.length; i++) {
         addContent(sidebarItems, sidebarContent[i], 'sidebar-item', 'div');
@@ -19,7 +19,6 @@ const initSidebar = () => {
 const addSidebarInput = () => {
     const sidebarForm = addSidebarForm(sidebarItems);
     const sidebarButton = addButton(sidebarForm, '+ Folder', 'sidebar-add-button', 'submit');
-    // Make sidebarButton a "submit" type
 
     sidebarButton.addEventListener('submit', () => {
         getInput();

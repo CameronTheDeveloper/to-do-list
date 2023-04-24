@@ -17,15 +17,17 @@ const setSidebarInput = (input) => {
     addAbove(input, 'sidebar-item', 'div', sidebarItems, sidebarForm);
 };
 
+/* Change this for reuse*/
 const submitClicked = () => {
     const input = getInput('folder-title');
     setSidebarInput(input);
 };
 
-const registerSidebarSubmitListener = (form) => {
+const registerSidebarSubmitListener = (form, input) => {
     form.addEventListener('submit', (event) => {
         event.preventDefault();
         submitClicked();
+        input.value = '';
     });
 };
 

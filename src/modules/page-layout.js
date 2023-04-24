@@ -28,7 +28,7 @@ const addForm = (parent) => {
 
 const addSidebarInputElement = (parent, id) => {
     const input = document.createElement('input');
-    setSidebarInputAttributes(input, 'text', id, id);  //attribute function
+
     parent.appendChild(input);
     return input;
 };
@@ -44,8 +44,8 @@ const addFormParent = (parent, id) => {
 const addSidebarForm = (parent) => {
     const formParent = addFormParent(parent, 'sidebar-add-form');
     const form = addForm(formParent);
-    addSidebarInputElement(form, 'folder-title');
-    addSidebarFormAttributes(form,);
+    const input = addSidebarInputElement(form, 'folder-title');
+    addSidebarFormAttributes(form, input);
 
     //setSidebarFormAttributes();
     registerSidebarSubmitListener(form);

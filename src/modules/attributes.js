@@ -10,6 +10,11 @@ const setSidebarFormAttributes = (form, action, method) => {
     form.addAttribute('method', method);
 };
 
+const addSidebarFormAttributes = (form, item, type, id, name) => {
+    setSidebarInputAttributes();
+    setSidebarFormAttributes(form, '', 'post');
+};
+
 //
 // const setLabelAttributes = (item, attType, , text) => {
 //     item.setAttribute(attType, att);
@@ -18,4 +23,4 @@ const setSidebarFormAttributes = (form, action, method) => {
 
 //For <form>
 
-export { setSidebarInputAttributes };
+export { addSidebarFormAttributes };

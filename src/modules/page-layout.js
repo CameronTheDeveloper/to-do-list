@@ -40,10 +40,15 @@ const addFormParent = (parent, id) => {
     return element;
 };
 
+const addFormToDOM = (parent, id) => {
+    const formParent = addFormParent(parent, id);
+    const form = addForm(formParent);
+    return form;
+};
+
 //
 const addSidebarForm = (parent) => {
-    const formParent = addFormParent(parent, 'sidebar-add-form');
-    const form = addForm(formParent);
+    const form = addFormToDOM(parent, 'sidebar-add-form');
     const input = addSidebarInputElement(form, 'folder-title');
 
     addSidebarFormAttributes(form, input);
@@ -100,5 +105,6 @@ export {
     clearHTML,
     removeHTML,
     addAbove,
-    addSidebarForm
+    addSidebarForm,
+    addRemoveButton
 };

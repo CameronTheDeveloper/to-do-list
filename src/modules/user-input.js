@@ -1,12 +1,7 @@
-import { addAbove } from "./page-layout";
+import { addAbove, addRemoveButton } from "./page-layout";
 
 const content = document.querySelector('#content');
 const sidebarItems = document.querySelector('#sidebar-items');
-
-const openSidebarForm = () => {
-
-};
-
 
 const getInput = (id) => {
     return document.getElementById(id).value;
@@ -31,4 +26,10 @@ const registerSidebarSubmitListener = (form, input) => {
     });
 };
 
-export { registerSidebarSubmitListener };
+const registerRemoveListener = (button, element) => {
+    button.addEventListener('click', () => {
+        element.remove();
+    });
+};
+
+export { registerSidebarSubmitListener, registerRemoveListener };

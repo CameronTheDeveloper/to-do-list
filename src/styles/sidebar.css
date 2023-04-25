@@ -43,8 +43,13 @@
 }
 
 .sidebar-item {
+    cursor: pointer;
     display: grid;
     grid-template-columns: 10fr 1fr;
+}
+
+.sidebar-item:hover {
+    background-color: rgba(103, 103, 103, 0.5)
 }
 
 .sidebar-item button {
@@ -74,5 +79,5 @@
 }
 
 #sidebar form input:hover {
-    border: 2px solid rgb(0, 0, 0);
+    border: 1.2px solid rgb(0, 0, 0);
 }

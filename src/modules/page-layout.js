@@ -71,6 +71,7 @@ const appendAbove = (parent, lowerDiv, item) => {
     parent.insertBefore(item, lowerDiv);
 };
 
+//addAttributes needs changes
 const addAbove = (className, elementType, parent, lowerDiv) => {
     const element = addAttributes('', 'class', className, elementType);
     appendAbove(parent, lowerDiv, element);
@@ -94,7 +95,7 @@ const removeHTML = (element) => {
 
 const addRemoveButton = (parent, text, className) => {
     const removeButton = addButton(parent, text, className, 'button');
-    //add event listener for removeButton
+    registerRemoveListener(removeButton, parent);
     return removeButton;
 
 };

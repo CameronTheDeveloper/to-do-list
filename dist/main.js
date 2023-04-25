@@ -703,7 +703,7 @@ const removeHTML = (element) => {
 
 const addRemoveButton = (parent, text, className) => {
     const removeButton = addButton(parent, text, className, 'button');
-    //add event listener for removeButton
+    (0,_user_input__WEBPACK_IMPORTED_MODULE_0__.registerRemoveListener)(removeButton, parent);
     return removeButton;
 
 };
@@ -793,9 +793,6 @@ const setSidebarInput = (input) => {
     const item = (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.addAbove)('sidebar-item', 'div', sidebarItems, sidebarForm);
     setFormItemElements(item, input);
 };
-
-//addAbove is creating the sidebar-item and appending above form
-//We need to create the sidebar-item, add title and x button, then add above
 
 /* Change this for reuse*/
 const submitClicked = () => {

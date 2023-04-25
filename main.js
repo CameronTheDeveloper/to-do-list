@@ -556,8 +556,16 @@ module.exports = styleTagTransform;
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "addAttributes": () => (/* binding */ addAttributes),
 /* harmony export */   "addSidebarFormAttributes": () => (/* binding */ addSidebarFormAttributes)
 /* harmony export */ });
+const addAttributes = (text, attType, attName, elementType) => {
+    const element = document.createElement(elementType);
+    element.textContent = text;
+    element.setAttribute(attType, attName);
+    return element;
+};
+
 const setSidebarInputAttributes = (item, type, id, name) => {
     item.setAttribute('type', type);
     item.setAttribute('id', id);
@@ -625,15 +633,6 @@ const addForm = (parent) => {
     return element;
 };
 
-// //Remember to reorganize this
-// const addFormItemElements = (parent, elementType, id) => {
-//     const input = document.createElement('input');
-
-//     setFormInputAttributes(input, 'text', id, id);
-//     parent.appendChild(input);
-
-// };
-
 const addSidebarInputElement = (parent, id) => {
     const input = document.createElement('input');
 
@@ -664,13 +663,7 @@ const addSidebarForm = (parent) => {
     return form;
 };
 
-/* This function */
-const addAttributes = (text, attType, attName, elementType) => {
-    const element = document.createElement(elementType);
-    element.textContent = text;
-    element.setAttribute(attType, attName);
-    return element;
-};
+
 
 const addButtonType = (button, type) => {
     button.setAttribute('type', type);
@@ -682,13 +675,13 @@ const appendAbove = (parent, lowerDiv, item) => {
 
 //addAttributes needs changes
 const addAbove = (className, elementType, parent, lowerDiv) => {
-    const element = addAttributes('', 'class', className, elementType);
+    const element = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)('', 'class', className, elementType);
     appendAbove(parent, lowerDiv, element);
     return element;
 };
 
 const addButton = (parent, text, className, type) => {
-    const button = addAttributes(text, 'class', className, 'button');
+    const button = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)(text, 'class', className, 'button');
     addButtonType(button, type);
     parent.appendChild(button);
     return button;

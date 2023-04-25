@@ -46,10 +46,14 @@
     cursor: pointer;
     display: grid;
     grid-template-columns: 10fr 1fr;
+    align-items: center;
+    padding: 8px;
+    border-radius: 10px;
 }
 
 .sidebar-item:hover {
-    background-color: rgba(103, 103, 103, 0.5)
+    background-color: rgba(103, 103, 103, 0.5);
+    font-weight: 700;
 }
 
 .sidebar-item button {
@@ -64,7 +68,7 @@
 }
 
 .sidebar-item button:hover {
-    background-color: rgb(255, 86, 86);
+    background-color: rgba(255, 37, 37, 0.798);
     font-weight: 900;
     border-width: 1.5px;
 }

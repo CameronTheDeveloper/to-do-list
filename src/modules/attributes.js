@@ -1,3 +1,10 @@
+const addAttributes = (text, attType, attName, elementType) => {
+    const element = document.createElement(elementType);
+    element.textContent = text;
+    element.setAttribute(attType, attName);
+    return element;
+};
+
 const setSidebarInputAttributes = (item, type, id, name) => {
     item.setAttribute('type', type);
     item.setAttribute('id', id);
@@ -24,4 +31,4 @@ const addSidebarFormAttributes = (form, input) => {
 
 //For <form>
 
-export { addSidebarFormAttributes };
+export { addSidebarFormAttributes, addAttributes };

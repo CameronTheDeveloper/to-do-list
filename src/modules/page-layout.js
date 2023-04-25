@@ -1,5 +1,5 @@
 import { registerSidebarSubmitListener, registerRemoveListener } from "./user-input";
-import { addSidebarFormAttributes } from "./attributes";
+import { addSidebarFormAttributes, addAttributes } from "./attributes";
 
 const content = document.querySelector('#content');
 
@@ -15,15 +15,6 @@ const addForm = (parent) => {
     parent.appendChild(element);
     return element;
 };
-
-// //Remember to reorganize this
-// const addFormItemElements = (parent, elementType, id) => {
-//     const input = document.createElement('input');
-
-//     setFormInputAttributes(input, 'text', id, id);
-//     parent.appendChild(input);
-
-// };
 
 const addSidebarInputElement = (parent, id) => {
     const input = document.createElement('input');
@@ -55,13 +46,7 @@ const addSidebarForm = (parent) => {
     return form;
 };
 
-/* This function */
-const addAttributes = (text, attType, attName, elementType) => {
-    const element = document.createElement(elementType);
-    element.textContent = text;
-    element.setAttribute(attType, attName);
-    return element;
-};
+
 
 const addButtonType = (button, type) => {
     button.setAttribute('type', type);

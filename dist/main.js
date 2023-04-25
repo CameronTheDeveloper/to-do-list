@@ -563,6 +563,7 @@ const setSidebarInputAttributes = (item, type, id, name) => {
     item.setAttribute('id', id);
     item.setAttribute('name', name);
     item.setAttribute('maxLength', '20');
+    item.required = true;
 };
 
 const setSidebarFormAttributes = (form, action, method) => {

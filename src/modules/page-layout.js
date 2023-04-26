@@ -46,6 +46,14 @@ const addSidebarForm = (parent) => {
     return form;
 };
 
+const addToDoForm = (parent) => {
+    const form = addFormToDOM(parent, 'todo-add-form');
+    const input = addSidebarInputElement(form, 'todo-title');
+
+    addSidebarFormAttributes(form, input);
+    registerSidebarSubmitListener(form, input);
+};
+
 
 
 const addButtonType = (button, type) => {

@@ -4,3 +4,6 @@ function toDo(title) {
     };
 }
 
+const createToDo = (title) => {
+    const newToDo = toDo(title);
+};

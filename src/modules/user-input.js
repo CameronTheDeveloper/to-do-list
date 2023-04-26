@@ -33,6 +33,14 @@ const submitClicked = () => {
     setSidebarInput(input);
 };
 
+const toggleButtonStyle = (button) => {
+    if (button.style.display !== 'none') {
+        button.style.display = 'none';
+    } else {
+        button.style.display = 'inline-block';
+    }
+};
+
 const registerSidebarSubmitListener = (form, input) => {
     form.addEventListener('submit', (event) => {
         event.preventDefault();
@@ -49,6 +57,7 @@ const registerRemoveListener = (button, element) => {
 
 const registerAddToDoListener = (button) => {
     button.addEventListener('click', () => {
+        toggleButtonStyle(button);
         addToDoForm(contentItems);
     });
 };

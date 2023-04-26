@@ -1,4 +1,5 @@
 import { addButton } from "./page-layout";
+import { registerAddToDoListener } from "./user-input";
 
 const contentItems = document.querySelector('#content-items');
 
@@ -14,6 +15,7 @@ const createToDo = (title) => {
 
 const addToDoButton = () => {
     const addToDoButton = addButton(contentItems, '+ To Do', 'to-do', 'button');
+    registerAddToDoListener(addToDoButton);
 };
 
 const initToDo = () => {

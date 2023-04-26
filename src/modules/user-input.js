@@ -1,6 +1,7 @@
-import { addAbove, addRemoveButton } from "./page-layout";
+import { addAbove, addRemoveButton, addToDoForm } from "./page-layout";
 
 const sidebarItems = document.querySelector('#sidebar-items');
+const contentItems = document.querySelector('#content-items');
 
 const getInput = (id) => {
     return document.getElementById(id).value;
@@ -46,4 +47,14 @@ const registerRemoveListener = (button, element) => {
     });
 };
 
-export { registerSidebarSubmitListener, registerRemoveListener };
+const registerAddToDoListener = (button) => {
+    button.addEventListener('click', () => {
+        addToDoForm(contentItems);
+    });
+};
+
+export {
+    registerSidebarSubmitListener,
+    registerRemoveListener,
+    registerAddToDoListener
+};

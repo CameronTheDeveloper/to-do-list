@@ -46,13 +46,15 @@ const addSidebarForm = (parent) => {
     return form;
 };
 
+
+
 //Not getting called right away
 const addToDoForm = (parent) => {
     const form = addFormToDOM(parent, 'todo-add-form');
-    const input = addFormInputElement(form, 'todo-title');//
+    const input = addFormInputElement(form, 'todo-title');
 
-    addSidebarFormAttributes(form, input);//
-    registerSidebarSubmitListener(form, input);//
+    //addSidebarFormAttributes(form, input);
+    //registerSidebarSubmitListener(form, input);
 };
 
 
@@ -101,5 +103,6 @@ export {
     removeHTML,
     addAbove,
     addSidebarForm,
+    addToDoForm,
     addRemoveButton
 };

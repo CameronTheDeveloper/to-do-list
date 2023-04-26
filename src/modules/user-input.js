@@ -1,14 +1,12 @@
 import { addAbove, addRemoveButton } from "./page-layout";
 
-const content = document.querySelector('#content');
 const sidebarItems = document.querySelector('#sidebar-items');
 
 const getInput = (id) => {
     return document.getElementById(id).value;
 };
 
-//Parent = sidebar-item
-const setFormItemElements = (parent, input) => {
+const setSidebarFormItemElements = (parent, input) => {
     const title = document.createElement('div');
     const removeButton = addRemoveButton(parent, 'X', 'remove-folder');
 
@@ -25,7 +23,7 @@ const addFormItemElements = (parent, title, removeButton) => {
 const setSidebarInput = (input) => {
     const sidebarForm = document.querySelector('#sidebar-add-form');
     const item = addAbove('sidebar-item', 'div', sidebarItems, sidebarForm);
-    setFormItemElements(item, input);
+    setSidebarFormItemElements(item, input);
 };
 
 /* Change this for reuse*/

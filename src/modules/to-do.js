@@ -1,6 +1,6 @@
 import { addButton } from "./page-layout";
 
-const content = document.querySelector('#content');
+const contentItems = document.querySelector('#content-items');
 
 function toDo(title) {
     return {
@@ -13,7 +13,7 @@ const createToDo = (title) => {
 };
 
 const addToDoInput = () => {
-    const addToDoButton = addButton(content, '+ To Do', 'to-do', 'button');
+    const addToDoButton = addButton(contentItems, '+ To Do', 'to-do', 'button');
 };
 
 const initToDo = () => {

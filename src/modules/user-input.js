@@ -33,7 +33,7 @@ const submitClicked = () => {
     setSidebarInput(input);
 };
 
-const toggleButtonStyle = (button) => {
+const toggleButtonDisplay = (button) => {
     if (button.style.display !== 'none') {
         button.style.display = 'none';
     } else {
@@ -57,7 +57,7 @@ const registerRemoveListener = (button, element) => {
 
 const registerAddToDoListener = (button) => {
     button.addEventListener('click', () => {
-        toggleButtonStyle(button);
+        toggleButtonDisplay(button);
         addToDoForm(contentItems);
     });
 };

@@ -746,6 +746,43 @@ const addSidebarInput = () => {
 
 /***/ }),
 
+/***/ "./src/modules/to-do.js":
+/*!******************************!*\
+  !*** ./src/modules/to-do.js ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "initToDo": () => (/* binding */ initToDo)
+/* harmony export */ });
+/* harmony import */ var _page_layout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./page-layout */ "./src/modules/page-layout.js");
+
+
+const content = document.querySelector('#content');
+
+function toDo(title) {
+    return {
+        title: title,
+    };
+}
+
+const createToDo = (title) => {
+    const newToDo = toDo(title);
+};
+
+const addToDoInput = () => {
+    const addToDoButton = (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.addButton)(content, '+ To Do', 'to-do', 'button');
+};
+
+const initToDo = () => {
+    addToDoInput();
+};
+
+
+
+/***/ }),
+
 /***/ "./src/modules/user-input.js":
 /*!***********************************!*\
   !*** ./src/modules/user-input.js ***!
@@ -894,12 +931,15 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/index.css */ "./src/styles/index.css");
 /* harmony import */ var _modules_sidebar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/sidebar */ "./src/modules/sidebar.js");
+/* harmony import */ var _modules_to_do__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/to-do */ "./src/modules/to-do.js");
+
 
 
 // const content = document.querySelector('#content');
 // const sidebar = document.querySelector('#sidebar');
 
 (0,_modules_sidebar__WEBPACK_IMPORTED_MODULE_1__.initSidebar)();
+(0,_modules_to_do__WEBPACK_IMPORTED_MODULE_2__.initToDo)();
 })();
 
 /******/ })()

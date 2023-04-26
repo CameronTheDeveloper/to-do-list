@@ -12,12 +12,12 @@ const createToDo = (title) => {
     const newToDo = toDo(title);
 };
 
-const addToDoInput = () => {
+const addToDoButton = () => {
     const addToDoButton = addButton(contentItems, '+ To Do', 'to-do', 'button');
 };
 
 const initToDo = () => {
-    addToDoInput();
+    addToDoButton();
 };
 
 export { initToDo };

@@ -664,6 +664,8 @@ const addSidebarForm = (parent) => {
     return form;
 };
 
+
+
 //Not getting called right away
 const addToDoForm = (parent) => {
     const form = addFormToDOM(parent, 'todo-add-form');
@@ -844,6 +846,14 @@ const submitClicked = () => {
     setSidebarInput(input);
 };
 
+const toggleButtonStyle = (button) => {
+    if (button.style.display !== 'none') {
+        button.style.display = 'none';
+    } else {
+        button.style.display = 'inline-block';
+    }
+};
+
 const registerSidebarSubmitListener = (form, input) => {
     form.addEventListener('submit', (event) => {
         event.preventDefault();
@@ -860,6 +870,7 @@ const registerRemoveListener = (button, element) => {
 
 const registerAddToDoListener = (button) => {
     button.addEventListener('click', () => {
+        toggleButtonStyle(button);
         (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.addToDoForm)(contentItems);
     });
 };

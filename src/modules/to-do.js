@@ -1,5 +1,6 @@
-import { addButton } from "./page-layout";
-import { registerAddToDoListener } from "./user-input";
+import '../styles/to-do.css';
+import { addButton } from './page-layout';
+import { registerAddToDoListener } from './user-input';
 
 const contentItems = document.querySelector('#content-items');
 

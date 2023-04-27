@@ -13,15 +13,16 @@ const setSidebarInputAttributes = (item, type, id, name) => {
     item.required = true;
 };
 
-const setSidebarFormAttributes = (form, action, method) => {
+const setFormElementAttributes = (form, action, method) => {
     form.setAttribute('action', action);
     form.setAttribute('method', method);
 };
 
 const addSidebarFormAttributes = (form, input) => {
     setSidebarInputAttributes(input, 'text', 'folder-title', 'form-title');
-    setSidebarFormAttributes(form, '', 'post');
+    setFormElementAttributes(form, '', 'post');
 };
+
 
 //
 // const setLabelAttributes = (item, attType, , text) => {

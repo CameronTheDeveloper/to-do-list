@@ -23,7 +23,10 @@ const addSidebarFormAttributes = (form, input) => {
     setFormElementAttributes(form, '', 'post');
 };
 
-
+const addToDoFormAttributes = (form, title) => {
+    //setToDoInputAttributes (title)
+    setFormElementAttributes(form, '', 'post');
+};
 //
 // const setLabelAttributes = (item, attType, , text) => {
 //     item.setAttribute(attType, att);
@@ -32,4 +35,4 @@ const addSidebarFormAttributes = (form, input) => {
 
 //For <form>
 
-export { addSidebarFormAttributes, addAttributes };
+export { addSidebarFormAttributes, addToDoFormAttributes, addAttributes };

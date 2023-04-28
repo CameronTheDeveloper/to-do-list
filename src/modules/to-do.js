@@ -10,6 +10,7 @@ function toDo(title) {
     };
 }
 
+//When submit is pressed
 const createToDo = (title) => {
     const newToDo = toDo(title);
 };

@@ -756,6 +756,7 @@ const addToDoForm = (parent) => {
     const form = addFormToDOM(parent, 'todo-add-form');
     const title = addFormInputElement(form, 'todo-title');
 
+    const submitButton = addButton(form, 'submit', 'todo-submit-button', 'submit');
     (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addToDoFormAttributes)(form, title);
 
     //addSidebarFormAttributes(form, input);

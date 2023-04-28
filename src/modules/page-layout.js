@@ -1,5 +1,9 @@
 import { registerSidebarSubmitListener, registerRemoveListener } from "./user-input";
-import { addSidebarFormAttributes, addAttributes } from "./attributes";
+import {
+    addSidebarFormAttributes,
+    addToDoFormAttributes,
+    addAttributes
+} from "./attributes";
 
 const content = document.querySelector('#content');
 

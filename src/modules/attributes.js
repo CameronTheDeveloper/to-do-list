@@ -5,11 +5,11 @@ const addAttributes = (text, attType, attName, elementType) => {
     return element;
 };
 
-const setSidebarInputAttributes = (item, type, id, name) => {
+const setTextInputAttributes = (item, type, id, name, maxLength) => {
     item.setAttribute('type', type);
     item.setAttribute('id', id);
     item.setAttribute('name', name);
-    item.setAttribute('maxLength', '20');
+    item.setAttribute('maxLength', maxLength);
     item.required = true;
 };
 
@@ -19,13 +19,14 @@ const setFormElementAttributes = (form, action, method) => {
 };
 
 const addSidebarFormAttributes = (form, input) => {
-    setSidebarInputAttributes(input, 'text', 'folder-title', 'form-title');
+    setTextInputAttributes(input, 'text', 'folder-title', 'form-title', '20');
     setFormElementAttributes(form, '', 'post');
 };
 
 const addToDoFormAttributes = (form, title) => {
     //setToDoInputAttributes (title)
     setFormElementAttributes(form, '', 'post');
+
 };
 //
 // const setLabelAttributes = (item, attType, , text) => {

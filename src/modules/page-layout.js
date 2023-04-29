@@ -43,7 +43,7 @@ const addFormToDOM = (parent, id) => {
 //
 const addSidebarForm = (parent) => {
     const form = addFormToDOM(parent, 'sidebar-add-form');
-    const input = addFormInputElement(form, 'folder-title');
+    const input = addFormInputElement('input', form, 'folder-title');
 
     addSidebarFormAttributes(form, input);
     registerSidebarSubmitListener(form, input);
@@ -55,8 +55,8 @@ const addSidebarForm = (parent) => {
 //Not getting called right away
 const addToDoForm = (parent) => {
     const form = addFormToDOM(parent, 'todo-add-form');
-    const title = addFormInputElement(form, 'todo-title');
-    const description = addFormInputElement(form, 'todo-description');
+    const title = addFormInputElement('input', form, 'todo-title');
+    const description = addFormInputElement('textarea', form, 'todo-description');
 
     const submitButton = addButton(form, 'submit', 'todo-submit-button', 'submit');
     addToDoFormAttributes(form, title, description);

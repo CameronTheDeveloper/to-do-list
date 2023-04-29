@@ -20,8 +20,8 @@ const addForm = (parent) => {
     return element;
 };
 
-const addFormInputElement = (parent, id) => {
-    const input = document.createElement('input');
+const addFormInputElement = (type, parent, id) => {
+    const input = document.createElement(type);
 
     parent.appendChild(input);
     return input;
@@ -56,9 +56,10 @@ const addSidebarForm = (parent) => {
 const addToDoForm = (parent) => {
     const form = addFormToDOM(parent, 'todo-add-form');
     const title = addFormInputElement(form, 'todo-title');
+    const description = addFormInputElement(form, 'todo-description');
 
     const submitButton = addButton(form, 'submit', 'todo-submit-button', 'submit');
-    addToDoFormAttributes(form, title);
+    addToDoFormAttributes(form, title, description);
 
     //addSidebarFormAttributes(form, input);
     //registerSidebarSubmitListener(form, input);

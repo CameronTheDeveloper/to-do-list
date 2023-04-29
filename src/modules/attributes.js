@@ -24,9 +24,8 @@ const addSidebarFormAttributes = (form, input) => {
 };
 
 const addToDoFormAttributes = (form, title) => {
-    //setToDoInputAttributes (title)
     setFormElementAttributes(form, '', 'post');
-
+    setTextInputAttributes(title, 'text', 'todo-title', 'todo-title', '10');
 };
 //
 // const setLabelAttributes = (item, attType, , text) => {

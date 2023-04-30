@@ -2,7 +2,8 @@ import { registerSidebarSubmitListener, registerRemoveListener } from "./user-in
 import {
     addSidebarFormAttributes,
     addToDoFormAttributes,
-    addAttributes
+    addAttributes,
+    addToDoLabelAttributes
 } from "./attributes";
 
 const content = document.querySelector('#content');
@@ -22,9 +23,15 @@ const addForm = (parent) => {
 
 const addFormInputElement = (type, parent, id) => {
     const input = document.createElement(type);
-
     parent.appendChild(input);
     return input;
+};
+
+const addFormLabelElement = (parent) => {
+    const label = document.createElement('label');
+    parent.appendChild(label);
+    console.log(label);
+    return label;
 };
 
 const addFormParent = (parent, id) => {
@@ -55,13 +62,17 @@ const addSidebarForm = (parent) => {
 //Not getting called right away
 const addToDoForm = (parent) => {
     const form = addFormToDOM(parent, 'todo-add-form');
+    const titleLabel = addFormLabelElement(form);
     const title = addFormInputElement('input', form, 'todo-title');
+    const descLabel = addFormLabelElement(form);
     const description = addFormInputElement('textarea', form, 'todo-description');
+
 
     const submitButton = addButton(form, 'submit', 'todo-submit-button', 'submit');
     addToDoFormAttributes(form, title, description);
+    addToDoLabelAttributes(titleLabel, descLabel);
 
-    //addSidebarFormAttributes(form, input);
+
     //registerSidebarSubmitListener(form, input);
 };
 

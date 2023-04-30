@@ -36,9 +36,21 @@ const addToDoFormAttributes = (form, title, desc) => {
     setTextAreaAttributes(desc, 'todo-description', '26', '5');
 };
 
-const setLabelAttributes = (item, attType, text) => {
+const addToDoLabelAttributes = (title, desc) => {
+    setLabelAttributes(title, 'for', 'todo-title', 'Title: ');
+    setLabelAttributes(desc, 'for', 'todo-description', 'Description');
+};
+
+const setLabelAttributes = (item, attType, att, text) => {
     item.setAttribute(attType, att);
+    item.setAttribute('class', 'form-label');
     item.innerHTML = text;
 };
 
-export { addSidebarFormAttributes, addToDoFormAttributes, addAttributes };
+
+export {
+    addSidebarFormAttributes,
+    addToDoFormAttributes,
+    addAttributes,
+    addToDoLabelAttributes,
+};

@@ -73,7 +73,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "#content {\n    display: grid;\n}\n\n#content-items {\n    display: grid;\n    grid-template: repeat(5, 1fr) / repeat(5, 1fr);\n\n}", "",{"version":3,"sources":["webpack://./src/styles/to-do.css"],"names":[],"mappings":"AAAA;IACI,aAAa;AACjB;;AAEA;IACI,aAAa;IACb,8CAA8C;;AAElD","sourcesContent":["#content {\n    display: grid;\n}\n\n#content-items {\n    display: grid;\n    grid-template: repeat(5, 1fr) / repeat(5, 1fr);\n\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "#content {\n    display: grid;\n}\n\n#content-items {\n    display: grid;\n    grid-template: repeat(5, 1fr) / repeat(5, 1fr);\n}\n\n#content-items {\n    margin: 16px;\n    padding: 16px;\n}\n\n#todo-add-form form {\n    background-color: white;\n    padding: 8px;\n    border-radius: 16px;\n}\n\n#todo-add-form input,\n#todo-add-form textarea {\n    width: 350px;\n}\n\n#todo-add-form input {\n    border-width: 5px;\n    border: 1px solid green;\n    padding: 4px;\n    font-size: 1rem;\n}\n\n\n\n/* edit text area css, also maybe do a seperate function for its attributes*/\n#todo-add-form #todo-description {\n    height: 200px;\n}\n\n#todo-add-form button {\n    border-radius: 12px;\n}", "",{"version":3,"sources":["webpack://./src/styles/to-do.css"],"names":[],"mappings":"AAAA;IACI,aAAa;AACjB;;AAEA;IACI,aAAa;IACb,8CAA8C;AAClD;;AAEA;IACI,YAAY;IACZ,aAAa;AACjB;;AAEA;IACI,uBAAuB;IACvB,YAAY;IACZ,mBAAmB;AACvB;;AAEA;;IAEI,YAAY;AAChB;;AAEA;IACI,iBAAiB;IACjB,uBAAuB;IACvB,YAAY;IACZ,eAAe;AACnB;;;;AAIA,4EAA4E;AAC5E;IACI,aAAa;AACjB;;AAEA;IACI,mBAAmB;AACvB","sourcesContent":["#content {\n    display: grid;\n}\n\n#content-items {\n    display: grid;\n    grid-template: repeat(5, 1fr) / repeat(5, 1fr);\n}\n\n#content-items {\n    margin: 16px;\n    padding: 16px;\n}\n\n#todo-add-form form {\n    background-color: white;\n    padding: 8px;\n    border-radius: 16px;\n}\n\n#todo-add-form input,\n#todo-add-form textarea {\n    width: 350px;\n}\n\n#todo-add-form input {\n    border-width: 5px;\n    border: 1px solid green;\n    padding: 4px;\n    font-size: 1rem;\n}\n\n\n\n/* edit text area css, also maybe do a seperate function for its attributes*/\n#todo-add-form #todo-description {\n    height: 200px;\n}\n\n#todo-add-form button {\n    border-radius: 12px;\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -638,7 +638,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "addAttributes": () => (/* binding */ addAttributes),
 /* harmony export */   "addSidebarFormAttributes": () => (/* binding */ addSidebarFormAttributes),
-/* harmony export */   "addToDoFormAttributes": () => (/* binding */ addToDoFormAttributes)
+/* harmony export */   "addToDoFormAttributes": () => (/* binding */ addToDoFormAttributes),
+/* harmony export */   "addToDoLabelAttributes": () => (/* binding */ addToDoLabelAttributes)
 /* harmony export */ });
 const addAttributes = (text, attType, attName, elementType) => {
     const element = document.createElement(elementType);
@@ -647,12 +648,19 @@ const addAttributes = (text, attType, attName, elementType) => {
     return element;
 };
 
-const setSidebarInputAttributes = (item, type, id, name) => {
+const setTextInputAttributes = (item, type, id, maxLength) => {
     item.setAttribute('type', type);
     item.setAttribute('id', id);
-    item.setAttribute('name', name);
-    item.setAttribute('maxLength', '20');
+    item.setAttribute('name', id);
+    item.setAttribute('maxLength', maxLength);
     item.required = true;
+};
+
+const setTextAreaAttributes = (item, id, cols, rows) => {
+    item.setAttribute('id', id);
+    item.setAttribute('name', id);
+    item.setAttribute('rows', rows);
+    item.setAttribute('cols', cols);
 };
 
 const setFormElementAttributes = (form, action, method) => {
@@ -661,21 +669,27 @@ const setFormElementAttributes = (form, action, method) => {
 };
 
 const addSidebarFormAttributes = (form, input) => {
-    setSidebarInputAttributes(input, 'text', 'folder-title', 'form-title');
+    setTextInputAttributes(input, 'text', 'form-title', '20');
     setFormElementAttributes(form, '', 'post');
 };
 
-const addToDoFormAttributes = (form, title) => {
-    //setToDoInputAttributes (title)
+const addToDoFormAttributes = (form, title, desc) => {
     setFormElementAttributes(form, '', 'post');
+    setTextInputAttributes(title, 'text', 'todo-title', '10');
+    setTextAreaAttributes(desc, 'todo-description', '26', '5');
 };
-//
-// const setLabelAttributes = (item, attType, , text) => {
-//     item.setAttribute(attType, att);
-//     item.innerHTML = text;
-// };
 
-//For <form>
+const addToDoLabelAttributes = (title, desc) => {
+    setLabelAttributes(title, 'for', 'todo-title', 'Title: ');
+    setLabelAttributes(desc, 'for', 'todo-description', 'Description');
+};
+
+const setLabelAttributes = (item, attType, att, text) => {
+    item.setAttribute(attType, att);
+    item.setAttribute('class', 'form-label');
+    item.innerHTML = text;
+};
+
 
 
 
@@ -719,11 +733,17 @@ const addForm = (parent) => {
     return element;
 };
 
-const addFormInputElement = (parent, id) => {
-    const input = document.createElement('input');
-
+const addFormInputElement = (type, parent, id) => {
+    const input = document.createElement(type);
     parent.appendChild(input);
     return input;
+};
+
+const addFormLabelElement = (parent) => {
+    const label = document.createElement('label');
+    parent.appendChild(label);
+    console.log(label);
+    return label;
 };
 
 const addFormParent = (parent, id) => {
@@ -742,7 +762,7 @@ const addFormToDOM = (parent, id) => {
 //
 const addSidebarForm = (parent) => {
     const form = addFormToDOM(parent, 'sidebar-add-form');
-    const input = addFormInputElement(form, 'folder-title');
+    const input = addFormInputElement('input', form, 'folder-title');
 
     (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addSidebarFormAttributes)(form, input);
     (0,_user_input__WEBPACK_IMPORTED_MODULE_0__.registerSidebarSubmitListener)(form, input);
@@ -754,12 +774,17 @@ const addSidebarForm = (parent) => {
 //Not getting called right away
 const addToDoForm = (parent) => {
     const form = addFormToDOM(parent, 'todo-add-form');
-    const title = addFormInputElement(form, 'todo-title');
+    const titleLabel = addFormLabelElement(form);
+    const title = addFormInputElement('input', form, 'todo-title');
+    const descLabel = addFormLabelElement(form);
+    const description = addFormInputElement('textarea', form, 'todo-description');
+
 
     const submitButton = addButton(form, 'submit', 'todo-submit-button', 'submit');
-    (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addToDoFormAttributes)(form, title);
+    (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addToDoFormAttributes)(form, title, description);
+    (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addToDoLabelAttributes)(titleLabel, descLabel);
 
-    //addSidebarFormAttributes(form, input);
+
     //registerSidebarSubmitListener(form, input);
 };
 
@@ -919,6 +944,7 @@ const setSidebarFormItemElements = (parent, input) => {
     addFormItemElements(parent, title, removeButton);
 };
 
+//This also seems to be for the sidebar
 const addFormItemElements = (parent, title, removeButton) => {
 
     parent.appendChild(title);
@@ -945,12 +971,18 @@ const toggleButtonDisplay = (button) => {
     }
 };
 
+
 const registerSidebarSubmitListener = (form, input) => {
     form.addEventListener('submit', (event) => {
         event.preventDefault();
         submitClicked();
         input.value = '';
     });
+};
+
+const registerToDoSubmitListener = (form, input) => {
+    //Create to do() OR colect to do input()
+    //toggleButtonDisplay()
 };
 
 const registerRemoveListener = (button, element) => {

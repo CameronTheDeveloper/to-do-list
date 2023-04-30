@@ -5,17 +5,17 @@ const addAttributes = (text, attType, attName, elementType) => {
     return element;
 };
 
-const setTextInputAttributes = (item, type, id, name, maxLength) => {
+const setTextInputAttributes = (item, type, id, maxLength) => {
     item.setAttribute('type', type);
     item.setAttribute('id', id);
-    item.setAttribute('name', name);
+    item.setAttribute('name', id);
     item.setAttribute('maxLength', maxLength);
     item.required = true;
 };
 
-const setTextAreaAttributes = (item, id, name, cols, rows) => {
+const setTextAreaAttributes = (item, id, cols, rows) => {
     item.setAttribute('id', id);
-    item.setAttribute('name', name);
+    item.setAttribute('name', id);
     item.setAttribute('rows', rows);
     item.setAttribute('cols', cols);
 };
@@ -26,14 +26,14 @@ const setFormElementAttributes = (form, action, method) => {
 };
 
 const addSidebarFormAttributes = (form, input) => {
-    setTextInputAttributes(input, 'text', 'folder-title', 'form-title', '20');
+    setTextInputAttributes(input, 'text', 'form-title', '20');
     setFormElementAttributes(form, '', 'post');
 };
 
 const addToDoFormAttributes = (form, title, desc) => {
     setFormElementAttributes(form, '', 'post');
-    setTextInputAttributes(title, 'text', 'todo-title', 'todo-title', '10');
-    setTextAreaAttributes(desc, 'todo-description', 'todo-description', '50', '50');
+    setTextInputAttributes(title, 'text', 'todo-title', '10');
+    setTextAreaAttributes(desc, 'todo-description', '50', '5');
 };
 //
 // const setLabelAttributes = (item, attType, , text) => {

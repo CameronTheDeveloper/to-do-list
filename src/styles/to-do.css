@@ -10,7 +10,17 @@
 #content-items {
     margin: 16px;
     padding: 16px;
+}
 
+#todo-add-form form {
+    background-color: white;
+    padding: 8px;
+    border-radius: 16px;
+}
+
+#todo-add-form input,
+#todo-add-form textarea {
+    width: 350px;
 }
 
 #todo-add-form input {
@@ -18,6 +28,13 @@
     border: 1px solid green;
     padding: 4px;
     font-size: 1rem;
+}
+
+
+
+/* edit text area css, also maybe do a seperate function for its attributes*/
+#todo-add-form #todo-description {
+    height: 200px;
 }
 
 #todo-add-form button {

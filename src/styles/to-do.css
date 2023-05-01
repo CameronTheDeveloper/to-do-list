@@ -8,9 +8,12 @@
 }
 
 #content-items {
+    display: grid;
     margin: 16px;
     padding: 16px;
 }
+
+/* To Do Form */
 
 #todo-add-form form {
     background-color: white;
@@ -27,12 +30,19 @@
     padding: 4px;
 }
 
-
-/* edit text area css, also maybe do a seperate function for its attributes*/
 #todo-add-form #todo-description {
     height: 200px;
 }
 
 #todo-add-form button {
     border-radius: 12px;
+}
+
+/* To Do */
+
+#todo-container {
+    background-color: white;
+    padding: 16px;
+    margin: 16px;
+    border-radius: 16px;
 }

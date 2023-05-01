@@ -982,8 +982,8 @@ const toggleButtonDisplay = (button) => {
 
 
 const addToDo = () => {
-    const title = getInput('title');
-    const description = getInput('description');
+    const title = getInput('title-input');
+    const description = getInput('description-input');
     const toDoItem = (0,_to_do__WEBPACK_IMPORTED_MODULE_1__.toDo)(title, description);
     const addToDoButton = document.querySelector('#todo-add-button');
     (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.displayToDo)(toDoItem, contentItems, addToDoButton);

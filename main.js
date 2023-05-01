@@ -712,7 +712,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "addToDoForm": () => (/* binding */ addToDoForm),
 /* harmony export */   "clearHTML": () => (/* binding */ clearHTML),
 /* harmony export */   "displayToDo": () => (/* binding */ displayToDo),
-/* harmony export */   "removeHTML": () => (/* binding */ removeHTML)
+/* harmony export */   "removeHTML": () => (/* binding */ removeHTML),
+/* harmony export */   "toggleFormVisible": () => (/* binding */ toggleFormVisible)
 /* harmony export */ });
 /* harmony import */ var _user_input__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./user-input */ "./src/modules/user-input.js");
 /* harmony import */ var _attributes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./attributes */ "./src/modules/attributes.js");
@@ -819,6 +820,14 @@ const addButton = (parent, text, id, type) => {
     return button;
 };
 
+const toggleFormVisible = (element) => {
+    if (element.style.display !== 'none') {
+        element.style.display = 'none';
+    } else {
+        element.style.display = 'grid';
+    }
+};
+
 const clearHTML = (element) => {
     element.innerHTML = '';
 };
@@ -831,7 +840,6 @@ const addRemoveButton = (parent, text, id) => {
     const removeButton = addButton(parent, text, id, 'button');
     (0,_user_input__WEBPACK_IMPORTED_MODULE_0__.registerRemoveListener)(removeButton, parent);
     return removeButton;
-
 };
 
 
@@ -977,7 +985,6 @@ const toggleAddToDoButtonDisplay = () => {
     }
 };
 
-
 const addToDo = () => {
     const title = getInput('title-input');
     const description = getInput('description-input');
@@ -999,6 +1006,7 @@ const registerToDoSubmitListener = (form) => {
         event.preventDefault();
         addToDo();
         toggleAddToDoButtonDisplay();
+        (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.toggleFormVisible)(form);
     });
 };
 

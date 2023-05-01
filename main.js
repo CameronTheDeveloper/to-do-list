@@ -718,6 +718,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 const content = document.querySelector('#content');
 
 const addContent = (parent, text, className, elementType) => {
@@ -765,7 +766,7 @@ const addSidebarForm = (parent) => {
     const input = addFormInputElement('input', form, 'folder-title');
 
     (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addSidebarFormAttributes)(form, input);
-    (0,_user_input__WEBPACK_IMPORTED_MODULE_0__.registerSidebarSubmitListener)(form, input);
+    (0,_user_input__WEBPACK_IMPORTED_MODULE_0__.registerSidebarSubmitListener)(form, input);     //
     return form;
 };
 
@@ -784,8 +785,7 @@ const addToDoForm = (parent) => {
     (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addToDoFormAttributes)(form, title, description);
     (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addToDoLabelAttributes)(titleLabel, descLabel);
 
-
-    //registerSidebarSubmitListener(form, input);
+    (0,_user_input__WEBPACK_IMPORTED_MODULE_0__.registerToDoSubmitListener)(form);
 };
 
 
@@ -879,7 +879,8 @@ const addSidebarInput = () => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "initToDo": () => (/* binding */ initToDo)
+/* harmony export */   "initToDo": () => (/* binding */ initToDo),
+/* harmony export */   "toDo": () => (/* binding */ toDo)
 /* harmony export */ });
 /* harmony import */ var _styles_to_do_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../styles/to-do.css */ "./src/styles/to-do.css");
 /* harmony import */ var _page_layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./page-layout */ "./src/modules/page-layout.js");
@@ -890,16 +891,12 @@ __webpack_require__.r(__webpack_exports__);
 
 const contentItems = document.querySelector('#content-items');
 
-function toDo(title) {
+function toDo(title, description) {
     return {
         title: title,
+        description: description,
     };
 }
-
-//When submit is pressed
-const createToDo = (title) => {
-    const newToDo = toDo(title);
-};
 
 const addToDoButton = () => {
     const addToDoButton = (0,_page_layout__WEBPACK_IMPORTED_MODULE_1__.addButton)(contentItems, '+ To Do', 'to-do', 'button');
@@ -924,9 +921,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "registerAddToDoListener": () => (/* binding */ registerAddToDoListener),
 /* harmony export */   "registerRemoveListener": () => (/* binding */ registerRemoveListener),
-/* harmony export */   "registerSidebarSubmitListener": () => (/* binding */ registerSidebarSubmitListener)
+/* harmony export */   "registerSidebarSubmitListener": () => (/* binding */ registerSidebarSubmitListener),
+/* harmony export */   "registerToDoSubmitListener": () => (/* binding */ registerToDoSubmitListener)
 /* harmony export */ });
 /* harmony import */ var _page_layout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./page-layout */ "./src/modules/page-layout.js");
+/* harmony import */ var _to_do__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./to-do */ "./src/modules/to-do.js");
+
 
 
 const sidebarItems = document.querySelector('#sidebar-items');
@@ -946,7 +946,6 @@ const setSidebarFormItemElements = (parent, input) => {
 
 //This also seems to be for the sidebar
 const addFormItemElements = (parent, title, removeButton) => {
-
     parent.appendChild(title);
     parent.appendChild(removeButton);
 };
@@ -972,6 +971,15 @@ const toggleButtonDisplay = (button) => {
 };
 
 
+const addToDo = () => {
+    const title = getInput('todo-title');
+    const desc = getInput('todo-description');
+    const toDoItem = (0,_to_do__WEBPACK_IMPORTED_MODULE_1__.toDo)(title, desc);
+    console.log(toDoItem.title, toDoItem.desc);
+
+    //Create div with input values
+};
+
 const registerSidebarSubmitListener = (form, input) => {
     form.addEventListener('submit', (event) => {
         event.preventDefault();
@@ -980,9 +988,11 @@ const registerSidebarSubmitListener = (form, input) => {
     });
 };
 
-const registerToDoSubmitListener = (form, input) => {
-    //Create to do() OR colect to do input()
-    //toggleButtonDisplay()
+const registerToDoSubmitListener = (form) => {
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        addToDo();
+    });
 };
 
 const registerRemoveListener = (button, element) => {

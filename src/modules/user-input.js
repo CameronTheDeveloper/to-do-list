@@ -43,9 +43,9 @@ const toggleButtonDisplay = (button) => {
 };
 
 
-const addToDo = (titleID, descID) => {
-    const title = getInput(titleID);
-    const desc = getInput(descID);
+const addToDo = () => {
+    const title = getInput('todo-title');
+    const desc = getInput('todo-description');
     const toDoItem = toDo(title, desc);
     console.log(toDoItem.title, toDoItem.desc);
 
@@ -60,9 +60,11 @@ const registerSidebarSubmitListener = (form, input) => {
     });
 };
 
-const registerToDoSubmitListener = (form, input) => {
-
-    addToDo();
+const registerToDoSubmitListener = (form, title, desc) => {
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        addToDo();
+    });
 };
 
 const registerRemoveListener = (button, element) => {
@@ -81,5 +83,6 @@ const registerAddToDoListener = (button) => {
 export {
     registerSidebarSubmitListener,
     registerRemoveListener,
-    registerAddToDoListener
+    registerAddToDoListener,
+    registerToDoSubmitListener
 };

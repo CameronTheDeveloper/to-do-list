@@ -15,7 +15,7 @@
     display: grid;
 }
 
-#sidebar .sidebar-add-button {
+#sidebar #sidebar-add-button {
     margin: 10px;
     width: 100px;
     height: 40px;
@@ -26,13 +26,13 @@
     cursor: pointer;
 }
 
-#sidebar .sidebar-add-button:hover {
+#sidebar #sidebar-add-button:hover {
     background-color: rgb(10, 78, 10);
     color: white;
     font-weight: 900;
 }
 
-#sidebar .sidebar-add-button:active {
+#sidebar #sidebar-add-button:active {
     color: rgb(187, 159, 0);
 }
 

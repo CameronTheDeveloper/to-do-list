@@ -2,7 +2,8 @@ import {
     addAbove,
     addRemoveButton,
     addToDoForm,
-    displayToDo
+    displayToDo,
+    toggleFormVisible
 } from "./page-layout";
 import { toDo } from "./to-do";
 
@@ -47,7 +48,6 @@ const toggleAddToDoButtonDisplay = () => {
     }
 };
 
-
 const addToDo = () => {
     const title = getInput('title-input');
     const description = getInput('description-input');
@@ -69,6 +69,7 @@ const registerToDoSubmitListener = (form) => {
         event.preventDefault();
         addToDo();
         toggleAddToDoButtonDisplay();
+        toggleFormVisible(form);
     });
 };
 

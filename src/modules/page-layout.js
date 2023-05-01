@@ -110,6 +110,14 @@ const addButton = (parent, text, id, type) => {
     return button;
 };
 
+const toggleFormVisible = (element) => {
+    if (element.style.display !== 'none') {
+        element.style.display = 'none';
+    } else {
+        element.style.display = 'grid';
+    }
+};
+
 const clearHTML = (element) => {
     element.innerHTML = '';
 };
@@ -122,7 +130,6 @@ const addRemoveButton = (parent, text, id) => {
     const removeButton = addButton(parent, text, id, 'button');
     registerRemoveListener(removeButton, parent);
     return removeButton;
-
 };
 
 export {
@@ -134,5 +141,6 @@ export {
     addSidebarForm,
     addToDoForm,
     addRemoveButton,
-    displayToDo
+    displayToDo,
+    toggleFormVisible
 };

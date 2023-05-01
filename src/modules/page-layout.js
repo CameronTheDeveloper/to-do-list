@@ -1,4 +1,9 @@
-import { registerSidebarSubmitListener, registerRemoveListener } from "./user-input";
+import {
+    registerSidebarSubmitListener,
+    registerRemoveListener,
+    registerToDoSubmitListener
+} from "./user-input";
+
 import {
     addSidebarFormAttributes,
     addToDoFormAttributes,
@@ -53,7 +58,7 @@ const addSidebarForm = (parent) => {
     const input = addFormInputElement('input', form, 'folder-title');
 
     addSidebarFormAttributes(form, input);
-    registerSidebarSubmitListener(form, input);
+    registerSidebarSubmitListener(form, input);     //
     return form;
 };
 
@@ -72,8 +77,7 @@ const addToDoForm = (parent) => {
     addToDoFormAttributes(form, title, description);
     addToDoLabelAttributes(titleLabel, descLabel);
 
-
-    //registerSidebarSubmitListener(form, input);
+    registerToDoSubmitListener(form);
 };
 
 

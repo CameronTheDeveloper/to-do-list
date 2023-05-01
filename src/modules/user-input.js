@@ -60,7 +60,7 @@ const registerSidebarSubmitListener = (form, input) => {
     });
 };
 
-const registerToDoSubmitListener = (form, title, desc) => {
+const registerToDoSubmitListener = (form) => {
     form.addEventListener('submit', (event) => {
         event.preventDefault();
         addToDo();

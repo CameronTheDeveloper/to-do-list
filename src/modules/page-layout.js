@@ -35,7 +35,6 @@ const addFormInputElement = (type, parent, id) => {
 const addFormLabelElement = (parent) => {
     const label = document.createElement('label');
     parent.appendChild(label);
-    console.log(label);
     return label;
 };
 

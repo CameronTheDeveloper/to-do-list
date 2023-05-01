@@ -45,10 +45,8 @@ const toggleButtonDisplay = (button) => {
 
 const addToDo = () => {
     const title = getInput('todo-title');
-    const desc = getInput('todo-description');
-    const toDoItem = toDo(title, desc);
-    console.log(toDoItem.title, toDoItem.desc);
-
+    const description = getInput('todo-description');
+    const toDoItem = toDo(title, description);
     //Create div with input values
 };
 

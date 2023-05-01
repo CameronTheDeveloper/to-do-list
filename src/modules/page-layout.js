@@ -79,6 +79,16 @@ const addToDoForm = (parent) => {
     registerToDoSubmitListener(form);
 };
 
+const displayToDo = (toDoItem, contentItems) => {
+    const toDoParent = document.createElement('div');
+    const titleDiv = document.createElement('div');
+    const descDiv = document.createElement('div');
+
+    contentItems.appendChild(toDoParent);
+    toDoParent.appendChild(titleDiv);
+    appendAbove(contentItems, toDoParent /*, form button*/);
+};
+
 
 
 const addButtonType = (button, type) => {
@@ -126,5 +136,6 @@ export {
     addAbove,
     addSidebarForm,
     addToDoForm,
-    addRemoveButton
+    addRemoveButton,
+    displayToDo
 };

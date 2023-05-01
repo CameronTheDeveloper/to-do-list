@@ -785,7 +785,7 @@ const addToDoForm = (parent) => {
     (0,_user_input__WEBPACK_IMPORTED_MODULE_0__.registerToDoSubmitListener)(form);
 };
 
-const displayToDo = (toDoItem, contentItems) => {
+const displayToDo = (toDoItem, contentItems, addToDoButton) => {
     const toDoParent = document.createElement('div');
     const titleDiv = document.createElement('div');
     const descDiv = document.createElement('div');
@@ -793,10 +793,10 @@ const displayToDo = (toDoItem, contentItems) => {
     contentItems.appendChild(toDoParent);
     toDoParent.appendChild(titleDiv);
     toDoParent.appendChild(descDiv);
-    appendAbove(contentItems, toDoParent /*, form button*/);
+    appendAbove(contentItems, toDoParent, addToDoButton);
 
-    titleDiv.appendChild(toDoItem.title);
-    descDiv.appendChild(toDoItem.description);
+    titleDiv.innerHTML = toDoItem.title;
+    descDiv.innerHTML = toDoItem.description;
 
 
 
@@ -989,8 +989,8 @@ const addToDo = () => {
     const title = getInput('todo-title');
     const description = getInput('todo-description');
     const toDoItem = (0,_to_do__WEBPACK_IMPORTED_MODULE_1__.toDo)(title, description);
-    console.log(toDoItem.title);
-    (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.displayToDo)(toDoItem, contentItems);
+    const addToDoButton = document.querySelector('#todo-add-button');
+    (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.displayToDo)(toDoItem, contentItems, addToDoButton);
 };
 
 const registerSidebarSubmitListener = (form, input) => {

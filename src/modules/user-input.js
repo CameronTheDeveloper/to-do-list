@@ -51,8 +51,8 @@ const addToDo = () => {
     const title = getInput('todo-title');
     const description = getInput('todo-description');
     const toDoItem = toDo(title, description);
-    console.log(toDoItem.title);
-    displayToDo(toDoItem, contentItems);
+    const addToDoButton = document.querySelector('#todo-add-button');
+    displayToDo(toDoItem, contentItems, addToDoButton);
 };
 
 const registerSidebarSubmitListener = (form, input) => {

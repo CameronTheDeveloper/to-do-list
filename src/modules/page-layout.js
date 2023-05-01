@@ -76,7 +76,7 @@ const addToDoForm = (parent) => {
     registerToDoSubmitListener(form);
 };
 
-const displayToDo = (toDoItem, contentItems) => {
+const displayToDo = (toDoItem, contentItems, addToDoButton) => {
     const toDoParent = document.createElement('div');
     const titleDiv = document.createElement('div');
     const descDiv = document.createElement('div');
@@ -84,10 +84,10 @@ const displayToDo = (toDoItem, contentItems) => {
     contentItems.appendChild(toDoParent);
     toDoParent.appendChild(titleDiv);
     toDoParent.appendChild(descDiv);
-    appendAbove(contentItems, toDoParent /*, form button*/);
+    appendAbove(contentItems, toDoParent, addToDoButton);
 
-    titleDiv.appendChild(toDoItem.title);
-    descDiv.appendChild(toDoItem.description);
+    titleDiv.innerHTML = toDoItem.title;
+    descDiv.innerHTML = toDoItem.description;
 
 
 

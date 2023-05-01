@@ -73,7 +73,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "#content {\n    display: grid;\n}\n\n#content-items {\n    display: grid;\n    grid-template: repeat(5, 1fr) / repeat(5, 1fr);\n}\n\n#content-items {\n    display: grid;\n    margin: 16px;\n    padding: 16px;\n}\n\n/* To Do Form */\n\n#todo-add-form form {\n    background-color: white;\n    padding: 8px;\n    border-radius: 16px;\n\n}\n\n#todo-add-form input,\n#todo-add-form textarea {\n    width: 350px;\n    font-size: 1rem;\n    border: 1px solid green;\n    padding: 4px;\n}\n\n#todo-add-form #todo-description {\n    height: 200px;\n}\n\n#todo-add-form button {\n    border-radius: 12px;\n}\n\n/* To Do */\n\n.todo {\n    background-color: white;\n    padding: 16px;\n    margin: 16px;\n    border-radius: 16px;\n}", "",{"version":3,"sources":["webpack://./src/styles/to-do.css"],"names":[],"mappings":"AAAA;IACI,aAAa;AACjB;;AAEA;IACI,aAAa;IACb,8CAA8C;AAClD;;AAEA;IACI,aAAa;IACb,YAAY;IACZ,aAAa;AACjB;;AAEA,eAAe;;AAEf;IACI,uBAAuB;IACvB,YAAY;IACZ,mBAAmB;;AAEvB;;AAEA;;IAEI,YAAY;IACZ,eAAe;IACf,uBAAuB;IACvB,YAAY;AAChB;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI,mBAAmB;AACvB;;AAEA,UAAU;;AAEV;IACI,uBAAuB;IACvB,aAAa;IACb,YAAY;IACZ,mBAAmB;AACvB","sourcesContent":["#content {\n    display: grid;\n}\n\n#content-items {\n    display: grid;\n    grid-template: repeat(5, 1fr) / repeat(5, 1fr);\n}\n\n#content-items {\n    display: grid;\n    margin: 16px;\n    padding: 16px;\n}\n\n/* To Do Form */\n\n#todo-add-form form {\n    background-color: white;\n    padding: 8px;\n    border-radius: 16px;\n\n}\n\n#todo-add-form input,\n#todo-add-form textarea {\n    width: 350px;\n    font-size: 1rem;\n    border: 1px solid green;\n    padding: 4px;\n}\n\n#todo-add-form #todo-description {\n    height: 200px;\n}\n\n#todo-add-form button {\n    border-radius: 12px;\n}\n\n/* To Do */\n\n.todo {\n    background-color: white;\n    padding: 16px;\n    margin: 16px;\n    border-radius: 16px;\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "#content {\n    display: grid;\n}\n\n#content-items {\n    display: grid;\n    grid-template: repeat(5, 1fr) / repeat(5, 1fr);\n}\n\n#content-items {\n    display: grid;\n    margin: 16px;\n    padding: 16px;\n}\n\n/* To Do Form */\n\n#todo-add-form form {\n    background-color: white;\n    padding: 8px;\n    border-radius: 16px;\n\n}\n\n#todo-add-form input,\n#todo-add-form textarea {\n    width: 350px;\n    font-size: 1rem;\n    border: 1px solid green;\n    padding: 4px;\n}\n\n#todo-add-form #description {\n    height: 200px;\n}\n\n#todo-add-form button {\n    border-radius: 12px;\n}\n\n/* To Do */\n\n.todo {\n    background-color: white;\n    padding: 16px;\n    margin: 16px;\n    border-radius: 16px;\n}\n\n.todo .title {\n    font-weight: bold;\n    font-size: 2rem;\n}", "",{"version":3,"sources":["webpack://./src/styles/to-do.css"],"names":[],"mappings":"AAAA;IACI,aAAa;AACjB;;AAEA;IACI,aAAa;IACb,8CAA8C;AAClD;;AAEA;IACI,aAAa;IACb,YAAY;IACZ,aAAa;AACjB;;AAEA,eAAe;;AAEf;IACI,uBAAuB;IACvB,YAAY;IACZ,mBAAmB;;AAEvB;;AAEA;;IAEI,YAAY;IACZ,eAAe;IACf,uBAAuB;IACvB,YAAY;AAChB;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI,mBAAmB;AACvB;;AAEA,UAAU;;AAEV;IACI,uBAAuB;IACvB,aAAa;IACb,YAAY;IACZ,mBAAmB;AACvB;;AAEA;IACI,iBAAiB;IACjB,eAAe;AACnB","sourcesContent":["#content {\n    display: grid;\n}\n\n#content-items {\n    display: grid;\n    grid-template: repeat(5, 1fr) / repeat(5, 1fr);\n}\n\n#content-items {\n    display: grid;\n    margin: 16px;\n    padding: 16px;\n}\n\n/* To Do Form */\n\n#todo-add-form form {\n    background-color: white;\n    padding: 8px;\n    border-radius: 16px;\n\n}\n\n#todo-add-form input,\n#todo-add-form textarea {\n    width: 350px;\n    font-size: 1rem;\n    border: 1px solid green;\n    padding: 4px;\n}\n\n#todo-add-form #description {\n    height: 200px;\n}\n\n#todo-add-form button {\n    border-radius: 12px;\n}\n\n/* To Do */\n\n.todo {\n    background-color: white;\n    padding: 16px;\n    margin: 16px;\n    border-radius: 16px;\n}\n\n.todo .title {\n    font-weight: bold;\n    font-size: 2rem;\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -675,13 +675,13 @@ const addSidebarFormAttributes = (form, input) => {
 
 const addToDoFormAttributes = (form, title, desc) => {
     setFormElementAttributes(form, '', 'post');
-    setTextInputAttributes(title, 'text', 'todo-title', '10');
-    setTextAreaAttributes(desc, 'todo-description', '26', '5');
+    setTextInputAttributes(title, 'text', 'title', '10');
+    setTextAreaAttributes(desc, 'description', '26', '5');
 };
 
 const addToDoLabelAttributes = (title, desc) => {
-    setLabelAttributes(title, 'for', 'todo-title', 'Title: ');
-    setLabelAttributes(desc, 'for', 'todo-description', 'Description');
+    setLabelAttributes(title, 'for', 'title', 'Title: ');
+    setLabelAttributes(desc, 'for', 'description', 'Description');
 };
 
 const setLabelAttributes = (item, attType, att, text) => {
@@ -773,9 +773,9 @@ const addSidebarForm = (parent) => {
 const addToDoForm = (parent) => {
     const form = addFormToDOM(parent, 'todo-add-form');
     const titleLabel = addFormLabelElement(form);
-    const title = addFormInputElement('input', form, 'todo-title');
+    const title = addFormInputElement('input', form, 'title');
     const descLabel = addFormLabelElement(form);
-    const description = addFormInputElement('textarea', form, 'todo-description');
+    const description = addFormInputElement('textarea', form, 'description');
 
 
     const submitButton = addButton(form, 'submit', 'todo-submit-button', 'submit');
@@ -787,7 +787,7 @@ const addToDoForm = (parent) => {
 
 const displayToDo = (toDoItem, contentItems, addToDoButton) => {
     const toDoParent = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)('', 'class', 'todo', 'div');
-    const titleDiv = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)(toDoItem.title, 'class', 'todo-title', 'div');
+    const titleDiv = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)(toDoItem.title, 'class', 'title', 'div');
     const descDiv = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)(toDoItem.description, 'class', 'todo-desc', 'div');
 
     contentItems.appendChild(toDoParent);
@@ -982,8 +982,8 @@ const toggleButtonDisplay = (button) => {
 
 
 const addToDo = () => {
-    const title = getInput('todo-title');
-    const description = getInput('todo-description');
+    const title = getInput('title');
+    const description = getInput('description');
     const toDoItem = (0,_to_do__WEBPACK_IMPORTED_MODULE_1__.toDo)(title, description);
     const addToDoButton = document.querySelector('#todo-add-button');
     (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.displayToDo)(toDoItem, contentItems, addToDoButton);

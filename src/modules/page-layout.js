@@ -51,19 +51,16 @@ const addFormToDOM = (parent, id) => {
     return form;
 };
 
-//
+
 const addSidebarForm = (parent) => {
     const form = addFormToDOM(parent, 'sidebar-add-form');
     const input = addFormInputElement('input', form, 'folder-title');
 
     addSidebarFormAttributes(form, input);
-    registerSidebarSubmitListener(form, input);     //
+    registerSidebarSubmitListener(form, input);
     return form;
 };
 
-
-
-//Not getting called right away
 const addToDoForm = (parent) => {
     const form = addFormToDOM(parent, 'todo-add-form');
     const titleLabel = addFormLabelElement(form);
@@ -86,7 +83,15 @@ const displayToDo = (toDoItem, contentItems) => {
 
     contentItems.appendChild(toDoParent);
     toDoParent.appendChild(titleDiv);
+    toDoParent.appendChild(descDiv);
     appendAbove(contentItems, toDoParent /*, form button*/);
+
+    titleDiv.appendChild(toDoItem.title);
+    descDiv.appendChild(toDoItem.description);
+
+
+
+
 };
 
 
@@ -106,8 +111,8 @@ const addAbove = (className, elementType, parent, lowerDiv) => {
     return element;
 };
 
-const addButton = (parent, text, className, type) => {
-    const button = addAttributes(text, 'class', className, 'button');
+const addButton = (parent, text, id, type) => {
+    const button = addAttributes(text, 'id', id, 'button');
     addButtonType(button, type);
     parent.appendChild(button);
     return button;
@@ -121,8 +126,8 @@ const removeHTML = (element) => {
     element.remove();
 };
 
-const addRemoveButton = (parent, text, className) => {
-    const removeButton = addButton(parent, text, className, 'button');
+const addRemoveButton = (parent, text, id) => {
+    const removeButton = addButton(parent, text, id, 'button');
     registerRemoveListener(removeButton, parent);
     return removeButton;
 

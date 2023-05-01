@@ -15,7 +15,7 @@ const getInput = (id) => {
 
 const setSidebarFormItemElements = (parent, input) => {
     const title = document.createElement('div');
-    const removeButton = addRemoveButton(parent, 'X', 'remove-folder');
+    const removeButton = addRemoveButton(parent, 'X', 'remove-folder-button');
 
     title.innerHTML = input;
     addFormItemElements(parent, title, removeButton);
@@ -51,6 +51,7 @@ const addToDo = () => {
     const title = getInput('todo-title');
     const description = getInput('todo-description');
     const toDoItem = toDo(title, description);
+    console.log(toDoItem.title);
     displayToDo(toDoItem, contentItems);
 };
 

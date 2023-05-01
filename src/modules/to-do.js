@@ -12,7 +12,7 @@ function toDo(title, description) {
 }
 
 const addToDoButton = () => {
-    const addToDoButton = addButton(contentItems, '+ To Do', 'to-do', 'button');
+    const addToDoButton = addButton(contentItems, '+ To Do', 'todo-add-button', 'button');
     registerAddToDoListener(addToDoButton);
 };
 

@@ -711,6 +711,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "addSidebarForm": () => (/* binding */ addSidebarForm),
 /* harmony export */   "addToDoForm": () => (/* binding */ addToDoForm),
 /* harmony export */   "clearHTML": () => (/* binding */ clearHTML),
+/* harmony export */   "displayToDo": () => (/* binding */ displayToDo),
 /* harmony export */   "removeHTML": () => (/* binding */ removeHTML)
 /* harmony export */ });
 /* harmony import */ var _user_input__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./user-input */ "./src/modules/user-input.js");
@@ -759,19 +760,16 @@ const addFormToDOM = (parent, id) => {
     return form;
 };
 
-//
+
 const addSidebarForm = (parent) => {
     const form = addFormToDOM(parent, 'sidebar-add-form');
     const input = addFormInputElement('input', form, 'folder-title');
 
     (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addSidebarFormAttributes)(form, input);
-    (0,_user_input__WEBPACK_IMPORTED_MODULE_0__.registerSidebarSubmitListener)(form, input);     //
+    (0,_user_input__WEBPACK_IMPORTED_MODULE_0__.registerSidebarSubmitListener)(form, input);
     return form;
 };
 
-
-
-//Not getting called right away
 const addToDoForm = (parent) => {
     const form = addFormToDOM(parent, 'todo-add-form');
     const titleLabel = addFormLabelElement(form);
@@ -785,6 +783,24 @@ const addToDoForm = (parent) => {
     (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addToDoLabelAttributes)(titleLabel, descLabel);
 
     (0,_user_input__WEBPACK_IMPORTED_MODULE_0__.registerToDoSubmitListener)(form);
+};
+
+const displayToDo = (toDoItem, contentItems) => {
+    const toDoParent = document.createElement('div');
+    const titleDiv = document.createElement('div');
+    const descDiv = document.createElement('div');
+
+    contentItems.appendChild(toDoParent);
+    toDoParent.appendChild(titleDiv);
+    toDoParent.appendChild(descDiv);
+    appendAbove(contentItems, toDoParent /*, form button*/);
+
+    titleDiv.appendChild(toDoItem.title);
+    descDiv.appendChild(toDoItem.description);
+
+
+
+
 };
 
 
@@ -804,8 +820,8 @@ const addAbove = (className, elementType, parent, lowerDiv) => {
     return element;
 };
 
-const addButton = (parent, text, className, type) => {
-    const button = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)(text, 'class', className, 'button');
+const addButton = (parent, text, id, type) => {
+    const button = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)(text, 'id', id, 'button');
     addButtonType(button, type);
     parent.appendChild(button);
     return button;
@@ -819,8 +835,8 @@ const removeHTML = (element) => {
     element.remove();
 };
 
-const addRemoveButton = (parent, text, className) => {
-    const removeButton = addButton(parent, text, className, 'button');
+const addRemoveButton = (parent, text, id) => {
+    const removeButton = addButton(parent, text, id, 'button');
     (0,_user_input__WEBPACK_IMPORTED_MODULE_0__.registerRemoveListener)(removeButton, parent);
     return removeButton;
 
@@ -898,7 +914,7 @@ function toDo(title, description) {
 }
 
 const addToDoButton = () => {
-    const addToDoButton = (0,_page_layout__WEBPACK_IMPORTED_MODULE_1__.addButton)(contentItems, '+ To Do', 'to-do', 'button');
+    const addToDoButton = (0,_page_layout__WEBPACK_IMPORTED_MODULE_1__.addButton)(contentItems, '+ To Do', 'todo-add-button', 'button');
     (0,_user_input__WEBPACK_IMPORTED_MODULE_2__.registerAddToDoListener)(addToDoButton);
 };
 
@@ -937,13 +953,13 @@ const getInput = (id) => {
 
 const setSidebarFormItemElements = (parent, input) => {
     const title = document.createElement('div');
-    const removeButton = (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.addRemoveButton)(parent, 'X', 'remove-folder');
+    const removeButton = (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.addRemoveButton)(parent, 'X', 'remove-folder-button');
 
     title.innerHTML = input;
     addFormItemElements(parent, title, removeButton);
 };
 
-//This also seems to be for the sidebar
+//Only used for sidebar
 const addFormItemElements = (parent, title, removeButton) => {
     parent.appendChild(title);
     parent.appendChild(removeButton);
@@ -954,7 +970,6 @@ const setSidebarInput = (input) => {
     const item = (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.addAbove)('sidebar-item', 'div', sidebarItems, sidebarForm);
     setSidebarFormItemElements(item, input);
 };
-
 
 const getSidebarInput = () => {
     const input = getInput('folder-title');
@@ -974,7 +989,8 @@ const addToDo = () => {
     const title = getInput('todo-title');
     const description = getInput('todo-description');
     const toDoItem = (0,_to_do__WEBPACK_IMPORTED_MODULE_1__.toDo)(title, description);
-    //addAbove(toDoItem)
+    console.log(toDoItem.title);
+    (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.displayToDo)(toDoItem, contentItems);
 };
 
 const registerSidebarSubmitListener = (form, input) => {

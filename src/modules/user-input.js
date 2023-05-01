@@ -38,7 +38,8 @@ const getSidebarInput = () => {
     setSidebarInput(input);
 };
 
-const toggleButtonDisplay = (button) => {
+const toggleAddToDoButtonDisplay = () => {
+    const button = document.querySelector('#todo-add-button');
     if (button.style.display !== 'none') {
         button.style.display = 'none';
     } else {
@@ -67,6 +68,7 @@ const registerToDoSubmitListener = (form) => {
     form.addEventListener('submit', (event) => {
         event.preventDefault();
         addToDo();
+        toggleAddToDoButtonDisplay();
     });
 };
 
@@ -78,7 +80,7 @@ const registerRemoveListener = (button, element) => {
 
 const registerAddToDoListener = (button) => {
     button.addEventListener('click', () => {
-        toggleButtonDisplay(button);
+        toggleAddToDoButtonDisplay();
         addToDoForm(contentItems);
     });
 };

@@ -4,16 +4,12 @@ import { registerAddToDoListener } from './user-input';
 
 const contentItems = document.querySelector('#content-items');
 
-function toDo(title) {
+function toDo(title, description) {
     return {
         title: title,
+        description: description,
     };
 }
-
-//When submit is pressed
-const createToDo = (title) => {
-    const newToDo = toDo(title);
-};
 
 const addToDoButton = () => {
     const addToDoButton = addButton(contentItems, '+ To Do', 'to-do', 'button');
@@ -24,4 +20,4 @@ const initToDo = () => {
     addToDoButton();
 };
 
-export { initToDo };
+export { initToDo, toDo };

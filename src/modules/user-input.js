@@ -1,4 +1,5 @@
 import { addAbove, addRemoveButton, addToDoForm } from "./page-layout";
+import { toDo } from "./to-do";
 
 const sidebarItems = document.querySelector('#sidebar-items');
 const contentItems = document.querySelector('#content-items');
@@ -17,7 +18,6 @@ const setSidebarFormItemElements = (parent, input) => {
 
 //This also seems to be for the sidebar
 const addFormItemElements = (parent, title, removeButton) => {
-
     parent.appendChild(title);
     parent.appendChild(removeButton);
 };
@@ -42,11 +42,14 @@ const toggleButtonDisplay = (button) => {
     }
 };
 
-const createToDo = () => {
-    //Get input
+
+const addToDo = (titleID, descID) => {
+    const title = getInput(title);
+    const desc = getInput(descID);
+    const toDoItem = toDo(title, desc);
+
     //Create div with input values
 };
-
 
 const registerSidebarSubmitListener = (form, input) => {
     form.addEventListener('submit', (event) => {

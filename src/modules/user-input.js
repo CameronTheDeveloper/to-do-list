@@ -44,9 +44,10 @@ const toggleButtonDisplay = (button) => {
 
 
 const addToDo = (titleID, descID) => {
-    const title = getInput(title);
+    const title = getInput(titleID);
     const desc = getInput(descID);
     const toDoItem = toDo(title, desc);
+    console.log(toDoItem.title, toDoItem.desc);
 
     //Create div with input values
 };
@@ -61,7 +62,7 @@ const registerSidebarSubmitListener = (form, input) => {
 
 const registerToDoSubmitListener = (form, input) => {
 
-    createToDo();
+    addToDo();
 };
 
 const registerRemoveListener = (button, element) => {

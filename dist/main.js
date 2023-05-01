@@ -675,13 +675,13 @@ const addSidebarFormAttributes = (form, input) => {
 
 const addToDoFormAttributes = (form, title, desc) => {
     setFormElementAttributes(form, '', 'post');
-    setTextInputAttributes(title, 'text', 'title', '10');
-    setTextAreaAttributes(desc, 'description', '26', '5');
+    setTextInputAttributes(title, 'text', 'title-input', '10');
+    setTextAreaAttributes(desc, 'description-input', '26', '5');
 };
 
 const addToDoLabelAttributes = (title, desc) => {
-    setLabelAttributes(title, 'for', 'title', 'Title: ');
-    setLabelAttributes(desc, 'for', 'description', 'Description');
+    setLabelAttributes(title, 'for', 'title-label', 'Title: ');
+    setLabelAttributes(desc, 'for', 'description-label', 'Description');
 };
 
 const setLabelAttributes = (item, attType, att, text) => {

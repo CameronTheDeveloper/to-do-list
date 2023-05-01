@@ -743,7 +743,6 @@ const addFormInputElement = (type, parent, id) => {
 const addFormLabelElement = (parent) => {
     const label = document.createElement('label');
     parent.appendChild(label);
-    console.log(label);
     return label;
 };
 
@@ -973,10 +972,8 @@ const toggleButtonDisplay = (button) => {
 
 const addToDo = () => {
     const title = getInput('todo-title');
-    const desc = getInput('todo-description');
-    const toDoItem = (0,_to_do__WEBPACK_IMPORTED_MODULE_1__.toDo)(title, desc);
-    console.log(toDoItem.title, toDoItem.desc);
-
+    const description = getInput('todo-description');
+    const toDoItem = (0,_to_do__WEBPACK_IMPORTED_MODULE_1__.toDo)(title, description);
     //Create div with input values
 };
 

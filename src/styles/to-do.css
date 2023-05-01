@@ -30,7 +30,7 @@
     padding: 4px;
 }
 
-#todo-add-form #todo-description {
+#todo-add-form #description {
     height: 200px;
 }
 
@@ -45,4 +45,9 @@
     padding: 16px;
     margin: 16px;
     border-radius: 16px;
+}
+
+.todo .title {
+    font-weight: bold;
+    font-size: 2rem;
 }

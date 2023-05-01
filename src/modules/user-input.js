@@ -48,8 +48,8 @@ const toggleButtonDisplay = (button) => {
 
 
 const addToDo = () => {
-    const title = getInput('todo-title');
-    const description = getInput('todo-description');
+    const title = getInput('title');
+    const description = getInput('description');
     const toDoItem = toDo(title, description);
     const addToDoButton = document.querySelector('#todo-add-button');
     displayToDo(toDoItem, contentItems, addToDoButton);

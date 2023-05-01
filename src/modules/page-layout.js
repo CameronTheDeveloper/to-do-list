@@ -64,9 +64,9 @@ const addSidebarForm = (parent) => {
 const addToDoForm = (parent) => {
     const form = addFormToDOM(parent, 'todo-add-form');
     const titleLabel = addFormLabelElement(form);
-    const title = addFormInputElement('input', form, 'todo-title');
+    const title = addFormInputElement('input', form, 'title');
     const descLabel = addFormLabelElement(form);
-    const description = addFormInputElement('textarea', form, 'todo-description');
+    const description = addFormInputElement('textarea', form, 'description');
 
 
     const submitButton = addButton(form, 'submit', 'todo-submit-button', 'submit');
@@ -78,7 +78,7 @@ const addToDoForm = (parent) => {
 
 const displayToDo = (toDoItem, contentItems, addToDoButton) => {
     const toDoParent = addAttributes('', 'class', 'todo', 'div');
-    const titleDiv = addAttributes(toDoItem.title, 'class', 'todo-title', 'div');
+    const titleDiv = addAttributes(toDoItem.title, 'class', 'title', 'div');
     const descDiv = addAttributes(toDoItem.description, 'class', 'todo-desc', 'div');
 
     contentItems.appendChild(toDoParent);

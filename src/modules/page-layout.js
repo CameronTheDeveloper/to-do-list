@@ -79,7 +79,7 @@ const addToDoForm = (parent) => {
 const displayToDo = (toDoItem, contentItems, addToDoButton) => {
     const toDoParent = addAttributes('', 'class', 'todo', 'div');
     const titleDiv = addAttributes(toDoItem.title, 'class', 'title', 'div');
-    const descDiv = addAttributes(toDoItem.description, 'class', 'todo-desc', 'div');
+    const descDiv = addAttributes(toDoItem.description, 'class', 'description', 'div');
 
     contentItems.appendChild(toDoParent);
     toDoParent.appendChild(titleDiv);

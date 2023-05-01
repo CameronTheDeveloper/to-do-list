@@ -28,8 +28,8 @@ const setSidebarInput = (input) => {
     setSidebarFormItemElements(item, input);
 };
 
-/* Change this for reuse*/
-const submitClicked = () => {
+
+const getSidebarInput = () => {
     const input = getInput('folder-title');
     setSidebarInput(input);
 };
@@ -47,13 +47,13 @@ const addToDo = () => {
     const title = getInput('todo-title');
     const description = getInput('todo-description');
     const toDoItem = toDo(title, description);
-    //Create div with input values
+    //addAbove(toDoItem)
 };
 
 const registerSidebarSubmitListener = (form, input) => {
     form.addEventListener('submit', (event) => {
         event.preventDefault();
-        submitClicked();
+        getSidebarInput();
         input.value = '';
     });
 };

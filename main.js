@@ -788,7 +788,7 @@ const addToDoForm = (parent) => {
 const displayToDo = (toDoItem, contentItems, addToDoButton) => {
     const toDoParent = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)('', 'class', 'todo', 'div');
     const titleDiv = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)(toDoItem.title, 'class', 'title', 'div');
-    const descDiv = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)(toDoItem.description, 'class', 'todo-desc', 'div');
+    const descDiv = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)(toDoItem.description, 'class', 'description', 'div');
 
     contentItems.appendChild(toDoParent);
     toDoParent.appendChild(titleDiv);

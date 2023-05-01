@@ -15,6 +15,7 @@ const setSidebarFormItemElements = (parent, input) => {
     addFormItemElements(parent, title, removeButton);
 };
 
+//This also seems to be for the sidebar
 const addFormItemElements = (parent, title, removeButton) => {
 
     parent.appendChild(title);
@@ -41,12 +42,23 @@ const toggleButtonDisplay = (button) => {
     }
 };
 
+const createToDo = () => {
+    //Get input
+    //Create div with input values
+};
+
+
 const registerSidebarSubmitListener = (form, input) => {
     form.addEventListener('submit', (event) => {
         event.preventDefault();
         submitClicked();
         input.value = '';
     });
+};
+
+const registerToDoSubmitListener = (form, input) => {
+
+    createToDo();
 };
 
 const registerRemoveListener = (button, element) => {

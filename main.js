@@ -786,21 +786,17 @@ const addToDoForm = (parent) => {
 };
 
 const displayToDo = (toDoItem, contentItems, addToDoButton) => {
-    const toDoParent = document.createElement('div');
-    const titleDiv = document.createElement('div');
-    const descDiv = document.createElement('div');
+    const toDoParent = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)('', 'id', 'todo-container', 'div');
+    const titleDiv = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)(toDoItem.title, 'class', 'todo-title', 'div');
+    const descDiv = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)(toDoItem.description, 'class', 'todo-desc', 'div');
 
     contentItems.appendChild(toDoParent);
     toDoParent.appendChild(titleDiv);
     toDoParent.appendChild(descDiv);
     appendAbove(contentItems, toDoParent, addToDoButton);
 
-    titleDiv.innerHTML = toDoItem.title;
-    descDiv.innerHTML = toDoItem.description;
-
-
-
-
+    // titleDiv.innerHTML = toDoItem.title;
+    // descDiv.innerHTML = toDoItem.description;
 };
 
 

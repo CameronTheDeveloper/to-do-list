@@ -81,13 +81,9 @@ const displayToDo = (toDoItem, contentItems, addToDoButton) => {
     const titleDiv = addAttributes(toDoItem.title, 'class', 'title', 'div');
     const descDiv = addAttributes(toDoItem.description, 'class', 'description', 'div');
 
-    contentItems.appendChild(toDoParent);
     toDoParent.appendChild(titleDiv);
     toDoParent.appendChild(descDiv);
-    appendAbove(contentItems, toDoParent, addToDoButton);
-
-    // titleDiv.innerHTML = toDoItem.title;
-    // descDiv.innerHTML = toDoItem.description;
+    appendAbove(contentItems, addToDoButton, toDoParent);
 };
 
 

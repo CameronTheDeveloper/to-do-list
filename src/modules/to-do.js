@@ -1,5 +1,5 @@
 import '../styles/to-do.css';
-import { addButton } from './page-layout';
+import { addButton, addToDoForm } from './page-layout';
 import { registerAddToDoListener } from './user-input';
 
 const contentItems = document.querySelector('#content-items');
@@ -13,11 +13,13 @@ function toDo(title, description) {
 
 const addToDoButton = () => {
     const addToDoButton = addButton(contentItems, '+ To Do', 'todo-add-button', 'button');
-    registerAddToDoListener(addToDoButton);
+    const toDoForm = document.querySelector('#todo-add-form');
+    registerAddToDoListener(addToDoButton, toDoForm);
 };
 
 const initToDo = () => {
     addToDoButton();
+    addToDoForm(contentItems);
 };
 
 export { initToDo, toDo };

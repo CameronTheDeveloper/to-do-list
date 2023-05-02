@@ -79,10 +79,11 @@ const registerRemoveListener = (button, element) => {
     });
 };
 
-const registerAddToDoListener = (button) => {
+const registerAddToDoListener = (button, toDoForm) => {
     button.addEventListener('click', () => {
         toggleAddToDoButtonDisplay();
-        addToDoForm(contentItems);
+        toggleFormVisible(toDoForm);
+
     });
 };
 

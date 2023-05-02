@@ -110,11 +110,15 @@ const addButton = (parent, text, id, type) => {
     return button;
 };
 
-const toggleFormVisible = (element) => {
-    if (element.style.display !== 'none') {
-        element.style.display = 'none';
+const toggleToDoFormVisible = () => {
+    const toDoForm = document.querySelector('#todo-add-form');
+
+    if (toDoForm.style.display === 'none') {
+        toDoForm.style.display = 'grid';
+    } else if (toDoForm.style.display === 'grid') {
+        toDoForm.style.display = 'none';
     } else {
-        element.style.display = 'grid';
+        toDoForm.style.display = 'grid';
     }
 };
 
@@ -142,5 +146,5 @@ export {
     addToDoForm,
     addRemoveButton,
     displayToDo,
-    toggleFormVisible
+    toggleToDoFormVisible
 };

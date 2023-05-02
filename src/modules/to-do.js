@@ -11,15 +11,17 @@ function toDo(title, description) {
     };
 }
 
+//This needs to happen after form is added
 const addToDoButton = () => {
     const addToDoButton = addButton(contentItems, '+ To Do', 'todo-add-button', 'button');
     const toDoForm = document.querySelector('#todo-add-form');
-    registerAddToDoListener(addToDoButton, toDoForm);
+
+    registerAddToDoListener(addToDoButton);
 };
 
 const initToDo = () => {
-    addToDoButton();
     addToDoForm(contentItems);
+    addToDoButton();
 };
 
 export { initToDo, toDo };

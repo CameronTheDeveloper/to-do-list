@@ -3,7 +3,7 @@ import {
     addRemoveButton,
     addToDoForm,
     displayToDo,
-    toggleFormVisible
+    toggleToDoFormVisible
 } from "./page-layout";
 import { toDo } from "./to-do";
 
@@ -69,7 +69,7 @@ const registerToDoSubmitListener = (form) => {
         event.preventDefault();
         addToDo();
         toggleAddToDoButtonDisplay();
-        toggleFormVisible(form);
+        toggleToDoFormVisible();
     });
 };
 
@@ -79,11 +79,10 @@ const registerRemoveListener = (button, element) => {
     });
 };
 
-const registerAddToDoListener = (button, toDoForm) => {
+const registerAddToDoListener = (button) => {
     button.addEventListener('click', () => {
         toggleAddToDoButtonDisplay();
-        toggleFormVisible(toDoForm);
-
+        toggleToDoFormVisible();
     });
 };
 

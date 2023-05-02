@@ -15,11 +15,14 @@
 
 /* To Do Form */
 
+#todo-add-form {
+    display: none;
+}
+
 #todo-add-form form {
     background-color: white;
     padding: 8px;
     border-radius: 16px;
-    display: none;
 }
 
 #todo-add-form input,

@@ -76,17 +76,15 @@ const addToDoForm = (parent) => {
     registerToDoSubmitListener(form);
 };
 
-const displayToDo = (toDoItem, contentItems, addToDoButton) => {
+const displayToDo = (toDoItem, contentItems, toDoForm) => {
     const toDoParent = addAttributes('', 'class', 'todo', 'div');
     const titleDiv = addAttributes(toDoItem.title, 'class', 'title', 'div');
     const descDiv = addAttributes(toDoItem.description, 'class', 'description', 'div');
 
     toDoParent.appendChild(titleDiv);
     toDoParent.appendChild(descDiv);
-    appendAbove(contentItems, addToDoButton, toDoParent);
+    appendAbove(contentItems, toDoForm, toDoParent);
 };
-
-
 
 const addButtonType = (button, type) => {
     button.setAttribute('type', type);

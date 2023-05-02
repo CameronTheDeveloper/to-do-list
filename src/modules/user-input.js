@@ -69,8 +69,8 @@ const addToDo = () => {
     const title = getInput('title-input');
     const description = getInput('description-input');
     const toDoItem = toDo(title, description);
-    const addToDoButton = document.querySelector('#todo-add-button');
-    displayToDo(toDoItem, contentItems, addToDoButton);
+    const toDoForm = document.querySelector('#todo-add-form');
+    displayToDo(toDoItem, contentItems, toDoForm);
 };
 
 const registerAddToDoListener = (button) => {

@@ -14,6 +14,8 @@ const getInput = (id) => {
     return document.getElementById(id).value;
 };
 
+/* Sidebar */
+
 const setSidebarFormItemElements = (parent, input) => {
     const title = document.createElement('div');
     const removeButton = addRemoveButton(parent, 'X', 'remove-folder-button');
@@ -22,7 +24,6 @@ const setSidebarFormItemElements = (parent, input) => {
     addFormItemElements(parent, title, removeButton);
 };
 
-//Only used for sidebar
 const addFormItemElements = (parent, title, removeButton) => {
     parent.appendChild(title);
     parent.appendChild(removeButton);
@@ -38,6 +39,22 @@ const getSidebarInput = () => {
     const input = getInput('folder-title');
     setSidebarInput(input);
 };
+
+const registerSidebarSubmitListener = (form, input) => {
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        getSidebarInput();
+        input.value = '';
+    });
+};
+
+const registerRemoveListener = (button, element) => {
+    button.addEventListener('click', () => {
+        element.remove();
+    });
+};
+
+/* To Do */
 
 const toggleAddToDoButtonDisplay = () => {
     const button = document.querySelector('#todo-add-button');
@@ -56,11 +73,10 @@ const addToDo = () => {
     displayToDo(toDoItem, contentItems, addToDoButton);
 };
 
-const registerSidebarSubmitListener = (form, input) => {
-    form.addEventListener('submit', (event) => {
-        event.preventDefault();
-        getSidebarInput();
-        input.value = '';
+const registerAddToDoListener = (button) => {
+    button.addEventListener('click', () => {
+        toggleAddToDoButtonDisplay();
+        toggleToDoFormVisible();
     });
 };
 
@@ -68,19 +84,6 @@ const registerToDoSubmitListener = (form) => {
     form.addEventListener('submit', (event) => {
         event.preventDefault();
         addToDo();
-        toggleAddToDoButtonDisplay();
-        toggleToDoFormVisible();
-    });
-};
-
-const registerRemoveListener = (button, element) => {
-    button.addEventListener('click', () => {
-        element.remove();
-    });
-};
-
-const registerAddToDoListener = (button) => {
-    button.addEventListener('click', () => {
         toggleAddToDoButtonDisplay();
         toggleToDoFormVisible();
     });

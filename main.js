@@ -786,17 +786,15 @@ const addToDoForm = (parent) => {
     (0,_user_input__WEBPACK_IMPORTED_MODULE_0__.registerToDoSubmitListener)(form);
 };
 
-const displayToDo = (toDoItem, contentItems, addToDoButton) => {
+const displayToDo = (toDoItem, contentItems, toDoForm) => {
     const toDoParent = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)('', 'class', 'todo', 'div');
     const titleDiv = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)(toDoItem.title, 'class', 'title', 'div');
     const descDiv = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)(toDoItem.description, 'class', 'description', 'div');
 
     toDoParent.appendChild(titleDiv);
     toDoParent.appendChild(descDiv);
-    appendAbove(contentItems, addToDoButton, toDoParent);
+    appendAbove(contentItems, toDoForm, toDoParent);
 };
-
-
 
 const addButtonType = (button, type) => {
     button.setAttribute('type', type);
@@ -917,7 +915,6 @@ function toDo(title, description) {
     };
 }
 
-//This needs to happen after form is added
 const addToDoButton = () => {
     const addToDoButton = (0,_page_layout__WEBPACK_IMPORTED_MODULE_1__.addButton)(contentItems, '+ To Do', 'todo-add-button', 'button');
     const toDoForm = document.querySelector('#todo-add-form');
@@ -1014,8 +1011,8 @@ const addToDo = () => {
     const title = getInput('title-input');
     const description = getInput('description-input');
     const toDoItem = (0,_to_do__WEBPACK_IMPORTED_MODULE_1__.toDo)(title, description);
-    const addToDoButton = document.querySelector('#todo-add-button');
-    (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.displayToDo)(toDoItem, contentItems, addToDoButton);
+    const toDoForm = document.querySelector('#todo-add-form');
+    (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.displayToDo)(toDoItem, contentItems, toDoForm);
 };
 
 const registerAddToDoListener = (button) => {

@@ -19,7 +19,7 @@
     background-color: white;
     padding: 8px;
     border-radius: 16px;
-
+    display: grid;
 }
 
 #todo-add-form input,

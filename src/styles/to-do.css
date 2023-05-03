@@ -13,6 +13,21 @@
     padding: 16px;
 }
 
+#todo-add-button {
+    align-self: center;
+    justify-self: center;
+    height: 80px;
+    width: 160px;
+    border-radius: 50px;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+#todo-add-button:hover {
+    background-color: rgb(0, 255, 0);
+    font-weight: 700;
+}
+
 /* To Do Form */
 
 #todo-add-form {

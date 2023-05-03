@@ -27,7 +27,7 @@
 
 #todo-add-form input,
 #todo-add-form textarea {
-    width: 350px;
+    width: 250px;
     font-size: 1rem;
     border: 1px solid green;
     padding: 4px;

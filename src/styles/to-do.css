@@ -45,6 +45,12 @@
     margin: 16px;
     border-radius: 16px;
     display: grid;
+    cursor: pointer;
+}
+
+.todo:hover {
+    background-color: rgb(24, 244, 24);
+    transition: background-color 0.15s ease-in-out;
 }
 
 .todo .title {

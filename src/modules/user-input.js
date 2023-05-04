@@ -44,7 +44,7 @@ const registerSidebarSubmitListener = (form, input) => {
     form.addEventListener('submit', (event) => {
         event.preventDefault();
         getSidebarInput();
-        input.value = '';
+        resetForm(form);
     });
 };
 
@@ -73,6 +73,10 @@ const addToDo = () => {
     displayToDo(toDoItem, contentItems, toDoForm);
 };
 
+const resetForm = (form) => {
+    form.reset();
+};
+
 const registerAddToDoListener = (button) => {
     button.addEventListener('click', () => {
         toggleAddToDoButtonDisplay();
@@ -86,6 +90,7 @@ const registerToDoSubmitListener = (form) => {
         addToDo();
         toggleAddToDoButtonDisplay();
         toggleToDoFormVisible();
+        resetForm(form);
     });
 };
 

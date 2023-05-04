@@ -987,7 +987,7 @@ const registerSidebarSubmitListener = (form, input) => {
     form.addEventListener('submit', (event) => {
         event.preventDefault();
         getSidebarInput();
-        input.value = '';
+        resetForm(form);
     });
 };
 
@@ -1016,6 +1016,10 @@ const addToDo = () => {
     (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.displayToDo)(toDoItem, contentItems, toDoForm);
 };
 
+const resetForm = (form) => {
+    form.reset();
+};
+
 const registerAddToDoListener = (button) => {
     button.addEventListener('click', () => {
         toggleAddToDoButtonDisplay();
@@ -1029,6 +1033,7 @@ const registerToDoSubmitListener = (form) => {
         addToDo();
         toggleAddToDoButtonDisplay();
         (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.toggleToDoFormVisible)();
+        resetForm(form);
     });
 };
 

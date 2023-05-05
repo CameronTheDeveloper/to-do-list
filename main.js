@@ -73,7 +73,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "#content {\n    display: grid;\n    grid-template-rows: 1fr 8fr;\n}\n\n#todo-clear-mode-button {\n    width: 150px;\n    font-size: 1rem;\n    border-radius: 12px;\n    height: 50px;\n    margin: 12px;\n    background-color: rgb(248, 130, 130);\n    font-weight: 500;\n\n}\n\n#todo-clear-mode-button:hover {\n    font-weight: 900;\n    background-color: rgb(255, 42, 42);\n    font-size: 1.1rem;\n    transition: background-color 50ms ease-in-out;\n    transition: font-size 50ms ease-in-out;\n\n}\n\n#content-items {\n    display: grid;\n    grid-template: repeat(auto-fill, minmax(200px, 1fr)) / repeat(auto-fill, minmax(260px, 1fr));\n}\n\n#content-items {\n    display: grid;\n    margin: 16px;\n    padding: 16px;\n}\n\n#todo-add-button {\n    align-self: center;\n    justify-self: center;\n    height: 80px;\n    width: 160px;\n    border-radius: 50px;\n    font-size: 2rem;\n    font-weight: 500;\n}\n\n#todo-add-button:hover {\n    background-color: rgb(0, 255, 0);\n    font-weight: 700;\n}\n\n/* To Do Form */\n\n#todo-add-form {\n    display: none;\n}\n\n#todo-add-form form {\n    background-color: white;\n    padding: 8px;\n    border-radius: 16px;\n}\n\n#todo-add-form input,\n#todo-add-form textarea {\n    width: 250px;\n    font-size: 1rem;\n    border: 1px solid green;\n    padding: 4px;\n}\n\n#todo-add-form button {\n    border-radius: 12px;\n}\n\n/* To Do */\n\n.todo {\n    background-color: white;\n    padding: 16px;\n    margin: 16px;\n    border-radius: 16px;\n    display: grid;\n    cursor: pointer;\n}\n\n.todo:hover {\n    background-color: rgb(24, 244, 24);\n    transition: background-color 0.15s ease-in-out;\n}\n\n.todo .title {\n    font-weight: bold;\n    font-size: 2rem;\n    justify-self: center;\n}", "",{"version":3,"sources":["webpack://./src/styles/to-do.css"],"names":[],"mappings":"AAAA;IACI,aAAa;IACb,2BAA2B;AAC/B;;AAEA;IACI,YAAY;IACZ,eAAe;IACf,mBAAmB;IACnB,YAAY;IACZ,YAAY;IACZ,oCAAoC;IACpC,gBAAgB;;AAEpB;;AAEA;IACI,gBAAgB;IAChB,kCAAkC;IAClC,iBAAiB;IACjB,6CAA6C;IAC7C,sCAAsC;;AAE1C;;AAEA;IACI,aAAa;IACb,4FAA4F;AAChG;;AAEA;IACI,aAAa;IACb,YAAY;IACZ,aAAa;AACjB;;AAEA;IACI,kBAAkB;IAClB,oBAAoB;IACpB,YAAY;IACZ,YAAY;IACZ,mBAAmB;IACnB,eAAe;IACf,gBAAgB;AACpB;;AAEA;IACI,gCAAgC;IAChC,gBAAgB;AACpB;;AAEA,eAAe;;AAEf;IACI,aAAa;AACjB;;AAEA;IACI,uBAAuB;IACvB,YAAY;IACZ,mBAAmB;AACvB;;AAEA;;IAEI,YAAY;IACZ,eAAe;IACf,uBAAuB;IACvB,YAAY;AAChB;;AAEA;IACI,mBAAmB;AACvB;;AAEA,UAAU;;AAEV;IACI,uBAAuB;IACvB,aAAa;IACb,YAAY;IACZ,mBAAmB;IACnB,aAAa;IACb,eAAe;AACnB;;AAEA;IACI,kCAAkC;IAClC,8CAA8C;AAClD;;AAEA;IACI,iBAAiB;IACjB,eAAe;IACf,oBAAoB;AACxB","sourcesContent":["#content {\n    display: grid;\n    grid-template-rows: 1fr 8fr;\n}\n\n#todo-clear-mode-button {\n    width: 150px;\n    font-size: 1rem;\n    border-radius: 12px;\n    height: 50px;\n    margin: 12px;\n    background-color: rgb(248, 130, 130);\n    font-weight: 500;\n\n}\n\n#todo-clear-mode-button:hover {\n    font-weight: 900;\n    background-color: rgb(255, 42, 42);\n    font-size: 1.1rem;\n    transition: background-color 50ms ease-in-out;\n    transition: font-size 50ms ease-in-out;\n\n}\n\n#content-items {\n    display: grid;\n    grid-template: repeat(auto-fill, minmax(200px, 1fr)) / repeat(auto-fill, minmax(260px, 1fr));\n}\n\n#content-items {\n    display: grid;\n    margin: 16px;\n    padding: 16px;\n}\n\n#todo-add-button {\n    align-self: center;\n    justify-self: center;\n    height: 80px;\n    width: 160px;\n    border-radius: 50px;\n    font-size: 2rem;\n    font-weight: 500;\n}\n\n#todo-add-button:hover {\n    background-color: rgb(0, 255, 0);\n    font-weight: 700;\n}\n\n/* To Do Form */\n\n#todo-add-form {\n    display: none;\n}\n\n#todo-add-form form {\n    background-color: white;\n    padding: 8px;\n    border-radius: 16px;\n}\n\n#todo-add-form input,\n#todo-add-form textarea {\n    width: 250px;\n    font-size: 1rem;\n    border: 1px solid green;\n    padding: 4px;\n}\n\n#todo-add-form button {\n    border-radius: 12px;\n}\n\n/* To Do */\n\n.todo {\n    background-color: white;\n    padding: 16px;\n    margin: 16px;\n    border-radius: 16px;\n    display: grid;\n    cursor: pointer;\n}\n\n.todo:hover {\n    background-color: rgb(24, 244, 24);\n    transition: background-color 0.15s ease-in-out;\n}\n\n.todo .title {\n    font-weight: bold;\n    font-size: 2rem;\n    justify-self: center;\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "#content {\n    display: grid;\n    grid-template-rows: 1fr 8fr;\n}\n\n#todo-clear-mode-button {\n    width: 150px;\n    font-size: 1rem;\n    border-radius: 12px;\n    height: 50px;\n    margin: 12px;\n    background-color: rgb(255, 179, 179);\n    font-weight: 500;\n\n}\n\n#todo-clear-mode-button:hover {\n    font-weight: 900;\n    background-color: rgb(255, 67, 67);\n    font-size: 1.1rem;\n    transition: background-color 50ms ease-in-out;\n    transition: font-size 50ms ease-in-out;\n\n}\n\n#content-items {\n    display: grid;\n    grid-template: repeat(auto-fill, minmax(200px, 1fr)) / repeat(auto-fill, minmax(260px, 1fr));\n}\n\n#content-items {\n    display: grid;\n    margin: 16px;\n    padding: 16px;\n}\n\n#todo-add-button {\n    align-self: center;\n    justify-self: center;\n    height: 80px;\n    width: 160px;\n    border-radius: 50px;\n    font-size: 2rem;\n    font-weight: 500;\n}\n\n#todo-add-button:hover {\n    background-color: rgb(0, 255, 0);\n    font-weight: 700;\n}\n\n/* To Do Form */\n\n#todo-add-form {\n    display: none;\n}\n\n#todo-add-form form {\n    background-color: white;\n    padding: 8px;\n    border-radius: 16px;\n}\n\n#todo-add-form input,\n#todo-add-form textarea {\n    width: 250px;\n    font-size: 1rem;\n    border: 1px solid green;\n    padding: 4px;\n}\n\n#todo-add-form button {\n    border-radius: 12px;\n}\n\n/* To Do */\n\n.todo {\n    background-color: white;\n    padding: 16px;\n    margin: 16px;\n    border-radius: 16px;\n    display: grid;\n    cursor: pointer;\n}\n\n.todo:hover {\n    background-color: rgb(24, 244, 24);\n    transition: background-color 0.15s ease-in-out;\n}\n\n.todo .title {\n    font-weight: bold;\n    font-size: 2rem;\n    justify-self: center;\n}", "",{"version":3,"sources":["webpack://./src/styles/to-do.css"],"names":[],"mappings":"AAAA;IACI,aAAa;IACb,2BAA2B;AAC/B;;AAEA;IACI,YAAY;IACZ,eAAe;IACf,mBAAmB;IACnB,YAAY;IACZ,YAAY;IACZ,oCAAoC;IACpC,gBAAgB;;AAEpB;;AAEA;IACI,gBAAgB;IAChB,kCAAkC;IAClC,iBAAiB;IACjB,6CAA6C;IAC7C,sCAAsC;;AAE1C;;AAEA;IACI,aAAa;IACb,4FAA4F;AAChG;;AAEA;IACI,aAAa;IACb,YAAY;IACZ,aAAa;AACjB;;AAEA;IACI,kBAAkB;IAClB,oBAAoB;IACpB,YAAY;IACZ,YAAY;IACZ,mBAAmB;IACnB,eAAe;IACf,gBAAgB;AACpB;;AAEA;IACI,gCAAgC;IAChC,gBAAgB;AACpB;;AAEA,eAAe;;AAEf;IACI,aAAa;AACjB;;AAEA;IACI,uBAAuB;IACvB,YAAY;IACZ,mBAAmB;AACvB;;AAEA;;IAEI,YAAY;IACZ,eAAe;IACf,uBAAuB;IACvB,YAAY;AAChB;;AAEA;IACI,mBAAmB;AACvB;;AAEA,UAAU;;AAEV;IACI,uBAAuB;IACvB,aAAa;IACb,YAAY;IACZ,mBAAmB;IACnB,aAAa;IACb,eAAe;AACnB;;AAEA;IACI,kCAAkC;IAClC,8CAA8C;AAClD;;AAEA;IACI,iBAAiB;IACjB,eAAe;IACf,oBAAoB;AACxB","sourcesContent":["#content {\n    display: grid;\n    grid-template-rows: 1fr 8fr;\n}\n\n#todo-clear-mode-button {\n    width: 150px;\n    font-size: 1rem;\n    border-radius: 12px;\n    height: 50px;\n    margin: 12px;\n    background-color: rgb(255, 179, 179);\n    font-weight: 500;\n\n}\n\n#todo-clear-mode-button:hover {\n    font-weight: 900;\n    background-color: rgb(255, 67, 67);\n    font-size: 1.1rem;\n    transition: background-color 50ms ease-in-out;\n    transition: font-size 50ms ease-in-out;\n\n}\n\n#content-items {\n    display: grid;\n    grid-template: repeat(auto-fill, minmax(200px, 1fr)) / repeat(auto-fill, minmax(260px, 1fr));\n}\n\n#content-items {\n    display: grid;\n    margin: 16px;\n    padding: 16px;\n}\n\n#todo-add-button {\n    align-self: center;\n    justify-self: center;\n    height: 80px;\n    width: 160px;\n    border-radius: 50px;\n    font-size: 2rem;\n    font-weight: 500;\n}\n\n#todo-add-button:hover {\n    background-color: rgb(0, 255, 0);\n    font-weight: 700;\n}\n\n/* To Do Form */\n\n#todo-add-form {\n    display: none;\n}\n\n#todo-add-form form {\n    background-color: white;\n    padding: 8px;\n    border-radius: 16px;\n}\n\n#todo-add-form input,\n#todo-add-form textarea {\n    width: 250px;\n    font-size: 1rem;\n    border: 1px solid green;\n    padding: 4px;\n}\n\n#todo-add-form button {\n    border-radius: 12px;\n}\n\n/* To Do */\n\n.todo {\n    background-color: white;\n    padding: 16px;\n    margin: 16px;\n    border-radius: 16px;\n    display: grid;\n    cursor: pointer;\n}\n\n.todo:hover {\n    background-color: rgb(24, 244, 24);\n    transition: background-color 0.15s ease-in-out;\n}\n\n.todo .title {\n    font-weight: bold;\n    font-size: 2rem;\n    justify-self: center;\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -712,14 +712,6 @@ __webpack_require__.r(__webpack_exports__);
 const clearButton = document.querySelector('#todo-clear-mode-button');
 let clearMode = false;
 
-clearButton.addEventListener('click', () => {
-    if (!clearMode) {
-        clearMode = true;
-    } else {
-        clearMode = false;
-    }
-});
-
 //Call on each to do created
 const addClearEventListener = (element) => {
     element.addEventListener('click', () => {
@@ -729,8 +721,34 @@ const addClearEventListener = (element) => {
             //Expand to do
         }
     });
+};
+
+const toggleClearStyle = (clearMode) => {
+    if (clearMode) {
+        clearButton.style.boxShadow = '0 0 10px red';
+        clearButton.style.fontWeight = '900';
+        clearButton.style.fontSize = '1.1rem';
+        clearButton.style.color = 'red';
+
+    } else {
+        clearButton.style.boxShadow = '';
+        clearButton.style.fontWeight = '500';
+        clearButton.style.fontSize = '1rem';
+        clearButton.style.color = 'black';
+
+    }
 
 };
+
+clearButton.addEventListener('click', () => {
+    if (!clearMode) {
+        clearMode = true;
+        toggleClearStyle(clearMode);
+    } else {
+        clearMode = false;
+        toggleClearStyle(clearMode);
+    }
+});
 
 // toDos.forEach(todo => {
 

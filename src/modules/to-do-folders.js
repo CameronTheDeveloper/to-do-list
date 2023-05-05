@@ -2,7 +2,7 @@ const contentItems = document.querySelector('#content-items');
 
 const addToDoFolder = (folderName) => {
     const folder = document.createElement('div');
-    folder.classList.add(folderName);
+    folder.classList.add('todo-folder', folderName);
     folder.appendChild('#content-items');
     return folder;
 };

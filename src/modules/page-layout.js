@@ -10,6 +10,7 @@ import {
     addAttributes,
     addToDoLabelAttributes
 } from "./attributes";
+import { addClearEventListener } from "./clear-mode";
 
 const content = document.querySelector('#content');
 
@@ -84,6 +85,7 @@ const displayToDo = (toDoItem, contentItems, toDoForm) => {
     toDoParent.appendChild(titleDiv);
     toDoParent.appendChild(descDiv);
     appendAbove(contentItems, toDoForm, toDoParent);
+    addClearEventListener(toDoParent);
 };
 
 const addButtonType = (button, type) => {

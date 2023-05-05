@@ -696,6 +696,56 @@ const setLabelAttributes = (item, attType, att, text) => {
 
 /***/ }),
 
+/***/ "./src/modules/clear-mode.js":
+/*!***********************************!*\
+  !*** ./src/modules/clear-mode.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "addClearEventListener": () => (/* binding */ addClearEventListener)
+/* harmony export */ });
+/* harmony import */ var _page_layout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./page-layout */ "./src/modules/page-layout.js");
+
+
+const clearButton = document.querySelector('#todo-clear-mode-button');
+let clearMode = false;
+
+clearButton.addEventListener('click', () => {
+    if (!clearMode) {
+        clearMode = true;
+    } else {
+        clearMode = false;
+    }
+});
+
+//Call on each to do created
+const addClearEventListener = (element) => {
+    element.addEventListener('click', () => {
+        if (clearMode) {
+            (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.removeHTML)(element);
+        } else {
+            //Expand to do
+        }
+    });
+
+};
+
+// toDos.forEach(todo => {
+
+// });
+
+
+// todo.addeventlistener click;
+// if clearmode == true{
+//     todo.removeHTML();
+// }
+
+
+
+/***/ }),
+
 /***/ "./src/modules/page-layout.js":
 /*!************************************!*\
   !*** ./src/modules/page-layout.js ***!
@@ -717,6 +767,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _user_input__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./user-input */ "./src/modules/user-input.js");
 /* harmony import */ var _attributes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./attributes */ "./src/modules/attributes.js");
+/* harmony import */ var _clear_mode__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./clear-mode */ "./src/modules/clear-mode.js");
+
 
 
 
@@ -794,6 +846,7 @@ const displayToDo = (toDoItem, contentItems, toDoForm) => {
     toDoParent.appendChild(titleDiv);
     toDoParent.appendChild(descDiv);
     appendAbove(contentItems, toDoForm, toDoParent);
+    (0,_clear_mode__WEBPACK_IMPORTED_MODULE_2__.addClearEventListener)(toDoParent);
 };
 
 const addButtonType = (button, type) => {
@@ -842,10 +895,6 @@ const addRemoveButton = (parent, text, id) => {
     const removeButton = addButton(parent, text, id, 'button');
     (0,_user_input__WEBPACK_IMPORTED_MODULE_0__.registerRemoveListener)(removeButton, parent);
     return removeButton;
-};
-
-const addClearModeButton = () => {  //Toggle clear mode
-
 };
 
 
@@ -910,7 +959,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const content = document.querySelector('#content');
 const contentItems = document.querySelector('#content-items');
 
 function toDo(title, description) {
@@ -920,6 +968,7 @@ function toDo(title, description) {
     };
 }
 
+//This needs to happen after form is added
 const addToDoButton = () => {
     const addToDoButton = (0,_page_layout__WEBPACK_IMPORTED_MODULE_1__.addButton)(contentItems, '+ To Do', 'todo-add-button', 'button');
     const toDoForm = document.querySelector('#todo-add-form');

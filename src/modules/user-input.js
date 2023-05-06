@@ -45,7 +45,6 @@ const manageSidebarInput = () => {
     const input = getSidebarInput();
     setSidebarInput(input);
     const folder = addToDoFolder(input);
-    //folder = setSidebarInput(input)
     //addRemoveListener, pass folder and element
 };
 
@@ -58,14 +57,14 @@ const registerSidebarSubmitListener = (form, input) => {
     });
 };
 
-const removeFolder = () => {
-
+const removeFolder = (folder, sidebarElement) => {
+    folder.remove();
+    sidebarElement.remove();
 };
 
-const registerRemoveListener = (button, element) => {
+const registerRemoveFolderListener = (button, folder, sidebarElement) => {
     button.addEventListener('click', () => {
-        console.log(element);
-        element.remove();
+        removeFolder(folder, element);
     });
 };
 
@@ -111,7 +110,6 @@ const registerToDoSubmitListener = (form) => {
 
 export {
     registerSidebarSubmitListener,
-    registerRemoveListener,
     registerAddToDoListener,
     registerToDoSubmitListener
 };

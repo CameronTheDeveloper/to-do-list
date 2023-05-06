@@ -33,25 +33,37 @@ const addFormItemElements = (parent, title, removeButton) => {
 const setSidebarInput = (input) => {
     const sidebarForm = document.querySelector('#sidebar-add-form');
     const item = addAbove('sidebar-item', 'div', sidebarItems, sidebarForm);
-    addToDoFolder(input);
+    const folder = addToDoFolder(input);  // Folder
     setSidebarFormItemElements(item, input);
 };
 
 const getSidebarInput = () => {
     const input = getInput('folder-title');
+    return input;
+};
+
+const manageSidebarInput = () => {
+    const input = getSidebarInput();
     setSidebarInput(input);
+    //folder = setSidebarInput(input)
 };
 
 const registerSidebarSubmitListener = (form, input) => {
     form.addEventListener('submit', (event) => {
         event.preventDefault();
-        getSidebarInput();
+        manageSidebarInput();
+        //getSidebarInput();
         resetForm(form);
     });
 };
 
+const removeFolder = () => {
+
+};
+
 const registerRemoveListener = (button, element) => {
     button.addEventListener('click', () => {
+        console.log(element);
         element.remove();
     });
 };

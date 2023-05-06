@@ -130,12 +130,6 @@ const removeHTML = (element) => {
     element.remove();
 };
 
-const addRemoveButton = (parent, text, id) => {
-    const removeButton = addButton(parent, text, id, 'button');
-    registerRemoveListener(removeButton, parent);
-    return removeButton;
-};
-
 export {
     addContent,
     addButton,
@@ -144,7 +138,6 @@ export {
     addAbove,
     addSidebarForm,
     addToDoForm,
-    addRemoveButton,
     displayToDo,
     toggleToDoFormVisible
 };

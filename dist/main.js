@@ -1064,10 +1064,10 @@ const getInput = (id) => {
 
 const setSidebarFormItemElements = (parent, input) => {
     const title = document.createElement('div');
-    const removeButton = (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.addRemoveButton)(parent, 'X', 'remove-folder-button');
-
+    const removeButton = (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.addButton)(parent, 'X', 'remove-folder-button', 'button');
     title.innerHTML = input;
     addFormItemElements(parent, title, removeButton);
+    //add removeButton event listeners
 };
 
 const addFormItemElements = (parent, title, removeButton) => {
@@ -1078,7 +1078,6 @@ const addFormItemElements = (parent, title, removeButton) => {
 const setSidebarInput = (input) => {
     const sidebarForm = document.querySelector('#sidebar-add-form');
     const item = (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.addAbove)('sidebar-item', 'div', sidebarItems, sidebarForm);
-    const folder = (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_2__.addToDoFolder)(input);  // Folder
     setSidebarFormItemElements(item, input);
 };
 
@@ -1090,7 +1089,9 @@ const getSidebarInput = () => {
 const manageSidebarInput = () => {
     const input = getSidebarInput();
     setSidebarInput(input);
+    const folder = (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_2__.addToDoFolder)(input);
     //folder = setSidebarInput(input)
+    //addRemoveListener, pass folder and element
 };
 
 const registerSidebarSubmitListener = (form, input) => {

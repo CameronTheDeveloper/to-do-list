@@ -1,6 +1,6 @@
 import {
     addAbove,
-    addRemoveButton,
+    addButton,
     addToDoForm,
     displayToDo,
     toggleToDoFormVisible
@@ -19,10 +19,10 @@ const getInput = (id) => {
 
 const setSidebarFormItemElements = (parent, input) => {
     const title = document.createElement('div');
-    const removeButton = addRemoveButton(parent, 'X', 'remove-folder-button');
-
+    const removeButton = addButton(parent, 'X', 'remove-folder-button', 'button');
     title.innerHTML = input;
     addFormItemElements(parent, title, removeButton);
+    //add removeButton event listeners
 };
 
 const addFormItemElements = (parent, title, removeButton) => {
@@ -33,7 +33,6 @@ const addFormItemElements = (parent, title, removeButton) => {
 const setSidebarInput = (input) => {
     const sidebarForm = document.querySelector('#sidebar-add-form');
     const item = addAbove('sidebar-item', 'div', sidebarItems, sidebarForm);
-    const folder = addToDoFolder(input);  // Folder
     setSidebarFormItemElements(item, input);
 };
 
@@ -45,7 +44,9 @@ const getSidebarInput = () => {
 const manageSidebarInput = () => {
     const input = getSidebarInput();
     setSidebarInput(input);
+    const folder = addToDoFolder(input);
     //folder = setSidebarInput(input)
+    //addRemoveListener, pass folder and element
 };
 
 const registerSidebarSubmitListener = (form, input) => {

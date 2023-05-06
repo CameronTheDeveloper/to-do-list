@@ -1048,6 +1048,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _page_layout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./page-layout */ "./src/modules/page-layout.js");
 /* harmony import */ var _to_do__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./to-do */ "./src/modules/to-do.js");
+/* harmony import */ var _to_do_folders__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./to-do-folders */ "./src/modules/to-do-folders.js");
+
 
 
 
@@ -1076,6 +1078,7 @@ const addFormItemElements = (parent, title, removeButton) => {
 const setSidebarInput = (input) => {
     const sidebarForm = document.querySelector('#sidebar-add-form');
     const item = (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.addAbove)('sidebar-item', 'div', sidebarItems, sidebarForm);
+    (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_2__.addToDoFolder)(input);
     setSidebarFormItemElements(item, input);
 };
 

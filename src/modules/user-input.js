@@ -17,12 +17,12 @@ const getInput = (id) => {
 
 /* Sidebar */
 
-const setSidebarFormItemElements = (parent, input) => {
+const setFolderElements = (parent, input) => {
     const title = document.createElement('div');
     const removeButton = addButton(parent, 'X', 'remove-folder-button', 'button');
     title.innerHTML = input;
     addFormItemElements(parent, title, removeButton);
-    //add removeButton event listeners
+    //add removeButton event listener and pass folder
 };
 
 const addFormItemElements = (parent, title, removeButton) => {
@@ -33,7 +33,7 @@ const addFormItemElements = (parent, title, removeButton) => {
 const setSidebarInput = (input) => {
     const sidebarForm = document.querySelector('#sidebar-add-form');
     const item = addAbove('sidebar-item', 'div', sidebarItems, sidebarForm);
-    setSidebarFormItemElements(item, input);
+    setFolderElements(item, input);
 };
 
 const getSidebarInput = () => {

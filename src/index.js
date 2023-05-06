@@ -4,5 +4,5 @@ import { initToDo } from './modules/to-do';
 // const content = document.querySelector('#content');
 // const sidebar = document.querySelector('#sidebar');
 
-initSidebar();
 initToDo();
+initSidebar();

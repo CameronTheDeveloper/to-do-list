@@ -775,7 +775,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "addAbove": () => (/* binding */ addAbove),
 /* harmony export */   "addButton": () => (/* binding */ addButton),
 /* harmony export */   "addContent": () => (/* binding */ addContent),
-/* harmony export */   "addRemoveButton": () => (/* binding */ addRemoveButton),
 /* harmony export */   "addSidebarForm": () => (/* binding */ addSidebarForm),
 /* harmony export */   "addToDoForm": () => (/* binding */ addToDoForm),
 /* harmony export */   "clearHTML": () => (/* binding */ clearHTML),
@@ -907,12 +906,6 @@ const clearHTML = (element) => {
 
 const removeHTML = (element) => {
     element.remove();
-};
-
-const addRemoveButton = (parent, text, id) => {
-    const removeButton = addButton(parent, text, id, 'button');
-    (0,_user_input__WEBPACK_IMPORTED_MODULE_0__.registerRemoveListener)(removeButton, parent);
-    return removeButton;
 };
 
 

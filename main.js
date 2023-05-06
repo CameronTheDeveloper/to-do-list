@@ -943,7 +943,7 @@ let sidebarContent = ['Projects', 'Today', 'ThisWeek'];
 const renderSidebarContent = () => {
     for (let i = 0; i < sidebarContent.length; i++) {
         (0,_page_layout__WEBPACK_IMPORTED_MODULE_1__.addContent)(sidebarItems, sidebarContent[i], 'sidebar-item', 'div');
-        (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_2__.addToDoFolder)(sidebarContent[i]);
+        const folder = (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_2__.addToDoFolder)(sidebarContent[i]);
     }
     addSidebarInput();
 };
@@ -1078,25 +1078,37 @@ const addFormItemElements = (parent, title, removeButton) => {
 const setSidebarInput = (input) => {
     const sidebarForm = document.querySelector('#sidebar-add-form');
     const item = (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.addAbove)('sidebar-item', 'div', sidebarItems, sidebarForm);
-    (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_2__.addToDoFolder)(input);
+    const folder = (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_2__.addToDoFolder)(input);  // Folder
     setSidebarFormItemElements(item, input);
 };
 
 const getSidebarInput = () => {
     const input = getInput('folder-title');
+    return input;
+};
+
+const manageSidebarInput = () => {
+    const input = getSidebarInput();
     setSidebarInput(input);
+    //folder = setSidebarInput(input)
 };
 
 const registerSidebarSubmitListener = (form, input) => {
     form.addEventListener('submit', (event) => {
         event.preventDefault();
-        getSidebarInput();
+        manageSidebarInput();
+        //getSidebarInput();
         resetForm(form);
     });
 };
 
+const removeFolder = () => {
+
+};
+
 const registerRemoveListener = (button, element) => {
     button.addEventListener('click', () => {
+        console.log(element);
         element.remove();
     });
 };

@@ -10,10 +10,20 @@ import { addToDoFolder } from "./to-do-folders";
 
 const sidebarItems = document.querySelector('#sidebar-items');
 const contentItems = document.querySelector('#content-items');
+let activeFolder = document.querySelector('.Projects');
 
 const getInput = (id) => {
     return document.getElementById(id).value;
 };
+
+//Problem. Sidebar element needs to be clicked, not folder
+const setActiveFolderOnClick = (sidebarItem, folder) => {
+    sidebarItem.addEventListener = ('click', () => {
+        activeFolder = folder;
+        console.log(activeFolder);
+    });
+};
+
 
 /* Sidebar */
 
@@ -23,7 +33,6 @@ const setFolderElements = (parent, input, folder) => {
     title.innerHTML = input;
     addFormItemElements(parent, title, removeButton);
     registerRemoveFolderListener(removeButton, folder, parent);
-    //add removeButton event listener and pass folder
 };
 
 const addFormItemElements = (parent, title, removeButton) => {
@@ -35,6 +44,7 @@ const setSidebarInput = (input, folder) => {
     const sidebarForm = document.querySelector('#sidebar-add-form');
     const item = addAbove('sidebar-item', 'div', sidebarItems, sidebarForm);
     setFolderElements(item, input, folder);
+    setActiveFolderOnClick(item, folder);
 };
 
 const getSidebarInput = () => {
@@ -53,7 +63,6 @@ const registerSidebarSubmitListener = (form, input) => {
     form.addEventListener('submit', (event) => {
         event.preventDefault();
         manageSidebarInput();
-        //getSidebarInput();
         resetForm(form);
     });
 };
@@ -80,12 +89,18 @@ const toggleAddToDoButtonDisplay = () => {
     }
 };
 
+const getFolder = () => {
+    //Add folder click event listeners to setFolder()
+};
+
 const addToDo = () => {
     const title = getInput('title-input');
     const description = getInput('description-input');
     const toDoItem = toDo(title, description);
     const toDoForm = document.querySelector('#todo-add-form');
-    displayToDo(toDoItem, contentItems, toDoForm);
+    const folder = getFolder();  //
+    displayToDo(toDoItem, contentItems, toDoForm, folder);  //Needs folder parameter
+    //Folder parameter will = whichever folder we clicked
 };
 
 const resetForm = (form) => {

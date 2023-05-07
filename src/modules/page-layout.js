@@ -77,7 +77,7 @@ const addToDoForm = (parent) => {
     registerToDoSubmitListener(form);
 };
 
-const displayToDo = (toDoItem, contentItems, toDoForm, folder) => {
+const displayToDo = (toDoItem, folder) => {
     const toDoParent = addAttributes('', 'class', 'todo', 'div');
     const titleDiv = addAttributes(toDoItem.title, 'class', 'title', 'div');
     const descDiv = addAttributes(toDoItem.description, 'class', 'description', 'div');
@@ -86,7 +86,6 @@ const displayToDo = (toDoItem, contentItems, toDoForm, folder) => {
     toDoParent.appendChild(titleDiv);
     toDoParent.appendChild(descDiv);
 
-    //appendAbove(contentItems, toDoForm, folder);
     addClearEventListener(toDoParent);
 };
 
@@ -96,11 +95,6 @@ const addButtonType = (button, type) => {
 
 const appendAbove = (parent, lowerDiv, item) => {
     parent.insertBefore(item, lowerDiv);
-    //folder.insertBefore(toDoForm, toDoParent) - Todo parent is the todo
-    //Before, parent was contentItems. 
-    //The 'item' needs to be the folder
-    //This function might not be used in displayToDo, but where
-    //folder is being added to DOM
 };
 
 //addAttributes needs changes

@@ -16,15 +16,15 @@ const getInput = (id) => {
     return document.getElementById(id).value;
 };
 
-//Problem. Sidebar element needs to be clicked, not folder
 const setActiveFolderOnClick = (sidebarItem, folder) => {
-    sidebarItem.addEventListener = ('click', () => {
+    sidebarItem.addEventListener('click', () => {
         activeFolder = folder;
-        console.log(activeFolder);
     });
 };
 
-
+const getActiveFolder = () => {
+    return activeFolder;
+};
 /* Sidebar */
 
 const setFolderElements = (parent, input, folder) => {
@@ -33,6 +33,8 @@ const setFolderElements = (parent, input, folder) => {
     title.innerHTML = input;
     addFormItemElements(parent, title, removeButton);
     registerRemoveFolderListener(removeButton, folder, parent);
+    //setActiveFolderOnClick(title, folder);
+    //Give title a class
 };
 
 const addFormItemElements = (parent, title, removeButton) => {
@@ -89,18 +91,14 @@ const toggleAddToDoButtonDisplay = () => {
     }
 };
 
-const getFolder = () => {
-    //Add folder click event listeners to setFolder()
-};
-
 const addToDo = () => {
     const title = getInput('title-input');
     const description = getInput('description-input');
     const toDoItem = toDo(title, description);
-    const toDoForm = document.querySelector('#todo-add-form');
-    const folder = getFolder();  //
-    displayToDo(toDoItem, contentItems, toDoForm, folder);  //Needs folder parameter
-    //Folder parameter will = whichever folder we clicked
+    //const toDoForm = document.querySelector('#todo-add-form');
+    const folder = getActiveFolder();
+    displayToDo(toDoItem, folder);
+
 };
 
 const resetForm = (form) => {

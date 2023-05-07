@@ -855,14 +855,15 @@ const addToDoForm = (parent) => {
     (0,_user_input__WEBPACK_IMPORTED_MODULE_0__.registerToDoSubmitListener)(form);
 };
 
-const displayToDo = (toDoItem, contentItems, toDoForm) => {
+const displayToDo = (toDoItem, folder) => {
     const toDoParent = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)('', 'class', 'todo', 'div');
     const titleDiv = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)(toDoItem.title, 'class', 'title', 'div');
     const descDiv = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)(toDoItem.description, 'class', 'description', 'div');
 
+    folder.appendChild(toDoParent);
     toDoParent.appendChild(titleDiv);
     toDoParent.appendChild(descDiv);
-    appendAbove(contentItems, toDoForm, toDoParent);
+
     (0,_clear_mode__WEBPACK_IMPORTED_MODULE_2__.addClearEventListener)(toDoParent);
 };
 
@@ -1047,11 +1048,21 @@ __webpack_require__.r(__webpack_exports__);
 
 const sidebarItems = document.querySelector('#sidebar-items');
 const contentItems = document.querySelector('#content-items');
+let activeFolder = document.querySelector('.Projects');
 
 const getInput = (id) => {
     return document.getElementById(id).value;
 };
 
+const setActiveFolderOnClick = (sidebarItem, folder) => {
+    sidebarItem.addEventListener('click', () => {
+        activeFolder = folder;
+    });
+};
+
+const getActiveFolder = () => {
+    return activeFolder;
+};
 /* Sidebar */
 
 const setFolderElements = (parent, input, folder) => {
@@ -1060,7 +1071,8 @@ const setFolderElements = (parent, input, folder) => {
     title.innerHTML = input;
     addFormItemElements(parent, title, removeButton);
     registerRemoveFolderListener(removeButton, folder, parent);
-    //add removeButton event listener and pass folder
+    //setActiveFolderOnClick(title, folder);
+    //Give title a class
 };
 
 const addFormItemElements = (parent, title, removeButton) => {
@@ -1072,6 +1084,7 @@ const setSidebarInput = (input, folder) => {
     const sidebarForm = document.querySelector('#sidebar-add-form');
     const item = (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.addAbove)('sidebar-item', 'div', sidebarItems, sidebarForm);
     setFolderElements(item, input, folder);
+    setActiveFolderOnClick(item, folder);
 };
 
 const getSidebarInput = () => {
@@ -1090,7 +1103,6 @@ const registerSidebarSubmitListener = (form, input) => {
     form.addEventListener('submit', (event) => {
         event.preventDefault();
         manageSidebarInput();
-        //getSidebarInput();
         resetForm(form);
     });
 };
@@ -1121,8 +1133,10 @@ const addToDo = () => {
     const title = getInput('title-input');
     const description = getInput('description-input');
     const toDoItem = (0,_to_do__WEBPACK_IMPORTED_MODULE_1__.toDo)(title, description);
-    const toDoForm = document.querySelector('#todo-add-form');
-    (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.displayToDo)(toDoItem, contentItems, toDoForm);
+    //const toDoForm = document.querySelector('#todo-add-form');
+    const folder = getActiveFolder();
+    (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.displayToDo)(toDoItem, folder);
+
 };
 
 const resetForm = (form) => {

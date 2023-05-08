@@ -1,9 +1,10 @@
 const contentItems = document.querySelector('#content-items');
 
 const addToDoFolder = (folderName) => {
+    const addToDoButton = document.querySelector('#todo-add-button');
     const folder = document.createElement('div');
     folder.classList.add('todo-folder', folderName);
-    contentItems.appendChild(folder);
+    contentItems.insertBefore(folder, addToDoButton);
     return folder;
 };
 

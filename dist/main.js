@@ -846,8 +846,9 @@ const addToDoForm = (parent) => {
     const title = addFormInputElement('input', form, 'title');
     const descLabel = addFormLabelElement(form);
     const description = addFormInputElement('textarea', form, 'description');
-    const submitButton = addButton(form, 'submit', 'todo-submit-button', 'submit');
 
+
+    const submitButton = addButton(form, 'submit', 'todo-submit-button', 'submit');
     (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addToDoFormAttributes)(form, title, description);
     (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addToDoLabelAttributes)(titleLabel, descLabel);
 
@@ -968,10 +969,10 @@ __webpack_require__.r(__webpack_exports__);
 const contentItems = document.querySelector('#content-items');
 
 const addToDoFolder = (folderName) => {
-    const addToDoButton = document.querySelector('#todo-add-button');
+    const toDoInputs = document.querySelector('#todo-inputs');
     const folder = document.createElement('div');
     folder.classList.add('todo-folder', folderName);
-    contentItems.insertBefore(folder, addToDoButton);
+    contentItems.insertBefore(folder, toDoInputs);
     return folder;
 };
 

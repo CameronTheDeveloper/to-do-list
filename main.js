@@ -846,9 +846,8 @@ const addToDoForm = (parent) => {
     const title = addFormInputElement('input', form, 'title');
     const descLabel = addFormLabelElement(form);
     const description = addFormInputElement('textarea', form, 'description');
-
-
     const submitButton = addButton(form, 'submit', 'todo-submit-button', 'submit');
+
     (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addToDoFormAttributes)(form, title, description);
     (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addToDoLabelAttributes)(titleLabel, descLabel);
 
@@ -1002,7 +1001,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const contentItems = document.querySelector('#content-items');
+const toDoInputs = document.querySelector('#todo-inputs');
 
 function toDo(title, description) {
     return {
@@ -1013,14 +1012,14 @@ function toDo(title, description) {
 
 //This needs to happen after form is added
 const addToDoButton = () => {
-    const addToDoButton = (0,_page_layout__WEBPACK_IMPORTED_MODULE_1__.addButton)(contentItems, '+ To Do', 'todo-add-button', 'button');
+    const addToDoButton = (0,_page_layout__WEBPACK_IMPORTED_MODULE_1__.addButton)(toDoInputs, '+ To Do', 'todo-add-button', 'button');
     const toDoForm = document.querySelector('#todo-add-form');
 
     (0,_user_input__WEBPACK_IMPORTED_MODULE_2__.registerAddToDoListener)(addToDoButton);
 };
 
 const initToDo = () => {
-    (0,_page_layout__WEBPACK_IMPORTED_MODULE_1__.addToDoForm)(contentItems);
+    (0,_page_layout__WEBPACK_IMPORTED_MODULE_1__.addToDoForm)(toDoInputs);
     addToDoButton();
 };
 

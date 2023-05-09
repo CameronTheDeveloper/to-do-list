@@ -779,6 +779,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "addToDoForm": () => (/* binding */ addToDoForm),
 /* harmony export */   "clearHTML": () => (/* binding */ clearHTML),
 /* harmony export */   "displayToDo": () => (/* binding */ displayToDo),
+/* harmony export */   "hideElements": () => (/* binding */ hideElements),
 /* harmony export */   "removeHTML": () => (/* binding */ removeHTML),
 /* harmony export */   "toggleToDoFormVisible": () => (/* binding */ toggleToDoFormVisible)
 /* harmony export */ });
@@ -909,6 +910,12 @@ const removeHTML = (element) => {
     element.remove();
 };
 
+const hideElements = (elements) => {
+    elements.forEach((element) => {
+        element.style.display = 'none';
+    });
+};
+
 
 
 /***/ }),
@@ -964,8 +971,12 @@ const addSidebarInput = () => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "addToDoFolder": () => (/* binding */ addToDoFolder)
+/* harmony export */   "addToDoFolder": () => (/* binding */ addToDoFolder),
+/* harmony export */   "hideInactiveFolders": () => (/* binding */ hideInactiveFolders)
 /* harmony export */ });
+/* harmony import */ var _page_layout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./page-layout */ "./src/modules/page-layout.js");
+
+
 const contentItems = document.querySelector('#content-items');
 
 const addToDoFolder = (folderName) => {
@@ -976,10 +987,14 @@ const addToDoFolder = (folderName) => {
     return folder;
 };
 
+const hideInactiveFolders = (activeFolder) => {
+    const folders = document.querySelectorAll('.todo-folder');
+
+    (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.hideElements)(folders);
+    activeFolder.style.display = 'grid';
+};
 
 
-//In display-to-do (page-layout.js), replace to-do parent with folder
-//Clear folder when folder-remove button is clicked
 
 
 /***/ }),
@@ -1058,6 +1073,7 @@ const getInput = (id) => {
 const setActiveFolderOnClick = (sidebarItem, folder) => {
     sidebarItem.addEventListener('click', () => {
         activeFolder = folder;
+        (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_2__.hideInactiveFolders)(folder);
     });
 };
 

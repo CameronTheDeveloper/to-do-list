@@ -10,9 +10,11 @@ const addToDoFolder = (folderName) => {
     return folder;
 };
 
-const hideInactiveFolders = () => {
-    const folders = document.querySelectorAll('.folder');
+const hideInactiveFolders = (activeFolder) => {
+    const folders = document.querySelectorAll('.todo-folder');
+
     hideElements(folders);
+    activeFolder.style.display = 'grid';
 };
 
 export { addToDoFolder, hideInactiveFolders };

@@ -6,7 +6,7 @@ import {
     toggleToDoFormVisible
 } from "./page-layout";
 import { toDo } from "./to-do";
-import { addToDoFolder } from "./to-do-folders";
+import { addToDoFolder, hideInactiveFolders } from "./to-do-folders";
 
 const sidebarItems = document.querySelector('#sidebar-items');
 const contentItems = document.querySelector('#content-items');
@@ -19,6 +19,7 @@ const getInput = (id) => {
 const setActiveFolderOnClick = (sidebarItem, folder) => {
     sidebarItem.addEventListener('click', () => {
         activeFolder = folder;
+        hideInactiveFolders(folder);
     });
 };
 

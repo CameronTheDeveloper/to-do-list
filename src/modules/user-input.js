@@ -8,6 +8,7 @@ import { toDo } from "./to-do";
 import { addToDoFolder, hideInactiveFolders } from "./to-do-folders";
 
 const sidebarItems = document.querySelector('#sidebar-items');
+const toDoInputs = document.querySelector('#todo-inputs');
 let activeFolder = document.querySelector('.Projects');
 
 const getInput = (id) => {
@@ -18,6 +19,7 @@ const setActiveFolderOnClick = (sidebarItem, folder) => {
     sidebarItem.addEventListener('click', () => {
         activeFolder = folder;
         hideInactiveFolders(folder);
+        folder.appendChild(toDoInputs);
     });
 };
 

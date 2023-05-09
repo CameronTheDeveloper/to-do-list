@@ -75,11 +75,12 @@ const addToDoForm = (parent) => {
 };
 
 const displayToDo = (toDoItem, folder) => {
+    const toDoInputs = document.querySelector('#todo-inputs');
     const toDoParent = addAttributes('', 'class', 'todo', 'div');
     const titleDiv = addAttributes(toDoItem.title, 'class', 'title', 'div');
     const descDiv = addAttributes(toDoItem.description, 'class', 'description', 'div');
 
-    folder.appendChild(toDoParent);
+    folder.insertBefore(toDoParent, toDoInputs);
     toDoParent.appendChild(titleDiv);
     toDoParent.appendChild(descDiv);
 

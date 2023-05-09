@@ -14,6 +14,7 @@ const hideInactiveFolders = (activeFolder) => {
 
     hideElements(folders);
     activeFolder.style.display = 'grid';
+    contentItems.style.display = 'block';
 };
 
 export { addToDoFolder, hideInactiveFolders };

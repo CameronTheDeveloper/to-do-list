@@ -964,6 +964,7 @@ const hideInactiveFolders = (activeFolder) => {
 
     (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.hideElements)(folders);
     activeFolder.style.display = 'grid';
+    contentItems.style.display = 'block';
 };
 
 
@@ -1051,6 +1052,7 @@ const setActiveFolderOnClick = (sidebarItem, folder) => {
 const getActiveFolder = () => {
     return activeFolder;
 };
+
 /* Sidebar */
 
 const setFolderElements = (parent, input, folder) => {

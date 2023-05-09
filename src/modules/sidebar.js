@@ -21,7 +21,6 @@ const initSidebar = () => {
 const addSidebarInput = () => {
     const sidebarForm = addSidebarForm(sidebarItems);
     const sidebarButton = addButton(sidebarForm, '+ Folder', 'sidebar-add-button', 'submit');
-
 };
 
 export { initSidebar };

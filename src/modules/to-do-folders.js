@@ -1,5 +1,4 @@
 import { hideElements } from "./page-layout";
-
 const contentItems = document.querySelector('#content-items');
 
 const addToDoFolder = (folderName) => {

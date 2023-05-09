@@ -1,6 +1,5 @@
 import {
     registerSidebarSubmitListener,
-    registerRemoveListener,
     registerToDoSubmitListener
 } from "./user-input";
 
@@ -11,8 +10,6 @@ import {
     addToDoLabelAttributes
 } from "./attributes";
 import { addClearEventListener } from "./clear-mode";
-
-const content = document.querySelector('#content');
 
 const addContent = (parent, text, className, elementType) => {
     const element = document.createElement(elementType);
@@ -123,14 +120,6 @@ const toggleToDoFormVisible = () => {
     }
 };
 
-const clearHTML = (element) => {
-    element.innerHTML = '';
-};
-
-const removeHTML = (element) => {
-    element.remove();
-};
-
 const hideElements = (elements) => {
     elements.forEach((element) => {
         element.style.display = 'none';
@@ -140,8 +129,6 @@ const hideElements = (elements) => {
 export {
     addContent,
     addButton,
-    clearHTML,
-    removeHTML,
     addAbove,
     addSidebarForm,
     addToDoForm,

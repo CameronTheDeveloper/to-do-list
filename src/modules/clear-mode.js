@@ -1,5 +1,3 @@
-import { removeHTML } from "./page-layout";
-
 const clearButton = document.querySelector('#todo-clear-mode-button');
 let clearMode = false;
 
@@ -7,7 +5,7 @@ let clearMode = false;
 const addClearEventListener = (element) => {
     element.addEventListener('click', () => {
         if (clearMode) {
-            removeHTML(element);
+            element.remove();
         } else {
             //Expand to do
         }
@@ -28,7 +26,6 @@ const toggleClearStyle = (clearMode) => {
         clearButton.style.color = 'black';
 
     }
-
 };
 
 clearButton.addEventListener('click', () => {
@@ -40,15 +37,5 @@ clearButton.addEventListener('click', () => {
         toggleClearStyle(clearMode);
     }
 });
-
-// toDos.forEach(todo => {
-
-// });
-
-
-// todo.addeventlistener click;
-// if clearmode == true{
-//     todo.removeHTML();
-// }
 
 export { addClearEventListener };

@@ -131,6 +131,12 @@ const removeHTML = (element) => {
     element.remove();
 };
 
+const hideElements = (elements) => {
+    elements.forEach((element) => {
+        element.style.display = 'none';
+    });
+};
+
 export {
     addContent,
     addButton,
@@ -140,5 +146,6 @@ export {
     addSidebarForm,
     addToDoForm,
     displayToDo,
-    toggleToDoFormVisible
+    toggleToDoFormVisible,
+    hideElements
 };

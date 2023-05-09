@@ -1,3 +1,5 @@
+import { hideElements } from "./page-layout";
+
 const contentItems = document.querySelector('#content-items');
 
 const addToDoFolder = (folderName) => {
@@ -8,7 +10,9 @@ const addToDoFolder = (folderName) => {
     return folder;
 };
 
-export { addToDoFolder };
+const hideInactiveFolders = () => {
+    const folders = document.querySelectorAll('.folder');
+    hideElements(folders);
+};
 
-//In display-to-do (page-layout.js), replace to-do parent with folder
-//Clear folder when folder-remove button is clicked
+export { addToDoFolder, hideInactiveFolders };

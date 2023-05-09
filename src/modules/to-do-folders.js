@@ -1,3 +1,4 @@
+import '../styles/to-do-folders.css';
 import { hideElements } from "./page-layout";
 const contentItems = document.querySelector('#content-items');
 

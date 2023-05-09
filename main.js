@@ -706,9 +706,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "addClearEventListener": () => (/* binding */ addClearEventListener)
 /* harmony export */ });
-/* harmony import */ var _page_layout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./page-layout */ "./src/modules/page-layout.js");
-
-
 const clearButton = document.querySelector('#todo-clear-mode-button');
 let clearMode = false;
 
@@ -716,7 +713,7 @@ let clearMode = false;
 const addClearEventListener = (element) => {
     element.addEventListener('click', () => {
         if (clearMode) {
-            (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.removeHTML)(element);
+            element.remove();
         } else {
             //Expand to do
         }
@@ -737,7 +734,6 @@ const toggleClearStyle = (clearMode) => {
         clearButton.style.color = 'black';
 
     }
-
 };
 
 clearButton.addEventListener('click', () => {
@@ -749,16 +745,6 @@ clearButton.addEventListener('click', () => {
         toggleClearStyle(clearMode);
     }
 });
-
-// toDos.forEach(todo => {
-
-// });
-
-
-// todo.addeventlistener click;
-// if clearmode == true{
-//     todo.removeHTML();
-// }
 
 
 
@@ -777,10 +763,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "addContent": () => (/* binding */ addContent),
 /* harmony export */   "addSidebarForm": () => (/* binding */ addSidebarForm),
 /* harmony export */   "addToDoForm": () => (/* binding */ addToDoForm),
-/* harmony export */   "clearHTML": () => (/* binding */ clearHTML),
 /* harmony export */   "displayToDo": () => (/* binding */ displayToDo),
 /* harmony export */   "hideElements": () => (/* binding */ hideElements),
-/* harmony export */   "removeHTML": () => (/* binding */ removeHTML),
 /* harmony export */   "toggleToDoFormVisible": () => (/* binding */ toggleToDoFormVisible)
 /* harmony export */ });
 /* harmony import */ var _user_input__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./user-input */ "./src/modules/user-input.js");
@@ -790,8 +774,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-const content = document.querySelector('#content');
 
 const addContent = (parent, text, className, elementType) => {
     const element = document.createElement(elementType);
@@ -902,14 +884,6 @@ const toggleToDoFormVisible = () => {
     }
 };
 
-const clearHTML = (element) => {
-    element.innerHTML = '';
-};
-
-const removeHTML = (element) => {
-    element.remove();
-};
-
 const hideElements = (elements) => {
     elements.forEach((element) => {
         element.style.display = 'none';
@@ -956,7 +930,6 @@ const initSidebar = () => {
 const addSidebarInput = () => {
     const sidebarForm = (0,_page_layout__WEBPACK_IMPORTED_MODULE_1__.addSidebarForm)(sidebarItems);
     const sidebarButton = (0,_page_layout__WEBPACK_IMPORTED_MODULE_1__.addButton)(sidebarForm, '+ Folder', 'sidebar-add-button', 'submit');
-
 };
 
 
@@ -975,7 +948,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "hideInactiveFolders": () => (/* binding */ hideInactiveFolders)
 /* harmony export */ });
 /* harmony import */ var _page_layout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./page-layout */ "./src/modules/page-layout.js");
-
 
 const contentItems = document.querySelector('#content-items');
 
@@ -1063,7 +1035,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const sidebarItems = document.querySelector('#sidebar-items');
-const contentItems = document.querySelector('#content-items');
 let activeFolder = document.querySelector('.Projects');
 
 const getInput = (id) => {
@@ -1088,7 +1059,6 @@ const setFolderElements = (parent, input, folder) => {
     title.innerHTML = input;
     addFormItemElements(parent, title, removeButton);
     registerRemoveFolderListener(removeButton, folder, parent);
-    //setActiveFolderOnClick(title, folder);
     //Give title a class
 };
 
@@ -1267,8 +1237,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-// const content = document.querySelector('#content');
-// const sidebar = document.querySelector('#sidebar');
 
 (0,_modules_to_do__WEBPACK_IMPORTED_MODULE_2__.initToDo)();
 (0,_modules_sidebar__WEBPACK_IMPORTED_MODULE_1__.initSidebar)();

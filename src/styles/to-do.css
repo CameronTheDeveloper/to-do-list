@@ -29,6 +29,10 @@
     padding: 16px;
 }
 
+#todo-inputs {
+    display: grid;
+}
+
 #todo-add-button {
     align-self: center;
     justify-self: center;

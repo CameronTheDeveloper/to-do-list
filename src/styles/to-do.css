@@ -20,16 +20,11 @@
     font-size: 1.1rem;
     transition: background-color 50ms ease-in-out;
     transition: font-size 50ms ease-in-out;
-
 }
 
 #content-items {
     display: grid;
     grid-template: repeat(auto-fill, minmax(200px, 1fr)) / repeat(auto-fill, minmax(260px, 1fr));
-}
-
-#content-items {
-    display: grid;
     margin: 16px;
     padding: 16px;
 }

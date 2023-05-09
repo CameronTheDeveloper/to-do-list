@@ -919,11 +919,12 @@ const addToDoForm = (parent) => {
 };
 
 const displayToDo = (toDoItem, folder) => {
+    const toDoInputs = document.querySelector('#todo-inputs');
     const toDoParent = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)('', 'class', 'todo', 'div');
     const titleDiv = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)(toDoItem.title, 'class', 'title', 'div');
     const descDiv = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)(toDoItem.description, 'class', 'description', 'div');
 
-    folder.appendChild(toDoParent);
+    folder.insertBefore(toDoParent, toDoInputs);
     toDoParent.appendChild(titleDiv);
     toDoParent.appendChild(descDiv);
 
@@ -1034,16 +1035,14 @@ __webpack_require__.r(__webpack_exports__);
 const contentItems = document.querySelector('#content-items');
 
 const addToDoFolder = (folderName) => {
-    const toDoInputs = document.querySelector('#todo-inputs');
     const folder = document.createElement('div');
     folder.classList.add('todo-folder', folderName);
-    contentItems.insertBefore(folder, toDoInputs);
+    contentItems.appendChild(folder);
     return folder;
 };
 
 const hideInactiveFolders = (activeFolder) => {
     const folders = document.querySelectorAll('.todo-folder');
-
     (0,_page_layout__WEBPACK_IMPORTED_MODULE_1__.hideElements)(folders);
     activeFolder.style.display = 'grid';
     contentItems.style.display = 'block';
@@ -1118,6 +1117,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const sidebarItems = document.querySelector('#sidebar-items');
+const toDoInputs = document.querySelector('#todo-inputs');
 let activeFolder = document.querySelector('.Projects');
 
 const getInput = (id) => {
@@ -1128,6 +1128,7 @@ const setActiveFolderOnClick = (sidebarItem, folder) => {
     sidebarItem.addEventListener('click', () => {
         activeFolder = folder;
         (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_2__.hideInactiveFolders)(folder);
+        folder.appendChild(toDoInputs);
     });
 };
 

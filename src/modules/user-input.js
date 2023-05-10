@@ -15,6 +15,11 @@ const getInput = (id) => {
     return document.getElementById(id).value;
 };
 
+const changeFolderHeading = (sidebarItem) => {
+    const folderHeading = document.querySelector('#active-folder-heading');
+    //folderHeading.innerHTML = sidebarItem.innerHTML;
+};
+
 const setActiveFolderOnClick = (sidebarItem, folder) => {
     sidebarItem.addEventListener('click', () => {
         activeFolder = folder;

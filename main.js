@@ -1023,6 +1023,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _styles_to_do_folders_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../styles/to-do-folders.css */ "./src/styles/to-do-folders.css");
 /* harmony import */ var _page_layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./page-layout */ "./src/modules/page-layout.js");
+/* harmony import */ var _user_input__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./user-input */ "./src/modules/user-input.js");
+
+
 
 
 const contentItems = document.querySelector('#content-items');
@@ -1030,7 +1033,9 @@ const toDoInputs = document.querySelector('#todo-inputs');
 let activeFolder = document.querySelector('.Projects');
 
 const initToDoFolder = () => {
-    addToDoFolder('Projects');
+    const folderName = 'Projects';
+    const folder = addToDoFolder(folderName);
+    (0,_user_input__WEBPACK_IMPORTED_MODULE_2__.setSidebarInput)(folderName, folder);
 };
 
 const addToDoFolder = (folderName) => {
@@ -1057,7 +1062,7 @@ const hideInactiveFolders = (activeFolder) => {
     const folders = document.querySelectorAll('.todo-folder');
     (0,_page_layout__WEBPACK_IMPORTED_MODULE_1__.hideElements)(folders);
     activeFolder.style.display = 'grid';
-    contentItems.style.display = 'block';
+    contentItems.style.display = 'block';       //Possible remove
 };
 
 const changeFolderHeading = (sidebarFolder) => {
@@ -1125,7 +1130,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "registerAddToDoListener": () => (/* binding */ registerAddToDoListener),
 /* harmony export */   "registerSidebarSubmitListener": () => (/* binding */ registerSidebarSubmitListener),
-/* harmony export */   "registerToDoSubmitListener": () => (/* binding */ registerToDoSubmitListener)
+/* harmony export */   "registerToDoSubmitListener": () => (/* binding */ registerToDoSubmitListener),
+/* harmony export */   "setSidebarInput": () => (/* binding */ setSidebarInput)
 /* harmony export */ });
 /* harmony import */ var _page_layout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./page-layout */ "./src/modules/page-layout.js");
 /* harmony import */ var _to_do__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./to-do */ "./src/modules/to-do.js");

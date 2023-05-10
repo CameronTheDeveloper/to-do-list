@@ -4,20 +4,19 @@
 }
 
 #todo-clear-mode-button {
-    width: 150px;
-    font-size: 1rem;
+    width: 175px;
+    font-size: 1.2rem;
     border-radius: 12px;
-    height: 50px;
+    height: 58px;
     margin: 12px;
     background-color: rgb(255, 179, 179);
     font-weight: 500;
-
 }
 
 #todo-clear-mode-button:hover {
     font-weight: 900;
     background-color: rgb(255, 67, 67);
-    font-size: 1.1rem;
+    font-size: 1.4rem;
     transition: background-color 50ms ease-in-out;
     transition: font-size 50ms ease-in-out;
 }

@@ -1030,12 +1030,13 @@ __webpack_require__.r(__webpack_exports__);
 
 const contentItems = document.querySelector('#content-items');
 const toDoInputs = document.querySelector('#todo-inputs');
-let activeFolder = document.querySelector('.Projects');
+let activeFolder = null;
 
 const initToDoFolder = () => {
     const folderName = 'Projects';
     const folder = addToDoFolder(folderName);
-    (0,_user_input__WEBPACK_IMPORTED_MODULE_2__.setSidebarInput)(folderName, folder);
+    const sidebarFolder = (0,_user_input__WEBPACK_IMPORTED_MODULE_2__.setSidebarInput)(folderName, folder);
+    activeFolder = setActiveFolder(sidebarFolder, folder);
 };
 
 const addToDoFolder = (folderName) => {
@@ -1068,6 +1069,7 @@ const hideInactiveFolders = (activeFolder) => {
 const changeFolderHeading = (sidebarFolder) => {
     const folderHeading = document.querySelector('#active-folder-heading');
     const title = sidebarFolder.querySelector('.sidebar-folder-title');
+    debugger;
     folderHeading.innerHTML = title.innerHTML;
 };
 
@@ -1174,6 +1176,7 @@ const setSidebarInput = (input, folder) => {
     const item = (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.addAbove)('sidebar-folder', 'div', sidebarFolders, sidebarForm);
     setFolderElements(item, input, folder);
     setActiveFolderOnClick(item, folder);
+    return item;
 };
 
 const getSidebarInput = () => {
@@ -1185,7 +1188,7 @@ const manageSidebarInput = () => {
     const input = getSidebarInput();
     const folder = (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_2__.addToDoFolder)(input);
 
-    setSidebarInput(input, folder);
+    const sidebarFolder = setSidebarInput(input, folder);
 };
 
 const registerSidebarSubmitListener = (form, input) => {

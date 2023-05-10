@@ -1143,7 +1143,7 @@ const setFolderElements = (parent, input, folder) => {
     title.innerHTML = input;
     addFormItemElements(parent, title, removeButton);
     registerRemoveFolderListener(removeButton, folder, parent);
-    //Give title a class
+    //Give title a class - sidebar folder
 };
 
 const addFormItemElements = (parent, title, removeButton) => {

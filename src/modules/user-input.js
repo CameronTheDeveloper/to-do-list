@@ -5,28 +5,18 @@ import {
     toggleToDoFormVisible
 } from "./page-layout";
 import { toDo } from "./to-do";
-import { addToDoFolder, hideInactiveFolders } from "./to-do-folders";
+import { addToDoFolder, setActiveFolder } from "./to-do-folders";
 
 const sidebarFolders = document.querySelector('#sidebar-folders');
 const toDoInputs = document.querySelector('#todo-inputs');
-let activeFolder = document.querySelector('.Projects');
 
 const getInput = (id) => {
     return document.getElementById(id).value;
 };
 
-const changeFolderHeading = (sidebarFolder) => {
-    const folderHeading = document.querySelector('#active-folder-heading');
-    const title = sidebarFolder.querySelector('.sidebar-folder-title');
-    folderHeading.innerHTML = title.innerHTML;
-};
-
 const setActiveFolderOnClick = (sidebarFolder, folder) => {
     sidebarFolder.addEventListener('click', () => {
-        activeFolder = folder;
-        hideInactiveFolders(folder);
-        folder.appendChild(toDoInputs);
-        changeFolderHeading(sidebarFolder);
+        setActiveFolder(sidebarFolder, folder);
     });
 };
 
@@ -103,7 +93,6 @@ const addToDo = () => {
     const title = getInput('title-input');
     const description = getInput('description-input');
     const toDoItem = toDo(title, description);
-    //const toDoForm = document.querySelector('#todo-add-form');
     const folder = getActiveFolder();
     displayToDo(toDoItem, folder);
 

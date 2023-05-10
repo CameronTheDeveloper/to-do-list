@@ -1029,6 +1029,7 @@ const addSidebarInput = () => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "addToDoFolder": () => (/* binding */ addToDoFolder),
+/* harmony export */   "getActiveFolder": () => (/* binding */ getActiveFolder),
 /* harmony export */   "setActiveFolder": () => (/* binding */ setActiveFolder)
 /* harmony export */ });
 /* harmony import */ var _styles_to_do_folders_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../styles/to-do-folders.css */ "./src/styles/to-do-folders.css");
@@ -1052,6 +1053,10 @@ const setActiveFolder = (sidebarFolder, folder) => {
     hideInactiveFolders(folder);
     folder.appendChild(toDoInputs);
     changeFolderHeading(sidebarFolder);
+    return activeFolder;
+};
+
+const getActiveFolder = () => {
     return activeFolder;
 };
 
@@ -1149,10 +1154,6 @@ const setActiveFolderOnClick = (sidebarFolder, folder) => {
     });
 };
 
-const getActiveFolder = () => {
-    return activeFolder;
-};
-
 /* Sidebar */
 
 const setFolderElements = (parent, input, folder) => {
@@ -1222,7 +1223,7 @@ const addToDo = () => {
     const title = getInput('title-input');
     const description = getInput('description-input');
     const toDoItem = (0,_to_do__WEBPACK_IMPORTED_MODULE_1__.toDo)(title, description);
-    const folder = getActiveFolder();
+    const folder = (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_2__.getActiveFolder)();
     (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.displayToDo)(toDoItem, folder);
 
 };

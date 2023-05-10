@@ -1039,7 +1039,8 @@ const contentItems = document.querySelector('#content-items');
 
 const addToDoFolder = (folderName) => {
     const folder = document.createElement('div');
-    folder.classList.add('todo-folder', folderName);
+    const folderClass = folderName.replace(/\s/g, '-');
+    folder.classList.add('todo-folder', folderClass);
     contentItems.appendChild(folder);
     return folder;
 };
@@ -1145,6 +1146,7 @@ const setActiveFolderOnClick = (sidebarItem, folder) => {
 const getActiveFolder = () => {
     return activeFolder;
 };
+
 /* Sidebar */
 
 const setFolderElements = (parent, input, folder) => {

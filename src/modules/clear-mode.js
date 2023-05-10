@@ -16,13 +16,13 @@ const toggleClearStyle = (clearMode) => {
     if (clearMode) {
         clearButton.style.boxShadow = '0 0 10px red';
         clearButton.style.fontWeight = '900';
-        clearButton.style.fontSize = '1.1rem';
+        clearButton.style.fontSize = '1.4rem';
         clearButton.style.color = 'red';
 
     } else {
         clearButton.style.boxShadow = '';
         clearButton.style.fontWeight = '500';
-        clearButton.style.fontSize = '1rem';
+        clearButton.style.fontSize = '1.2rem';
         clearButton.style.color = 'black';
 
     }

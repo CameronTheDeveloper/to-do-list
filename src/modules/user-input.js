@@ -7,7 +7,7 @@ import {
 import { toDo } from "./to-do";
 import { addToDoFolder, hideInactiveFolders } from "./to-do-folders";
 
-const sidebarItems = document.querySelector('#sidebar-folders');
+const sidebarFolders = document.querySelector('#sidebar-folders');
 const toDoInputs = document.querySelector('#todo-inputs');
 let activeFolder = document.querySelector('.Projects');
 
@@ -15,18 +15,18 @@ const getInput = (id) => {
     return document.getElementById(id).value;
 };
 
-const changeFolderHeading = (sidebarItem) => {
+const changeFolderHeading = (sidebarFolder) => {
     const folderHeading = document.querySelector('#active-folder-heading');
-    const title = sidebarItem.querySelector('.sidebar-folder-title');
+    const title = sidebarFolder.querySelector('.sidebar-folder-title');
     folderHeading.innerHTML = title.innerHTML;
 };
 
-const setActiveFolderOnClick = (sidebarItem, folder) => {
-    sidebarItem.addEventListener('click', () => {
+const setActiveFolderOnClick = (sidebarFolder, folder) => {
+    sidebarFolder.addEventListener('click', () => {
         activeFolder = folder;
         hideInactiveFolders(folder);
         folder.appendChild(toDoInputs);
-        changeFolderHeading(sidebarItem);
+        changeFolderHeading(sidebarFolder);
     });
 };
 
@@ -52,7 +52,7 @@ const addFormItemElements = (parent, title, removeButton) => {
 
 const setSidebarInput = (input, folder) => {
     const sidebarForm = document.querySelector('#sidebar-add-form');
-    const item = addAbove('sidebar-folder', 'div', sidebarItems, sidebarForm);
+    const item = addAbove('sidebar-folder', 'div', sidebarFolders, sidebarForm);
     setFolderElements(item, input, folder);
     setActiveFolderOnClick(item, folder);
 };

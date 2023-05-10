@@ -4,6 +4,10 @@ const contentItems = document.querySelector('#content-items');
 const toDoInputs = document.querySelector('#todo-inputs');
 let activeFolder = document.querySelector('.Projects');
 
+const initToDoFolder = () => {
+    addToDoFolder('Projects');
+};
+
 const addToDoFolder = (folderName) => {
     const folder = document.createElement('div');
     const folderClass = folderName.replace(/\s/g, '-');
@@ -37,4 +41,4 @@ const changeFolderHeading = (sidebarFolder) => {
     folderHeading.innerHTML = title.innerHTML;
 };
 
-export { addToDoFolder, setActiveFolder, getActiveFolder };
+export { initToDoFolder, addToDoFolder, setActiveFolder, getActiveFolder };

@@ -18,13 +18,16 @@ const toggleClearStyle = (clearMode) => {
         clearButton.style.fontWeight = '900';
         clearButton.style.fontSize = '1.4rem';
         clearButton.style.color = 'red';
+        clearButton.style.transition = 'box-shadow 50ms ease-in, ' +
+            'font-weight 50ms ease-in, ' +
+            'font-size 50ms ease-in, ' +
+            'color 50ms ease-in';
 
     } else {
         clearButton.style.boxShadow = '';
         clearButton.style.fontWeight = '500';
         clearButton.style.fontSize = '1.2rem';
         clearButton.style.color = 'black';
-
     }
 };
 

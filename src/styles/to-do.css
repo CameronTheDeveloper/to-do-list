@@ -9,16 +9,12 @@
     border-radius: 12px;
     height: 58px;
     margin: 12px;
-    background-color: rgb(255, 179, 179);
+    background-color: rgb(255, 198, 198);
     font-weight: 500;
 }
 
 #todo-clear-mode-button:hover {
-    font-weight: 900;
-    background-color: rgb(255, 67, 67);
-    font-size: 1.4rem;
-    transition: background-color 50ms ease-in-out;
-    transition: font-size 50ms ease-in-out;
+    background-color: rgb(255, 171, 171);
 }
 
 #content-items {

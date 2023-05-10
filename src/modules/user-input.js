@@ -45,6 +45,7 @@ const setSidebarInput = (input, folder) => {
     const item = addAbove('sidebar-folder', 'div', sidebarFolders, sidebarForm);
     setFolderElements(item, input, folder);
     setActiveFolderOnClick(item, folder);
+    return item;
 };
 
 const getSidebarInput = () => {
@@ -56,7 +57,7 @@ const manageSidebarInput = () => {
     const input = getSidebarInput();
     const folder = addToDoFolder(input);
 
-    setSidebarInput(input, folder);
+    const sidebarFolder = setSidebarInput(input, folder);
 };
 
 const registerSidebarSubmitListener = (form, input) => {

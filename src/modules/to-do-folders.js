@@ -4,12 +4,13 @@ import { setSidebarInput } from './user-input';
 
 const contentItems = document.querySelector('#content-items');
 const toDoInputs = document.querySelector('#todo-inputs');
-let activeFolder = document.querySelector('.Projects');
+let activeFolder = null;
 
 const initToDoFolder = () => {
     const folderName = 'Projects';
     const folder = addToDoFolder(folderName);
-    setSidebarInput(folderName, folder);
+    const sidebarFolder = setSidebarInput(folderName, folder);
+    activeFolder = setActiveFolder(sidebarFolder, folder);
 };
 
 const addToDoFolder = (folderName) => {
@@ -42,6 +43,7 @@ const hideInactiveFolders = (activeFolder) => {
 const changeFolderHeading = (sidebarFolder) => {
     const folderHeading = document.querySelector('#active-folder-heading');
     const title = sidebarFolder.querySelector('.sidebar-folder-title');
+    debugger;
     folderHeading.innerHTML = title.innerHTML;
 };
 

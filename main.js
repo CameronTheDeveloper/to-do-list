@@ -990,25 +990,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _styles_sidebar_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../styles/sidebar.css */ "./src/styles/sidebar.css");
 /* harmony import */ var _page_layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./page-layout */ "./src/modules/page-layout.js");
-/* harmony import */ var _to_do_folders__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./to-do-folders */ "./src/modules/to-do-folders.js");
-
 
 
 
 const sidebarFolders = document.querySelector('#sidebar-folders');
-let sidebarContent = ['Projects', 'Today', 'This Week'];
-
-//Possible remove
-const renderSidebarContent = () => {
-    for (let i = 0; i < sidebarContent.length; i++) {
-        (0,_page_layout__WEBPACK_IMPORTED_MODULE_1__.addContent)(sidebarFolders, sidebarContent[i], 'sidebar-folder', 'div');
-        (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_2__.addToDoFolder)(sidebarContent[i]);
-    }
-    addSidebarInput();
-};
 
 const initSidebar = () => {
-    renderSidebarContent();
+    addSidebarInput();
 };
 
 const addSidebarInput = () => {
@@ -1030,6 +1018,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "addToDoFolder": () => (/* binding */ addToDoFolder),
 /* harmony export */   "getActiveFolder": () => (/* binding */ getActiveFolder),
+/* harmony export */   "initToDoFolder": () => (/* binding */ initToDoFolder),
 /* harmony export */   "setActiveFolder": () => (/* binding */ setActiveFolder)
 /* harmony export */ });
 /* harmony import */ var _styles_to_do_folders_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../styles/to-do-folders.css */ "./src/styles/to-do-folders.css");
@@ -1039,6 +1028,10 @@ __webpack_require__.r(__webpack_exports__);
 const contentItems = document.querySelector('#content-items');
 const toDoInputs = document.querySelector('#todo-inputs');
 let activeFolder = document.querySelector('.Projects');
+
+const initToDoFolder = () => {
+    addToDoFolder('Projects');
+};
 
 const addToDoFolder = (folderName) => {
     const folder = document.createElement('div');
@@ -1336,12 +1329,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/index.css */ "./src/styles/index.css");
 /* harmony import */ var _modules_sidebar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/sidebar */ "./src/modules/sidebar.js");
 /* harmony import */ var _modules_to_do__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/to-do */ "./src/modules/to-do.js");
+/* harmony import */ var _modules_to_do_folders__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/to-do-folders */ "./src/modules/to-do-folders.js");
+
 
 
 
 
 (0,_modules_to_do__WEBPACK_IMPORTED_MODULE_2__.initToDo)();
 (0,_modules_sidebar__WEBPACK_IMPORTED_MODULE_1__.initSidebar)();
+(0,_modules_to_do_folders__WEBPACK_IMPORTED_MODULE_3__.initToDoFolder)();
 
 })();
 

@@ -16,3 +16,15 @@ button {
     grid-column: 2/-1;
     background-color: grey;
 }
+
+#content-top {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    justify-items: center;
+    align-items: center;
+}
+
+#active-folder-heading {
+    font-size: 4.75rem;
+    font-weight: 700;
+}

@@ -1,11 +1,15 @@
 import '../styles/to-do-folders.css';
 import { hideElements } from "./page-layout";
+import { setSidebarInput } from './user-input';
+
 const contentItems = document.querySelector('#content-items');
 const toDoInputs = document.querySelector('#todo-inputs');
 let activeFolder = document.querySelector('.Projects');
 
 const initToDoFolder = () => {
-    addToDoFolder('Projects');
+    const folderName = 'Projects';
+    const folder = addToDoFolder(folderName);
+    setSidebarInput(folderName, folder);
 };
 
 const addToDoFolder = (folderName) => {
@@ -32,7 +36,7 @@ const hideInactiveFolders = (activeFolder) => {
     const folders = document.querySelectorAll('.todo-folder');
     hideElements(folders);
     activeFolder.style.display = 'grid';
-    contentItems.style.display = 'block';
+    contentItems.style.display = 'block';       //Possible remove
 };
 
 const changeFolderHeading = (sidebarFolder) => {

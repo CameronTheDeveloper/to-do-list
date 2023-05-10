@@ -122,5 +122,6 @@ const registerToDoSubmitListener = (form) => {
 export {
     registerSidebarSubmitListener,
     registerAddToDoListener,
-    registerToDoSubmitListener
+    registerToDoSubmitListener,
+    setSidebarInput
 };

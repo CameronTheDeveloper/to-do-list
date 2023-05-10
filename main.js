@@ -1151,7 +1151,7 @@ const setFolderElements = (parent, input, folder) => {
     title.innerHTML = input;
     addFormItemElements(parent, title, removeButton);
     registerRemoveFolderListener(removeButton, folder, parent);
-    //Give title a class - sidebar folder
+    title.setAttribute('class', 'sidebar-folder-title');
 };
 
 const addFormItemElements = (parent, title, removeButton) => {
@@ -1164,6 +1164,7 @@ const setSidebarInput = (input, folder) => {
     const item = (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.addAbove)('sidebar-folder', 'div', sidebarItems, sidebarForm);
     setFolderElements(item, input, folder);
     setActiveFolderOnClick(item, folder);
+    console.log(item);
 };
 
 const getSidebarInput = () => {

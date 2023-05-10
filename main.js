@@ -1036,6 +1036,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const contentItems = document.querySelector('#content-items');
+const toDoInputs = document.querySelector('#todo-inputs');
 let activeFolder = document.querySelector('.Projects');
 
 const addToDoFolder = (folderName) => {
@@ -1144,7 +1145,7 @@ const getInput = (id) => {
 
 const setActiveFolderOnClick = (sidebarFolder, folder) => {
     sidebarFolder.addEventListener('click', () => {
-        (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_2__.setActiveFolder)(sidebarFolder, folder);
+        let activeFolder = (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_2__.setActiveFolder)(sidebarFolder, folder);
     });
 };
 

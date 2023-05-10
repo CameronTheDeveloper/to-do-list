@@ -7,7 +7,7 @@ import {
 import { toDo } from "./to-do";
 import { addToDoFolder, hideInactiveFolders } from "./to-do-folders";
 
-const sidebarItems = document.querySelector('#sidebar-items');
+const sidebarItems = document.querySelector('#sidebar-folders');
 const toDoInputs = document.querySelector('#todo-inputs');
 let activeFolder = document.querySelector('.Projects');
 
@@ -49,7 +49,7 @@ const addFormItemElements = (parent, title, removeButton) => {
 
 const setSidebarInput = (input, folder) => {
     const sidebarForm = document.querySelector('#sidebar-add-form');
-    const item = addAbove('sidebar-item', 'div', sidebarItems, sidebarForm);
+    const item = addAbove('sidebar-folder', 'div', sidebarItems, sidebarForm);
     setFolderElements(item, input, folder);
     setActiveFolderOnClick(item, folder);
 };

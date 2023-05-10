@@ -20,6 +20,10 @@ const setActiveFolder = (sidebarFolder, folder) => {
     return activeFolder;
 };
 
+const getActiveFolder = () => {
+    return activeFolder;
+};
+
 const hideInactiveFolders = (activeFolder) => {
     const folders = document.querySelectorAll('.todo-folder');
     hideElements(folders);
@@ -33,4 +37,4 @@ const changeFolderHeading = (sidebarFolder) => {
     folderHeading.innerHTML = title.innerHTML;
 };
 
-export { addToDoFolder, setActiveFolder };
+export { addToDoFolder, setActiveFolder, getActiveFolder };

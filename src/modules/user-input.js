@@ -5,7 +5,11 @@ import {
     toggleToDoFormVisible
 } from "./page-layout";
 import { toDo } from "./to-do";
-import { addToDoFolder, setActiveFolder } from "./to-do-folders";
+import {
+    addToDoFolder,
+    setActiveFolder,
+    getActiveFolder
+} from "./to-do-folders";
 
 const sidebarFolders = document.querySelector('#sidebar-folders');
 const toDoInputs = document.querySelector('#todo-inputs');
@@ -16,12 +20,8 @@ const getInput = (id) => {
 
 const setActiveFolderOnClick = (sidebarFolder, folder) => {
     sidebarFolder.addEventListener('click', () => {
-        setActiveFolder(sidebarFolder, folder);
+        let activeFolder = setActiveFolder(sidebarFolder, folder);
     });
-};
-
-const getActiveFolder = () => {
-    return activeFolder;
 };
 
 /* Sidebar */

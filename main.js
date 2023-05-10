@@ -760,8 +760,8 @@ const addToDoFormAttributes = (form, title, desc) => {
 };
 
 const addToDoLabelAttributes = (title, desc) => {
-    setLabelAttributes(title, 'for', 'title-label', 'Title: ');
-    setLabelAttributes(desc, 'for', 'description-label', 'Description');
+    setLabelAttributes(title, 'for', 'title-input', 'Title: ');
+    setLabelAttributes(desc, 'for', 'description-input', 'Description');
 };
 
 const setLabelAttributes = (item, attType, att, text) => {

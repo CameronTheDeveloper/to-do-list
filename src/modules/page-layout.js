@@ -3,6 +3,8 @@ import {
     registerToDoSubmitListener
 } from "./user-input";
 
+import { addClearEventListener } from "./clear-mode";
+
 import {
     addSidebarFormAttributes,
     addToDoFormAttributes,
@@ -62,14 +64,12 @@ const addFolderChildElements = (parent, title, removeButton) => {
     parent.appendChild(removeButton);
 };
 
-
 const addToDoForm = (parent) => {
     const form = addFormToDOM(parent, 'todo-add-form');
     const titleLabel = addFormLabelElement(form);
     const title = addFormInputElement('input', form, 'title');
     const descLabel = addFormLabelElement(form);
     const description = addFormInputElement('textarea', form, 'description');
-
 
     const submitButton = addButton(form, 'submit', 'todo-submit-button', 'submit');
     addToDoFormAttributes(form, title, description);
@@ -88,6 +88,19 @@ const toggleToDoFormVisible = () => {
     } else {
         toDoForm.style.display = 'grid';
     }
+};
+
+const displayToDo = (toDoItem, folder) => {
+    const toDoInputs = document.querySelector('#todo-inputs');
+    const toDoParent = addAttributes('', 'class', 'todo', 'div');
+    const titleDiv = addAttributes(toDoItem.title, 'class', 'title', 'div');
+    const descDiv = addAttributes(toDoItem.description, 'class', 'description', 'div');
+
+    folder.insertBefore(toDoParent, toDoInputs);
+    toDoParent.appendChild(titleDiv);
+    toDoParent.appendChild(descDiv);
+
+    addClearEventListener(toDoParent);
 };
 
 const addButtonType = (button, type) => {
@@ -120,6 +133,7 @@ export {
     addSidebarForm,
     addToDoForm,
     toggleToDoFormVisible,
+    displayToDo,
     hideElements,
     addFolderChildElements
 };

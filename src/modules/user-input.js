@@ -2,12 +2,12 @@ import {
     addAbove,
     addButton,
     toggleToDoFormVisible,
+    displayToDo,
     addFolderChildElements
 } from "./page-layout";
 
 import {
-    toDo,
-    displayToDo
+    toDo
 } from "./to-do";
 
 import {

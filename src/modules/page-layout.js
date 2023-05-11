@@ -17,7 +17,7 @@ const addContent = (parent, text, className, elementType) => {
     parent.appendChild(element);
 };
 
-const addForm = (parent) => {
+const addFormElement = (parent) => {
     const element = document.createElement('form');
     parent.appendChild(element);
     return element;
@@ -44,10 +44,9 @@ const addFormParent = (parent, id) => {
 
 const addFormToDOM = (parent, id) => {
     const formParent = addFormParent(parent, id);
-    const form = addForm(formParent);
+    const form = addFormElement(formParent);
     return form;
 };
-
 
 const addSidebarForm = (parent) => {
     const form = addFormToDOM(parent, 'sidebar-add-form');
@@ -73,6 +72,18 @@ const addToDoForm = (parent) => {
     registerToDoSubmitListener(form);
 };
 
+const toggleToDoFormVisible = () => {
+    const toDoForm = document.querySelector('#todo-add-form');
+
+    if (toDoForm.style.display === 'none') {
+        toDoForm.style.display = 'grid';
+    } else if (toDoForm.style.display === 'grid') {
+        toDoForm.style.display = 'none';
+    } else {
+        toDoForm.style.display = 'grid';
+    }
+};
+
 const addButtonType = (button, type) => {
     button.setAttribute('type', type);
 };
@@ -88,18 +99,6 @@ const addButton = (parent, text, id, type) => {
     addButtonType(button, type);
     parent.appendChild(button);
     return button;
-};
-
-const toggleToDoFormVisible = () => {
-    const toDoForm = document.querySelector('#todo-add-form');
-
-    if (toDoForm.style.display === 'none') {
-        toDoForm.style.display = 'grid';
-    } else if (toDoForm.style.display === 'grid') {
-        toDoForm.style.display = 'none';
-    } else {
-        toDoForm.style.display = 'grid';
-    }
 };
 
 const hideElements = (elements) => {

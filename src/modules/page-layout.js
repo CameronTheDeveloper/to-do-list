@@ -57,6 +57,12 @@ const addSidebarForm = (parent) => {
     return form;
 };
 
+const addFolderChildElements = (parent, title, removeButton) => {
+    parent.appendChild(title);
+    parent.appendChild(removeButton);
+};
+
+
 const addToDoForm = (parent) => {
     const form = addFormToDOM(parent, 'todo-add-form');
     const titleLabel = addFormLabelElement(form);
@@ -114,5 +120,6 @@ export {
     addSidebarForm,
     addToDoForm,
     toggleToDoFormVisible,
-    hideElements
+    hideElements,
+    addFolderChildElements
 };

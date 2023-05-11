@@ -1,7 +1,8 @@
 import {
     addAbove,
     addButton,
-    toggleToDoFormVisible
+    toggleToDoFormVisible,
+    addFolderChildElements
 } from "./page-layout";
 
 import {
@@ -35,15 +36,11 @@ const setFolderElements = (parent, input, folder) => {
     const title = document.createElement('div');
     const removeButton = addButton(parent, 'X', 'remove-folder-button', 'button');
     title.innerHTML = input;
-    addFormItemElements(parent, title, removeButton);
+    addFolderChildElements(parent, title, removeButton);
     registerRemoveFolderListener(removeButton, folder, parent);
     title.setAttribute('class', 'sidebar-folder-title');
 };
 
-const addFormItemElements = (parent, title, removeButton) => {
-    parent.appendChild(title);
-    parent.appendChild(removeButton);
-};
 
 const setSidebarInput = (input, folder) => {
     const sidebarForm = document.querySelector('#sidebar-add-form');

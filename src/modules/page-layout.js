@@ -9,7 +9,6 @@ import {
     addAttributes,
     addToDoLabelAttributes
 } from "./attributes";
-import { addClearEventListener } from "./clear-mode";
 
 const addContent = (parent, text, className, elementType) => {
     const element = document.createElement(elementType);
@@ -74,19 +73,6 @@ const addToDoForm = (parent) => {
     registerToDoSubmitListener(form);
 };
 
-const displayToDo = (toDoItem, folder) => {
-    const toDoInputs = document.querySelector('#todo-inputs');
-    const toDoParent = addAttributes('', 'class', 'todo', 'div');
-    const titleDiv = addAttributes(toDoItem.title, 'class', 'title', 'div');
-    const descDiv = addAttributes(toDoItem.description, 'class', 'description', 'div');
-
-    folder.insertBefore(toDoParent, toDoInputs);
-    toDoParent.appendChild(titleDiv);
-    toDoParent.appendChild(descDiv);
-
-    addClearEventListener(toDoParent);
-};
-
 const addButtonType = (button, type) => {
     button.setAttribute('type', type);
 };
@@ -95,7 +81,6 @@ const appendAbove = (parent, lowerDiv, item) => {
     parent.insertBefore(item, lowerDiv);
 };
 
-//addAttributes needs changes
 const addAbove = (className, elementType, parent, lowerDiv) => {
     const element = addAttributes('', 'class', className, elementType);
     appendAbove(parent, lowerDiv, element);
@@ -133,7 +118,6 @@ export {
     addAbove,
     addSidebarForm,
     addToDoForm,
-    displayToDo,
     toggleToDoFormVisible,
     hideElements
 };

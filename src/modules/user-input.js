@@ -1,10 +1,14 @@
 import {
     addAbove,
     addButton,
-    displayToDo,
     toggleToDoFormVisible
 } from "./page-layout";
-import { toDo } from "./to-do";
+
+import {
+    toDo,
+    displayToDo
+} from "./to-do";
+
 import {
     addToDoFolder,
     setActiveFolder,

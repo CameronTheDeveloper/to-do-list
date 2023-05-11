@@ -1085,13 +1085,13 @@ const changeFolderHeading = (sidebarFolder) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "initToDo": () => (/* binding */ initToDo),
-/* harmony export */   "toDo": () => (/* binding */ toDo)
+/* harmony export */   "addToDo": () => (/* binding */ addToDo),
+/* harmony export */   "initToDo": () => (/* binding */ initToDo)
 /* harmony export */ });
 /* harmony import */ var _styles_to_do_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../styles/to-do.css */ "./src/styles/to-do.css");
 /* harmony import */ var _page_layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./page-layout */ "./src/modules/page-layout.js");
 /* harmony import */ var _user_input__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./user-input */ "./src/modules/user-input.js");
-/* harmony import */ var _attributes__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./attributes */ "./src/modules/attributes.js");
+/* harmony import */ var _to_do_folders__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./to-do-folders */ "./src/modules/to-do-folders.js");
 
 
 
@@ -1106,12 +1106,19 @@ function toDo(title, description) {
     };
 }
 
-//This needs to happen after form is added
 const addToDoButton = () => {
     const addToDoButton = (0,_page_layout__WEBPACK_IMPORTED_MODULE_1__.addButton)(toDoInputs, '+ To Do', 'todo-add-button', 'button');
     const toDoForm = document.querySelector('#todo-add-form');
 
     (0,_user_input__WEBPACK_IMPORTED_MODULE_2__.registerAddToDoListener)(addToDoButton);
+};
+
+const addToDo = () => {
+    const title = (0,_user_input__WEBPACK_IMPORTED_MODULE_2__.getInput)('title-input');
+    const description = (0,_user_input__WEBPACK_IMPORTED_MODULE_2__.getInput)('description-input');
+    const toDoItem = toDo(title, description);
+    const folder = (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_3__.getActiveFolder)();
+    (0,_page_layout__WEBPACK_IMPORTED_MODULE_1__.displayToDo)(toDoItem, folder);
 };
 
 const initToDo = () => {
@@ -1133,6 +1140,7 @@ const initToDo = () => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "getInput": () => (/* binding */ getInput),
 /* harmony export */   "registerAddToDoListener": () => (/* binding */ registerAddToDoListener),
 /* harmony export */   "registerSidebarSubmitListener": () => (/* binding */ registerSidebarSubmitListener),
 /* harmony export */   "registerToDoSubmitListener": () => (/* binding */ registerToDoSubmitListener),
@@ -1145,10 +1153,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-
 const sidebarFolders = document.querySelector('#sidebar-folders');
-const toDoInputs = document.querySelector('#todo-inputs');
 
 const getInput = (id) => {
     return document.getElementById(id).value;
@@ -1229,13 +1234,7 @@ const toggleAddToDoButtonDisplay = () => {
     }
 };
 
-const addToDo = () => {
-    const title = getInput('title-input');
-    const description = getInput('description-input');
-    const toDoItem = (0,_to_do__WEBPACK_IMPORTED_MODULE_1__.toDo)(title, description);
-    const folder = (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_2__.getActiveFolder)();
-    (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.displayToDo)(toDoItem, folder);
-};
+
 
 const resetForm = (form) => {
     form.reset();
@@ -1251,7 +1250,7 @@ const registerAddToDoListener = (button) => {
 const registerToDoSubmitListener = (form) => {
     form.addEventListener('submit', (event) => {
         event.preventDefault();
-        addToDo();
+        (0,_to_do__WEBPACK_IMPORTED_MODULE_1__.addToDo)();
         toggleAddToDoButtonDisplay();
         (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.toggleToDoFormVisible)();
         resetForm(form);

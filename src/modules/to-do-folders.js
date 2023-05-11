@@ -43,7 +43,6 @@ const hideInactiveFolders = (activeFolder) => {
 const changeFolderHeading = (sidebarFolder) => {
     const folderHeading = document.querySelector('#active-folder-heading');
     const title = sidebarFolder.querySelector('.sidebar-folder-title');
-    debugger;
     folderHeading.innerHTML = title.innerHTML;
 };
 

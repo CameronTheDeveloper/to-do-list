@@ -73,8 +73,14 @@ const removeFolder = (folder, sidebarElement) => {
     sidebarElement.remove();
 };
 
+const removeFolderContentItems = () => {
+    const folderHeader = document.querySelector('#active-folder-heading');
+    folderHeader.innerHTML = '';
+};
+
 const registerRemoveFolderListener = (button, folder, sidebarElement) => {
     button.addEventListener('click', () => {
+        removeFolderContentItems();
         removeFolder(folder, sidebarElement);
     });
 };
@@ -96,7 +102,6 @@ const addToDo = () => {
     const toDoItem = toDo(title, description);
     const folder = getActiveFolder();
     displayToDo(toDoItem, folder);
-
 };
 
 const resetForm = (form) => {

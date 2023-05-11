@@ -1069,7 +1069,6 @@ const hideInactiveFolders = (activeFolder) => {
 const changeFolderHeading = (sidebarFolder) => {
     const folderHeading = document.querySelector('#active-folder-heading');
     const title = sidebarFolder.querySelector('.sidebar-folder-title');
-    debugger;
     folderHeading.innerHTML = title.innerHTML;
 };
 
@@ -1204,8 +1203,15 @@ const removeFolder = (folder, sidebarElement) => {
     sidebarElement.remove();
 };
 
+const removeFolderContentItems = (sidebarElement) => {
+    const folderHeader = document.querySelector('#active-folder-heading');
+    folderHeader.innerHTML = '';
+    sidebarElement.removeEventListener('click');
+};
+
 const registerRemoveFolderListener = (button, folder, sidebarElement) => {
     button.addEventListener('click', () => {
+        removeFolderContentItems(sidebarElement);
         removeFolder(folder, sidebarElement);
     });
 };
@@ -1227,7 +1233,6 @@ const addToDo = () => {
     const toDoItem = (0,_to_do__WEBPACK_IMPORTED_MODULE_1__.toDo)(title, description);
     const folder = (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_2__.getActiveFolder)();
     (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.displayToDo)(toDoItem, folder);
-
 };
 
 const resetForm = (form) => {

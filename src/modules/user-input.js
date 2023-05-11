@@ -19,7 +19,8 @@ const getInput = (id) => {
 };
 
 const setActiveFolderOnClick = (sidebarFolder, folder) => {
-    sidebarFolder.addEventListener('click', () => {
+    const title = sidebarFolder.querySelector('.sidebar-folder-title');
+    title.addEventListener('click', () => {
         let activeFolder = setActiveFolder(sidebarFolder, folder);
     });
 };

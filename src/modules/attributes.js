@@ -26,7 +26,7 @@ const setFormElementAttributes = (form, action, method) => {
 };
 
 const addSidebarFormAttributes = (form, input) => {
-    setTextInputAttributes(input, 'text', 'folder-title', '20');
+    setTextInputAttributes(input, 'text', 'folder-title', '15');
     setFormElementAttributes(form, '', 'post');
 };
 

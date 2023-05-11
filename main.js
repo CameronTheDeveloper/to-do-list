@@ -1149,7 +1149,8 @@ const getInput = (id) => {
 };
 
 const setActiveFolderOnClick = (sidebarFolder, folder) => {
-    sidebarFolder.addEventListener('click', () => {
+    const title = sidebarFolder.querySelector('.sidebar-folder-title');
+    title.addEventListener('click', () => {
         let activeFolder = (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_2__.setActiveFolder)(sidebarFolder, folder);
     });
 };
@@ -1203,15 +1204,14 @@ const removeFolder = (folder, sidebarElement) => {
     sidebarElement.remove();
 };
 
-const removeFolderContentItems = (sidebarElement) => {
+const removeFolderContentItems = () => {
     const folderHeader = document.querySelector('#active-folder-heading');
     folderHeader.innerHTML = '';
-    sidebarElement.removeEventListener('click');
 };
 
 const registerRemoveFolderListener = (button, folder, sidebarElement) => {
     button.addEventListener('click', () => {
-        removeFolderContentItems(sidebarElement);
+        removeFolderContentItems();
         removeFolder(folder, sidebarElement);
     });
 };

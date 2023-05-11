@@ -847,11 +847,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "addFolderChildElements": () => (/* binding */ addFolderChildElements),
 /* harmony export */   "addSidebarForm": () => (/* binding */ addSidebarForm),
 /* harmony export */   "addToDoForm": () => (/* binding */ addToDoForm),
+/* harmony export */   "displayToDo": () => (/* binding */ displayToDo),
 /* harmony export */   "hideElements": () => (/* binding */ hideElements),
 /* harmony export */   "toggleToDoFormVisible": () => (/* binding */ toggleToDoFormVisible)
 /* harmony export */ });
 /* harmony import */ var _user_input__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./user-input */ "./src/modules/user-input.js");
-/* harmony import */ var _attributes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./attributes */ "./src/modules/attributes.js");
+/* harmony import */ var _clear_mode__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./clear-mode */ "./src/modules/clear-mode.js");
+/* harmony import */ var _attributes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./attributes */ "./src/modules/attributes.js");
+
+
 
 
 
@@ -898,7 +902,7 @@ const addSidebarForm = (parent) => {
     const form = addFormToDOM(parent, 'sidebar-add-form');
     const input = addFormInputElement('input', form, 'folder-title');
 
-    (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addSidebarFormAttributes)(form, input);
+    (0,_attributes__WEBPACK_IMPORTED_MODULE_2__.addSidebarFormAttributes)(form, input);
     (0,_user_input__WEBPACK_IMPORTED_MODULE_0__.registerSidebarSubmitListener)(form, input);
     return form;
 };
@@ -908,7 +912,6 @@ const addFolderChildElements = (parent, title, removeButton) => {
     parent.appendChild(removeButton);
 };
 
-
 const addToDoForm = (parent) => {
     const form = addFormToDOM(parent, 'todo-add-form');
     const titleLabel = addFormLabelElement(form);
@@ -916,10 +919,9 @@ const addToDoForm = (parent) => {
     const descLabel = addFormLabelElement(form);
     const description = addFormInputElement('textarea', form, 'description');
 
-
     const submitButton = addButton(form, 'submit', 'todo-submit-button', 'submit');
-    (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addToDoFormAttributes)(form, title, description);
-    (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addToDoLabelAttributes)(titleLabel, descLabel);
+    (0,_attributes__WEBPACK_IMPORTED_MODULE_2__.addToDoFormAttributes)(form, title, description);
+    (0,_attributes__WEBPACK_IMPORTED_MODULE_2__.addToDoLabelAttributes)(titleLabel, descLabel);
 
     (0,_user_input__WEBPACK_IMPORTED_MODULE_0__.registerToDoSubmitListener)(form);
 };
@@ -936,18 +938,31 @@ const toggleToDoFormVisible = () => {
     }
 };
 
+const displayToDo = (toDoItem, folder) => {
+    const toDoInputs = document.querySelector('#todo-inputs');
+    const toDoParent = (0,_attributes__WEBPACK_IMPORTED_MODULE_2__.addAttributes)('', 'class', 'todo', 'div');
+    const titleDiv = (0,_attributes__WEBPACK_IMPORTED_MODULE_2__.addAttributes)(toDoItem.title, 'class', 'title', 'div');
+    const descDiv = (0,_attributes__WEBPACK_IMPORTED_MODULE_2__.addAttributes)(toDoItem.description, 'class', 'description', 'div');
+
+    folder.insertBefore(toDoParent, toDoInputs);
+    toDoParent.appendChild(titleDiv);
+    toDoParent.appendChild(descDiv);
+
+    (0,_clear_mode__WEBPACK_IMPORTED_MODULE_1__.addClearEventListener)(toDoParent);
+};
+
 const addButtonType = (button, type) => {
     button.setAttribute('type', type);
 };
 
 const addAbove = (className, elementType, parent, lowerDiv) => {
-    const element = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)('', 'class', className, elementType);
+    const element = (0,_attributes__WEBPACK_IMPORTED_MODULE_2__.addAttributes)('', 'class', className, elementType);
     parent.insertBefore(element, lowerDiv);
     return element;
 };
 
 const addButton = (parent, text, id, type) => {
-    const button = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)(text, 'id', id, 'button');
+    const button = (0,_attributes__WEBPACK_IMPORTED_MODULE_2__.addAttributes)(text, 'id', id, 'button');
     addButtonType(button, type);
     parent.appendChild(button);
     return button;
@@ -1070,16 +1085,13 @@ const changeFolderHeading = (sidebarFolder) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "displayToDo": () => (/* binding */ displayToDo),
 /* harmony export */   "initToDo": () => (/* binding */ initToDo),
 /* harmony export */   "toDo": () => (/* binding */ toDo)
 /* harmony export */ });
 /* harmony import */ var _styles_to_do_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../styles/to-do.css */ "./src/styles/to-do.css");
 /* harmony import */ var _page_layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./page-layout */ "./src/modules/page-layout.js");
 /* harmony import */ var _user_input__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./user-input */ "./src/modules/user-input.js");
-/* harmony import */ var _clear_mode__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./clear-mode */ "./src/modules/clear-mode.js");
-/* harmony import */ var _attributes__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./attributes */ "./src/modules/attributes.js");
-
+/* harmony import */ var _attributes__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./attributes */ "./src/modules/attributes.js");
 
 
 
@@ -1107,18 +1119,7 @@ const initToDo = () => {
     addToDoButton();
 };
 
-const displayToDo = (toDoItem, folder) => {
-    const toDoInputs = document.querySelector('#todo-inputs');
-    const toDoParent = (0,_attributes__WEBPACK_IMPORTED_MODULE_4__.addAttributes)('', 'class', 'todo', 'div');
-    const titleDiv = (0,_attributes__WEBPACK_IMPORTED_MODULE_4__.addAttributes)(toDoItem.title, 'class', 'title', 'div');
-    const descDiv = (0,_attributes__WEBPACK_IMPORTED_MODULE_4__.addAttributes)(toDoItem.description, 'class', 'description', 'div');
 
-    folder.insertBefore(toDoParent, toDoInputs);
-    toDoParent.appendChild(titleDiv);
-    toDoParent.appendChild(descDiv);
-
-    (0,_clear_mode__WEBPACK_IMPORTED_MODULE_3__.addClearEventListener)(toDoParent);
-};
 
 
 
@@ -1233,7 +1234,7 @@ const addToDo = () => {
     const description = getInput('description-input');
     const toDoItem = (0,_to_do__WEBPACK_IMPORTED_MODULE_1__.toDo)(title, description);
     const folder = (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_2__.getActiveFolder)();
-    (0,_to_do__WEBPACK_IMPORTED_MODULE_1__.displayToDo)(toDoItem, folder);
+    (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.displayToDo)(toDoItem, folder);
 };
 
 const resetForm = (form) => {

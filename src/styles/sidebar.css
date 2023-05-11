@@ -84,3 +84,7 @@
 #sidebar form input:hover {
     border: 1.2px solid rgb(0, 0, 0);
 }
+
+.sidebar-folder-title {
+    max-width: 150px;
+}

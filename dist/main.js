@@ -922,13 +922,9 @@ const addButtonType = (button, type) => {
     button.setAttribute('type', type);
 };
 
-const appendAbove = (parent, lowerDiv, item) => {
-    parent.insertBefore(item, lowerDiv);
-};
-
 const addAbove = (className, elementType, parent, lowerDiv) => {
     const element = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)('', 'class', className, elementType);
-    appendAbove(parent, lowerDiv, element);
+    parent.insertBefore(element, lowerDiv);
     return element;
 };
 

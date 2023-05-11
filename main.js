@@ -844,6 +844,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "addAbove": () => (/* binding */ addAbove),
 /* harmony export */   "addButton": () => (/* binding */ addButton),
 /* harmony export */   "addContent": () => (/* binding */ addContent),
+/* harmony export */   "addFolderChildElements": () => (/* binding */ addFolderChildElements),
 /* harmony export */   "addSidebarForm": () => (/* binding */ addSidebarForm),
 /* harmony export */   "addToDoForm": () => (/* binding */ addToDoForm),
 /* harmony export */   "hideElements": () => (/* binding */ hideElements),
@@ -901,6 +902,12 @@ const addSidebarForm = (parent) => {
     (0,_user_input__WEBPACK_IMPORTED_MODULE_0__.registerSidebarSubmitListener)(form, input);
     return form;
 };
+
+const addFolderChildElements = (parent, title, removeButton) => {
+    parent.appendChild(title);
+    parent.appendChild(removeButton);
+};
+
 
 const addToDoForm = (parent) => {
     const form = addFormToDOM(parent, 'todo-add-form');
@@ -1159,15 +1166,11 @@ const setFolderElements = (parent, input, folder) => {
     const title = document.createElement('div');
     const removeButton = (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.addButton)(parent, 'X', 'remove-folder-button', 'button');
     title.innerHTML = input;
-    addFormItemElements(parent, title, removeButton);
+    (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.addFolderChildElements)(parent, title, removeButton);
     registerRemoveFolderListener(removeButton, folder, parent);
     title.setAttribute('class', 'sidebar-folder-title');
 };
 
-const addFormItemElements = (parent, title, removeButton) => {
-    parent.appendChild(title);
-    parent.appendChild(removeButton);
-};
 
 const setSidebarInput = (input, folder) => {
     const sidebarForm = document.querySelector('#sidebar-add-form');

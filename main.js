@@ -846,14 +846,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "addContent": () => (/* binding */ addContent),
 /* harmony export */   "addSidebarForm": () => (/* binding */ addSidebarForm),
 /* harmony export */   "addToDoForm": () => (/* binding */ addToDoForm),
-/* harmony export */   "displayToDo": () => (/* binding */ displayToDo),
 /* harmony export */   "hideElements": () => (/* binding */ hideElements),
 /* harmony export */   "toggleToDoFormVisible": () => (/* binding */ toggleToDoFormVisible)
 /* harmony export */ });
 /* harmony import */ var _user_input__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./user-input */ "./src/modules/user-input.js");
 /* harmony import */ var _attributes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./attributes */ "./src/modules/attributes.js");
-/* harmony import */ var _clear_mode__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./clear-mode */ "./src/modules/clear-mode.js");
-
 
 
 
@@ -921,19 +918,6 @@ const addToDoForm = (parent) => {
     (0,_user_input__WEBPACK_IMPORTED_MODULE_0__.registerToDoSubmitListener)(form);
 };
 
-const displayToDo = (toDoItem, folder) => {
-    const toDoInputs = document.querySelector('#todo-inputs');
-    const toDoParent = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)('', 'class', 'todo', 'div');
-    const titleDiv = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)(toDoItem.title, 'class', 'title', 'div');
-    const descDiv = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)(toDoItem.description, 'class', 'description', 'div');
-
-    folder.insertBefore(toDoParent, toDoInputs);
-    toDoParent.appendChild(titleDiv);
-    toDoParent.appendChild(descDiv);
-
-    (0,_clear_mode__WEBPACK_IMPORTED_MODULE_2__.addClearEventListener)(toDoParent);
-};
-
 const addButtonType = (button, type) => {
     button.setAttribute('type', type);
 };
@@ -942,7 +926,6 @@ const appendAbove = (parent, lowerDiv, item) => {
     parent.insertBefore(item, lowerDiv);
 };
 
-//addAttributes needs changes
 const addAbove = (className, elementType, parent, lowerDiv) => {
     const element = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)('', 'class', className, elementType);
     appendAbove(parent, lowerDiv, element);
@@ -1085,12 +1068,17 @@ const changeFolderHeading = (sidebarFolder) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "displayToDo": () => (/* binding */ displayToDo),
 /* harmony export */   "initToDo": () => (/* binding */ initToDo),
 /* harmony export */   "toDo": () => (/* binding */ toDo)
 /* harmony export */ });
 /* harmony import */ var _styles_to_do_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../styles/to-do.css */ "./src/styles/to-do.css");
 /* harmony import */ var _page_layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./page-layout */ "./src/modules/page-layout.js");
 /* harmony import */ var _user_input__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./user-input */ "./src/modules/user-input.js");
+/* harmony import */ var _clear_mode__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./clear-mode */ "./src/modules/clear-mode.js");
+/* harmony import */ var _attributes__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./attributes */ "./src/modules/attributes.js");
+
+
 
 
 
@@ -1117,6 +1105,19 @@ const initToDo = () => {
     addToDoButton();
 };
 
+const displayToDo = (toDoItem, folder) => {
+    const toDoInputs = document.querySelector('#todo-inputs');
+    const toDoParent = (0,_attributes__WEBPACK_IMPORTED_MODULE_4__.addAttributes)('', 'class', 'todo', 'div');
+    const titleDiv = (0,_attributes__WEBPACK_IMPORTED_MODULE_4__.addAttributes)(toDoItem.title, 'class', 'title', 'div');
+    const descDiv = (0,_attributes__WEBPACK_IMPORTED_MODULE_4__.addAttributes)(toDoItem.description, 'class', 'description', 'div');
+
+    folder.insertBefore(toDoParent, toDoInputs);
+    toDoParent.appendChild(titleDiv);
+    toDoParent.appendChild(descDiv);
+
+    (0,_clear_mode__WEBPACK_IMPORTED_MODULE_3__.addClearEventListener)(toDoParent);
+};
+
 
 
 /***/ }),
@@ -1137,6 +1138,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _page_layout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./page-layout */ "./src/modules/page-layout.js");
 /* harmony import */ var _to_do__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./to-do */ "./src/modules/to-do.js");
 /* harmony import */ var _to_do_folders__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./to-do-folders */ "./src/modules/to-do-folders.js");
+
+
 
 
 
@@ -1232,7 +1235,7 @@ const addToDo = () => {
     const description = getInput('description-input');
     const toDoItem = (0,_to_do__WEBPACK_IMPORTED_MODULE_1__.toDo)(title, description);
     const folder = (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_2__.getActiveFolder)();
-    (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.displayToDo)(toDoItem, folder);
+    (0,_to_do__WEBPACK_IMPORTED_MODULE_1__.displayToDo)(toDoItem, folder);
 };
 
 const resetForm = (form) => {

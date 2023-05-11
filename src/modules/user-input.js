@@ -2,22 +2,15 @@ import {
     addAbove,
     addButton,
     toggleToDoFormVisible,
-    displayToDo,
     addFolderChildElements
 } from "./page-layout";
-
-import {
-    toDo
-} from "./to-do";
-
 import {
     addToDoFolder,
     setActiveFolder,
-    getActiveFolder
 } from "./to-do-folders";
+import { addToDo } from "./to-do";
 
 const sidebarFolders = document.querySelector('#sidebar-folders');
-const toDoInputs = document.querySelector('#todo-inputs');
 
 const getInput = (id) => {
     return document.getElementById(id).value;
@@ -98,13 +91,7 @@ const toggleAddToDoButtonDisplay = () => {
     }
 };
 
-const addToDo = () => {
-    const title = getInput('title-input');
-    const description = getInput('description-input');
-    const toDoItem = toDo(title, description);
-    const folder = getActiveFolder();
-    displayToDo(toDoItem, folder);
-};
+
 
 const resetForm = (form) => {
     form.reset();
@@ -131,5 +118,6 @@ export {
     registerSidebarSubmitListener,
     registerAddToDoListener,
     registerToDoSubmitListener,
-    setSidebarInput
+    setSidebarInput,
+    getInput
 };

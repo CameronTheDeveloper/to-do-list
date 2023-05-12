@@ -103,7 +103,6 @@ const addToDoForm = (parent) => {
     const form = addFormToDOM(parent, 'todo-add-form');
     const titleLabel = addFormLabelElement(form);
     const title = addFormInputElement('input', form, 'title');
-    const priorityLabel = addFormLabelElement(form);
     addToDoPriorityForm(form);
     const descLabel = addFormLabelElement(form);
     const description = addFormInputElement('textarea', form, 'description');

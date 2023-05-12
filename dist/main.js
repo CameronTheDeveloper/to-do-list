@@ -891,7 +891,7 @@ const addFormInputElement = (type, parent, id) => { //id is not used
 };
 
 const addFormRadioElements = (parent, name, option) => {
-    const radioInput = document.createElement('radio');
+    const radioInput = document.createElement('input');
     const label = document.createElement('label');
 
     (0,_attributes__WEBPACK_IMPORTED_MODULE_2__.setRadioAttributes)(radioInput, label, name, option);

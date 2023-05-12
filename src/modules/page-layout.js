@@ -34,7 +34,7 @@ const addFormInputElement = (type, parent, id) => { //id is not used
 };
 
 const addFormRadioElements = (parent, name, option) => {
-    const radioInput = document.createElement('radio');
+    const radioInput = document.createElement('input');
     const label = document.createElement('label');
 
     setRadioAttributes(radioInput, label, name, option);

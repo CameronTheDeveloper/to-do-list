@@ -902,7 +902,7 @@ const addFormRadioElements = (parent, name, option) => {
 const setRadioFormElements = (name, optionsAr, legend) => {
     const fieldset = document.createElement('fieldset');
     fieldset.appendChild(legend);
-    for (let i = 0; i <= optionsAr.length; i++) {
+    for (let i = 0; i < optionsAr.length; i++) {
         let parentDiv = document.createElement('div');
         fieldset.appendChild(parentDiv);
         addFormRadioElements(parentDiv, name, optionsAr[i]);

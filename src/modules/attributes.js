@@ -22,12 +22,11 @@ const setTextAreaAttributes = (item, id, cols, rows) => {
 
 const setRadioAttributes = (element, label, name, value) => {
     const id = value.toLowerCase().replace(/\s/g, '-');
-
     element.setAttribute('type', 'radio');
     element.setAttribute('id', id);
     element.setAttribute('name', name);
-    element.setAttribute('value', value);
-    label.setAttribute('for', value);
+    element.setAttribute('value', id);
+    label.setAttribute('for', id);
     label.innerHTML = value;
 };
 

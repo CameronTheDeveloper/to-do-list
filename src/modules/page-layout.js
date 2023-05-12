@@ -34,16 +34,17 @@ const addFormInputElement = (type, parent, id) => { //id is not used
 };
 
 const addFormRadioElements = (parent, name, option) => {
-    let radioInput = document.createElement('radio');
-    let label = document.createElement('label');
+    const radioInput = document.createElement('radio');
+    const label = document.createElement('label');
 
     setRadioAttributes(radioInput, label, name, option);
     parent.appendChild(radioInput);
+    parent.appendChild(label);
 };
 
 const setRadioFormElements = (fieldset, name, optionsAr) => {
     for (let i = 0; i < optionsAr.length; i++) {
-        let parentDiv = document.createElement('div');
+        const parentDiv = document.createElement('div');
         fieldset.appendChild(parentDiv);
         addFormRadioElements(parentDiv, name, optionsAr[i]);
     }

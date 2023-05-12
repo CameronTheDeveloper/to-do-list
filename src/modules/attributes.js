@@ -20,6 +20,17 @@ const setTextAreaAttributes = (item, id, cols, rows) => {
     item.setAttribute('cols', cols);
 };
 
+const setRadioAttributes = (element, label, name, value) => {
+    const id = value.toLowerCase().replace(/\s/g, '-');
+
+    element.setAttribute('type', 'radio');
+    element.setAttribute('id', id);
+    element.setAttribute('name', name);
+    element.setAttribute('value', value);
+    label.addAttribute('for', value);
+    label.innerHTML = value;
+};
+
 const setFormElementAttributes = (form, action, method) => {
     form.setAttribute('action', action);
     form.setAttribute('method', method);

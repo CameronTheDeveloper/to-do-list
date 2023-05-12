@@ -53,8 +53,10 @@ const setRadioFormElements = (name, optionsAr, legend) => {
 
 const addToDoPriorityForm = () => {
     const legend = document.createElement('legend');
-    //legend.innerHTML =
-    setRadioFormElements(legend);
+    const optionsAr = ['Low', 'Medium', 'High'];
+
+    legend.innerHTML = 'Priority: ';
+    setRadioFormElements('priority-input', optionsAr, legend);
 };
 
 const addFormLabelElement = (parent) => {
@@ -91,19 +93,17 @@ const addFolderChildElements = (parent, title, removeButton) => {
 };
 
 const addToDoForm = (parent) => {
-    //const priorityAr = ['Low', 'Medium', 'High'];
     const form = addFormToDOM(parent, 'todo-add-form');
     const titleLabel = addFormLabelElement(form);
     const title = addFormInputElement('input', form, 'title');
     const priorityLabel = addFormLabelElement(form);
-    addFormRadioElements();
-    //const priority = addFormRadioElements(priorityAr);
+    addToDoPriorityForm();
     const descLabel = addFormLabelElement(form);
     const description = addFormInputElement('textarea', form, 'description');
     const submitButton = addButton(form, 'submit', 'todo-submit-button', 'submit');
 
-    addToDoFormAttributes(form, title, priority, description);  //Possible remove priority
-    addToDoLabelAttributes(titleLabel, priorityLabel, descLabel);   //Priority label is legend
+    addToDoFormAttributes(form, title, description);
+    addToDoLabelAttributes(titleLabel, descLabel);
 
     registerToDoSubmitListener(form);
 };

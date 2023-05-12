@@ -753,14 +753,15 @@ const addSidebarFormAttributes = (form, input) => {
     setFormElementAttributes(form, '', 'post');
 };
 
-const addToDoFormAttributes = (form, title, desc) => {
+const addToDoFormAttributes = (form, title, priority, desc) => {
     setFormElementAttributes(form, '', 'post');
     setTextInputAttributes(title, 'text', 'title-input', '10');
     setTextAreaAttributes(desc, 'description-input', '26', '5');
 };
 
-const addToDoLabelAttributes = (title, desc) => {
+const addToDoLabelAttributes = (title, priority, desc) => {
     setLabelAttributes(title, 'for', 'title-input', 'Title: ');
+    setLabelAttributes(priority, 'for', 'priority-input', 'Priority:');
     setLabelAttributes(desc, 'for', 'description-input', 'Description');
 };
 
@@ -873,7 +874,7 @@ const addFormElement = (parent) => {
     return element;
 };
 
-const addFormInputElement = (type, parent, id) => {
+const addFormInputElement = (type, parent, id) => { //id is not used
     const input = document.createElement(type);
     parent.appendChild(input);
     return input;
@@ -916,12 +917,14 @@ const addToDoForm = (parent) => {
     const form = addFormToDOM(parent, 'todo-add-form');
     const titleLabel = addFormLabelElement(form);
     const title = addFormInputElement('input', form, 'title');
+    const priorityLabel = addFormLabelElement(form);
+    const priority = addFormInputElement('radio', form, 'priority');
     const descLabel = addFormLabelElement(form);
     const description = addFormInputElement('textarea', form, 'description');
 
     const submitButton = addButton(form, 'submit', 'todo-submit-button', 'submit');
-    (0,_attributes__WEBPACK_IMPORTED_MODULE_2__.addToDoFormAttributes)(form, title, description);
-    (0,_attributes__WEBPACK_IMPORTED_MODULE_2__.addToDoLabelAttributes)(titleLabel, descLabel);
+    (0,_attributes__WEBPACK_IMPORTED_MODULE_2__.addToDoFormAttributes)(form, title, priority, description);
+    (0,_attributes__WEBPACK_IMPORTED_MODULE_2__.addToDoLabelAttributes)(titleLabel, priority, descLabel);
 
     (0,_user_input__WEBPACK_IMPORTED_MODULE_0__.registerToDoSubmitListener)(form);
 };
@@ -1099,9 +1102,10 @@ __webpack_require__.r(__webpack_exports__);
 
 const toDoInputs = document.querySelector('#todo-inputs');
 
-function toDo(title, description) {
+function toDo(title, priority, description) {
     return {
         title: title,
+        priority: priority,
         description: description,
     };
 }
@@ -1115,8 +1119,9 @@ const addToDoButton = () => {
 
 const addToDo = () => {
     const title = (0,_user_input__WEBPACK_IMPORTED_MODULE_2__.getInput)('title-input');
+    const priority = (0,_user_input__WEBPACK_IMPORTED_MODULE_2__.getInput)('priority-input');
     const description = (0,_user_input__WEBPACK_IMPORTED_MODULE_2__.getInput)('description-input');
-    const toDoItem = toDo(title, description);
+    const toDoItem = toDo(title, priority, description);    //
     const folder = (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_3__.getActiveFolder)();
     (0,_page_layout__WEBPACK_IMPORTED_MODULE_1__.displayToDo)(toDoItem, folder);
 };
@@ -1147,8 +1152,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "setSidebarInput": () => (/* binding */ setSidebarInput)
 /* harmony export */ });
 /* harmony import */ var _page_layout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./page-layout */ "./src/modules/page-layout.js");
-/* harmony import */ var _to_do__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./to-do */ "./src/modules/to-do.js");
-/* harmony import */ var _to_do_folders__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./to-do-folders */ "./src/modules/to-do-folders.js");
+/* harmony import */ var _to_do_folders__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./to-do-folders */ "./src/modules/to-do-folders.js");
+/* harmony import */ var _to_do__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./to-do */ "./src/modules/to-do.js");
 
 
 
@@ -1162,7 +1167,7 @@ const getInput = (id) => {
 const setActiveFolderOnClick = (sidebarFolder, folder) => {
     const title = sidebarFolder.querySelector('.sidebar-folder-title');
     title.addEventListener('click', () => {
-        let activeFolder = (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_2__.setActiveFolder)(sidebarFolder, folder);
+        let activeFolder = (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_1__.setActiveFolder)(sidebarFolder, folder);
     });
 };
 
@@ -1193,7 +1198,7 @@ const getSidebarInput = () => {
 
 const manageSidebarInput = () => {
     const input = getSidebarInput();
-    const folder = (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_2__.addToDoFolder)(input);
+    const folder = (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_1__.addToDoFolder)(input);
 
     const sidebarFolder = setSidebarInput(input, folder);
 };
@@ -1250,7 +1255,7 @@ const registerAddToDoListener = (button) => {
 const registerToDoSubmitListener = (form) => {
     form.addEventListener('submit', (event) => {
         event.preventDefault();
-        (0,_to_do__WEBPACK_IMPORTED_MODULE_1__.addToDo)();
+        (0,_to_do__WEBPACK_IMPORTED_MODULE_2__.addToDo)();
         toggleAddToDoButtonDisplay();
         (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.toggleToDoFormVisible)();
         resetForm(form);

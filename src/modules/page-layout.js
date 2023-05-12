@@ -72,10 +72,10 @@ const addToDoForm = (parent) => {
     const priority = addFormInputElement('radio', form, 'priority');
     const descLabel = addFormLabelElement(form);
     const description = addFormInputElement('textarea', form, 'description');
-
     const submitButton = addButton(form, 'submit', 'todo-submit-button', 'submit');
+
     addToDoFormAttributes(form, title, priority, description);
-    addToDoLabelAttributes(titleLabel, priority, descLabel);
+    addToDoLabelAttributes(titleLabel, priorityLabel, descLabel);
 
     registerToDoSubmitListener(form);
 };

@@ -27,7 +27,7 @@ const setRadioAttributes = (element, label, name, value) => {
     element.setAttribute('id', id);
     element.setAttribute('name', name);
     element.setAttribute('value', value);
-    label.addAttribute('for', value);
+    label.setAttribute('for', value);
     label.innerHTML = value;
 };
 

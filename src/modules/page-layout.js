@@ -39,13 +39,23 @@ const addFormRadioElements = (parent, name, option) => {
 
     setRadioAttributes(radioInput, label, name, option);
     parent.appendChild(radioInput);
-
 };
 
-// const setRadioFormElements = () => {
+const setRadioFormElements = (name, optionsAr, legend) => {
+    const fieldset = document.createElement('fieldset');
+    fieldset.appendChild(legend);
+    for (i = 0; i <= optionsAr.length; i++) {
+        let parentDiv = document.createElement('div');
+        fieldset.appendChild(parentDiv);
+        addFormRadioElements(parentDiv, name, optionAr[i]);
+    }
+};
 
-//     //Return as fieldset or radio option parent div as parent
-// };
+const addToDoPriorityForm = () => {
+    const legend = document.createElement('legend');
+    //legend.innerHTML =
+    setRadioFormElements(legend);
+};
 
 const addFormLabelElement = (parent) => {
     const label = document.createElement('label');

@@ -131,10 +131,12 @@ const displayToDo = (toDoItem, folder) => {
     const toDoInputs = document.querySelector('#todo-inputs');
     const toDoParent = addAttributes('', 'class', 'todo', 'div');
     const titleDiv = addAttributes(toDoItem.title, 'class', 'title', 'div');
+    const priority = addAttributes(toDoItem.priority, 'class', 'priority', 'div');
     const descDiv = addAttributes(toDoItem.description, 'class', 'description', 'div');
 
     folder.insertBefore(toDoParent, toDoInputs);
     toDoParent.appendChild(titleDiv);
+    toDoParent.appendChild(priority);
     toDoParent.appendChild(descDiv);
 
     addClearEventListener(toDoParent);

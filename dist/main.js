@@ -988,10 +988,12 @@ const displayToDo = (toDoItem, folder) => {
     const toDoInputs = document.querySelector('#todo-inputs');
     const toDoParent = (0,_attributes__WEBPACK_IMPORTED_MODULE_2__.addAttributes)('', 'class', 'todo', 'div');
     const titleDiv = (0,_attributes__WEBPACK_IMPORTED_MODULE_2__.addAttributes)(toDoItem.title, 'class', 'title', 'div');
+    const priority = (0,_attributes__WEBPACK_IMPORTED_MODULE_2__.addAttributes)(toDoItem.priority, 'class', 'priority', 'div');
     const descDiv = (0,_attributes__WEBPACK_IMPORTED_MODULE_2__.addAttributes)(toDoItem.description, 'class', 'description', 'div');
 
     folder.insertBefore(toDoParent, toDoInputs);
     toDoParent.appendChild(titleDiv);
+    toDoParent.appendChild(priority);
     toDoParent.appendChild(descDiv);
 
     (0,_clear_mode__WEBPACK_IMPORTED_MODULE_1__.addClearEventListener)(toDoParent);
@@ -1205,15 +1207,15 @@ __webpack_require__.r(__webpack_exports__);
 const sidebarFolders = document.querySelector('#sidebar-folders');
 
 const getInput = (id) => {
-    debugger;
     return document.getElementById(id).value;
 };
 
 const getRadioInput = (name) => {
     const radios = document.getElementsByName(name);
+
     for (let i = 0; i < radios.length; i++) {
         if (radios[i].checked) {
-            console.log(radios[i]);
+            return radios[i].value;
         }
     }
 };

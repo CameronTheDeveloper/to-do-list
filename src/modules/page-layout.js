@@ -41,9 +41,7 @@ const addFormRadioElements = (parent, name, option) => {
     parent.appendChild(radioInput);
 };
 
-const setRadioFormElements = (name, optionsAr, legend) => {
-    const fieldset = document.createElement('fieldset');
-    fieldset.appendChild(legend);
+const setRadioFormElements = (fieldset, name, optionsAr) => {
     for (let i = 0; i < optionsAr.length; i++) {
         let parentDiv = document.createElement('div');
         fieldset.appendChild(parentDiv);
@@ -51,12 +49,19 @@ const setRadioFormElements = (name, optionsAr, legend) => {
     }
 };
 
-const addToDoPriorityForm = () => {
+const createFieldset = (legendText) => {
+    const fieldset = document.createElement('fieldset');
     const legend = document.createElement('legend');
-    const optionsAr = ['Low', 'Medium', 'High'];
 
-    legend.innerHTML = 'Priority: ';
-    setRadioFormElements('priority-input', optionsAr, legend);
+    fieldset.appendChild(legend);
+    legend.innerHTML = legendText;
+    return fieldset;
+};
+
+const addToDoPriorityForm = () => {
+    const optionsAr = ['Low', 'Medium', 'High'];
+    const fieldset = createFieldset('Priority: ');
+    setRadioFormElements(fieldset, 'priority-input', optionsAr);
 };
 
 const addFormLabelElement = (parent) => {

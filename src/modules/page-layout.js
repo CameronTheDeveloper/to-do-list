@@ -25,7 +25,7 @@ const addFormElement = (parent) => {
     return element;
 };
 
-const addFormInputElement = (type, parent, id) => {
+const addFormInputElement = (type, parent, id) => { //id is not used
     const input = document.createElement(type);
     parent.appendChild(input);
     return input;
@@ -68,12 +68,14 @@ const addToDoForm = (parent) => {
     const form = addFormToDOM(parent, 'todo-add-form');
     const titleLabel = addFormLabelElement(form);
     const title = addFormInputElement('input', form, 'title');
+    const priorityLabel = addFormLabelElement(form);
+    const priority = addFormInputElement('radio', form, 'priority');
     const descLabel = addFormLabelElement(form);
     const description = addFormInputElement('textarea', form, 'description');
 
     const submitButton = addButton(form, 'submit', 'todo-submit-button', 'submit');
-    addToDoFormAttributes(form, title, description);
-    addToDoLabelAttributes(titleLabel, descLabel);
+    addToDoFormAttributes(form, title, priority, description);
+    addToDoLabelAttributes(titleLabel, priority, descLabel);
 
     registerToDoSubmitListener(form);
 };

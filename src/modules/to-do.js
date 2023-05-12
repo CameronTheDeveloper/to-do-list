@@ -26,9 +26,9 @@ const addToDoButton = () => {
 
 const addToDo = () => {
     const title = getInput('title-input');
-    const description = getInput('description-input');
     const priority = getInput('priority-input');
-    const toDoItem = toDo(title, priority, description);
+    const description = getInput('description-input');
+    const toDoItem = toDo(title, priority, description);    //
     const folder = getActiveFolder();
     displayToDo(toDoItem, folder);
 };

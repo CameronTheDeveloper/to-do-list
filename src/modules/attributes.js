@@ -30,13 +30,13 @@ const addSidebarFormAttributes = (form, input) => {
     setFormElementAttributes(form, '', 'post');
 };
 
-const addToDoFormAttributes = (form, title, desc) => {
+const addToDoFormAttributes = (form, title, priority, desc) => {
     setFormElementAttributes(form, '', 'post');
     setTextInputAttributes(title, 'text', 'title-input', '10');
     setTextAreaAttributes(desc, 'description-input', '26', '5');
 };
 
-const addToDoLabelAttributes = (title, desc) => {
+const addToDoLabelAttributes = (title, priority, desc) => {
     setLabelAttributes(title, 'for', 'title-input', 'Title: ');
     setLabelAttributes(desc, 'for', 'description-input', 'Description');
 };

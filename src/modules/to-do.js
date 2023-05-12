@@ -4,7 +4,11 @@ import {
     addToDoForm,
     displayToDo
 } from './page-layout';
-import { registerAddToDoListener, getInput } from './user-input';
+import {
+    registerAddToDoListener,
+    getInput,
+    getRadioInput
+} from './user-input';
 import { getActiveFolder } from './to-do-folders';
 
 const toDoInputs = document.querySelector('#todo-inputs');
@@ -26,9 +30,9 @@ const addToDoButton = () => {
 
 const addToDo = () => {
     const title = getInput('title-input');
-    const priority = getInput('priority-input');
+    const priority = getRadioInput('priority-input');
     const description = getInput('description-input');
-    const toDoItem = toDo(title, priority, description);    //
+    const toDoItem = toDo(title, priority, description);
     const folder = getActiveFolder();
     displayToDo(toDoItem, folder);
 };

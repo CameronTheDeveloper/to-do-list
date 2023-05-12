@@ -13,7 +13,17 @@ import { addToDo } from "./to-do";
 const sidebarFolders = document.querySelector('#sidebar-folders');
 
 const getInput = (id) => {
+    debugger;
     return document.getElementById(id).value;
+};
+
+const getRadioInput = (name) => {
+    const radios = document.getElementsByName(name);
+    for (let i = 0; i < radios.length; i++) {
+        if (radios[i].checked) {
+            console.log(radios[i]);
+        }
+    }
 };
 
 const setActiveFolderOnClick = (sidebarFolder, folder) => {
@@ -119,5 +129,6 @@ export {
     registerAddToDoListener,
     registerToDoSubmitListener,
     setSidebarInput,
-    getInput
+    getInput,
+    getRadioInput
 };

@@ -1162,9 +1162,9 @@ const addToDoButton = () => {
 
 const addToDo = () => {
     const title = (0,_user_input__WEBPACK_IMPORTED_MODULE_2__.getInput)('title-input');
-    const priority = (0,_user_input__WEBPACK_IMPORTED_MODULE_2__.getInput)('priority-input');
+    const priority = (0,_user_input__WEBPACK_IMPORTED_MODULE_2__.getRadioInput)('priority-input');
     const description = (0,_user_input__WEBPACK_IMPORTED_MODULE_2__.getInput)('description-input');
-    const toDoItem = toDo(title, priority, description);    //
+    const toDoItem = toDo(title, priority, description);
     const folder = (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_3__.getActiveFolder)();
     (0,_page_layout__WEBPACK_IMPORTED_MODULE_1__.displayToDo)(toDoItem, folder);
 };
@@ -1189,6 +1189,7 @@ const initToDo = () => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "getInput": () => (/* binding */ getInput),
+/* harmony export */   "getRadioInput": () => (/* binding */ getRadioInput),
 /* harmony export */   "registerAddToDoListener": () => (/* binding */ registerAddToDoListener),
 /* harmony export */   "registerSidebarSubmitListener": () => (/* binding */ registerSidebarSubmitListener),
 /* harmony export */   "registerToDoSubmitListener": () => (/* binding */ registerToDoSubmitListener),
@@ -1204,7 +1205,17 @@ __webpack_require__.r(__webpack_exports__);
 const sidebarFolders = document.querySelector('#sidebar-folders');
 
 const getInput = (id) => {
+    debugger;
     return document.getElementById(id).value;
+};
+
+const getRadioInput = (name) => {
+    const radios = document.getElementsByName(name);
+    for (let i = 0; i < radios.length; i++) {
+        if (radios[i].checked) {
+            console.log(radios[i]);
+        }
+    }
 };
 
 const setActiveFolderOnClick = (sidebarFolder, folder) => {

@@ -65,4 +65,5 @@ export {
     addToDoFormAttributes,
     addAttributes,
     addToDoLabelAttributes,
+    setRadioAttributes
 };

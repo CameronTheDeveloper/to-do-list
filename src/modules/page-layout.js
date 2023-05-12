@@ -9,7 +9,9 @@ import {
     addSidebarFormAttributes,
     addToDoFormAttributes,
     addAttributes,
-    addToDoLabelAttributes
+    addToDoLabelAttributes,
+    setRadioAttributes
+
 } from "./attributes";
 
 const addContent = (parent, text, className, elementType) => {
@@ -29,6 +31,16 @@ const addFormInputElement = (type, parent, id) => { //id is not used
     const input = document.createElement(type);
     parent.appendChild(input);
     return input;
+};
+
+const addFormRadioInputs = (parent, optionsAr, name) => {
+    for (let i = 0; i < optionsAr.length; i++) {
+        let radioInput = document.createElement('radio');
+        let label = document.createElement('label');
+
+        setRadioAttributes(radioInput, label, name, optionsAr[i]);
+        parent.appendChild(radioInput);
+    }
 };
 
 const addFormLabelElement = (parent) => {
@@ -65,11 +77,12 @@ const addFolderChildElements = (parent, title, removeButton) => {
 };
 
 const addToDoForm = (parent) => {
+    const priorityAr = ['Low', 'Medium', 'High'];
     const form = addFormToDOM(parent, 'todo-add-form');
     const titleLabel = addFormLabelElement(form);
     const title = addFormInputElement('input', form, 'title');
     const priorityLabel = addFormLabelElement(form);
-    const priority = addFormInputElement('radio', form, 'priority');
+    //const priority = addFormRadioElements(priorityAr);
     const descLabel = addFormLabelElement(form);
     const description = addFormInputElement('textarea', form, 'description');
     const submitButton = addButton(form, 'submit', 'todo-submit-button', 'submit');

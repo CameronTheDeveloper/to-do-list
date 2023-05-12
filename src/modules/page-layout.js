@@ -33,15 +33,16 @@ const addFormInputElement = (type, parent, id) => { //id is not used
     return input;
 };
 
-const addFormRadioInput = (parent, name, option) => {
+const addFormRadioElements = (parent, name, option) => {
     let radioInput = document.createElement('radio');
     let label = document.createElement('label');
 
     setRadioAttributes(radioInput, label, name, option);
     parent.appendChild(radioInput);
+
 };
 
-// const addRadioElements = () => {
+// const setRadioFormElements = () => {
 
 //     //Return as fieldset or radio option parent div as parent
 // };
@@ -85,7 +86,7 @@ const addToDoForm = (parent) => {
     const titleLabel = addFormLabelElement(form);
     const title = addFormInputElement('input', form, 'title');
     const priorityLabel = addFormLabelElement(form);
-    addFormRadioInputs();
+    addFormRadioElements();
     //const priority = addFormRadioElements(priorityAr);
     const descLabel = addFormLabelElement(form);
     const description = addFormInputElement('textarea', form, 'description');

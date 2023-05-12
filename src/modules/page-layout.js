@@ -33,15 +33,18 @@ const addFormInputElement = (type, parent, id) => { //id is not used
     return input;
 };
 
-const addFormRadioInputs = (parent, optionsAr, name) => {
-    for (let i = 0; i < optionsAr.length; i++) {
-        let radioInput = document.createElement('radio');
-        let label = document.createElement('label');
+const addFormRadioInput = (parent, name, option) => {
+    let radioInput = document.createElement('radio');
+    let label = document.createElement('label');
 
-        setRadioAttributes(radioInput, label, name, optionsAr[i]);
-        parent.appendChild(radioInput);
-    }
+    setRadioAttributes(radioInput, label, name, option);
+    parent.appendChild(radioInput);
 };
+
+// const addRadioElements = () => {
+
+//     //Return as fieldset or radio option parent div as parent
+// };
 
 const addFormLabelElement = (parent) => {
     const label = document.createElement('label');
@@ -77,18 +80,19 @@ const addFolderChildElements = (parent, title, removeButton) => {
 };
 
 const addToDoForm = (parent) => {
-    const priorityAr = ['Low', 'Medium', 'High'];
+    //const priorityAr = ['Low', 'Medium', 'High'];
     const form = addFormToDOM(parent, 'todo-add-form');
     const titleLabel = addFormLabelElement(form);
     const title = addFormInputElement('input', form, 'title');
     const priorityLabel = addFormLabelElement(form);
+    addFormRadioInputs();
     //const priority = addFormRadioElements(priorityAr);
     const descLabel = addFormLabelElement(form);
     const description = addFormInputElement('textarea', form, 'description');
     const submitButton = addButton(form, 'submit', 'todo-submit-button', 'submit');
 
-    addToDoFormAttributes(form, title, priority, description);
-    addToDoLabelAttributes(titleLabel, priorityLabel, descLabel);
+    addToDoFormAttributes(form, title, priority, description);  //Possible remove priority
+    addToDoLabelAttributes(titleLabel, priorityLabel, descLabel);   //Priority label is legend
 
     registerToDoSubmitListener(form);
 };

@@ -746,12 +746,11 @@ const setTextAreaAttributes = (item, id, cols, rows) => {
 
 const setRadioAttributes = (element, label, name, value) => {
     const id = value.toLowerCase().replace(/\s/g, '-');
-
     element.setAttribute('type', 'radio');
     element.setAttribute('id', id);
     element.setAttribute('name', name);
-    element.setAttribute('value', value);
-    label.setAttribute('for', value);
+    element.setAttribute('value', id);
+    label.setAttribute('for', id);
     label.innerHTML = value;
 };
 
@@ -892,29 +891,36 @@ const addFormInputElement = (type, parent, id) => { //id is not used
 };
 
 const addFormRadioElements = (parent, name, option) => {
-    let radioInput = document.createElement('radio');
-    let label = document.createElement('label');
+    const radioInput = document.createElement('radio');
+    const label = document.createElement('label');
 
     (0,_attributes__WEBPACK_IMPORTED_MODULE_2__.setRadioAttributes)(radioInput, label, name, option);
     parent.appendChild(radioInput);
+    parent.appendChild(label);
 };
 
-const setRadioFormElements = (name, optionsAr, legend) => {
-    const fieldset = document.createElement('fieldset');
-    fieldset.appendChild(legend);
+const setRadioFormElements = (fieldset, name, optionsAr) => {
     for (let i = 0; i < optionsAr.length; i++) {
-        let parentDiv = document.createElement('div');
+        const parentDiv = document.createElement('div');
         fieldset.appendChild(parentDiv);
         addFormRadioElements(parentDiv, name, optionsAr[i]);
     }
 };
 
-const addToDoPriorityForm = () => {
+const createFieldset = (legendText) => {
+    const fieldset = document.createElement('fieldset');
     const legend = document.createElement('legend');
-    const optionsAr = ['Low', 'Medium', 'High'];
 
-    legend.innerHTML = 'Priority: ';
-    setRadioFormElements('priority-input', optionsAr, legend);
+    fieldset.appendChild(legend);
+    legend.innerHTML = legendText;
+    return fieldset;
+};
+
+const addToDoPriorityForm = (form) => {
+    const optionsAr = ['Low', 'Medium', 'High'];
+    const fieldset = createFieldset('Priority: ');
+    setRadioFormElements(fieldset, 'priority-input', optionsAr);
+    form.appendChild(fieldset);
 };
 
 const addFormLabelElement = (parent) => {
@@ -955,7 +961,7 @@ const addToDoForm = (parent) => {
     const titleLabel = addFormLabelElement(form);
     const title = addFormInputElement('input', form, 'title');
     const priorityLabel = addFormLabelElement(form);
-    addToDoPriorityForm();
+    addToDoPriorityForm(form);
     const descLabel = addFormLabelElement(form);
     const description = addFormInputElement('textarea', form, 'description');
     const submitButton = addButton(form, 'submit', 'todo-submit-button', 'submit');

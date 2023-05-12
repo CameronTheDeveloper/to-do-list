@@ -9,9 +9,10 @@ import { getActiveFolder } from './to-do-folders';
 
 const toDoInputs = document.querySelector('#todo-inputs');
 
-function toDo(title, description) {
+function toDo(title, priority, description) {
     return {
         title: title,
+        priority: priority,
         description: description,
     };
 }
@@ -26,7 +27,8 @@ const addToDoButton = () => {
 const addToDo = () => {
     const title = getInput('title-input');
     const description = getInput('description-input');
-    const toDoItem = toDo(title, description);
+    const priority = getInput('priority-input');
+    const toDoItem = toDo(title, priority, description);
     const folder = getActiveFolder();
     displayToDo(toDoItem, folder);
 };

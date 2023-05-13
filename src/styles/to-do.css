@@ -56,11 +56,23 @@
 }
 
 #todo-add-form input,
-#todo-add-form textarea {
+#todo-add-form textarea,
+#todo-add-form fieldset {
     width: 250px;
     font-size: 1rem;
     border: 1px solid green;
     padding: 4px;
+}
+
+#todo-add-form fieldset {
+    border: 0;
+    display: grid;
+    grid-template: 1fr / repeat(3, 1fr);
+}
+
+#todo-add-form fieldset div {
+    display: grid;
+    grid-template: 1fr / repeat(2, 1fr);
 }
 
 #todo-add-form button {

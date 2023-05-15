@@ -30,6 +30,10 @@ const setRadioAttributes = (element, label, name, value) => {
     label.innerHTML = value;
 };
 
+const setDateInputAttributes = (element) => {
+    element.setAttribute('type', 'date');
+};
+
 const setFormElementAttributes = (form, action, method) => {
     form.setAttribute('action', action);
     form.setAttribute('method', method);
@@ -63,5 +67,6 @@ export {
     addToDoFormAttributes,
     addAttributes,
     addToDoLabelAttributes,
-    setRadioAttributes
+    setRadioAttributes,
+    setDateInputAttributes
 };

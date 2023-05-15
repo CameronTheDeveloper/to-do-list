@@ -10,7 +10,8 @@ import {
     addToDoFormAttributes,
     addAttributes,
     addToDoLabelAttributes,
-    setRadioAttributes
+    setRadioAttributes,
+    setDateInputAttributes
 
 } from "./attributes";
 
@@ -27,7 +28,7 @@ const addFormElement = (parent) => {
     return element;
 };
 
-const addFormInputElement = (type, parent, id) => { //id is not used
+const addFormInputElement = (type, parent) => {
     const input = document.createElement(type);
     parent.appendChild(input);
     return input;
@@ -40,6 +41,11 @@ const addFormRadioElements = (parent, name, option) => {
     setRadioAttributes(radioInput, label, name, option);
     parent.appendChild(radioInput);
     parent.appendChild(label);
+};
+
+const addFormDateElements = (parent) => {
+    const dateInput = addFormInputElement(parent, 'input');
+    setDateInputAttributes(dateInput);
 };
 
 const setRadioFormElements = (fieldset, name, optionsAr) => {

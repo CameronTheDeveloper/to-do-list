@@ -900,7 +900,14 @@ const addFormDateElements = (parent) => {
     (0,_attributes__WEBPACK_IMPORTED_MODULE_2__.setDateInputAttributes)(dateInput);
 };
 
-const addToDoDueDateInput = (form) => {
+const setToDoDueDateInput = (form) => {
+    const today = new Date();
+    const minDate = today.format('yyyy-MM-dd');
+    console.log(minDate);
+    const id = 'duedate-input';
+    const name = 'todo-duedate';
+    const value = 'todo-duedate';//today
+    //const max = ;
     addFormDateElements(form);
 };
 
@@ -937,8 +944,6 @@ const addToDoPriorityInput = (form) => {
     setRadioFormElements(fieldset, 'priority-input', optionsAr);
     form.appendChild(fieldset);
 };
-
-
 
 const addFormLabelElement = (parent) => {
     const label = document.createElement('label');
@@ -977,7 +982,7 @@ const addToDoForm = (parent) => {
     const form = addFormToDOM(parent, 'todo-add-form');
     const titleLabel = addFormLabelElement(form);
     const title = addFormInputElement('input', form);
-    addToDoDueDateInput(form);
+    setToDoDueDateInput(form);
     addToDoPriorityInput(form);
     const descLabel = addFormLabelElement(form);
     const description = addFormInputElement('textarea', form);

@@ -11,7 +11,7 @@ import {
 } from "./attributes";
 import {
     setToDoDueDateInput,
-    addToDoPriorityInput,
+    setToDoPriorityInput,
     addButton
 } from "./page-layout";
 
@@ -48,7 +48,7 @@ const addToDoForm = (parent) => {
     const titleLabel = addFormLabelElement(form);
     const title = addFormInputElement('input', form);
     setToDoDueDateInput(form);
-    addToDoPriorityInput(form);
+    setToDoPriorityInput(form);
     const descLabel = addFormLabelElement(form);
     const description = addFormInputElement('textarea', form);
     const submitButton = addButton(form, 'submit', 'todo-submit-button', 'submit');

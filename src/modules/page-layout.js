@@ -46,8 +46,8 @@ const createFieldset = (legendText) => {
     return fieldset;
 };
 
-//Retitle
-const addToDoPriorityInput = (form) => {
+
+const setToDoPriorityInput = (form) => {
     const optionsAr = ['Low', 'Medium', 'High'];
     const fieldset = createFieldset('Priority: ');
     setRadioFormElements(fieldset, 'priority-input', optionsAr);
@@ -115,5 +115,5 @@ export {
     hideElements,
     addFolderChildElements,
     setToDoDueDateInput,
-    addToDoPriorityInput
+    setToDoPriorityInput
 };

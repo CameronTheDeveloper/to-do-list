@@ -34,6 +34,15 @@ const addFormInputElement = (type, parent) => {
     return input;
 };
 
+const addFormDateElements = (parent) => {
+    const dateInput = addFormInputElement(parent, 'input');
+    setDateInputAttributes(dateInput);
+};
+
+const addToDoDueDateInput = (form) => {
+    addFormDateElements(form);
+};
+
 const addFormRadioElements = (parent, name, option) => {
     const radioInput = document.createElement('input');
     const label = document.createElement('label');
@@ -41,11 +50,6 @@ const addFormRadioElements = (parent, name, option) => {
     setRadioAttributes(radioInput, label, name, option);
     parent.appendChild(radioInput);
     parent.appendChild(label);
-};
-
-const addFormDateElements = (parent) => {
-    const dateInput = addFormInputElement(parent, 'input');
-    setDateInputAttributes(dateInput);
 };
 
 const setRadioFormElements = (fieldset, name, optionsAr) => {
@@ -65,12 +69,15 @@ const createFieldset = (legendText) => {
     return fieldset;
 };
 
+//Retitle
 const addToDoPriorityForm = (form) => {
     const optionsAr = ['Low', 'Medium', 'High'];
     const fieldset = createFieldset('Priority: ');
     setRadioFormElements(fieldset, 'priority-input', optionsAr);
     form.appendChild(fieldset);
 };
+
+
 
 const addFormLabelElement = (parent) => {
     const label = document.createElement('label');
@@ -109,6 +116,7 @@ const addToDoForm = (parent) => {
     const form = addFormToDOM(parent, 'todo-add-form');
     const titleLabel = addFormLabelElement(form);
     const title = addFormInputElement('input', form);
+    addToDoDueDateInput(form);
     addToDoPriorityForm(form);
     const descLabel = addFormLabelElement(form);
     const description = addFormInputElement('textarea', form);

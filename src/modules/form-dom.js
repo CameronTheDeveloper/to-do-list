@@ -84,4 +84,5 @@ const addFormLabelElement = (parent) => {
 export {
     addSidebarForm,
     addToDoForm,
+    addFormDateElements
 };

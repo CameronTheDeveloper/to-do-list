@@ -1,6 +1,7 @@
 import { addClearEventListener } from "./clear-mode";
-
 import { addAttributes } from "./attributes";
+import { addFormDateElements } from "./form-dom.js";
+import { format } from "date-fns";
 
 const addContent = (parent, text, className, elementType) => {
     const element = document.createElement(elementType);
@@ -15,8 +16,8 @@ const addFolderChildElements = (parent, title, removeButton) => {
 };
 
 const setToDoDueDateInput = (form) => {
-    const today = new Date();
-    const minDate = today.format('yyyy-MM-dd');
+    const today = format(new Date(), 'yyyy-MM-dd');
+    const minDate = today;
     console.log(minDate);
     const id = 'duedate-input';
     const name = 'todo-duedate';

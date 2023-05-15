@@ -1,3 +1,15 @@
+import {
+    registerSidebarSubmitListener,
+    registerToDoSubmitListener
+} from "./user-input";
+import {
+    addSidebarFormAttributes,
+    addToDoFormAttributes,
+    addToDoLabelAttributes,
+    setRadioAttributes,
+    setDateInputAttributes
+} from "./attributes";
+
 const addFormParent = (parent, id) => {
     const element = document.createElement('div');
     element.setAttribute('id', id);
@@ -24,11 +36,6 @@ const addSidebarForm = (parent) => {
     addSidebarFormAttributes(form, input);
     registerSidebarSubmitListener(form, input);
     return form;
-};
-
-const addFolderChildElements = (parent, title, removeButton) => {
-    parent.appendChild(title);
-    parent.appendChild(removeButton);
 };
 
 const addToDoForm = (parent) => {
@@ -71,4 +78,9 @@ const addFormLabelElement = (parent) => {
     const label = document.createElement('label');
     parent.appendChild(label);
     return label;
+};
+
+export {
+    addSidebarForm,
+    addToDoForm,
 };

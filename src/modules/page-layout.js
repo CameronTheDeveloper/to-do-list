@@ -1,18 +1,7 @@
-import {
-    registerSidebarSubmitListener,
-    registerToDoSubmitListener
-} from "./user-input";
-
 import { addClearEventListener } from "./clear-mode";
 
 import {
-    addSidebarFormAttributes,
-    addToDoFormAttributes,
     addAttributes,
-    addToDoLabelAttributes,
-    setRadioAttributes,
-    setDateInputAttributes
-
 } from "./attributes";
 
 const addContent = (parent, text, className, elementType) => {
@@ -20,6 +9,11 @@ const addContent = (parent, text, className, elementType) => {
     element.textContent = text;
     element.classList.add(className);
     parent.appendChild(element);
+};
+
+const addFolderChildElements = (parent, title, removeButton) => {
+    parent.appendChild(title);
+    parent.appendChild(removeButton);
 };
 
 const setToDoDueDateInput = (form) => {
@@ -32,8 +26,6 @@ const setToDoDueDateInput = (form) => {
     //const max = ;
     addFormDateElements(form);
 };
-
-
 
 const setRadioFormElements = (fieldset, name, optionsAr) => {
     for (let i = 0; i < optionsAr.length; i++) {
@@ -116,8 +108,8 @@ export {
     addContent,
     addButton,
     addAbove,
-    addSidebarForm,
-    addToDoForm,
+
+
     toggleToDoFormVisible,
     displayToDo,
     hideElements,

@@ -70,7 +70,7 @@ const createFieldset = (legendText) => {
 };
 
 //Retitle
-const addToDoPriorityForm = (form) => {
+const addToDoPriorityInput = (form) => {
     const optionsAr = ['Low', 'Medium', 'High'];
     const fieldset = createFieldset('Priority: ');
     setRadioFormElements(fieldset, 'priority-input', optionsAr);
@@ -117,7 +117,7 @@ const addToDoForm = (parent) => {
     const titleLabel = addFormLabelElement(form);
     const title = addFormInputElement('input', form);
     addToDoDueDateInput(form);
-    addToDoPriorityForm(form);
+    addToDoPriorityInput(form);
     const descLabel = addFormLabelElement(form);
     const description = addFormInputElement('textarea', form);
     const submitButton = addButton(form, 'submit', 'todo-submit-button', 'submit');

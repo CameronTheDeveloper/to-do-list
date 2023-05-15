@@ -3620,6 +3620,7 @@ clearButton.addEventListener('click', () => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "addFormDateElements": () => (/* binding */ addFormDateElements),
+/* harmony export */   "addFormRadioElements": () => (/* binding */ addFormRadioElements),
 /* harmony export */   "addSidebarForm": () => (/* binding */ addSidebarForm),
 /* harmony export */   "addToDoForm": () => (/* binding */ addToDoForm)
 /* harmony export */ });
@@ -3663,10 +3664,10 @@ const addToDoForm = (parent) => {
     const titleLabel = addFormLabelElement(form);
     const title = addFormInputElement('input', form);
     (0,_page_layout__WEBPACK_IMPORTED_MODULE_2__.setToDoDueDateInput)(form);
-    addToDoPriorityInput(form);
+    (0,_page_layout__WEBPACK_IMPORTED_MODULE_2__.addToDoPriorityInput)(form);
     const descLabel = addFormLabelElement(form);
     const description = addFormInputElement('textarea', form);
-    const submitButton = addButton(form, 'submit', 'todo-submit-button', 'submit');
+    const submitButton = (0,_page_layout__WEBPACK_IMPORTED_MODULE_2__.addButton)(form, 'submit', 'todo-submit-button', 'submit');
 
     (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addToDoFormAttributes)(form, title, description);
     (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addToDoLabelAttributes)(titleLabel, descLabel);
@@ -3716,6 +3717,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "addButton": () => (/* binding */ addButton),
 /* harmony export */   "addContent": () => (/* binding */ addContent),
 /* harmony export */   "addFolderChildElements": () => (/* binding */ addFolderChildElements),
+/* harmony export */   "addToDoPriorityInput": () => (/* binding */ addToDoPriorityInput),
 /* harmony export */   "displayToDo": () => (/* binding */ displayToDo),
 /* harmony export */   "hideElements": () => (/* binding */ hideElements),
 /* harmony export */   "setToDoDueDateInput": () => (/* binding */ setToDoDueDateInput),
@@ -3757,7 +3759,7 @@ const setRadioFormElements = (fieldset, name, optionsAr) => {
     for (let i = 0; i < optionsAr.length; i++) {
         const parentDiv = document.createElement('div');
         fieldset.appendChild(parentDiv);
-        addFormRadioElements(parentDiv, name, optionsAr[i]);
+        (0,_form_dom_js__WEBPACK_IMPORTED_MODULE_2__.addFormRadioElements)(parentDiv, name, optionsAr[i]);
     }
 };
 

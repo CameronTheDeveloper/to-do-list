@@ -1,6 +1,9 @@
 import { addClearEventListener } from "./clear-mode";
 import { addAttributes } from "./attributes";
-import { addFormDateElements } from "./form-dom.js";
+import {
+    addFormDateElements,
+    addFormRadioElements
+} from "./form-dom.js";
 import { format } from "date-fns";
 
 const addContent = (parent, text, className, elementType) => {
@@ -111,5 +114,6 @@ export {
     displayToDo,
     hideElements,
     addFolderChildElements,
-    setToDoDueDateInput
+    setToDoDueDateInput,
+    addToDoPriorityInput
 };

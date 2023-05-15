@@ -9,7 +9,11 @@ import {
     setRadioAttributes,
     setDateInputAttributes,
 } from "./attributes";
-import { setToDoDueDateInput } from "./page-layout";
+import {
+    setToDoDueDateInput,
+    addToDoPriorityInput,
+    addButton
+} from "./page-layout";
 
 const addFormParent = (parent, id) => {
     const element = document.createElement('div');
@@ -84,5 +88,6 @@ const addFormLabelElement = (parent) => {
 export {
     addSidebarForm,
     addToDoForm,
-    addFormDateElements
+    addFormDateElements,
+    addFormRadioElements
 };

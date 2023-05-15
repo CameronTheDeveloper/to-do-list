@@ -35,7 +35,7 @@ const addFormInputElement = (type, parent) => {
 };
 
 const addFormDateElements = (parent) => {
-    const dateInput = addFormInputElement(parent, 'input');
+    const dateInput = addFormInputElement('input', parent);
     setDateInputAttributes(dateInput);
 };
 

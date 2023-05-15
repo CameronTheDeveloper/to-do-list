@@ -1,8 +1,6 @@
 import { addClearEventListener } from "./clear-mode";
 
-import {
-    addAttributes,
-} from "./attributes";
+import { addAttributes } from "./attributes";
 
 const addContent = (parent, text, className, elementType) => {
     const element = document.createElement(elementType);
@@ -108,10 +106,9 @@ export {
     addContent,
     addButton,
     addAbove,
-
-
     toggleToDoFormVisible,
     displayToDo,
     hideElements,
-    addFolderChildElements
+    addFolderChildElements,
+    setToDoDueDateInput
 };

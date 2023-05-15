@@ -7,8 +7,9 @@ import {
     addToDoFormAttributes,
     addToDoLabelAttributes,
     setRadioAttributes,
-    setDateInputAttributes
+    setDateInputAttributes,
 } from "./attributes";
+import { setToDoDueDateInput } from "./page-layout";
 
 const addFormParent = (parent, id) => {
     const element = document.createElement('div');

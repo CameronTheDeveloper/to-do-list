@@ -1,7 +1,6 @@
 import '../styles/to-do.css';
 import {
     addButton,
-    addToDoForm,
     displayToDo
 } from './page-layout';
 import {
@@ -10,6 +9,7 @@ import {
     getRadioInput
 } from './user-input';
 import { getActiveFolder } from './to-do-folders';
+import { addToDoForm } from './form-dom';
 
 const toDoInputs = document.querySelector('#todo-inputs');
 

@@ -1,5 +1,6 @@
 import '../styles/sidebar.css';
-import { addButton, addSidebarForm } from './page-layout';
+import { addButton } from './page-layout';
+import { addSidebarForm } from './form-dom';
 
 const sidebarFolders = document.querySelector('#sidebar-folders');
 

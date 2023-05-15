@@ -93,7 +93,7 @@ const addFormToDOM = (parent, id) => {
 
 const addSidebarForm = (parent) => {
     const form = addFormToDOM(parent, 'sidebar-add-form');
-    const input = addFormInputElement('input', form, 'folder-title');
+    const input = addFormInputElement('input', form);
 
     addSidebarFormAttributes(form, input);
     registerSidebarSubmitListener(form, input);
@@ -108,10 +108,10 @@ const addFolderChildElements = (parent, title, removeButton) => {
 const addToDoForm = (parent) => {
     const form = addFormToDOM(parent, 'todo-add-form');
     const titleLabel = addFormLabelElement(form);
-    const title = addFormInputElement('input', form, 'title');
+    const title = addFormInputElement('input', form);
     addToDoPriorityForm(form);
     const descLabel = addFormLabelElement(form);
-    const description = addFormInputElement('textarea', form, 'description');
+    const description = addFormInputElement('textarea', form);
     const submitButton = addButton(form, 'submit', 'todo-submit-button', 'submit');
 
     addToDoFormAttributes(form, title, description);

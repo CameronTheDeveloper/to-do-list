@@ -13,9 +13,10 @@ import { getActiveFolder } from './to-do-folders';
 
 const toDoInputs = document.querySelector('#todo-inputs');
 
-function toDo(title, priority, description) {
+function toDo(title, dueDate, priority, description) {
     return {
         title: title,
+        dueDate: dueDate,
         priority: priority,
         description: description,
     };
@@ -30,10 +31,14 @@ const addToDoButton = () => {
 
 const addToDo = () => {
     const title = getInput('title-input');
+    const dueDate = new Date();             //
+    const year = dueDate.getFullYear();     //
     const priority = getRadioInput('priority-input');
     const description = getInput('description-input');
-    const toDoItem = toDo(title, priority, description);
+    const toDoItem = toDo(title, year, priority, description);
     const folder = getActiveFolder();
+
+
     displayToDo(toDoItem, folder);
 };
 

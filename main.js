@@ -987,12 +987,14 @@ const displayToDo = (toDoItem, folder) => {
     const toDoInputs = document.querySelector('#todo-inputs');
     const toDoParent = (0,_attributes__WEBPACK_IMPORTED_MODULE_2__.addAttributes)('', 'class', 'todo', 'div');
     const titleDiv = (0,_attributes__WEBPACK_IMPORTED_MODULE_2__.addAttributes)(toDoItem.title, 'class', 'title', 'div');
-    const priority = (0,_attributes__WEBPACK_IMPORTED_MODULE_2__.addAttributes)(toDoItem.priority, 'class', 'priority', 'div');
+    const dueDateDiv = (0,_attributes__WEBPACK_IMPORTED_MODULE_2__.addAttributes)(toDoItem.dueDate, 'class', 'due-date', 'div');
+    const priorityDiv = (0,_attributes__WEBPACK_IMPORTED_MODULE_2__.addAttributes)(toDoItem.priority, 'class', 'priority', 'div');
     const descDiv = (0,_attributes__WEBPACK_IMPORTED_MODULE_2__.addAttributes)(toDoItem.description, 'class', 'description', 'div');
 
     folder.insertBefore(toDoParent, toDoInputs);
     toDoParent.appendChild(titleDiv);
-    toDoParent.appendChild(priority);
+    toDoParent.appendChild(dueDateDiv);
+    toDoParent.appendChild(priorityDiv);
     toDoParent.appendChild(descDiv);
 
     (0,_clear_mode__WEBPACK_IMPORTED_MODULE_1__.addClearEventListener)(toDoParent);
@@ -1146,9 +1148,10 @@ __webpack_require__.r(__webpack_exports__);
 
 const toDoInputs = document.querySelector('#todo-inputs');
 
-function toDo(title, priority, description) {
+function toDo(title, dueDate, priority, description) {
     return {
         title: title,
+        dueDate: dueDate,
         priority: priority,
         description: description,
     };
@@ -1163,10 +1166,14 @@ const addToDoButton = () => {
 
 const addToDo = () => {
     const title = (0,_user_input__WEBPACK_IMPORTED_MODULE_2__.getInput)('title-input');
+    const dueDate = new Date();             //
+    const year = dueDate.getFullYear();     //
     const priority = (0,_user_input__WEBPACK_IMPORTED_MODULE_2__.getRadioInput)('priority-input');
     const description = (0,_user_input__WEBPACK_IMPORTED_MODULE_2__.getInput)('description-input');
-    const toDoItem = toDo(title, priority, description);
+    const toDoItem = toDo(title, year, priority, description);
     const folder = (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_3__.getActiveFolder)();
+
+
     (0,_page_layout__WEBPACK_IMPORTED_MODULE_1__.displayToDo)(toDoItem, folder);
 };
 

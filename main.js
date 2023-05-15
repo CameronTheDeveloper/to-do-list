@@ -720,6 +720,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "addSidebarFormAttributes": () => (/* binding */ addSidebarFormAttributes),
 /* harmony export */   "addToDoFormAttributes": () => (/* binding */ addToDoFormAttributes),
 /* harmony export */   "addToDoLabelAttributes": () => (/* binding */ addToDoLabelAttributes),
+/* harmony export */   "setDateInputAttributes": () => (/* binding */ setDateInputAttributes),
 /* harmony export */   "setRadioAttributes": () => (/* binding */ setRadioAttributes)
 /* harmony export */ });
 const addAttributes = (text, attType, attName, elementType) => {
@@ -752,6 +753,10 @@ const setRadioAttributes = (element, label, name, value) => {
     element.setAttribute('value', id);
     label.setAttribute('for', id);
     label.innerHTML = value;
+};
+
+const setDateInputAttributes = (element) => {
+    element.setAttribute('type', 'date');
 };
 
 const setFormElementAttributes = (form, action, method) => {
@@ -884,7 +889,7 @@ const addFormElement = (parent) => {
     return element;
 };
 
-const addFormInputElement = (type, parent, id) => { //id is not used
+const addFormInputElement = (type, parent) => {
     const input = document.createElement(type);
     parent.appendChild(input);
     return input;
@@ -897,6 +902,11 @@ const addFormRadioElements = (parent, name, option) => {
     (0,_attributes__WEBPACK_IMPORTED_MODULE_2__.setRadioAttributes)(radioInput, label, name, option);
     parent.appendChild(radioInput);
     parent.appendChild(label);
+};
+
+const addFormDateElements = (parent) => {
+    const dateInput = addFormInputElement(parent, 'input');
+    (0,_attributes__WEBPACK_IMPORTED_MODULE_2__.setDateInputAttributes)(dateInput);
 };
 
 const setRadioFormElements = (fieldset, name, optionsAr) => {
@@ -944,7 +954,7 @@ const addFormToDOM = (parent, id) => {
 
 const addSidebarForm = (parent) => {
     const form = addFormToDOM(parent, 'sidebar-add-form');
-    const input = addFormInputElement('input', form, 'folder-title');
+    const input = addFormInputElement('input', form);
 
     (0,_attributes__WEBPACK_IMPORTED_MODULE_2__.addSidebarFormAttributes)(form, input);
     (0,_user_input__WEBPACK_IMPORTED_MODULE_0__.registerSidebarSubmitListener)(form, input);
@@ -959,10 +969,10 @@ const addFolderChildElements = (parent, title, removeButton) => {
 const addToDoForm = (parent) => {
     const form = addFormToDOM(parent, 'todo-add-form');
     const titleLabel = addFormLabelElement(form);
-    const title = addFormInputElement('input', form, 'title');
+    const title = addFormInputElement('input', form);
     addToDoPriorityForm(form);
     const descLabel = addFormLabelElement(form);
-    const description = addFormInputElement('textarea', form, 'description');
+    const description = addFormInputElement('textarea', form);
     const submitButton = addButton(form, 'submit', 'todo-submit-button', 'submit');
 
     (0,_attributes__WEBPACK_IMPORTED_MODULE_2__.addToDoFormAttributes)(form, title, description);

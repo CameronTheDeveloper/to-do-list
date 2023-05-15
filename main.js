@@ -849,6 +849,98 @@ clearButton.addEventListener('click', () => {
 
 /***/ }),
 
+/***/ "./src/modules/form-dom.js":
+/*!*********************************!*\
+  !*** ./src/modules/form-dom.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "addSidebarForm": () => (/* binding */ addSidebarForm),
+/* harmony export */   "addToDoForm": () => (/* binding */ addToDoForm)
+/* harmony export */ });
+/* harmony import */ var _user_input__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./user-input */ "./src/modules/user-input.js");
+/* harmony import */ var _attributes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./attributes */ "./src/modules/attributes.js");
+/* harmony import */ var _page_layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./page-layout */ "./src/modules/page-layout.js");
+
+
+
+
+const addFormParent = (parent, id) => {
+    const element = document.createElement('div');
+    element.setAttribute('id', id);
+    parent.appendChild(element);
+    return element;
+};
+
+const addFormElement = (parent) => {
+    const element = document.createElement('form');
+    parent.appendChild(element);
+    return element;
+};
+
+const addFormToDOM = (parent, id) => {
+    const formParent = addFormParent(parent, id);
+    const form = addFormElement(formParent);
+    return form;
+};
+
+const addSidebarForm = (parent) => {
+    const form = addFormToDOM(parent, 'sidebar-add-form');
+    const input = addFormInputElement('input', form);
+
+    (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addSidebarFormAttributes)(form, input);
+    (0,_user_input__WEBPACK_IMPORTED_MODULE_0__.registerSidebarSubmitListener)(form, input);
+    return form;
+};
+
+const addToDoForm = (parent) => {
+    const form = addFormToDOM(parent, 'todo-add-form');
+    const titleLabel = addFormLabelElement(form);
+    const title = addFormInputElement('input', form);
+    (0,_page_layout__WEBPACK_IMPORTED_MODULE_2__.setToDoDueDateInput)(form);
+    addToDoPriorityInput(form);
+    const descLabel = addFormLabelElement(form);
+    const description = addFormInputElement('textarea', form);
+    const submitButton = addButton(form, 'submit', 'todo-submit-button', 'submit');
+
+    (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addToDoFormAttributes)(form, title, description);
+    (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addToDoLabelAttributes)(titleLabel, descLabel);
+
+    (0,_user_input__WEBPACK_IMPORTED_MODULE_0__.registerToDoSubmitListener)(form);
+};
+
+const addFormInputElement = (type, parent) => {
+    const input = document.createElement(type);
+    parent.appendChild(input);
+    return input;
+};
+
+const addFormDateElements = (parent) => {
+    const dateInput = addFormInputElement('input', parent);
+    (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.setDateInputAttributes)(dateInput);
+};
+
+const addFormRadioElements = (parent, name, option) => {
+    const radioInput = document.createElement('input');
+    const label = document.createElement('label');
+
+    (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.setRadioAttributes)(radioInput, label, name, option);
+    parent.appendChild(radioInput);
+    parent.appendChild(label);
+};
+
+const addFormLabelElement = (parent) => {
+    const label = document.createElement('label');
+    parent.appendChild(label);
+    return label;
+};
+
+
+
+/***/ }),
+
 /***/ "./src/modules/page-layout.js":
 /*!************************************!*\
   !*** ./src/modules/page-layout.js ***!
@@ -861,17 +953,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "addButton": () => (/* binding */ addButton),
 /* harmony export */   "addContent": () => (/* binding */ addContent),
 /* harmony export */   "addFolderChildElements": () => (/* binding */ addFolderChildElements),
-/* harmony export */   "addSidebarForm": () => (/* binding */ addSidebarForm),
-/* harmony export */   "addToDoForm": () => (/* binding */ addToDoForm),
 /* harmony export */   "displayToDo": () => (/* binding */ displayToDo),
 /* harmony export */   "hideElements": () => (/* binding */ hideElements),
+/* harmony export */   "setToDoDueDateInput": () => (/* binding */ setToDoDueDateInput),
 /* harmony export */   "toggleToDoFormVisible": () => (/* binding */ toggleToDoFormVisible)
 /* harmony export */ });
-/* harmony import */ var _user_input__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./user-input */ "./src/modules/user-input.js");
-/* harmony import */ var _clear_mode__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./clear-mode */ "./src/modules/clear-mode.js");
-/* harmony import */ var _attributes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./attributes */ "./src/modules/attributes.js");
-
-
+/* harmony import */ var _clear_mode__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./clear-mode */ "./src/modules/clear-mode.js");
+/* harmony import */ var _attributes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./attributes */ "./src/modules/attributes.js");
 
 
 
@@ -883,21 +971,9 @@ const addContent = (parent, text, className, elementType) => {
     parent.appendChild(element);
 };
 
-const addFormElement = (parent) => {
-    const element = document.createElement('form');
-    parent.appendChild(element);
-    return element;
-};
-
-const addFormInputElement = (type, parent) => {
-    const input = document.createElement(type);
-    parent.appendChild(input);
-    return input;
-};
-
-const addFormDateElements = (parent) => {
-    const dateInput = addFormInputElement('input', parent);
-    (0,_attributes__WEBPACK_IMPORTED_MODULE_2__.setDateInputAttributes)(dateInput);
+const addFolderChildElements = (parent, title, removeButton) => {
+    parent.appendChild(title);
+    parent.appendChild(removeButton);
 };
 
 const setToDoDueDateInput = (form) => {
@@ -909,15 +985,6 @@ const setToDoDueDateInput = (form) => {
     const value = 'todo-duedate';//today
     //const max = ;
     addFormDateElements(form);
-};
-
-const addFormRadioElements = (parent, name, option) => {
-    const radioInput = document.createElement('input');
-    const label = document.createElement('label');
-
-    (0,_attributes__WEBPACK_IMPORTED_MODULE_2__.setRadioAttributes)(radioInput, label, name, option);
-    parent.appendChild(radioInput);
-    parent.appendChild(label);
 };
 
 const setRadioFormElements = (fieldset, name, optionsAr) => {
@@ -945,55 +1012,6 @@ const addToDoPriorityInput = (form) => {
     form.appendChild(fieldset);
 };
 
-const addFormLabelElement = (parent) => {
-    const label = document.createElement('label');
-    parent.appendChild(label);
-    return label;
-};
-
-const addFormParent = (parent, id) => {
-    const element = document.createElement('div');
-    element.setAttribute('id', id);
-    parent.appendChild(element);
-    return element;
-};
-
-const addFormToDOM = (parent, id) => {
-    const formParent = addFormParent(parent, id);
-    const form = addFormElement(formParent);
-    return form;
-};
-
-const addSidebarForm = (parent) => {
-    const form = addFormToDOM(parent, 'sidebar-add-form');
-    const input = addFormInputElement('input', form);
-
-    (0,_attributes__WEBPACK_IMPORTED_MODULE_2__.addSidebarFormAttributes)(form, input);
-    (0,_user_input__WEBPACK_IMPORTED_MODULE_0__.registerSidebarSubmitListener)(form, input);
-    return form;
-};
-
-const addFolderChildElements = (parent, title, removeButton) => {
-    parent.appendChild(title);
-    parent.appendChild(removeButton);
-};
-
-const addToDoForm = (parent) => {
-    const form = addFormToDOM(parent, 'todo-add-form');
-    const titleLabel = addFormLabelElement(form);
-    const title = addFormInputElement('input', form);
-    setToDoDueDateInput(form);
-    addToDoPriorityInput(form);
-    const descLabel = addFormLabelElement(form);
-    const description = addFormInputElement('textarea', form);
-    const submitButton = addButton(form, 'submit', 'todo-submit-button', 'submit');
-
-    (0,_attributes__WEBPACK_IMPORTED_MODULE_2__.addToDoFormAttributes)(form, title, description);
-    (0,_attributes__WEBPACK_IMPORTED_MODULE_2__.addToDoLabelAttributes)(titleLabel, descLabel);
-
-    (0,_user_input__WEBPACK_IMPORTED_MODULE_0__.registerToDoSubmitListener)(form);
-};
-
 const toggleToDoFormVisible = () => {
     const toDoForm = document.querySelector('#todo-add-form');
 
@@ -1008,11 +1026,11 @@ const toggleToDoFormVisible = () => {
 
 const displayToDo = (toDoItem, folder) => {
     const toDoInputs = document.querySelector('#todo-inputs');
-    const toDoParent = (0,_attributes__WEBPACK_IMPORTED_MODULE_2__.addAttributes)('', 'class', 'todo', 'div');
-    const titleDiv = (0,_attributes__WEBPACK_IMPORTED_MODULE_2__.addAttributes)(toDoItem.title, 'class', 'title', 'div');
-    const dueDateDiv = (0,_attributes__WEBPACK_IMPORTED_MODULE_2__.addAttributes)(toDoItem.dueDate, 'class', 'due-date', 'div');
-    const priorityDiv = (0,_attributes__WEBPACK_IMPORTED_MODULE_2__.addAttributes)(toDoItem.priority, 'class', 'priority', 'div');
-    const descDiv = (0,_attributes__WEBPACK_IMPORTED_MODULE_2__.addAttributes)(toDoItem.description, 'class', 'description', 'div');
+    const toDoParent = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)('', 'class', 'todo', 'div');
+    const titleDiv = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)(toDoItem.title, 'class', 'title', 'div');
+    const dueDateDiv = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)(toDoItem.dueDate, 'class', 'due-date', 'div');
+    const priorityDiv = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)(toDoItem.priority, 'class', 'priority', 'div');
+    const descDiv = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)(toDoItem.description, 'class', 'description', 'div');
 
     folder.insertBefore(toDoParent, toDoInputs);
     toDoParent.appendChild(titleDiv);
@@ -1020,7 +1038,7 @@ const displayToDo = (toDoItem, folder) => {
     toDoParent.appendChild(priorityDiv);
     toDoParent.appendChild(descDiv);
 
-    (0,_clear_mode__WEBPACK_IMPORTED_MODULE_1__.addClearEventListener)(toDoParent);
+    (0,_clear_mode__WEBPACK_IMPORTED_MODULE_0__.addClearEventListener)(toDoParent);
 };
 
 const addButtonType = (button, type) => {
@@ -1028,13 +1046,13 @@ const addButtonType = (button, type) => {
 };
 
 const addAbove = (className, elementType, parent, lowerDiv) => {
-    const element = (0,_attributes__WEBPACK_IMPORTED_MODULE_2__.addAttributes)('', 'class', className, elementType);
+    const element = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)('', 'class', className, elementType);
     parent.insertBefore(element, lowerDiv);
     return element;
 };
 
 const addButton = (parent, text, id, type) => {
-    const button = (0,_attributes__WEBPACK_IMPORTED_MODULE_2__.addAttributes)(text, 'id', id, 'button');
+    const button = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)(text, 'id', id, 'button');
     addButtonType(button, type);
     parent.appendChild(button);
     return button;
@@ -1062,6 +1080,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _styles_sidebar_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../styles/sidebar.css */ "./src/styles/sidebar.css");
 /* harmony import */ var _page_layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./page-layout */ "./src/modules/page-layout.js");
+/* harmony import */ var _form_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./form-dom */ "./src/modules/form-dom.js");
+
 
 
 
@@ -1072,7 +1092,7 @@ const initSidebar = () => {
 };
 
 const addSidebarInput = () => {
-    const sidebarForm = (0,_page_layout__WEBPACK_IMPORTED_MODULE_1__.addSidebarForm)(sidebarFolders);
+    const sidebarForm = (0,_form_dom__WEBPACK_IMPORTED_MODULE_2__.addSidebarForm)(sidebarFolders);
     const sidebarButton = (0,_page_layout__WEBPACK_IMPORTED_MODULE_1__.addButton)(sidebarForm, '+ Folder', 'sidebar-add-button', 'submit');
 };
 
@@ -1164,6 +1184,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _page_layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./page-layout */ "./src/modules/page-layout.js");
 /* harmony import */ var _user_input__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./user-input */ "./src/modules/user-input.js");
 /* harmony import */ var _to_do_folders__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./to-do-folders */ "./src/modules/to-do-folders.js");
+/* harmony import */ var _form_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./form-dom */ "./src/modules/form-dom.js");
+
 
 
 
@@ -1201,7 +1223,7 @@ const addToDo = () => {
 };
 
 const initToDo = () => {
-    (0,_page_layout__WEBPACK_IMPORTED_MODULE_1__.addToDoForm)(toDoInputs);
+    (0,_form_dom__WEBPACK_IMPORTED_MODULE_4__.addToDoForm)(toDoInputs);
     addToDoButton();
 };
 

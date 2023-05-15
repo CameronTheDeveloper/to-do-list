@@ -39,7 +39,7 @@ const addFormDateElements = (parent) => {
     setDateInputAttributes(dateInput);
 };
 
-const addToDoDueDateInput = (form) => {
+const setToDoDueDateInput = (form) => {
     addFormDateElements(form);
 };
 

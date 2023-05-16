@@ -4103,11 +4103,10 @@ const addToDoButton = () => {
 
 const addToDo = () => {
     const title = (0,_user_input__WEBPACK_IMPORTED_MODULE_2__.getInput)('title-input');
-    const dueDate = new Date();             //
-    const year = dueDate.getFullYear();     //
+    const dueDate = (0,_user_input__WEBPACK_IMPORTED_MODULE_2__.getInput)('duedate-input');
     const priority = (0,_user_input__WEBPACK_IMPORTED_MODULE_2__.getRadioInput)('priority-input');
     const description = (0,_user_input__WEBPACK_IMPORTED_MODULE_2__.getInput)('description-input');
-    const toDoItem = toDo(title, year, priority, description);
+    const toDoItem = toDo(title, dueDate, priority, description);
     const folder = (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_3__.getActiveFolder)();
 
 

@@ -31,13 +31,11 @@ const addToDoButton = () => {
 
 const addToDo = () => {
     const title = getInput('title-input');
-    const dueDate = new Date();             //
-    const year = dueDate.getFullYear();     //
+    const dueDate = getInput('duedate-input');
     const priority = getRadioInput('priority-input');
     const description = getInput('description-input');
-    const toDoItem = toDo(title, year, priority, description);
+    const toDoItem = toDo(title, dueDate, priority, description);
     const folder = getActiveFolder();
-
 
     displayToDo(toDoItem, folder);
 };

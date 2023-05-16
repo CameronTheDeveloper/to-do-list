@@ -4,7 +4,7 @@ import {
     addFormDateElements,
     addFormRadioElements
 } from "./form-dom.js";
-import { format, addYears } from "date-fns";
+import { format, addYears, parse } from "date-fns";
 
 const addContent = (parent, text, className, elementType) => {
     const element = document.createElement(elementType);
@@ -19,8 +19,10 @@ const addFolderChildElements = (parent, title, removeButton) => {
 };
 
 const formatToDoDate = (date) => {
-    const dateString = date.toString();//turn date to string
-    const formattedDate = format(dateString, 'MMMM dd, yyyy');
+    const dateString = date.toString();
+    const parsedDate = parse(dateString, 'yyyy-MM-dd', new Date());
+    const formattedDate = format(parsedDate, 'MMMM dd, yyyy');
+
     return formattedDate;
 };
 
@@ -78,7 +80,8 @@ const addToDoContent = (toDoItem) => {
     const toDoContentDiv = document.createElement('div');
     const dueDateDiv = addAttributes('', 'class', 'due-date-div', 'div');
     const dueDateLabel = addAttributes('Due - ', 'class', 'duedate-label', 'div');
-    const dueDateValue = addAttributes(toDoItem.dueDate, 'class', 'due-date', 'div');
+    const formattedDate = formatToDoDate(toDoItem.dueDate);
+    const dueDateValue = addAttributes(formattedDate, 'class', 'due-date', 'div');
     const priorityDiv = addAttributes('', 'class', 'priority-div', 'div');
     const priorityLabel = addAttributes('Priority - ', 'class', 'priority-label', 'div');
     const priorityValue = addAttributes(toDoItem.priority, 'class', 'priority', 'div');

@@ -11,7 +11,7 @@ const addClearEventListener = (element) => {
     });
 };
 
-const toggleClearStyle = (clearMode) => {
+const toggleClearModeButtonStyle = (clearMode) => {
     if (clearMode) {
         clearButton.style.boxShadow = '0 0 10px red';
         clearButton.style.fontWeight = '900';
@@ -52,11 +52,11 @@ const toggleToDoBorderStyle = (clearMode) => {
 clearButton.addEventListener('click', () => {
     if (!clearMode) {
         clearMode = true;
-        toggleClearStyle(clearMode);
+        toggleClearModeButtonStyle(clearMode);
         toggleToDoBorderStyle(clearMode);
     } else {
         clearMode = false;
-        toggleClearStyle(clearMode);
+        toggleClearModeButtonStyle(clearMode);
         toggleToDoBorderStyle(clearMode);
     }
 });

@@ -3869,6 +3869,12 @@ const addFolderChildElements = (parent, title, removeButton) => {
     parent.appendChild(removeButton);
 };
 
+const formatToDoDate = (date) => {
+    const dateString = date.toString();//turn date to string
+    const formattedDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_3__["default"])(dateString, 'MMMM dd, yyyy');
+    return formattedDate;
+};
+
 const setToDoDueDateInput = (form) => {
     const today = new Date();
     const minDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_3__["default"])(today, 'yyyy-MM-dd');

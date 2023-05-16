@@ -93,6 +93,7 @@
     margin: 16px;
     border-radius: 16px;
     display: grid;
+    grid-template-rows: 1fr 5fr;
     cursor: pointer;
 }
 
@@ -101,12 +102,18 @@
     transition: background-color 0.15s ease-in-out;
 }
 
+.todo-content {
+    display: grid;
+    align-items: center;
+    align-content: center;
+}
+
 .todo .title {
     font-weight: bold;
     font-size: 2rem;
     justify-self: center;
 }
 
-.todo .priority {
+.todo-content .priority {
     justify-self: center;
 }

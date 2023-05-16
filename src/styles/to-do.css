@@ -135,9 +135,17 @@
 .todo .due-date-div,
 .todo .priority-div {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+
     justify-self: center;
     font-size: 1.5rem;
+}
+
+.todo .due-date-div {
+    grid-template-columns: 1fr 1fr;
+}
+
+.todo .priority-div {
+    grid-template-columns: 4fr 1fr;
 }
 
 .todo .due-date-div .due-date,

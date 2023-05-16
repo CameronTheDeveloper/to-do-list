@@ -55,12 +55,15 @@ const setToDoPriorityInput = (form) => {
 //Maybe change this function to toggle parameter visible
 const toggleToDoFormVisible = () => {
     const toDoForm = document.querySelector('#todo-add-form');
+    const checkedRadio = document.querySelector('#low-radio');
 
     if (toDoForm.style.display === 'none') {
+        checkedRadio.checked = true;
         toDoForm.style.display = 'grid';
     } else if (toDoForm.style.display === 'grid') {
         toDoForm.style.display = 'none';
     } else {
+        checkedRadio.checked = true;
         toDoForm.style.display = 'grid';
     }
 };
@@ -76,6 +79,7 @@ const addToDoContent = (toDoItem) => {
     toDoContentDiv.appendChild(priorityDiv);
     toDoContentDiv.appendChild(descDiv);
     return toDoContentDiv;
+    //Add labels for each div (Like 'due: ')
     //To add 'todo expand' feature, hide toDoContentDiv when clicked
 };
 

@@ -3902,18 +3902,19 @@ const setToDoPriorityInput = (form) => {
     const fieldset = createFieldset('Priority: ');
     setRadioFormElements(fieldset, 'priority-input', optionsAr);
     form.appendChild(fieldset);
-    // const checkedOption = document.querySelector('low-radio');
-    // checkedOption.checked = true;
 };
 //Maybe change this function to toggle parameter visible
 const toggleToDoFormVisible = () => {
     const toDoForm = document.querySelector('#todo-add-form');
+    const checkedRadio = document.querySelector('#low-radio');
 
     if (toDoForm.style.display === 'none') {
+        checkedRadio.checked = true;
         toDoForm.style.display = 'grid';
     } else if (toDoForm.style.display === 'grid') {
         toDoForm.style.display = 'none';
     } else {
+        checkedRadio.checked = true;
         toDoForm.style.display = 'grid';
     }
 };

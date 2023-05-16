@@ -18,8 +18,6 @@
 }
 
 #content-items {
-    /* display: grid;
-    grid-template: repeat(auto-fill, minmax(200px, 1fr)) / repeat(auto-fill, minmax(260px, 1fr)); */
     margin: 16px;
     padding: 16px;
 }
@@ -135,13 +133,11 @@
 .todo .due-date-div,
 .todo .priority-div {
     display: grid;
-
-    justify-self: center;
     font-size: 1.5rem;
 }
 
 .todo .due-date-div {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 3fr;
 }
 
 .todo .priority-div {
@@ -150,7 +146,7 @@
 
 .todo .due-date-div .due-date,
 .todo .priority-div .priority {
-    font-weight: 700
+    font-weight: 700;
 }
 
 .todo .due-date-div .duedate-label,

@@ -70,12 +70,16 @@ const toggleToDoFormVisible = () => {
 
 const addToDoContent = (toDoItem) => {
     const toDoContentDiv = document.createElement('div');
-    const dueDateDiv = addAttributes('Due: ' + toDoItem.dueDate, 'class', 'due-date', 'div');
+    const dueDateLabel = addAttributes('Due - ', 'class', 'duedate-label', 'div');
+    const dueDateDiv = addAttributes(toDoItem.dueDate, 'class', 'due-date', 'div');
+    const priorityLabel = addAttributes('Priority - ', 'class', 'priority-label', 'div');
     const priorityDiv = addAttributes(toDoItem.priority, 'class', 'priority', 'div');
     const descDiv = addAttributes(toDoItem.description, 'class', 'description', 'div');
 
     toDoContentDiv.setAttribute('class', 'todo-content');
+    toDoContentDiv.appendChild(dueDateLabel);
     toDoContentDiv.appendChild(dueDateDiv);
+    toDoContentDiv.appendChild(priorityLabel);
     toDoContentDiv.appendChild(priorityDiv);
     toDoContentDiv.appendChild(descDiv);
     return toDoContentDiv;

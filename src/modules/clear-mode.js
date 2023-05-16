@@ -1,7 +1,6 @@
 const clearButton = document.querySelector('#todo-clear-mode-button');
 let clearMode = false;
 
-//Call on each to do created
 const addClearEventListener = (element) => {
     element.addEventListener('click', () => {
         if (clearMode) {
@@ -31,13 +30,28 @@ const toggleClearStyle = (clearMode) => {
     }
 };
 
+const toggleToDoBorderStyle = (clearMode) => {
+    const toDos = document.querySelectorAll('.todo');
+    if (clearMode) {
+        toDos.forEach((toDo) => {
+            toDo.style.borderColor = 'red';
+        });
+    } else {
+        toDos.forEach((toDo) => {
+            toDo.style.borderColor = 'black';
+        });
+    }
+};
+
 clearButton.addEventListener('click', () => {
     if (!clearMode) {
         clearMode = true;
         toggleClearStyle(clearMode);
+        toggleToDoBorderStyle(clearMode);
     } else {
         clearMode = false;
         toggleClearStyle(clearMode);
+        toggleToDoBorderStyle(clearMode);
     }
 });
 

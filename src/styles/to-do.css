@@ -54,7 +54,6 @@
     padding: 8px;
     border-radius: 16px;
     display: grid;
-    /* grid-template-rows: 1fr 2fr 3fr 1fr 5fr 1fr; */
 }
 
 #todo-add-form input,
@@ -62,8 +61,18 @@
 #todo-add-form fieldset {
     width: 250px;
     font-size: 1rem;
-    border: 1px solid green;
+    border: 1px solid rgba(103, 103, 103, 0.5);
+    border-radius: 10px;
     padding: 4px;
+}
+
+#todo-add-form input:hover,
+#todo-add-form textarea:hover {
+    border: 1.2px solid rgb(0, 0, 0);
+}
+
+#todo-add-form #duedate-input {
+    cursor: pointer;
 }
 
 #todo-add-form fieldset {

@@ -52,7 +52,7 @@ const setToDoPriorityInput = (form) => {
     setRadioFormElements(fieldset, 'priority-input', optionsAr);
     form.appendChild(fieldset);
 };
-
+//Maybe change this function to toggle parameter visible
 const toggleToDoFormVisible = () => {
     const toDoForm = document.querySelector('#todo-add-form');
 
@@ -65,20 +65,29 @@ const toggleToDoFormVisible = () => {
     }
 };
 
+const addToDoContent = (toDoItem) => {
+    const toDoContentDiv = document.createElement('div');
+    const dueDateDiv = addAttributes('Due: ' + toDoItem.dueDate, 'class', 'due-date', 'div');
+    const priorityDiv = addAttributes(toDoItem.priority, 'class', 'priority', 'div');
+    const descDiv = addAttributes(toDoItem.description, 'class', 'description', 'div');
+
+    toDoContentDiv.setAttribute('id', 'todo-content');
+    toDoContentDiv.appendChild(dueDateDiv);
+    toDoContentDiv.appendChild(priorityDiv);
+    toDoContentDiv.appendChild(descDiv);
+    return toDoContentDiv;
+    //To add 'todo expand' feature, hide toDoContentDiv when clicked
+};
+
 const displayToDo = (toDoItem, folder) => {
     const toDoInputs = document.querySelector('#todo-inputs');
     const toDoParent = addAttributes('', 'class', 'todo', 'div');
     const titleDiv = addAttributes(toDoItem.title, 'class', 'title', 'div');
-    const dueDateDiv = addAttributes(toDoItem.dueDate, 'class', 'due-date', 'div');
-    const priorityDiv = addAttributes(toDoItem.priority, 'class', 'priority', 'div');
-    const descDiv = addAttributes(toDoItem.description, 'class', 'description', 'div');
+    const toDoContentDiv = addToDoContent(toDoItem);
 
     folder.insertBefore(toDoParent, toDoInputs);
     toDoParent.appendChild(titleDiv);
-    toDoParent.appendChild(dueDateDiv);
-    toDoParent.appendChild(priorityDiv);
-    toDoParent.appendChild(descDiv);
-
+    toDoParent.appendChild(toDoContentDiv);
     addClearEventListener(toDoParent);
 };
 

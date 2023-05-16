@@ -126,14 +126,14 @@
 
 .todo .title {
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 3.5rem;
     justify-self: center;
 }
 
 .todo .due-date-div,
 .todo .priority-div {
     display: grid;
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
 .todo .due-date-div {
@@ -141,7 +141,7 @@
 }
 
 .todo .priority-div {
-    grid-template-columns: 4fr 1fr;
+    grid-template-columns: 3fr 5fr;
 }
 
 .todo .due-date-div .due-date,

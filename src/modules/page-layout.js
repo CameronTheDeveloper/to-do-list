@@ -18,6 +18,12 @@ const addFolderChildElements = (parent, title, removeButton) => {
     parent.appendChild(removeButton);
 };
 
+const formatToDoDate = (date) => {
+    const dateString = date.toString();//turn date to string
+    const formattedDate = format(dateString, 'MMMM dd, yyyy');
+    return formattedDate;
+};
+
 const setToDoDueDateInput = (form) => {
     const today = new Date();
     const minDate = format(today, 'yyyy-MM-dd');

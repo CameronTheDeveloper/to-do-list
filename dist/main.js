@@ -3629,9 +3629,9 @@ const setTextAreaAttributes = (item, id, cols, rows) => {
 const setRadioAttributes = (element, label, name, value) => {
     const id = value.toLowerCase().replace(/\s/g, '-');
     element.setAttribute('type', 'radio');
-    element.setAttribute('id', id);
+    element.setAttribute('id', id + '-radio');
     element.setAttribute('name', name);
-    element.setAttribute('value', id);
+    element.setAttribute('value', value);
     label.setAttribute('for', id);
     label.innerHTML = value;
 };
@@ -3902,6 +3902,8 @@ const setToDoPriorityInput = (form) => {
     const fieldset = createFieldset('Priority: ');
     setRadioFormElements(fieldset, 'priority-input', optionsAr);
     form.appendChild(fieldset);
+    // const checkedOption = document.querySelector('low-radio');
+    // checkedOption.checked = true;
 };
 //Maybe change this function to toggle parameter visible
 const toggleToDoFormVisible = () => {
@@ -3927,6 +3929,7 @@ const addToDoContent = (toDoItem) => {
     toDoContentDiv.appendChild(priorityDiv);
     toDoContentDiv.appendChild(descDiv);
     return toDoContentDiv;
+    //Add labels for each div (Like 'due: ')
     //To add 'todo expand' feature, hide toDoContentDiv when clicked
 };
 

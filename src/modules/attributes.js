@@ -21,9 +21,9 @@ const setTextAreaAttributes = (item, id, cols, rows) => {
 };
 
 const setRadioAttributes = (element, label, name, value) => {
-    const id = value.toLowerCase().replace(/\s/g, '-');
+    const id = value.toLowerCase().replace(/\s/g, '-') + '-radio';
     element.setAttribute('type', 'radio');
-    element.setAttribute('id', id + '-radio');
+    element.setAttribute('id', id);
     element.setAttribute('name', name);
     element.setAttribute('value', value);
     label.setAttribute('for', id);

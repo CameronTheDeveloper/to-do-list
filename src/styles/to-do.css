@@ -73,6 +73,8 @@
 
 #todo-add-form #duedate-input {
     cursor: pointer;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 #todo-add-form fieldset {
@@ -92,6 +94,14 @@
 
 #todo-add-form button {
     border-radius: 12px;
+    width: 70px;
+    margin-top: 5px;
+    text-align: center;
+}
+
+#todo-add-form button:hover {
+    background-color: rgb(72, 189, 72);
+    font-weight: 700;
 }
 
 /* To Do */

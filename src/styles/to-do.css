@@ -156,4 +156,5 @@
 .todo .due-date-div .duedate-label,
 .todo .priority-div .priority-label {
     font-style: italic;
+    text-align: start;
 }

@@ -123,14 +123,19 @@
 
 .todo-content {
     display: grid;
-    align-items: center;
-    align-content: center;
+    grid-template-rows: 1fr 1fr 2fr;
 }
 
 .todo .title {
     font-weight: bold;
     font-size: 2rem;
     justify-self: center;
+}
+
+.todo .due-date-div,
+.todo .priority-div {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
 }
 
 .todo-content .priority {

@@ -34,11 +34,17 @@ const toggleToDoBorderStyle = (clearMode) => {
     const toDos = document.querySelectorAll('.todo');
     if (clearMode) {
         toDos.forEach((toDo) => {
-            toDo.style.borderColor = 'red';
+            toDo.style.borderColor = '#ff5757';
+            toDo.style.backgroundColor = 'rgb(255 197 197)';
+            toDo.style.borderWidth = '2px';
+            toDo.style.boxShadow = '0 0 10px 5px rgb(136 44 44)';
         });
     } else {
         toDos.forEach((toDo) => {
             toDo.style.borderColor = 'black';
+            toDo.style.backgroundColor = 'white';
+            toDo.style.borderWidth = '1px';
+            toDo.style.boxShadow = '';
         });
     }
 };

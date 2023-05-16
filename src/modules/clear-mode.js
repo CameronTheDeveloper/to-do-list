@@ -49,15 +49,26 @@ const toggleToDoBorderStyle = (clearMode) => {
     }
 };
 
+const toggleToDoInputsDisplay = (clearMode) => {
+    const toDoInputs = document.querySelector('#todo-inputs');
+    if (clearMode) {
+        toDoInputs.style.display = 'none';
+    } else {
+        toDoInputs.style.display = 'grid';
+    }
+};
+
 clearButton.addEventListener('click', () => {
     if (!clearMode) {
         clearMode = true;
         toggleClearModeButtonStyle(clearMode);
         toggleToDoBorderStyle(clearMode);
+        toggleToDoInputsDisplay(clearMode);
     } else {
         clearMode = false;
         toggleClearModeButtonStyle(clearMode);
         toggleToDoBorderStyle(clearMode);
+        toggleToDoInputsDisplay(clearMode);
     }
 });
 

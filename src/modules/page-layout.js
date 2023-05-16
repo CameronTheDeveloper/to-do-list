@@ -4,7 +4,7 @@ import {
     addFormDateElements,
     addFormRadioElements
 } from "./form-dom.js";
-import { format } from "date-fns";
+import { format, addYears } from "date-fns";
 
 const addContent = (parent, text, className, elementType) => {
     const element = document.createElement(elementType);
@@ -19,14 +19,13 @@ const addFolderChildElements = (parent, title, removeButton) => {
 };
 
 const setToDoDueDateInput = (form) => {
-    const today = format(new Date(), 'yyyy-MM-dd');
-    const minDate = today;
-    console.log(minDate);
+    const today = new Date();
+    const minDate = format(today, 'yyyy-MM-dd');
     const id = 'duedate-input';
     const name = 'todo-duedate';
-    const value = 'todo-duedate';//today
-    //const max = ;
-    addFormDateElements(form);
+    const maxDate = addYears(today, 75);
+    const formattedMaxDate = format(maxDate, 'yyyy-MM-dd');
+    addFormDateElements(form, minDate, formattedMaxDate, minDate, id, name);
 };
 
 const setRadioFormElements = (fieldset, name, optionsAr) => {

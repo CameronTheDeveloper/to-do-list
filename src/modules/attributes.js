@@ -30,8 +30,13 @@ const setRadioAttributes = (element, label, name, value) => {
     label.innerHTML = value;
 };
 
-const setDateInputAttributes = (element) => {
+const setDateInputAttributes = (element, min, max, value, id, name) => {
     element.setAttribute('type', 'date');
+    element.setAttribute('min', min);
+    element.setAttribute('max', max);
+    element.setAttribute('value', value);
+    element.setAttribute('id', id);
+    element.setAttribute('name', name);
 };
 
 const setFormElementAttributes = (form, action, method) => {

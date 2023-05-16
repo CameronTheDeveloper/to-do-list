@@ -65,9 +65,9 @@ const addFormInputElement = (type, parent) => {
     return input;
 };
 
-const addFormDateElements = (parent) => {
+const addFormDateElements = (parent, min, max, value, id, name) => {
     const dateInput = addFormInputElement('input', parent);
-    setDateInputAttributes(dateInput);
+    setDateInputAttributes(dateInput, min, max, value, id, name);
 };
 
 const addFormRadioElements = (parent, name, option) => {

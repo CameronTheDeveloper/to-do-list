@@ -16,12 +16,11 @@ const addClearEventListener = (element) => {
 const toggleClearModeButtonStyle = (clearMode) => {
     if (clearMode) {
         clearButton.className = 'active';
-
     } else {
         clearButton.className = 'inactive';
     }
 };
-
+// Add todo mode class
 const toggleToDoBorderStyle = (clearMode) => {
     const toDos = document.querySelectorAll('.todo');
     if (clearMode) {
@@ -30,6 +29,7 @@ const toggleToDoBorderStyle = (clearMode) => {
             toDo.style.backgroundColor = 'rgb(255 197 197)';
             toDo.style.borderWidth = '2px';
             toDo.style.boxShadow = '0 0 10px 5px rgb(136 44 44)';
+            toDo.className = 'todo clearMode';
         });
     } else {
         toDos.forEach((toDo) => {
@@ -37,6 +37,7 @@ const toggleToDoBorderStyle = (clearMode) => {
             toDo.style.backgroundColor = 'white';
             toDo.style.borderWidth = '1px';
             toDo.style.boxShadow = '';
+            toDo.className = 'todo expand-mode';
         });
     }
 };

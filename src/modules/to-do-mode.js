@@ -29,7 +29,7 @@ const toggleToDoBorderStyle = (clearMode) => {
             toDo.style.backgroundColor = 'rgb(255 197 197)';
             toDo.style.borderWidth = '2px';
             toDo.style.boxShadow = '0 0 10px 5px rgb(136 44 44)';
-            toDo.className = 'todo clearMode';
+            toDo.className = 'todo clear-mode';
         });
     } else {
         toDos.forEach((toDo) => {

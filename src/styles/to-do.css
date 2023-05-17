@@ -3,10 +3,6 @@
     grid-template-rows: 1fr 8fr;
 }
 
-#todo-clear-mode-button:hover {
-    background-color: rgb(255, 171, 171);
-}
-
 #content-items {
     margin: 16px;
     padding: 16px;

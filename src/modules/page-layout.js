@@ -103,7 +103,7 @@ const addToDoContent = (toDoItem) => {
 
 const displayToDo = (toDoItem, folder) => {
     const toDoInputs = document.querySelector('#todo-inputs');
-    const toDoParent = addAttributes('', 'class', 'todo', 'div');
+    const toDoParent = addAttributes('', 'class', 'todo expand-mode', 'div');
     const titleDiv = addAttributes(toDoItem.title, 'class', 'title', 'div');
     const toDoContentDiv = addToDoContent(toDoItem);
 

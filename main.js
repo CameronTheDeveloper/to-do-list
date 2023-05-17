@@ -2,6 +2,32 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./node_modules/css-loader/dist/cjs.js!./src/styles/clear-mode.css":
+/*!*************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/styles/clear-mode.css ***!
+  \*************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/sourceMaps.js */ "./node_modules/css-loader/dist/runtime/sourceMaps.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "#todo-clear-mode-button.inactive {\n    width: 175px;\n    font-size: 1.2rem;\n    border-radius: 12px;\n    height: 58px;\n    margin: 12px;\n    background-color: rgb(255, 198, 198);\n    font-weight: 500;\n}\n\n#todo-clear-mode-button.active {\n    color: red;\n    font-size: 1.4rem;\n    font-weight: 900;\n    box-shadow: 0 0 10px red;\n}\n\n.clear-mode div:hover {}", "",{"version":3,"sources":["webpack://./src/styles/clear-mode.css"],"names":[],"mappings":"AAAA;IACI,YAAY;IACZ,iBAAiB;IACjB,mBAAmB;IACnB,YAAY;IACZ,YAAY;IACZ,oCAAoC;IACpC,gBAAgB;AACpB;;AAEA;IACI,UAAU;IACV,iBAAiB;IACjB,gBAAgB;IAChB,wBAAwB;AAC5B;;AAEA,uBAAuB","sourcesContent":["#todo-clear-mode-button.inactive {\n    width: 175px;\n    font-size: 1.2rem;\n    border-radius: 12px;\n    height: 58px;\n    margin: 12px;\n    background-color: rgb(255, 198, 198);\n    font-weight: 500;\n}\n\n#todo-clear-mode-button.active {\n    color: red;\n    font-size: 1.4rem;\n    font-weight: 900;\n    box-shadow: 0 0 10px red;\n}\n\n.clear-mode div:hover {}"],"sourceRoot":""}]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js!./src/styles/index.css":
 /*!********************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./src/styles/index.css ***!
@@ -99,7 +125,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "#content {\n    display: grid;\n    grid-template-rows: 1fr 8fr;\n}\n\n#todo-clear-mode-button {\n    width: 175px;\n    font-size: 1.2rem;\n    border-radius: 12px;\n    height: 58px;\n    margin: 12px;\n    background-color: rgb(255, 198, 198);\n    font-weight: 500;\n}\n\n#todo-clear-mode-button:hover {\n    background-color: rgb(255, 171, 171);\n}\n\n#content-items {\n    margin: 16px;\n    padding: 16px;\n}\n\n#todo-inputs {\n    display: grid;\n}\n\n#todo-add-button {\n    align-self: center;\n    justify-self: center;\n    height: 80px;\n    width: 160px;\n    border-radius: 50px;\n    font-size: 2rem;\n    font-weight: 500;\n}\n\n#todo-add-button:hover {\n    background-color: rgb(0, 255, 0);\n    font-weight: 700;\n}\n\n/* To Do Form */\n\n#todo-add-form {\n    display: none;\n}\n\n#todo-add-form form {\n    background-color: white;\n    padding: 8px;\n    border-radius: 16px;\n    display: grid;\n}\n\n#todo-add-form input,\n#todo-add-form textarea,\n#todo-add-form fieldset {\n    width: 250px;\n    font-size: 1rem;\n    border: 1px solid rgba(103, 103, 103, 0.5);\n    border-radius: 10px;\n    padding: 4px;\n}\n\n#todo-add-form input:hover,\n#todo-add-form textarea:hover {\n    border: 1.2px solid rgb(0, 0, 0);\n}\n\n#todo-add-form #duedate-input {\n    cursor: pointer;\n    margin-top: 5px;\n    margin-bottom: 5px;\n}\n\n#todo-add-form fieldset {\n    border: 0;\n}\n\n#todo-add-form fieldset div {\n    display: grid;\n    grid-template: 1fr / 1fr 5fr;\n    align-items: center;\n}\n\n#todo-add-form fieldset div input {\n    margin: 0.5rem;\n    width: 20px;\n}\n\n#todo-add-form button {\n    border-radius: 12px;\n    width: 70px;\n    margin-top: 5px;\n    text-align: center;\n}\n\n#todo-add-form button:hover {\n    background-color: rgb(72, 189, 72);\n    font-weight: 700;\n}\n\n/* To Do */\n\n.todo {\n    background-color: white;\n    padding: 16px;\n    margin: 16px;\n    border-radius: 16px;\n    border: 1px solid black;\n    display: grid;\n    grid-template-rows: 1fr 5fr;\n    cursor: pointer;\n}\n\n.todo:hover {\n    background-color: rgb(24, 244, 24);\n    transition: background-color 0.15s ease-in-out;\n}\n\n.todo-content {\n    display: grid;\n    grid-template-rows: 1fr 1fr 2fr;\n}\n\n.todo .title {\n    font-weight: bold;\n    font-size: 3.5rem;\n    justify-self: center;\n}\n\n.todo .due-date-div,\n.todo .priority-div {\n    display: grid;\n    font-size: 2rem;\n}\n\n.todo .due-date-div {\n    grid-template-columns: 1fr 3fr;\n}\n\n.todo .priority-div {\n    grid-template-columns: 3fr 5fr;\n}\n\n.todo .due-date-div .due-date,\n.todo .priority-div .priority {\n    font-weight: 700;\n}\n\n.todo .due-date-div .duedate-label,\n.todo .priority-div .priority-label {\n    font-style: italic;\n    text-align: start;\n}", "",{"version":3,"sources":["webpack://./src/styles/to-do.css"],"names":[],"mappings":"AAAA;IACI,aAAa;IACb,2BAA2B;AAC/B;;AAEA;IACI,YAAY;IACZ,iBAAiB;IACjB,mBAAmB;IACnB,YAAY;IACZ,YAAY;IACZ,oCAAoC;IACpC,gBAAgB;AACpB;;AAEA;IACI,oCAAoC;AACxC;;AAEA;IACI,YAAY;IACZ,aAAa;AACjB;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI,kBAAkB;IAClB,oBAAoB;IACpB,YAAY;IACZ,YAAY;IACZ,mBAAmB;IACnB,eAAe;IACf,gBAAgB;AACpB;;AAEA;IACI,gCAAgC;IAChC,gBAAgB;AACpB;;AAEA,eAAe;;AAEf;IACI,aAAa;AACjB;;AAEA;IACI,uBAAuB;IACvB,YAAY;IACZ,mBAAmB;IACnB,aAAa;AACjB;;AAEA;;;IAGI,YAAY;IACZ,eAAe;IACf,0CAA0C;IAC1C,mBAAmB;IACnB,YAAY;AAChB;;AAEA;;IAEI,gCAAgC;AACpC;;AAEA;IACI,eAAe;IACf,eAAe;IACf,kBAAkB;AACtB;;AAEA;IACI,SAAS;AACb;;AAEA;IACI,aAAa;IACb,4BAA4B;IAC5B,mBAAmB;AACvB;;AAEA;IACI,cAAc;IACd,WAAW;AACf;;AAEA;IACI,mBAAmB;IACnB,WAAW;IACX,eAAe;IACf,kBAAkB;AACtB;;AAEA;IACI,kCAAkC;IAClC,gBAAgB;AACpB;;AAEA,UAAU;;AAEV;IACI,uBAAuB;IACvB,aAAa;IACb,YAAY;IACZ,mBAAmB;IACnB,uBAAuB;IACvB,aAAa;IACb,2BAA2B;IAC3B,eAAe;AACnB;;AAEA;IACI,kCAAkC;IAClC,8CAA8C;AAClD;;AAEA;IACI,aAAa;IACb,+BAA+B;AACnC;;AAEA;IACI,iBAAiB;IACjB,iBAAiB;IACjB,oBAAoB;AACxB;;AAEA;;IAEI,aAAa;IACb,eAAe;AACnB;;AAEA;IACI,8BAA8B;AAClC;;AAEA;IACI,8BAA8B;AAClC;;AAEA;;IAEI,gBAAgB;AACpB;;AAEA;;IAEI,kBAAkB;IAClB,iBAAiB;AACrB","sourcesContent":["#content {\n    display: grid;\n    grid-template-rows: 1fr 8fr;\n}\n\n#todo-clear-mode-button {\n    width: 175px;\n    font-size: 1.2rem;\n    border-radius: 12px;\n    height: 58px;\n    margin: 12px;\n    background-color: rgb(255, 198, 198);\n    font-weight: 500;\n}\n\n#todo-clear-mode-button:hover {\n    background-color: rgb(255, 171, 171);\n}\n\n#content-items {\n    margin: 16px;\n    padding: 16px;\n}\n\n#todo-inputs {\n    display: grid;\n}\n\n#todo-add-button {\n    align-self: center;\n    justify-self: center;\n    height: 80px;\n    width: 160px;\n    border-radius: 50px;\n    font-size: 2rem;\n    font-weight: 500;\n}\n\n#todo-add-button:hover {\n    background-color: rgb(0, 255, 0);\n    font-weight: 700;\n}\n\n/* To Do Form */\n\n#todo-add-form {\n    display: none;\n}\n\n#todo-add-form form {\n    background-color: white;\n    padding: 8px;\n    border-radius: 16px;\n    display: grid;\n}\n\n#todo-add-form input,\n#todo-add-form textarea,\n#todo-add-form fieldset {\n    width: 250px;\n    font-size: 1rem;\n    border: 1px solid rgba(103, 103, 103, 0.5);\n    border-radius: 10px;\n    padding: 4px;\n}\n\n#todo-add-form input:hover,\n#todo-add-form textarea:hover {\n    border: 1.2px solid rgb(0, 0, 0);\n}\n\n#todo-add-form #duedate-input {\n    cursor: pointer;\n    margin-top: 5px;\n    margin-bottom: 5px;\n}\n\n#todo-add-form fieldset {\n    border: 0;\n}\n\n#todo-add-form fieldset div {\n    display: grid;\n    grid-template: 1fr / 1fr 5fr;\n    align-items: center;\n}\n\n#todo-add-form fieldset div input {\n    margin: 0.5rem;\n    width: 20px;\n}\n\n#todo-add-form button {\n    border-radius: 12px;\n    width: 70px;\n    margin-top: 5px;\n    text-align: center;\n}\n\n#todo-add-form button:hover {\n    background-color: rgb(72, 189, 72);\n    font-weight: 700;\n}\n\n/* To Do */\n\n.todo {\n    background-color: white;\n    padding: 16px;\n    margin: 16px;\n    border-radius: 16px;\n    border: 1px solid black;\n    display: grid;\n    grid-template-rows: 1fr 5fr;\n    cursor: pointer;\n}\n\n.todo:hover {\n    background-color: rgb(24, 244, 24);\n    transition: background-color 0.15s ease-in-out;\n}\n\n.todo-content {\n    display: grid;\n    grid-template-rows: 1fr 1fr 2fr;\n}\n\n.todo .title {\n    font-weight: bold;\n    font-size: 3.5rem;\n    justify-self: center;\n}\n\n.todo .due-date-div,\n.todo .priority-div {\n    display: grid;\n    font-size: 2rem;\n}\n\n.todo .due-date-div {\n    grid-template-columns: 1fr 3fr;\n}\n\n.todo .priority-div {\n    grid-template-columns: 3fr 5fr;\n}\n\n.todo .due-date-div .due-date,\n.todo .priority-div .priority {\n    font-weight: 700;\n}\n\n.todo .due-date-div .duedate-label,\n.todo .priority-div .priority-label {\n    font-style: italic;\n    text-align: start;\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "#content {\n    display: grid;\n    grid-template-rows: 1fr 8fr;\n}\n\n#todo-clear-mode-button:hover {\n    background-color: rgb(255, 171, 171);\n}\n\n#content-items {\n    margin: 16px;\n    padding: 16px;\n}\n\n#todo-inputs {\n    display: grid;\n}\n\n#todo-add-button {\n    align-self: center;\n    justify-self: center;\n    height: 80px;\n    width: 160px;\n    border-radius: 50px;\n    font-size: 2rem;\n    font-weight: 500;\n}\n\n#todo-add-button:hover {\n    background-color: rgb(0, 255, 0);\n    font-weight: 700;\n}\n\n/* To Do Form */\n\n#todo-add-form {\n    display: none;\n}\n\n#todo-add-form form {\n    background-color: white;\n    padding: 8px;\n    border-radius: 16px;\n    display: grid;\n}\n\n#todo-add-form input,\n#todo-add-form textarea,\n#todo-add-form fieldset {\n    width: 250px;\n    font-size: 1rem;\n    border: 1px solid rgba(103, 103, 103, 0.5);\n    border-radius: 10px;\n    padding: 4px;\n}\n\n#todo-add-form input:hover,\n#todo-add-form textarea:hover {\n    border: 1.2px solid rgb(0, 0, 0);\n}\n\n#todo-add-form #duedate-input {\n    cursor: pointer;\n    margin-top: 5px;\n    margin-bottom: 5px;\n}\n\n#todo-add-form fieldset {\n    border: 0;\n}\n\n#todo-add-form fieldset div {\n    display: grid;\n    grid-template: 1fr / 1fr 5fr;\n    align-items: center;\n}\n\n#todo-add-form fieldset div input {\n    margin: 0.5rem;\n    width: 20px;\n}\n\n#todo-add-form button {\n    border-radius: 12px;\n    width: 70px;\n    margin-top: 5px;\n    text-align: center;\n}\n\n#todo-add-form button:hover {\n    background-color: rgb(72, 189, 72);\n    font-weight: 700;\n}\n\n/* To Do */\n\n.todo {\n    background-color: white;\n    padding: 16px;\n    margin: 16px;\n    border-radius: 16px;\n    border: 1px solid black;\n    display: grid;\n    grid-template-rows: 1fr 5fr;\n    cursor: pointer;\n}\n\n.todo:hover {\n    background-color: rgb(24, 244, 24);\n    transition: background-color 0.15s ease-in-out;\n}\n\n.todo-content {\n    display: grid;\n    grid-template-rows: 1fr 1fr 2fr;\n}\n\n.todo .title {\n    font-weight: bold;\n    font-size: 3.5rem;\n    justify-self: center;\n}\n\n.todo .due-date-div,\n.todo .priority-div {\n    display: grid;\n    font-size: 2rem;\n}\n\n.todo .due-date-div {\n    grid-template-columns: 1fr 3fr;\n}\n\n.todo .priority-div {\n    grid-template-columns: 3fr 5fr;\n}\n\n.todo .due-date-div .due-date,\n.todo .priority-div .priority {\n    font-weight: 700;\n}\n\n.todo .due-date-div .duedate-label,\n.todo .priority-div .priority-label {\n    font-style: italic;\n    text-align: start;\n}", "",{"version":3,"sources":["webpack://./src/styles/to-do.css"],"names":[],"mappings":"AAAA;IACI,aAAa;IACb,2BAA2B;AAC/B;;AAEA;IACI,oCAAoC;AACxC;;AAEA;IACI,YAAY;IACZ,aAAa;AACjB;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI,kBAAkB;IAClB,oBAAoB;IACpB,YAAY;IACZ,YAAY;IACZ,mBAAmB;IACnB,eAAe;IACf,gBAAgB;AACpB;;AAEA;IACI,gCAAgC;IAChC,gBAAgB;AACpB;;AAEA,eAAe;;AAEf;IACI,aAAa;AACjB;;AAEA;IACI,uBAAuB;IACvB,YAAY;IACZ,mBAAmB;IACnB,aAAa;AACjB;;AAEA;;;IAGI,YAAY;IACZ,eAAe;IACf,0CAA0C;IAC1C,mBAAmB;IACnB,YAAY;AAChB;;AAEA;;IAEI,gCAAgC;AACpC;;AAEA;IACI,eAAe;IACf,eAAe;IACf,kBAAkB;AACtB;;AAEA;IACI,SAAS;AACb;;AAEA;IACI,aAAa;IACb,4BAA4B;IAC5B,mBAAmB;AACvB;;AAEA;IACI,cAAc;IACd,WAAW;AACf;;AAEA;IACI,mBAAmB;IACnB,WAAW;IACX,eAAe;IACf,kBAAkB;AACtB;;AAEA;IACI,kCAAkC;IAClC,gBAAgB;AACpB;;AAEA,UAAU;;AAEV;IACI,uBAAuB;IACvB,aAAa;IACb,YAAY;IACZ,mBAAmB;IACnB,uBAAuB;IACvB,aAAa;IACb,2BAA2B;IAC3B,eAAe;AACnB;;AAEA;IACI,kCAAkC;IAClC,8CAA8C;AAClD;;AAEA;IACI,aAAa;IACb,+BAA+B;AACnC;;AAEA;IACI,iBAAiB;IACjB,iBAAiB;IACjB,oBAAoB;AACxB;;AAEA;;IAEI,aAAa;IACb,eAAe;AACnB;;AAEA;IACI,8BAA8B;AAClC;;AAEA;IACI,8BAA8B;AAClC;;AAEA;;IAEI,gBAAgB;AACpB;;AAEA;;IAEI,kBAAkB;IAClB,iBAAiB;AACrB","sourcesContent":["#content {\n    display: grid;\n    grid-template-rows: 1fr 8fr;\n}\n\n#todo-clear-mode-button:hover {\n    background-color: rgb(255, 171, 171);\n}\n\n#content-items {\n    margin: 16px;\n    padding: 16px;\n}\n\n#todo-inputs {\n    display: grid;\n}\n\n#todo-add-button {\n    align-self: center;\n    justify-self: center;\n    height: 80px;\n    width: 160px;\n    border-radius: 50px;\n    font-size: 2rem;\n    font-weight: 500;\n}\n\n#todo-add-button:hover {\n    background-color: rgb(0, 255, 0);\n    font-weight: 700;\n}\n\n/* To Do Form */\n\n#todo-add-form {\n    display: none;\n}\n\n#todo-add-form form {\n    background-color: white;\n    padding: 8px;\n    border-radius: 16px;\n    display: grid;\n}\n\n#todo-add-form input,\n#todo-add-form textarea,\n#todo-add-form fieldset {\n    width: 250px;\n    font-size: 1rem;\n    border: 1px solid rgba(103, 103, 103, 0.5);\n    border-radius: 10px;\n    padding: 4px;\n}\n\n#todo-add-form input:hover,\n#todo-add-form textarea:hover {\n    border: 1.2px solid rgb(0, 0, 0);\n}\n\n#todo-add-form #duedate-input {\n    cursor: pointer;\n    margin-top: 5px;\n    margin-bottom: 5px;\n}\n\n#todo-add-form fieldset {\n    border: 0;\n}\n\n#todo-add-form fieldset div {\n    display: grid;\n    grid-template: 1fr / 1fr 5fr;\n    align-items: center;\n}\n\n#todo-add-form fieldset div input {\n    margin: 0.5rem;\n    width: 20px;\n}\n\n#todo-add-form button {\n    border-radius: 12px;\n    width: 70px;\n    margin-top: 5px;\n    text-align: center;\n}\n\n#todo-add-form button:hover {\n    background-color: rgb(72, 189, 72);\n    font-weight: 700;\n}\n\n/* To Do */\n\n.todo {\n    background-color: white;\n    padding: 16px;\n    margin: 16px;\n    border-radius: 16px;\n    border: 1px solid black;\n    display: grid;\n    grid-template-rows: 1fr 5fr;\n    cursor: pointer;\n}\n\n.todo:hover {\n    background-color: rgb(24, 244, 24);\n    transition: background-color 0.15s ease-in-out;\n}\n\n.todo-content {\n    display: grid;\n    grid-template-rows: 1fr 1fr 2fr;\n}\n\n.todo .title {\n    font-weight: bold;\n    font-size: 3.5rem;\n    justify-self: center;\n}\n\n.todo .due-date-div,\n.todo .priority-div {\n    display: grid;\n    font-size: 2rem;\n}\n\n.todo .due-date-div {\n    grid-template-columns: 1fr 3fr;\n}\n\n.todo .priority-div {\n    grid-template-columns: 3fr 5fr;\n}\n\n.todo .due-date-div .due-date,\n.todo .priority-div .priority {\n    font-weight: 700;\n}\n\n.todo .due-date-div .duedate-label,\n.todo .priority-div .priority-label {\n    font-style: italic;\n    text-align: start;\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -7143,6 +7169,60 @@ function toDate(argument) {
 
 /***/ }),
 
+/***/ "./src/styles/clear-mode.css":
+/*!***********************************!*\
+  !*** ./src/styles/clear-mode.css ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/styleDomAPI.js */ "./node_modules/style-loader/dist/runtime/styleDomAPI.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/insertBySelector.js */ "./node_modules/style-loader/dist/runtime/insertBySelector.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js */ "./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/insertStyleElement.js */ "./node_modules/style-loader/dist/runtime/insertStyleElement.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/styleTagTransform.js */ "./node_modules/style-loader/dist/runtime/styleTagTransform.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_clear_mode_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! !!../../node_modules/css-loader/dist/cjs.js!./clear-mode.css */ "./node_modules/css-loader/dist/cjs.js!./src/styles/clear-mode.css");
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+var options = {};
+
+options.styleTagTransform = (_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default());
+options.setAttributes = (_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default());
+
+      options.insert = _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default().bind(null, "head");
+    
+options.domAPI = (_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default());
+options.insertStyleElement = (_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default());
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_clear_mode_css__WEBPACK_IMPORTED_MODULE_6__["default"], options);
+
+
+
+
+       /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clear_mode_css__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_clear_mode_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_clear_mode_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
+
+
+/***/ }),
+
 /***/ "./src/styles/index.css":
 /*!******************************!*\
   !*** ./src/styles/index.css ***!
@@ -7725,6 +7805,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "addClearEventListener": () => (/* binding */ addClearEventListener)
 /* harmony export */ });
+/* harmony import */ var _styles_clear_mode_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../styles/clear-mode.css */ "./src/styles/clear-mode.css");
+
+
 const clearButton = document.querySelector('#todo-clear-mode-button');
 let clearMode = false;
 
@@ -7740,10 +7823,11 @@ const addClearEventListener = (element) => {
 
 const toggleClearModeButtonStyle = (clearMode) => {
     if (clearMode) {
-        clearButton.style.boxShadow = '0 0 10px red';
-        clearButton.style.fontWeight = '900';
-        clearButton.style.fontSize = '1.4rem';
-        clearButton.style.color = 'red';
+        // clearButton.style.boxShadow = '0 0 10px red';
+        // clearButton.style.fontWeight = '900';
+        // clearButton.style.fontSize = '1.4rem';
+        // clearButton.style.color = 'red';
+        clearButton.className = 'active';
         clearButton.style.transition = 'box-shadow 50ms ease-in, ' +
             'font-weight 50ms ease-in, ' +
             'font-size 50ms ease-in, ' +
@@ -7754,6 +7838,7 @@ const toggleClearModeButtonStyle = (clearMode) => {
         clearButton.style.fontWeight = '500';
         clearButton.style.fontSize = '1.2rem';
         clearButton.style.color = 'black';
+        clearButton.className = 'inactive';
     }
 };
 

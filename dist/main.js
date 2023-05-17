@@ -2,32 +2,6 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./src/styles/clear-mode.css":
-/*!*************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./src/styles/clear-mode.css ***!
-  \*************************************************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/sourceMaps.js */ "./node_modules/css-loader/dist/runtime/sourceMaps.js");
-/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
-// Imports
-
-
-var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
-// Module
-___CSS_LOADER_EXPORT___.push([module.id, "#todo-clear-mode-button.inactive {\n    width: 175px;\n    font-size: 1.2rem;\n    border-radius: 12px;\n    height: 58px;\n    margin: 12px;\n    background-color: rgb(255, 255, 255);\n    font-weight: 500;\n\n    transition: box-shadow 50ms ease-in,\n        font-weight 50ms ease-in,\n        font-size 50ms ease-in,\n        color 50ms ease-in;\n}\n\n#todo-clear-mode-button.active {\n    color: red;\n    font-size: 1.4rem;\n    font-weight: 900;\n    box-shadow: 0 0 10px red;\n\n    width: 175px;\n    border-radius: 12px;\n    height: 58px;\n    margin: 12px;\n    background-color: rgb(255, 198, 198);\n}\n\n\n#todo-clear-mode-button:hover {\n    background-color: rgb(255, 171, 171);\n}", "",{"version":3,"sources":["webpack://./src/styles/clear-mode.css"],"names":[],"mappings":"AAAA;IACI,YAAY;IACZ,iBAAiB;IACjB,mBAAmB;IACnB,YAAY;IACZ,YAAY;IACZ,oCAAoC;IACpC,gBAAgB;;IAEhB;;;0BAGsB;AAC1B;;AAEA;IACI,UAAU;IACV,iBAAiB;IACjB,gBAAgB;IAChB,wBAAwB;;IAExB,YAAY;IACZ,mBAAmB;IACnB,YAAY;IACZ,YAAY;IACZ,oCAAoC;AACxC;;;AAGA;IACI,oCAAoC;AACxC","sourcesContent":["#todo-clear-mode-button.inactive {\n    width: 175px;\n    font-size: 1.2rem;\n    border-radius: 12px;\n    height: 58px;\n    margin: 12px;\n    background-color: rgb(255, 255, 255);\n    font-weight: 500;\n\n    transition: box-shadow 50ms ease-in,\n        font-weight 50ms ease-in,\n        font-size 50ms ease-in,\n        color 50ms ease-in;\n}\n\n#todo-clear-mode-button.active {\n    color: red;\n    font-size: 1.4rem;\n    font-weight: 900;\n    box-shadow: 0 0 10px red;\n\n    width: 175px;\n    border-radius: 12px;\n    height: 58px;\n    margin: 12px;\n    background-color: rgb(255, 198, 198);\n}\n\n\n#todo-clear-mode-button:hover {\n    background-color: rgb(255, 171, 171);\n}"],"sourceRoot":""}]);
-// Exports
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
-
-
-/***/ }),
-
 /***/ "./node_modules/css-loader/dist/cjs.js!./src/styles/index.css":
 /*!********************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./src/styles/index.css ***!
@@ -100,6 +74,32 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, ".todo-folder {\n    grid-template: repeat(auto-fill, 300px) / repeat(auto-fill, minmax(450px, 1fr));\n}", "",{"version":3,"sources":["webpack://./src/styles/to-do-folders.css"],"names":[],"mappings":"AAAA;IACI,+EAA+E;AACnF","sourcesContent":[".todo-folder {\n    grid-template: repeat(auto-fill, 300px) / repeat(auto-fill, minmax(450px, 1fr));\n}"],"sourceRoot":""}]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./src/styles/to-do-mode.css":
+/*!*************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/styles/to-do-mode.css ***!
+  \*************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/sourceMaps.js */ "./node_modules/css-loader/dist/runtime/sourceMaps.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "#todo-clear-mode-button.inactive {\n    width: 175px;\n    font-size: 1.2rem;\n    border-radius: 12px;\n    height: 58px;\n    margin: 12px;\n    background-color: rgb(255, 255, 255);\n    font-weight: 500;\n\n    transition: box-shadow 50ms ease-in,\n        font-weight 50ms ease-in,\n        font-size 50ms ease-in,\n        color 50ms ease-in;\n}\n\n#todo-clear-mode-button.active {\n    color: red;\n    font-size: 1.4rem;\n    font-weight: 900;\n    box-shadow: 0 0 10px red;\n\n    width: 175px;\n    border-radius: 12px;\n    height: 58px;\n    margin: 12px;\n    background-color: rgb(255, 198, 198);\n}\n\n\n#todo-clear-mode-button:hover {\n    background-color: rgb(255, 171, 171);\n}", "",{"version":3,"sources":["webpack://./src/styles/to-do-mode.css"],"names":[],"mappings":"AAAA;IACI,YAAY;IACZ,iBAAiB;IACjB,mBAAmB;IACnB,YAAY;IACZ,YAAY;IACZ,oCAAoC;IACpC,gBAAgB;;IAEhB;;;0BAGsB;AAC1B;;AAEA;IACI,UAAU;IACV,iBAAiB;IACjB,gBAAgB;IAChB,wBAAwB;;IAExB,YAAY;IACZ,mBAAmB;IACnB,YAAY;IACZ,YAAY;IACZ,oCAAoC;AACxC;;;AAGA;IACI,oCAAoC;AACxC","sourcesContent":["#todo-clear-mode-button.inactive {\n    width: 175px;\n    font-size: 1.2rem;\n    border-radius: 12px;\n    height: 58px;\n    margin: 12px;\n    background-color: rgb(255, 255, 255);\n    font-weight: 500;\n\n    transition: box-shadow 50ms ease-in,\n        font-weight 50ms ease-in,\n        font-size 50ms ease-in,\n        color 50ms ease-in;\n}\n\n#todo-clear-mode-button.active {\n    color: red;\n    font-size: 1.4rem;\n    font-weight: 900;\n    box-shadow: 0 0 10px red;\n\n    width: 175px;\n    border-radius: 12px;\n    height: 58px;\n    margin: 12px;\n    background-color: rgb(255, 198, 198);\n}\n\n\n#todo-clear-mode-button:hover {\n    background-color: rgb(255, 171, 171);\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -7169,60 +7169,6 @@ function toDate(argument) {
 
 /***/ }),
 
-/***/ "./src/styles/clear-mode.css":
-/*!***********************************!*\
-  !*** ./src/styles/clear-mode.css ***!
-  \***********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/styleDomAPI.js */ "./node_modules/style-loader/dist/runtime/styleDomAPI.js");
-/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/insertBySelector.js */ "./node_modules/style-loader/dist/runtime/insertBySelector.js");
-/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js */ "./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js");
-/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/insertStyleElement.js */ "./node_modules/style-loader/dist/runtime/insertStyleElement.js");
-/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/styleTagTransform.js */ "./node_modules/style-loader/dist/runtime/styleTagTransform.js");
-/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_clear_mode_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! !!../../node_modules/css-loader/dist/cjs.js!./clear-mode.css */ "./node_modules/css-loader/dist/cjs.js!./src/styles/clear-mode.css");
-
-      
-      
-      
-      
-      
-      
-      
-      
-      
-
-var options = {};
-
-options.styleTagTransform = (_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default());
-options.setAttributes = (_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default());
-
-      options.insert = _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default().bind(null, "head");
-    
-options.domAPI = (_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default());
-options.insertStyleElement = (_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default());
-
-var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_clear_mode_css__WEBPACK_IMPORTED_MODULE_6__["default"], options);
-
-
-
-
-       /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clear_mode_css__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_clear_mode_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_clear_mode_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
-
-
-/***/ }),
-
 /***/ "./src/styles/index.css":
 /*!******************************!*\
   !*** ./src/styles/index.css ***!
@@ -7381,6 +7327,60 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 
        /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_to_do_folders_css__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_to_do_folders_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_to_do_folders_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
+
+
+/***/ }),
+
+/***/ "./src/styles/to-do-mode.css":
+/*!***********************************!*\
+  !*** ./src/styles/to-do-mode.css ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/styleDomAPI.js */ "./node_modules/style-loader/dist/runtime/styleDomAPI.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/insertBySelector.js */ "./node_modules/style-loader/dist/runtime/insertBySelector.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js */ "./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/insertStyleElement.js */ "./node_modules/style-loader/dist/runtime/insertStyleElement.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/styleTagTransform.js */ "./node_modules/style-loader/dist/runtime/styleTagTransform.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_to_do_mode_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! !!../../node_modules/css-loader/dist/cjs.js!./to-do-mode.css */ "./node_modules/css-loader/dist/cjs.js!./src/styles/to-do-mode.css");
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+var options = {};
+
+options.styleTagTransform = (_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default());
+options.setAttributes = (_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default());
+
+      options.insert = _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default().bind(null, "head");
+    
+options.domAPI = (_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default());
+options.insertStyleElement = (_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default());
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_to_do_mode_css__WEBPACK_IMPORTED_MODULE_6__["default"], options);
+
+
+
+
+       /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_to_do_mode_css__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_to_do_mode_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_to_do_mode_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
 
 
 /***/ }),
@@ -7795,87 +7795,6 @@ const setLabelAttributes = (item, attType, att, text) => {
 
 /***/ }),
 
-/***/ "./src/modules/clear-mode.js":
-/*!***********************************!*\
-  !*** ./src/modules/clear-mode.js ***!
-  \***********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "addClearEventListener": () => (/* binding */ addClearEventListener)
-/* harmony export */ });
-/* harmony import */ var _styles_clear_mode_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../styles/clear-mode.css */ "./src/styles/clear-mode.css");
-
-
-const clearButton = document.querySelector('#todo-clear-mode-button');
-let clearMode = false;
-
-const addClearEventListener = (element) => {
-    element.addEventListener('click', () => {
-        if (clearMode) {
-            element.remove();
-        } else {
-            //Expand to do
-        }
-    });
-};
-
-const toggleClearModeButtonStyle = (clearMode) => {
-    if (clearMode) {
-        clearButton.className = 'active';
-
-    } else {
-        clearButton.className = 'inactive';
-    }
-};
-
-const toggleToDoBorderStyle = (clearMode) => {
-    const toDos = document.querySelectorAll('.todo');
-    if (clearMode) {
-        toDos.forEach((toDo) => {
-            toDo.style.borderColor = '#ff5757';
-            toDo.style.backgroundColor = 'rgb(255 197 197)';
-            toDo.style.borderWidth = '2px';
-            toDo.style.boxShadow = '0 0 10px 5px rgb(136 44 44)';
-        });
-    } else {
-        toDos.forEach((toDo) => {
-            toDo.style.borderColor = 'black';
-            toDo.style.backgroundColor = 'white';
-            toDo.style.borderWidth = '1px';
-            toDo.style.boxShadow = '';
-        });
-    }
-};
-
-const toggleToDoInputsDisplay = (clearMode) => {
-    const toDoInputs = document.querySelector('#todo-inputs');
-    if (clearMode) {
-        toDoInputs.style.display = 'none';
-    } else {
-        toDoInputs.style.display = 'grid';
-    }
-};
-
-clearButton.addEventListener('click', () => {
-    if (!clearMode) {
-        clearMode = true;
-        toggleClearModeButtonStyle(clearMode);
-        toggleToDoBorderStyle(clearMode);
-        toggleToDoInputsDisplay(clearMode);
-    } else {
-        clearMode = false;
-        toggleClearModeButtonStyle(clearMode);
-        toggleToDoBorderStyle(clearMode);
-        toggleToDoInputsDisplay(clearMode);
-    }
-});
-
-
-
-/***/ }),
-
 /***/ "./src/modules/form-dom.js":
 /*!*********************************!*\
   !*** ./src/modules/form-dom.js ***!
@@ -7988,7 +7907,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "setToDoPriorityInput": () => (/* binding */ setToDoPriorityInput),
 /* harmony export */   "toggleToDoFormVisible": () => (/* binding */ toggleToDoFormVisible)
 /* harmony export */ });
-/* harmony import */ var _clear_mode__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./clear-mode */ "./src/modules/clear-mode.js");
+/* harmony import */ var _to_do_mode__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./to-do-mode */ "./src/modules/to-do-mode.js");
 /* harmony import */ var _attributes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./attributes */ "./src/modules/attributes.js");
 /* harmony import */ var _form_dom_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./form-dom.js */ "./src/modules/form-dom.js");
 /* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! date-fns */ "./node_modules/date-fns/esm/parse/index.js");
@@ -8103,7 +8022,7 @@ const displayToDo = (toDoItem, folder) => {
     folder.insertBefore(toDoParent, toDoInputs);
     toDoParent.appendChild(titleDiv);
     toDoParent.appendChild(toDoContentDiv);
-    (0,_clear_mode__WEBPACK_IMPORTED_MODULE_0__.addClearEventListener)(toDoParent);
+    (0,_to_do_mode__WEBPACK_IMPORTED_MODULE_0__.addClearEventListener)(toDoParent);
 };
 
 const addButtonType = (button, type) => {
@@ -8229,6 +8148,87 @@ const changeFolderHeading = (sidebarFolder) => {
     folderHeading.innerHTML = title.innerHTML;
 };
 
+
+
+
+/***/ }),
+
+/***/ "./src/modules/to-do-mode.js":
+/*!***********************************!*\
+  !*** ./src/modules/to-do-mode.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "addClearEventListener": () => (/* binding */ addClearEventListener)
+/* harmony export */ });
+/* harmony import */ var _styles_to_do_mode_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../styles/to-do-mode.css */ "./src/styles/to-do-mode.css");
+
+
+const clearButton = document.querySelector('#todo-clear-mode-button');
+let clearMode = false;
+
+const addClearEventListener = (element) => {
+    element.addEventListener('click', () => {
+        if (clearMode) {
+            element.remove();
+        } else {
+            //Expand to do
+        }
+    });
+};
+
+const toggleClearModeButtonStyle = (clearMode) => {
+    if (clearMode) {
+        clearButton.className = 'active';
+
+    } else {
+        clearButton.className = 'inactive';
+    }
+};
+
+const toggleToDoBorderStyle = (clearMode) => {
+    const toDos = document.querySelectorAll('.todo');
+    if (clearMode) {
+        toDos.forEach((toDo) => {
+            toDo.style.borderColor = '#ff5757';
+            toDo.style.backgroundColor = 'rgb(255 197 197)';
+            toDo.style.borderWidth = '2px';
+            toDo.style.boxShadow = '0 0 10px 5px rgb(136 44 44)';
+        });
+    } else {
+        toDos.forEach((toDo) => {
+            toDo.style.borderColor = 'black';
+            toDo.style.backgroundColor = 'white';
+            toDo.style.borderWidth = '1px';
+            toDo.style.boxShadow = '';
+        });
+    }
+};
+
+const toggleToDoInputsDisplay = (clearMode) => {
+    const toDoInputs = document.querySelector('#todo-inputs');
+    if (clearMode) {
+        toDoInputs.style.display = 'none';
+    } else {
+        toDoInputs.style.display = 'grid';
+    }
+};
+
+clearButton.addEventListener('click', () => {
+    if (!clearMode) {
+        clearMode = true;
+        toggleClearModeButtonStyle(clearMode);
+        toggleToDoBorderStyle(clearMode);
+        toggleToDoInputsDisplay(clearMode);
+    } else {
+        clearMode = false;
+        toggleClearModeButtonStyle(clearMode);
+        toggleToDoBorderStyle(clearMode);
+        toggleToDoInputsDisplay(clearMode);
+    }
+});
 
 
 

@@ -1,4 +1,4 @@
-import { addClearEventListener } from "./clear-mode";
+import { addClearEventListener } from "./to-do-mode";
 import { addAttributes } from "./attributes";
 import {
     addFormDateElements,

@@ -1,4 +1,4 @@
-import '../styles/clear-mode.css';
+import '../styles/to-do-mode.css';
 
 const clearButton = document.querySelector('#todo-clear-mode-button');
 let clearMode = false;

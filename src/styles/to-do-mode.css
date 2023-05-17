@@ -34,3 +34,16 @@
     background-color: rgb(24, 244, 24);
     transition: background-color 0.15s ease-in-out;
 }
+
+.todo.expand-mode {
+    border-color: black;
+    background-color: white;
+    border-width: 1px;
+}
+
+.todo.clear-mode {
+    border-color: #ff5757;
+    background-color: rgb(255 197 197);
+    border-width: 2px;
+    box-shadow: 0 0 10px 5px rgb(136 44 44);
+}

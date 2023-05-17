@@ -101,11 +101,6 @@
     cursor: pointer;
 }
 
-.todo:hover {
-    background-color: rgb(24, 244, 24);
-    transition: background-color 0.15s ease-in-out;
-}
-
 .todo-content {
     display: grid;
     grid-template-rows: 1fr 1fr 2fr;

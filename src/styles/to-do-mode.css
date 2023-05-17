@@ -26,7 +26,11 @@
     background-color: rgb(255, 198, 198);
 }
 
-
 #todo-clear-mode-button:hover {
     background-color: rgb(255, 171, 171);
+}
+
+.todo.expand-mode:hover {
+    background-color: rgb(24, 244, 24);
+    transition: background-color 0.15s ease-in-out;
 }

@@ -3,16 +3,6 @@
     grid-template-rows: 1fr 8fr;
 }
 
-#todo-clear-mode-button {
-    width: 175px;
-    font-size: 1.2rem;
-    border-radius: 12px;
-    height: 58px;
-    margin: 12px;
-    background-color: rgb(255, 198, 198);
-    font-weight: 500;
-}
-
 #todo-clear-mode-button:hover {
     background-color: rgb(255, 171, 171);
 }

@@ -1,0 +1,18 @@
+#todo-clear-mode-button.inactive {
+    width: 175px;
+    font-size: 1.2rem;
+    border-radius: 12px;
+    height: 58px;
+    margin: 12px;
+    background-color: rgb(255, 198, 198);
+    font-weight: 500;
+}
+
+#todo-clear-mode-button.active {
+    color: red;
+    font-size: 1.4rem;
+    font-weight: 900;
+    box-shadow: 0 0 10px red;
+}
+
+.clear-mode div:hover {}

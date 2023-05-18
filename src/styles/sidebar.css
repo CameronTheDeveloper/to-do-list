@@ -11,6 +11,12 @@
     justify-content: center;
 }
 
+#sidebar-title {
+    font-size: 3.2rem;
+    font-weight: 700;
+
+}
+
 #side-bar-items {
     display: grid;
 }

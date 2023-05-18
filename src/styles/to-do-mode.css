@@ -16,14 +16,19 @@
 #todo-clear-mode-button.active {
     color: red;
     font-size: 1.4rem;
-    font-weight: 900;
+    font-weight: 500;
     box-shadow: 0 0 10px red;
     background-color: rgb(255, 198, 198);
+}
+
+#todo-clear-mode-button.active .on-off {
+    font-weight: 900;
 }
 
 #todo-clear-mode-button:hover {
     background-color: rgb(255, 171, 171);
 }
+
 
 .todo.expand-mode:hover {
     background-color: rgb(24, 244, 24);

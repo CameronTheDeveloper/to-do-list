@@ -14,13 +14,16 @@ const addClearEventListener = (element) => {
 };
 
 const toggleClearModeButtonStyle = (clearMode) => {
+    const onOff = clearButton.querySelector('.on-off');
     if (clearMode) {
         clearButton.className = 'active';
+        onOff.innerHTML = 'ON';
     } else {
         clearButton.className = 'inactive';
+        onOff.innerHTML = 'Off';
     }
 };
-// Add todo mode class
+
 const toggleToDoBorderStyle = (clearMode) => {
     const toDos = document.querySelectorAll('.todo');
     if (clearMode) {

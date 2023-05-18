@@ -73,7 +73,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".todo-folder {\n    grid-template: repeat(auto-fill, 300px) / repeat(auto-fill, minmax(450px, 1fr));\n}", "",{"version":3,"sources":["webpack://./src/styles/to-do-folders.css"],"names":[],"mappings":"AAAA;IACI,+EAA+E;AACnF","sourcesContent":[".todo-folder {\n    grid-template: repeat(auto-fill, 300px) / repeat(auto-fill, minmax(450px, 1fr));\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".todo-folder {\n    grid-template: repeat(auto-fill, 300px) / repeat(auto-fill, minmax(450px, 1fr));\n    grid-auto-rows: 300px;\n}", "",{"version":3,"sources":["webpack://./src/styles/to-do-folders.css"],"names":[],"mappings":"AAAA;IACI,+EAA+E;IAC/E,qBAAqB;AACzB","sourcesContent":[".todo-folder {\n    grid-template: repeat(auto-fill, 300px) / repeat(auto-fill, minmax(450px, 1fr));\n    grid-auto-rows: 300px;\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

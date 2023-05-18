@@ -5,7 +5,7 @@
     font-size: 2rem;
     padding: 24px;
     display: grid;
-    grid-template-rows: 7fr 1fr;
+    grid-template-rows: 1fr 12fr;
     width: 400px;
     justify-items: center;
     justify-content: center;

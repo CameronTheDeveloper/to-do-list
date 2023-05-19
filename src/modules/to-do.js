@@ -23,8 +23,7 @@ function toDo(title, dueDate, priority, description) {
 }
 
 const addToDoButton = () => {
-    const addToDoButton = addButton(toDoInputs, '+ To Do', 'todo-add-button', 'button');
-    const toDoForm = document.querySelector('#todo-add-form');
+    const addToDoButton = addButton(toDoInputs, 'button', 'todo-add-button', 'active', '+ To Do');
 
     registerAddToDoListener(addToDoButton);
 };

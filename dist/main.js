@@ -7715,6 +7715,7 @@ module.exports = styleTagTransform;
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "addAttributes": () => (/* binding */ addAttributes),
+/* harmony export */   "addButtonAttributes": () => (/* binding */ addButtonAttributes),
 /* harmony export */   "addSidebarFormAttributes": () => (/* binding */ addSidebarFormAttributes),
 /* harmony export */   "addToDoFormAttributes": () => (/* binding */ addToDoFormAttributes),
 /* harmony export */   "addToDoLabelAttributes": () => (/* binding */ addToDoLabelAttributes),
@@ -7726,6 +7727,13 @@ const addAttributes = (text, attType, attName, elementType) => {
     element.textContent = text;
     element.setAttribute(attType, attName);
     return element;
+};
+
+const addButtonAttributes = (button, type, id, className, text) => {
+    button.setAttribute('type', type);
+    button.setAttribute('id', id);
+    button.setAttribute('class', className);
+    button.textContent = text;
 };
 
 const setTextInputAttributes = (item, type, id, maxLength) => {
@@ -7853,7 +7861,7 @@ const addToDoForm = (parent) => {
     (0,_page_layout__WEBPACK_IMPORTED_MODULE_2__.setToDoPriorityInput)(form);
     const descLabel = addFormLabelElement(form);
     const description = addFormInputElement('textarea', form);
-    const submitButton = (0,_page_layout__WEBPACK_IMPORTED_MODULE_2__.addButton)(form, 'submit', 'todo-submit-button', 'submit');
+    const submitButton = (0,_page_layout__WEBPACK_IMPORTED_MODULE_2__.addButton)(form, 'submit', 'todo-submit-button', 'active', 'submit');
 
     (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addToDoFormAttributes)(form, title, description);
     (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addToDoLabelAttributes)(titleLabel, descLabel);
@@ -8023,19 +8031,15 @@ const displayToDo = (toDoItem, folder) => {
     (0,_to_do_mode__WEBPACK_IMPORTED_MODULE_0__.addClearEventListener)(toDoParent);
 };
 
-const addButtonType = (button, type) => {
-    button.setAttribute('type', type);
-};
-
 const addAbove = (className, elementType, parent, lowerDiv) => {
     const element = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)('', 'class', className, elementType);
     parent.insertBefore(element, lowerDiv);
     return element;
 };
 
-const addButton = (parent, text, id, type) => {
+const addButton = (parent, type, id, className, text) => {
     const button = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)(text, 'id', id, 'button');
-    addButtonType(button, type);
+    (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addButtonAttributes)(button, type, id, className, text);
     parent.appendChild(button);
     return button;
 };
@@ -8075,7 +8079,7 @@ const initSidebar = () => {
 
 const addSidebarInput = () => {
     const sidebarForm = (0,_form_dom__WEBPACK_IMPORTED_MODULE_2__.addSidebarForm)(sidebarFolders);
-    const sidebarButton = (0,_page_layout__WEBPACK_IMPORTED_MODULE_1__.addButton)(sidebarForm, '+ Folder', 'sidebar-add-button', 'submit');
+    const sidebarButton = (0,_page_layout__WEBPACK_IMPORTED_MODULE_1__.addButton)(sidebarForm, 'submit', 'sidebar-add-button', 'active', '+ Folder');
 };
 
 
@@ -8262,8 +8266,7 @@ function toDo(title, dueDate, priority, description) {
 }
 
 const addToDoButton = () => {
-    const addToDoButton = (0,_page_layout__WEBPACK_IMPORTED_MODULE_1__.addButton)(toDoInputs, '+ To Do', 'todo-add-button', 'button');
-    const toDoForm = document.querySelector('#todo-add-form');
+    const addToDoButton = (0,_page_layout__WEBPACK_IMPORTED_MODULE_1__.addButton)(toDoInputs, 'button', 'todo-add-button', 'active', '+ To Do');
 
     (0,_user_input__WEBPACK_IMPORTED_MODULE_2__.registerAddToDoListener)(addToDoButton);
 };
@@ -8341,7 +8344,7 @@ const setActiveFolderOnClick = (sidebarFolder, folder) => {
 
 const setFolderElements = (parent, input, folder) => {
     const title = document.createElement('div');
-    const removeButton = (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.addButton)(parent, 'X', 'remove-folder-button', 'button');
+    const removeButton = (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.addButton)(parent, 'button', 'remove-folder-button', 'active', 'X');
     title.innerHTML = input;
     (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.addFolderChildElements)(parent, title, removeButton);
     registerRemoveFolderListener(removeButton, folder, parent);

@@ -52,7 +52,7 @@ const addToDoForm = (parent) => {
     setToDoPriorityInput(form);
     const descLabel = addFormLabelElement(form);
     const description = addFormInputElement('textarea', form);
-    const submitButton = addButton(form, 'submit', 'todo-submit-button', 'submit');
+    const submitButton = addButton(form, 'submit', 'todo-submit-button', 'active', 'submit');
 
     addToDoFormAttributes(form, title, description);
     addToDoLabelAttributes(titleLabel, descLabel);

@@ -1,5 +1,5 @@
 import { addClearEventListener } from "./to-do-mode";
-import { addAttributes } from "./attributes";
+import { addAttributes, addButtonAttributes } from "./attributes";
 import {
     addFormDateElements,
     addFormRadioElements
@@ -104,9 +104,9 @@ const addAbove = (className, elementType, parent, lowerDiv) => {
     return element;
 };
 
-const addButton = (parent, text, id, type) => {
+const addButton = (parent, type, id, className, text) => {
     const button = addAttributes(text, 'id', id, 'button');
-    // addButtonType(button, type);
+    addButtonAttributes(button, type, id, className, text);
     parent.appendChild(button);
     return button;
 };

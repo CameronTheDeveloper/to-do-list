@@ -37,7 +37,7 @@ const setActiveFolderOnClick = (sidebarFolder, folder) => {
 
 const setFolderElements = (parent, input, folder) => {
     const title = document.createElement('div');
-    const removeButton = addButton(parent, 'X', 'remove-folder-button', 'button');
+    const removeButton = addButton(parent, 'button', 'remove-folder-button', 'active', 'X');
     title.innerHTML = input;
     addFolderChildElements(parent, title, removeButton);
     registerRemoveFolderListener(removeButton, folder, parent);

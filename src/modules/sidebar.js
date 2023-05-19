@@ -10,7 +10,7 @@ const initSidebar = () => {
 
 const addSidebarInput = () => {
     const sidebarForm = addSidebarForm(sidebarFolders);
-    const sidebarButton = addButton(sidebarForm, '+ Folder', 'sidebar-add-button', 'submit');
+    const sidebarButton = addButton(sidebarForm, 'submit', 'sidebar-add-button', 'active', '+ Folder');
 };
 
 export { initSidebar };

@@ -86,7 +86,7 @@ const addToDoContent = (toDoItem) => {
     const priorityLabel = addAttributes('Priority - ', 'class', 'priority-label', 'div');
     const priorityValue = addAttributes(toDoItem.priority, 'class', 'priority', 'div');
 
-    const descDiv = addAttributes(toDoItem.description, 'class', 'description', 'div');
+    const descDiv = addAttributes(toDoItem.description, 'class', 'description', 'p');
 
     toDoContentDiv.setAttribute('class', 'todo-content');
     dueDateDiv.appendChild(dueDateLabel);

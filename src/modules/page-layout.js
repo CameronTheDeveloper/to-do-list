@@ -68,7 +68,6 @@ const toggleToDoFormVisible = () => {
     if (toDoForm.className === 'inactive') {
         checkedRadio.checked = true;
         toDoForm.className = 'active';
-        console.log();
     } else {
         toDoForm.className = 'inactive';
     }

@@ -7773,7 +7773,6 @@ const addSidebarFormAttributes = (form, input) => {
 };
 
 const addToDoFormAttributes = (form, title, desc) => {
-    //
     setFormElementAttributes(form, '', 'post');
     setTextInputAttributes(title, 'text', 'title-input', '10');
     setTextAreaAttributes(desc, 'description-input', '26', '5');
@@ -7982,9 +7981,7 @@ const toggleToDoFormVisible = () => {
     if (toDoForm.className === 'inactive') {
         checkedRadio.checked = true;
         toDoForm.className = 'active';
-        console.log();
     } else {
-        // checkedRadio.checked = true;
         toDoForm.className = 'inactive';
     }
 };

@@ -94,14 +94,12 @@ const registerRemoveFolderListener = (button, folder, sidebarElement) => {
 
 const toggleAddToDoButtonDisplay = () => {
     const button = document.querySelector('#todo-add-button');
-    if (button.style.display !== 'none') {
-        button.style.display = 'none';
+    if (button.className === 'active') {
+        button.className = 'inactive';
     } else {
-        button.style.display = 'inline-block';
+        button.className = 'active';
     }
 };
-
-
 
 const resetForm = (form) => {
     form.reset();

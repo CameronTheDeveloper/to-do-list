@@ -7861,11 +7861,21 @@ const addToDoForm = (parent) => {
     (0,_page_layout__WEBPACK_IMPORTED_MODULE_2__.setToDoPriorityInput)(form);
     const descLabel = addFormLabelElement(form);
     const description = addFormInputElement('textarea', form);
-    const submitButton = (0,_page_layout__WEBPACK_IMPORTED_MODULE_2__.addButton)(form, 'submit', 'todo-submit-button', 'active', 'submit');
+    addToDoFormButtons(form);
 
     (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addToDoFormAttributes)(form, title, description);
     (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addToDoLabelAttributes)(titleLabel, descLabel);
 
+
+};
+
+const addToDoFormButtons = (form) => {
+    const formButtonsDiv = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)('', 'id', 'todo-form-buttons-container', 'div');
+    const clearButton = (0,_page_layout__WEBPACK_IMPORTED_MODULE_2__.addButton)(formButtonsDiv, 'button', 'todo-form-clear-button', 'active', 'clear');
+    const submitButton = (0,_page_layout__WEBPACK_IMPORTED_MODULE_2__.addButton)(formButtonsDiv, 'submit', 'todo-submit-button', 'active', 'submit');
+    form.appendChild(formButtonsDiv);
+
+    (0,_user_input__WEBPACK_IMPORTED_MODULE_0__.registerToDoFormClearListener)(form, clearButton);
     (0,_user_input__WEBPACK_IMPORTED_MODULE_0__.registerToDoSubmitListener)(form);
 };
 
@@ -8305,6 +8315,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "getRadioInput": () => (/* binding */ getRadioInput),
 /* harmony export */   "registerAddToDoListener": () => (/* binding */ registerAddToDoListener),
 /* harmony export */   "registerSidebarSubmitListener": () => (/* binding */ registerSidebarSubmitListener),
+/* harmony export */   "registerToDoFormClearListener": () => (/* binding */ registerToDoFormClearListener),
 /* harmony export */   "registerToDoSubmitListener": () => (/* binding */ registerToDoSubmitListener),
 /* harmony export */   "setSidebarInput": () => (/* binding */ setSidebarInput)
 /* harmony export */ });
@@ -8416,6 +8427,14 @@ const registerAddToDoListener = (button) => {
     button.addEventListener('click', () => {
         toggleAddToDoButtonDisplay();
         (0,_form_dom__WEBPACK_IMPORTED_MODULE_3__.toggleToDoFormVisible)();
+    });
+};
+
+const registerToDoFormClearListener = (form, clearButton) => {
+    clearButton.addEventListener('click', () => {
+        toggleAddToDoButtonDisplay();
+        (0,_form_dom__WEBPACK_IMPORTED_MODULE_3__.toggleToDoFormVisible)();
+        form.reset();
     });
 };
 

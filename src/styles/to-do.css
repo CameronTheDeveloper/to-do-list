@@ -100,6 +100,7 @@
 
 #todo-form-buttons-container {
     grid-column: 2/3;
+    grid-row: 1/7;
     display: grid;
 }
 
@@ -108,7 +109,11 @@
     border-radius: 12px;
     width: 70px;
     margin-top: 5px;
-    text-align: center;
+    display: grid;
+    align-items: center;
+    align-content: center;
+    border: 0px;
+    background-color: #fafafa;
     transition: background-color 200ms, font-weight 50ms;
 }
 

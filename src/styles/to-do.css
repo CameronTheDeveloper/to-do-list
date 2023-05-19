@@ -116,6 +116,8 @@
 .todo .priority-div {
     display: grid;
     font-size: 2rem;
+    margin-top: 8px;
+    margin-bottom: 8px;
 }
 
 .todo .due-date-div {
@@ -124,6 +126,12 @@
 
 .todo .priority-div {
     grid-template-columns: 3fr 5fr;
+}
+
+.todo .description {
+    padding: 8px;
+    word-break: break-all;
+    hyphens: auto;
 }
 
 .todo .due-date-div .due-date,

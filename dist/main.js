@@ -7979,14 +7979,13 @@ const toggleToDoFormVisible = () => {
     const toDoForm = document.querySelector('#todo-add-form');
     const checkedRadio = document.querySelector('#low-radio');
 
-    if (toDoForm.style.display === 'none') {
+    if (toDoForm.className === 'inactive') {
         checkedRadio.checked = true;
-        toDoForm.style.display = 'grid';
-    } else if (toDoForm.style.display === 'grid') {
-        toDoForm.style.display = 'none';
+        toDoForm.className = 'active';
+        console.log();
     } else {
-        checkedRadio.checked = true;
-        toDoForm.style.display = 'grid';
+        // checkedRadio.checked = true;
+        toDoForm.className = 'inactive';
     }
 };
 

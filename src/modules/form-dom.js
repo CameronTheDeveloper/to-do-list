@@ -3,6 +3,7 @@ import {
     registerToDoSubmitListener
 } from "./user-input";
 import {
+    addAttributes,
     addSidebarFormAttributes,
     addToDoFormAttributes,
     addToDoLabelAttributes,
@@ -52,10 +53,19 @@ const addToDoForm = (parent) => {
     setToDoPriorityInput(form);
     const descLabel = addFormLabelElement(form);
     const description = addFormInputElement('textarea', form);
-    const submitButton = addButton(form, 'submit', 'todo-submit-button', 'active', 'submit');
+    addToDoFormButtons(form);
 
     addToDoFormAttributes(form, title, description);
     addToDoLabelAttributes(titleLabel, descLabel);
+
+
+};
+
+const addToDoFormButtons = (form) => {
+    const formButtonsDiv = addAttributes('', 'id', 'todo-form-buttons-container', 'div');
+    const clearButton = addButton(formButtonsDiv, 'button', 'todo-form-clear-button', 'active', 'clear');
+    const submitButton = addButton(formButtonsDiv, 'submit', 'todo-submit-button', 'active', 'submit');
+    form.appendChild(formButtonsDiv);
 
     registerToDoSubmitListener(form);
 };

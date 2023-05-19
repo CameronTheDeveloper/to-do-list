@@ -133,6 +133,7 @@ const registerToDoSubmitListener = (form) => {
 export {
     registerSidebarSubmitListener,
     registerAddToDoListener,
+    registerToDoFormClearListener,
     registerToDoSubmitListener,
     setSidebarInput,
     getInput,

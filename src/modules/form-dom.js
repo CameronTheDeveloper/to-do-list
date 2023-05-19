@@ -1,5 +1,6 @@
 import {
     registerSidebarSubmitListener,
+    registerToDoFormClearListener,
     registerToDoSubmitListener
 } from "./user-input";
 import {
@@ -67,6 +68,7 @@ const addToDoFormButtons = (form) => {
     const submitButton = addButton(formButtonsDiv, 'submit', 'todo-submit-button', 'active', 'submit');
     form.appendChild(formButtonsDiv);
 
+    registerToDoFormClearListener(form, clearButton);
     registerToDoSubmitListener(form);
 };
 

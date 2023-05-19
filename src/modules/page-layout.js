@@ -98,10 +98,6 @@ const displayToDo = (toDoItem, folder) => {
     addClearEventListener(toDoParent);
 };
 
-const addButtonType = (button, type) => {
-    button.setAttribute('type', type);
-};
-
 const addAbove = (className, elementType, parent, lowerDiv) => {
     const element = addAttributes('', 'class', className, elementType);
     parent.insertBefore(element, lowerDiv);
@@ -110,7 +106,7 @@ const addAbove = (className, elementType, parent, lowerDiv) => {
 
 const addButton = (parent, text, id, type) => {
     const button = addAttributes(text, 'id', id, 'button');
-    addButtonType(button, type);
+    // addButtonType(button, type);
     parent.appendChild(button);
     return button;
 };

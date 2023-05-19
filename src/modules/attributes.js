@@ -5,6 +5,13 @@ const addAttributes = (text, attType, attName, elementType) => {
     return element;
 };
 
+const addButtonAttributes = (button, type, id, className, text) => {
+    button.setAttribute('type', type);
+    button.setAttribute('id', id);
+    button.setAttribute('class', className);
+    button.textContent = text;
+};
+
 const setTextInputAttributes = (item, type, id, maxLength) => {
     item.setAttribute('type', type);
     item.setAttribute('id', id);
@@ -68,9 +75,10 @@ const setLabelAttributes = (item, attType, att, text) => {
 
 
 export {
+    addAttributes,
+    addButtonAttributes,
     addSidebarFormAttributes,
     addToDoFormAttributes,
-    addAttributes,
     addToDoLabelAttributes,
     setRadioAttributes,
     setDateInputAttributes

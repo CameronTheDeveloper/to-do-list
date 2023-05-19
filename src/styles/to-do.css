@@ -63,6 +63,8 @@
 
 #todo-add-form fieldset {
     border: 0;
+    display: flex;
+    gap: 14px;
 }
 
 #todo-add-form fieldset div {

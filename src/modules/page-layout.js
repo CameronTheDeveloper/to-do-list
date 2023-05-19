@@ -56,7 +56,7 @@ const createFieldset = (legendText) => {
 
 const setToDoPriorityInput = (form) => {
     const optionsAr = ['Low', 'Medium', 'High'];
-    const fieldset = createFieldset('Priority: ');
+    const fieldset = createFieldset('Priority');
     setRadioFormElements(fieldset, 'priority-input', optionsAr);
     form.appendChild(fieldset);
 };

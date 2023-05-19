@@ -60,6 +60,18 @@ const addToDoForm = (parent) => {
     registerToDoSubmitListener(form);
 };
 
+const toggleToDoFormVisible = () => {
+    const toDoForm = document.querySelector('#todo-add-form');
+    const checkedRadio = document.querySelector('#low-radio');
+
+    if (toDoForm.className === 'inactive') {
+        checkedRadio.checked = true;
+        toDoForm.className = 'active';
+    } else {
+        toDoForm.className = 'inactive';
+    }
+};
+
 const addFormInputElement = (type, parent) => {
     const input = document.createElement(type);
     parent.appendChild(input);
@@ -89,6 +101,7 @@ const addFormLabelElement = (parent) => {
 export {
     addSidebarForm,
     addToDoForm,
+    toggleToDoFormVisible,
     addFormDateElements,
     addFormRadioElements
 };

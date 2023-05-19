@@ -61,18 +61,6 @@ const setToDoPriorityInput = (form) => {
     form.appendChild(fieldset);
 };
 
-const toggleToDoFormVisible = () => {
-    const toDoForm = document.querySelector('#todo-add-form');
-    const checkedRadio = document.querySelector('#low-radio');
-
-    if (toDoForm.className === 'inactive') {
-        checkedRadio.checked = true;
-        toDoForm.className = 'active';
-    } else {
-        toDoForm.className = 'inactive';
-    }
-};
-
 const addToDoContent = (toDoItem) => {
     const toDoContentDiv = document.createElement('div');
     const dueDateDiv = addAttributes('', 'class', 'due-date-div', 'div');
@@ -137,7 +125,6 @@ export {
     addContent,
     addButton,
     addAbove,
-    toggleToDoFormVisible,
     displayToDo,
     hideElements,
     addFolderChildElements,

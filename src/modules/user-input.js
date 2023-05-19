@@ -1,7 +1,6 @@
 import {
     addAbove,
     addButton,
-    toggleToDoFormVisible,
     addFolderChildElements
 } from "./page-layout";
 import {
@@ -9,6 +8,7 @@ import {
     setActiveFolder,
 } from "./to-do-folders";
 import { addToDo } from "./to-do";
+import { toggleToDoFormVisible } from "./form-dom";
 
 const sidebarFolders = document.querySelector('#sidebar-folders');
 

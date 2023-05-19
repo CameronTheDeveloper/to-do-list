@@ -7806,7 +7806,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "addFormDateElements": () => (/* binding */ addFormDateElements),
 /* harmony export */   "addFormRadioElements": () => (/* binding */ addFormRadioElements),
 /* harmony export */   "addSidebarForm": () => (/* binding */ addSidebarForm),
-/* harmony export */   "addToDoForm": () => (/* binding */ addToDoForm)
+/* harmony export */   "addToDoForm": () => (/* binding */ addToDoForm),
+/* harmony export */   "toggleToDoFormVisible": () => (/* binding */ toggleToDoFormVisible)
 /* harmony export */ });
 /* harmony import */ var _user_input__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./user-input */ "./src/modules/user-input.js");
 /* harmony import */ var _attributes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./attributes */ "./src/modules/attributes.js");
@@ -7860,6 +7861,18 @@ const addToDoForm = (parent) => {
     (0,_user_input__WEBPACK_IMPORTED_MODULE_0__.registerToDoSubmitListener)(form);
 };
 
+const toggleToDoFormVisible = () => {
+    const toDoForm = document.querySelector('#todo-add-form');
+    const checkedRadio = document.querySelector('#low-radio');
+
+    if (toDoForm.className === 'inactive') {
+        checkedRadio.checked = true;
+        toDoForm.className = 'active';
+    } else {
+        toDoForm.className = 'inactive';
+    }
+};
+
 const addFormInputElement = (type, parent) => {
     const input = document.createElement(type);
     parent.appendChild(input);
@@ -7905,8 +7918,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "displayToDo": () => (/* binding */ displayToDo),
 /* harmony export */   "hideElements": () => (/* binding */ hideElements),
 /* harmony export */   "setToDoDueDateInput": () => (/* binding */ setToDoDueDateInput),
-/* harmony export */   "setToDoPriorityInput": () => (/* binding */ setToDoPriorityInput),
-/* harmony export */   "toggleToDoFormVisible": () => (/* binding */ toggleToDoFormVisible)
+/* harmony export */   "setToDoPriorityInput": () => (/* binding */ setToDoPriorityInput)
 /* harmony export */ });
 /* harmony import */ var _to_do_mode__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./to-do-mode */ "./src/modules/to-do-mode.js");
 /* harmony import */ var _attributes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./attributes */ "./src/modules/attributes.js");
@@ -7972,18 +7984,6 @@ const setToDoPriorityInput = (form) => {
     const fieldset = createFieldset('Priority');
     setRadioFormElements(fieldset, 'priority-input', optionsAr);
     form.appendChild(fieldset);
-};
-
-const toggleToDoFormVisible = () => {
-    const toDoForm = document.querySelector('#todo-add-form');
-    const checkedRadio = document.querySelector('#low-radio');
-
-    if (toDoForm.className === 'inactive') {
-        checkedRadio.checked = true;
-        toDoForm.className = 'active';
-    } else {
-        toDoForm.className = 'inactive';
-    }
 };
 
 const addToDoContent = (toDoItem) => {
@@ -8308,6 +8308,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _page_layout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./page-layout */ "./src/modules/page-layout.js");
 /* harmony import */ var _to_do_folders__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./to-do-folders */ "./src/modules/to-do-folders.js");
 /* harmony import */ var _to_do__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./to-do */ "./src/modules/to-do.js");
+/* harmony import */ var _form_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./form-dom */ "./src/modules/form-dom.js");
+
 
 
 
@@ -8412,7 +8414,7 @@ const resetForm = (form) => {
 const registerAddToDoListener = (button) => {
     button.addEventListener('click', () => {
         toggleAddToDoButtonDisplay();
-        (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.toggleToDoFormVisible)();
+        (0,_form_dom__WEBPACK_IMPORTED_MODULE_3__.toggleToDoFormVisible)();
     });
 };
 
@@ -8421,7 +8423,7 @@ const registerToDoSubmitListener = (form) => {
         event.preventDefault();
         (0,_to_do__WEBPACK_IMPORTED_MODULE_2__.addToDo)();
         toggleAddToDoButtonDisplay();
-        (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.toggleToDoFormVisible)();
+        (0,_form_dom__WEBPACK_IMPORTED_MODULE_3__.toggleToDoFormVisible)();
         resetForm(form);
     });
 };

@@ -29,8 +29,13 @@
 
 /* To Do Form */
 
-#todo-add-form {
+#todo-add-form.inactive {
     display: none;
+}
+
+#todo-add-form.active {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
 }
 
 #todo-add-form form {

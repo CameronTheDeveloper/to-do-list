@@ -60,7 +60,7 @@ const setToDoPriorityInput = (form) => {
     setRadioFormElements(fieldset, 'priority-input', optionsAr);
     form.appendChild(fieldset);
 };
-//Maybe change this function to toggle parameter visible
+
 const toggleToDoFormVisible = () => {
     const toDoForm = document.querySelector('#todo-add-form');
     const checkedRadio = document.querySelector('#low-radio');

@@ -15,9 +15,10 @@ import {
     addButton
 } from "./page-layout";
 
-const addFormParent = (parent, id) => {
+const addFormParent = (parent, id, className) => {
     const element = document.createElement('div');
     element.setAttribute('id', id);
+    element.setAttribute('class', className);
     parent.appendChild(element);
     return element;
 };
@@ -28,14 +29,14 @@ const addFormElement = (parent) => {
     return element;
 };
 
-const addFormToDOM = (parent, id) => {
-    const formParent = addFormParent(parent, id);
+const addFormToDOM = (parent, id, className) => {
+    const formParent = addFormParent(parent, id, className);
     const form = addFormElement(formParent);
     return form;
 };
 
 const addSidebarForm = (parent) => {
-    const form = addFormToDOM(parent, 'sidebar-add-form');
+    const form = addFormToDOM(parent, 'sidebar-add-form', 'active');
     const input = addFormInputElement('input', form);
 
     addSidebarFormAttributes(form, input);
@@ -44,7 +45,7 @@ const addSidebarForm = (parent) => {
 };
 
 const addToDoForm = (parent) => {
-    const form = addFormToDOM(parent, 'todo-add-form');
+    const form = addFormToDOM(parent, 'todo-add-form', 'inactive');
     const titleLabel = addFormLabelElement(form);
     const title = addFormInputElement('input', form);
     setToDoDueDateInput(form);

@@ -112,6 +112,14 @@ const registerAddToDoListener = (button) => {
     });
 };
 
+const registerToDoFormClearListener = (form, clearButton) => {
+    clearButton.addEventListener('click', () => {
+        toggleAddToDoButtonDisplay();
+        toggleToDoFormVisible();
+        form.reset();
+    });
+};
+
 const registerToDoSubmitListener = (form) => {
     form.addEventListener('submit', (event) => {
         event.preventDefault();

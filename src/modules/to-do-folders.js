@@ -4,12 +4,14 @@ import { setSidebarInput } from './user-input';
 
 const contentItems = document.querySelector('#content-items');
 const toDoInputs = document.querySelector('#todo-inputs');
+const defaultFolder = null;
+const defaultFolderName = 'General';
 let activeFolder = null;
 
 const initToDoFolder = () => {
-    const folderName = 'General';
-    const folder = addToDoFolder(folderName);
-    const sidebarFolder = setSidebarInput(folderName, folder, 'inactive');
+    const folder = addToDoFolder(defaultFolderName);
+    defaultFolder = folder;
+    const sidebarFolder = setSidebarInput(defaultFolderName, folder, 'inactive');
     activeFolder = setActiveFolder(sidebarFolder, folder);
 };
 
@@ -30,6 +32,11 @@ const setActiveFolder = (sidebarFolder, folder) => {
 };
 
 const getActiveFolder = () => {
+    return activeFolder;
+};
+
+const resetActiveFolder = () => {
+    activeFolder = setActiveFolder(defaultFolderName, defaultFolder);
     return activeFolder;
 };
 

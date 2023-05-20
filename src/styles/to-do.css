@@ -10,6 +10,7 @@
 
 #todo-inputs {
     display: grid;
+    justify-items: center;
 }
 
 #todo-add-button {
@@ -41,15 +42,10 @@
     display: none;
 }
 
-#todo-add-form.active {
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-}
-
 #todo-add-form form {
     background-color: white;
     border-radius: 16px;
-    padding: 10px 0px 10px 10px;
+    padding: 0px;
     display: grid;
 }
 
@@ -68,6 +64,11 @@
 #todo-add-form fieldset,
 #todo-add-form label {
     grid-column: 1/2;
+    margin-left: 14px;
+}
+
+#todo-add-form label {
+    margin-top: 5px;
 }
 
 #todo-add-form input:hover,
@@ -104,10 +105,7 @@
     display: grid;
 }
 
-
-#todo-add-form button {
-    /* Change to top/bottom border radius*/
-    border-radius: 14px;
+#todo-form-buttons-container button {
     width: 70px;
     margin-top: 0px;
     display: grid;
@@ -115,6 +113,14 @@
     align-content: center;
     border: 0px;
     transition: background-color 200ms, font-weight 50ms;
+}
+
+#todo-form-clear-button {
+    border-top-right-radius: 16px;
+}
+
+#todo-submit-button {
+    border-bottom-right-radius: 16px;
 }
 
 #todo-submit-button {

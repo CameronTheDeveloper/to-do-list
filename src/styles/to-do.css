@@ -88,12 +88,6 @@
     gap: 14px;
 }
 
-#todo-add-form fieldset div {
-    display: grid;
-    grid-template: 1fr / 1fr 5fr;
-    align-items: center;
-}
-
 #todo-add-form fieldset div input {
     margin: 0.5rem;
     width: 20px;

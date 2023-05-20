@@ -72,6 +72,14 @@
     border-width: 1px;
 }
 
+.remove-folder-button.inactive {
+    display: none;
+}
+
+.remove-folder-button.active {
+    display: inline-block;
+}
+
 .sidebar-folder button:hover {
     background-color: rgba(255, 37, 37, 0.798);
     font-weight: 900;

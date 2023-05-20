@@ -8114,6 +8114,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "addToDoFolder": () => (/* binding */ addToDoFolder),
 /* harmony export */   "getActiveFolder": () => (/* binding */ getActiveFolder),
 /* harmony export */   "initToDoFolder": () => (/* binding */ initToDoFolder),
+/* harmony export */   "resetActiveFolder": () => (/* binding */ resetActiveFolder),
 /* harmony export */   "setActiveFolder": () => (/* binding */ setActiveFolder)
 /* harmony export */ });
 /* harmony import */ var _styles_to_do_folders_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../styles/to-do-folders.css */ "./src/styles/to-do-folders.css");
@@ -8125,12 +8126,14 @@ __webpack_require__.r(__webpack_exports__);
 
 const contentItems = document.querySelector('#content-items');
 const toDoInputs = document.querySelector('#todo-inputs');
+const defaultFolder = null;
+const defaultFolderName = 'General';
 let activeFolder = null;
 
 const initToDoFolder = () => {
-    const folderName = 'General';
-    const folder = addToDoFolder(folderName);
-    const sidebarFolder = (0,_user_input__WEBPACK_IMPORTED_MODULE_2__.setSidebarInput)(folderName, folder, 'inactive');
+    const folder = addToDoFolder(defaultFolderName);
+    defaultFolder = folder;
+    const sidebarFolder = (0,_user_input__WEBPACK_IMPORTED_MODULE_2__.setSidebarInput)(defaultFolderName, folder, 'inactive');
     activeFolder = setActiveFolder(sidebarFolder, folder);
 };
 
@@ -8151,6 +8154,11 @@ const setActiveFolder = (sidebarFolder, folder) => {
 };
 
 const getActiveFolder = () => {
+    return activeFolder;
+};
+
+const resetActiveFolder = () => {
+    activeFolder = setActiveFolder(defaultFolderName, defaultFolder);
     return activeFolder;
 };
 
@@ -8412,6 +8420,7 @@ const registerRemoveFolderListener = (button, folder, sidebarElement) => {
     button.addEventListener('click', () => {
         removeFolderContentItems();
         removeFolder(folder, sidebarElement);
+        (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_1__.resetActiveFolder)();
     });
 };
 

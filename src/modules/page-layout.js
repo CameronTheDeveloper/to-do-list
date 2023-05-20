@@ -26,7 +26,7 @@ const formatToDoDate = (date) => {
     return formattedDate;
 };
 
-const setToDoDueDateInput = (form) => {
+const addToDoDueDateInput = (form) => {
     const today = new Date();
     const minDate = format(today, 'yyyy-MM-dd');
     const id = 'duedate-input';
@@ -54,7 +54,7 @@ const createFieldset = (legendText) => {
 };
 
 
-const setToDoPriorityInput = (form) => {
+const addToDoPriorityInput = (form) => {
     const optionsAr = ['Low', 'Medium', 'High'];
     const fieldset = createFieldset('Priority');
     setRadioFormElements(fieldset, 'priority-input', optionsAr);
@@ -131,6 +131,6 @@ export {
     hideElements,
     addFolderClearButton,
     addFolderChildElements,
-    setToDoDueDateInput,
-    setToDoPriorityInput
+    addToDoDueDateInput,
+    addToDoPriorityInput
 };

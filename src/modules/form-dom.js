@@ -12,8 +12,8 @@ import {
     setDateInputAttributes,
 } from "./attributes";
 import {
-    setToDoDueDateInput,
-    setToDoPriorityInput,
+    addToDoDueDateInput,
+    addToDoPriorityInput,
     addButton
 } from "./page-layout";
 
@@ -50,17 +50,18 @@ const addToDoForm = (parent) => {
     const form = addFormToDOM(parent, 'todo-add-form', 'inactive');
     const titleLabel = addFormLabelElement(form);
     const title = addFormInputElement('input', form);
-    setToDoDueDateInput(form);
-    setToDoPriorityInput(form);
+
+    addToDoDueDateInput(form);
+    addToDoPriorityInput(form);
     const descLabel = addFormLabelElement(form);
     const description = addFormInputElement('textarea', form);
     addToDoFormButtons(form);
 
     addToDoFormAttributes(form, title, description);
     addToDoLabelAttributes(titleLabel, descLabel);
-
-
 };
+
+
 
 const addToDoFormButtons = (form) => {
     const formButtonsDiv = addAttributes('', 'id', 'todo-form-buttons-container', 'div');

@@ -7857,17 +7857,18 @@ const addToDoForm = (parent) => {
     const form = addFormToDOM(parent, 'todo-add-form', 'inactive');
     const titleLabel = addFormLabelElement(form);
     const title = addFormInputElement('input', form);
-    (0,_page_layout__WEBPACK_IMPORTED_MODULE_2__.setToDoDueDateInput)(form);
-    (0,_page_layout__WEBPACK_IMPORTED_MODULE_2__.setToDoPriorityInput)(form);
+
+    (0,_page_layout__WEBPACK_IMPORTED_MODULE_2__.addToDoDueDateInput)(form);
+    (0,_page_layout__WEBPACK_IMPORTED_MODULE_2__.addToDoPriorityInput)(form);
     const descLabel = addFormLabelElement(form);
     const description = addFormInputElement('textarea', form);
     addToDoFormButtons(form);
 
     (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addToDoFormAttributes)(form, title, description);
     (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addToDoLabelAttributes)(titleLabel, descLabel);
-
-
 };
+
+
 
 const addToDoFormButtons = (form) => {
     const formButtonsDiv = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)('', 'id', 'todo-form-buttons-container', 'div');
@@ -7934,10 +7935,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "addContent": () => (/* binding */ addContent),
 /* harmony export */   "addFolderChildElements": () => (/* binding */ addFolderChildElements),
 /* harmony export */   "addFolderClearButton": () => (/* binding */ addFolderClearButton),
+/* harmony export */   "addToDoDueDateInput": () => (/* binding */ addToDoDueDateInput),
+/* harmony export */   "addToDoPriorityInput": () => (/* binding */ addToDoPriorityInput),
 /* harmony export */   "displayToDo": () => (/* binding */ displayToDo),
-/* harmony export */   "hideElements": () => (/* binding */ hideElements),
-/* harmony export */   "setToDoDueDateInput": () => (/* binding */ setToDoDueDateInput),
-/* harmony export */   "setToDoPriorityInput": () => (/* binding */ setToDoPriorityInput)
+/* harmony export */   "hideElements": () => (/* binding */ hideElements)
 /* harmony export */ });
 /* harmony import */ var _to_do_mode__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./to-do-mode */ "./src/modules/to-do-mode.js");
 /* harmony import */ var _attributes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./attributes */ "./src/modules/attributes.js");
@@ -7970,7 +7971,7 @@ const formatToDoDate = (date) => {
     return formattedDate;
 };
 
-const setToDoDueDateInput = (form) => {
+const addToDoDueDateInput = (form) => {
     const today = new Date();
     const minDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_4__["default"])(today, 'yyyy-MM-dd');
     const id = 'duedate-input';
@@ -7998,7 +7999,7 @@ const createFieldset = (legendText) => {
 };
 
 
-const setToDoPriorityInput = (form) => {
+const addToDoPriorityInput = (form) => {
     const optionsAr = ['Low', 'Medium', 'High'];
     const fieldset = createFieldset('Priority');
     setRadioFormElements(fieldset, 'priority-input', optionsAr);

@@ -7,9 +7,9 @@ const toDoInputs = document.querySelector('#todo-inputs');
 let activeFolder = null;
 
 const initToDoFolder = () => {
-    const folderName = 'Projects';
+    const folderName = 'General';
     const folder = addToDoFolder(folderName);
-    const sidebarFolder = setSidebarInput(folderName, folder);
+    const sidebarFolder = setSidebarInput(folderName, folder, 'inactive');
     activeFolder = setActiveFolder(sidebarFolder, folder);
 };
 

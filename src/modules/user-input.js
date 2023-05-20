@@ -35,9 +35,9 @@ const setActiveFolderOnClick = (sidebarFolder, folder) => {
 
 /* Sidebar */
 
-const setFolderElements = (parent, input, folder) => {
+const setFolderElements = (parent, input, folder, buttonClass) => {
     const title = document.createElement('div');
-    const removeButton = addButton(parent, 'button', 'remove-folder-button', 'active', 'X');
+    const removeButton = addButton(parent, 'button', 'remove-folder-button', buttonClass, 'X');
     title.innerHTML = input;
     addFolderChildElements(parent, title, removeButton);
     registerRemoveFolderListener(removeButton, folder, parent);
@@ -45,10 +45,10 @@ const setFolderElements = (parent, input, folder) => {
 };
 
 
-const setSidebarInput = (input, folder) => {
+const setSidebarInput = (input, folder, buttonClass) => {
     const sidebarForm = document.querySelector('#sidebar-add-form');
     const item = addAbove('sidebar-folder', 'div', sidebarFolders, sidebarForm);
-    setFolderElements(item, input, folder);
+    setFolderElements(item, input, folder, buttonClass);
     setActiveFolderOnClick(item, folder);
     return item;
 };
@@ -62,7 +62,7 @@ const manageSidebarInput = () => {
     const input = getSidebarInput();
     const folder = addToDoFolder(input);
 
-    const sidebarFolder = setSidebarInput(input, folder);
+    const sidebarFolder = setSidebarInput(input, folder, 'active');
 };
 
 const registerSidebarSubmitListener = (form, input) => {

@@ -8121,9 +8121,9 @@ const toDoInputs = document.querySelector('#todo-inputs');
 let activeFolder = null;
 
 const initToDoFolder = () => {
-    const folderName = 'Projects';
+    const folderName = 'General';
     const folder = addToDoFolder(folderName);
-    const sidebarFolder = (0,_user_input__WEBPACK_IMPORTED_MODULE_2__.setSidebarInput)(folderName, folder);
+    const sidebarFolder = (0,_user_input__WEBPACK_IMPORTED_MODULE_2__.setSidebarInput)(folderName, folder, 'inactive');
     activeFolder = setActiveFolder(sidebarFolder, folder);
 };
 
@@ -8353,9 +8353,9 @@ const setActiveFolderOnClick = (sidebarFolder, folder) => {
 
 /* Sidebar */
 
-const setFolderElements = (parent, input, folder) => {
+const setFolderElements = (parent, input, folder, buttonClass) => {
     const title = document.createElement('div');
-    const removeButton = (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.addButton)(parent, 'button', 'remove-folder-button', 'active', 'X');
+    const removeButton = (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.addButton)(parent, 'button', 'remove-folder-button', buttonClass, 'X');
     title.innerHTML = input;
     (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.addFolderChildElements)(parent, title, removeButton);
     registerRemoveFolderListener(removeButton, folder, parent);
@@ -8363,10 +8363,10 @@ const setFolderElements = (parent, input, folder) => {
 };
 
 
-const setSidebarInput = (input, folder) => {
+const setSidebarInput = (input, folder, buttonClass) => {
     const sidebarForm = document.querySelector('#sidebar-add-form');
     const item = (0,_page_layout__WEBPACK_IMPORTED_MODULE_0__.addAbove)('sidebar-folder', 'div', sidebarFolders, sidebarForm);
-    setFolderElements(item, input, folder);
+    setFolderElements(item, input, folder, buttonClass);
     setActiveFolderOnClick(item, folder);
     return item;
 };
@@ -8380,7 +8380,7 @@ const manageSidebarInput = () => {
     const input = getSidebarInput();
     const folder = (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_1__.addToDoFolder)(input);
 
-    const sidebarFolder = setSidebarInput(input, folder);
+    const sidebarFolder = setSidebarInput(input, folder, 'active');
 };
 
 const registerSidebarSubmitListener = (form, input) => {

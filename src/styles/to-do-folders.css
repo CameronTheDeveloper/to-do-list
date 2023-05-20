@@ -1,4 +1,4 @@
 .todo-folder {
-    grid-template: repeat(auto-fill, 300px) / repeat(auto-fill, minmax(450px, 1fr));
+    grid-template: repeat(auto-fill, 300px) / repeat(auto-fill, 450px);
     grid-auto-rows: 300px;
 }

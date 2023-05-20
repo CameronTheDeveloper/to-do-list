@@ -111,6 +111,12 @@ const addButton = (parent, type, id, className, text) => {
     return button;
 };
 
+const addFolderClearButton = (parent, activeClass) => {
+    const button = addAttributes('X', 'class', 'remove-folder-button ' + activeClass, 'button');
+    parent.appendChild(button);
+    return button;
+};
+
 const hideElements = (elements) => {
     elements.forEach((element) => {
         element.style.display = 'none';
@@ -123,6 +129,7 @@ export {
     addAbove,
     displayToDo,
     hideElements,
+    addFolderClearButton,
     addFolderChildElements,
     setToDoDueDateInput,
     setToDoPriorityInput

@@ -1,6 +1,7 @@
 import {
     addAbove,
     addButton,
+    addFolderClearButton,
     addFolderChildElements
 } from "./page-layout";
 import {
@@ -37,7 +38,7 @@ const setActiveFolderOnClick = (sidebarFolder, folder) => {
 
 const setFolderElements = (parent, input, folder, buttonClass) => {
     const title = document.createElement('div');
-    const removeButton = addButton(parent, 'button', 'remove-folder-button', buttonClass, 'X');
+    const removeButton = addFolderClearButton(parent, buttonClass);
     title.innerHTML = input;
     addFolderChildElements(parent, title, removeButton);
     registerRemoveFolderListener(removeButton, folder, parent);

@@ -53,4 +53,10 @@ const changeFolderHeading = (sidebarFolder) => {
     folderHeading.innerHTML = title.innerHTML;
 };
 
-export { initToDoFolder, addToDoFolder, setActiveFolder, getActiveFolder };
+export {
+    initToDoFolder,
+    addToDoFolder,
+    setActiveFolder,
+    getActiveFolder,
+    resetActiveFolder
+};

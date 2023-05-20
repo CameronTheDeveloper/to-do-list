@@ -7,6 +7,7 @@ import {
 import {
     addToDoFolder,
     setActiveFolder,
+    resetActiveFolder
 } from "./to-do-folders";
 import { addToDo } from "./to-do";
 import { toggleToDoFormVisible } from "./form-dom";
@@ -88,6 +89,7 @@ const registerRemoveFolderListener = (button, folder, sidebarElement) => {
     button.addEventListener('click', () => {
         removeFolderContentItems();
         removeFolder(folder, sidebarElement);
+        resetActiveFolder();
     });
 };
 

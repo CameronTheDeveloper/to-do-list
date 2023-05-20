@@ -106,24 +106,31 @@
 
 
 #todo-add-form button {
-    border-radius: 12px;
+    border-radius: 14px;
     width: 70px;
-    margin-top: 5px;
+    margin-top: 0px;
     display: grid;
     align-items: center;
     align-content: center;
     border: 0px;
-    background-color: #fafafa;
     transition: background-color 200ms, font-weight 50ms;
 }
 
+#todo-submit-button {
+    background-color: rgb(133, 185, 133);
+}
+
+#todo-form-clear-button {
+    background-color: rgb(245, 158, 158);
+}
+
 #todo-submit-button:hover {
-    background-color: rgb(72, 189, 72);
+    background-color: rgb(31, 192, 31);
     font-weight: 700;
 }
 
 #todo-form-clear-button:hover {
-    background-color: rgb(241, 94, 94);
+    background-color: rgb(227, 54, 54);
     font-weight: 700;
 }
 

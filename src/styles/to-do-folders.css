@@ -1,4 +1,6 @@
 .todo-folder {
     grid-template: repeat(auto-fill, 300px) / repeat(auto-fill, 450px);
+    grid-gap: 40px 10px;
     grid-auto-rows: 300px;
+    justify-items: center;
 }

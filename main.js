@@ -8132,7 +8132,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const contentItems = document.querySelector('#content-items');
 const toDoInputs = document.querySelector('#todo-inputs');
-let defaultFolder = null;
+let defaultFolder = null;       //Create getDefaultFolder function
 let defaultFolderName = 'General';
 let defaultSidebarFolder = null;
 let activeFolder = null;
@@ -8154,12 +8154,16 @@ const addToDoFolder = (folderName) => {
 };
 
 const setActiveFolder = (sidebarFolder, folder) => {
-    activeFolder = folder;
+    changeActiveFolder(folder);
     hideInactiveFolders(folder);
     folder.appendChild(toDoInputs);
     changeFolderHeading(sidebarFolder);
     (0,_form_dom__WEBPACK_IMPORTED_MODULE_3__.toggleToDoFormVisible)(false);
     return activeFolder;
+};
+
+const changeActiveFolder = (folder) => {
+    activeFolder = folder;
 };
 
 const getActiveFolder = () => {

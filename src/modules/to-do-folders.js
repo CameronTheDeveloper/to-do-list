@@ -1,6 +1,7 @@
 import '../styles/to-do-folders.css';
 import { hideElements } from "./page-layout";
 import { setSidebarInput } from './user-input';
+import { toggleToDoFormVisible } from './form-dom';
 
 const contentItems = document.querySelector('#content-items');
 const toDoInputs = document.querySelector('#todo-inputs');
@@ -30,6 +31,7 @@ const setActiveFolder = (sidebarFolder, folder) => {
     hideInactiveFolders(folder);
     folder.appendChild(toDoInputs);
     changeFolderHeading(sidebarFolder);
+    toggleToDoFormVisible(false);
     return activeFolder;
 };
 

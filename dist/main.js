@@ -8124,6 +8124,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_to_do_folders_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../styles/to-do-folders.css */ "./src/styles/to-do-folders.css");
 /* harmony import */ var _page_layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./page-layout */ "./src/modules/page-layout.js");
 /* harmony import */ var _user_input__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./user-input */ "./src/modules/user-input.js");
+/* harmony import */ var _form_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./form-dom */ "./src/modules/form-dom.js");
+
 
 
 
@@ -8156,6 +8158,7 @@ const setActiveFolder = (sidebarFolder, folder) => {
     hideInactiveFolders(folder);
     folder.appendChild(toDoInputs);
     changeFolderHeading(sidebarFolder);
+    (0,_form_dom__WEBPACK_IMPORTED_MODULE_3__.toggleToDoFormVisible)(false);
     return activeFolder;
 };
 

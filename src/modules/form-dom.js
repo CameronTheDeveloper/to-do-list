@@ -76,12 +76,15 @@ const addToDoFormButtons = (form) => {
 const toggleToDoFormVisible = () => {
     const toDoForm = document.querySelector('#todo-add-form');
     const checkedRadio = document.querySelector('#low-radio');
+    const toDoAddButton = document.querySelector('#todo-add-button');
 
     if (toDoForm.className === 'inactive') {
+        toDoAddButton.className = 'inactive';
         checkedRadio.checked = true;
         toDoForm.className = 'active';
     } else {
         toDoForm.className = 'inactive';
+        toDoAddButton.className = 'active';
     }
 };
 

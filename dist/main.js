@@ -7883,12 +7883,15 @@ const addToDoFormButtons = (form) => {
 const toggleToDoFormVisible = () => {
     const toDoForm = document.querySelector('#todo-add-form');
     const checkedRadio = document.querySelector('#low-radio');
+    const toDoAddButton = document.querySelector('#todo-add-button');
 
     if (toDoForm.className === 'inactive') {
+        toDoAddButton.className = 'inactive';
         checkedRadio.checked = true;
         toDoForm.className = 'active';
     } else {
         toDoForm.className = 'inactive';
+        toDoAddButton.className = 'active';
     }
 };
 
@@ -8428,25 +8431,14 @@ const registerRemoveFolderListener = (button, folder, sidebarElement) => {
 
 /* To Do */
 
-const toggleAddToDoButtonDisplay = () => {
-    const button = document.querySelector('#todo-add-button');
-    if (button.className === 'active') {
-        button.className = 'inactive';
-    } else {
-        button.className = 'active';
-    }
-};
-
 const registerAddToDoListener = (button) => {
     button.addEventListener('click', () => {
-        toggleAddToDoButtonDisplay();
         (0,_form_dom__WEBPACK_IMPORTED_MODULE_3__.toggleToDoFormVisible)();
     });
 };
 
 const registerToDoFormClearListener = (form, clearButton) => {
     clearButton.addEventListener('click', () => {
-        toggleAddToDoButtonDisplay();
         (0,_form_dom__WEBPACK_IMPORTED_MODULE_3__.toggleToDoFormVisible)();
         form.reset();
     });
@@ -8456,7 +8448,6 @@ const registerToDoSubmitListener = (form) => {
     form.addEventListener('submit', (event) => {
         event.preventDefault();
         (0,_to_do__WEBPACK_IMPORTED_MODULE_2__.addToDo)();
-        toggleAddToDoButtonDisplay();
         (0,_form_dom__WEBPACK_IMPORTED_MODULE_3__.toggleToDoFormVisible)();
         form.reset();
     });

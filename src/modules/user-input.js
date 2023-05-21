@@ -95,25 +95,14 @@ const registerRemoveFolderListener = (button, folder, sidebarElement) => {
 
 /* To Do */
 
-const toggleAddToDoButtonDisplay = () => {
-    const button = document.querySelector('#todo-add-button');
-    if (button.className === 'active') {
-        button.className = 'inactive';
-    } else {
-        button.className = 'active';
-    }
-};
-
 const registerAddToDoListener = (button) => {
     button.addEventListener('click', () => {
-        toggleAddToDoButtonDisplay();
         toggleToDoFormVisible();
     });
 };
 
 const registerToDoFormClearListener = (form, clearButton) => {
     clearButton.addEventListener('click', () => {
-        toggleAddToDoButtonDisplay();
         toggleToDoFormVisible();
         form.reset();
     });
@@ -123,7 +112,6 @@ const registerToDoSubmitListener = (form) => {
     form.addEventListener('submit', (event) => {
         event.preventDefault();
         addToDo();
-        toggleAddToDoButtonDisplay();
         toggleToDoFormVisible();
         form.reset();
     });

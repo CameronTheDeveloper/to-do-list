@@ -8142,7 +8142,8 @@ const initToDoFolder = () => {
     const sidebarFolder = (0,_user_input__WEBPACK_IMPORTED_MODULE_2__.setSidebarInput)(defaultFolderName, folder, 'inactive');
     defaultFolder = folder;
     defaultSidebarFolder = sidebarFolder;
-    activeFolder = setActiveFolder(sidebarFolder, folder);
+    //defaultSidebarFolder.setAttribute('id', 'default-folder');
+    setActiveFolder(sidebarFolder, folder);
 };
 
 const addToDoFolder = (folderName) => {
@@ -8154,14 +8155,12 @@ const addToDoFolder = (folderName) => {
 };
 
 const setActiveFolder = (sidebarFolder, folder) => {
-    if (folder != activeFolder) {
-        changeActiveFolder(folder);
-        hideInactiveFolders(folder);
-        folder.appendChild(toDoInputs);
-        changeFolderHeading(sidebarFolder);
-        (0,_form_dom__WEBPACK_IMPORTED_MODULE_3__.toggleToDoFormVisible)(false);
-        return activeFolder;
-    }
+    changeActiveFolder(folder);
+    hideInactiveFolders(folder);
+    folder.appendChild(toDoInputs);
+    changeFolderHeading(sidebarFolder);
+    (0,_form_dom__WEBPACK_IMPORTED_MODULE_3__.toggleToDoFormVisible)(false);
+    return activeFolder;
 };
 
 const changeActiveFolder = (folder) => {
@@ -8172,8 +8171,10 @@ const getActiveFolder = () => {
     return activeFolder;
 };
 
-const resetActiveFolder = () => {
-    activeFolder = setActiveFolder(defaultSidebarFolder, defaultFolder);
+const resetActiveFolder = (folder) => {
+    if (folder === activeFolder) {
+        activeFolder = setActiveFolder(defaultSidebarFolder, defaultFolder);
+    }
 };
 
 const hideInactiveFolders = (activeFolder) => {
@@ -8425,16 +8426,10 @@ const removeFolder = (folder, sidebarElement) => {
     sidebarElement.remove();
 };
 
-const removeFolderContentItems = () => {
-    const folderHeader = document.querySelector('#active-folder-heading');
-    folderHeader.innerHTML = '';
-};
-
 const registerRemoveFolderListener = (button, folder, sidebarElement) => {
     button.addEventListener('click', () => {
-        removeFolderContentItems();
         removeFolder(folder, sidebarElement);
-        (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_1__.resetActiveFolder)();
+        (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_1__.resetActiveFolder)(folder);
     });
 };
 

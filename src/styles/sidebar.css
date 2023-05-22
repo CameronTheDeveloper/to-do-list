@@ -1,27 +1,28 @@
-body {
+#left-content {
     scrollbar-width: thin;
     /* Fallback for Firefox */
-    scrollbar-color: #939b92 #ffffff;
+    scrollbar-color: #1e355c rgb(170, 255, 43);
     /* Fallback for newer WebKit browsers */
 }
 
-::-webkit-scrollbar {
-    width: 10px;
+#left-content ::-webkit-scrollbar {
+    height: 3px;
+    width: 3px;
 }
 
-::-webkit-scrollbar-track {
-    background-color: #ffffff;
+#left-content ::-webkit-scrollbar-track {
+    background-color: rgb(170, 255, 43);
 }
 
-::-webkit-scrollbar-thumb {
-    background-color: #939b92;
+#left-content ::-webkit-scrollbar-thumb {
+    background-color: #1e355c;
 }
 
 #left-content {
     grid-column: 1/2;
     grid-row: 1/-1;
     background-color: rgb(170, 255, 43);
-    width: 450px
+    width: 445px
 }
 
 #sidebar {

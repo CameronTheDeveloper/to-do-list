@@ -93,6 +93,10 @@
     width: 20px;
 }
 
+#todo-add-form textarea {
+    resize: none;
+}
+
 #todo-form-buttons-container {
     grid-column: 2/3;
     grid-row: 1/7;

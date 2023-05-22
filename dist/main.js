@@ -8154,12 +8154,14 @@ const addToDoFolder = (folderName) => {
 };
 
 const setActiveFolder = (sidebarFolder, folder) => {
-    changeActiveFolder(folder);
-    hideInactiveFolders(folder);
-    folder.appendChild(toDoInputs);
-    changeFolderHeading(sidebarFolder);
-    (0,_form_dom__WEBPACK_IMPORTED_MODULE_3__.toggleToDoFormVisible)(false);
-    return activeFolder;
+    if (folder != activeFolder) {
+        changeActiveFolder(folder);
+        hideInactiveFolders(folder);
+        folder.appendChild(toDoInputs);
+        changeFolderHeading(sidebarFolder);
+        (0,_form_dom__WEBPACK_IMPORTED_MODULE_3__.toggleToDoFormVisible)(false);
+        return activeFolder;
+    }
 };
 
 const changeActiveFolder = (folder) => {

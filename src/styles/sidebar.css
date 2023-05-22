@@ -128,4 +128,5 @@
 
 .sidebar-folder-title {
     max-width: 350px;
+    word-wrap: break-word;
 }

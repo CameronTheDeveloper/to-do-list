@@ -20,11 +20,12 @@ const setTextInputAttributes = (item, type, id, maxLength) => {
     item.required = true;
 };
 
-const setTextAreaAttributes = (item, id, cols, rows) => {
+const setTextAreaAttributes = (item, id, cols, rows, maxLength) => {
     item.setAttribute('id', id);
     item.setAttribute('name', id);
     item.setAttribute('rows', rows);
     item.setAttribute('cols', cols);
+    item.setAttribute('maxlength', maxLength);
 };
 
 const setRadioAttributes = (element, label, name, value) => {
@@ -59,7 +60,7 @@ const addSidebarFormAttributes = (form, input) => {
 const addToDoFormAttributes = (form, title, desc) => {
     setFormElementAttributes(form, '', 'post');
     setTextInputAttributes(title, 'text', 'title-input', '10');
-    setTextAreaAttributes(desc, 'description-input', '26', '5');
+    setTextAreaAttributes(desc, 'description-input', '26', '5', '150');
 };
 
 const addToDoLabelAttributes = (title, desc) => {

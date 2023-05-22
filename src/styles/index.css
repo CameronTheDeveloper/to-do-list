@@ -22,7 +22,6 @@ button {
     display: grid;
     grid-template-columns: 1fr 5fr;
     justify-items: center;
-    align-items: center;
 }
 
 #active-folder-heading {
@@ -30,4 +29,5 @@ button {
     font-weight: 700;
     max-width: 1000px;
     word-wrap: break-word;
+    align-self: center;
 }

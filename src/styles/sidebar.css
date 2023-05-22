@@ -1,3 +1,22 @@
+body {
+    scrollbar-width: thin;
+    /* Fallback for Firefox */
+    scrollbar-color: #939b92 #ffffff;
+    /* Fallback for newer WebKit browsers */
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #ffffff;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #939b92;
+}
+
 #left-content {
     grid-column: 1/2;
     grid-row: 1/-1;

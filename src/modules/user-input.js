@@ -80,16 +80,10 @@ const removeFolder = (folder, sidebarElement) => {
     sidebarElement.remove();
 };
 
-const removeFolderContentItems = () => {
-    const folderHeader = document.querySelector('#active-folder-heading');
-    folderHeader.innerHTML = '';
-};
-
 const registerRemoveFolderListener = (button, folder, sidebarElement) => {
     button.addEventListener('click', () => {
-        removeFolderContentItems();
         removeFolder(folder, sidebarElement);
-        resetActiveFolder();
+        resetActiveFolder(folder);
     });
 };
 

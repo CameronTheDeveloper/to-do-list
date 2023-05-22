@@ -15,7 +15,8 @@ const initToDoFolder = () => {
     const sidebarFolder = setSidebarInput(defaultFolderName, folder, 'inactive');
     defaultFolder = folder;
     defaultSidebarFolder = sidebarFolder;
-    activeFolder = setActiveFolder(sidebarFolder, folder);
+    //defaultSidebarFolder.setAttribute('id', 'default-folder');
+    setActiveFolder(sidebarFolder, folder);
 };
 
 const addToDoFolder = (folderName) => {
@@ -27,14 +28,12 @@ const addToDoFolder = (folderName) => {
 };
 
 const setActiveFolder = (sidebarFolder, folder) => {
-    if (folder != activeFolder) {
-        changeActiveFolder(folder);
-        hideInactiveFolders(folder);
-        folder.appendChild(toDoInputs);
-        changeFolderHeading(sidebarFolder);
-        toggleToDoFormVisible(false);
-        return activeFolder;
-    }
+    changeActiveFolder(folder);
+    hideInactiveFolders(folder);
+    folder.appendChild(toDoInputs);
+    changeFolderHeading(sidebarFolder);
+    toggleToDoFormVisible(false);
+    return activeFolder;
 };
 
 const changeActiveFolder = (folder) => {
@@ -45,8 +44,10 @@ const getActiveFolder = () => {
     return activeFolder;
 };
 
-const resetActiveFolder = () => {
-    activeFolder = setActiveFolder(defaultSidebarFolder, defaultFolder);
+const resetActiveFolder = (folder) => {
+    if (folder === activeFolder) {
+        activeFolder = setActiveFolder(defaultSidebarFolder, defaultFolder);
+    }
 };
 
 const hideInactiveFolders = (activeFolder) => {

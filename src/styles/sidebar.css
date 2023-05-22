@@ -1,7 +1,10 @@
-#sidebar {
+#left-content {
     grid-column: 1/2;
     grid-row: 1/-1;
     background-color: rgb(170, 255, 43);
+}
+
+#sidebar {
     font-size: 2rem;
     padding: 24px;
     display: grid;
@@ -14,7 +17,6 @@
 #sidebar-title {
     font-size: 3.2rem;
     font-weight: 700;
-
 }
 
 #side-bar-items {

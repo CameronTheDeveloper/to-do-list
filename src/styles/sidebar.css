@@ -2,9 +2,14 @@
     grid-column: 1/2;
     grid-row: 1/-1;
     background-color: rgb(170, 255, 43);
+    width: 450px
 }
 
 #sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    overflow-y: scroll;
     font-size: 2rem;
     padding: 24px;
     display: grid;

@@ -40,7 +40,7 @@ const toggleToDoInputsDisplay = (clearMode) => {
     }
 };
 
-const addToDoClearEventListener = (toDo) => {
+const addToDoClickEventListener = (toDo) => {
     toDo.addEventListener('click', () => {
         if (clearMode) {
             toDo.remove();
@@ -64,4 +64,4 @@ clearButton.addEventListener('click', () => {
     }
 });
 
-export { addToDoClearEventListener };
+export { addToDoClickEventListener };

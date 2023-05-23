@@ -149,12 +149,13 @@
     display: grid;
     grid-template-rows: 1fr 5fr;
     cursor: pointer;
-    height: 175px;
+    height: 200px;
 }
 
 .todo-content {
     display: grid;
     grid-template-rows: 1fr 1fr 2fr;
+    overflow: hidden;
 }
 
 .todo .title {
@@ -182,7 +183,6 @@
 .todo .description {
     word-break: break-all;
     hyphens: auto;
-    display: none;
 }
 
 .todo .due-date-div .due-date,

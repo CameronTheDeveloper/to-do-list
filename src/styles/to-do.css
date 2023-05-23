@@ -149,6 +149,7 @@
     display: grid;
     grid-template-rows: 1fr 5fr;
     cursor: pointer;
+    height: 175px;
 }
 
 .todo-content {
@@ -181,6 +182,7 @@
 .todo .description {
     word-break: break-all;
     hyphens: auto;
+    display: none;
 }
 
 .todo .due-date-div .due-date,

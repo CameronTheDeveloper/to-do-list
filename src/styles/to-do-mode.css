@@ -35,6 +35,15 @@
     transition: background-color 0.15s ease-in-out;
 }
 
+.todo.expanded {
+    background-color: rgb(24, 244, 24);
+    height: 90%;
+}
+
+.todo.expanded .description {
+    display: block;
+}
+
 .todo.clear-mode:hover {
     background-color: rgb(249 60 60);
     transition: background-color 0.08s ease-in-out;

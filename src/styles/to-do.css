@@ -155,7 +155,12 @@
 .todo-content {
     display: grid;
     grid-template-rows: 1fr 1fr 2fr;
+}
+
+.todo.expand-mode .todo-content .description {
+    white-space: nowrap;
     overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .todo .title {

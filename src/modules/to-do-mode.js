@@ -42,7 +42,7 @@ const toggleToDoInputsDisplay = (clearMode) => {
 
 const addToDoClearEventListener = (toDo) => {
     toDo.addEventListener('click', () => {
-        if (toDo) {
+        if (clearMode) {
             toDo.remove();
         } else {
             toggleToDoExpand(toDo);

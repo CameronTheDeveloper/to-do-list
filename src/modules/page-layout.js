@@ -1,4 +1,4 @@
-import { addClearEventListener } from "./to-do-mode";
+import { addToDoClearEventListener } from "./to-do-mode";
 import { addAttributes, addButtonAttributes } from "./attributes";
 import {
     addFormDateElements,
@@ -95,7 +95,7 @@ const displayToDo = (toDoItem, folder) => {
     folder.insertBefore(toDoParent, toDoInputs);
     toDoParent.appendChild(titleDiv);
     toDoParent.appendChild(toDoContentDiv);
-    addClearEventListener(toDoParent);
+    addToDoClearEventListener(toDoParent);
 };
 
 const addAbove = (className, elementType, parent, lowerDiv) => {

@@ -3,16 +3,6 @@ import '../styles/to-do-mode.css';
 const clearButton = document.querySelector('#todo-clear-mode-button');
 let clearMode = false;
 
-const addClearEventListener = (element) => {
-    element.addEventListener('click', () => {
-        if (clearMode) {
-            element.remove();
-        } else {
-            //Expand to do
-        }
-    });
-};
-
 const toggleClearModeButtonStyle = (clearMode) => {
     const onOff = clearButton.querySelector('.on-off');
     if (clearMode) {
@@ -37,6 +27,10 @@ const toggleToDoModeStyle = (clearMode) => {
     }
 };
 
+const toggleToDoExpand = (todo) => {
+
+};
+
 const toggleToDoInputsDisplay = (clearMode) => {
     const toDoInputs = document.querySelector('#todo-inputs');
     if (clearMode) {
@@ -44,6 +38,16 @@ const toggleToDoInputsDisplay = (clearMode) => {
     } else {
         toDoInputs.style.display = 'grid';
     }
+};
+
+const addToDoClearEventListener = (toDo) => {
+    toDo.addEventListener('click', () => {
+        if (toDo) {
+            toDo.remove();
+        } else {
+            toggleToDoExpand(toDo);
+        }
+    });
 };
 
 clearButton.addEventListener('click', () => {
@@ -60,4 +64,4 @@ clearButton.addEventListener('click', () => {
     }
 });
 
-export { addClearEventListener };
+export { addToDoClearEventListener };

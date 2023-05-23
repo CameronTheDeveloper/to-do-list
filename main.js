@@ -8232,7 +8232,7 @@ const toggleClearModeButtonStyle = (clearMode) => {
     }
 };
 
-const toggleToDoBorderStyle = (clearMode) => {
+const toggleToDoModeStyle = (clearMode) => {
     const toDos = document.querySelectorAll('.todo');
     if (clearMode) {
         toDos.forEach((toDo) => {
@@ -8258,12 +8258,12 @@ clearButton.addEventListener('click', () => {
     if (!clearMode) {
         clearMode = true;
         toggleClearModeButtonStyle(clearMode);
-        toggleToDoBorderStyle(clearMode);
+        toggleToDoModeStyle(clearMode);
         toggleToDoInputsDisplay(clearMode);
     } else {
         clearMode = false;
         toggleClearModeButtonStyle(clearMode);
-        toggleToDoBorderStyle(clearMode);
+        toggleToDoModeStyle(clearMode);
         toggleToDoInputsDisplay(clearMode);
     }
 });

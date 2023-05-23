@@ -27,8 +27,13 @@ const toggleToDoModeStyle = (clearMode) => {
     }
 };
 
-const toggleToDoExpand = (todo) => {
-
+const toggleToDoExpand = (toDo) => {
+    if (toDo.className !== 'todo expanded') {
+        toggleToDoModeStyle(false);
+        toDo.className = 'todo expanded';
+    } else {
+        toDo.className = 'todo expand-mode';
+    }
 };
 
 const toggleToDoInputsDisplay = (clearMode) => {

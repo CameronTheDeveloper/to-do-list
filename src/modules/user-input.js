@@ -1,6 +1,5 @@
 import {
     addAbove,
-    addButton,
     addFolderClearButton,
     addFolderChildElements
 } from "./page-layout";

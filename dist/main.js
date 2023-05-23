@@ -8133,7 +8133,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const contentItems = document.querySelector('#content-items');
 const toDoInputs = document.querySelector('#todo-inputs');
-let defaultFolder = null;       //Create getDefaultFolder function
+let defaultFolder = null;
 let defaultFolderName = 'General';
 let defaultSidebarFolder = null;
 let activeFolder = null;
@@ -8143,8 +8143,8 @@ const initToDoFolder = () => {
     const sidebarFolder = (0,_user_input__WEBPACK_IMPORTED_MODULE_2__.setSidebarInput)(defaultFolderName, folder, 'inactive');
     defaultFolder = folder;
     defaultSidebarFolder = sidebarFolder;
-    //defaultSidebarFolder.setAttribute('id', 'default-folder');
-    setActiveFolder(sidebarFolder, folder);
+    defaultSidebarFolder.setAttribute('id', 'default-folder');
+    activeFolder = setActiveFolder(sidebarFolder, folder);
 };
 
 const addToDoFolder = (folderName) => {
@@ -8182,7 +8182,6 @@ const hideInactiveFolders = (activeFolder) => {
     const folders = document.querySelectorAll('.todo-folder');
     (0,_page_layout__WEBPACK_IMPORTED_MODULE_1__.hideElements)(folders);
     activeFolder.style.display = 'grid';
-    contentItems.style.display = 'block';       //Possible remove
 };
 
 const changeFolderHeading = (sidebarFolder) => {

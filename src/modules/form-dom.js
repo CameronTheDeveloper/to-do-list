@@ -49,11 +49,10 @@ const addToDoForm = (parent) => {
     const form = addFormToDOM(parent, 'todo-add-form', 'inactive');
     const titleDiv = addToDoTitleInput(form);
     const dueDateDiv = addToDoDueDateInput(form);
-
-    addToDoPriorityInput(form);//
+    const priorityDiv = addToDoPriorityInput(form);//
     const descDiv = addToDoDescInput(form);
 
-    addToDoFormDivs(form, titleDiv, dueDateDiv, descDiv);
+    addToDoFormDivs(form, titleDiv, dueDateDiv, priorityDiv, descDiv);
     addToDoFormButtons(form);//Check this how the div works
 
     addToDoFormAttributes(form, title, description);//Refactor for each part of form
@@ -82,10 +81,13 @@ const addToDoDueDateInput = (form) => {
 };
 
 const addToDoPriorityInput = (form) => {
+    const priorityDiv = document.createElement('div');
     const optionsAr = ['Low', 'Medium', 'High'];
     const fieldset = createFieldset('Priority');
     setRadioFormElements(fieldset, 'priority-input', optionsAr);
-    form.appendChild(fieldset);
+    priorityDiv.appendChild(fieldset);
+
+    return priorityDiv;
 };
 
 const addToDoDescInput = (form) => {

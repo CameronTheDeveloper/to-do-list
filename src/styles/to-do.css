@@ -119,13 +119,13 @@
     align-items: center;
     align-content: center;
     border: 0px;
-    transition: background-color 175ms, font-weight 50ms;
-    font-size: 0.9rem;
+    transition: background-color 100ms ease-in,
+        font-weight 25ms ease-in;
+    font-size: 1rem;
 }
 
 #todo-form-buttons-container button:hover {
     font-weight: 700;
-    font-size: 1rem;
 }
 
 #todo-form-clear-button {
@@ -149,7 +149,7 @@
 }
 
 #todo-form-clear-button:hover {
-    background-color: rgb(235, 67, 67);
+    background-color: rgb(227, 84, 84);
 }
 
 /* To Do */

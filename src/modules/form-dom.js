@@ -48,17 +48,15 @@ const addSidebarForm = (parent) => {
     return form;
 };
 
-
-
 const addToDoForm = (parent) => {
     const form = addFormToDOM(parent, 'todo-add-form', 'inactive');
     const titleDiv = addToDoTitleInput(form);
+    const dueDateDiv = addToDoDueDateInput(form);
 
-    addToDoDueDateInput(form);//
     addToDoPriorityInput(form);//
     const descDiv = addToDoDescInput(form);
 
-    addToDoFormDivs(form, titleDiv, descDiv);
+    addToDoFormDivs(form, titleDiv, dueDateDiv, descDiv);
     addToDoFormButtons(form);//Check this how the div works
 
     addToDoFormAttributes(form, title, description);//Refactor for each part of form
@@ -75,13 +73,15 @@ const addToDoTitleInput = (form) => {
 };
 
 const addToDoDueDateInput = (form) => {
+    const dueDateDiv = document.createElement('div');
     const today = new Date();
     const minDate = format(today, 'yyyy-MM-dd');
     const id = 'duedate-input';
     const name = 'todo-duedate';
     const maxDate = addYears(today, 75);
     const formattedMaxDate = format(maxDate, 'yyyy-MM-dd');
-    addFormDateElements(form, minDate, formattedMaxDate, minDate, id, name);
+    addFormDateElements(dueDateDiv, minDate, formattedMaxDate, minDate, id, name);
+    return dueDateDiv;
 };
 
 const addToDoDescInput = (form) => {

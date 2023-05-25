@@ -1,6 +1,6 @@
 #content {
     display: grid;
-    grid-template-rows: 1fr 8fr;
+    grid-template-rows: 1fr 8fr 1fr;
 }
 
 #content-items {

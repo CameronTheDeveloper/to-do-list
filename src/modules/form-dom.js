@@ -14,7 +14,6 @@ import {
     setDateInputAttributes,
 } from "./attributes";
 import {
-    addToDoDueDateInput,
     addToDoPriorityInput,
     addButton
 } from "./page-layout";
@@ -74,8 +73,17 @@ const addToDoTitleInput = (form) => {
     return titleDiv;
 };
 
-const addToDoDescInput = (form) => {
+const addToDoDueDateInput = (form) => {
+    const today = new Date();
+    const minDate = format(today, 'yyyy-MM-dd');
+    const id = 'duedate-input';
+    const name = 'todo-duedate';
+    const maxDate = addYears(today, 75);
+    const formattedMaxDate = format(maxDate, 'yyyy-MM-dd');
+    addFormDateElements(form, minDate, formattedMaxDate, minDate, id, name);
+};
 
+const addToDoDescInput = (form) => {
     const descDiv = addAttributes('', 'id', 'todo-desc-parent', 'div');
     const descLabel = addFormLabelElement(descDiv);
     const description = addFormInputElement('textarea', descDiv);

@@ -26,15 +26,7 @@ const formatToDoDate = (date) => {
     return formattedDate;
 };
 
-const addToDoDueDateInput = (form) => {
-    const today = new Date();
-    const minDate = format(today, 'yyyy-MM-dd');
-    const id = 'duedate-input';
-    const name = 'todo-duedate';
-    const maxDate = addYears(today, 75);
-    const formattedMaxDate = format(maxDate, 'yyyy-MM-dd');
-    addFormDateElements(form, minDate, formattedMaxDate, minDate, id, name);
-};
+
 
 const setRadioFormElements = (fieldset, name, optionsAr) => {
     for (let i = 0; i < optionsAr.length; i++) {
@@ -131,6 +123,5 @@ export {
     hideElements,
     addFolderClearButton,
     addFolderChildElements,
-    addToDoDueDateInput,
     addToDoPriorityInput
 };

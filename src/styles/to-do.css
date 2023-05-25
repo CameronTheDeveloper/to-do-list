@@ -61,6 +61,14 @@
     padding: 2px;
 }
 
+#todo-title-parent:hover,
+#todo-duedate-parent:hover,
+#todo-priority-parent fieldset div:hover,
+#todo-desc-parent:hover {
+    transition: font-weight 35ms ease-in;
+    font-weight: 600;
+}
+
 #todo-add-form input,
 #todo-add-form textarea,
 #todo-add-form fieldset {

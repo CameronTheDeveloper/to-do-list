@@ -7764,7 +7764,8 @@ const setRadioAttributes = (element, label, name, value) => {
     label.innerHTML = value;
 };
 
-const setDateInputAttributes = (element, min, max, value, id, name) => {
+const setDateInputAttributes = (element, label, min, max, value, id, name) => {
+    setLabelAttributes(label, 'for', id, 'Due');
     element.setAttribute('type', 'date');
     element.setAttribute('min', min);
     element.setAttribute('max', max);
@@ -7884,6 +7885,7 @@ const addToDoTitleInput = (form) => {
 
 const addToDoDueDateInput = (form) => {
     const dueDateDiv = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)('', 'id', 'todo-duedate-parent', 'div');
+
     const today = new Date();
     const minDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_3__["default"])(today, 'yyyy-MM-dd');
     const id = 'duedate-input';
@@ -7953,8 +7955,9 @@ const addFormInputElement = (type, parent) => {
 };
 
 const addFormDateElements = (parent, min, max, value, id, name) => {
+    const dueDateLabel = addFormLabelElement(parent);
     const dateInput = addFormInputElement('input', parent);
-    (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.setDateInputAttributes)(dateInput, min, max, value, id, name);
+    (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.setDateInputAttributes)(dateInput, dueDateLabel, min, max, value, id, name);
 };
 
 const addFormRadioElements = (parent, name, option) => {

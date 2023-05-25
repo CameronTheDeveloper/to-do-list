@@ -88,6 +88,11 @@
 
 #todo-add-form label {
     margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#todo-priority-parent {
+    padding-top: 5px;
 }
 
 #todo-add-form #duedate-input {

@@ -51,8 +51,14 @@
 
 #todo-add-form form div {
     display: grid;
-    border: 1px solid rgba(103, 103, 103, 0.5);
-    border-radius: 10px;
+}
+
+#todo-title-parent,
+#todo-duedate-parent,
+#todo-priority-parent,
+#todo-desc-parent {
+    border: 1px solid rgb(157 157 157 / 50%);
+    padding: 2px;
 }
 
 #todo-add-form input,
@@ -86,6 +92,10 @@
     border: 0;
     display: flex;
     gap: 14px;
+}
+
+#todo-add-form fieldset div {
+    padding: 2px;
 }
 
 #todo-add-form fieldset div input {

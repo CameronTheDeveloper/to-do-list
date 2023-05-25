@@ -57,10 +57,8 @@ const addSidebarFormAttributes = (form, input) => {
     setFormElementAttributes(form, '', 'post');
 };
 
-const addToDoFormAttributes = (form, title, desc) => {
+const addToDoFormAttributes = (form) => {
     setFormElementAttributes(form, '', 'post');
-    //setTextInputAttributes(title, 'text', 'title-input', '10');
-    // setTextAreaAttributes(desc, 'description-input', '26', '5', '150');
 };
 
 const addToDoTitleInputAttributes = (titleLabel, title) => {
@@ -71,11 +69,6 @@ const addToDoTitleInputAttributes = (titleLabel, title) => {
 const addToDoDescInputAttributes = (descLabel, desc) => {
     setLabelAttributes(descLabel, 'for', 'description-input', 'Description');
     setTextAreaAttributes(desc, 'description-input', '26', '5', '150');
-};
-
-const addToDoLabelAttributes = (title, desc) => {
-    //setLabelAttributes(title, 'for', 'title-input', 'Title');
-    // setLabelAttributes(desc, 'for', 'description-input', 'Description');
 };
 
 const setLabelAttributes = (item, attType, att, text) => {
@@ -90,7 +83,6 @@ export {
     addButtonAttributes,
     addSidebarFormAttributes,
     addToDoFormAttributes,
-    addToDoLabelAttributes,
     addToDoTitleInputAttributes,
     addToDoDescInputAttributes,
     setRadioAttributes,

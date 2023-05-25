@@ -6,15 +6,13 @@ import {
 import {
     addAttributes,
     addSidebarFormAttributes,
-    addToDoFormAttributes,
-    addToDoLabelAttributes,
     addToDoTitleInputAttributes,
     addToDoDescInputAttributes,
     setRadioAttributes,
     setDateInputAttributes,
 } from "./attributes";
 import { addButton } from "./page-layout";
-import { addYears } from "date-fns";
+import { format, addYears } from "date-fns";
 
 const addFormParent = (parent, id, className) => {
     const element = document.createElement('div');
@@ -54,9 +52,6 @@ const addToDoForm = (parent) => {
 
     addToDoFormDivs(form, titleDiv, dueDateDiv, priorityDiv, descDiv);
     addToDoFormButtons(form);//Check this how the div works
-
-    addToDoFormAttributes(form, title, description);//Refactor for each part of form
-    addToDoLabelAttributes(titleLabel, descLabel);//
 };
 
 const addToDoTitleInput = (form) => {
@@ -101,7 +96,6 @@ const addToDoDescInput = (form) => {
 };
 
 const addToDoFormDivs = (form, titleDiv, dateDiv, priorityDiv, descDiv) => {
-
     form.appendChild(titleDiv);
     form.appendChild(dateDiv);
     form.appendChild(priorityDiv);

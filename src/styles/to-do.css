@@ -53,18 +53,18 @@
     display: grid;
 }
 
-#todo-title-parent,
-#todo-duedate-parent,
-#todo-priority-parent,
-#todo-desc-parent {
+#todo-form-title-parent,
+#todo-form-duedate-parent,
+#todo-form-priority-parent,
+#todo-form-desc-parent {
     border: 1px solid rgb(157 157 157 / 50%);
     padding: 2px;
 }
 
-#todo-title-parent:hover,
-#todo-duedate-parent:hover,
-#todo-priority-parent fieldset:hover legend,
-#todo-desc-parent:hover {
+#todo-form-title-parent:hover,
+#todo-form-duedate-parent:hover,
+#todo-form-priority-parent fieldset:hover legend,
+#todo-form-desc-parent:hover {
     transition: font-weight 35ms ease-in;
     font-weight: 600;
 }
@@ -91,7 +91,7 @@
     margin-bottom: 5px;
 }
 
-#todo-priority-parent {
+#todo-form-priority-parent {
     padding-top: 5px;
 }
 

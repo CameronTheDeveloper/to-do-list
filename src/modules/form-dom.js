@@ -57,7 +57,7 @@ const addToDoForm = (parent) => {
 };
 
 const addToDoTitleInput = (form) => {
-    const titleDiv = addAttributes('', 'id', 'todo-title-parent', 'div');
+    const titleDiv = addAttributes('', 'id', 'todo-form-title-parent', 'div');
     const titleLabel = addFormLabelElement(titleDiv);
     const title = addFormInputElement('input', titleDiv);
 
@@ -66,7 +66,7 @@ const addToDoTitleInput = (form) => {
 };
 
 const addToDoDueDateInput = (form) => {
-    const dueDateDiv = addAttributes('', 'id', 'todo-duedate-parent', 'div');
+    const dueDateDiv = addAttributes('', 'id', 'todo-form-duedate-parent', 'div');
 
     const today = new Date();
     const minDate = format(today, 'yyyy-MM-dd');
@@ -79,7 +79,7 @@ const addToDoDueDateInput = (form) => {
 };
 
 const addToDoPriorityInput = (form) => {
-    const priorityDiv = addAttributes('', 'id', 'todo-priority-parent', 'div');
+    const priorityDiv = addAttributes('', 'id', 'todo-form-priority-parent', 'div');
     const optionsAr = ['Low', 'Medium', 'High'];
     const fieldset = createFieldset('Priority');
     setRadioFormElements(fieldset, 'priority-input', optionsAr);
@@ -89,7 +89,7 @@ const addToDoPriorityInput = (form) => {
 };
 
 const addToDoDescInput = (form) => {
-    const descDiv = addAttributes('', 'id', 'todo-desc-parent', 'div');
+    const descDiv = addAttributes('', 'id', 'todo-form-desc-parent', 'div');
     const descLabel = addFormLabelElement(descDiv);
     const description = addFormInputElement('textarea', descDiv);
 

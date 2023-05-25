@@ -57,7 +57,7 @@ const addToDoForm = (parent) => {
     const descLabel = addFormLabelElement(form);//
     const description = addFormInputElement('textarea', form);//
 
-    addToDoFormDivs(form);
+    addToDoFormDivs(form, titleDiv);
     addToDoFormButtons(form);//Check this how the div works
 
     addToDoFormAttributes(form, title, description);
@@ -73,12 +73,12 @@ const addToDoTitleInput = (form) => {
 
 };
 
-const addToDoFormDivs = (form) => {
+const addToDoFormDivs = (form, titleDiv, dateDiv, priorityDiv, descDiv) => {
 
-    const dateDiv = form.addAttributes('', 'id', 'todo-date-parent', 'div');
-    const descDiv = form.addAttributes('', 'id', 'todo-desc-parent', 'div');
-
-
+    form.appendChild(titleDiv);
+    form.appendChild(dateDiv);
+    form.appendChild(priorityDiv);
+    form.appendChild(descDiv);
 };
 
 

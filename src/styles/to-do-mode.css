@@ -36,6 +36,7 @@
 }
 
 .todo.expanded {
+    transition: height 50ms ease-out;
     background-color: rgb(24, 244, 24);
     height: 90%;
 }

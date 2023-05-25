@@ -7854,19 +7854,39 @@ const addSidebarForm = (parent) => {
     return form;
 };
 
+
+
 const addToDoForm = (parent) => {
     const form = addFormToDOM(parent, 'todo-add-form', 'inactive');
-    const titleLabel = addFormLabelElement(form);
-    const title = addFormInputElement('input', form);
+    const titleDiv = addToDoTitleInput(form);
 
-    (0,_page_layout__WEBPACK_IMPORTED_MODULE_2__.addToDoDueDateInput)(form);
-    (0,_page_layout__WEBPACK_IMPORTED_MODULE_2__.addToDoPriorityInput)(form);
-    const descLabel = addFormLabelElement(form);
-    const description = addFormInputElement('textarea', form);
-    addToDoFormButtons(form);
+    (0,_page_layout__WEBPACK_IMPORTED_MODULE_2__.addToDoDueDateInput)(form);//
+    (0,_page_layout__WEBPACK_IMPORTED_MODULE_2__.addToDoPriorityInput)(form);//
+    const descLabel = addFormLabelElement(form);//
+    const description = addFormInputElement('textarea', form);//
+
+    addToDoFormDivs(form);
+    addToDoFormButtons(form);//Check this how the div works
 
     (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addToDoFormAttributes)(form, title, description);
     (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addToDoLabelAttributes)(titleLabel, descLabel);
+};
+
+const addToDoTitleInput = (form) => {
+    const titleDiv = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)('', 'id', 'todo-title-parent', 'div');
+    const titleLabel = addFormLabelElement(titleDiv);
+    const title = addFormInputElement('input', titleDiv);
+
+    return titleDiv;
+
+};
+
+const addToDoFormDivs = (form) => {
+
+    const dateDiv = form.addAttributes('', 'id', 'todo-date-parent', 'div');
+    const descDiv = form.addAttributes('', 'id', 'todo-desc-parent', 'div');
+
+
 };
 
 

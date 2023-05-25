@@ -1,10 +1,7 @@
 import { addToDoClickEventListener } from "./to-do-mode";
 import { addAttributes, addButtonAttributes } from "./attributes";
-import {
-    addFormDateElements,
-    addFormRadioElements
-} from "./form-dom.js";
-import { format, addYears, parse } from "date-fns";
+import { addFormRadioElements } from "./form-dom.js";
+import { format, parse } from "date-fns";
 
 const addContent = (parent, text, className, elementType) => {
     const element = document.createElement(elementType);

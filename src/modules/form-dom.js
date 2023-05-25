@@ -8,6 +8,8 @@ import {
     addSidebarFormAttributes,
     addToDoFormAttributes,
     addToDoLabelAttributes,
+    addToDoTitleInputAttributes,
+    addToDoDescInputAttributes,
     setRadioAttributes,
     setDateInputAttributes,
 } from "./attributes";
@@ -68,14 +70,17 @@ const addToDoTitleInput = (form) => {
     const titleLabel = addFormLabelElement(titleDiv);
     const title = addFormInputElement('input', titleDiv);
 
+    addToDoTitleInputAttributes(titleLabel, title);
     return titleDiv;
 };
 
 const addToDoDescInput = (form) => {
 
     const descDiv = addAttributes('', 'id', 'todo-desc-parent', 'div');
-    const descLabel = addFormLabelElement(descDiv);//
+    const descLabel = addFormLabelElement(descDiv);
     const description = addFormInputElement('textarea', descDiv);
+
+    addToDoDescInputAttributes(descLabel, description);
 
     return descDiv;
 };

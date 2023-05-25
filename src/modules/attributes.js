@@ -38,7 +38,8 @@ const setRadioAttributes = (element, label, name, value) => {
     label.innerHTML = value;
 };
 
-const setDateInputAttributes = (element, min, max, value, id, name) => {
+const setDateInputAttributes = (element, label, min, max, value, id, name) => {
+    setLabelAttributes(label, 'for', id, 'Due');
     element.setAttribute('type', 'date');
     element.setAttribute('min', min);
     element.setAttribute('max', max);

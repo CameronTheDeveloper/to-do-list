@@ -67,6 +67,7 @@ const addToDoTitleInput = (form) => {
 
 const addToDoDueDateInput = (form) => {
     const dueDateDiv = addAttributes('', 'id', 'todo-duedate-parent', 'div');
+
     const today = new Date();
     const minDate = format(today, 'yyyy-MM-dd');
     const id = 'duedate-input';
@@ -136,8 +137,9 @@ const addFormInputElement = (type, parent) => {
 };
 
 const addFormDateElements = (parent, min, max, value, id, name) => {
+    const dueDateLabel = addFormLabelElement(parent);
     const dateInput = addFormInputElement('input', parent);
-    setDateInputAttributes(dateInput, min, max, value, id, name);
+    setDateInputAttributes(dateInput, dueDateLabel, min, max, value, id, name);
 };
 
 const addFormRadioElements = (parent, name, option) => {

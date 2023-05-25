@@ -82,6 +82,7 @@ export {
     addAttributes,
     addButtonAttributes,
     addSidebarFormAttributes,
+    setFormElementAttributes,
     addToDoFormAttributes,
     addToDoTitleInputAttributes,
     addToDoDescInputAttributes,

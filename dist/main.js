@@ -7721,6 +7721,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "addToDoFormAttributes": () => (/* binding */ addToDoFormAttributes),
 /* harmony export */   "addToDoTitleInputAttributes": () => (/* binding */ addToDoTitleInputAttributes),
 /* harmony export */   "setDateInputAttributes": () => (/* binding */ setDateInputAttributes),
+/* harmony export */   "setFormElementAttributes": () => (/* binding */ setFormElementAttributes),
 /* harmony export */   "setRadioAttributes": () => (/* binding */ setRadioAttributes)
 /* harmony export */ });
 const addAttributes = (text, attType, attName, elementType) => {
@@ -7864,11 +7865,12 @@ const addToDoForm = (parent) => {
     const form = addFormToDOM(parent, 'todo-add-form', 'inactive');
     const titleDiv = addToDoTitleInput(form);
     const dueDateDiv = addToDoDueDateInput(form);
-    const priorityDiv = addToDoPriorityInput(form);//
+    const priorityDiv = addToDoPriorityInput(form);
     const descDiv = addToDoDescInput(form);
 
+    (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.setFormElementAttributes)(form, '', 'post');
     addToDoFormDivs(form, titleDiv, dueDateDiv, priorityDiv, descDiv);
-    addToDoFormButtons(form);//Check this how the div works
+    addToDoFormButtons(form);
 };
 
 const addToDoTitleInput = (form) => {
@@ -7881,7 +7883,7 @@ const addToDoTitleInput = (form) => {
 };
 
 const addToDoDueDateInput = (form) => {
-    const dueDateDiv = document.createElement('div');
+    const dueDateDiv = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)('', 'id', 'todo-duedate-parent', 'div');
     const today = new Date();
     const minDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_3__["default"])(today, 'yyyy-MM-dd');
     const id = 'duedate-input';
@@ -7893,7 +7895,7 @@ const addToDoDueDateInput = (form) => {
 };
 
 const addToDoPriorityInput = (form) => {
-    const priorityDiv = document.createElement('div');
+    const priorityDiv = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)('', 'id', 'todo-priority-parent', 'div');
     const optionsAr = ['Low', 'Medium', 'High'];
     const fieldset = createFieldset('Priority');
     setRadioFormElements(fieldset, 'priority-input', optionsAr);

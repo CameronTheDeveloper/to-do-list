@@ -1,6 +1,5 @@
 import { addToDoClickEventListener } from "./to-do-mode";
 import { addAttributes, addButtonAttributes } from "./attributes";
-import { addFormRadioElements } from "./form-dom.js";
 import { format, parse } from "date-fns";
 
 const addContent = (parent, text, className, elementType) => {
@@ -21,33 +20,6 @@ const formatToDoDate = (date) => {
     const formattedDate = format(parsedDate, 'MMMM dd, yyyy');
 
     return formattedDate;
-};
-
-
-
-const setRadioFormElements = (fieldset, name, optionsAr) => {
-    for (let i = 0; i < optionsAr.length; i++) {
-        const parentDiv = document.createElement('div');
-        fieldset.appendChild(parentDiv);
-        addFormRadioElements(parentDiv, name, optionsAr[i]);
-    }
-};
-
-const createFieldset = (legendText) => {
-    const fieldset = document.createElement('fieldset');
-    const legend = document.createElement('legend');
-
-    fieldset.appendChild(legend);
-    legend.innerHTML = legendText;
-    return fieldset;
-};
-
-
-const addToDoPriorityInput = (form) => {
-    const optionsAr = ['Low', 'Medium', 'High'];
-    const fieldset = createFieldset('Priority');
-    setRadioFormElements(fieldset, 'priority-input', optionsAr);
-    form.appendChild(fieldset);
 };
 
 const addToDoContent = (toDoItem) => {
@@ -120,5 +92,4 @@ export {
     hideElements,
     addFolderClearButton,
     addFolderChildElements,
-    addToDoPriorityInput
 };

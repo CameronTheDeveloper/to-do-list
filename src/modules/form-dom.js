@@ -13,10 +13,7 @@ import {
     setRadioAttributes,
     setDateInputAttributes,
 } from "./attributes";
-import {
-    addToDoPriorityInput,
-    addButton
-} from "./page-layout";
+import { addButton } from "./page-layout";
 import { addYears } from "date-fns";
 
 const addFormParent = (parent, id, className) => {
@@ -84,6 +81,13 @@ const addToDoDueDateInput = (form) => {
     return dueDateDiv;
 };
 
+const addToDoPriorityInput = (form) => {
+    const optionsAr = ['Low', 'Medium', 'High'];
+    const fieldset = createFieldset('Priority');
+    setRadioFormElements(fieldset, 'priority-input', optionsAr);
+    form.appendChild(fieldset);
+};
+
 const addToDoDescInput = (form) => {
     const descDiv = addAttributes('', 'id', 'todo-desc-parent', 'div');
     const descLabel = addFormLabelElement(descDiv);
@@ -101,8 +105,6 @@ const addToDoFormDivs = (form, titleDiv, dateDiv, priorityDiv, descDiv) => {
     form.appendChild(priorityDiv);
     form.appendChild(descDiv);
 };
-
-
 
 const addToDoFormButtons = (form) => {
     const formButtonsDiv = addAttributes('', 'id', 'todo-form-buttons-container', 'div');
@@ -149,6 +151,23 @@ const addFormRadioElements = (parent, name, option) => {
     parent.appendChild(label);
 };
 
+const setRadioFormElements = (fieldset, name, optionsAr) => {
+    for (let i = 0; i < optionsAr.length; i++) {
+        const parentDiv = document.createElement('div');
+        fieldset.appendChild(parentDiv);
+        addFormRadioElements(parentDiv, name, optionsAr[i]);
+    }
+};
+
+const createFieldset = (legendText) => {
+    const fieldset = document.createElement('fieldset');
+    const legend = document.createElement('legend');
+
+    fieldset.appendChild(legend);
+    legend.innerHTML = legendText;
+    return fieldset;
+};
+
 const addFormLabelElement = (parent) => {
     const label = document.createElement('label');
     parent.appendChild(label);
@@ -159,6 +178,5 @@ export {
     addSidebarForm,
     addToDoForm,
     toggleToDoFormVisible,
-    addFormDateElements,
-    addFormRadioElements
+    addFormDateElements
 };

@@ -46,19 +46,29 @@ const addSidebarForm = (parent) => {
     return form;
 };
 
+
+
 const addToDoForm = (parent) => {
     const form = addFormToDOM(parent, 'todo-add-form', 'inactive');
-    const titleLabel = addFormLabelElement(form);
-    const title = addFormInputElement('input', form);
+    const titleLabel = addFormLabelElement(form);   //Replace form with div
+    const title = addFormInputElement('input', form);//
 
-    addToDoDueDateInput(form);
-    addToDoPriorityInput(form);
-    const descLabel = addFormLabelElement(form);
-    const description = addFormInputElement('textarea', form);
-    addToDoFormButtons(form);
+    addToDoDueDateInput(form);//
+    addToDoPriorityInput(form);//
+    const descLabel = addFormLabelElement(form);//
+    const description = addFormInputElement('textarea', form);//
+    addToDoFormButtons(form);//Check this how the div works
 
     addToDoFormAttributes(form, title, description);
     addToDoLabelAttributes(titleLabel, descLabel);
+};
+
+const addToDoFormDivs = (form) => {
+    const titleDiv = form.addAttributes('', 'id', 'todo-title-parent', 'div');
+    const dateDiv = form.addAttributes('', 'id', 'todo-date-parent', 'div');
+    const descDiv = form.addAttributes('', 'id', 'todo-desc-parent', 'div');
+
+
 };
 
 

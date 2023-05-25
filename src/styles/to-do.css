@@ -119,7 +119,13 @@
     align-items: center;
     align-content: center;
     border: 0px;
-    transition: background-color 200ms, font-weight 50ms;
+    transition: background-color 175ms, font-weight 50ms;
+    font-size: 0.9rem;
+}
+
+#todo-form-buttons-container button:hover {
+    font-weight: 700;
+    font-size: 1rem;
 }
 
 #todo-form-clear-button {
@@ -139,13 +145,11 @@
 }
 
 #todo-submit-button:hover {
-    background-color: rgb(31, 192, 31);
-    font-weight: 700;
+    background-color: rgb(6, 164, 6);
 }
 
 #todo-form-clear-button:hover {
-    background-color: rgb(227, 54, 54);
-    font-weight: 700;
+    background-color: rgb(235, 67, 67);
 }
 
 /* To Do */

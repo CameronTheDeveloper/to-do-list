@@ -106,8 +106,8 @@ const addToDoFormDivs = (form, titleDiv, dateDiv, priorityDiv, descDiv) => {
 
 const addToDoFormButtons = (form) => {
     const formButtonsDiv = addAttributes('', 'id', 'todo-form-buttons-container', 'div');
-    const clearButton = addButton(formButtonsDiv, 'button', 'todo-form-clear-button', 'active', 'clear');
-    const submitButton = addButton(formButtonsDiv, 'submit', 'todo-submit-button', 'active', 'submit');
+    const clearButton = addButton(formButtonsDiv, 'button', 'todo-form-clear-button', 'active', 'Clear');
+    const submitButton = addButton(formButtonsDiv, 'submit', 'todo-submit-button', 'active', 'Submit');
     form.appendChild(formButtonsDiv);
 
     registerToDoFormClearListener(form, clearButton);

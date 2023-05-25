@@ -63,7 +63,7 @@
 
 #todo-title-parent:hover,
 #todo-duedate-parent:hover,
-#todo-priority-parent fieldset div:hover,
+#todo-priority-parent fieldset:hover legend,
 #todo-desc-parent:hover {
     transition: font-weight 35ms ease-in;
     font-weight: 600;

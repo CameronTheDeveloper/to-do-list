@@ -201,8 +201,9 @@
 .todo .priority-div {
     display: grid;
     font-size: 2rem;
-    margin-top: 8px;
-    margin-bottom: 8px;
+    padding: 4px 0px 4px 0px;
+    margin: 4px 0px 4px 0px;
+    border-bottom: 3px dotted rgb(0 0 0);
 }
 
 .todo .due-date-div {

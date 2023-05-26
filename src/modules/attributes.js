@@ -69,7 +69,7 @@ const addToDoTitleInputAttributes = (titleLabel, title) => {
 
 const addToDoDescInputAttributes = (descLabel, desc) => {
     setLabelAttributes(descLabel, 'for', 'description-input', 'Description');
-    setTextAreaAttributes(desc, 'description-input', '26', '5', '200');
+    setTextAreaAttributes(desc, 'description-input', '26', '5', '216');
 };
 
 const setLabelAttributes = (item, attType, att, text) => {

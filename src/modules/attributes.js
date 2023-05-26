@@ -64,12 +64,12 @@ const addToDoFormAttributes = (form) => {
 
 const addToDoTitleInputAttributes = (titleLabel, title) => {
     setLabelAttributes(titleLabel, 'for', 'title-input', 'Title');
-    setTextInputAttributes(title, 'text', 'title-input', '14');
+    setTextInputAttributes(title, 'text', 'title-input', '39');
 };
 
 const addToDoDescInputAttributes = (descLabel, desc) => {
     setLabelAttributes(descLabel, 'for', 'description-input', 'Description');
-    setTextAreaAttributes(desc, 'description-input', '26', '5', '150');
+    setTextAreaAttributes(desc, 'description-input', '26', '5', '200');
 };
 
 const setLabelAttributes = (item, attType, att, text) => {

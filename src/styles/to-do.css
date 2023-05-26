@@ -175,7 +175,7 @@
     display: grid;
     grid-template-rows: 1fr 5fr;
     cursor: pointer;
-    height: 200px;
+    height: 300px;
 }
 
 .todo-content {
@@ -193,6 +193,8 @@
     font-weight: bold;
     font-size: 3.5rem;
     justify-self: center;
+    word-wrap: break-word;
+    inline-size: 400px;
 }
 
 .todo .due-date-div,

@@ -64,7 +64,7 @@ const addToDoFormAttributes = (form) => {
 
 const addToDoTitleInputAttributes = (titleLabel, title) => {
     setLabelAttributes(titleLabel, 'for', 'title-input', 'Title');
-    setTextInputAttributes(title, 'text', 'title-input', '10');
+    setTextInputAttributes(title, 'text', 'title-input', '14');
 };
 
 const addToDoDescInputAttributes = (descLabel, desc) => {

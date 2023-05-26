@@ -175,7 +175,7 @@
     display: grid;
     grid-template-rows: 1fr 5fr;
     cursor: pointer;
-    height: 300px;
+    height: 270px;
 }
 
 .todo-content {

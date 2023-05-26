@@ -194,6 +194,8 @@
     font-size: 2rem;
     justify-self: center;
     word-wrap: break-word;
+    text-align: center;
+    height: 110px;
     inline-size: 400px;
 }
 
@@ -217,6 +219,7 @@
 .todo .description {
     word-break: break-all;
     hyphens: auto;
+    padding-top: 4px;
 }
 
 .todo .due-date-div .due-date,

@@ -28,6 +28,7 @@ button {
     font-size: 4.75rem;
     font-weight: 700;
     max-width: 1000px;
+    height: 175px;
     word-wrap: break-word;
     align-self: center;
 }

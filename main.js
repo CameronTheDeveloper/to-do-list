@@ -8146,6 +8146,7 @@ const addSidebarInput = () => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "removeToDoFromStorage": () => (/* binding */ removeToDoFromStorage),
 /* harmony export */   "storeToDo": () => (/* binding */ storeToDo)
 /* harmony export */ });
 let toDoCount = 0;
@@ -8167,6 +8168,20 @@ const storeToDo = (toDoItem) => {
     localStorage.setItem(priorityKey, toDoItem.priority);
     localStorage.setItem(descKey, toDoItem.description);
     toDoCount++;
+};
+
+const removeToDoFromStorage = (toDoItem) => {
+    const key = toDoItem.key;
+    const titleKey = `${key}title`;
+    const dueDateKey = `${key}duedate`;
+    const priorityKey = `${key}priority`;
+    const descKey = `${key}desc`;
+
+    localStorage.removeItem(toDoItem.key);
+    localStorage.removeItem(titleKey);
+    localStorage.removeItem(dueDateKey);
+    localStorage.removeItem(priorityKey);
+    localStorage.removeItem(descKey);
 };
 
 
@@ -8271,6 +8286,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "addToDoClickEventListener": () => (/* binding */ addToDoClickEventListener)
 /* harmony export */ });
 /* harmony import */ var _styles_to_do_mode_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../styles/to-do-mode.css */ "./src/styles/to-do-mode.css");
+/* harmony import */ var _storage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./storage */ "./src/modules/storage.js");
+
 
 
 const clearButton = document.querySelector('#todo-clear-mode-button');
@@ -8322,6 +8339,7 @@ const addToDoClickEventListener = (toDo) => {
     toDo.addEventListener('click', () => {
         if (clearMode) {
             toDo.remove();
+            (0,_storage__WEBPACK_IMPORTED_MODULE_1__.removeToDoFromStorage)(toDo);
         } else {
             toggleToDoExpand(toDo);
         }

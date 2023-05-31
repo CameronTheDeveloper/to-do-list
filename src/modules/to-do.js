@@ -13,12 +13,13 @@ import { addToDoForm } from './form-dom';
 
 const toDoInputs = document.querySelector('#todo-inputs');
 
-function toDo(title, dueDate, priority, description) {
+function toDo(title, dueDate, priority, description, key) {
     return {
         title: title,
         dueDate: dueDate,
         priority: priority,
         description: description,
+        key: key,
     };
 }
 

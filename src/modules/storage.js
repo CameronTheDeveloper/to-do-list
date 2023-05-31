@@ -19,4 +19,18 @@ const storeToDo = (toDoItem) => {
     toDoCount++;
 };
 
-export { storeToDo };
+const removeToDoFromStorage = (toDoItem) => {
+    const key = toDoItem.key;
+    const titleKey = `${key}title`;
+    const dueDateKey = `${key}duedate`;
+    const priorityKey = `${key}priority`;
+    const descKey = `${key}desc`;
+
+    localStorage.removeItem(toDoItem.key);
+    localStorage.removeItem(titleKey);
+    localStorage.removeItem(dueDateKey);
+    localStorage.removeItem(priorityKey);
+    localStorage.removeItem(descKey);
+};
+
+export { storeToDo, removeToDoFromStorage };

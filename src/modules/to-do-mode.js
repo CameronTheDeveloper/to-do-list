@@ -1,4 +1,5 @@
 import '../styles/to-do-mode.css';
+import { removeToDoFromStorage } from './storage';
 
 const clearButton = document.querySelector('#todo-clear-mode-button');
 let clearMode = false;
@@ -49,6 +50,7 @@ const addToDoClickEventListener = (toDo) => {
     toDo.addEventListener('click', () => {
         if (clearMode) {
             toDo.remove();
+            removeToDoFromStorage(toDo);
         } else {
             toggleToDoExpand(toDo);
         }

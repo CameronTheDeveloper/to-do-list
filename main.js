@@ -8074,7 +8074,7 @@ const displayToDo = (toDoItem, folder) => {
     folder.insertBefore(toDoParent, toDoInputs);
     toDoParent.appendChild(titleDiv);
     toDoParent.appendChild(toDoContentDiv);
-    (0,_to_do_mode__WEBPACK_IMPORTED_MODULE_0__.addToDoClickEventListener)(toDoParent);
+    (0,_to_do_mode__WEBPACK_IMPORTED_MODULE_0__.addToDoClickEventListener)(toDoParent, toDoItem);
 };
 
 const addAbove = (className, elementType, parent, lowerDiv) => {
@@ -8335,13 +8335,13 @@ const toggleToDoInputsDisplay = (clearMode) => {
     }
 };
 
-const addToDoClickEventListener = (toDo) => {
-    toDo.addEventListener('click', () => {
+const addToDoClickEventListener = (toDoParent, toDoItem) => {
+    toDoParent.addEventListener('click', () => {
         if (clearMode) {
-            toDo.remove();
-            (0,_storage__WEBPACK_IMPORTED_MODULE_1__.removeToDoFromStorage)(toDo);
+            toDoParent.remove();
+            (0,_storage__WEBPACK_IMPORTED_MODULE_1__.removeToDoFromStorage)(toDoItem);
         } else {
-            toggleToDoExpand(toDo);
+            toggleToDoExpand(toDoParent);
         }
     });
 };

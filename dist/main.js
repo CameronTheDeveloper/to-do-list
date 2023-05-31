@@ -8138,6 +8138,41 @@ const addSidebarInput = () => {
 
 /***/ }),
 
+/***/ "./src/modules/storage.js":
+/*!********************************!*\
+  !*** ./src/modules/storage.js ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "storeToDo": () => (/* binding */ storeToDo)
+/* harmony export */ });
+let toDoCount = 0;
+
+const generateToDoKey = (keyWord) => {
+    return `todo${toDoCount}${keyWord}`;
+};
+
+const storeToDo = (toDoItem) => {
+    const titleKey = generateToDoKey('title');
+    const dueDateKey = generateToDoKey('duedate');
+    const priorityKey = generateToDoKey('priority');
+    const descKey = generateToDoKey('desc');
+
+    toDoItem.key = `todo${toDoCount}`;
+    localStorage.setItem(toDoItem.key, toDoItem.key);
+    localStorage.setItem(titleKey, toDoItem.title);
+    localStorage.setItem(dueDateKey, toDoItem.dueDate);
+    localStorage.setItem(priorityKey, toDoItem.priority);
+    localStorage.setItem(descKey, toDoItem.description);
+    toDoCount++;
+};
+
+
+
+/***/ }),
+
 /***/ "./src/modules/to-do-folders.js":
 /*!**************************************!*\
   !*** ./src/modules/to-do-folders.js ***!
@@ -8327,6 +8362,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _user_input__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./user-input */ "./src/modules/user-input.js");
 /* harmony import */ var _to_do_folders__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./to-do-folders */ "./src/modules/to-do-folders.js");
 /* harmony import */ var _form_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./form-dom */ "./src/modules/form-dom.js");
+/* harmony import */ var _storage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./storage */ "./src/modules/storage.js");
+
 
 
 
@@ -8335,12 +8372,13 @@ __webpack_require__.r(__webpack_exports__);
 
 const toDoInputs = document.querySelector('#todo-inputs');
 
-function toDo(title, dueDate, priority, description) {
+function toDo(title, dueDate, priority, description, key) {
     return {
         title: title,
         dueDate: dueDate,
         priority: priority,
         description: description,
+        key: key,
     };
 }
 
@@ -8357,7 +8395,7 @@ const addToDo = () => {
     const description = (0,_user_input__WEBPACK_IMPORTED_MODULE_2__.getInput)('description-input');
     const toDoItem = toDo(title, dueDate, priority, description);
     const folder = (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_3__.getActiveFolder)();
-
+    (0,_storage__WEBPACK_IMPORTED_MODULE_5__.storeToDo)(toDoItem);
     (0,_page_layout__WEBPACK_IMPORTED_MODULE_1__.displayToDo)(toDoItem, folder);
 };
 

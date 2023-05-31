@@ -56,7 +56,7 @@ const displayToDo = (toDoItem, folder) => {
     folder.insertBefore(toDoParent, toDoInputs);
     toDoParent.appendChild(titleDiv);
     toDoParent.appendChild(toDoContentDiv);
-    addToDoClickEventListener(toDoParent);
+    addToDoClickEventListener(toDoParent, toDoItem);
 };
 
 const addAbove = (className, elementType, parent, lowerDiv) => {

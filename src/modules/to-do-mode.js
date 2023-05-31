@@ -46,13 +46,13 @@ const toggleToDoInputsDisplay = (clearMode) => {
     }
 };
 
-const addToDoClickEventListener = (toDo) => {
-    toDo.addEventListener('click', () => {
+const addToDoClickEventListener = (toDoParent, toDoItem) => {
+    toDoParent.addEventListener('click', () => {
         if (clearMode) {
-            toDo.remove();
-            removeToDoFromStorage(toDo);
+            toDoParent.remove();
+            removeToDoFromStorage(toDoItem);
         } else {
-            toggleToDoExpand(toDo);
+            toggleToDoExpand(toDoParent);
         }
     });
 };

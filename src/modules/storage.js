@@ -1,4 +1,21 @@
-let toDoCount = 0;
+let toDoCount = 0; //Add to storage. Add function that sets to 0 if storage is empty
+let folderCount = 0;
+
+/* Folder */
+
+const generateFolderKey = () => {
+    return `folder${folderCount}`;
+};
+
+const storeFolder = (folder) => {
+    const key = generateFolderKey();
+
+    folder.key = key;
+    localStorage.setItem(key, folder.key);
+    folderCount++;
+};
+
+/* To Do */
 
 const generateToDoKey = (keyWord) => {
     return `todo${toDoCount}${keyWord}`;
@@ -33,4 +50,4 @@ const removeToDoFromStorage = (toDoItem) => {
     localStorage.removeItem(descKey);
 };
 
-export { storeToDo, removeToDoFromStorage };
+export { storeFolder, storeToDo, removeToDoFromStorage };

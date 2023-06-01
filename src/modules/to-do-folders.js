@@ -2,6 +2,7 @@ import '../styles/to-do-folders.css';
 import { hideElements } from "./page-layout";
 import { setSidebarInput } from './user-input';
 import { toggleToDoFormVisible } from './form-dom';
+import { storeFolder } from './storage';
 
 const contentItems = document.querySelector('#content-items');
 const toDoInputs = document.querySelector('#todo-inputs');
@@ -10,12 +11,13 @@ let defaultFolderName = 'General';
 let defaultSidebarFolder = null;
 let activeFolder = null;
 
-function folder(title, key) {
+const folder = (title, active, key) => {
     return {
         title: title,
+        active: active,
         key: key,
     };
-}
+};
 
 const initToDoFolder = () => {
     const toDoFolder = addToDoFolder(defaultFolderName);

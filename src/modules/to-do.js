@@ -14,7 +14,7 @@ import { storeToDo } from './storage';
 
 const toDoInputs = document.querySelector('#todo-inputs');
 
-function toDo(title, dueDate, priority, description, key) {
+const toDo = (title, dueDate, priority, description, key) => {
     return {
         title: title,
         dueDate: dueDate,
@@ -22,7 +22,7 @@ function toDo(title, dueDate, priority, description, key) {
         description: description,
         key: key,
     };
-}
+};
 
 const addToDoButton = () => {
     const addToDoButton = addButton(toDoInputs, 'button', 'todo-add-button', 'active', '+ To Do');

@@ -10,7 +10,7 @@ let defaultFolderName = 'General';
 let defaultSidebarFolder = null;
 let activeFolder = null;
 
-function toDoFolder(title, key) {
+function folder(title, key) {
     return {
         title: title,
         key: key,
@@ -18,41 +18,41 @@ function toDoFolder(title, key) {
 }
 
 const initToDoFolder = () => {
-    const folder = addToDoFolder(defaultFolderName);
-    const sidebarFolder = setSidebarInput(defaultFolderName, folder, 'inactive');
-    defaultFolder = folder;
+    const toDoFolder = addToDoFolder(defaultFolderName);
+    const sidebarFolder = setSidebarInput(defaultFolderName, toDoFolder, 'inactive');
+    defaultFolder = toDoFolder;
     defaultSidebarFolder = sidebarFolder;
-    defaultSidebarFolder.setAttribute('id', 'default-folder');
-    activeFolder = setActiveFolder(sidebarFolder, folder);
+    defaultSidebarFolder.setAttribute('id', 'default-todo-folder');
+    activeFolder = setActiveFolder(sidebarFolder, toDoFolder);
 };
 
 const addToDoFolder = (folderName) => {
-    const folder = document.createElement('div');
+    const toDoFolder = document.createElement('div');
     const folderClass = folderName.replace(/\s/g, '-');
-    folder.classList.add('todo-folder', folderClass);
-    contentItems.appendChild(folder);
-    return folder;
+    toDoFolder.classList.add('todo-folder', folderClass);
+    contentItems.appendChild(toDoFolder);
+    return toDoFolder;
 };
 
-const setActiveFolder = (sidebarFolder, folder) => {
-    changeActiveFolder(folder);
-    hideInactiveFolders(folder);
-    folder.appendChild(toDoInputs);
+const setActiveFolder = (sidebarFolder, toDoFolder) => {
+    changeActiveFolder(toDoFolder);
+    hideInactiveFolders(toDoFolder);
+    toDoFolder.appendChild(toDoInputs);
     changeFolderHeading(sidebarFolder);
     toggleToDoFormVisible(false);
     return activeFolder;
 };
 
-const changeActiveFolder = (folder) => {
-    activeFolder = folder;
+const changeActiveFolder = (toDoFolder) => {
+    activeFolder = toDoFolder;
 };
 
 const getActiveFolder = () => {
     return activeFolder;
 };
 
-const resetActiveFolder = (folder) => {
-    if (folder === activeFolder) {
+const resetActiveFolder = (toDoFolder) => {
+    if (toDoFolder === activeFolder) {
         activeFolder = setActiveFolder(defaultSidebarFolder, defaultFolder);
     }
 };

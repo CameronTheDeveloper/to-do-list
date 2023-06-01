@@ -9,6 +9,10 @@ const addContent = (parent, text, className, elementType) => {
     parent.appendChild(element);
 };
 
+const addFolderElements = () => {
+
+};
+
 const addFolderChildElements = (parent, title, removeButton) => {
     parent.appendChild(title);
     parent.appendChild(removeButton);
@@ -90,6 +94,7 @@ export {
     addAbove,
     displayToDo,
     hideElements,
+    addFolderElements,
     addFolderClearButton,
     addFolderChildElements,
 };

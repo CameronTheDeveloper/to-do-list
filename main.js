@@ -8147,9 +8147,27 @@ const addSidebarInput = () => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "removeToDoFromStorage": () => (/* binding */ removeToDoFromStorage),
+/* harmony export */   "storeFolder": () => (/* binding */ storeFolder),
 /* harmony export */   "storeToDo": () => (/* binding */ storeToDo)
 /* harmony export */ });
-let toDoCount = 0;
+let toDoCount = 0; //Add to storage. Add function that sets to 0 if storage is empty
+let folderCount = 0;
+
+/* Folder */
+
+const generateFolderKey = () => {
+    return `folder${folderCount}`;
+};
+
+const storeFolder = (folder) => {
+    const key = generateFolderKey();
+
+    folder.key = key;
+    localStorage.setItem(key, folder.key);
+    folderCount++;
+};
+
+/* To Do */
 
 const generateToDoKey = (keyWord) => {
     return `todo${toDoCount}${keyWord}`;
@@ -8206,6 +8224,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _page_layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./page-layout */ "./src/modules/page-layout.js");
 /* harmony import */ var _user_input__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./user-input */ "./src/modules/user-input.js");
 /* harmony import */ var _form_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./form-dom */ "./src/modules/form-dom.js");
+/* harmony import */ var _storage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./storage */ "./src/modules/storage.js");
+
 
 
 
@@ -8218,42 +8238,50 @@ let defaultFolderName = 'General';
 let defaultSidebarFolder = null;
 let activeFolder = null;
 
+const folder = (title, active, key) => {
+    return {
+        title: title,
+        active: active,
+        key: key,
+    };
+};
+
 const initToDoFolder = () => {
-    const folder = addToDoFolder(defaultFolderName);
-    const sidebarFolder = (0,_user_input__WEBPACK_IMPORTED_MODULE_2__.setSidebarInput)(defaultFolderName, folder, 'inactive');
-    defaultFolder = folder;
+    const toDoFolder = addToDoFolder(defaultFolderName);
+    const sidebarFolder = (0,_user_input__WEBPACK_IMPORTED_MODULE_2__.setSidebarInput)(defaultFolderName, toDoFolder, 'inactive');
+    defaultFolder = toDoFolder;
     defaultSidebarFolder = sidebarFolder;
-    defaultSidebarFolder.setAttribute('id', 'default-folder');
-    activeFolder = setActiveFolder(sidebarFolder, folder);
+    defaultSidebarFolder.setAttribute('id', 'default-todo-folder');
+    activeFolder = setActiveFolder(sidebarFolder, toDoFolder);
 };
 
 const addToDoFolder = (folderName) => {
-    const folder = document.createElement('div');
+    const toDoFolder = document.createElement('div');
     const folderClass = folderName.replace(/\s/g, '-');
-    folder.classList.add('todo-folder', folderClass);
-    contentItems.appendChild(folder);
-    return folder;
+    toDoFolder.classList.add('todo-folder', folderClass);
+    contentItems.appendChild(toDoFolder);
+    return toDoFolder;
 };
 
-const setActiveFolder = (sidebarFolder, folder) => {
-    changeActiveFolder(folder);
-    hideInactiveFolders(folder);
-    folder.appendChild(toDoInputs);
+const setActiveFolder = (sidebarFolder, toDoFolder) => {
+    changeActiveFolder(toDoFolder);
+    hideInactiveFolders(toDoFolder);
+    toDoFolder.appendChild(toDoInputs);
     changeFolderHeading(sidebarFolder);
     (0,_form_dom__WEBPACK_IMPORTED_MODULE_3__.toggleToDoFormVisible)(false);
     return activeFolder;
 };
 
-const changeActiveFolder = (folder) => {
-    activeFolder = folder;
+const changeActiveFolder = (toDoFolder) => {
+    activeFolder = toDoFolder;
 };
 
 const getActiveFolder = () => {
     return activeFolder;
 };
 
-const resetActiveFolder = (folder) => {
-    if (folder === activeFolder) {
+const resetActiveFolder = (toDoFolder) => {
+    if (toDoFolder === activeFolder) {
         activeFolder = setActiveFolder(defaultSidebarFolder, defaultFolder);
     }
 };
@@ -8390,7 +8418,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const toDoInputs = document.querySelector('#todo-inputs');
 
-function toDo(title, dueDate, priority, description, key) {
+const toDo = (title, dueDate, priority, description, key) => {
     return {
         title: title,
         dueDate: dueDate,
@@ -8398,7 +8426,7 @@ function toDo(title, dueDate, priority, description, key) {
         description: description,
         key: key,
     };
-}
+};
 
 const addToDoButton = () => {
     const addToDoButton = (0,_page_layout__WEBPACK_IMPORTED_MODULE_1__.addButton)(toDoInputs, 'button', 'todo-add-button', 'active', '+ To Do');

@@ -10,6 +10,13 @@ let defaultFolderName = 'General';
 let defaultSidebarFolder = null;
 let activeFolder = null;
 
+function toDoFolder(title, key) {
+    return {
+        title: title,
+        key: key,
+    };
+}
+
 const initToDoFolder = () => {
     const folder = addToDoFolder(defaultFolderName);
     const sidebarFolder = setSidebarInput(defaultFolderName, folder, 'inactive');

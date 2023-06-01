@@ -2,7 +2,7 @@ import '../styles/to-do.css';
 import {
     addButton,
     displayToDo
-} from './page-layout';
+} from './page-dom';
 import {
     registerAddToDoListener,
     getInput,

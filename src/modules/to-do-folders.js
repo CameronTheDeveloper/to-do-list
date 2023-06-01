@@ -1,5 +1,5 @@
 import '../styles/to-do-folders.css';
-import { hideElements } from "./page-layout";
+import { hideElements } from "./page-dom";
 import { setSidebarInput } from './user-input';
 import { toggleToDoFormVisible } from './form-dom';
 import { generateFolderKey, storeFolder } from './storage';

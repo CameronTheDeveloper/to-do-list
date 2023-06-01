@@ -1,10 +1,11 @@
 import '../styles/sidebar.css';
-import { addButton } from './page-layout';
+import { addButton } from './page-dom';
 import { addSidebarForm } from './form-dom';
 
 const sidebarFolders = document.querySelector('#sidebar-folders');
 
 const initSidebar = () => {
+    //Initialize storage
     addSidebarInput();
 };
 

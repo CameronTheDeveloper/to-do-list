@@ -12,7 +12,7 @@ import {
     setRadioAttributes,
     setDateInputAttributes,
 } from "./attributes";
-import { addButton } from "./page-layout";
+import { addButton } from "./page-dom";
 import { format, addYears } from "date-fns";
 
 const addFormParent = (parent, id, className) => {

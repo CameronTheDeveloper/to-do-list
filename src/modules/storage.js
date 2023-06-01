@@ -8,9 +8,6 @@ const generateFolderKey = () => {
 };
 
 const storeFolder = (folder) => {
-    const key = generateFolderKey();
-
-    folder.key = key;
     localStorage.setItem(key, folder.key);
     folderCount++;
 };
@@ -27,7 +24,7 @@ const storeToDo = (toDoItem) => {
     const priorityKey = generateToDoKey('priority');
     const descKey = generateToDoKey('desc');
 
-    toDoItem.key = `todo${toDoCount}`;
+    toDoItem.key = `todo${toDoCount}`;// Move this to todo.js when keyCount has getItem()
     localStorage.setItem(toDoItem.key, toDoItem.key);
     localStorage.setItem(titleKey, toDoItem.title);
     localStorage.setItem(dueDateKey, toDoItem.dueDate);
@@ -50,4 +47,4 @@ const removeToDoFromStorage = (toDoItem) => {
     localStorage.removeItem(descKey);
 };
 
-export { storeFolder, storeToDo, removeToDoFromStorage };
+export { generateFolderKey, storeFolder, storeToDo, removeToDoFromStorage };

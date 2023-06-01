@@ -2,7 +2,7 @@ import '../styles/to-do-folders.css';
 import { hideElements } from "./page-layout";
 import { setSidebarInput } from './user-input';
 import { toggleToDoFormVisible } from './form-dom';
-import { storeFolder } from './storage';
+import { generateFolderKey, storeFolder } from './storage';
 
 const contentItems = document.querySelector('#content-items');
 const toDoInputs = document.querySelector('#todo-inputs');
@@ -28,12 +28,22 @@ const initToDoFolder = () => {
     activeFolder = setActiveFolder(sidebarFolder, toDoFolder);
 };
 
+// const addToDoFolder = (folderName) => {
+//     const toDoFolder = document.createElement('div');
+//     const folderClass = folderName.replace(/\s/g, '-');
+//     toDoFolder.classList.add('todo-folder', folderClass);
+//     contentItems.appendChild(toDoFolder);
+//     return toDoFolder;
+// };
+
 const addToDoFolder = (folderName) => {
-    const toDoFolder = document.createElement('div');
+    const key = generateFolderKey();
+    const toDoFolder = folder(folderName, false, key);
     const folderClass = folderName.replace(/\s/g, '-');
-    toDoFolder.classList.add('todo-folder', folderClass);
-    contentItems.appendChild(toDoFolder);
-    return toDoFolder;
+    //Problem, todo folders are 
+    storeFolder(toDoFolder);
+
+    //Need to return folder div
 };
 
 const setActiveFolder = (sidebarFolder, toDoFolder) => {

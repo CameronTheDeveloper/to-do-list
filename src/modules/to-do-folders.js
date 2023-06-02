@@ -1,5 +1,9 @@
 import '../styles/to-do-folders.css';
-import { addFolderSidebarElements, hideElements } from "./page-dom";
+import {
+    addFolderContentElements,
+    addFolderSidebarElements,
+    hideElements
+} from "./page-dom";
 import { setSidebarInput } from './user-input';
 import { toggleToDoFormVisible } from './form-dom';
 import { generateFolderKey, storeFolder } from './storage';
@@ -37,12 +41,12 @@ const initToDoFolder = () => {
 //     return toDoFolder;
 // };
 
-//In this function, call folder DOM functions
-//Right now it returns 
+//Called by manageSidebarInput (user-input.js) 
 const addToDoFolder = (folderName) => {
     const key = generateFolderKey();
-    const toDoFolder = folder(folderName, false, key);
     const folderClass = folderName.replace(/\s/g, '-');
+    const toDoFolder = folder(folderName, false, key);
+    const folderContentDiv = addFolderContentElements(contentItems, folderClass);
     const sidebarFolder = addFolderSidebarElements(toDoFolder, folderClass);
 
     storeFolder(toDoFolder);

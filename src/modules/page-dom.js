@@ -25,7 +25,8 @@ const addFolderSidebarElements = (folder, folderContentDiv) => {
     const sidebarTitle = addAttributes(folder.title, 'class', 'sidebar-folder-title', 'div');
     const removeButton = addFolderClearButton(sidebarDiv, 'active');
 
-    setFolderElements(sidebarDiv, folder, removeButton);
+    //Call this function in initToDoFolder
+    // setFolderElements(sidebarDiv, folder, removeButton);    //
     addSidebarFolderChildElements(sidebarDiv, sidebarTitle, removeButton);
     registerRemoveFolderListener(removeButton, folderContentDiv, sidebarTitle);
     return sidebarDiv;

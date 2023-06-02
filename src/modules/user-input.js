@@ -1,5 +1,5 @@
 import {
-    addAbove,
+    addAbove
 } from "./page-dom";
 import {
     addToDoFolder,
@@ -34,19 +34,11 @@ const setActiveFolderOnClick = (sidebarFolder, folder) => {
 
 /* Sidebar/Folder */
 
+//Replace with addFolderElements maybe
 const setFolderElements = (parent, folder, removeButton) => {
     //folder.title = folderName;
 
     registerRemoveFolderListener(removeButton, folder, parent);
-};
-
-
-const setSidebarInput = (input, folder, buttonClass) => {
-    const sidebarForm = document.querySelector('#sidebar-add-form');
-    const item = addAbove('sidebar-folder', 'div', sidebarFolders, sidebarForm);
-    setFolderElements(item, input, folder, buttonClass);
-    setActiveFolderOnClick(item, folder);
-    return item;
 };
 
 const getSidebarInput = () => {
@@ -54,11 +46,11 @@ const getSidebarInput = () => {
     return input;
 };
 
+//Called by submit sidebar
 const manageSidebarInput = () => {
     const input = getSidebarInput();
     const folder = addToDoFolder(input);
 
-    const sidebarFolder = setSidebarInput(input, folder, 'active');
 };
 
 const registerSidebarSubmitListener = (form) => {
@@ -111,7 +103,6 @@ export {
     registerAddToDoListener,
     registerToDoFormClearListener,
     registerToDoSubmitListener,
-    setSidebarInput,
     setFolderElements,
     getInput,
     getRadioInput

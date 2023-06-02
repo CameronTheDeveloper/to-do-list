@@ -4,7 +4,6 @@ import {
     addFolderSidebarElements,
     hideElements
 } from "./page-dom";
-import { setSidebarInput } from './user-input';
 import { toggleToDoFormVisible } from './form-dom';
 import { generateFolderKey, storeFolder } from './storage';
 
@@ -26,20 +25,12 @@ const folder = (title, active, key) => {
 
 const initToDoFolder = () => {
     const toDoFolder = addToDoFolder(defaultFolderName);
-    const sidebarFolder = setSidebarInput(defaultFolderName, toDoFolder, 'inactive');
     defaultFolder = toDoFolder;
-    defaultSidebarFolder = sidebarFolder;
-    defaultSidebarFolder.setAttribute('id', 'default-todo-folder');
-    activeFolder = setActiveFolder(sidebarFolder, toDoFolder);
+    // defaultSidebarFolder = sidebarFolder;
+    // defaultSidebarFolder.setAttribute('id', 'default-todo-folder');
+    // activeFolder = setActiveFolder(sidebarFolder, toDoFolder);
 };
 
-// const addToDoFolder = (folderName) => {
-//     const toDoFolder = document.createElement('div');
-//     const folderClass = folderName.replace(/\s/g, '-');
-//     toDoFolder.classList.add('todo-folder', folderClass);
-//     contentItems.appendChild(toDoFolder);
-//     return toDoFolder;
-// };
 
 //Called by manageSidebarInput (user-input.js) 
 const addToDoFolder = (folderName) => {
@@ -48,9 +39,9 @@ const addToDoFolder = (folderName) => {
     const toDoFolder = folder(folderName, false, key);
     const folderContentDiv = addFolderContentElements(contentItems, folderClass);
     const sidebarFolder = addFolderSidebarElements(toDoFolder, folderContentDiv);
-
     storeFolder(key, toDoFolder);
     //Need to return folder div
+    return folderContentDiv;
 };
 
 const setActiveFolder = (sidebarFolder, toDoFolder) => {

@@ -1,6 +1,6 @@
 import { addToDoClickEventListener } from "./to-do-mode";
 import { addAttributes, addButtonAttributes } from "./attributes";
-import { registerRemoveFolderListener } from "./user-input";
+import { registerRemoveFolderListener, setFolderElements } from "./user-input";
 import { format, parse } from "date-fns";
 
 
@@ -11,15 +11,17 @@ const addContent = (parent, text, className, elementType) => {
     parent.appendChild(element);
 };
 
+//Called when sidebar input submitted
 const addFolderElements = (folder) => {
     const folderDiv = document.createElement('div');
-    const titleDiv = document.createElement('div');
+    const sidebarTitle = addAttributes('', 'class', 'sidebar-folder-title', 'div');
     const removeButton = addFolderClearButton(parent, buttonClass);
+    //buttonClass ^
 
-    //Need to get input for folder title
-    titleDiv.innerHTML = folder.title;
-    addFolderChildElements(folderDiv, titleDiv, removeButton);
-    registerRemoveFolderListener(removeButton, folderDiv, parent);
+    setFolderElements(folderDiv, folder, removeButton);
+    sidebarTitle.innerHTML = folder.title;
+    addFolderChildElements(folderDiv, sidebarTitle, removeButton);
+    registerRemoveFolderListener(removeButton, sidebarTitle, parent);
 };
 
 const addFolderChildElements = (parent, title, removeButton) => {

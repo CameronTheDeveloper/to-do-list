@@ -32,17 +32,13 @@ const setActiveFolderOnClick = (sidebarFolder, folder) => {
     });
 };
 
-/* Sidebar */
+/* Sidebar/Folder */
 
-const setFolderElements = (parent, input, folder, buttonClass) => {
-    // Get folder input
+const setFolderElements = (parent, folder, removeButton) => {
+    folder.title = getSidebarInput();
 
-    // const title = document.createElement('div'); // DOM
-    // const removeButton = addFolderClearButton(parent, buttonClass);
 
-    // addFolderChildElements(parent, title, removeButton);
     registerRemoveFolderListener(removeButton, folder, parent);
-    title.setAttribute('class', 'sidebar-folder-title');
 };
 
 
@@ -117,6 +113,7 @@ export {
     registerToDoFormClearListener,
     registerToDoSubmitListener,
     setSidebarInput,
+    setFolderElements,
     getInput,
     getRadioInput
 };

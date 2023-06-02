@@ -15,8 +15,8 @@ const addContent = (parent, text, className, elementType) => {
 const addFolderElements = (folder) => {
     const folderDiv = document.createElement('div');
     const sidebarTitle = addAttributes('', 'class', 'sidebar-folder-title', 'div');
-    const removeButton = addFolderClearButton(parent, buttonClass);
-    //buttonClass ^
+    const removeButton = addFolderClearButton(folderDiv, 'active');
+    // Added to folderDiv before folder title. Check style
 
     setFolderElements(folderDiv, folder, removeButton);
     sidebarTitle.innerHTML = folder.title;

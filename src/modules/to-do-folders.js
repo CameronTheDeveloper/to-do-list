@@ -1,5 +1,5 @@
 import '../styles/to-do-folders.css';
-import { hideElements } from "./page-dom";
+import { addFolderSidebarElements, hideElements } from "./page-dom";
 import { setSidebarInput } from './user-input';
 import { toggleToDoFormVisible } from './form-dom';
 import { generateFolderKey, storeFolder } from './storage';
@@ -10,6 +10,7 @@ let defaultFolder = null;
 let defaultFolderName = 'General';
 let defaultSidebarFolder = null;
 let activeFolder = null;
+//Need to use the active property for folders
 
 const folder = (title, active, key) => {
     return {
@@ -36,13 +37,15 @@ const initToDoFolder = () => {
 //     return toDoFolder;
 // };
 
+//In this function, call folder DOM functions
+//Right now it returns 
 const addToDoFolder = (folderName) => {
     const key = generateFolderKey();
     const toDoFolder = folder(folderName, false, key);
     const folderClass = folderName.replace(/\s/g, '-');
-    //Problem, todo folders are 
-    storeFolder(toDoFolder);
 
+    addFolderSidebarElements(toDoFolder, folderClass);
+    storeFolder(toDoFolder);
     //Need to return folder div
 };
 

@@ -11,6 +11,13 @@ const addContent = (parent, text, className, elementType) => {
     parent.appendChild(element);
 };
 
+const addFolderContentElements = (contentItems, folderClass) => {
+    const folderParent = addAttributes('', 'class', 'todo-folder', 'div');
+    folderParent.classList.add(folderClass);
+    contentItems.appendChild(folderParent);
+    return folderParent;
+};
+
 //Called when sidebar input submitted
 const addFolderSidebarElements = (folder, folderClass) => {
     const sidebarDiv = addAttribute('',);
@@ -105,5 +112,6 @@ export {
     addAbove,
     displayToDo,
     hideElements,
+    addFolderContentElements,
     addFolderSidebarElements
 };

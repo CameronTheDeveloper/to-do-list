@@ -1,6 +1,8 @@
 import { addToDoClickEventListener } from "./to-do-mode";
 import { addAttributes, addButtonAttributes } from "./attributes";
+import { registerRemoveFolderListener } from "./user-input";
 import { format, parse } from "date-fns";
+
 
 const addContent = (parent, text, className, elementType) => {
     const element = document.createElement(elementType);
@@ -9,8 +11,15 @@ const addContent = (parent, text, className, elementType) => {
     parent.appendChild(element);
 };
 
-const addFolderElements = () => {
+const addFolderElements = (folder) => {
+    const folderDiv = document.createElement('div');
+    const titleDiv = document.createElement('div');
+    const removeButton = addFolderClearButton(parent, buttonClass);
 
+    //Need to get input for folder title
+    titleDiv.innerHTML = folder.title;
+    addFolderChildElements(folderDiv, titleDiv, removeButton);
+    registerRemoveFolderListener(removeButton, folderDiv, parent);
 };
 
 const addFolderChildElements = (parent, title, removeButton) => {
@@ -94,7 +103,5 @@ export {
     addAbove,
     displayToDo,
     hideElements,
-    addFolderElements,
-    addFolderClearButton,
-    addFolderChildElements,
+    addFolderElements
 };

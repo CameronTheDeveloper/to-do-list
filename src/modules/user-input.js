@@ -1,8 +1,6 @@
 import {
     addAbove,
-    addFolderClearButton,
-    addFolderChildElements
-} from "./page-layout";
+} from "./page-dom";
 import {
     addToDoFolder,
     setActiveFolder,
@@ -37,10 +35,12 @@ const setActiveFolderOnClick = (sidebarFolder, folder) => {
 /* Sidebar */
 
 const setFolderElements = (parent, input, folder, buttonClass) => {
-    const title = document.createElement('div');
-    const removeButton = addFolderClearButton(parent, buttonClass);
-    title.innerHTML = input;
-    addFolderChildElements(parent, title, removeButton);
+    // Get folder input
+
+    // const title = document.createElement('div'); // DOM
+    // const removeButton = addFolderClearButton(parent, buttonClass);
+
+    // addFolderChildElements(parent, title, removeButton);
     registerRemoveFolderListener(removeButton, folder, parent);
     title.setAttribute('class', 'sidebar-folder-title');
 };
@@ -112,6 +112,7 @@ const registerToDoSubmitListener = (form) => {
 
 export {
     registerSidebarSubmitListener,
+    registerRemoveFolderListener,
     registerAddToDoListener,
     registerToDoFormClearListener,
     registerToDoSubmitListener,

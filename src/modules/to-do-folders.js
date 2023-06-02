@@ -47,7 +47,7 @@ const addToDoFolder = (folderName) => {
     const folderClass = folderName.replace(/\s/g, '-');
     const toDoFolder = folder(folderName, false, key);
     const folderContentDiv = addFolderContentElements(contentItems, folderClass);
-    const sidebarFolder = addFolderSidebarElements(toDoFolder, folderClass);
+    const sidebarFolder = addFolderSidebarElements(toDoFolder, folderContentDiv);
 
     storeFolder(toDoFolder);
     //Need to return folder div

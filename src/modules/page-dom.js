@@ -19,11 +19,11 @@ const addFolderSidebarElements = (folder, folderClass) => {
     // Added to folderDiv before folder title. Check style
 
     setFolderElements(sidebarDiv, folder, removeButton);
-    addFolderChildElements(sidebarDiv, sidebarTitle, removeButton);
+    addSidebarFolderChildElements(sidebarDiv, sidebarTitle, removeButton);
     registerRemoveFolderListener(removeButton, sidebarTitle, parent);
 };
 
-const addFolderChildElements = (parent, title, removeButton) => {
+const addSidebarFolderChildElements = (parent, title, removeButton) => {
     parent.appendChild(title);
     parent.appendChild(removeButton);
 };

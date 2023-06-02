@@ -21,6 +21,7 @@ const addFolderSidebarElements = (folder, folderClass) => {
     setFolderElements(sidebarDiv, folder, removeButton);
     addSidebarFolderChildElements(sidebarDiv, sidebarTitle, removeButton);
     registerRemoveFolderListener(removeButton, sidebarTitle, parent);
+    return sidebarDiv;
 };
 
 const addSidebarFolderChildElements = (parent, title, removeButton) => {

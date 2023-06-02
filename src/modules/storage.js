@@ -7,7 +7,7 @@ const generateFolderKey = () => {
     return `folder${folderCount}`;
 };
 
-const storeFolder = (folder) => {
+const storeFolder = (key, folder) => {
     localStorage.setItem(key, folder.key);
     folderCount++;
 };

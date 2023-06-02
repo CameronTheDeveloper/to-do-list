@@ -19,7 +19,7 @@ const addFolderContentElements = (contentItems, folderClass) => {
 };
 
 const addFolderSidebarElements = (folder, folderContentDiv) => {
-    const sidebarDiv = addAttribute('', 'class', 'sidebar-folder', 'div');
+    const sidebarDiv = addAttributes('', 'class', 'sidebar-folder', 'div');
     const sidebarTitle = addAttributes(folder.title, 'class', 'sidebar-folder-title', 'div');
     const removeButton = addFolderClearButton(sidebarDiv, 'active');
 

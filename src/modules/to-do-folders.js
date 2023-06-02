@@ -49,7 +49,7 @@ const addToDoFolder = (folderName) => {
     const folderContentDiv = addFolderContentElements(contentItems, folderClass);
     const sidebarFolder = addFolderSidebarElements(toDoFolder, folderContentDiv);
 
-    storeFolder(toDoFolder);
+    storeFolder(key, toDoFolder);
     //Need to return folder div
 };
 

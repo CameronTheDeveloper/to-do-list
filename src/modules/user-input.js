@@ -35,8 +35,7 @@ const setActiveFolderOnClick = (sidebarFolder, folder) => {
 /* Sidebar/Folder */
 
 const setFolderElements = (parent, folder, removeButton) => {
-    folder.title = getSidebarInput();
-
+    //folder.title = folderName;
 
     registerRemoveFolderListener(removeButton, folder, parent);
 };
@@ -62,7 +61,7 @@ const manageSidebarInput = () => {
     const sidebarFolder = setSidebarInput(input, folder, 'active');
 };
 
-const registerSidebarSubmitListener = (form, input) => {
+const registerSidebarSubmitListener = (form) => {
     form.addEventListener('submit', (event) => {
         event.preventDefault();
         manageSidebarInput();

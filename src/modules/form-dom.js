@@ -40,7 +40,7 @@ const addSidebarForm = (parent) => {
     const input = addFormInputElement('input', form);
 
     addSidebarFormAttributes(form, input);
-    registerSidebarSubmitListener(form, input);
+    registerSidebarSubmitListener(form);
     return form;
 };
 

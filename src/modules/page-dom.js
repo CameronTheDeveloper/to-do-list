@@ -28,7 +28,7 @@ const addFolderSidebarElements = (folder, folderContentDiv) => {
     //Call this function in initToDoFolder
     // setFolderElements(sidebarDiv, folder, removeButton);    //
     addSidebarFolderChildElements(sidebarDiv, sidebarTitle, removeButton);
-    registerRemoveFolderListener(removeButton, folderContentDiv, sidebarTitle);
+    registerRemoveFolderListener(removeButton, folderContentDiv, sidebarDiv);
     return sidebarDiv;
 };
 

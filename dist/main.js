@@ -8253,7 +8253,7 @@ __webpack_require__.r(__webpack_exports__);
 const contentItems = document.querySelector('#content-items');
 const toDoInputs = document.querySelector('#todo-inputs');
 let defaultFolder = null;
-let defaultFolderName = 'General';
+let defaultFolderTitle = 'General';
 let defaultSidebarFolder = null;
 let activeFolder = null;
 //Need to use the active property for folders
@@ -8267,11 +8267,11 @@ const folder = (title, active, key) => {
 };
 
 const initToDoFolder = () => {
-    const toDoFolder = addToDoFolder(defaultFolderName, 'inactive');
+    const toDoFolder = addToDoFolder(defaultFolderTitle, 'inactive');
     defaultFolder = toDoFolder;
     // defaultSidebarFolder = sidebarFolder;
     // defaultSidebarFolder.setAttribute('id', 'default-todo-folder');
-    activeFolder = setActiveFolder(toDoFolder, defaultFolderName);
+    activeFolder = setActiveFolder(toDoFolder, defaultFolderTitle);
 };
 
 
@@ -8315,7 +8315,7 @@ const getActiveFolder = () => {
 
 const resetActiveFolder = (toDoFolder) => {
     if (toDoFolder === activeFolder) {
-        activeFolder = setActiveFolder(defaultSidebarFolder, defaultFolder);
+        activeFolder = setActiveFolder(defaultFolder, defaultFolderTitle);
     }
 };
 

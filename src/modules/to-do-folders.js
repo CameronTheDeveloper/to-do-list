@@ -38,17 +38,25 @@ const addToDoFolder = (folderName) => {
     const folderClass = folderName.replace(/\s/g, '-');
     const toDoFolder = folder(folderName, false, key);
     const folderContentDiv = addFolderContentElements(contentItems, folderClass);
-    const sidebarFolder = addFolderSidebarElements(toDoFolder, folderContentDiv);
-    storeFolder(key, toDoFolder);
-    //Need to return folder div
+    const sidebarFolderDiv = addFolderSidebarElements(toDoFolder, folderContentDiv);
+    setActiveFolderOnClick(sidebarFolderDiv, folderContentDiv, toDoFolder);
+    storeFolder(key, toDoFolder);   //Move this to a function that is only called if storage is empty
+
     return folderContentDiv;
 };
 
-const setActiveFolder = (sidebarFolder, toDoFolder) => {
-    changeActiveFolder(toDoFolder);
+const setActiveFolderOnClick = (sidebarFolderDiv, contentFolderDiv, folder) => {
+    const title = sidebarFolderDiv.querySelector('.sidebar-folder-title');
+    title.addEventListener('click', () => {
+        let activeFolder = setActiveFolder(contentFolderDiv, folder);
+    });
+};
+
+const setActiveFolder = (toDoFolderDiv, toDoFolder) => {
+    changeActiveFolder(toDoFolder); //Change
     hideInactiveFolders(toDoFolder);
-    toDoFolder.appendChild(toDoInputs);
-    changeFolderHeading(sidebarFolder);
+    toDoFolderDiv.appendChild(toDoInputs);
+    changeFolderHeading(toDoFolder.title);
     toggleToDoFormVisible(false);
     return activeFolder;
 };
@@ -73,10 +81,10 @@ const hideInactiveFolders = (activeFolder) => {
     activeFolder.style.display = 'grid';
 };
 
-const changeFolderHeading = (sidebarFolder) => {
-    const folderHeading = document.querySelector('#active-folder-heading');
-    const title = sidebarFolder.querySelector('.sidebar-folder-title');
-    folderHeading.innerHTML = title.innerHTML;
+const changeFolderHeading = (folderTitle) => {
+    // const folderHeading = document.querySelector('#active-folder-heading');
+    // const title = sidebarFolder.querySelector('.sidebar-folder-title');
+    folderHeading.innerHTML = folderTitle;
 };
 
 export {

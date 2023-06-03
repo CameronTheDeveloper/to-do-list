@@ -25,12 +25,7 @@ const getRadioInput = (name) => {
     }
 };
 
-const setActiveFolderOnClick = (sidebarFolder, folder) => {
-    const title = sidebarFolder.querySelector('.sidebar-folder-title');
-    title.addEventListener('click', () => {
-        let activeFolder = setActiveFolder(sidebarFolder, folder);
-    });
-};
+
 
 /* Sidebar/Folder */
 
@@ -68,7 +63,6 @@ const removeFolder = (folder, sidebarElement) => {
 
 const registerRemoveFolderListener = (button, folder, sidebarElement) => {
     button.addEventListener('click', () => {
-        console.log(sidebarElement);
         removeFolder(folder, sidebarElement);
         resetActiveFolder(folder);
     });
@@ -106,5 +100,5 @@ export {
     registerToDoSubmitListener,
     setFolderElements,
     getInput,
-    getRadioInput
+    getRadioInput,
 };

@@ -24,7 +24,7 @@ const folder = (title, active, key) => {
 };
 
 const initToDoFolder = () => {
-    const toDoFolder = addToDoFolder(defaultFolderName);
+    const toDoFolder = addToDoFolder(defaultFolderName, 'inactive');
     defaultFolder = toDoFolder;
     // defaultSidebarFolder = sidebarFolder;
     // defaultSidebarFolder.setAttribute('id', 'default-todo-folder');
@@ -33,12 +33,12 @@ const initToDoFolder = () => {
 
 
 //Called by manageSidebarInput (user-input.js) 
-const addToDoFolder = (folderName) => {
+const addToDoFolder = (folderName, buttonClass) => {
     const key = generateFolderKey();
     const folderClass = folderName.replace(/\s/g, '-');
     const toDoFolder = folder(folderName, false, key);
     const folderContentDiv = addFolderContentElements(contentItems, folderClass);
-    const sidebarFolderDiv = addFolderSidebarElements(toDoFolder, folderContentDiv);
+    const sidebarFolderDiv = addFolderSidebarElements(toDoFolder, folderContentDiv, buttonClass);
     setActiveFolderOnClick(sidebarFolderDiv, folderContentDiv, toDoFolder);
     storeFolder(key, toDoFolder);   //Move this to a function that is only called if storage is empty
 

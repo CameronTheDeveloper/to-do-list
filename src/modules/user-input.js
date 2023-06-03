@@ -44,7 +44,7 @@ const getSidebarInput = () => {
 //Called by submit sidebar
 const manageSidebarInput = () => {
     const input = getSidebarInput();
-    const folder = addToDoFolder(input);
+    const folder = addToDoFolder(input, 'active');
 
 };
 

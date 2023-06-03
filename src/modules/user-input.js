@@ -29,13 +29,6 @@ const getRadioInput = (name) => {
 
 /* Sidebar/Folder */
 
-//Replace with addFolderElements maybe
-const setFolderElements = (parent, folder, removeButton) => {
-    //folder.title = folderName;
-
-    registerRemoveFolderListener(removeButton, folder, parent);
-};
-
 const getSidebarInput = () => {
     const input = getInput('folder-title');
     return input;
@@ -98,7 +91,6 @@ export {
     registerAddToDoListener,
     registerToDoFormClearListener,
     registerToDoSubmitListener,
-    setFolderElements,
     getInput,
     getRadioInput,
 };

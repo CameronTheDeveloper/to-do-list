@@ -1,6 +1,6 @@
 import { addToDoClickEventListener } from "./to-do-mode";
 import { addAttributes, addButtonAttributes } from "./attributes";
-import { registerRemoveFolderListener, setFolderElements } from "./user-input";
+import { registerRemoveFolderListener } from "./user-input";
 import { format, parse } from "date-fns";
 
 

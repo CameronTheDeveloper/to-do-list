@@ -8037,12 +8037,12 @@ const addFolderContentElements = (contentItems, folderClass) => {
     return folderParent;
 };
 
-const addFolderSidebarElements = (folder, folderContentDiv) => {
+const addFolderSidebarElements = (folder, folderContentDiv, buttonClass) => {
     const sidebarForm = document.querySelector('#sidebar-add-form');
     const sidebarFolders = document.querySelector('#sidebar-folders');
     const sidebarDiv = addAbove('sidebar-folder', 'div', sidebarFolders, sidebarForm);
     const sidebarTitle = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)(folder.title, 'class', 'sidebar-folder-title', 'div');
-    const removeButton = addFolderClearButton(sidebarDiv, 'active');
+    const removeButton = addFolderClearButton(sidebarDiv, buttonClass);
 
     addSidebarFolderChildElements(sidebarDiv, sidebarTitle, removeButton);
     (0,_user_input__WEBPACK_IMPORTED_MODULE_2__.registerRemoveFolderListener)(removeButton, folderContentDiv, sidebarDiv);
@@ -8267,7 +8267,7 @@ const folder = (title, active, key) => {
 };
 
 const initToDoFolder = () => {
-    const toDoFolder = addToDoFolder(defaultFolderName);
+    const toDoFolder = addToDoFolder(defaultFolderName, 'inactive');
     defaultFolder = toDoFolder;
     // defaultSidebarFolder = sidebarFolder;
     // defaultSidebarFolder.setAttribute('id', 'default-todo-folder');
@@ -8276,12 +8276,12 @@ const initToDoFolder = () => {
 
 
 //Called by manageSidebarInput (user-input.js) 
-const addToDoFolder = (folderName) => {
+const addToDoFolder = (folderName, buttonClass) => {
     const key = (0,_storage__WEBPACK_IMPORTED_MODULE_3__.generateFolderKey)();
     const folderClass = folderName.replace(/\s/g, '-');
     const toDoFolder = folder(folderName, false, key);
     const folderContentDiv = (0,_page_dom__WEBPACK_IMPORTED_MODULE_1__.addFolderContentElements)(contentItems, folderClass);
-    const sidebarFolderDiv = (0,_page_dom__WEBPACK_IMPORTED_MODULE_1__.addFolderSidebarElements)(toDoFolder, folderContentDiv);
+    const sidebarFolderDiv = (0,_page_dom__WEBPACK_IMPORTED_MODULE_1__.addFolderSidebarElements)(toDoFolder, folderContentDiv, buttonClass);
     setActiveFolderOnClick(sidebarFolderDiv, folderContentDiv, toDoFolder);
     (0,_storage__WEBPACK_IMPORTED_MODULE_3__.storeFolder)(key, toDoFolder);   //Move this to a function that is only called if storage is empty
 
@@ -8502,8 +8502,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "registerRemoveFolderListener": () => (/* binding */ registerRemoveFolderListener),
 /* harmony export */   "registerSidebarSubmitListener": () => (/* binding */ registerSidebarSubmitListener),
 /* harmony export */   "registerToDoFormClearListener": () => (/* binding */ registerToDoFormClearListener),
-/* harmony export */   "registerToDoSubmitListener": () => (/* binding */ registerToDoSubmitListener),
-/* harmony export */   "setFolderElements": () => (/* binding */ setFolderElements)
+/* harmony export */   "registerToDoSubmitListener": () => (/* binding */ registerToDoSubmitListener)
 /* harmony export */ });
 /* harmony import */ var _page_dom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./page-dom */ "./src/modules/page-dom.js");
 /* harmony import */ var _to_do_folders__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./to-do-folders */ "./src/modules/to-do-folders.js");
@@ -8534,13 +8533,6 @@ const getRadioInput = (name) => {
 
 /* Sidebar/Folder */
 
-//Replace with addFolderElements maybe
-const setFolderElements = (parent, folder, removeButton) => {
-    //folder.title = folderName;
-
-    registerRemoveFolderListener(removeButton, folder, parent);
-};
-
 const getSidebarInput = () => {
     const input = getInput('folder-title');
     return input;
@@ -8549,7 +8541,7 @@ const getSidebarInput = () => {
 //Called by submit sidebar
 const manageSidebarInput = () => {
     const input = getSidebarInput();
-    const folder = (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_1__.addToDoFolder)(input);
+    const folder = (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_1__.addToDoFolder)(input, 'active');
 
 };
 

@@ -8044,8 +8044,6 @@ const addFolderSidebarElements = (folder, folderContentDiv) => {
     const sidebarTitle = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)(folder.title, 'class', 'sidebar-folder-title', 'div');
     const removeButton = addFolderClearButton(sidebarDiv, 'active');
 
-    //Call this function in initToDoFolder
-    // setFolderElements(sidebarDiv, folder, removeButton);    //
     addSidebarFolderChildElements(sidebarDiv, sidebarTitle, removeButton);
     (0,_user_input__WEBPACK_IMPORTED_MODULE_2__.registerRemoveFolderListener)(removeButton, folderContentDiv, sidebarDiv);
     return sidebarDiv;
@@ -8283,23 +8281,31 @@ const addToDoFolder = (folderName) => {
     const folderClass = folderName.replace(/\s/g, '-');
     const toDoFolder = folder(folderName, false, key);
     const folderContentDiv = (0,_page_dom__WEBPACK_IMPORTED_MODULE_1__.addFolderContentElements)(contentItems, folderClass);
-    const sidebarFolder = (0,_page_dom__WEBPACK_IMPORTED_MODULE_1__.addFolderSidebarElements)(toDoFolder, folderContentDiv);
-    (0,_storage__WEBPACK_IMPORTED_MODULE_3__.storeFolder)(key, toDoFolder);
-    //Need to return folder div
+    const sidebarFolderDiv = (0,_page_dom__WEBPACK_IMPORTED_MODULE_1__.addFolderSidebarElements)(toDoFolder, folderContentDiv);
+    setActiveFolderOnClick(sidebarFolderDiv, folderContentDiv, toDoFolder);
+    (0,_storage__WEBPACK_IMPORTED_MODULE_3__.storeFolder)(key, toDoFolder);   //Move this to a function that is only called if storage is empty
+
     return folderContentDiv;
 };
 
-const setActiveFolder = (sidebarFolder, toDoFolder) => {
-    changeActiveFolder(toDoFolder);
-    hideInactiveFolders(toDoFolder);
-    toDoFolder.appendChild(toDoInputs);
-    changeFolderHeading(sidebarFolder);
+const setActiveFolderOnClick = (sidebarFolderDiv, contentFolderDiv, folder) => {
+    const title = sidebarFolderDiv.querySelector('.sidebar-folder-title');
+    title.addEventListener('click', () => {
+        let activeFolder = setActiveFolder(contentFolderDiv, folder);
+    });
+};
+
+const setActiveFolder = (toDoFolderDiv, toDoFolder) => {
+    changeActiveFolder(toDoFolderDiv); //Change
+    hideInactiveFolders(toDoFolderDiv);
+    toDoFolderDiv.appendChild(toDoInputs);
+    changeFolderHeading(toDoFolder.title);
     (0,_form_dom__WEBPACK_IMPORTED_MODULE_2__.toggleToDoFormVisible)(false);
     return activeFolder;
 };
 
-const changeActiveFolder = (toDoFolder) => {
-    activeFolder = toDoFolder;
+const changeActiveFolder = (toDoFolderDiv) => {
+    activeFolder = toDoFolderDiv;
 };
 
 const getActiveFolder = () => {
@@ -8312,16 +8318,16 @@ const resetActiveFolder = (toDoFolder) => {
     }
 };
 
-const hideInactiveFolders = (activeFolder) => {
+const hideInactiveFolders = (activeFolderDiv) => {
     const folders = document.querySelectorAll('.todo-folder');
     (0,_page_dom__WEBPACK_IMPORTED_MODULE_1__.hideElements)(folders);
-    activeFolder.style.display = 'grid';
+    activeFolderDiv.style.display = 'grid';
 };
 
-const changeFolderHeading = (sidebarFolder) => {
+const changeFolderHeading = (folderTitle) => {
     const folderHeading = document.querySelector('#active-folder-heading');
-    const title = sidebarFolder.querySelector('.sidebar-folder-title');
-    folderHeading.innerHTML = title.innerHTML;
+    // const title = sidebarFolder.querySelector('.sidebar-folder-title');
+    folderHeading.innerHTML = folderTitle;
 };
 
 
@@ -8524,12 +8530,7 @@ const getRadioInput = (name) => {
     }
 };
 
-const setActiveFolderOnClick = (sidebarFolder, folder) => {
-    const title = sidebarFolder.querySelector('.sidebar-folder-title');
-    title.addEventListener('click', () => {
-        let activeFolder = (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_1__.setActiveFolder)(sidebarFolder, folder);
-    });
-};
+
 
 /* Sidebar/Folder */
 
@@ -8567,7 +8568,6 @@ const removeFolder = (folder, sidebarElement) => {
 
 const registerRemoveFolderListener = (button, folder, sidebarElement) => {
     button.addEventListener('click', () => {
-        console.log(sidebarElement);
         removeFolder(folder, sidebarElement);
         (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_1__.resetActiveFolder)(folder);
     });

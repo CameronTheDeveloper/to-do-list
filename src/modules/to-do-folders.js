@@ -28,7 +28,7 @@ const initToDoFolder = () => {
     defaultFolder = toDoFolder;
     // defaultSidebarFolder = sidebarFolder;
     // defaultSidebarFolder.setAttribute('id', 'default-todo-folder');
-    // activeFolder = setActiveFolder(sidebarFolder, toDoFolder);
+    activeFolder = setActiveFolder(toDoFolder, defaultFolderName);
 };
 
 
@@ -48,7 +48,7 @@ const addToDoFolder = (folderName, buttonClass) => {
 const setActiveFolderOnClick = (sidebarFolderDiv, contentFolderDiv, folder) => {
     const title = sidebarFolderDiv.querySelector('.sidebar-folder-title');
     title.addEventListener('click', () => {
-        let activeFolder = setActiveFolder(contentFolderDiv, folder);
+        let activeFolder = setActiveFolder(contentFolderDiv, folder.title);
     });
 };
 
@@ -56,8 +56,9 @@ const setActiveFolder = (toDoFolderDiv, toDoFolder) => {
     changeActiveFolder(toDoFolderDiv); //Change
     hideInactiveFolders(toDoFolderDiv);
     toDoFolderDiv.appendChild(toDoInputs);
-    changeFolderHeading(toDoFolder.title);
+    changeFolderHeading(toDoFolder);
     toggleToDoFormVisible(false);
+
     return activeFolder;
 };
 

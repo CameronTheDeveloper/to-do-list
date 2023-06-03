@@ -8295,11 +8295,11 @@ const setActiveFolderOnClick = (sidebarFolderDiv, contentFolderDiv, folder) => {
     });
 };
 
-const setActiveFolder = (toDoFolderDiv, toDoFolder) => {
-    changeActiveFolder(toDoFolderDiv); //Change
+const setActiveFolder = (toDoFolderDiv, folderTitle) => {
+    changeActiveFolder(toDoFolderDiv);
     hideInactiveFolders(toDoFolderDiv);
     toDoFolderDiv.appendChild(toDoInputs);
-    changeFolderHeading(toDoFolder);
+    changeFolderHeading(folderTitle);
     (0,_form_dom__WEBPACK_IMPORTED_MODULE_2__.toggleToDoFormVisible)(false);
 
     return activeFolder;

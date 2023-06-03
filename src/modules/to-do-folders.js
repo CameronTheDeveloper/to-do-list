@@ -52,11 +52,11 @@ const setActiveFolderOnClick = (sidebarFolderDiv, contentFolderDiv, folder) => {
     });
 };
 
-const setActiveFolder = (toDoFolderDiv, toDoFolder) => {
-    changeActiveFolder(toDoFolderDiv); //Change
+const setActiveFolder = (toDoFolderDiv, folderTitle) => {
+    changeActiveFolder(toDoFolderDiv);
     hideInactiveFolders(toDoFolderDiv);
     toDoFolderDiv.appendChild(toDoInputs);
-    changeFolderHeading(toDoFolder);
+    changeFolderHeading(folderTitle);
     toggleToDoFormVisible(false);
 
     return activeFolder;

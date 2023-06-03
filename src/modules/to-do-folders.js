@@ -53,16 +53,16 @@ const setActiveFolderOnClick = (sidebarFolderDiv, contentFolderDiv, folder) => {
 };
 
 const setActiveFolder = (toDoFolderDiv, toDoFolder) => {
-    changeActiveFolder(toDoFolder); //Change
-    hideInactiveFolders(toDoFolder);
+    changeActiveFolder(toDoFolderDiv); //Change
+    hideInactiveFolders(toDoFolderDiv);
     toDoFolderDiv.appendChild(toDoInputs);
     changeFolderHeading(toDoFolder.title);
     toggleToDoFormVisible(false);
     return activeFolder;
 };
 
-const changeActiveFolder = (toDoFolder) => {
-    activeFolder = toDoFolder;
+const changeActiveFolder = (toDoFolderDiv) => {
+    activeFolder = toDoFolderDiv;
 };
 
 const getActiveFolder = () => {
@@ -75,14 +75,14 @@ const resetActiveFolder = (toDoFolder) => {
     }
 };
 
-const hideInactiveFolders = (activeFolder) => {
+const hideInactiveFolders = (activeFolderDiv) => {
     const folders = document.querySelectorAll('.todo-folder');
     hideElements(folders);
-    activeFolder.style.display = 'grid';
+    activeFolderDiv.style.display = 'grid';
 };
 
 const changeFolderHeading = (folderTitle) => {
-    // const folderHeading = document.querySelector('#active-folder-heading');
+    const folderHeading = document.querySelector('#active-folder-heading');
     // const title = sidebarFolder.querySelector('.sidebar-folder-title');
     folderHeading.innerHTML = folderTitle;
 };

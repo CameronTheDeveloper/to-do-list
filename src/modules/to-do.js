@@ -14,13 +14,14 @@ import { storeToDo } from './storage';
 
 const toDoInputs = document.querySelector('#todo-inputs');
 
-const toDo = (title, dueDate, priority, description, key) => {
+const toDo = (title, dueDate, priority, description, key, folderKey) => {
     return {
         title: title,
         dueDate: dueDate,
         priority: priority,
         description: description,
         key: key,
+        folderKey: folderKey,
     };
 };
 

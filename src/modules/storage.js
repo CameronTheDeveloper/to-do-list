@@ -16,6 +16,14 @@ const storeFolder = (title, folder) => {
     folderCount++;
 };
 
+const removeFolderFromStorage = (folder) => {
+    const key = folder.key;
+    const titleKey = `${key}title`;
+
+    localStorage.removeItem(key);
+    localStorage.removeItem(titleKey);
+};
+
 /* To Do */
 
 const generateToDoKey = (keyWord) => {
@@ -51,4 +59,4 @@ const removeToDoFromStorage = (toDoItem) => {
     localStorage.removeItem(descKey);
 };
 
-export { generateFolderKey, storeFolder, storeToDo, removeToDoFromStorage };
+export { generateFolderKey, storeFolder, storeToDo, removeFolderFromStorage, removeToDoFromStorage };

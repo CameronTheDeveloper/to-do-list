@@ -8,6 +8,7 @@ import {
 } from "./to-do-folders";
 import { addToDo } from "./to-do";
 import { toggleToDoFormVisible } from "./form-dom";
+import { removeFolderFromStorage } from "./storage";
 
 const sidebarFolders = document.querySelector('#sidebar-folders');
 
@@ -54,10 +55,11 @@ const removeFolder = (folder, sidebarElement) => {
     sidebarElement.remove();
 };
 
-const registerRemoveFolderListener = (button, folder, sidebarElement) => {
+const registerRemoveFolderListener = (button, folderDiv, sidebarElement, folder) => {
     button.addEventListener('click', () => {
-        removeFolder(folder, sidebarElement);
-        resetActiveFolder(folder);
+        removeFolder(folderDiv, sidebarElement);
+        removeFolderFromStorage(folder);
+        resetActiveFolder(folderDiv);
     });
 };
 

@@ -8183,8 +8183,11 @@ const generateFolderKey = () => {
     return `folder${folderCount}`;
 };
 
-const storeFolder = (key, folder) => {
+const storeFolder = (key, title, folder) => {
+    const titleKey = generateFolderKey(folderCount);
+
     localStorage.setItem(key, folder.key);
+    localStorage.setItem(key, title);
     folderCount++;
 };
 
@@ -8283,8 +8286,7 @@ const addToDoFolder = (folderName, buttonClass) => {
     const folderContentDiv = (0,_page_dom__WEBPACK_IMPORTED_MODULE_1__.addFolderContentElements)(contentItems, folderClass);
     const sidebarFolderDiv = (0,_page_dom__WEBPACK_IMPORTED_MODULE_1__.addFolderSidebarElements)(toDoFolder, folderContentDiv, buttonClass);
     setActiveFolderOnClick(sidebarFolderDiv, folderContentDiv, toDoFolder);
-    (0,_storage__WEBPACK_IMPORTED_MODULE_3__.storeFolder)(key, toDoFolder);   //Move this to a function that is only called if storage is empty
-
+    (0,_storage__WEBPACK_IMPORTED_MODULE_3__.storeFolder)(key, toDoFolder.title, toDoFolder);   //Move this to a function that is only called if storage is empty
     return folderContentDiv;
 };
 

@@ -3,15 +3,16 @@ let folderCount = 0;
 
 /* Folder */
 
-const generateFolderKey = () => {
-    return `folder${folderCount}`;
+const generateFolderKey = (keyWord) => {
+    return `folder${folderCount}${keyWord}`;
 };
 
 const storeFolder = (key, title, folder) => {
-    const titleKey = generateFolderKey(folderCount);
+    const titleKey = generateFolderKey('title');
 
+    // folder.key = `folder${folderCount}`;
     localStorage.setItem(key, folder.key);
-    localStorage.setItem(key, title);
+    localStorage.setItem(titleKey, title);
     folderCount++;
 };
 

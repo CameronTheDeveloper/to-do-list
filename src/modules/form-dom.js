@@ -17,6 +17,7 @@ import { format, addYears } from "date-fns";
 
 const addFormParent = (parent, id, className) => {
     const element = document.createElement('div');
+
     element.setAttribute('id', id);
     element.setAttribute('class', className);
     parent.appendChild(element);
@@ -25,6 +26,7 @@ const addFormParent = (parent, id, className) => {
 
 const addFormElement = (parent) => {
     const element = document.createElement('form');
+
     parent.appendChild(element);
     return element;
 };
@@ -32,6 +34,7 @@ const addFormElement = (parent) => {
 const addFormToDOM = (parent, id, className) => {
     const formParent = addFormParent(parent, id, className);
     const form = addFormElement(formParent);
+
     return form;
 };
 
@@ -67,13 +70,13 @@ const addToDoTitleInput = (form) => {
 
 const addToDoDueDateInput = (form) => {
     const dueDateDiv = addAttributes('', 'id', 'todo-form-duedate-parent', 'div');
-
     const today = new Date();
     const minDate = format(today, 'yyyy-MM-dd');
     const id = 'duedate-input';
     const name = 'todo-duedate';
     const maxDate = addYears(today, 75);
     const formattedMaxDate = format(maxDate, 'yyyy-MM-dd');
+
     addFormDateElements(dueDateDiv, minDate, formattedMaxDate, minDate, id, name);
     return dueDateDiv;
 };
@@ -82,9 +85,9 @@ const addToDoPriorityInput = (form) => {
     const priorityDiv = addAttributes('', 'id', 'todo-form-priority-parent', 'div');
     const optionsAr = ['Low', 'Medium', 'High'];
     const fieldset = createFieldset('Priority');
+
     setRadioFormElements(fieldset, 'priority-input', optionsAr);
     priorityDiv.appendChild(fieldset);
-
     return priorityDiv;
 };
 
@@ -94,7 +97,6 @@ const addToDoDescInput = (form) => {
     const description = addFormInputElement('textarea', descDiv);
 
     addToDoDescInputAttributes(descLabel, description);
-
     return descDiv;
 };
 
@@ -109,8 +111,8 @@ const addToDoFormButtons = (form) => {
     const formButtonsDiv = addAttributes('', 'id', 'todo-form-buttons-container', 'div');
     const clearButton = addButton(formButtonsDiv, 'button', 'todo-form-clear-button', 'active', 'Clear');
     const submitButton = addButton(formButtonsDiv, 'submit', 'todo-submit-button', 'active', 'Submit');
-    form.appendChild(formButtonsDiv);
 
+    form.appendChild(formButtonsDiv);
     registerToDoFormClearListener(form, clearButton);
     registerToDoSubmitListener(form);
 };
@@ -132,6 +134,7 @@ const toggleToDoFormVisible = (formActive) => {
 
 const addFormInputElement = (type, parent) => {
     const input = document.createElement(type);
+
     parent.appendChild(input);
     return input;
 };
@@ -139,6 +142,7 @@ const addFormInputElement = (type, parent) => {
 const addFormDateElements = (parent, min, max, value, id, name) => {
     const dueDateLabel = addFormLabelElement(parent);
     const dateInput = addFormInputElement('input', parent);
+
     setDateInputAttributes(dateInput, dueDateLabel, min, max, value, id, name);
 };
 

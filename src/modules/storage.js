@@ -19,7 +19,6 @@ const storeFolder = (title, folder) => {
 const removeFolderFromStorage = (folder) => {
     const key = folder.key;
     const titleKey = `${key}title`;
-
     localStorage.removeItem(key);
     localStorage.removeItem(titleKey);
 };

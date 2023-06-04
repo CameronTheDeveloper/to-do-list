@@ -5,15 +5,13 @@ import {
     hideElements
 } from "./page-dom";
 import { toggleToDoFormVisible } from './form-dom';
-import { generateFolderKey, storeFolder } from './storage';
+import { storeFolder } from './storage';
 
 const contentItems = document.querySelector('#content-items');
 const toDoInputs = document.querySelector('#todo-inputs');
 let defaultFolder = null;
 let defaultFolderTitle = 'General';
-let defaultSidebarFolder = null;
 let activeFolder = null;
-//Need to use the active property for folders
 
 const folder = (title, active, key) => {
     return {
@@ -26,13 +24,9 @@ const folder = (title, active, key) => {
 const initToDoFolder = () => {
     const toDoFolder = addToDoFolder(defaultFolderTitle, 'inactive');
     defaultFolder = toDoFolder;
-    // defaultSidebarFolder = sidebarFolder;
-    // defaultSidebarFolder.setAttribute('id', 'default-todo-folder');
     activeFolder = setActiveFolder(toDoFolder, defaultFolderTitle);
 };
 
-
-//Called by manageSidebarInput (user-input.js) 
 const addToDoFolder = (folderName, buttonClass) => {
     const folderClass = folderName.replace(/\s/g, '-');
     const toDoFolder = folder(folderName, false);
@@ -46,6 +40,7 @@ const addToDoFolder = (folderName, buttonClass) => {
 
 const setActiveFolderOnClick = (sidebarFolderDiv, contentFolderDiv, folder) => {
     const title = sidebarFolderDiv.querySelector('.sidebar-folder-title');
+
     title.addEventListener('click', () => {
         let activeFolder = setActiveFolder(contentFolderDiv, folder.title);
     });
@@ -83,7 +78,6 @@ const hideInactiveFolders = (activeFolderDiv) => {
 
 const changeFolderHeading = (folderTitle) => {
     const folderHeading = document.querySelector('#active-folder-heading');
-    // const title = sidebarFolder.querySelector('.sidebar-folder-title');
     folderHeading.innerHTML = folderTitle;
 };
 

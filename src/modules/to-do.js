@@ -26,7 +26,6 @@ const toDo = (title, dueDate, priority, description, key) => {
 
 const addToDoButton = () => {
     const addToDoButton = addButton(toDoInputs, 'button', 'todo-add-button', 'active', '+ To Do');
-
     registerAddToDoListener(addToDoButton);
 };
 

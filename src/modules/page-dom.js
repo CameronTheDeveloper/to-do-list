@@ -52,7 +52,6 @@ const addToDoContent = (toDoItem) => {
     const priorityDiv = addAttributes('', 'class', 'priority-div', 'div');
     const priorityLabel = addAttributes('Priority - ', 'class', 'priority-label', 'div');
     const priorityValue = addAttributes(toDoItem.priority, 'class', 'priority', 'div');
-
     const descDiv = addAttributes(toDoItem.description, 'class', 'description', 'p');
 
     toDoContentDiv.setAttribute('class', 'todo-content');
@@ -64,8 +63,6 @@ const addToDoContent = (toDoItem) => {
     toDoContentDiv.appendChild(priorityDiv);
     toDoContentDiv.appendChild(descDiv);
     return toDoContentDiv;
-    //Add labels for each div (Like 'due: ')
-    //To add 'todo expand' feature, hide toDoContentDiv when clicked
 };
 
 const displayToDo = (toDoItem, folder) => {

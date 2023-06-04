@@ -1,16 +1,11 @@
 import {
-    addAbove
-} from "./page-dom";
-import {
     addToDoFolder,
-    setActiveFolder,
     resetActiveFolder
 } from "./to-do-folders";
 import { addToDo } from "./to-do";
 import { toggleToDoFormVisible } from "./form-dom";
 import { removeFolderFromStorage } from "./storage";
 
-const sidebarFolders = document.querySelector('#sidebar-folders');
 
 const getInput = (id) => {
     return document.getElementById(id).value;
@@ -26,8 +21,6 @@ const getRadioInput = (name) => {
     }
 };
 
-
-
 /* Sidebar/Folder */
 
 const getSidebarInput = () => {
@@ -35,11 +28,9 @@ const getSidebarInput = () => {
     return input;
 };
 
-//Called by submit sidebar
 const manageSidebarInput = () => {
     const input = getSidebarInput();
     const folder = addToDoFolder(input, 'active');
-
 };
 
 const registerSidebarSubmitListener = (form) => {

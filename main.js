@@ -8045,7 +8045,7 @@ const addFolderSidebarElements = (folder, folderContentDiv, buttonClass) => {
     const removeButton = addFolderClearButton(sidebarDiv, buttonClass);
 
     addSidebarFolderChildElements(sidebarDiv, sidebarTitle, removeButton);
-    (0,_user_input__WEBPACK_IMPORTED_MODULE_2__.registerRemoveFolderListener)(removeButton, folderContentDiv, sidebarDiv);
+    (0,_user_input__WEBPACK_IMPORTED_MODULE_2__.registerRemoveFolderListener)(removeButton, folderContentDiv, sidebarDiv, folder);
     return sidebarDiv;
 };
 
@@ -8170,6 +8170,7 @@ const addSidebarInput = () => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "generateFolderKey": () => (/* binding */ generateFolderKey),
+/* harmony export */   "removeFolderFromStorage": () => (/* binding */ removeFolderFromStorage),
 /* harmony export */   "removeToDoFromStorage": () => (/* binding */ removeToDoFromStorage),
 /* harmony export */   "storeFolder": () => (/* binding */ storeFolder),
 /* harmony export */   "storeToDo": () => (/* binding */ storeToDo)
@@ -8190,6 +8191,14 @@ const storeFolder = (title, folder) => {
     localStorage.setItem(folder.key, folder.key);
     localStorage.setItem(titleKey, title);
     folderCount++;
+};
+
+const removeFolderFromStorage = (folder) => {
+    const key = folder.key;
+    const titleKey = `${key}title`;
+
+    localStorage.removeItem(key);
+    localStorage.removeItem(titleKey);
 };
 
 /* To Do */
@@ -8512,6 +8521,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _to_do_folders__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./to-do-folders */ "./src/modules/to-do-folders.js");
 /* harmony import */ var _to_do__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./to-do */ "./src/modules/to-do.js");
 /* harmony import */ var _form_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./form-dom */ "./src/modules/form-dom.js");
+/* harmony import */ var _storage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./storage */ "./src/modules/storage.js");
+
 
 
 
@@ -8562,10 +8573,11 @@ const removeFolder = (folder, sidebarElement) => {
     sidebarElement.remove();
 };
 
-const registerRemoveFolderListener = (button, folder, sidebarElement) => {
+const registerRemoveFolderListener = (button, folderDiv, sidebarElement, folder) => {
     button.addEventListener('click', () => {
-        removeFolder(folder, sidebarElement);
-        (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_1__.resetActiveFolder)(folder);
+        removeFolder(folderDiv, sidebarElement);
+        (0,_storage__WEBPACK_IMPORTED_MODULE_4__.removeFolderFromStorage)(folder);
+        (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_1__.resetActiveFolder)(folderDiv);
     });
 };
 

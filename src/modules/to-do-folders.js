@@ -40,8 +40,7 @@ const addToDoFolder = (folderName, buttonClass) => {
     const folderContentDiv = addFolderContentElements(contentItems, folderClass);
     const sidebarFolderDiv = addFolderSidebarElements(toDoFolder, folderContentDiv, buttonClass);
     setActiveFolderOnClick(sidebarFolderDiv, folderContentDiv, toDoFolder);
-    storeFolder(key, toDoFolder);   //Move this to a function that is only called if storage is empty
-
+    storeFolder(key, toDoFolder.title, toDoFolder);   //Move this to a function that is only called if storage is empty
     return folderContentDiv;
 };
 

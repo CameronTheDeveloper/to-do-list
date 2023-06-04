@@ -7756,6 +7756,7 @@ const setTextAreaAttributes = (item, id, cols, rows, maxLength) => {
 
 const setRadioAttributes = (element, label, name, value) => {
     const id = value.toLowerCase().replace(/\s/g, '-') + '-radio';
+
     element.setAttribute('type', 'radio');
     element.setAttribute('id', id);
     element.setAttribute('name', name);
@@ -7835,6 +7836,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const addFormParent = (parent, id, className) => {
     const element = document.createElement('div');
+
     element.setAttribute('id', id);
     element.setAttribute('class', className);
     parent.appendChild(element);
@@ -7843,6 +7845,7 @@ const addFormParent = (parent, id, className) => {
 
 const addFormElement = (parent) => {
     const element = document.createElement('form');
+
     parent.appendChild(element);
     return element;
 };
@@ -7850,6 +7853,7 @@ const addFormElement = (parent) => {
 const addFormToDOM = (parent, id, className) => {
     const formParent = addFormParent(parent, id, className);
     const form = addFormElement(formParent);
+
     return form;
 };
 
@@ -7885,13 +7889,13 @@ const addToDoTitleInput = (form) => {
 
 const addToDoDueDateInput = (form) => {
     const dueDateDiv = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)('', 'id', 'todo-form-duedate-parent', 'div');
-
     const today = new Date();
     const minDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_3__["default"])(today, 'yyyy-MM-dd');
     const id = 'duedate-input';
     const name = 'todo-duedate';
     const maxDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_4__["default"])(today, 75);
     const formattedMaxDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_3__["default"])(maxDate, 'yyyy-MM-dd');
+
     addFormDateElements(dueDateDiv, minDate, formattedMaxDate, minDate, id, name);
     return dueDateDiv;
 };
@@ -7900,9 +7904,9 @@ const addToDoPriorityInput = (form) => {
     const priorityDiv = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)('', 'id', 'todo-form-priority-parent', 'div');
     const optionsAr = ['Low', 'Medium', 'High'];
     const fieldset = createFieldset('Priority');
+
     setRadioFormElements(fieldset, 'priority-input', optionsAr);
     priorityDiv.appendChild(fieldset);
-
     return priorityDiv;
 };
 
@@ -7912,7 +7916,6 @@ const addToDoDescInput = (form) => {
     const description = addFormInputElement('textarea', descDiv);
 
     (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addToDoDescInputAttributes)(descLabel, description);
-
     return descDiv;
 };
 
@@ -7927,8 +7930,8 @@ const addToDoFormButtons = (form) => {
     const formButtonsDiv = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)('', 'id', 'todo-form-buttons-container', 'div');
     const clearButton = (0,_page_dom__WEBPACK_IMPORTED_MODULE_2__.addButton)(formButtonsDiv, 'button', 'todo-form-clear-button', 'active', 'Clear');
     const submitButton = (0,_page_dom__WEBPACK_IMPORTED_MODULE_2__.addButton)(formButtonsDiv, 'submit', 'todo-submit-button', 'active', 'Submit');
-    form.appendChild(formButtonsDiv);
 
+    form.appendChild(formButtonsDiv);
     (0,_user_input__WEBPACK_IMPORTED_MODULE_0__.registerToDoFormClearListener)(form, clearButton);
     (0,_user_input__WEBPACK_IMPORTED_MODULE_0__.registerToDoSubmitListener)(form);
 };
@@ -7950,6 +7953,7 @@ const toggleToDoFormVisible = (formActive) => {
 
 const addFormInputElement = (type, parent) => {
     const input = document.createElement(type);
+
     parent.appendChild(input);
     return input;
 };
@@ -7957,6 +7961,7 @@ const addFormInputElement = (type, parent) => {
 const addFormDateElements = (parent, min, max, value, id, name) => {
     const dueDateLabel = addFormLabelElement(parent);
     const dateInput = addFormInputElement('input', parent);
+
     (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.setDateInputAttributes)(dateInput, dueDateLabel, min, max, value, id, name);
 };
 
@@ -8071,7 +8076,6 @@ const addToDoContent = (toDoItem) => {
     const priorityDiv = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)('', 'class', 'priority-div', 'div');
     const priorityLabel = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)('Priority - ', 'class', 'priority-label', 'div');
     const priorityValue = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)(toDoItem.priority, 'class', 'priority', 'div');
-
     const descDiv = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)(toDoItem.description, 'class', 'description', 'p');
 
     toDoContentDiv.setAttribute('class', 'todo-content');
@@ -8083,8 +8087,6 @@ const addToDoContent = (toDoItem) => {
     toDoContentDiv.appendChild(priorityDiv);
     toDoContentDiv.appendChild(descDiv);
     return toDoContentDiv;
-    //Add labels for each div (Like 'due: ')
-    //To add 'todo expand' feature, hide toDoContentDiv when clicked
 };
 
 const displayToDo = (toDoItem, folder) => {
@@ -8196,7 +8198,6 @@ const storeFolder = (title, folder) => {
 const removeFolderFromStorage = (folder) => {
     const key = folder.key;
     const titleKey = `${key}title`;
-
     localStorage.removeItem(key);
     localStorage.removeItem(titleKey);
 };
@@ -8267,9 +8268,7 @@ const contentItems = document.querySelector('#content-items');
 const toDoInputs = document.querySelector('#todo-inputs');
 let defaultFolder = null;
 let defaultFolderTitle = 'General';
-let defaultSidebarFolder = null;
 let activeFolder = null;
-//Need to use the active property for folders
 
 const folder = (title, active, key) => {
     return {
@@ -8282,13 +8281,9 @@ const folder = (title, active, key) => {
 const initToDoFolder = () => {
     const toDoFolder = addToDoFolder(defaultFolderTitle, 'inactive');
     defaultFolder = toDoFolder;
-    // defaultSidebarFolder = sidebarFolder;
-    // defaultSidebarFolder.setAttribute('id', 'default-todo-folder');
     activeFolder = setActiveFolder(toDoFolder, defaultFolderTitle);
 };
 
-
-//Called by manageSidebarInput (user-input.js) 
 const addToDoFolder = (folderName, buttonClass) => {
     const folderClass = folderName.replace(/\s/g, '-');
     const toDoFolder = folder(folderName, false);
@@ -8302,6 +8297,7 @@ const addToDoFolder = (folderName, buttonClass) => {
 
 const setActiveFolderOnClick = (sidebarFolderDiv, contentFolderDiv, folder) => {
     const title = sidebarFolderDiv.querySelector('.sidebar-folder-title');
+
     title.addEventListener('click', () => {
         let activeFolder = setActiveFolder(contentFolderDiv, folder.title);
     });
@@ -8339,7 +8335,6 @@ const hideInactiveFolders = (activeFolderDiv) => {
 
 const changeFolderHeading = (folderTitle) => {
     const folderHeading = document.querySelector('#active-folder-heading');
-    // const title = sidebarFolder.querySelector('.sidebar-folder-title');
     folderHeading.innerHTML = folderTitle;
 };
 
@@ -8475,7 +8470,6 @@ const toDo = (title, dueDate, priority, description, key) => {
 
 const addToDoButton = () => {
     const addToDoButton = (0,_page_dom__WEBPACK_IMPORTED_MODULE_1__.addButton)(toDoInputs, 'button', 'todo-add-button', 'active', '+ To Do');
-
     (0,_user_input__WEBPACK_IMPORTED_MODULE_2__.registerAddToDoListener)(addToDoButton);
 };
 
@@ -8517,18 +8511,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "registerToDoFormClearListener": () => (/* binding */ registerToDoFormClearListener),
 /* harmony export */   "registerToDoSubmitListener": () => (/* binding */ registerToDoSubmitListener)
 /* harmony export */ });
-/* harmony import */ var _page_dom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./page-dom */ "./src/modules/page-dom.js");
-/* harmony import */ var _to_do_folders__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./to-do-folders */ "./src/modules/to-do-folders.js");
-/* harmony import */ var _to_do__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./to-do */ "./src/modules/to-do.js");
-/* harmony import */ var _form_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./form-dom */ "./src/modules/form-dom.js");
-/* harmony import */ var _storage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./storage */ "./src/modules/storage.js");
+/* harmony import */ var _to_do_folders__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./to-do-folders */ "./src/modules/to-do-folders.js");
+/* harmony import */ var _to_do__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./to-do */ "./src/modules/to-do.js");
+/* harmony import */ var _form_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./form-dom */ "./src/modules/form-dom.js");
+/* harmony import */ var _storage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./storage */ "./src/modules/storage.js");
 
 
 
 
 
-
-const sidebarFolders = document.querySelector('#sidebar-folders');
 
 const getInput = (id) => {
     return document.getElementById(id).value;
@@ -8544,8 +8535,6 @@ const getRadioInput = (name) => {
     }
 };
 
-
-
 /* Sidebar/Folder */
 
 const getSidebarInput = () => {
@@ -8553,11 +8542,9 @@ const getSidebarInput = () => {
     return input;
 };
 
-//Called by submit sidebar
 const manageSidebarInput = () => {
     const input = getSidebarInput();
-    const folder = (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_1__.addToDoFolder)(input, 'active');
-
+    const folder = (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_0__.addToDoFolder)(input, 'active');
 };
 
 const registerSidebarSubmitListener = (form) => {
@@ -8576,8 +8563,8 @@ const removeFolder = (folder, sidebarElement) => {
 const registerRemoveFolderListener = (button, folderDiv, sidebarElement, folder) => {
     button.addEventListener('click', () => {
         removeFolder(folderDiv, sidebarElement);
-        (0,_storage__WEBPACK_IMPORTED_MODULE_4__.removeFolderFromStorage)(folder);
-        (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_1__.resetActiveFolder)(folderDiv);
+        (0,_storage__WEBPACK_IMPORTED_MODULE_3__.removeFolderFromStorage)(folder);
+        (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_0__.resetActiveFolder)(folderDiv);
     });
 };
 
@@ -8585,13 +8572,13 @@ const registerRemoveFolderListener = (button, folderDiv, sidebarElement, folder)
 
 const registerAddToDoListener = (button) => {
     button.addEventListener('click', () => {
-        (0,_form_dom__WEBPACK_IMPORTED_MODULE_3__.toggleToDoFormVisible)(true);
+        (0,_form_dom__WEBPACK_IMPORTED_MODULE_2__.toggleToDoFormVisible)(true);
     });
 };
 
 const registerToDoFormClearListener = (form, clearButton) => {
     clearButton.addEventListener('click', () => {
-        (0,_form_dom__WEBPACK_IMPORTED_MODULE_3__.toggleToDoFormVisible)(false);
+        (0,_form_dom__WEBPACK_IMPORTED_MODULE_2__.toggleToDoFormVisible)(false);
         form.reset();
     });
 };
@@ -8599,8 +8586,8 @@ const registerToDoFormClearListener = (form, clearButton) => {
 const registerToDoSubmitListener = (form) => {
     form.addEventListener('submit', (event) => {
         event.preventDefault();
-        (0,_to_do__WEBPACK_IMPORTED_MODULE_2__.addToDo)();
-        (0,_form_dom__WEBPACK_IMPORTED_MODULE_3__.toggleToDoFormVisible)(false);
+        (0,_to_do__WEBPACK_IMPORTED_MODULE_1__.addToDo)();
+        (0,_form_dom__WEBPACK_IMPORTED_MODULE_2__.toggleToDoFormVisible)(false);
         form.reset();
     });
 };

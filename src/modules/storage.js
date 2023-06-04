@@ -7,11 +7,11 @@ const generateFolderKey = (keyWord) => {
     return `folder${folderCount}${keyWord}`;
 };
 
-const storeFolder = (key, title, folder) => {
+const storeFolder = (title, folder) => {
     const titleKey = generateFolderKey('title');
 
-    // folder.key = `folder${folderCount}`;
-    localStorage.setItem(key, folder.key);
+    folder.key = `folder${folderCount}`;
+    localStorage.setItem(folder.key, folder.key);
     localStorage.setItem(titleKey, title);
     folderCount++;
 };

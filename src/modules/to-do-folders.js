@@ -34,13 +34,13 @@ const initToDoFolder = () => {
 
 //Called by manageSidebarInput (user-input.js) 
 const addToDoFolder = (folderName, buttonClass) => {
-    const key = generateFolderKey();
     const folderClass = folderName.replace(/\s/g, '-');
-    const toDoFolder = folder(folderName, false, key);
+    const toDoFolder = folder(folderName, false);
     const folderContentDiv = addFolderContentElements(contentItems, folderClass);
     const sidebarFolderDiv = addFolderSidebarElements(toDoFolder, folderContentDiv, buttonClass);
+
     setActiveFolderOnClick(sidebarFolderDiv, folderContentDiv, toDoFolder);
-    storeFolder(key, toDoFolder.title, toDoFolder);   //Move this to a function that is only called if storage is empty
+    storeFolder(toDoFolder.title, toDoFolder);   //Move this to a function that is only called if storage is empty
     return folderContentDiv;
 };
 

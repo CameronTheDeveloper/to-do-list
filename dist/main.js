@@ -8269,6 +8269,7 @@ const toDoInputs = document.querySelector('#todo-inputs');
 let defaultFolder = null;
 let defaultFolderTitle = 'General';
 let activeFolder = null;
+let activeFolderKey = null;
 
 const folder = (title, active, key) => {
     return {
@@ -8297,9 +8298,9 @@ const addToDoFolder = (folderName, buttonClass) => {
 
 const setActiveFolderOnClick = (sidebarFolderDiv, contentFolderDiv, folder, key) => {
     const title = sidebarFolderDiv.querySelector('.sidebar-folder-title');
-    console.log(key);
     title.addEventListener('click', () => {
         let activeFolder = setActiveFolder(contentFolderDiv, folder.title);
+        activeFolderKey = key;
     });
 };
 

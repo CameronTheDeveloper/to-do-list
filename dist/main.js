@@ -8283,7 +8283,7 @@ const folder = (title, active, key) => {
 const initToDoFolder = () => {
     const toDoFolder = addToDoFolder(defaultFolderTitle, 'inactive');
     defaultFolder = toDoFolder;
-    activeFolder = setActiveFolder(toDoFolder, defaultFolderTitle);
+    activeFolder = setActiveFolder(toDoFolder, defaultFolderTitle, 'folder0');
 };
 
 const addToDoFolder = (folderName, buttonClass) => {
@@ -8300,18 +8300,18 @@ const addToDoFolder = (folderName, buttonClass) => {
 const setActiveFolderOnClick = (sidebarFolderDiv, contentFolderDiv, folder, key) => {
     const title = sidebarFolderDiv.querySelector('.sidebar-folder-title');
     title.addEventListener('click', () => {
-        let activeFolder = setActiveFolder(contentFolderDiv, folder.title);
-        activeFolderKey = key;
+        let activeFolder = setActiveFolder(contentFolderDiv, folder.title, key);
     });
 };
 
-const setActiveFolder = (toDoFolderDiv, folderTitle) => {
+const setActiveFolder = (toDoFolderDiv, folderTitle, key) => {
     changeActiveFolder(toDoFolderDiv);
     hideInactiveFolders(toDoFolderDiv);
     toDoFolderDiv.appendChild(toDoInputs);
     changeFolderHeading(folderTitle);
     (0,_form_dom__WEBPACK_IMPORTED_MODULE_2__.toggleToDoFormVisible)(false);
-
+    setActiveFolderKey(key);
+    console.log(key);
     return activeFolder;
 };
 
@@ -8321,6 +8321,10 @@ const changeActiveFolder = (toDoFolderDiv) => {
 
 const getActiveFolder = () => {
     return activeFolder;
+};
+
+const setActiveFolderKey = (key) => {
+    activeFolderKey = key;
 };
 
 const getActiveFolderKey = () => {

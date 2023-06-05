@@ -25,7 +25,7 @@ const folder = (title, active, key) => {
 const initToDoFolder = () => {
     const toDoFolder = addToDoFolder(defaultFolderTitle, 'inactive');
     defaultFolder = toDoFolder;
-    activeFolder = setActiveFolder(toDoFolder, defaultFolderTitle);
+    activeFolder = setActiveFolder(toDoFolder, defaultFolderTitle, 'folder0');
 };
 
 const addToDoFolder = (folderName, buttonClass) => {

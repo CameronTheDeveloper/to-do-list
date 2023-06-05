@@ -56,12 +56,14 @@ const removeToDoFromStorage = (toDoItem) => {
     const dueDateKey = `${key}duedate`;
     const priorityKey = `${key}priority`;
     const descKey = `${key}desc`;
+    const folderKey = `${key}folder`;
 
     localStorage.removeItem(toDoItem.key);
     localStorage.removeItem(titleKey);
     localStorage.removeItem(dueDateKey);
     localStorage.removeItem(priorityKey);
     localStorage.removeItem(descKey);
+    localStorage.removeItem(folderKey);
 };
 
 export { generateFolderKey, storeFolder, storeToDo, removeFolderFromStorage, removeToDoFromStorage };

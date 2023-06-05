@@ -42,18 +42,17 @@ const addToDoFolder = (folderName, buttonClass) => {
 const setActiveFolderOnClick = (sidebarFolderDiv, contentFolderDiv, folder, key) => {
     const title = sidebarFolderDiv.querySelector('.sidebar-folder-title');
     title.addEventListener('click', () => {
-        let activeFolder = setActiveFolder(contentFolderDiv, folder.title);
-        activeFolderKey = key;
+        let activeFolder = setActiveFolder(contentFolderDiv, folder.title, key);
     });
 };
 
-const setActiveFolder = (toDoFolderDiv, folderTitle) => {
+const setActiveFolder = (toDoFolderDiv, folderTitle, key) => {
     changeActiveFolder(toDoFolderDiv);
     hideInactiveFolders(toDoFolderDiv);
     toDoFolderDiv.appendChild(toDoInputs);
     changeFolderHeading(folderTitle);
     toggleToDoFormVisible(false);
-
+    setActiveFolderKey(key);
     return activeFolder;
 };
 
@@ -63,6 +62,10 @@ const changeActiveFolder = (toDoFolderDiv) => {
 
 const getActiveFolder = () => {
     return activeFolder;
+};
+
+const setActiveFolderKey = (key) => {
+    activeFolderKey = key;
 };
 
 const getActiveFolderKey = () => {

@@ -65,6 +65,10 @@ const getActiveFolder = () => {
     return activeFolder;
 };
 
+const getActiveFolderKey = () => {
+    return activeFolderKey;
+};
+
 const resetActiveFolder = (toDoFolder) => {
     if (toDoFolder === activeFolder) {
         activeFolder = setActiveFolder(defaultFolder, defaultFolderTitle);
@@ -87,5 +91,6 @@ export {
     addToDoFolder,
     setActiveFolder,
     getActiveFolder,
+    getActiveFolderKey,
     resetActiveFolder
 };

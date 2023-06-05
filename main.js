@@ -8289,15 +8289,15 @@ const addToDoFolder = (folderName, buttonClass) => {
     const toDoFolder = folder(folderName, false);
     const folderContentDiv = (0,_page_dom__WEBPACK_IMPORTED_MODULE_1__.addFolderContentElements)(contentItems, folderClass);
     const sidebarFolderDiv = (0,_page_dom__WEBPACK_IMPORTED_MODULE_1__.addFolderSidebarElements)(toDoFolder, folderContentDiv, buttonClass);
-
-    setActiveFolderOnClick(sidebarFolderDiv, folderContentDiv, toDoFolder);
     (0,_storage__WEBPACK_IMPORTED_MODULE_3__.storeFolder)(toDoFolder.title, toDoFolder);   //Move this to a function that is only called if storage is empty
+    setActiveFolderOnClick(sidebarFolderDiv, folderContentDiv, toDoFolder, toDoFolder.key);
+
     return folderContentDiv;
 };
 
-const setActiveFolderOnClick = (sidebarFolderDiv, contentFolderDiv, folder) => {
+const setActiveFolderOnClick = (sidebarFolderDiv, contentFolderDiv, folder, key) => {
     const title = sidebarFolderDiv.querySelector('.sidebar-folder-title');
-
+    console.log(key);
     title.addEventListener('click', () => {
         let activeFolder = setActiveFolder(contentFolderDiv, folder.title);
     });
@@ -8458,13 +8458,14 @@ __webpack_require__.r(__webpack_exports__);
 
 const toDoInputs = document.querySelector('#todo-inputs');
 
-const toDo = (title, dueDate, priority, description, key) => {
+const toDo = (title, dueDate, priority, description, key, folderKey) => {
     return {
         title: title,
         dueDate: dueDate,
         priority: priority,
         description: description,
         key: key,
+        folderKey: folderKey,
     };
 };
 

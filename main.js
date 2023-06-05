@@ -8251,6 +8251,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "addToDoFolder": () => (/* binding */ addToDoFolder),
 /* harmony export */   "getActiveFolder": () => (/* binding */ getActiveFolder),
+/* harmony export */   "getActiveFolderKey": () => (/* binding */ getActiveFolderKey),
 /* harmony export */   "initToDoFolder": () => (/* binding */ initToDoFolder),
 /* harmony export */   "resetActiveFolder": () => (/* binding */ resetActiveFolder),
 /* harmony export */   "setActiveFolder": () => (/* binding */ setActiveFolder)
@@ -8320,6 +8321,10 @@ const changeActiveFolder = (toDoFolderDiv) => {
 
 const getActiveFolder = () => {
     return activeFolder;
+};
+
+const getActiveFolderKey = () => {
+    return activeFolderKey;
 };
 
 const resetActiveFolder = (toDoFolder) => {

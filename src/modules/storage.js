@@ -1,3 +1,4 @@
+import { getActiveFolderKey } from "./to-do-folders";
 let toDoCount = 0; //Add to storage. Add function that sets to 0 if storage is empty
 let folderCount = 0;
 
@@ -34,13 +35,18 @@ const storeToDo = (toDoItem) => {
     const dueDateKey = generateToDoKey('duedate');
     const priorityKey = generateToDoKey('priority');
     const descKey = generateToDoKey('desc');
+    const toDoFolderKey = generateToDoKey('folder');
+    const activeFolderKey = getActiveFolderKey();
 
     toDoItem.key = `todo${toDoCount}`;// Move this to todo.js when keyCount has getItem()
+    toDoItem.folderKey = activeFolderKey;
+
     localStorage.setItem(toDoItem.key, toDoItem.key);
     localStorage.setItem(titleKey, toDoItem.title);
     localStorage.setItem(dueDateKey, toDoItem.dueDate);
     localStorage.setItem(priorityKey, toDoItem.priority);
     localStorage.setItem(descKey, toDoItem.description);
+    localStorage.setItem(toDoFolderKey, activeFolderKey);
     toDoCount++;
 };
 

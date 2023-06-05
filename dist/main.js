@@ -8177,6 +8177,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "storeFolder": () => (/* binding */ storeFolder),
 /* harmony export */   "storeToDo": () => (/* binding */ storeToDo)
 /* harmony export */ });
+/* harmony import */ var _to_do_folders__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./to-do-folders */ "./src/modules/to-do-folders.js");
+
 let toDoCount = 0; //Add to storage. Add function that sets to 0 if storage is empty
 let folderCount = 0;
 
@@ -8213,13 +8215,18 @@ const storeToDo = (toDoItem) => {
     const dueDateKey = generateToDoKey('duedate');
     const priorityKey = generateToDoKey('priority');
     const descKey = generateToDoKey('desc');
+    const toDoFolderKey = generateToDoKey('folder');
+    const activeFolderKey = (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_0__.getActiveFolderKey)();
 
     toDoItem.key = `todo${toDoCount}`;// Move this to todo.js when keyCount has getItem()
+    toDoItem.folderKey = activeFolderKey;
+
     localStorage.setItem(toDoItem.key, toDoItem.key);
     localStorage.setItem(titleKey, toDoItem.title);
     localStorage.setItem(dueDateKey, toDoItem.dueDate);
     localStorage.setItem(priorityKey, toDoItem.priority);
     localStorage.setItem(descKey, toDoItem.description);
+    localStorage.setItem(toDoFolderKey, activeFolderKey);
     toDoCount++;
 };
 
@@ -8311,7 +8318,6 @@ const setActiveFolder = (toDoFolderDiv, folderTitle, key) => {
     changeFolderHeading(folderTitle);
     (0,_form_dom__WEBPACK_IMPORTED_MODULE_2__.toggleToDoFormVisible)(false);
     setActiveFolderKey(key);
-    console.log(key);
     return activeFolder;
 };
 

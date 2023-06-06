@@ -8208,17 +8208,19 @@ const checkLocalStorage = () => {
 
 /* Folder */
 
-const generateFolderKey = (keyWord) => {
-    return `folder${folderCount}${keyWord}`;
+const generateFolderKey = (folderNum, keyWord) => {
+    return `folder${folderNum}${keyWord}`;
 };
 
 const storeFolder = (title, folder) => {
-    const titleKey = generateFolderKey('title');
+    const folderNum = getFolderCount();
+    const titleKey = generateFolderKey(folderNum, 'title');
 
-    folder.key = `folder${folderCount}`;
+    folder.key = `folder${folderNum}`;
     localStorage.setItem(folder.key, folder.key);
     localStorage.setItem(titleKey, title);
-    folderCount++;
+    folderNum++;
+    localStorage.setItem(folderCountKey, folderNum);
 };
 
 const removeFolderFromStorage = (folder) => {

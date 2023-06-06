@@ -8302,8 +8302,14 @@ const folder = (title, active, key) => {
 };
 
 const initToDoFolders = () => {
-    // checkLocalStorage('folder');    //Works - Refactor initToDoFolders to only happen if storage is empty
-    addInitialFolder();
+    const storageFilled = (0,_storage__WEBPACK_IMPORTED_MODULE_3__.checkLocalStorage)('folder');
+    if (!storageFilled) {
+        addInitialFolder();
+    } else if (storageFilled) {
+
+    } else {
+
+    }
 };
 
 const addInitialFolder = () => {

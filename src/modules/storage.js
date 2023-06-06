@@ -57,24 +57,46 @@ const generateToDoKey = (toDoNum, keyWord) => {
 
 const storeToDo = (toDoItem) => {
     let toDoNum = getToDoCount();
-    const titleKey = generateToDoKey(toDoNum, 'title');
-    const dueDateKey = generateToDoKey(toDoNum, 'duedate');
-    const priorityKey = generateToDoKey(toDoNum, 'priority');
-    const descKey = generateToDoKey(toDoNum, 'desc');
-    const toDoFolderKey = generateToDoKey(toDoNum, 'folder');
     const activeFolderKey = getActiveFolderKey();
 
     toDoItem.key = `todo${toDoNum}`;
     toDoItem.folderKey = activeFolderKey;
 
+    storeToDoTitle(toDoItem, toDoNum);
+    storeToDoDueDate(toDoItem, toDoNum);
+    storeToDoPriority(toDoItem, toDoNum);
+    storeToDoDesc(toDoItem, toDoNum);
+    storeToDoFolder(activeFolderKey, toDoNum);
     localStorage.setItem(toDoItem.key, toDoItem.key);
-    localStorage.setItem(titleKey, toDoItem.title);
-    localStorage.setItem(dueDateKey, toDoItem.dueDate);
-    localStorage.setItem(priorityKey, toDoItem.priority);
-    localStorage.setItem(descKey, toDoItem.description);
-    localStorage.setItem(toDoFolderKey, activeFolderKey);
-    toDoNum++;
+
+    toDoNum++;//Move up
     localStorage.setItem(toDoCountKey, toDoNum);
+};
+
+const storeToDoTitle = (toDoItem, toDoNum) => {
+    const titleKey = generateToDoKey(toDoNum, 'title');
+    localStorage.setItem(titleKey, toDoItem.title);
+};
+
+const storeToDoDueDate = (toDoItem, toDoNum) => {
+    const dueDateKey = generateToDoKey(toDoNum, 'duedate');
+    localStorage.setItem(dueDateKey, toDoItem.dueDate);
+};
+
+const storeToDoPriority = (toDoItem, toDoNum) => {
+    const priorityKey = generateToDoKey(toDoNum, 'priority');
+    localStorage.setItem(priorityKey, toDoItem.priority);
+
+};
+
+const storeToDoDesc = (toDoItem, toDoNum) => {
+    const descKey = generateToDoKey(toDoNum, 'desc');
+    localStorage.setItem(descKey, toDoItem.description);
+};
+
+const storeToDoFolder = (activeFolderKey, toDoNum) => {
+    const toDoFolderKey = generateToDoKey(toDoNum, 'folder');
+    localStorage.setItem(toDoFolderKey, activeFolderKey);
 };
 
 const removeToDoFromStorage = (toDoItem) => {

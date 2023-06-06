@@ -23,7 +23,7 @@ const folder = (title, active, key) => {
 };
 
 const initToDoFolders = () => {
-    const storageFilled = checkLocalStorage('folder');
+    const storageFilled = checkLocalStorage();
     if (!storageFilled) {
         addInitialFolder();
     } else if (storageFilled) {

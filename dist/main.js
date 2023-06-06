@@ -8180,17 +8180,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _to_do_folders__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./to-do-folders */ "./src/modules/to-do-folders.js");
 
-let toDoCount = 0; //Add to storage. Add function that sets to 0 if storage is empty
-let folderCount = 0;
+let folderCountKey = 'folderCount';
+let toDoCountKey = 'toDoCount';
+
+const getFolderCount = () => {
+    return getItem(folderCountKey);
+};
+
+const getToDoCount = () => {
+    return getItem(toDoCountKey);
+};
+
+const initializeStorageCounts = () => {
+    localStorage.setItem(folderCountKey, 0);
+    localStorage.setItem(toDoCountKey, 0);
+};
 
 //Check if local storage is populated
-const checkLocalStorage = (keyWord) => {
-    if (!localStorage.getItem(`${keyWord}0`)) {
+const checkLocalStorage = () => {
+    if (localStorage.length === 0) {
+        initializeStorageCounts();
         return false;
-    } else if (localStorage.getItem(`${keyWord}0`)) {
-        return true;
     } else {
-        console.log('Invalid');
+        return true;
     }
 };
 
@@ -8302,7 +8314,7 @@ const folder = (title, active, key) => {
 };
 
 const initToDoFolders = () => {
-    const storageFilled = (0,_storage__WEBPACK_IMPORTED_MODULE_3__.checkLocalStorage)('folder');
+    const storageFilled = (0,_storage__WEBPACK_IMPORTED_MODULE_3__.checkLocalStorage)();
     if (!storageFilled) {
         addInitialFolder();
     } else if (storageFilled) {

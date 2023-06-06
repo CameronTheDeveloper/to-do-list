@@ -16,14 +16,12 @@ const initializeStorageCounts = () => {
 };
 
 //Check if local storage is populated
-const checkLocalStorage = (keyWord) => {
-    if (!localStorage.getItem(`${keyWord}0`)) {
+const checkLocalStorage = () => {
+    if (localStorage.length === 0) {
         initializeStorageCounts();
         return false;
-    } else if (localStorage.getItem(`${keyWord}0`)) {
-        return true;
     } else {
-        console.log('Invalid');
+        return true;
     }
 };
 

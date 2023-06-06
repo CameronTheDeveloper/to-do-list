@@ -24,6 +24,10 @@ const folder = (title, active, key) => {
 
 const initToDoFolders = () => {
     // checkLocalStorage('folder');    //Works - Refactor initToDoFolders to only happen if storage is empty
+    addInitialFolder();
+};
+
+const addInitialFolder = () => {
     const toDoFolder = addToDoFolder(defaultFolderTitle, 'inactive');
     defaultFolder = toDoFolder;
     activeFolder = setActiveFolder(toDoFolder, defaultFolderTitle, 'folder0');

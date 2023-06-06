@@ -8232,19 +8232,20 @@ const removeFolderFromStorage = (folder) => {
 
 /* To Do */
 
-const generateToDoKey = (keyWord) => {
-    return `todo${toDoCount}${keyWord}`;
+const generateToDoKey = (toDoNum, keyWord) => {
+    return `todo${toDoNum}${keyWord}`;
 };
 
 const storeToDo = (toDoItem) => {
-    const titleKey = generateToDoKey('title');
-    const dueDateKey = generateToDoKey('duedate');
-    const priorityKey = generateToDoKey('priority');
-    const descKey = generateToDoKey('desc');
-    const toDoFolderKey = generateToDoKey('folder');
+    let toDoNum = getToDoCount();
+    const titleKey = generateToDoKey(toDoNum, 'title');
+    const dueDateKey = generateToDoKey(toDoNum, 'duedate');
+    const priorityKey = generateToDoKey(toDoNum, 'priority');
+    const descKey = generateToDoKey(toDoNum, 'desc');
+    const toDoFolderKey = generateToDoKey(toDoNum, 'folder');
     const activeFolderKey = (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_0__.getActiveFolderKey)();
 
-    toDoItem.key = `todo${toDoCount}`;// Move this to todo.js when keyCount has getItem()
+    toDoItem.key = `todo${toDoNum}`;
     toDoItem.folderKey = activeFolderKey;
 
     localStorage.setItem(toDoItem.key, toDoItem.key);
@@ -8253,7 +8254,8 @@ const storeToDo = (toDoItem) => {
     localStorage.setItem(priorityKey, toDoItem.priority);
     localStorage.setItem(descKey, toDoItem.description);
     localStorage.setItem(toDoFolderKey, activeFolderKey);
-    toDoCount++;
+    toDoNum++;
+    localStorage.setItem(toDoCountKey, toDoNum);
 };
 
 const removeToDoFromStorage = (toDoItem) => {

@@ -1,6 +1,14 @@
 import { getActiveFolderKey } from "./to-do-folders";
-let toDoCount = 0; //Add to storage. Add function that sets to 0 if storage is empty
-let folderCount = 0;
+let folderCountKey = 'folderCount';
+let toDoCountKey = 'toDoCount';
+
+const getFolderCount = () => {
+    return getItem(folderCountKey);
+};
+
+const getToDoCount = () => {
+    return getItem(toDoCountKey);
+};
 
 //Check if local storage is populated
 const checkLocalStorage = (keyWord) => {

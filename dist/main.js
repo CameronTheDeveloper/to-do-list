@@ -8184,11 +8184,11 @@ let folderCountKey = 'folderCount';
 let toDoCountKey = 'toDoCount';
 
 const getFolderCount = () => {
-    return getItem(folderCountKey);
+    return localStorage.getItem(folderCountKey);
 };
 
 const getToDoCount = () => {
-    return getItem(toDoCountKey);
+    return localStorage.getItem(toDoCountKey);
 };
 
 const initializeStorageCounts = () => {
@@ -8213,7 +8213,7 @@ const generateFolderKey = (folderNum, keyWord) => {
 };
 
 const storeFolder = (title, folder) => {
-    const folderNum = getFolderCount();
+    let folderNum = getFolderCount();
     const titleKey = generateFolderKey(folderNum, 'title');
 
     folder.key = `folder${folderNum}`;

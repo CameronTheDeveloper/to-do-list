@@ -2,6 +2,17 @@ import { getActiveFolderKey } from "./to-do-folders";
 let toDoCount = 0; //Add to storage. Add function that sets to 0 if storage is empty
 let folderCount = 0;
 
+//Check if local storage is populated
+const checkLocalStorage = (keyWord) => {
+    if (!localStorage.getItem(`${keyWord}0`)) {
+        return false;
+    } else if (localStorage.getItem(`${keyWord}0`)) {
+        return true;
+    } else {
+        console.log('Invalid');
+    }
+};
+
 /* Folder */
 
 const generateFolderKey = (keyWord) => {
@@ -66,4 +77,4 @@ const removeToDoFromStorage = (toDoItem) => {
     localStorage.removeItem(folderKey);
 };
 
-export { generateFolderKey, storeFolder, storeToDo, removeFolderFromStorage, removeToDoFromStorage };
+export { checkLocalStorage, generateFolderKey, storeFolder, storeToDo, removeFolderFromStorage, removeToDoFromStorage };

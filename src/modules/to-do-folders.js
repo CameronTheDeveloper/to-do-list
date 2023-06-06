@@ -23,8 +23,14 @@ const folder = (title, active, key) => {
 };
 
 const initToDoFolders = () => {
-    // checkLocalStorage('folder');    //Works - Refactor initToDoFolders to only happen if storage is empty
-    addInitialFolder();
+    const storageFilled = checkLocalStorage('folder');
+    if (!storageFilled) {
+        addInitialFolder();
+    } else if (storageFilled) {
+
+    } else {
+
+    }
 };
 
 const addInitialFolder = () => {

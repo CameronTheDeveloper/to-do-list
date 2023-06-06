@@ -10,6 +10,11 @@ const getToDoCount = () => {
     return getItem(toDoCountKey);
 };
 
+const initializeStorageCounts = () => {
+    localStorage.setItem(folderCountKey, 0);
+    localStorage.setItem(toDoCountKey, 0);
+};
+
 //Check if local storage is populated
 const checkLocalStorage = (keyWord) => {
     if (!localStorage.getItem(`${keyWord}0`)) {

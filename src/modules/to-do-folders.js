@@ -5,7 +5,7 @@ import {
     hideElements
 } from "./page-dom";
 import { toggleToDoFormVisible } from './form-dom';
-import { storeFolder } from './storage';
+import { checkLocalStorage, storeFolder } from './storage';
 
 const contentItems = document.querySelector('#content-items');
 const toDoInputs = document.querySelector('#todo-inputs');
@@ -22,11 +22,13 @@ const folder = (title, active, key) => {
     };
 };
 
-const initToDoFolder = () => {
+const initToDoFolders = () => {
+    // checkLocalStorage('folder');    //Works - Refactor initToDoFolders to only happen if storage is empty
     const toDoFolder = addToDoFolder(defaultFolderTitle, 'inactive');
     defaultFolder = toDoFolder;
     activeFolder = setActiveFolder(toDoFolder, defaultFolderTitle, 'folder0');
 };
+
 
 const addToDoFolder = (folderName, buttonClass) => {
     const folderClass = folderName.replace(/\s/g, '-');
@@ -90,7 +92,7 @@ const changeFolderHeading = (folderTitle) => {
 };
 
 export {
-    initToDoFolder,
+    initToDoFolders,
     addToDoFolder,
     setActiveFolder,
     getActiveFolder,

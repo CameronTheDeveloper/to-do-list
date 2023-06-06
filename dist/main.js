@@ -8171,6 +8171,7 @@ const addSidebarInput = () => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "checkLocalStorage": () => (/* binding */ checkLocalStorage),
 /* harmony export */   "generateFolderKey": () => (/* binding */ generateFolderKey),
 /* harmony export */   "removeFolderFromStorage": () => (/* binding */ removeFolderFromStorage),
 /* harmony export */   "removeToDoFromStorage": () => (/* binding */ removeToDoFromStorage),
@@ -8181,6 +8182,17 @@ __webpack_require__.r(__webpack_exports__);
 
 let toDoCount = 0; //Add to storage. Add function that sets to 0 if storage is empty
 let folderCount = 0;
+
+//Check if local storage is populated
+const checkLocalStorage = (keyWord) => {
+    if (!localStorage.getItem(`${keyWord}0`)) {
+        return false;
+    } else if (localStorage.getItem(`${keyWord}0`)) {
+        return true;
+    } else {
+        console.log('Invalid');
+    }
+};
 
 /* Folder */
 
@@ -8261,7 +8273,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "addToDoFolder": () => (/* binding */ addToDoFolder),
 /* harmony export */   "getActiveFolder": () => (/* binding */ getActiveFolder),
 /* harmony export */   "getActiveFolderKey": () => (/* binding */ getActiveFolderKey),
-/* harmony export */   "initToDoFolder": () => (/* binding */ initToDoFolder),
+/* harmony export */   "initToDoFolders": () => (/* binding */ initToDoFolders),
 /* harmony export */   "resetActiveFolder": () => (/* binding */ resetActiveFolder),
 /* harmony export */   "setActiveFolder": () => (/* binding */ setActiveFolder)
 /* harmony export */ });
@@ -8289,11 +8301,13 @@ const folder = (title, active, key) => {
     };
 };
 
-const initToDoFolder = () => {
+const initToDoFolders = () => {
+    // checkLocalStorage('folder');    //Works - Refactor initToDoFolders to only happen if storage is empty
     const toDoFolder = addToDoFolder(defaultFolderTitle, 'inactive');
     defaultFolder = toDoFolder;
     activeFolder = setActiveFolder(toDoFolder, defaultFolderTitle, 'folder0');
 };
+
 
 const addToDoFolder = (folderName, buttonClass) => {
     const folderClass = folderName.replace(/\s/g, '-');
@@ -9131,7 +9145,7 @@ __webpack_require__.r(__webpack_exports__);
 
 (0,_modules_to_do__WEBPACK_IMPORTED_MODULE_2__.initToDo)();
 (0,_modules_sidebar__WEBPACK_IMPORTED_MODULE_1__.initSidebar)();
-(0,_modules_to_do_folders__WEBPACK_IMPORTED_MODULE_3__.initToDoFolder)();
+(0,_modules_to_do_folders__WEBPACK_IMPORTED_MODULE_3__.initToDoFolders)();
 
 })();
 

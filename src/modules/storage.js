@@ -18,6 +18,7 @@ const initializeStorageCounts = () => {
 //Check if local storage is populated
 const checkLocalStorage = (keyWord) => {
     if (!localStorage.getItem(`${keyWord}0`)) {
+        initializeStorageCounts();
         return false;
     } else if (localStorage.getItem(`${keyWord}0`)) {
         return true;

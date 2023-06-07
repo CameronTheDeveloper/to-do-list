@@ -8180,6 +8180,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _to_do_folders__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./to-do-folders */ "./src/modules/to-do-folders.js");
 
+
 let folderCountKey = 'folderCount';
 let toDoCountKey = 'toDoCount';
 
@@ -8250,7 +8251,7 @@ const storeToDo = (toDoItem) => {
     storeToDoFolder(activeFolderKey, toDoNum);
     localStorage.setItem(toDoItem.key, toDoItem.key);
 
-    toDoNum++;//Move up
+    toDoNum++;
     localStorage.setItem(toDoCountKey, toDoNum);
 };
 
@@ -8294,6 +8295,21 @@ const removeToDoFromStorage = (toDoItem) => {
     localStorage.removeItem(priorityKey);
     localStorage.removeItem(descKey);
     localStorage.removeItem(folderKey);
+};
+
+removeAllFolderToDos = (folderKeyWord, folder, toDoItem) => {
+    //Figure out how to match a ToDo by its key value
+    if (folder.title == toDoItem.title) {
+        removeToDoFromStorage(toDoItem);
+    }
+    for (let i = 0; i <= localStorage.length; i++) {
+        let toDoKeyWord = `todo${i}`;
+
+    }
+    while (true) {
+
+    }
+
 };
 
 

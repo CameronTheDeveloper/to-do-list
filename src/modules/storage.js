@@ -1,3 +1,4 @@
+import { getActiveFolderKey } from "date-fns/locale";
 import { getActiveFolderKey } from "./to-do-folders";
 let folderCountKey = 'folderCount';
 let toDoCountKey = 'toDoCount';
@@ -69,7 +70,7 @@ const storeToDo = (toDoItem) => {
     storeToDoFolder(activeFolderKey, toDoNum);
     localStorage.setItem(toDoItem.key, toDoItem.key);
 
-    toDoNum++;//Move up
+    toDoNum++;
     localStorage.setItem(toDoCountKey, toDoNum);
 };
 
@@ -113,6 +114,24 @@ const removeToDoFromStorage = (toDoItem) => {
     localStorage.removeItem(priorityKey);
     localStorage.removeItem(descKey);
     localStorage.removeItem(folderKey);
+};
+
+removeAllFolderToDos = (folder, toDoItem) => {
+    if (folder.title == toDoItem.title) {
+        removeToDoFromStorage(toDoItem);
+    }
+    for (let i = 0; i <= localStorage.length; i++) {
+        let toDoKeyWord = `todo${i}`;
+        let toDoFolderKey = `${toDoKeyWord}folder`;
+        let toDoFolder = localStorage.getItem(toDoFolderKey);
+        if (toDoFolder == folder) {
+            // let toDoTitle = `${toDoKeyWord}title`;
+            // let toDoDueDate = `${toDoKeyWord}duedate`;
+            // let toDoPriority = `${toDoKeyWord}priority`;
+            removeToDoFromStorage();
+        }
+    }
+
 };
 
 export { checkLocalStorage, generateFolderKey, storeFolder, storeToDo, removeFolderFromStorage, removeToDoFromStorage };

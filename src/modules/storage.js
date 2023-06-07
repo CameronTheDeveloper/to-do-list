@@ -100,15 +100,14 @@ const storeToDoFolder = (activeFolderKey, toDoNum) => {
     localStorage.setItem(toDoFolderKey, activeFolderKey);
 };
 
-const removeToDoFromStorage = (toDoItem) => {
-    const key = toDoItem.key;
+const removeToDoFromStorage = (key) => {
     const titleKey = `${key}title`;
     const dueDateKey = `${key}duedate`;
     const priorityKey = `${key}priority`;
     const descKey = `${key}desc`;
     const folderKey = `${key}folder`;
 
-    localStorage.removeItem(toDoItem.key);
+    localStorage.removeItem(key);
     localStorage.removeItem(titleKey);
     localStorage.removeItem(dueDateKey);
     localStorage.removeItem(priorityKey);
@@ -117,9 +116,9 @@ const removeToDoFromStorage = (toDoItem) => {
 };
 
 removeAllFolderToDos = (folder, toDoItem) => {
-    if (folder.title == toDoItem.title) {
-        removeToDoFromStorage(toDoItem);
-    }
+    // if (folder.title == toDoItem.title) {
+    //     removeToDoFromStorage(toDoItem);
+    // }
     for (let i = 0; i <= localStorage.length; i++) {
         let toDoKeyWord = `todo${i}`;
         let toDoFolderKey = `${toDoKeyWord}folder`;

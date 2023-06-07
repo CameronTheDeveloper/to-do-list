@@ -50,7 +50,7 @@ const addToDoClickEventListener = (toDoParent, toDoItem) => {
     toDoParent.addEventListener('click', () => {
         if (clearMode) {
             toDoParent.remove();
-            removeToDoFromStorage(toDoItem);
+            removeToDoFromStorage(toDoItem.key);
         } else {
             toggleToDoExpand(toDoParent);
         }

@@ -1,4 +1,5 @@
 /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./node_modules/css-loader/dist/cjs.js!./src/styles/index.css":
@@ -7,7 +8,6 @@
   \********************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -34,7 +34,6 @@ ___CSS_LOADER_EXPORT___.push([module.id, "* {\n    margin: 0;\n    font-family: 
   \**********************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -61,7 +60,6 @@ ___CSS_LOADER_EXPORT___.push([module.id, "#left-content {\n    scrollbar-width: 
   \****************************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -88,7 +86,6 @@ ___CSS_LOADER_EXPORT___.push([module.id, ".todo-folder {\n    grid-template: rep
   \*************************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -115,7 +112,6 @@ ___CSS_LOADER_EXPORT___.push([module.id, "#todo-clear-mode-button {\n    width: 
   \********************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -142,7 +138,6 @@ ___CSS_LOADER_EXPORT___.push([module.id, "#content {\n    display: grid;\n    gr
   \*****************************************************/
 /***/ ((module) => {
 
-"use strict";
 
 
 /*
@@ -237,7 +232,6 @@ module.exports = function (cssWithMappingToString) {
   \************************************************************/
 /***/ ((module) => {
 
-"use strict";
 
 
 module.exports = function (item) {
@@ -263,7 +257,6 @@ module.exports = function (item) {
   \*****************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ addLeadingZeros)
@@ -285,7 +278,6 @@ function addLeadingZeros(number, targetLength) {
   \********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ assign)
@@ -311,7 +303,6 @@ function assign(target, object) {
   \***************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -328,7 +319,6 @@ __webpack_require__.r(__webpack_exports__);
   \****************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "getDefaultOptions": () => (/* binding */ getDefaultOptions),
@@ -350,7 +340,6 @@ function setDefaultOptions(newOptions) {
   \*******************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -1143,7 +1132,6 @@ function formatTimezone(offset, dirtyDelimiter) {
   \************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -1238,7 +1226,6 @@ var formatters = {
   \***********************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -1332,7 +1319,6 @@ var longFormatters = {
   \*********************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ getTimezoneOffsetInMilliseconds)
@@ -1362,7 +1348,6 @@ function getTimezoneOffsetInMilliseconds(date) {
   \*****************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ getUTCDayOfYear)
@@ -1391,7 +1376,6 @@ function getUTCDayOfYear(dirtyDate) {
   \***************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ getUTCISOWeek)
@@ -1424,7 +1408,6 @@ function getUTCISOWeek(dirtyDate) {
   \*******************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ getUTCISOWeekYear)
@@ -1464,7 +1447,6 @@ function getUTCISOWeekYear(dirtyDate) {
   \************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ getUTCWeek)
@@ -1497,7 +1479,6 @@ function getUTCWeek(dirtyDate, options) {
   \****************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ getUTCWeekYear)
@@ -1549,7 +1530,6 @@ function getUTCWeekYear(dirtyDate, options) {
   \*****************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "isProtectedDayOfYearToken": () => (/* binding */ isProtectedDayOfYearToken),
@@ -1584,7 +1564,6 @@ function throwProtectedError(token, format, input) {
   \**************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ requiredArgs)
@@ -1603,7 +1582,6 @@ function requiredArgs(required, args) {
   \***********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ setUTCDay)
@@ -1644,7 +1622,6 @@ function setUTCDay(dirtyDate, dirtyDay, options) {
   \**************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ setUTCISODay)
@@ -1679,7 +1656,6 @@ function setUTCISODay(dirtyDate, dirtyDay) {
   \***************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ setUTCISOWeek)
@@ -1709,7 +1685,6 @@ function setUTCISOWeek(dirtyDate, dirtyISOWeek) {
   \************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ setUTCWeek)
@@ -1739,7 +1714,6 @@ function setUTCWeek(dirtyDate, dirtyWeek, options) {
   \*******************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ startOfUTCISOWeek)
@@ -1767,7 +1741,6 @@ function startOfUTCISOWeek(dirtyDate) {
   \***********************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ startOfUTCISOWeekYear)
@@ -1796,7 +1769,6 @@ function startOfUTCISOWeekYear(dirtyDate) {
   \****************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ startOfUTCWeek)
@@ -1835,7 +1807,6 @@ function startOfUTCWeek(dirtyDate, options) {
   \********************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ startOfUTCWeekYear)
@@ -1871,7 +1842,6 @@ function startOfUTCWeekYear(dirtyDate, options) {
   \***********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ toInteger)
@@ -1895,7 +1865,6 @@ function toInteger(dirtyNumber) {
   \************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ addMilliseconds)
@@ -1939,7 +1908,6 @@ function addMilliseconds(dirtyDate, dirtyAmount) {
   \******************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ addMonths)
@@ -2017,7 +1985,6 @@ function addMonths(dirtyDate, dirtyAmount) {
   \*****************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ addYears)
@@ -2060,7 +2027,6 @@ function addYears(dirtyDate, dirtyAmount) {
   \******************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "daysInWeek": () => (/* binding */ daysInWeek),
@@ -2274,7 +2240,6 @@ var secondsInQuarter = secondsInMonth * 3;
   \***************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ format)
@@ -2701,7 +2666,6 @@ function cleanEscapedString(input) {
   \***************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ isDate)
@@ -2755,7 +2719,6 @@ function isDate(value) {
   \****************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ isValid)
@@ -2814,7 +2777,6 @@ function isValid(dirtyDate) {
   \**************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ buildFormatLongFn)
@@ -2837,7 +2799,6 @@ function buildFormatLongFn(args) {
   \************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ buildLocalizeFn)
@@ -2869,7 +2830,6 @@ function buildLocalizeFn(args) {
   \*********************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ buildMatchFn)
@@ -2925,7 +2885,6 @@ function findIndex(array, predicate) {
   \****************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ buildMatchPatternFn)
@@ -2956,7 +2915,6 @@ function buildMatchPatternFn(args) {
   \*****************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -3053,7 +3011,6 @@ var formatDistance = function formatDistance(token, count, options) {
   \*************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -3102,7 +3059,6 @@ var formatLong = {
   \*****************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -3128,7 +3084,6 @@ var formatRelative = function formatRelative(token, _date, _baseDate, _options) 
   \***********************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -3286,7 +3241,6 @@ var localize = {
   \********************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -3400,7 +3354,6 @@ var match = {
   \*********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -3446,7 +3399,6 @@ var locale = {
   \********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "Parser": () => (/* binding */ Parser)
@@ -3495,7 +3447,6 @@ var Parser = /*#__PURE__*/function () {
   \********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "DateToSystemTimezoneSetter": () => (/* binding */ DateToSystemTimezoneSetter),
@@ -3595,7 +3546,6 @@ var DateToSystemTimezoneSetter = /*#__PURE__*/function (_Setter2) {
   \***********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "numericPatterns": () => (/* binding */ numericPatterns),
@@ -3658,7 +3608,6 @@ var timezonePatterns = {
   \****************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AMPMMidnightParser": () => (/* binding */ AMPMMidnightParser)
@@ -3744,7 +3693,6 @@ var AMPMMidnightParser = /*#__PURE__*/function (_Parser) {
   \********************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AMPMParser": () => (/* binding */ AMPMParser)
@@ -3830,7 +3778,6 @@ var AMPMParser = /*#__PURE__*/function (_Parser) {
   \********************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "DateParser": () => (/* binding */ DateParser)
@@ -3917,7 +3864,6 @@ var DateParser = /*#__PURE__*/function (_Parser) {
   \*************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "DayOfYearParser": () => (/* binding */ DayOfYearParser)
@@ -4000,7 +3946,6 @@ var DayOfYearParser = /*#__PURE__*/function (_Parser) {
   \*******************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "DayParser": () => (/* binding */ DayParser)
@@ -4110,7 +4055,6 @@ var DayParser = /*#__PURE__*/function (_Parser) {
   \*************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "DayPeriodParser": () => (/* binding */ DayPeriodParser)
@@ -4196,7 +4140,6 @@ var DayPeriodParser = /*#__PURE__*/function (_Parser) {
   \*******************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "EraParser": () => (/* binding */ EraParser)
@@ -4279,7 +4222,6 @@ var EraParser = /*#__PURE__*/function (_Parser) {
   \****************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ExtendedYearParser": () => (/* binding */ ExtendedYearParser)
@@ -4341,7 +4283,6 @@ var ExtendedYearParser = /*#__PURE__*/function (_Parser) {
   \********************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "FractionOfSecondParser": () => (/* binding */ FractionOfSecondParser)
@@ -4402,7 +4343,6 @@ var FractionOfSecondParser = /*#__PURE__*/function (_Parser) {
   \*************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "Hour0To11Parser": () => (/* binding */ Hour0To11Parser)
@@ -4481,7 +4421,6 @@ var Hour0To11Parser = /*#__PURE__*/function (_Parser) {
   \*************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "Hour0to23Parser": () => (/* binding */ Hour0to23Parser)
@@ -4555,7 +4494,6 @@ var Hour0to23Parser = /*#__PURE__*/function (_Parser) {
   \*************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "Hour1To24Parser": () => (/* binding */ Hour1To24Parser)
@@ -4630,7 +4568,6 @@ var Hour1To24Parser = /*#__PURE__*/function (_Parser) {
   \*************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "Hour1to12Parser": () => (/* binding */ Hour1to12Parser)
@@ -4711,7 +4648,6 @@ var Hour1to12Parser = /*#__PURE__*/function (_Parser) {
   \**********************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ISODayParser": () => (/* binding */ ISODayParser)
@@ -4837,7 +4773,6 @@ var ISODayParser = /*#__PURE__*/function (_Parser) {
   \***************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ISOTimezoneParser": () => (/* binding */ ISOTimezoneParser)
@@ -4911,7 +4846,6 @@ var ISOTimezoneParser = /*#__PURE__*/function (_Parser) {
   \********************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ISOTimezoneWithZParser": () => (/* binding */ ISOTimezoneWithZParser)
@@ -4985,7 +4919,6 @@ var ISOTimezoneWithZParser = /*#__PURE__*/function (_Parser) {
   \***********************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ISOWeekParser": () => (/* binding */ ISOWeekParser)
@@ -5062,7 +4995,6 @@ var ISOWeekParser = /*#__PURE__*/function (_Parser) {
   \***************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ISOWeekYearParser": () => (/* binding */ ISOWeekYearParser)
@@ -5127,7 +5059,6 @@ var ISOWeekYearParser = /*#__PURE__*/function (_Parser) {
   \************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "LocalDayParser": () => (/* binding */ LocalDayParser)
@@ -5251,7 +5182,6 @@ var LocalDayParser = /*#__PURE__*/function (_Parser) {
   \*************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "LocalWeekParser": () => (/* binding */ LocalWeekParser)
@@ -5328,7 +5258,6 @@ var LocalWeekParser = /*#__PURE__*/function (_Parser) {
   \*****************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "LocalWeekYearParser": () => (/* binding */ LocalWeekYearParser)
@@ -5420,7 +5349,6 @@ var LocalWeekYearParser = /*#__PURE__*/function (_Parser) {
   \**********************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "MinuteParser": () => (/* binding */ MinuteParser)
@@ -5494,7 +5422,6 @@ var MinuteParser = /*#__PURE__*/function (_Parser) {
   \*********************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "MonthParser": () => (/* binding */ MonthParser)
@@ -5603,7 +5530,6 @@ var MonthParser = /*#__PURE__*/function (_Parser) {
   \***********************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "QuarterParser": () => (/* binding */ QuarterParser)
@@ -5706,7 +5632,6 @@ var QuarterParser = /*#__PURE__*/function (_Parser) {
   \**********************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "SecondParser": () => (/* binding */ SecondParser)
@@ -5780,7 +5705,6 @@ var SecondParser = /*#__PURE__*/function (_Parser) {
   \**********************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "StandAloneLocalDayParser": () => (/* binding */ StandAloneLocalDayParser)
@@ -5904,7 +5828,6 @@ var StandAloneLocalDayParser = /*#__PURE__*/function (_Parser) {
   \*******************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "StandAloneMonthParser": () => (/* binding */ StandAloneMonthParser)
@@ -6013,7 +5936,6 @@ var StandAloneMonthParser = /*#__PURE__*/function (_Parser) {
   \*********************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "StandAloneQuarterParser": () => (/* binding */ StandAloneQuarterParser)
@@ -6116,7 +6038,6 @@ var StandAloneQuarterParser = /*#__PURE__*/function (_Parser) {
   \*************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "TimestampMillisecondsParser": () => (/* binding */ TimestampMillisecondsParser)
@@ -6175,7 +6096,6 @@ var TimestampMillisecondsParser = /*#__PURE__*/function (_Parser) {
   \********************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "TimestampSecondsParser": () => (/* binding */ TimestampSecondsParser)
@@ -6234,7 +6154,6 @@ var TimestampSecondsParser = /*#__PURE__*/function (_Parser) {
   \********************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "YearParser": () => (/* binding */ YearParser)
@@ -6329,7 +6248,6 @@ var YearParser = /*#__PURE__*/function (_Parser) {
   \***************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "parsers": () => (/* binding */ parsers)
@@ -6481,7 +6399,6 @@ var parsers = {
   \*******************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "dayPeriodEnumToHours": () => (/* binding */ dayPeriodEnumToHours),
@@ -6617,7 +6534,6 @@ function isLeapYearIndex(year) {
   \**************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ parse)
@@ -7150,7 +7066,6 @@ function cleanEscapedString(input) {
   \************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ subMilliseconds)
@@ -7193,7 +7108,6 @@ function subMilliseconds(dirtyDate, dirtyAmount) {
   \***************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ toDate)
@@ -7261,7 +7175,6 @@ function toDate(argument) {
   \******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -7316,7 +7229,6 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
   \********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -7371,7 +7283,6 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
   \**************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -7426,7 +7337,6 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
   \***********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -7481,7 +7391,6 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
   \******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -7536,7 +7445,6 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
   \****************************************************************************/
 /***/ ((module) => {
 
-"use strict";
 
 
 var stylesInDOM = [];
@@ -7630,7 +7538,6 @@ module.exports = function (list, options) {
   \********************************************************************/
 /***/ ((module) => {
 
-"use strict";
 
 
 var memo = {};
@@ -7674,7 +7581,6 @@ module.exports = insertBySelector;
   \**********************************************************************/
 /***/ ((module) => {
 
-"use strict";
 
 
 /* istanbul ignore next  */
@@ -7694,7 +7600,6 @@ module.exports = insertStyleElement;
   \**********************************************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-"use strict";
 
 
 /* istanbul ignore next  */
@@ -7714,7 +7619,6 @@ module.exports = setAttributesWithoutAttributes;
   \***************************************************************/
 /***/ ((module) => {
 
-"use strict";
 
 
 /* istanbul ignore next  */
@@ -7785,7 +7689,6 @@ module.exports = domAPI;
   \*********************************************************************/
 /***/ ((module) => {
 
-"use strict";
 
 
 /* istanbul ignore next  */
@@ -7809,7 +7712,6 @@ module.exports = styleTagTransform;
   \***********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "addAttributes": () => (/* binding */ addAttributes),
@@ -7915,7 +7817,6 @@ const setLabelAttributes = (item, attType, att, text) => {
   \*********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "addFormDateElements": () => (/* binding */ addFormDateElements),
@@ -8106,7 +8007,6 @@ const addFormLabelElement = (parent) => {
   \*********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "addAbove": () => (/* binding */ addAbove),
@@ -8236,7 +8136,6 @@ const hideElements = (elements) => {
   \********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "initSidebar": () => (/* binding */ initSidebar)
@@ -8268,9 +8167,151 @@ const addSidebarInput = () => {
 /*!********************************!*\
   !*** ./src/modules/storage.js ***!
   \********************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-throw new Error("Module parse failed: Identifier 'getActiveFolderKey' has already been declared (2:9)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| import { getActiveFolderKey } from \"date-fns/locale\";\n> import { getActiveFolderKey } from \"./to-do-folders\";\n| const folderCountKey = 'folderCount';\n| const toDoCountKey = 'toDoCount';");
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "checkLocalStorage": () => (/* binding */ checkLocalStorage),
+/* harmony export */   "generateFolderKey": () => (/* binding */ generateFolderKey),
+/* harmony export */   "removeAllFolderToDos": () => (/* binding */ removeAllFolderToDos),
+/* harmony export */   "removeFolderFromStorage": () => (/* binding */ removeFolderFromStorage),
+/* harmony export */   "removeToDoFromStorage": () => (/* binding */ removeToDoFromStorage),
+/* harmony export */   "storeFolder": () => (/* binding */ storeFolder),
+/* harmony export */   "storeToDo": () => (/* binding */ storeToDo)
+/* harmony export */ });
+/* harmony import */ var _to_do_folders__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./to-do-folders */ "./src/modules/to-do-folders.js");
+
+const folderCountKey = 'folderCount';
+const toDoCountKey = 'toDoCount';
+const keyPrefix = 'toDoListProject_';
+
+const getFolderCount = () => {
+    return localStorage.getItem(folderCountKey);
+};
+
+const getToDoCount = () => {
+    return localStorage.getItem(toDoCountKey);
+};
+
+const initializeStorageCounts = () => {
+    localStorage.setItem(folderCountKey, 0);
+    localStorage.setItem(toDoCountKey, 0);
+};
+
+//Check if local storage is populated
+const checkLocalStorage = () => {
+    if (localStorage.length === 0) {
+        initializeStorageCounts();
+        return false;
+    } else {
+        return true;
+    }
+};
+
+/* Folder */
+
+const generateFolderKey = (folderNum, keyWord) => {
+    return `${keyPrefix}folder${folderNum}${keyWord}`;
+};
+
+const storeFolder = (title, folder) => {
+    let folderNum = getFolderCount();
+    const titleKey = generateFolderKey(folderNum, 'title');
+
+    folder.key = `${keyPrefix}folder${folderNum}`;
+    localStorage.setItem(folder.key, folder.key);
+    localStorage.setItem(titleKey, title);
+    folderNum++;
+    localStorage.setItem(folderCountKey, folderNum);
+};
+
+const removeFolderFromStorage = (folder) => {
+    const key = folder.key;
+    const titleKey = `${keyPrefix}${key}title`;
+    localStorage.removeItem(key);
+    localStorage.removeItem(titleKey);
+};
+
+/* To Do */
+
+const generateToDoKey = (toDoNum, keyWord) => {
+    return `${keyPrefix}todo${toDoNum}${keyWord}`;
+};
+
+const storeToDo = (toDoItem) => {
+    let toDoNum = getToDoCount();
+    const activeFolderKey = (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_0__.getActiveFolderKey)();
+
+    toDoItem.key = `${keyPrefix}todo${toDoNum}`;
+    toDoItem.folderKey = activeFolderKey;
+
+    storeToDoTitle(toDoItem, toDoNum);
+    storeToDoDueDate(toDoItem, toDoNum);
+    storeToDoPriority(toDoItem, toDoNum);
+    storeToDoDesc(toDoItem, toDoNum);
+    storeToDoFolder(activeFolderKey, toDoNum);
+    localStorage.setItem(toDoItem.key, toDoItem.key);
+
+    toDoNum++;
+    localStorage.setItem(toDoCountKey, toDoNum);
+};
+
+const storeToDoTitle = (toDoItem, toDoNum) => {
+    const titleKey = generateToDoKey(toDoNum, 'title');
+    localStorage.setItem(titleKey, toDoItem.title);
+};
+
+const storeToDoDueDate = (toDoItem, toDoNum) => {
+    const dueDateKey = generateToDoKey(toDoNum, 'duedate');
+    localStorage.setItem(dueDateKey, toDoItem.dueDate);
+};
+
+const storeToDoPriority = (toDoItem, toDoNum) => {
+    const priorityKey = generateToDoKey(toDoNum, 'priority');
+    localStorage.setItem(priorityKey, toDoItem.priority);
+
+};
+
+const storeToDoDesc = (toDoItem, toDoNum) => {
+    const descKey = generateToDoKey(toDoNum, 'desc');
+    localStorage.setItem(descKey, toDoItem.description);
+};
+
+const storeToDoFolder = (activeFolderKey, toDoNum) => {
+    const toDoFolderKey = generateToDoKey(toDoNum, 'folder');
+    localStorage.setItem(toDoFolderKey, activeFolderKey);
+};
+
+const removeToDoFromStorage = (key) => {
+    const titleKey = `${key}title`;
+    const dueDateKey = `${key}duedate`;
+    const priorityKey = `${key}priority`;
+    const descKey = `${key}desc`;
+    const folderKey = `${key}folder`;
+
+    localStorage.removeItem(key);
+    localStorage.removeItem(titleKey);
+    localStorage.removeItem(dueDateKey);
+    localStorage.removeItem(priorityKey);
+    localStorage.removeItem(descKey);
+    localStorage.removeItem(folderKey);
+};
+
+const removeAllFolderToDos = (folder, toDoItem) => {
+    //'folder' is the folder being deleted
+    for (let i = 0; i <= localStorage.length; i++) {
+        let toDoKeyWord = `${keyPrefix}todo${i}`;
+        let toDoFolderKey = `${toDoKeyWord}folder`;
+        let toDoFolder = localStorage.getItem(toDoFolderKey);
+        if (toDoFolder == folder) {
+            //If toDoFolder key value = folder key value (thats being deleted)
+            removeToDoFromStorage(toDoKeyWord);
+        }
+    }
+
+};
+
+
 
 /***/ }),
 
@@ -8280,7 +8321,6 @@ throw new Error("Module parse failed: Identifier 'getActiveFolderKey' has alread
   \**************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "addToDoFolder": () => (/* binding */ addToDoFolder),
@@ -8294,7 +8334,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _page_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./page-dom */ "./src/modules/page-dom.js");
 /* harmony import */ var _form_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./form-dom */ "./src/modules/form-dom.js");
 /* harmony import */ var _storage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./storage */ "./src/modules/storage.js");
-/* harmony import */ var _storage__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_storage__WEBPACK_IMPORTED_MODULE_3__);
 
 
 
@@ -8405,14 +8444,12 @@ const changeFolderHeading = (folderTitle) => {
   \***********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "addToDoClickEventListener": () => (/* binding */ addToDoClickEventListener)
 /* harmony export */ });
 /* harmony import */ var _styles_to_do_mode_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../styles/to-do-mode.css */ "./src/styles/to-do-mode.css");
 /* harmony import */ var _storage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./storage */ "./src/modules/storage.js");
-/* harmony import */ var _storage__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_storage__WEBPACK_IMPORTED_MODULE_1__);
 
 
 
@@ -8496,7 +8533,6 @@ clearButton.addEventListener('click', () => {
   \******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "addToDo": () => (/* binding */ addToDo),
@@ -8508,7 +8544,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _to_do_folders__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./to-do-folders */ "./src/modules/to-do-folders.js");
 /* harmony import */ var _form_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./form-dom */ "./src/modules/form-dom.js");
 /* harmony import */ var _storage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./storage */ "./src/modules/storage.js");
-/* harmony import */ var _storage__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_storage__WEBPACK_IMPORTED_MODULE_5__);
 
 
 
@@ -8562,7 +8597,6 @@ const initToDo = () => {
   \***********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "getInput": () => (/* binding */ getInput),
@@ -8577,7 +8611,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _to_do__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./to-do */ "./src/modules/to-do.js");
 /* harmony import */ var _form_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./form-dom */ "./src/modules/form-dom.js");
 /* harmony import */ var _storage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./storage */ "./src/modules/storage.js");
-/* harmony import */ var _storage__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_storage__WEBPACK_IMPORTED_MODULE_3__);
 
 
 
@@ -8665,7 +8698,6 @@ const registerToDoSubmitListener = (form) => {
   \*********************************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ _arrayLikeToArray)
@@ -8684,7 +8716,6 @@ function _arrayLikeToArray(arr, len) {
   \**************************************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ _assertThisInitialized)
@@ -8704,7 +8735,6 @@ function _assertThisInitialized(self) {
   \*******************************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ _classCallCheck)
@@ -8723,7 +8753,6 @@ function _classCallCheck(instance, Constructor) {
   \****************************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ _createClass)
@@ -8756,7 +8785,6 @@ function _createClass(Constructor, protoProps, staticProps) {
   \******************************************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ _createForOfIteratorHelper)
@@ -8823,7 +8851,6 @@ function _createForOfIteratorHelper(o, allowArrayLike) {
   \****************************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ _createSuper)
@@ -8857,7 +8884,6 @@ function _createSuper(Derived) {
   \*******************************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ _defineProperty)
@@ -8887,7 +8913,6 @@ function _defineProperty(obj, key, value) {
   \*******************************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ _getPrototypeOf)
@@ -8907,7 +8932,6 @@ function _getPrototypeOf(o) {
   \*************************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ _inherits)
@@ -8939,7 +8963,6 @@ function _inherits(subClass, superClass) {
   \*****************************************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ _isNativeReflectConstruct)
@@ -8964,7 +8987,6 @@ function _isNativeReflectConstruct() {
   \******************************************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ _possibleConstructorReturn)
@@ -8990,7 +9012,6 @@ function _possibleConstructorReturn(self, call) {
   \*******************************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ _setPrototypeOf)
@@ -9011,7 +9032,6 @@ function _setPrototypeOf(o, p) {
   \****************************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ _toPrimitive)
@@ -9037,7 +9057,6 @@ function _toPrimitive(input, hint) {
   \******************************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ _toPropertyKey)
@@ -9059,7 +9078,6 @@ function _toPropertyKey(arg) {
   \***********************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ _typeof)
@@ -9082,7 +9100,6 @@ function _typeof(obj) {
   \*******************************************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ _unsupportedIterableToArray)
@@ -9174,9 +9191,8 @@ function _unsupportedIterableToArray(o, minLen) {
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be in strict mode.
+// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
-"use strict";
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/

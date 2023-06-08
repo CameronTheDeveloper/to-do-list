@@ -38,7 +38,7 @@ const storeFolder = (title, folder) => {
     const titleKey = generateFolderKey(folderNum, 'title');
 
     folder.key = `${keyPrefix}folder${folderNum}`;
-    localStorage.setItem(folder.key, folder.key);
+    localStorage.setItem(folder.key, `folder${folderNum}`);
     localStorage.setItem(titleKey, title);
     folderNum++;
     localStorage.setItem(folderCountKey, folderNum);
@@ -69,7 +69,7 @@ const storeToDo = (toDoItem) => {
     storeToDoPriority(toDoItem, toDoNum);
     storeToDoDesc(toDoItem, toDoNum);
     storeToDoFolder(activeFolderKey, toDoNum);
-    localStorage.setItem(toDoItem.key, toDoItem.key);
+    localStorage.setItem(toDoItem.key, `todo${toDoNum}`);
 
     toDoNum++;
     localStorage.setItem(toDoCountKey, toDoNum);

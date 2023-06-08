@@ -30,14 +30,14 @@ const checkLocalStorage = () => {
 /* Folder */
 
 const generateFolderKey = (folderNum, keyWord) => {
-    return `folder${folderNum}${keyWord}`;
+    return `${keyPrefix}folder${folderNum}${keyWord}`;
 };
 
 const storeFolder = (title, folder) => {
     let folderNum = getFolderCount();
     const titleKey = generateFolderKey(folderNum, 'title');
 
-    folder.key = `folder${folderNum}`;
+    folder.key = `${keyPrefix}folder${folderNum}`;
     localStorage.setItem(folder.key, folder.key);
     localStorage.setItem(titleKey, title);
     folderNum++;
@@ -46,7 +46,7 @@ const storeFolder = (title, folder) => {
 
 const removeFolderFromStorage = (folder) => {
     const key = folder.key;
-    const titleKey = `${key}title`;
+    const titleKey = `${keyPrefix}${key}title`;
     localStorage.removeItem(key);
     localStorage.removeItem(titleKey);
 };
@@ -54,14 +54,14 @@ const removeFolderFromStorage = (folder) => {
 /* To Do */
 
 const generateToDoKey = (toDoNum, keyWord) => {
-    return `todo${toDoNum}${keyWord}`;
+    return `${keyPrefix}todo${toDoNum}${keyWord}`;
 };
 
 const storeToDo = (toDoItem) => {
     let toDoNum = getToDoCount();
     const activeFolderKey = getActiveFolderKey();
 
-    toDoItem.key = `todo${toDoNum}`;
+    toDoItem.key = `${keyPrefix}todo${toDoNum}`;
     toDoItem.folderKey = activeFolderKey;
 
     storeToDoTitle(toDoItem, toDoNum);
@@ -119,7 +119,7 @@ const removeToDoFromStorage = (key) => {
 removeAllFolderToDos = (folder, toDoItem) => {
     //'folder' is the folder being deleted
     for (let i = 0; i <= localStorage.length; i++) {
-        let toDoKeyWord = `todo${i}`;
+        let toDoKeyWord = `${keyPrefix}todo${i}`;
         let toDoFolderKey = `${toDoKeyWord}folder`;
         let toDoFolder = localStorage.getItem(toDoFolderKey);
         if (toDoFolder == folder) {

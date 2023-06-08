@@ -38,8 +38,7 @@ const storeFolder = (title, folder) => {
 
     storePrimaryFolderKey(folder, folderNum);
     storeFolderTitle(title, folderNum);
-    folderNum++;
-    localStorage.setItem(folderCountKey, folderNum);
+    incrementFolderCount(folderNum);
 };
 
 const storePrimaryFolderKey = (folder, folderNum) => {
@@ -50,6 +49,11 @@ const storePrimaryFolderKey = (folder, folderNum) => {
 const storeFolderTitle = (title, folderNum) => {
     const titleKey = generateFolderKey(folderNum, 'title');
     localStorage.setItem(titleKey, title);
+};
+
+const incrementFolderCount = (folderNum) => {
+    folderNum++;
+    localStorage.setItem(folderCountKey, folderNum);
 };
 
 const removeFolderFromStorage = (folder) => {
@@ -69,18 +73,14 @@ const storeToDo = (toDoItem) => {
     let toDoNum = getToDoCount();
     const activeFolderKey = getActiveFolderKey();
 
-
     toDoItem.folderKey = activeFolderKey;
-
     storePrimaryToDoKey(toDoItem, toDoNum);
     storeToDoTitle(toDoItem, toDoNum);
     storeToDoDueDate(toDoItem, toDoNum);
     storeToDoPriority(toDoItem, toDoNum);
     storeToDoDesc(toDoItem, toDoNum);
     storeToDoFolder(activeFolderKey, toDoNum);
-
-    toDoNum++;
-    localStorage.setItem(toDoCountKey, toDoNum);
+    incrementToDoCount(toDoNum);
 };
 
 const storePrimaryToDoKey = (toDoItem, toDoNum) => {
@@ -112,6 +112,11 @@ const storeToDoDesc = (toDoItem, toDoNum) => {
 const storeToDoFolder = (activeFolderKey, toDoNum) => {
     const toDoFolderKey = generateToDoKey(toDoNum, 'folder');
     localStorage.setItem(toDoFolderKey, activeFolderKey);
+};
+
+const incrementToDoCount = (toDoNum) => {
+    toDoNum++;
+    localStorage.setItem(toDoCountKey, toDoNum);
 };
 
 const removeToDoFromStorage = (key) => {

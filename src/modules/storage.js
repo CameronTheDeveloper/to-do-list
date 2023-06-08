@@ -1,4 +1,3 @@
-import { getActiveFolderKey } from "date-fns/locale";
 import { getActiveFolderKey } from "./to-do-folders";
 const folderCountKey = 'folderCount';
 const toDoCountKey = 'toDoCount';
@@ -116,20 +115,18 @@ const removeToDoFromStorage = (key) => {
     localStorage.removeItem(folderKey);
 };
 
-removeAllFolderToDos = (folder, toDoItem) => {
+const removeAllFolderToDos = (folder, toDoItem) => {
     //'folder' is the folder being deleted
     for (let i = 0; i <= localStorage.length; i++) {
         let toDoKeyWord = `${keyPrefix}todo${i}`;
         let toDoFolderKey = `${toDoKeyWord}folder`;
         let toDoFolder = localStorage.getItem(toDoFolderKey);
         if (toDoFolder == folder) {
-            // let toDoTitle = `${toDoKeyWord}title`;
-            // let toDoDueDate = `${toDoKeyWord}duedate`;
-            // let toDoPriority = `${toDoKeyWord}priority`;
+            //If toDoFolder key value = folder key value (thats being deleted)
             removeToDoFromStorage(toDoKeyWord);
         }
     }
 
 };
 
-export { checkLocalStorage, generateFolderKey, storeFolder, storeToDo, removeFolderFromStorage, removeToDoFromStorage };
+export { checkLocalStorage, generateFolderKey, storeFolder, storeToDo, removeFolderFromStorage, removeAllFolderToDos, removeToDoFromStorage };

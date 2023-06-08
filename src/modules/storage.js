@@ -115,7 +115,7 @@ const removeToDoFromStorage = (key) => {
     localStorage.removeItem(folderKey);
 };
 
-const removeAllFolderToDos = (folder, toDoItem) => {
+const removeFolderToDosFromStorage = (folder, toDoItem) => {
     //'folder' is the folder being deleted
     for (let i = 0; i <= localStorage.length; i++) {
         let toDoKeyWord = `${keyPrefix}todo${i}`;
@@ -129,4 +129,4 @@ const removeAllFolderToDos = (folder, toDoItem) => {
 
 };
 
-export { checkLocalStorage, generateFolderKey, storeFolder, storeToDo, removeFolderFromStorage, removeAllFolderToDos, removeToDoFromStorage };
+export { checkLocalStorage, generateFolderKey, storeFolder, storeToDo, removeFolderFromStorage, removeFolderToDosFromStorage, removeToDoFromStorage };

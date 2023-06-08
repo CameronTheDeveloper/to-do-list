@@ -1,7 +1,8 @@
 import { getActiveFolderKey } from "./to-do-folders";
-const folderCountKey = 'folderCount';
-const toDoCountKey = 'toDoCount';
 const keyPrefix = 'toDoListProject_';
+const folderCountKey = `${keyPrefix}folderCount`;
+const toDoCountKey = `${keyPrefix}toDoCount`;
+
 
 const getFolderCount = () => {
     return localStorage.getItem(folderCountKey);

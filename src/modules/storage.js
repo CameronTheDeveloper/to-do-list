@@ -35,13 +35,18 @@ const generateFolderKey = (folderNum, keyWord) => {
 
 const storeFolder = (title, folder) => {
     let folderNum = getFolderCount();
-    const titleKey = generateFolderKey(folderNum, 'title');
+
 
     folder.key = `${keyPrefix}folder${folderNum}`;
     localStorage.setItem(folder.key, `folder${folderNum}`);
-    localStorage.setItem(titleKey, title);
+    storeFolderTitle(title, folderNum);
     folderNum++;
     localStorage.setItem(folderCountKey, folderNum);
+};
+
+const storeFolderTitle = (title, folderNum) => {
+    const titleKey = generateFolderKey(folderNum, 'title');
+    localStorage.setItem(titleKey, title);
 };
 
 const removeFolderFromStorage = (folder) => {

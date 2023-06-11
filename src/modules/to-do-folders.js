@@ -8,9 +8,9 @@ import { toggleToDoFormVisible } from './form-dom';
 import { checkLocalStorage, storeFolder } from './storage';
 
 const contentItems = document.querySelector('#content-items');
-const toDoInputs = document.querySelector('#todo-inputs');
 let defaultFolder = null;
 let defaultFolderTitle = 'General';
+//let defaultFolderKey = '';
 let activeFolder = null;
 let activeFolderKey = null;
 
@@ -35,8 +35,10 @@ const initToDoFolders = () => {
 
 const addInitialFolder = () => {
     const toDoFolder = addToDoFolder(defaultFolderTitle, 'inactive');
+    //toDoFolder is the folderContentDiv
     defaultFolder = toDoFolder;
     activeFolder = setActiveFolder(toDoFolder, defaultFolderTitle, 'folder0');
+    //3rd parameter needs to be the key
 };
 
 
@@ -61,7 +63,7 @@ const setActiveFolderOnClick = (sidebarFolderDiv, contentFolderDiv, folder, key)
 const setActiveFolder = (toDoFolderDiv, folderTitle, key) => {
     changeActiveFolder(toDoFolderDiv);
     hideInactiveFolders(toDoFolderDiv);
-    toDoFolderDiv.appendChild(toDoInputs);
+    changeToDoInputsFolder(toDoFolderDiv);
     changeFolderHeading(folderTitle);
     toggleToDoFormVisible(false);
     setActiveFolderKey(key);
@@ -81,7 +83,13 @@ const setActiveFolderKey = (key) => {
 };
 
 const getActiveFolderKey = () => {
+    //Might need to refactor to getActiveFolderValue for key
     return activeFolderKey;
+};
+
+const changeToDoInputsFolder = (toDoFolderDiv) => {
+    const toDoInputs = document.querySelector('#todo-inputs');
+    toDoFolderDiv.appendChild(toDoInputs);
 };
 
 const resetActiveFolder = (toDoFolder) => {

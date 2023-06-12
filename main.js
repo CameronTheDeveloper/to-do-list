@@ -8268,7 +8268,7 @@ const storeToDo = (toDoItem) => {
     storeToDoDueDate(toDoItem, toDoNum);
     storeToDoPriority(toDoItem, toDoNum);
     storeToDoDesc(toDoItem, toDoNum);
-    storeToDoFolder(activeFolderKey, toDoNum);
+    storeToDoFolderKey(activeFolderKey, toDoNum);
     incrementToDoCount(toDoNum);
 };
 
@@ -8298,8 +8298,8 @@ const storeToDoDesc = (toDoItem, toDoNum) => {
     localStorage.setItem(descKey, toDoItem.description);
 };
 
-const storeToDoFolder = (activeFolderKey, toDoNum) => {
-    const toDoFolderKey = generateToDoKey(toDoNum, 'folder');
+const storeToDoFolderKey = (activeFolderKey, toDoNum) => {
+    const toDoFolderKey = generateToDoKey(toDoNum, 'folderkey');
     localStorage.setItem(toDoFolderKey, activeFolderKey);
 };
 
@@ -8313,7 +8313,7 @@ const removeToDoFromStorage = (key) => {
     const dueDateKey = `${key}duedate`;
     const priorityKey = `${key}priority`;
     const descKey = `${key}desc`;
-    const folderKey = `${key}folder`;
+    const folderKey = `${key}folderkey`;
 
     localStorage.removeItem(key);
     localStorage.removeItem(titleKey);
@@ -8325,16 +8325,17 @@ const removeToDoFromStorage = (key) => {
 
 const removeFolderToDosFromStorage = (folderKey) => {
     let folderNum = localStorage.getItem(folderKey);
-
+    console.log(folderNum);
     for (let i = 0; i <= localStorage.length; i++) {
-        let toDoKeyWord = `${keyPrefix}todo${i}`;  // = toDo key
-        let toDoFolderKey = `${toDoKeyWord}folder`;// = toDoFolder key
+        // let toDoKeyWord = `${keyPrefix}todo${i}`;  // = toDo key
+        // let toDoFolderKey = `${toDoKeyWord}folder`;// = toDoFolder key
 
-        let toDoFolder = localStorage.getItem(toDoFolderKey);
+        // let toDoFolder = localStorage.getItem(toDoFolderKey);
 
-        if (toDoFolder == folderKey) {
-            removeToDoFromStorage(toDoKeyWord);
-        }
+        // if (toDoFolder == folderKey) {
+        //     removeToDoFromStorage(toDoKeyWord);
+        // }
+
         //Write else statement for null values (Deleted keys)
         //Write a loop that increments i until !Null 
     }

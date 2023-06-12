@@ -8173,17 +8173,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "checkLocalStorage": () => (/* binding */ checkLocalStorage),
 /* harmony export */   "generateFolderKey": () => (/* binding */ generateFolderKey),
-/* harmony export */   "removeAllFolderToDos": () => (/* binding */ removeAllFolderToDos),
 /* harmony export */   "removeFolderFromStorage": () => (/* binding */ removeFolderFromStorage),
+/* harmony export */   "removeFolderToDosFromStorage": () => (/* binding */ removeFolderToDosFromStorage),
 /* harmony export */   "removeToDoFromStorage": () => (/* binding */ removeToDoFromStorage),
 /* harmony export */   "storeFolder": () => (/* binding */ storeFolder),
 /* harmony export */   "storeToDo": () => (/* binding */ storeToDo)
 /* harmony export */ });
 /* harmony import */ var _to_do_folders__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./to-do-folders */ "./src/modules/to-do-folders.js");
 
-const folderCountKey = 'folderCount';
-const toDoCountKey = 'toDoCount';
 const keyPrefix = 'toDoListProject_';
+const folderCountKey = `${keyPrefix}folderCount`;
+const toDoCountKey = `${keyPrefix}toDoCount`;
+
 
 const getFolderCount = () => {
     return localStorage.getItem(folderCountKey);
@@ -8216,11 +8217,23 @@ const generateFolderKey = (folderNum, keyWord) => {
 
 const storeFolder = (title, folder) => {
     let folderNum = getFolderCount();
-    const titleKey = generateFolderKey(folderNum, 'title');
 
+    storePrimaryFolderKey(folder, folderNum);
+    storeFolderTitle(title, folderNum);
+    incrementFolderCount(folderNum);
+};
+
+const storePrimaryFolderKey = (folder, folderNum) => {
     folder.key = `${keyPrefix}folder${folderNum}`;
-    localStorage.setItem(folder.key, folder.key);
+    localStorage.setItem(folder.key, `folder${folderNum}`);
+};
+
+const storeFolderTitle = (title, folderNum) => {
+    const titleKey = generateFolderKey(folderNum, 'title');
     localStorage.setItem(titleKey, title);
+};
+
+const incrementFolderCount = (folderNum) => {
     folderNum++;
     localStorage.setItem(folderCountKey, folderNum);
 };
@@ -8228,6 +8241,8 @@ const storeFolder = (title, folder) => {
 const removeFolderFromStorage = (folder) => {
     const key = folder.key;
     const titleKey = `${keyPrefix}${key}title`;
+
+    removeFolderToDosFromStorage(key);
     localStorage.removeItem(key);
     localStorage.removeItem(titleKey);
 };
@@ -8242,18 +8257,19 @@ const storeToDo = (toDoItem) => {
     let toDoNum = getToDoCount();
     const activeFolderKey = (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_0__.getActiveFolderKey)();
 
-    toDoItem.key = `${keyPrefix}todo${toDoNum}`;
     toDoItem.folderKey = activeFolderKey;
-
+    storePrimaryToDoKey(toDoItem, toDoNum);
     storeToDoTitle(toDoItem, toDoNum);
     storeToDoDueDate(toDoItem, toDoNum);
     storeToDoPriority(toDoItem, toDoNum);
     storeToDoDesc(toDoItem, toDoNum);
     storeToDoFolder(activeFolderKey, toDoNum);
-    localStorage.setItem(toDoItem.key, toDoItem.key);
+    incrementToDoCount(toDoNum);
+};
 
-    toDoNum++;
-    localStorage.setItem(toDoCountKey, toDoNum);
+const storePrimaryToDoKey = (toDoItem, toDoNum) => {
+    toDoItem.key = `${keyPrefix}todo${toDoNum}`;
+    localStorage.setItem(toDoItem.key, `todo${toDoNum}`);
 };
 
 const storeToDoTitle = (toDoItem, toDoNum) => {
@@ -8282,6 +8298,11 @@ const storeToDoFolder = (activeFolderKey, toDoNum) => {
     localStorage.setItem(toDoFolderKey, activeFolderKey);
 };
 
+const incrementToDoCount = (toDoNum) => {
+    toDoNum++;
+    localStorage.setItem(toDoCountKey, toDoNum);
+};
+
 const removeToDoFromStorage = (key) => {
     const titleKey = `${key}title`;
     const dueDateKey = `${key}duedate`;
@@ -8297,16 +8318,20 @@ const removeToDoFromStorage = (key) => {
     localStorage.removeItem(folderKey);
 };
 
-const removeAllFolderToDos = (folder, toDoItem) => {
-    //'folder' is the folder being deleted
+const removeFolderToDosFromStorage = (folderKey) => {
+    let folderNum = localStorage.getItem(folderKey);
+
     for (let i = 0; i <= localStorage.length; i++) {
-        let toDoKeyWord = `${keyPrefix}todo${i}`;
-        let toDoFolderKey = `${toDoKeyWord}folder`;
+        let toDoKeyWord = `${keyPrefix}todo${i}`;  // = toDo key
+        let toDoFolderKey = `${toDoKeyWord}folder`;// = toDoFolder key
+
         let toDoFolder = localStorage.getItem(toDoFolderKey);
-        if (toDoFolder == folder) {
-            //If toDoFolder key value = folder key value (thats being deleted)
+
+        if (toDoFolder == folderKey) {
             removeToDoFromStorage(toDoKeyWord);
         }
+        //Write else statement for null values (Deleted keys)
+        //Write a loop that increments i until !Null 
     }
 
 };
@@ -8340,7 +8365,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const contentItems = document.querySelector('#content-items');
-const toDoInputs = document.querySelector('#todo-inputs');
 let defaultFolder = null;
 let defaultFolderTitle = 'General';
 let activeFolder = null;
@@ -8366,9 +8390,8 @@ const initToDoFolders = () => {
 };
 
 const addInitialFolder = () => {
-    const toDoFolder = addToDoFolder(defaultFolderTitle, 'inactive');
-    defaultFolder = toDoFolder;
-    activeFolder = setActiveFolder(toDoFolder, defaultFolderTitle, 'folder0');
+    const toDoFolderDiv = addToDoFolder(defaultFolderTitle, 'inactive');
+    defaultFolder = toDoFolderDiv;
 };
 
 
@@ -8377,7 +8400,9 @@ const addToDoFolder = (folderName, buttonClass) => {
     const toDoFolder = folder(folderName, false);
     const folderContentDiv = (0,_page_dom__WEBPACK_IMPORTED_MODULE_1__.addFolderContentElements)(contentItems, folderClass);
     const sidebarFolderDiv = (0,_page_dom__WEBPACK_IMPORTED_MODULE_1__.addFolderSidebarElements)(toDoFolder, folderContentDiv, buttonClass);
+
     (0,_storage__WEBPACK_IMPORTED_MODULE_3__.storeFolder)(toDoFolder.title, toDoFolder);   //Move this to a function that is only called if storage is empty
+    activeFolder = setActiveFolder(folderContentDiv, toDoFolder.title, toDoFolder.key);
     setActiveFolderOnClick(sidebarFolderDiv, folderContentDiv, toDoFolder, toDoFolder.key);
 
     return folderContentDiv;
@@ -8386,14 +8411,14 @@ const addToDoFolder = (folderName, buttonClass) => {
 const setActiveFolderOnClick = (sidebarFolderDiv, contentFolderDiv, folder, key) => {
     const title = sidebarFolderDiv.querySelector('.sidebar-folder-title');
     title.addEventListener('click', () => {
-        let activeFolder = setActiveFolder(contentFolderDiv, folder.title, key);
+        activeFolder = setActiveFolder(contentFolderDiv, folder.title, key);
     });
 };
 
 const setActiveFolder = (toDoFolderDiv, folderTitle, key) => {
     changeActiveFolder(toDoFolderDiv);
-    hideInactiveFolders(toDoFolderDiv);
-    toDoFolderDiv.appendChild(toDoInputs);
+    hideInactiveFolders(toDoFolderDiv);//
+    changeToDoInputsFolder(toDoFolderDiv);
     changeFolderHeading(folderTitle);
     (0,_form_dom__WEBPACK_IMPORTED_MODULE_2__.toggleToDoFormVisible)(false);
     setActiveFolderKey(key);
@@ -8413,7 +8438,13 @@ const setActiveFolderKey = (key) => {
 };
 
 const getActiveFolderKey = () => {
+    //Might need to refactor to getActiveFolderValue for key
     return activeFolderKey;
+};
+
+const changeToDoInputsFolder = (toDoFolderDiv) => {
+    const toDoInputs = document.querySelector('#todo-inputs');
+    toDoFolderDiv.appendChild(toDoInputs);
 };
 
 const resetActiveFolder = (toDoFolder) => {

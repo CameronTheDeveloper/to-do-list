@@ -62,7 +62,7 @@ const incrementFolderCount = (folderNum) => {
 
 const removeFolderFromStorage = (folder) => {
     const key = folder.key;
-    const titleKey = `${keyPrefix}${key}title`;
+    const titleKey = `${key}title`;
 
     removeFolderToDosFromStorage(key);
     localStorage.removeItem(key);

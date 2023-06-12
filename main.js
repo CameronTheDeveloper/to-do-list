@@ -8324,17 +8324,19 @@ const removeToDoFromStorage = (key) => {
 };
 
 const removeFolderToDosFromStorage = (folderKey) => {
+    const toDoCount = getToDoCount();
     let folderNum = localStorage.getItem(folderKey);
-    console.log(folderNum);
-    for (let i = 0; i <= localStorage.length; i++) {
-        // let toDoKeyWord = `${keyPrefix}todo${i}`;  // = toDo key
-        // let toDoFolderKey = `${toDoKeyWord}folder`;// = toDoFolder key
 
-        // let toDoFolder = localStorage.getItem(toDoFolderKey);
+    for (let i = 0; i < toDoCount; i++) {
+        let toDoKey = `${keyPrefix}todo${i}`;
+        let toDoFolderKey = `${toDoKey}folderkey`;
 
-        // if (toDoFolder == folderKey) {
-        //     removeToDoFromStorage(toDoKeyWord);
-        // }
+        let toDoFolderValue = localStorage.getItem(toDoFolderKey);
+        let folderNum2 = localStorage.getItem(toDoFolderValue);
+
+        if (folderNum == folderNum2) {
+            console.log('match');
+        }
 
         //Write else statement for null values (Deleted keys)
         //Write a loop that increments i until !Null 

@@ -10,7 +10,6 @@ import { checkLocalStorage, storeFolder } from './storage';
 const contentItems = document.querySelector('#content-items');
 let defaultFolder = null;
 let defaultFolderTitle = 'General';
-//let defaultFolderKey = '';
 let activeFolder = null;
 let activeFolderKey = null;
 
@@ -34,11 +33,8 @@ const initToDoFolders = () => {
 };
 
 const addInitialFolder = () => {
-    const toDoFolder = addToDoFolder(defaultFolderTitle, 'inactive');
-    //toDoFolder is the folderContentDiv
-    defaultFolder = toDoFolder;
-    activeFolder = setActiveFolder(toDoFolder, defaultFolderTitle, 'folder0');
-    //3rd parameter needs to be the key
+    const toDoFolderDiv = addToDoFolder(defaultFolderTitle, 'inactive');
+    defaultFolder = toDoFolderDiv;
 };
 
 
@@ -47,7 +43,9 @@ const addToDoFolder = (folderName, buttonClass) => {
     const toDoFolder = folder(folderName, false);
     const folderContentDiv = addFolderContentElements(contentItems, folderClass);
     const sidebarFolderDiv = addFolderSidebarElements(toDoFolder, folderContentDiv, buttonClass);
+
     storeFolder(toDoFolder.title, toDoFolder);   //Move this to a function that is only called if storage is empty
+    activeFolder = setActiveFolder(folderContentDiv, toDoFolder.title, toDoFolder.key);
     setActiveFolderOnClick(sidebarFolderDiv, folderContentDiv, toDoFolder, toDoFolder.key);
 
     return folderContentDiv;
@@ -56,13 +54,13 @@ const addToDoFolder = (folderName, buttonClass) => {
 const setActiveFolderOnClick = (sidebarFolderDiv, contentFolderDiv, folder, key) => {
     const title = sidebarFolderDiv.querySelector('.sidebar-folder-title');
     title.addEventListener('click', () => {
-        let activeFolder = setActiveFolder(contentFolderDiv, folder.title, key);
+        activeFolder = setActiveFolder(contentFolderDiv, folder.title, key);
     });
 };
 
 const setActiveFolder = (toDoFolderDiv, folderTitle, key) => {
     changeActiveFolder(toDoFolderDiv);
-    hideInactiveFolders(toDoFolderDiv);
+    hideInactiveFolders(toDoFolderDiv);//
     changeToDoInputsFolder(toDoFolderDiv);
     changeFolderHeading(folderTitle);
     toggleToDoFormVisible(false);

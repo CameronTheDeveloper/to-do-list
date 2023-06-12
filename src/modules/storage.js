@@ -59,6 +59,8 @@ const incrementFolderCount = (folderNum) => {
 const removeFolderFromStorage = (folder) => {
     const key = folder.key;
     const titleKey = `${keyPrefix}${key}title`;
+
+    removeFolderToDosFromStorage(key);
     localStorage.removeItem(key);
     localStorage.removeItem(titleKey);
 };
@@ -134,16 +136,20 @@ const removeToDoFromStorage = (key) => {
     localStorage.removeItem(folderKey);
 };
 
-const removeFolderToDosFromStorage = (folder, toDoItem) => {
-    //'folder' is the folder being deleted
+const removeFolderToDosFromStorage = (folderKey) => {
+    let folderNum = localStorage.getItem(folderKey);
+
     for (let i = 0; i <= localStorage.length; i++) {
-        let toDoKeyWord = `${keyPrefix}todo${i}`;
-        let toDoFolderKey = `${toDoKeyWord}folder`;
+        let toDoKeyWord = `${keyPrefix}todo${i}`;  // = toDo key
+        let toDoFolderKey = `${toDoKeyWord}folder`;// = toDoFolder key
+
         let toDoFolder = localStorage.getItem(toDoFolderKey);
-        if (toDoFolder == folder) {
-            //If toDoFolder key value = folder key value (thats being deleted)
+
+        if (toDoFolder == folderKey) {
             removeToDoFromStorage(toDoKeyWord);
         }
+        //Write else statement for null values (Deleted keys)
+        //Write a loop that increments i until !Null 
     }
 
 };

@@ -3,7 +3,6 @@ const keyPrefix = 'toDoListProject_';
 const folderCountKey = `${keyPrefix}folderCount`;
 const toDoCountKey = `${keyPrefix}toDoCount`;
 
-
 const getFolderCount = () => {
     return localStorage.getItem(folderCountKey);
 };
@@ -31,6 +30,11 @@ const checkLocalStorage = () => {
 
 const generateFolderKey = (folderNum, keyWord) => {
     return `${keyPrefix}folder${folderNum}${keyWord}`;
+};
+
+const getDefaultFolderKey = () => {
+    const defaultFolderKey = generateFolderKey('0', '');
+    return defaultFolderKey;
 };
 
 const storeFolder = (title, folder) => {
@@ -154,4 +158,4 @@ const removeFolderToDosFromStorage = (folderKey) => {
 
 };
 
-export { checkLocalStorage, generateFolderKey, storeFolder, storeToDo, removeFolderFromStorage, removeFolderToDosFromStorage, removeToDoFromStorage };
+export { checkLocalStorage, generateFolderKey, getDefaultFolderKey, storeFolder, storeToDo, removeFolderFromStorage, removeFolderToDosFromStorage, removeToDoFromStorage };

@@ -8173,6 +8173,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "checkLocalStorage": () => (/* binding */ checkLocalStorage),
 /* harmony export */   "generateFolderKey": () => (/* binding */ generateFolderKey),
+/* harmony export */   "getDefaultFolderKey": () => (/* binding */ getDefaultFolderKey),
 /* harmony export */   "removeFolderFromStorage": () => (/* binding */ removeFolderFromStorage),
 /* harmony export */   "removeFolderToDosFromStorage": () => (/* binding */ removeFolderToDosFromStorage),
 /* harmony export */   "removeToDoFromStorage": () => (/* binding */ removeToDoFromStorage),
@@ -8184,7 +8185,6 @@ __webpack_require__.r(__webpack_exports__);
 const keyPrefix = 'toDoListProject_';
 const folderCountKey = `${keyPrefix}folderCount`;
 const toDoCountKey = `${keyPrefix}toDoCount`;
-
 
 const getFolderCount = () => {
     return localStorage.getItem(folderCountKey);
@@ -8213,6 +8213,11 @@ const checkLocalStorage = () => {
 
 const generateFolderKey = (folderNum, keyWord) => {
     return `${keyPrefix}folder${folderNum}${keyWord}`;
+};
+
+const getDefaultFolderKey = () => {
+    const defaultFolderKey = generateFolderKey('0', '');
+    return defaultFolderKey;
 };
 
 const storeFolder = (title, folder) => {
@@ -8352,8 +8357,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "getActiveFolder": () => (/* binding */ getActiveFolder),
 /* harmony export */   "getActiveFolderKey": () => (/* binding */ getActiveFolderKey),
 /* harmony export */   "initToDoFolders": () => (/* binding */ initToDoFolders),
-/* harmony export */   "resetActiveFolder": () => (/* binding */ resetActiveFolder),
-/* harmony export */   "setActiveFolder": () => (/* binding */ setActiveFolder)
+/* harmony export */   "resetActiveFolder": () => (/* binding */ resetActiveFolder)
 /* harmony export */ });
 /* harmony import */ var _styles_to_do_folders_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../styles/to-do-folders.css */ "./src/styles/to-do-folders.css");
 /* harmony import */ var _page_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./page-dom */ "./src/modules/page-dom.js");
@@ -8417,7 +8421,7 @@ const setActiveFolderOnClick = (sidebarFolderDiv, contentFolderDiv, folder, key)
 
 const setActiveFolder = (toDoFolderDiv, folderTitle, key) => {
     changeActiveFolder(toDoFolderDiv);
-    hideInactiveFolders(toDoFolderDiv);//
+    hideInactiveFolders(toDoFolderDiv);
     changeToDoInputsFolder(toDoFolderDiv);
     changeFolderHeading(folderTitle);
     (0,_form_dom__WEBPACK_IMPORTED_MODULE_2__.toggleToDoFormVisible)(false);
@@ -8449,7 +8453,8 @@ const changeToDoInputsFolder = (toDoFolderDiv) => {
 
 const resetActiveFolder = (toDoFolder) => {
     if (toDoFolder === activeFolder) {
-        activeFolder = setActiveFolder(defaultFolder, defaultFolderTitle);
+        const key = (0,_storage__WEBPACK_IMPORTED_MODULE_3__.getDefaultFolderKey)();
+        activeFolder = setActiveFolder(defaultFolder, defaultFolderTitle, key);
     }
 };
 
@@ -8689,9 +8694,10 @@ const removeFolder = (folder, sidebarElement) => {
 
 const registerRemoveFolderListener = (button, folderDiv, sidebarElement, folder) => {
     button.addEventListener('click', () => {
+        (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_0__.resetActiveFolder)(folderDiv);
         removeFolder(folderDiv, sidebarElement);
         (0,_storage__WEBPACK_IMPORTED_MODULE_3__.removeFolderFromStorage)(folder);
-        (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_0__.resetActiveFolder)(folderDiv);
+
     });
 };
 

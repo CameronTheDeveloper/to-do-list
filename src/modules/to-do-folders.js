@@ -5,7 +5,11 @@ import {
     hideElements
 } from "./page-dom";
 import { toggleToDoFormVisible } from './form-dom';
-import { checkLocalStorage, storeFolder } from './storage';
+import {
+    checkLocalStorage,
+    getDefaultFolderKey,
+    storeFolder
+} from './storage';
 
 const contentItems = document.querySelector('#content-items');
 let defaultFolder = null;
@@ -60,7 +64,7 @@ const setActiveFolderOnClick = (sidebarFolderDiv, contentFolderDiv, folder, key)
 
 const setActiveFolder = (toDoFolderDiv, folderTitle, key) => {
     changeActiveFolder(toDoFolderDiv);
-    hideInactiveFolders(toDoFolderDiv);//
+    hideInactiveFolders(toDoFolderDiv);
     changeToDoInputsFolder(toDoFolderDiv);
     changeFolderHeading(folderTitle);
     toggleToDoFormVisible(false);
@@ -92,7 +96,8 @@ const changeToDoInputsFolder = (toDoFolderDiv) => {
 
 const resetActiveFolder = (toDoFolder) => {
     if (toDoFolder === activeFolder) {
-        activeFolder = setActiveFolder(defaultFolder, defaultFolderTitle);
+        const key = getDefaultFolderKey();
+        activeFolder = setActiveFolder(defaultFolder, defaultFolderTitle, key);
     }
 };
 
@@ -110,7 +115,6 @@ const changeFolderHeading = (folderTitle) => {
 export {
     initToDoFolders,
     addToDoFolder,
-    setActiveFolder,
     getActiveFolder,
     getActiveFolderKey,
     resetActiveFolder

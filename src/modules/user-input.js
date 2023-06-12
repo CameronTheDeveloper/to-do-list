@@ -48,9 +48,10 @@ const removeFolder = (folder, sidebarElement) => {
 
 const registerRemoveFolderListener = (button, folderDiv, sidebarElement, folder) => {
     button.addEventListener('click', () => {
+        resetActiveFolder(folderDiv);
         removeFolder(folderDiv, sidebarElement);
         removeFolderFromStorage(folder);
-        resetActiveFolder(folderDiv);
+
     });
 };
 

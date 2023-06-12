@@ -8321,6 +8321,7 @@ const removeToDoFromStorage = (key) => {
     localStorage.removeItem(priorityKey);
     localStorage.removeItem(descKey);
     localStorage.removeItem(folderKey);
+
 };
 
 const removeFolderToDosFromStorage = (folderKey) => {
@@ -8335,11 +8336,8 @@ const removeFolderToDosFromStorage = (folderKey) => {
         let folderNum2 = localStorage.getItem(toDoFolderValue);
 
         if (folderNum == folderNum2) {
-            console.log('match');
+            removeToDoFromStorage(toDoKey);
         }
-
-        //Write else statement for null values (Deleted keys)
-        //Write a loop that increments i until !Null 
     }
 
 };

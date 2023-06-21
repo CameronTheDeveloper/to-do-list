@@ -12,7 +12,7 @@ import {
 } from './storage';
 
 const contentItems = document.querySelector('#content-items');
-let defaultFolder = null;
+let defaultFolderDiv = null; 
 let defaultFolderTitle = 'General';
 let activeFolder = null;
 let activeFolderKey = null;
@@ -36,8 +36,10 @@ const initToDoFolders = () => {
 };
 
 const addInitialFolder = () => {
-    const toDoFolderDiv = addToDoFolder(defaultFolderTitle, 'inactive');
-    defaultFolder = toDoFolderDiv;
+    const toDoFolder = addToDoFolder(defaultFolderTitle, 'inactive');
+    // defaultFolderDiv = ;
+    //Problem - addToDoFolder doesn't return folderDiv anymore
+    //
 };
 
 
@@ -95,7 +97,7 @@ const changeToDoInputsFolder = (toDoFolderDiv) => {
 const resetActiveFolder = (toDoFolder) => {
     if (toDoFolder === activeFolder) {
         const key = getDefaultFolderKey();
-        activeFolder = setActiveFolder(defaultFolder, defaultFolderTitle, key);
+        activeFolder = setActiveFolder(defaultFolderDiv, defaultFolderTitle, key);
     }
 };
 

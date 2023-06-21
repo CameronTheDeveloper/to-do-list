@@ -8256,7 +8256,7 @@ const storeFolder = (folder) => {
     let folderNum = getFolderCount();
 
     storePrimaryFolderKey(folder, folderNum);
-    storeFolderTitle(title.title, folderNum);
+    storeFolderTitle(folder.title, folderNum);
     incrementFolderCount(folderNum);
 };
 
@@ -8402,7 +8402,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const contentItems = document.querySelector('#content-items');
-let defaultFolder = null;
+let defaultFolderDiv = null; 
 let defaultFolderTitle = 'General';
 let activeFolder = null;
 let activeFolderKey = null;
@@ -8426,8 +8426,8 @@ const initToDoFolders = () => {
 };
 
 const addInitialFolder = () => {
-    const toDoFolderDiv = addToDoFolder(defaultFolderTitle, 'inactive');
-    defaultFolder = toDoFolderDiv;
+    const toDoFolder = addToDoFolder(defaultFolderTitle, 'inactive');
+    defaultFolderDiv = document.querySelector('.todo-folder');
 };
 
 
@@ -8439,7 +8439,6 @@ const addToDoFolder = (folderName, buttonClass) => {
 
     activeFolder = setActiveFolder(folderContentDiv, toDoFolder.title, toDoFolder.key);
     setActiveFolderOnClick(sidebarFolderDiv, folderContentDiv, toDoFolder, toDoFolder.key);
-
     return toDoFolder;
 };
 
@@ -8485,7 +8484,7 @@ const changeToDoInputsFolder = (toDoFolderDiv) => {
 const resetActiveFolder = (toDoFolder) => {
     if (toDoFolder === activeFolder) {
         const key = (0,_storage__WEBPACK_IMPORTED_MODULE_3__.getDefaultFolderKey)();
-        activeFolder = setActiveFolder(defaultFolder, defaultFolderTitle, key);
+        activeFolder = setActiveFolder(defaultFolderDiv, defaultFolderTitle, key);
     }
 };
 

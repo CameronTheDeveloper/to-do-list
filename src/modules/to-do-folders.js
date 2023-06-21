@@ -52,7 +52,7 @@ const addToDoFolder = (folderName, buttonClass) => {
     activeFolder = setActiveFolder(folderContentDiv, toDoFolder.title, toDoFolder.key);
     setActiveFolderOnClick(sidebarFolderDiv, folderContentDiv, toDoFolder, toDoFolder.key);
 
-    return folderContentDiv;
+    return toDoFolder;
 };
 
 const setActiveFolderOnClick = (sidebarFolderDiv, contentFolderDiv, folder, key) => {

@@ -8208,7 +8208,7 @@ const loadFolders = () => {
 
         //If folder != null (Folder exists)
         let folderTitle = getFolderTitle(folderKey);
-        (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_0__.addToDoFolder)(folderTitle, 'active')
+        (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_0__.addToDoFolder)(folderTitle, 'active');
     }
 }
 
@@ -8252,11 +8252,11 @@ const getDefaultFolderKey = () => {
     return defaultFolderKey;
 };
 
-const storeFolder = (title, folder) => {
+const storeFolder = (folder) => {
     let folderNum = getFolderCount();
 
     storePrimaryFolderKey(folder, folderNum);
-    storeFolderTitle(title, folderNum);
+    storeFolderTitle(title.title, folderNum);
     incrementFolderCount(folderNum);
 };
 
@@ -8437,11 +8437,10 @@ const addToDoFolder = (folderName, buttonClass) => {
     const folderContentDiv = (0,_page_dom__WEBPACK_IMPORTED_MODULE_1__.addFolderContentElements)(contentItems, folderClass);
     const sidebarFolderDiv = (0,_page_dom__WEBPACK_IMPORTED_MODULE_1__.addFolderSidebarElements)(toDoFolder, folderContentDiv, buttonClass);
 
-    (0,_storage__WEBPACK_IMPORTED_MODULE_3__.storeFolder)(toDoFolder.title, toDoFolder);   //Move this to a function that is only called if storage is empty
     activeFolder = setActiveFolder(folderContentDiv, toDoFolder.title, toDoFolder.key);
     setActiveFolderOnClick(sidebarFolderDiv, folderContentDiv, toDoFolder, toDoFolder.key);
 
-    return folderContentDiv;
+    return toDoFolder;
 };
 
 const setActiveFolderOnClick = (sidebarFolderDiv, contentFolderDiv, folder, key) => {
@@ -8709,6 +8708,7 @@ const getSidebarInput = () => {
 const manageSidebarInput = () => {
     const input = getSidebarInput();
     const folder = (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_0__.addToDoFolder)(input, 'active');
+    (0,_storage__WEBPACK_IMPORTED_MODULE_3__.storeFolder)(folder)
 };
 
 const registerSidebarSubmitListener = (form) => {

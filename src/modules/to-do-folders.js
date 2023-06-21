@@ -9,7 +9,6 @@ import {
     checkLocalStorage,
     loadStorage,
     getDefaultFolderKey,
-    storeFolder
 } from './storage';
 
 const contentItems = document.querySelector('#content-items');
@@ -48,7 +47,6 @@ const addToDoFolder = (folderName, buttonClass) => {
     const folderContentDiv = addFolderContentElements(contentItems, folderClass);
     const sidebarFolderDiv = addFolderSidebarElements(toDoFolder, folderContentDiv, buttonClass);
 
-    storeFolder(toDoFolder);   //Move this to a function that is only called if storage is empty
     activeFolder = setActiveFolder(folderContentDiv, toDoFolder.title, toDoFolder.key);
     setActiveFolderOnClick(sidebarFolderDiv, folderContentDiv, toDoFolder, toDoFolder.key);
 

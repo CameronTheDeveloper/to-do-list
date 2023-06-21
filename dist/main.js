@@ -8183,6 +8183,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _to_do_folders__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./to-do-folders */ "./src/modules/to-do-folders.js");
 
+
 const keyPrefix = 'toDoListProject_';
 const folderCountKey = `${keyPrefix}folderCount`;
 const toDoCountKey = `${keyPrefix}toDoCount`;
@@ -8207,8 +8208,7 @@ const loadFolders = () => {
 
         //If folder != null (Folder exists)
         let folderTitle = getFolderTitle(folderKey);
-        console.log(folderTitle)
-        //addFolder(folder)
+        (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_0__.addToDoFolder)(folderTitle, 'active')
     }
 }
 

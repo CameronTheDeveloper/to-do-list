@@ -8428,6 +8428,7 @@ const initToDoFolders = () => {
 const addInitialFolder = () => {
     const toDoFolder = addToDoFolder(defaultFolderTitle, 'inactive');
     defaultFolderDiv = document.querySelector('.todo-folder');
+    (0,_storage__WEBPACK_IMPORTED_MODULE_3__.storeFolder)(toDoFolder)
 };
 
 

@@ -16,6 +16,25 @@ const initializeStorageCounts = () => {
     localStorage.setItem(toDoCountKey, 0);
 };
 
+const loadFolders = () => {
+    let count = getFolderCount()
+    for (let i = 0; i <= count; i++){
+        //let folderKey = `${keyPrefix}folder${i}`;
+        //folder = getItem(folderKey)
+        //addFolder(folder)
+    }
+}
+
+const loadToDos = () => {
+    let count = getToDoCount()
+    for (let i = 0; i <= count; i++){
+        //let toDoKey = `${keyPrefix}todo${i}`;
+        //toDo = getItem(toDoKey)
+        //addToDo(toDo)
+        //Make function for this process
+    }
+}
+
 //Check if local storage is populated
 const checkLocalStorage = () => {
     if (localStorage.length === 0) {

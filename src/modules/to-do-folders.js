@@ -6,6 +6,7 @@ import {
 } from "./page-dom";
 import { toggleToDoFormVisible } from './form-dom';
 import {
+    storeFolder,
     checkLocalStorage,
     loadStorage,
     getDefaultFolderKey,
@@ -38,6 +39,7 @@ const initToDoFolders = () => {
 const addInitialFolder = () => {
     const toDoFolder = addToDoFolder(defaultFolderTitle, 'inactive');
     defaultFolderDiv = document.querySelector('.todo-folder');
+    storeFolder(toDoFolder)
 };
 
 

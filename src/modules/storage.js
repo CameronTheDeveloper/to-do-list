@@ -72,7 +72,7 @@ const storeFolder = (folder) => {
     let folderNum = getFolderCount();
 
     storePrimaryFolderKey(folder, folderNum);
-    storeFolderTitle(title.title, folderNum);
+    storeFolderTitle(folder.title, folderNum);
     incrementFolderCount(folderNum);
 };
 

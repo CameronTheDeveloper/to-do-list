@@ -8174,6 +8174,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "checkLocalStorage": () => (/* binding */ checkLocalStorage),
 /* harmony export */   "generateFolderKey": () => (/* binding */ generateFolderKey),
 /* harmony export */   "getDefaultFolderKey": () => (/* binding */ getDefaultFolderKey),
+/* harmony export */   "loadStorage": () => (/* binding */ loadStorage),
 /* harmony export */   "removeFolderFromStorage": () => (/* binding */ removeFolderFromStorage),
 /* harmony export */   "removeFolderToDosFromStorage": () => (/* binding */ removeFolderToDosFromStorage),
 /* harmony export */   "removeToDoFromStorage": () => (/* binding */ removeToDoFromStorage),
@@ -8199,7 +8200,38 @@ const initializeStorageCounts = () => {
     localStorage.setItem(toDoCountKey, 0);
 };
 
-//Check if local storage is populated
+const loadFolders = () => {
+    let count = getFolderCount();
+    for (let i = 0; i < count; i++){
+        let folderKey = `${keyPrefix}folder${i}`;
+
+        //If folder != null (Folder exists)
+        let folderTitle = getFolderTitle(folderKey);
+        console.log(folderTitle)
+        //addFolder(folder)
+    }
+}
+
+const getFolderTitle = (folderKey) => {
+    const folderTitleKey = `${folderKey}title`;
+    const folderTitle = localStorage.getItem(folderTitleKey);
+    return folderTitle;
+}
+
+const loadToDos = () => {
+    let count = getToDoCount();
+    for (let i = 0; i <= count; i++){
+        //let toDoKey = `${keyPrefix}todo${i}`;
+        //toDo = getItem(toDoKey)
+        //addToDo(toDo)
+        //Make function for this process
+    }
+}
+
+const loadStorage = () => {
+    loadFolders();
+}
+
 const checkLocalStorage = () => {
     if (localStorage.length === 0) {
         initializeStorageCounts();
@@ -8375,10 +8407,9 @@ let defaultFolderTitle = 'General';
 let activeFolder = null;
 let activeFolderKey = null;
 
-const folder = (title, active, key) => {
+const folder = (title, key) => {
     return {
         title: title,
-        active: active,
         key: key,
     };
 };
@@ -8388,7 +8419,7 @@ const initToDoFolders = () => {
     if (!storageFilled) {
         addInitialFolder();
     } else if (storageFilled) {
-
+        (0,_storage__WEBPACK_IMPORTED_MODULE_3__.loadStorage)();
     } else {
 
     }
@@ -8402,7 +8433,7 @@ const addInitialFolder = () => {
 
 const addToDoFolder = (folderName, buttonClass) => {
     const folderClass = folderName.replace(/\s/g, '-');
-    const toDoFolder = folder(folderName, false);
+    const toDoFolder = folder(folderName);
     const folderContentDiv = (0,_page_dom__WEBPACK_IMPORTED_MODULE_1__.addFolderContentElements)(contentItems, folderClass);
     const sidebarFolderDiv = (0,_page_dom__WEBPACK_IMPORTED_MODULE_1__.addFolderSidebarElements)(toDoFolder, folderContentDiv, buttonClass);
 

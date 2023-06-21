@@ -18,10 +18,9 @@ let defaultFolderTitle = 'General';
 let activeFolder = null;
 let activeFolderKey = null;
 
-const folder = (title, active, key) => {
+const folder = (title, key) => {
     return {
         title: title,
-        active: active,
         key: key,
     };
 };
@@ -45,7 +44,7 @@ const addInitialFolder = () => {
 
 const addToDoFolder = (folderName, buttonClass) => {
     const folderClass = folderName.replace(/\s/g, '-');
-    const toDoFolder = folder(folderName, false);
+    const toDoFolder = folder(folderName);
     const folderContentDiv = addFolderContentElements(contentItems, folderClass);
     const sidebarFolderDiv = addFolderSidebarElements(toDoFolder, folderContentDiv, buttonClass);
 

@@ -68,11 +68,11 @@ const getDefaultFolderKey = () => {
     return defaultFolderKey;
 };
 
-const storeFolder = (title, folder) => {
+const storeFolder = (folder) => {
     let folderNum = getFolderCount();
 
     storePrimaryFolderKey(folder, folderNum);
-    storeFolderTitle(title, folderNum);
+    storeFolderTitle(title.title, folderNum);
     incrementFolderCount(folderNum);
 };
 

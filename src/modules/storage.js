@@ -17,16 +17,27 @@ const initializeStorageCounts = () => {
 };
 
 const loadFolders = () => {
-    let count = getFolderCount()
+    let count = getFolderCount();
     for (let i = 0; i <= count; i++){
         let folderKey = `${keyPrefix}folder${i}`;
-        folder = getItem(folderKey)
+        let folder = getItem(folderKey);
+        // ^ folder = folder0
+
+        //If folder != null (Folder exists)
+        let folderTitle = getFolderTitle(folderKey);
+        
         //addFolder(folder)
     }
 }
 
+const getFolderTitle = (folderKey) => {
+    const folderTitleKey = `${folderKey}title`;
+    const folderTitle = localStorage.getItem(folderTitleKey);
+    return folderTitle;
+}
+
 const loadToDos = () => {
-    let count = getToDoCount()
+    let count = getToDoCount();
     for (let i = 0; i <= count; i++){
         //let toDoKey = `${keyPrefix}todo${i}`;
         //toDo = getItem(toDoKey)

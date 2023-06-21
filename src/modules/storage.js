@@ -19,8 +19,8 @@ const initializeStorageCounts = () => {
 const loadFolders = () => {
     let count = getFolderCount()
     for (let i = 0; i <= count; i++){
-        //let folderKey = `${keyPrefix}folder${i}`;
-        //folder = getItem(folderKey)
+        let folderKey = `${keyPrefix}folder${i}`;
+        folder = getItem(folderKey)
         //addFolder(folder)
     }
 }
@@ -35,7 +35,10 @@ const loadToDos = () => {
     }
 }
 
-//Check if local storage is populated
+const loadStorage = () => {
+    loadFolders();
+}
+
 const checkLocalStorage = () => {
     if (localStorage.length === 0) {
         initializeStorageCounts();
@@ -178,4 +181,4 @@ const removeFolderToDosFromStorage = (folderKey) => {
 
 };
 
-export { checkLocalStorage, generateFolderKey, getDefaultFolderKey, storeFolder, storeToDo, removeFolderFromStorage, removeFolderToDosFromStorage, removeToDoFromStorage };
+export { checkLocalStorage, loadStorage, generateFolderKey, getDefaultFolderKey, storeFolder, storeToDo, removeFolderFromStorage, removeFolderToDosFromStorage, removeToDoFromStorage };

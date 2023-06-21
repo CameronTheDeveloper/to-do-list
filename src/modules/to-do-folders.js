@@ -7,6 +7,7 @@ import {
 import { toggleToDoFormVisible } from './form-dom';
 import {
     checkLocalStorage,
+    loadStorage,
     getDefaultFolderKey,
     storeFolder
 } from './storage';
@@ -30,7 +31,7 @@ const initToDoFolders = () => {
     if (!storageFilled) {
         addInitialFolder();
     } else if (storageFilled) {
-
+        loadStorage();
     } else {
 
     }

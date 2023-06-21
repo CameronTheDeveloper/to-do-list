@@ -18,14 +18,11 @@ const initializeStorageCounts = () => {
 
 const loadFolders = () => {
     let count = getFolderCount();
-    for (let i = 0; i <= count; i++){
+    for (let i = 0; i < count; i++){
         let folderKey = `${keyPrefix}folder${i}`;
-        let folder = getItem(folderKey);
-        // ^ folder = folder0
 
         //If folder != null (Folder exists)
         let folderTitle = getFolderTitle(folderKey);
-        
         //addFolder(folder)
     }
 }

@@ -17,27 +17,19 @@ const initializeStorageCounts = () => {
     localStorage.setItem(toDoCountKey, 0);
 };
 
-// const loadInitialFolder = () => {
-//     const folderKey = `${keyPrefix}folder${0}`;
-//     const folderTitle = getFolderTitle(folderKey);
-//     addToDoFolder(folderTitle, 'inactive');
-// }
-
 const loadFolder = (index, buttonClass) => {
+   
     const folderKey = `${keyPrefix}folder${index}`;
+    //If folder != null (Folder exists)
     const folderTitle = getFolderTitle(folderKey);
     addToDoFolder(folderTitle, buttonClass);
 }
 
 const loadFolders = () => {
     const count = getFolderCount();
+    loadFolder(0, 'inactive');
     for (let i = 1; i < count; i++){
-        loadFolder(i, 'active')
-        let folderKey = `${keyPrefix}folder${i}`;
-
-        //If folder != null (Folder exists)
-        let folderTitle = getFolderTitle(folderKey);
-        addToDoFolder(folderTitle, 'active');
+        loadFolder(i, 'active');
     }
 }
 

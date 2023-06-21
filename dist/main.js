@@ -8201,14 +8201,25 @@ const initializeStorageCounts = () => {
     localStorage.setItem(toDoCountKey, 0);
 };
 
-const loadFolders = () => {
-    let count = getFolderCount();
-    for (let i = 0; i < count; i++){
-        let folderKey = `${keyPrefix}folder${i}`;
+// const loadInitialFolder = () => {
+//     const folderKey = `${keyPrefix}folder${0}`;
+//     const folderTitle = getFolderTitle(folderKey);
+//     addToDoFolder(folderTitle, 'inactive');
+// }
 
-        //If folder != null (Folder exists)
-        let folderTitle = getFolderTitle(folderKey);
-        (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_0__.addToDoFolder)(folderTitle, 'active');
+const loadFolder = (index, buttonClass) => {
+   
+    const folderKey = `${keyPrefix}folder${index}`;
+    //If folder != null (Folder exists)
+    const folderTitle = getFolderTitle(folderKey);
+    (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_0__.addToDoFolder)(folderTitle, buttonClass);
+}
+
+const loadFolders = () => {
+    const count = getFolderCount();
+    loadFolder(0, 'inactive')
+    for (let i = 1; i < count; i++){
+        loadFolder(i, 'active')
     }
 }
 

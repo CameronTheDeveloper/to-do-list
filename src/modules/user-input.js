@@ -31,7 +31,7 @@ const getSidebarInput = () => {
 const manageSidebarInput = () => {
     const input = getSidebarInput();
     const folder = addToDoFolder(input, 'active');
-    storeFolder(folder)
+    storeFolder(folder);
 };
 
 const registerSidebarSubmitListener = (form) => {

@@ -102,7 +102,7 @@ const resetActiveFolder = (toDoFolder) => {
 const hideInactiveFolders = (activeFolderDiv) => {
     const folders = document.querySelectorAll('.todo-folder');
     hideElements(folders);
-    // activeFolderDiv.style.display = 'grid';
+    activeFolderDiv.style.display = 'grid';
 };
 
 const changeFolderHeading = (folderTitle) => {

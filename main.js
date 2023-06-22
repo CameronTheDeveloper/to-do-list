@@ -8196,30 +8196,33 @@ const getToDoCount = () => {
     return localStorage.getItem(toDoCountKey);
 };
 
+const checkIfStored = (key) => {
+    const value = localStorage.getItem(key);
+    if (value != null){
+        return true;
+    } else {
+        return false;
+    }
+}
+
 const initializeStorageCounts = () => {
     localStorage.setItem(folderCountKey, 0);
     localStorage.setItem(toDoCountKey, 0);
 };
 
-// const loadInitialFolder = () => {
-//     const folderKey = `${keyPrefix}folder${0}`;
-//     const folderTitle = getFolderTitle(folderKey);
-//     addToDoFolder(folderTitle, 'inactive');
-// }
-
 const loadFolder = (index, buttonClass) => {
-   
     const folderKey = `${keyPrefix}folder${index}`;
-    //If folder != null (Folder exists)
     const folderTitle = getFolderTitle(folderKey);
-    (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_0__.addToDoFolder)(folderTitle, buttonClass);
+    checkIfStored(folderKey);
+    if (checkIfStored(folderKey)){
+        (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_0__.addToDoFolder)(folderTitle, buttonClass);
+    }
 }
 
 const loadFolders = () => {
     const count = getFolderCount();
-    loadFolder(0, 'inactive')
     for (let i = 1; i < count; i++){
-        loadFolder(i, 'active')
+        loadFolder(i, 'active');
     }
 }
 
@@ -8427,12 +8430,9 @@ const folder = (title, key) => {
 
 const initToDoFolders = () => {
     const storageFilled = (0,_storage__WEBPACK_IMPORTED_MODULE_3__.checkLocalStorage)();
-    if (!storageFilled) {
-        addInitialFolder();
-    } else if (storageFilled) {
+    addInitialFolder();
+    if (storageFilled) {
         (0,_storage__WEBPACK_IMPORTED_MODULE_3__.loadStorage)();
-    } else {
-
     }
 };
 
@@ -8503,7 +8503,7 @@ const resetActiveFolder = (toDoFolder) => {
 const hideInactiveFolders = (activeFolderDiv) => {
     const folders = document.querySelectorAll('.todo-folder');
     (0,_page_dom__WEBPACK_IMPORTED_MODULE_1__.hideElements)(folders);
-    activeFolderDiv.style.display = 'grid';
+    // activeFolderDiv.style.display = 'grid';
 };
 
 const changeFolderHeading = (folderTitle) => {

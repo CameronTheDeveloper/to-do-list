@@ -54,8 +54,14 @@ const getFolderTitle = (folderKey) => {
 };
 
 const loadToDo = (index) => {
-    //const toDoKey = `${keyPrefix}toDo${index}`;
-    //checkIfStored(toDoKey)
+    const toDoKey = `${keyPrefix}toDo${index}`;
+    const title = getToDoTitle(toDoKey);
+};
+
+const getToDoTitle = (toDoKey) => {
+    const toDoTitleKey = `${toDoKey}title`;
+    const toDoTitle = localStorage.getItem(toDoTitleKey);
+    return toDoTitle;
 };
 
 //Maybe factor this function to be called when each folder is 

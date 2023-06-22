@@ -58,6 +58,7 @@ const loadToDo = (index) => {
     const title = getToDoTitle(toDoKey);
     const dueDate = getToDoDueDate(toDoKey);
     const priority = getToDoPriority(toDoKey);
+    const desc = getToDoDesc(toDoKey);
 };
 
 const getToDoTitle = (toDoKey) => {
@@ -76,6 +77,12 @@ const getToDoPriority = (toDoKey) => {
     const priorityKey = `${toDoKey}priority`;
     const toDoPriority = localStorage.getItem(priorityKey);
     return toDoPriority;
+};
+
+const getToDoDesc = (toDoKey) => {
+    const descKey = `${toDoKey}desc`;
+    const toDoDesc = `${descKey}desc`;
+    return toDoDesc;
 };
 
 //Maybe factor this function to be called when each folder is 

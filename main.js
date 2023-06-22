@@ -8198,12 +8198,12 @@ const getToDoCount = () => {
 
 const checkIfStored = (key) => {
     const value = localStorage.getItem(key);
-    if (value != null){
+    if (value != null) {
         return true;
     } else {
         return false;
     }
-}
+};
 
 const initializeStorageCounts = () => {
     localStorage.setItem(folderCountKey, 0);
@@ -8214,37 +8214,42 @@ const loadFolder = (index, buttonClass) => {
     const folderKey = `${keyPrefix}folder${index}`;
     const folderTitle = getFolderTitle(folderKey);
     checkIfStored(folderKey);
-    if (checkIfStored(folderKey)){
+    if (checkIfStored(folderKey)) {
         (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_0__.addToDoFolder)(folderTitle, buttonClass);
     }
-}
+};
 
 const loadFolders = () => {
     const count = getFolderCount();
-    for (let i = 1; i < count; i++){
+    for (let i = 1; i < count; i++) {
         loadFolder(i, 'active');
     }
-}
+};
 
 const getFolderTitle = (folderKey) => {
     const folderTitleKey = `${folderKey}title`;
     const folderTitle = localStorage.getItem(folderTitleKey);
     return folderTitle;
-}
+};
+
+const loadToDo = (index) => {
+    //const toDoKey = `${keyPrefix}toDo${index}`;
+    //checkIfStored(toDoKey)
+};
 
 const loadToDos = () => {
     let count = getToDoCount();
-    for (let i = 0; i <= count; i++){
+    for (let i = 0; i <= count; i++) {
+        loadToDo(i);
         //let toDoKey = `${keyPrefix}todo${i}`;
         //toDo = getItem(toDoKey)
         //addToDo(toDo)
-        //Make function for this process
     }
-}
+};
 
 const loadStorage = () => {
     loadFolders();
-}
+};
 
 const checkLocalStorage = () => {
     if (localStorage.length === 0) {
@@ -8416,7 +8421,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const contentItems = document.querySelector('#content-items');
-let defaultFolderDiv = null; 
+let defaultFolderDiv = null;
 let defaultFolderTitle = 'General';
 let activeFolder = null;
 let activeFolderKey = null;
@@ -8430,16 +8435,18 @@ const folder = (title, key) => {
 
 const initToDoFolders = () => {
     const storageFilled = (0,_storage__WEBPACK_IMPORTED_MODULE_3__.checkLocalStorage)();
-    addInitialFolder();
+    const initialFolder = addInitialFolder();
     if (storageFilled) {
         (0,_storage__WEBPACK_IMPORTED_MODULE_3__.loadStorage)();
+    } else {
+        (0,_storage__WEBPACK_IMPORTED_MODULE_3__.storeFolder)(initialFolder);
     }
 };
 
 const addInitialFolder = () => {
     const toDoFolder = addToDoFolder(defaultFolderTitle, 'inactive');
     defaultFolderDiv = document.querySelector('.todo-folder');
-    (0,_storage__WEBPACK_IMPORTED_MODULE_3__.storeFolder)(toDoFolder)
+    return toDoFolder;
 };
 
 

@@ -13,7 +13,7 @@ import {
 } from './storage';
 
 const contentItems = document.querySelector('#content-items');
-let defaultFolderDiv = null; 
+let defaultFolderDiv = null;
 let defaultFolderTitle = 'General';
 let activeFolder = null;
 let activeFolderKey = null;
@@ -27,16 +27,18 @@ const folder = (title, key) => {
 
 const initToDoFolders = () => {
     const storageFilled = checkLocalStorage();
-    addInitialFolder();
+    const initialFolder = addInitialFolder();
     if (storageFilled) {
         loadStorage();
+    } else {
+        storeFolder(initialFolder);
     }
 };
 
 const addInitialFolder = () => {
     const toDoFolder = addToDoFolder(defaultFolderTitle, 'inactive');
     defaultFolderDiv = document.querySelector('.todo-folder');
-    storeFolder(toDoFolder)
+    return toDoFolder;
 };
 
 

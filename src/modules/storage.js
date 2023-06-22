@@ -37,7 +37,6 @@ const loadFolder = (index, buttonClass) => {
 
 const loadFolders = () => {
     const count = getFolderCount();
-    loadFolder(0, 'inactive');
     for (let i = 1; i < count; i++){
         loadFolder(i, 'active');
     }

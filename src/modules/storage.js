@@ -15,7 +15,7 @@ const getToDoCount = () => {
 const checkIfStored = (key) => {
     const value = localStorage.getItem(key);
     if (value != null){
-        return true
+        return true;
     } else {
         return false;
     }
@@ -29,8 +29,10 @@ const initializeStorageCounts = () => {
 const loadFolder = (index, buttonClass) => {
     const folderKey = `${keyPrefix}folder${index}`;
     const folderTitle = getFolderTitle(folderKey);
-
-    addToDoFolder(folderTitle, buttonClass);
+    checkIfStored(folderKey);
+    if (checkIfStored(folderKey)){
+        addToDoFolder(folderTitle, buttonClass);
+    }
 }
 
 const loadFolders = () => {

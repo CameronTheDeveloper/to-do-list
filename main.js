@@ -8210,12 +8210,17 @@ const initializeStorageCounts = () => {
     localStorage.setItem(toDoCountKey, 0);
 };
 
+// const matchToDoFolderKey = (toDoFolderKey, folderKey) => {
+
+// };
+
 const loadFolder = (index, buttonClass) => {
     const folderKey = `${keyPrefix}folder${index}`;
     const folderTitle = getFolderTitle(folderKey);
     checkIfStored(folderKey);
     if (checkIfStored(folderKey)) {
-        (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_0__.addToDoFolder)(folderTitle, buttonClass);
+        const toDoFolder = (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_0__.addToDoFolder)(folderTitle, buttonClass);
+        toDoFolder.key = folderKey;
     }
 };
 
@@ -8237,7 +8242,11 @@ const loadToDo = (index) => {
     //checkIfStored(toDoKey)
 };
 
-const loadToDos = () => {
+//Maybe factor this function to be called when each folder is 
+//loaded
+//In loadFolders, check if each toDo key matches the folder key
+//If match, output todo in folder
+const loadToDos = (key) => {
     let count = getToDoCount();
     for (let i = 0; i <= count; i++) {
         loadToDo(i);
@@ -8510,7 +8519,7 @@ const resetActiveFolder = (toDoFolder) => {
 const hideInactiveFolders = (activeFolderDiv) => {
     const folders = document.querySelectorAll('.todo-folder');
     (0,_page_dom__WEBPACK_IMPORTED_MODULE_1__.hideElements)(folders);
-    // activeFolderDiv.style.display = 'grid';
+    activeFolderDiv.style.display = 'grid';
 };
 
 const changeFolderHeading = (folderTitle) => {
@@ -8726,7 +8735,7 @@ const getSidebarInput = () => {
 const manageSidebarInput = () => {
     const input = getSidebarInput();
     const folder = (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_0__.addToDoFolder)(input, 'active');
-    (0,_storage__WEBPACK_IMPORTED_MODULE_3__.storeFolder)(folder)
+    (0,_storage__WEBPACK_IMPORTED_MODULE_3__.storeFolder)(folder);
 };
 
 const registerSidebarSubmitListener = (form) => {

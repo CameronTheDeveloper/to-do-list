@@ -14,12 +14,12 @@ const getToDoCount = () => {
 
 const checkIfStored = (key) => {
     const value = localStorage.getItem(key);
-    if (value != null){
+    if (value != null) {
         return true;
     } else {
         return false;
     }
-}
+};
 
 const initializeStorageCounts = () => {
     localStorage.setItem(folderCountKey, 0);
@@ -30,37 +30,42 @@ const loadFolder = (index, buttonClass) => {
     const folderKey = `${keyPrefix}folder${index}`;
     const folderTitle = getFolderTitle(folderKey);
     checkIfStored(folderKey);
-    if (checkIfStored(folderKey)){
+    if (checkIfStored(folderKey)) {
         addToDoFolder(folderTitle, buttonClass);
     }
-}
+};
 
 const loadFolders = () => {
     const count = getFolderCount();
-    for (let i = 1; i < count; i++){
+    for (let i = 1; i < count; i++) {
         loadFolder(i, 'active');
     }
-}
+};
 
 const getFolderTitle = (folderKey) => {
     const folderTitleKey = `${folderKey}title`;
     const folderTitle = localStorage.getItem(folderTitleKey);
     return folderTitle;
-}
+};
+
+const loadToDo = (index) => {
+    //const toDoKey = `${keyPrefix}toDo${index}`;
+    //checkIfStored(toDoKey)
+};
 
 const loadToDos = () => {
     let count = getToDoCount();
-    for (let i = 0; i <= count; i++){
+    for (let i = 0; i <= count; i++) {
+        loadToDo(i);
         //let toDoKey = `${keyPrefix}todo${i}`;
         //toDo = getItem(toDoKey)
         //addToDo(toDo)
-        //Make function for this process
     }
-}
+};
 
 const loadStorage = () => {
     loadFolders();
-}
+};
 
 const checkLocalStorage = () => {
     if (localStorage.length === 0) {

@@ -4,7 +4,11 @@ import {
 } from "./to-do-folders";
 import { addToDo } from "./to-do";
 import { toggleToDoFormVisible } from "./form-dom";
-import { removeFolderFromStorage, storeFolder } from "./storage";
+import {
+    removeFolderFromStorage,
+    storeFolder,
+    getPrimaryFolderKey
+} from "./storage";
 
 
 const getInput = (id) => {
@@ -30,7 +34,8 @@ const getSidebarInput = () => {
 
 const manageSidebarInput = () => {
     const input = getSidebarInput();
-    const folder = addToDoFolder(input, 'active');
+    const folderKey = getPrimaryFolderKey();
+    const folder = addToDoFolder(input, 'active', folderKey);
     storeFolder(folder);
 };
 

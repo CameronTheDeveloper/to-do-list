@@ -9,7 +9,7 @@ import {
     storeFolder,
     checkLocalStorage,
     loadStorage,
-    getDefaultFolderKey,
+    getDefaultFolderKey
 } from './storage';
 
 const contentItems = document.querySelector('#content-items');
@@ -36,11 +36,11 @@ const initToDoFolders = () => {
 };
 
 const addInitialFolder = () => {
-    const toDoFolder = addToDoFolder(defaultFolderTitle, 'inactive');
+    const key = getDefaultFolderKey();
+    const toDoFolder = addToDoFolder(defaultFolderTitle, 'inactive', key);
     defaultFolderDiv = document.querySelector('.todo-folder');
     return toDoFolder;
 };
-
 
 const addToDoFolder = (folderName, buttonClass, key) => {
     const folderClass = folderName.replace(/\s/g, '-');

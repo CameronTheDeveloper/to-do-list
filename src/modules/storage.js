@@ -128,6 +128,11 @@ const getDefaultFolderKey = () => {
     return defaultFolderKey;
 };
 
+const getPrimaryFolderKey = () => {
+    const folderNum = getFolderCount();
+    return `${keyPrefix}folder${folderNum}`;
+};
+
 const storeFolder = (folder) => {
     let folderNum = getFolderCount();
 
@@ -137,7 +142,6 @@ const storeFolder = (folder) => {
 };
 
 const storePrimaryFolderKey = (folder, folderNum) => {
-    folder.key = `${keyPrefix}folder${folderNum}`;
     localStorage.setItem(folder.key, `folder${folderNum}`);
 };
 
@@ -247,7 +251,17 @@ const removeFolderToDosFromStorage = (folderKey) => {
             removeToDoFromStorage(toDoKey);
         }
     }
-
 };
 
-export { checkLocalStorage, loadStorage, generateFolderKey, getDefaultFolderKey, storeFolder, storeToDo, removeFolderFromStorage, removeFolderToDosFromStorage, removeToDoFromStorage };
+export {
+    checkLocalStorage,
+    loadStorage,
+    generateFolderKey,
+    getDefaultFolderKey,
+    getPrimaryFolderKey,
+    storeFolder,
+    storeToDo,
+    removeFolderFromStorage,
+    removeFolderToDosFromStorage,
+    removeToDoFromStorage
+};

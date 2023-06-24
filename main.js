@@ -8174,6 +8174,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "checkLocalStorage": () => (/* binding */ checkLocalStorage),
 /* harmony export */   "generateFolderKey": () => (/* binding */ generateFolderKey),
 /* harmony export */   "getDefaultFolderKey": () => (/* binding */ getDefaultFolderKey),
+/* harmony export */   "getPrimaryFolderKey": () => (/* binding */ getPrimaryFolderKey),
 /* harmony export */   "loadStorage": () => (/* binding */ loadStorage),
 /* harmony export */   "removeFolderFromStorage": () => (/* binding */ removeFolderFromStorage),
 /* harmony export */   "removeFolderToDosFromStorage": () => (/* binding */ removeFolderToDosFromStorage),
@@ -8312,6 +8313,11 @@ const getDefaultFolderKey = () => {
     return defaultFolderKey;
 };
 
+const getPrimaryFolderKey = () => {
+    const folderNum = getFolderCount();
+    return `${keyPrefix}folder${folderNum}`;
+};
+
 const storeFolder = (folder) => {
     let folderNum = getFolderCount();
 
@@ -8321,7 +8327,6 @@ const storeFolder = (folder) => {
 };
 
 const storePrimaryFolderKey = (folder, folderNum) => {
-    folder.key = `${keyPrefix}folder${folderNum}`;
     localStorage.setItem(folder.key, `folder${folderNum}`);
 };
 
@@ -8431,7 +8436,6 @@ const removeFolderToDosFromStorage = (folderKey) => {
             removeToDoFromStorage(toDoKey);
         }
     }
-
 };
 
 
@@ -8485,11 +8489,11 @@ const initToDoFolders = () => {
 };
 
 const addInitialFolder = () => {
-    const toDoFolder = addToDoFolder(defaultFolderTitle, 'inactive');
+    const key = (0,_storage__WEBPACK_IMPORTED_MODULE_3__.getDefaultFolderKey)();
+    const toDoFolder = addToDoFolder(defaultFolderTitle, 'inactive', key);
     defaultFolderDiv = document.querySelector('.todo-folder');
     return toDoFolder;
 };
-
 
 const addToDoFolder = (folderName, buttonClass, key) => {
     const folderClass = folderName.replace(/\s/g, '-');
@@ -8765,7 +8769,8 @@ const getSidebarInput = () => {
 
 const manageSidebarInput = () => {
     const input = getSidebarInput();
-    const folder = (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_0__.addToDoFolder)(input, 'active');
+    const folderKey = (0,_storage__WEBPACK_IMPORTED_MODULE_3__.getPrimaryFolderKey)();
+    const folder = (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_0__.addToDoFolder)(input, 'active', folderKey);
     (0,_storage__WEBPACK_IMPORTED_MODULE_3__.storeFolder)(folder);
 };
 

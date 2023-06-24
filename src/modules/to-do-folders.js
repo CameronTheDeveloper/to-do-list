@@ -42,12 +42,11 @@ const addInitialFolder = () => {
 };
 
 
-const addToDoFolder = (folderName, buttonClass) => {
+const addToDoFolder = (folderName, buttonClass, key) => {
     const folderClass = folderName.replace(/\s/g, '-');
-    const toDoFolder = folder(folderName);
+    const toDoFolder = folder(folderName, key);
     const folderContentDiv = addFolderContentElements(contentItems, folderClass);
     const sidebarFolderDiv = addFolderSidebarElements(toDoFolder, folderContentDiv, buttonClass);
-
     activeFolder = setActiveFolder(folderContentDiv, toDoFolder.title, toDoFolder.key);
     setActiveFolderOnClick(sidebarFolderDiv, folderContentDiv, toDoFolder, toDoFolder.key);
     return toDoFolder;

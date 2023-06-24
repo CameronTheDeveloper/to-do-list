@@ -8210,9 +8210,7 @@ const initializeStorageCounts = () => {
     localStorage.setItem(toDoCountKey, 0);
 };
 
-// const matchToDoFolderKey = (toDoFolderKey, folderKey) => {
 
-// };
 
 const loadFolder = (index, buttonClass) => {
     const folderKey = `${keyPrefix}folder${index}`;
@@ -8238,21 +8236,55 @@ const getFolderTitle = (folderKey) => {
 };
 
 const loadToDo = (index) => {
-    //const toDoKey = `${keyPrefix}toDo${index}`;
-    //checkIfStored(toDoKey)
+    const toDoKey = `${keyPrefix}toDo${index}`;
+    const title = getToDoTitle(toDoKey);
+    const dueDate = getToDoDueDate(toDoKey);
+    const priority = getToDoPriority(toDoKey);
+    const desc = getToDoDesc(toDoKey);
+    console.log(title, dueDate, priority, desc);
+    //addToDo(title, duedate...)
 };
 
-//Maybe factor this function to be called when each folder is 
-//loaded
-//In loadFolders, check if each toDo key matches the folder key
-//If match, output todo in folder
+const getToDoTitle = (toDoKey) => {
+    const toDoTitleKey = `${toDoKey}title`;
+    const toDoTitle = localStorage.getItem(toDoTitleKey);
+    return toDoTitle;
+};
+
+const getToDoDueDate = (toDoKey) => {
+    const dueDateKey = `${toDoKey}duedate`;
+    const toDoDueDate = localStorage.getItem(dueDateKey);
+    return toDoDueDate;
+};
+
+const getToDoPriority = (toDoKey) => {
+    const priorityKey = `${toDoKey}priority`;
+    const toDoPriority = localStorage.getItem(priorityKey);
+    return toDoPriority;
+};
+
+const getToDoDesc = (toDoKey) => {
+    const descKey = `${toDoKey}desc`;
+    const toDoDesc = `${descKey}desc`;
+    return toDoDesc;
+};
+
+const matchToDoFolderKey = (index, folderKey) => {
+    const toDoFolderKey = `${keyPrefix}`;
+    const toDoFolder = localStorage.getItem(toDoFolderKey);
+    if (toDoFolderKey === toDoFolder) {
+        true;
+    } else {
+        false;
+    }
+};
+
 const loadToDos = (key) => {
     let count = getToDoCount();
     for (let i = 0; i <= count; i++) {
+
         loadToDo(i);
-        //let toDoKey = `${keyPrefix}todo${i}`;
-        //toDo = getItem(toDoKey)
-        //addToDo(toDo)
+
     }
 };
 

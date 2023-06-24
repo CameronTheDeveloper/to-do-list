@@ -8210,16 +8210,15 @@ const initializeStorageCounts = () => {
     localStorage.setItem(toDoCountKey, 0);
 };
 
-
-
 const loadFolder = (index, buttonClass) => {
     const folderKey = `${keyPrefix}folder${index}`;
     const folderTitle = getFolderTitle(folderKey);
     checkIfStored(folderKey);
     if (checkIfStored(folderKey)) {
-        const toDoFolder = (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_0__.addToDoFolder)(folderTitle, buttonClass);
+        const toDoFolder = (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_0__.addToDoFolder)(folderTitle, buttonClass, folderKey);
         toDoFolder.key = folderKey;
     }
+    //loadToDos(folderKey);
 };
 
 const loadFolders = () => {
@@ -8241,7 +8240,6 @@ const loadToDo = (index) => {
     const dueDate = getToDoDueDate(toDoKey);
     const priority = getToDoPriority(toDoKey);
     const desc = getToDoDesc(toDoKey);
-    console.log(title, dueDate, priority, desc);
     //addToDo(title, duedate...)
 };
 
@@ -8270,21 +8268,23 @@ const getToDoDesc = (toDoKey) => {
 };
 
 const matchToDoFolderKey = (index, folderKey) => {
-    const toDoFolderKey = `${keyPrefix}`;
+    const toDoFolderKey = generateToDoKey(index, 'folderkey');
     const toDoFolder = localStorage.getItem(toDoFolderKey);
-    if (toDoFolderKey === toDoFolder) {
+    const folder = localStorage.getItem(folder);
+
+    if (toDoFolder === folder) {
         true;
     } else {
         false;
     }
 };
 
-const loadToDos = (key) => {
+const loadToDos = (folderKey) => {
     let count = getToDoCount();
     for (let i = 0; i <= count; i++) {
-
-        loadToDo(i);
-
+        if (matchToDoFolderKey(i, folderKey)) {
+            loadToDo(i);
+        }
     }
 };
 
@@ -8491,21 +8491,20 @@ const addInitialFolder = () => {
 };
 
 
-const addToDoFolder = (folderName, buttonClass) => {
+const addToDoFolder = (folderName, buttonClass, key) => {
     const folderClass = folderName.replace(/\s/g, '-');
-    const toDoFolder = folder(folderName);
+    const toDoFolder = folder(folderName, key);
     const folderContentDiv = (0,_page_dom__WEBPACK_IMPORTED_MODULE_1__.addFolderContentElements)(contentItems, folderClass);
     const sidebarFolderDiv = (0,_page_dom__WEBPACK_IMPORTED_MODULE_1__.addFolderSidebarElements)(toDoFolder, folderContentDiv, buttonClass);
-
     activeFolder = setActiveFolder(folderContentDiv, toDoFolder.title, toDoFolder.key);
-    setActiveFolderOnClick(sidebarFolderDiv, folderContentDiv, toDoFolder, toDoFolder.key);
+    setActiveFolderOnClick(sidebarFolderDiv, folderContentDiv, toDoFolder);
     return toDoFolder;
 };
 
-const setActiveFolderOnClick = (sidebarFolderDiv, contentFolderDiv, folder, key) => {
+const setActiveFolderOnClick = (sidebarFolderDiv, contentFolderDiv, folder) => {
     const title = sidebarFolderDiv.querySelector('.sidebar-folder-title');
     title.addEventListener('click', () => {
-        activeFolder = setActiveFolder(contentFolderDiv, folder.title, key);
+        activeFolder = setActiveFolder(contentFolderDiv, folder.title, folder.key);
     });
 };
 

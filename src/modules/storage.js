@@ -31,7 +31,7 @@ const loadFolder = (index, buttonClass) => {
     const folderTitle = getFolderTitle(folderKey);
     checkIfStored(folderKey);
     if (checkIfStored(folderKey)) {
-        const toDoFolder = addToDoFolder(folderTitle, buttonClass);
+        const toDoFolder = addToDoFolder(folderTitle, buttonClass, folderKey);
         toDoFolder.key = folderKey;
     }
     //loadToDos(folderKey);
@@ -86,7 +86,9 @@ const getToDoDesc = (toDoKey) => {
 const matchToDoFolderKey = (index, folderKey) => {
     const toDoFolderKey = generateToDoKey(index, 'folderkey');
     const toDoFolder = localStorage.getItem(toDoFolderKey);
-    if (toDoFolderKey === toDoFolder) {
+    const folder = localStorage.getItem(folder);
+
+    if (toDoFolder === folder) {
         true;
     } else {
         false;

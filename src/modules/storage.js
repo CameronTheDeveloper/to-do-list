@@ -26,8 +26,6 @@ const initializeStorageCounts = () => {
     localStorage.setItem(toDoCountKey, 0);
 };
 
-
-
 const loadFolder = (index, buttonClass) => {
     const folderKey = `${keyPrefix}folder${index}`;
     const folderTitle = getFolderTitle(folderKey);
@@ -36,6 +34,7 @@ const loadFolder = (index, buttonClass) => {
         const toDoFolder = addToDoFolder(folderTitle, buttonClass);
         toDoFolder.key = folderKey;
     }
+    //loadToDos(folderKey);
 };
 
 const loadFolders = () => {
@@ -57,7 +56,6 @@ const loadToDo = (index) => {
     const dueDate = getToDoDueDate(toDoKey);
     const priority = getToDoPriority(toDoKey);
     const desc = getToDoDesc(toDoKey);
-    console.log(title, dueDate, priority, desc);
     //addToDo(title, duedate...)
 };
 
@@ -86,7 +84,7 @@ const getToDoDesc = (toDoKey) => {
 };
 
 const matchToDoFolderKey = (index, folderKey) => {
-    const toDoFolderKey = `${keyPrefix}`;
+    const toDoFolderKey = generateToDoKey(index, 'folderkey');
     const toDoFolder = localStorage.getItem(toDoFolderKey);
     if (toDoFolderKey === toDoFolder) {
         true;
@@ -95,12 +93,12 @@ const matchToDoFolderKey = (index, folderKey) => {
     }
 };
 
-const loadToDos = (key) => {
+const loadToDos = (folderKey) => {
     let count = getToDoCount();
     for (let i = 0; i <= count; i++) {
-
-        loadToDo(i);
-
+        if (matchToDoFolderKey(i, folderKey)) {
+            loadToDo(i);
+        }
     }
 };
 

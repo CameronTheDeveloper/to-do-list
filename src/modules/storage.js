@@ -26,9 +26,7 @@ const initializeStorageCounts = () => {
     localStorage.setItem(toDoCountKey, 0);
 };
 
-// const matchToDoFolderKey = (toDoFolderKey, folderKey) => {
 
-// };
 
 const loadFolder = (index, buttonClass) => {
     const folderKey = `${keyPrefix}folder${index}`;
@@ -59,6 +57,8 @@ const loadToDo = (index) => {
     const dueDate = getToDoDueDate(toDoKey);
     const priority = getToDoPriority(toDoKey);
     const desc = getToDoDesc(toDoKey);
+    console.log(title, dueDate, priority, desc);
+    //addToDo(title, duedate...)
 };
 
 const getToDoTitle = (toDoKey) => {
@@ -85,17 +85,22 @@ const getToDoDesc = (toDoKey) => {
     return toDoDesc;
 };
 
-//Maybe factor this function to be called when each folder is 
-//loaded
-//In loadFolders, check if each toDo key matches the folder key
-//If match, output todo in folder
+const matchToDoFolderKey = (index, folderKey) => {
+    const toDoFolderKey = `${keyPrefix}`;
+    const toDoFolder = localStorage.getItem(toDoFolderKey);
+    if (toDoFolderKey === toDoFolder) {
+        true;
+    } else {
+        false;
+    }
+};
+
 const loadToDos = (key) => {
     let count = getToDoCount();
     for (let i = 0; i <= count; i++) {
+
         loadToDo(i);
-        //let toDoKey = `${keyPrefix}todo${i}`;
-        //toDo = getItem(toDoKey)
-        //addToDo(toDo)
+
     }
 };
 

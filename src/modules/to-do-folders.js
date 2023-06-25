@@ -81,7 +81,7 @@ const setActiveFolderKey = (key) => {
     activeFolderKey = key;
 };
 
-const getActiveFolderKey = () => {
+const getActiveFolderKeyValue = () => {
     //Might need to refactor to getActiveFolderValue for key
     return activeFolderKey;
 };
@@ -113,6 +113,6 @@ export {
     initToDoFolders,
     addToDoFolder,
     getActiveFolder,
-    getActiveFolderKey,
+    getActiveFolderKeyValue,
     resetActiveFolder
 };

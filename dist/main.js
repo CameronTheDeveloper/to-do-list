@@ -8357,7 +8357,7 @@ const generateToDoKey = (toDoNum, keyWord) => {
 
 const storeToDo = (toDoItem) => {
     let toDoNum = getToDoCount();
-    const activeFolderKey = (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_0__.getActiveFolderKey)();
+    const activeFolderKey = (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_0__.getActiveFolderKeyValue)();
 
     toDoItem.folderKey = activeFolderKey;
     storePrimaryToDoKey(toDoItem, toDoNum);
@@ -8452,7 +8452,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "addToDoFolder": () => (/* binding */ addToDoFolder),
 /* harmony export */   "getActiveFolder": () => (/* binding */ getActiveFolder),
-/* harmony export */   "getActiveFolderKey": () => (/* binding */ getActiveFolderKey),
+/* harmony export */   "getActiveFolderKeyValue": () => (/* binding */ getActiveFolderKeyValue),
 /* harmony export */   "initToDoFolders": () => (/* binding */ initToDoFolders),
 /* harmony export */   "resetActiveFolder": () => (/* binding */ resetActiveFolder)
 /* harmony export */ });
@@ -8534,7 +8534,7 @@ const setActiveFolderKey = (key) => {
     activeFolderKey = key;
 };
 
-const getActiveFolderKey = () => {
+const getActiveFolderKeyValue = () => {
     //Might need to refactor to getActiveFolderValue for key
     return activeFolderKey;
 };

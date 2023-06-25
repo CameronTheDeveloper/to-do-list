@@ -1,4 +1,4 @@
-import { getActiveFolderKey } from "./to-do-folders";
+import { getActiveFolderKeyValue } from "./to-do-folders";
 import { addToDoFolder } from "./to-do-folders";
 const keyPrefix = 'toDoListProject_';
 const folderCountKey = `${keyPrefix}folderCount`;
@@ -172,7 +172,7 @@ const generateToDoKey = (toDoNum, keyWord) => {
 
 const storeToDo = (toDoItem) => {
     let toDoNum = getToDoCount();
-    const activeFolderKey = getActiveFolderKey();
+    const activeFolderKey = getActiveFolderKeyValue();
 
     toDoItem.folderKey = activeFolderKey;
     storePrimaryToDoKey(toDoItem, toDoNum);

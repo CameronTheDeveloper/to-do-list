@@ -34,7 +34,7 @@ const loadFolder = (index, buttonClass) => {
         const toDoFolder = addToDoFolder(folderTitle, buttonClass, folderKey);
         toDoFolder.key = folderKey;
     }
-    //loadToDos(folderKey);
+    loadToDos(folderKey);
 };
 
 const loadFolders = () => {
@@ -89,9 +89,9 @@ const checkToDoFolderMatch = (index, folderKey) => {
     const folder = localStorage.getItem(folderKey);
 
     if (toDoFolder === folder) {
-        true;
+        return true;
     } else {
-        false;
+        return false;
     }
 };
 
@@ -238,16 +238,14 @@ const removeToDoFromStorage = (key) => {
 
 const removeFolderToDosFromStorage = (folderKey) => {
     const toDoCount = getToDoCount();
-    let folderNum = localStorage.getItem(folderKey);
+    const folderValue = localStorage.getItem(folderKey);
 
     for (let i = 0; i < toDoCount; i++) {
         let toDoKey = `${keyPrefix}todo${i}`;
         let toDoFolderKey = `${toDoKey}folderkey`;
-
         let toDoFolderValue = localStorage.getItem(toDoFolderKey);
-        let folderNum2 = localStorage.getItem(toDoFolderValue);
 
-        if (folderNum == folderNum2) {
+        if (folderValue == toDoFolderValue) {
             removeToDoFromStorage(toDoKey);
         }
     }

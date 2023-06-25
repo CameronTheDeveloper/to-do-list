@@ -82,8 +82,8 @@ const setActiveFolderKey = (key) => {
 };
 
 const getActiveFolderKeyValue = () => {
-    //Might need to refactor to getActiveFolderValue for key
-    return activeFolderKey;
+    const folder = localStorage.getItem(activeFolderKey);
+    return folder;
 };
 
 const changeToDoInputsFolder = (toDoFolderDiv) => {

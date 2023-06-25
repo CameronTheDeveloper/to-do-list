@@ -8271,7 +8271,7 @@ const getToDoDesc = (toDoKey) => {
 const matchToDoFolderKey = (index, folderKey) => {
     const toDoFolderKey = generateToDoKey(index, 'folderkey');
     const toDoFolder = localStorage.getItem(toDoFolderKey);
-    const folder = localStorage.getItem(folder);
+    const folder = localStorage.getItem(folderKey);
 
     if (toDoFolder === folder) {
         true;

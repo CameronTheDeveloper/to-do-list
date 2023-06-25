@@ -172,15 +172,15 @@ const generateToDoKey = (toDoNum, keyWord) => {
 
 const storeToDo = (toDoItem) => {
     let toDoNum = getToDoCount();
-    const activeFolderKey = getActiveFolderKeyValue();
+    const activeFolderValue = getActiveFolderKeyValue();
 
-    toDoItem.folderKey = activeFolderKey;
+    toDoItem.folderKey = activeFolderValue;
     storePrimaryToDoKey(toDoItem, toDoNum);
     storeToDoTitle(toDoItem, toDoNum);
     storeToDoDueDate(toDoItem, toDoNum);
     storeToDoPriority(toDoItem, toDoNum);
     storeToDoDesc(toDoItem, toDoNum);
-    storeToDoFolderKey(activeFolderKey, toDoNum);
+    storeToDoFolderKey(activeFolderValue, toDoNum);
     incrementToDoCount(toDoNum);
 };
 

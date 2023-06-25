@@ -83,7 +83,7 @@ const getToDoDesc = (toDoKey) => {
     return toDoDesc;
 };
 
-const matchToDoFolderKey = (index, folderKey) => {
+const checkToDoFolderMatch = (index, folderKey) => {
     const toDoFolderKey = generateToDoKey(index, 'folderkey');
     const toDoFolder = localStorage.getItem(toDoFolderKey);
     const folder = localStorage.getItem(folderKey);
@@ -98,7 +98,7 @@ const matchToDoFolderKey = (index, folderKey) => {
 const loadToDos = (folderKey) => {
     let count = getToDoCount();
     for (let i = 0; i <= count; i++) {
-        if (matchToDoFolderKey(i, folderKey)) {
+        if (checkToDoFolderMatch(i, folderKey)) {
             loadToDo(i);
         }
     }

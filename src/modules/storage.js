@@ -180,7 +180,7 @@ const storeToDo = (toDoItem) => {
     storeToDoDueDate(toDoItem, toDoNum);
     storeToDoPriority(toDoItem, toDoNum);
     storeToDoDesc(toDoItem, toDoNum);
-    storeToDoFolderKey(activeFolderValue, toDoNum);
+    storeToDoFolderValue(activeFolderValue, toDoNum);
     incrementToDoCount(toDoNum);
 };
 
@@ -210,9 +210,9 @@ const storeToDoDesc = (toDoItem, toDoNum) => {
     localStorage.setItem(descKey, toDoItem.description);
 };
 
-const storeToDoFolderKey = (activeFolderKey, toDoNum) => {
+const storeToDoFolderValue = (activeFolderValue, toDoNum) => {
     const toDoFolderKey = generateToDoKey(toDoNum, 'folderkey');
-    localStorage.setItem(toDoFolderKey, activeFolderKey);
+    localStorage.setItem(toDoFolderKey, activeFolderValue);
 };
 
 const incrementToDoCount = (toDoNum) => {

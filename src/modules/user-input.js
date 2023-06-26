@@ -63,6 +63,15 @@ const registerRemoveFolderListener = (button, folderDiv, sidebarElement, folder)
 
 /* To Do */
 
+const addToDoInputs = () => {
+    const title = getInput('title-input');
+    const dueDate = getInput('duedate-input');
+    const priority = getRadioInput('priority-input');
+    const description = getInput('description-input');
+
+    addToDo(title, dueDate, priority, description);
+};
+
 const registerAddToDoListener = (button) => {
     button.addEventListener('click', () => {
         toggleToDoFormVisible(true);
@@ -79,7 +88,7 @@ const registerToDoFormClearListener = (form, clearButton) => {
 const registerToDoSubmitListener = (form) => {
     form.addEventListener('submit', (event) => {
         event.preventDefault();
-        addToDo();
+        addToDoInputs();
         toggleToDoFormVisible(false);
         form.reset();
     });

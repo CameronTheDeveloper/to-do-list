@@ -8696,17 +8696,8 @@ const addToDoButton = () => {
     (0,_user_input__WEBPACK_IMPORTED_MODULE_2__.registerAddToDoListener)(addToDoButton);
 };
 
-const addToDoInputs = () => {
-    const title = (0,_user_input__WEBPACK_IMPORTED_MODULE_2__.getInput)('title-input');
-    const dueDate = (0,_user_input__WEBPACK_IMPORTED_MODULE_2__.getInput)('duedate-input');
-    const priority = (0,_user_input__WEBPACK_IMPORTED_MODULE_2__.getRadioInput)('priority-input');
-    const description = (0,_user_input__WEBPACK_IMPORTED_MODULE_2__.getInput)('description-input');
+const addToDo = (title, dueDate, priority, description) => {
     const toDoItem = toDo(title, dueDate, priority, description);
-    return toDoItem;
-};
-
-const addToDo = () => {
-    const toDoItem = addToDoInputs();
     const folder = (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_3__.getActiveFolder)();
     (0,_storage__WEBPACK_IMPORTED_MODULE_5__.storeToDo)(toDoItem);
     (0,_page_dom__WEBPACK_IMPORTED_MODULE_1__.displayToDo)(toDoItem, folder);
@@ -8801,6 +8792,15 @@ const registerRemoveFolderListener = (button, folderDiv, sidebarElement, folder)
 
 /* To Do */
 
+const addToDoInputs = () => {
+    const title = getInput('title-input');
+    const dueDate = getInput('duedate-input');
+    const priority = getRadioInput('priority-input');
+    const description = getInput('description-input');
+
+    (0,_to_do__WEBPACK_IMPORTED_MODULE_1__.addToDo)(title, dueDate, priority, description);
+};
+
 const registerAddToDoListener = (button) => {
     button.addEventListener('click', () => {
         (0,_form_dom__WEBPACK_IMPORTED_MODULE_2__.toggleToDoFormVisible)(true);
@@ -8817,7 +8817,7 @@ const registerToDoFormClearListener = (form, clearButton) => {
 const registerToDoSubmitListener = (form) => {
     form.addEventListener('submit', (event) => {
         event.preventDefault();
-        (0,_to_do__WEBPACK_IMPORTED_MODULE_1__.addToDo)();
+        addToDoInputs();
         (0,_form_dom__WEBPACK_IMPORTED_MODULE_2__.toggleToDoFormVisible)(false);
         form.reset();
     });

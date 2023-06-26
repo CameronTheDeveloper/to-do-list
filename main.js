@@ -8242,7 +8242,7 @@ const loadToDo = (index) => {
     const dueDate = getToDoDueDate(toDoKey);
     const priority = getToDoPriority(toDoKey);
     const desc = getToDoDesc(toDoKey);
-    (0,_to_do__WEBPACK_IMPORTED_MODULE_1__.addToDo)(title, dueDate, priority, desc);
+    const toDoItem = (0,_to_do__WEBPACK_IMPORTED_MODULE_1__.addToDo)(title, dueDate, priority, desc);
 };
 
 const getToDoTitle = (toDoKey) => {
@@ -8671,8 +8671,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _user_input__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./user-input */ "./src/modules/user-input.js");
 /* harmony import */ var _to_do_folders__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./to-do-folders */ "./src/modules/to-do-folders.js");
 /* harmony import */ var _form_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./form-dom */ "./src/modules/form-dom.js");
-/* harmony import */ var _storage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./storage */ "./src/modules/storage.js");
-
 
 
 
@@ -8700,8 +8698,8 @@ const addToDoButton = () => {
 const addToDo = (title, dueDate, priority, description) => {
     const toDoItem = toDo(title, dueDate, priority, description);
     const folder = (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_3__.getActiveFolder)();
-    (0,_storage__WEBPACK_IMPORTED_MODULE_5__.storeToDo)(toDoItem);
     (0,_page_dom__WEBPACK_IMPORTED_MODULE_1__.displayToDo)(toDoItem, folder);
+    return toDoItem;
 };
 
 const initToDo = () => {
@@ -8799,7 +8797,9 @@ const addToDoInputs = () => {
     const priority = getRadioInput('priority-input');
     const description = getInput('description-input');
 
-    (0,_to_do__WEBPACK_IMPORTED_MODULE_1__.addToDo)(title, dueDate, priority, description);
+    const toDoItem = (0,_to_do__WEBPACK_IMPORTED_MODULE_1__.addToDo)(title, dueDate, priority, description);
+    (0,_storage__WEBPACK_IMPORTED_MODULE_3__.storeToDo)(toDoItem);
+
 };
 
 const registerAddToDoListener = (button) => {

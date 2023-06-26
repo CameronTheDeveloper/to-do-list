@@ -8150,7 +8150,6 @@ __webpack_require__.r(__webpack_exports__);
 const sidebarFolders = document.querySelector('#sidebar-folders');
 
 const initSidebar = () => {
-    //Initialize storage
     addSidebarInput();
 };
 
@@ -8711,7 +8710,6 @@ const initToDo = () => {
 
 
 
-
 /***/ }),
 
 /***/ "./src/modules/user-input.js":
@@ -8722,8 +8720,6 @@ const initToDo = () => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "getInput": () => (/* binding */ getInput),
-/* harmony export */   "getRadioInput": () => (/* binding */ getRadioInput),
 /* harmony export */   "registerAddToDoListener": () => (/* binding */ registerAddToDoListener),
 /* harmony export */   "registerRemoveFolderListener": () => (/* binding */ registerRemoveFolderListener),
 /* harmony export */   "registerSidebarSubmitListener": () => (/* binding */ registerSidebarSubmitListener),
@@ -8786,7 +8782,6 @@ const registerRemoveFolderListener = (button, folderDiv, sidebarElement, folder)
         (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_0__.resetActiveFolder)(folderDiv);
         removeFolder(folderDiv, sidebarElement);
         (0,_storage__WEBPACK_IMPORTED_MODULE_3__.removeFolderFromStorage)(folder);
-
     });
 };
 
@@ -8797,10 +8792,8 @@ const addToDoInputs = () => {
     const dueDate = getInput('duedate-input');
     const priority = getRadioInput('priority-input');
     const description = getInput('description-input');
-
     const toDoItem = (0,_to_do__WEBPACK_IMPORTED_MODULE_1__.addToDo)(title, dueDate, priority, description);
     (0,_storage__WEBPACK_IMPORTED_MODULE_3__.storeToDo)(toDoItem);
-
 };
 
 const registerAddToDoListener = (button) => {

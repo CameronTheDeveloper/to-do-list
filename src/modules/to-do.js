@@ -4,9 +4,7 @@ import {
     displayToDo
 } from './page-dom';
 import {
-    registerAddToDoListener,
-    getInput,
-    getRadioInput
+    registerAddToDoListener
 } from './user-input';
 import { getActiveFolder } from './to-do-folders';
 import { addToDoForm } from './form-dom';
@@ -39,7 +37,6 @@ const initToDo = () => {
     addToDoForm(toDoInputs);
     addToDoButton();
 };
-
 
 
 export { initToDo, addToDo };

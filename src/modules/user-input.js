@@ -58,7 +58,6 @@ const registerRemoveFolderListener = (button, folderDiv, sidebarElement, folder)
         resetActiveFolder(folderDiv);
         removeFolder(folderDiv, sidebarElement);
         removeFolderFromStorage(folder);
-
     });
 };
 
@@ -69,10 +68,8 @@ const addToDoInputs = () => {
     const dueDate = getInput('duedate-input');
     const priority = getRadioInput('priority-input');
     const description = getInput('description-input');
-
     const toDoItem = addToDo(title, dueDate, priority, description);
     storeToDo(toDoItem);
-
 };
 
 const registerAddToDoListener = (button) => {
@@ -102,7 +99,5 @@ export {
     registerRemoveFolderListener,
     registerAddToDoListener,
     registerToDoFormClearListener,
-    registerToDoSubmitListener,
-    getInput,
-    getRadioInput,
+    registerToDoSubmitListener
 };

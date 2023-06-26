@@ -5,7 +5,6 @@ import { addSidebarForm } from './form-dom';
 const sidebarFolders = document.querySelector('#sidebar-folders');
 
 const initSidebar = () => {
-    //Initialize storage
     addSidebarInput();
 };
 

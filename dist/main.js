@@ -8237,7 +8237,7 @@ const getFolderTitle = (folderKey) => {
 };
 
 const loadToDo = (index) => {
-    const toDoKey = `${keyPrefix}toDo${index}`;
+    const toDoKey = `${keyPrefix}todo${index}`;
     const title = getToDoTitle(toDoKey);
     const dueDate = getToDoDueDate(toDoKey);
     const priority = getToDoPriority(toDoKey);

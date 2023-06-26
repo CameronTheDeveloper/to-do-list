@@ -7725,86 +7725,85 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "setRadioAttributes": () => (/* binding */ setRadioAttributes)
 /* harmony export */ });
 const addAttributes = (text, attType, attName, elementType) => {
-    const element = document.createElement(elementType);
-    element.textContent = text;
-    element.setAttribute(attType, attName);
-    return element;
+  const element = document.createElement(elementType);
+  element.textContent = text;
+  element.setAttribute(attType, attName);
+  return element;
 };
 
 const addButtonAttributes = (button, type, id, className, text) => {
-    button.setAttribute('type', type);
-    button.setAttribute('id', id);
-    button.setAttribute('class', className);
-    button.textContent = text;
+  button.setAttribute('type', type);
+  button.setAttribute('id', id);
+  button.setAttribute('class', className);
+  button.textContent = text;
 };
 
 const setTextInputAttributes = (item, type, id, maxLength) => {
-    item.setAttribute('type', type);
-    item.setAttribute('id', id);
-    item.setAttribute('name', id);
-    item.setAttribute('maxLength', maxLength);
-    item.required = true;
+  item.setAttribute('type', type);
+  item.setAttribute('id', id);
+  item.setAttribute('name', id);
+  item.setAttribute('maxLength', maxLength);
+  item.required = true;
 };
 
 const setTextAreaAttributes = (item, id, cols, rows, maxLength) => {
-    item.setAttribute('id', id);
-    item.setAttribute('name', id);
-    item.setAttribute('rows', rows);
-    item.setAttribute('cols', cols);
-    item.setAttribute('maxlength', maxLength);
+  item.setAttribute('id', id);
+  item.setAttribute('name', id);
+  item.setAttribute('rows', rows);
+  item.setAttribute('cols', cols);
+  item.setAttribute('maxlength', maxLength);
 };
 
 const setRadioAttributes = (element, label, name, value) => {
-    const id = value.toLowerCase().replace(/\s/g, '-') + '-radio';
+  const id = value.toLowerCase().replace(/\s/g, '-') + '-radio';
 
-    element.setAttribute('type', 'radio');
-    element.setAttribute('id', id);
-    element.setAttribute('name', name);
-    element.setAttribute('value', value);
-    label.setAttribute('for', id);
-    label.innerHTML = value;
+  element.setAttribute('type', 'radio');
+  element.setAttribute('id', id);
+  element.setAttribute('name', name);
+  element.setAttribute('value', value);
+  label.setAttribute('for', id);
+  label.innerHTML = value;
 };
 
 const setDateInputAttributes = (element, label, min, max, value, id, name) => {
-    setLabelAttributes(label, 'for', id, 'Due');
-    element.setAttribute('type', 'date');
-    element.setAttribute('min', min);
-    element.setAttribute('max', max);
-    element.setAttribute('value', value);
-    element.setAttribute('id', id);
-    element.setAttribute('name', name);
+  setLabelAttributes(label, 'for', id, 'Due');
+  element.setAttribute('type', 'date');
+  element.setAttribute('min', min);
+  element.setAttribute('max', max);
+  element.setAttribute('value', value);
+  element.setAttribute('id', id);
+  element.setAttribute('name', name);
 };
 
 const setFormElementAttributes = (form, action, method) => {
-    form.setAttribute('action', action);
-    form.setAttribute('method', method);
+  form.setAttribute('action', action);
+  form.setAttribute('method', method);
 };
 
 const addSidebarFormAttributes = (form, input) => {
-    setTextInputAttributes(input, 'text', 'folder-title', '25');
-    setFormElementAttributes(form, '', 'post');
+  setTextInputAttributes(input, 'text', 'folder-title', '25');
+  setFormElementAttributes(form, '', 'post');
 };
 
 const addToDoFormAttributes = (form) => {
-    setFormElementAttributes(form, '', 'post');
+  setFormElementAttributes(form, '', 'post');
 };
 
 const addToDoTitleInputAttributes = (titleLabel, title) => {
-    setLabelAttributes(titleLabel, 'for', 'title-input', 'Title');
-    setTextInputAttributes(title, 'text', 'title-input', '39');
+  setLabelAttributes(titleLabel, 'for', 'title-input', 'Title');
+  setTextInputAttributes(title, 'text', 'title-input', '39');
 };
 
 const addToDoDescInputAttributes = (descLabel, desc) => {
-    setLabelAttributes(descLabel, 'for', 'description-input', 'Description');
-    setTextAreaAttributes(desc, 'description-input', '26', '5', '216');
+  setLabelAttributes(descLabel, 'for', 'description-input', 'Description');
+  setTextAreaAttributes(desc, 'description-input', '26', '5', '216');
 };
 
 const setLabelAttributes = (item, attType, att, text) => {
-    item.setAttribute(attType, att);
-    item.setAttribute('class', 'form-label');
-    item.innerHTML = text;
+  item.setAttribute(attType, att);
+  item.setAttribute('class', 'form-label');
+  item.innerHTML = text;
 };
-
 
 
 
@@ -7835,167 +7834,190 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const addFormParent = (parent, id, className) => {
-    const element = document.createElement('div');
+  const element = document.createElement('div');
 
-    element.setAttribute('id', id);
-    element.setAttribute('class', className);
-    parent.appendChild(element);
-    return element;
+  element.setAttribute('id', id);
+  element.setAttribute('class', className);
+  parent.appendChild(element);
+  return element;
 };
 
 const addFormElement = (parent) => {
-    const element = document.createElement('form');
+  const element = document.createElement('form');
 
-    parent.appendChild(element);
-    return element;
+  parent.appendChild(element);
+  return element;
 };
 
 const addFormToDOM = (parent, id, className) => {
-    const formParent = addFormParent(parent, id, className);
-    const form = addFormElement(formParent);
+  const formParent = addFormParent(parent, id, className);
+  const form = addFormElement(formParent);
 
-    return form;
+  return form;
 };
 
 const addSidebarForm = (parent) => {
-    const form = addFormToDOM(parent, 'sidebar-add-form', 'active');
-    const input = addFormInputElement('input', form);
+  const form = addFormToDOM(parent, 'sidebar-add-form', 'active');
+  const input = addFormInputElement('input', form);
 
-    (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addSidebarFormAttributes)(form, input);
-    (0,_user_input__WEBPACK_IMPORTED_MODULE_0__.registerSidebarSubmitListener)(form);
-    return form;
+  (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addSidebarFormAttributes)(form, input);
+  (0,_user_input__WEBPACK_IMPORTED_MODULE_0__.registerSidebarSubmitListener)(form);
+  return form;
 };
 
 const addToDoForm = (parent) => {
-    const form = addFormToDOM(parent, 'todo-add-form', 'inactive');
-    const titleDiv = addToDoTitleInput();
-    const dueDateDiv = addToDoDueDateInput();
-    const priorityDiv = addToDoPriorityInput();
-    const descDiv = addToDoDescInput();
+  const form = addFormToDOM(parent, 'todo-add-form', 'inactive');
+  const titleDiv = addToDoTitleInput();
+  const dueDateDiv = addToDoDueDateInput();
+  const priorityDiv = addToDoPriorityInput();
+  const descDiv = addToDoDescInput();
 
-    (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.setFormElementAttributes)(form, '', 'post');
-    addToDoFormDivs(form, titleDiv, dueDateDiv, priorityDiv, descDiv);
-    addToDoFormButtons(form);
+  (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.setFormElementAttributes)(form, '', 'post');
+  addToDoFormDivs(form, titleDiv, dueDateDiv, priorityDiv, descDiv);
+  addToDoFormButtons(form);
 };
 
 const addToDoTitleInput = () => {
-    const titleDiv = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)('', 'id', 'todo-form-title-parent', 'div');
-    const titleLabel = addFormLabelElement(titleDiv);
-    const title = addFormInputElement('input', titleDiv);
+  const titleDiv = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)('', 'id', 'todo-form-title-parent', 'div');
+  const titleLabel = addFormLabelElement(titleDiv);
+  const title = addFormInputElement('input', titleDiv);
 
-    (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addToDoTitleInputAttributes)(titleLabel, title);
-    return titleDiv;
+  (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addToDoTitleInputAttributes)(titleLabel, title);
+  return titleDiv;
 };
 
 const addToDoDueDateInput = () => {
-    const dueDateDiv = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)('', 'id', 'todo-form-duedate-parent', 'div');
-    const today = new Date();
-    const minDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_3__["default"])(today, 'yyyy-MM-dd');
-    const id = 'duedate-input';
-    const name = 'todo-duedate';
-    const maxDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_4__["default"])(today, 75);
-    const formattedMaxDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_3__["default"])(maxDate, 'yyyy-MM-dd');
+  const dueDateDiv = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)('', 'id', 'todo-form-duedate-parent', 'div');
+  const today = new Date();
+  const minDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_3__["default"])(today, 'yyyy-MM-dd');
+  const id = 'duedate-input';
+  const name = 'todo-duedate';
+  const maxDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_4__["default"])(today, 75);
+  const formattedMaxDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_3__["default"])(maxDate, 'yyyy-MM-dd');
 
-    addFormDateElements(dueDateDiv, minDate, formattedMaxDate, minDate, id, name);
-    return dueDateDiv;
+  addFormDateElements(dueDateDiv, minDate, formattedMaxDate, minDate, id, name);
+  return dueDateDiv;
 };
 
 const addToDoPriorityInput = () => {
-    const priorityDiv = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)('', 'id', 'todo-form-priority-parent', 'div');
-    const optionsAr = ['Low', 'Medium', 'High'];
-    const fieldset = createFieldset('Priority');
+  const priorityDiv = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)(
+    '',
+    'id',
+    'todo-form-priority-parent',
+    'div',
+  );
+  const optionsAr = ['Low', 'Medium', 'High'];
+  const fieldset = createFieldset('Priority');
 
-    setRadioFormElements(fieldset, 'priority-input', optionsAr);
-    priorityDiv.appendChild(fieldset);
-    return priorityDiv;
+  setRadioFormElements(fieldset, 'priority-input', optionsAr);
+  priorityDiv.appendChild(fieldset);
+  return priorityDiv;
 };
 
 const addToDoDescInput = () => {
-    const descDiv = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)('', 'id', 'todo-form-desc-parent', 'div');
-    const descLabel = addFormLabelElement(descDiv);
-    const description = addFormInputElement('textarea', descDiv);
+  const descDiv = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)('', 'id', 'todo-form-desc-parent', 'div');
+  const descLabel = addFormLabelElement(descDiv);
+  const description = addFormInputElement('textarea', descDiv);
 
-    (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addToDoDescInputAttributes)(descLabel, description);
-    return descDiv;
+  (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addToDoDescInputAttributes)(descLabel, description);
+  return descDiv;
 };
 
 const addToDoFormDivs = (form, titleDiv, dateDiv, priorityDiv, descDiv) => {
-    form.appendChild(titleDiv);
-    form.appendChild(dateDiv);
-    form.appendChild(priorityDiv);
-    form.appendChild(descDiv);
+  form.appendChild(titleDiv);
+  form.appendChild(dateDiv);
+  form.appendChild(priorityDiv);
+  form.appendChild(descDiv);
 };
 
 const addToDoFormButtons = (form) => {
-    const formButtonsDiv = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)('', 'id', 'todo-form-buttons-container', 'div');
-    const clearButton = (0,_page_dom__WEBPACK_IMPORTED_MODULE_2__.addButton)(formButtonsDiv, 'button', 'todo-form-clear-button', 'active', 'Clear');
-    const submitButton = (0,_page_dom__WEBPACK_IMPORTED_MODULE_2__.addButton)(formButtonsDiv, 'submit', 'todo-submit-button', 'active', 'Submit');
+  const formButtonsDiv = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)(
+    '',
+    'id',
+    'todo-form-buttons-container',
+    'div',
+  );
+  const clearButton = (0,_page_dom__WEBPACK_IMPORTED_MODULE_2__.addButton)(
+    formButtonsDiv,
+    'button',
+    'todo-form-clear-button',
+    'active',
+    'Clear',
+  );
+  const submitButton = (0,_page_dom__WEBPACK_IMPORTED_MODULE_2__.addButton)(
+    formButtonsDiv,
+    'submit',
+    'todo-submit-button',
+    'active',
+    'Submit',
+  );
 
-    form.appendChild(formButtonsDiv);
-    (0,_user_input__WEBPACK_IMPORTED_MODULE_0__.registerToDoFormClearListener)(form, clearButton);
-    (0,_user_input__WEBPACK_IMPORTED_MODULE_0__.registerToDoSubmitListener)(form);
+  form.appendChild(formButtonsDiv);
+  (0,_user_input__WEBPACK_IMPORTED_MODULE_0__.registerToDoFormClearListener)(form, clearButton);
+  (0,_user_input__WEBPACK_IMPORTED_MODULE_0__.registerToDoSubmitListener)(form);
 };
 
 const toggleToDoFormVisible = (formActive) => {
-    const toDoForm = document.querySelector('#todo-add-form');
-    const checkedRadio = document.querySelector('#low-radio');
-    const toDoAddButton = document.querySelector('#todo-add-button');
+  const toDoForm = document.querySelector('#todo-add-form');
+  const checkedRadio = document.querySelector('#low-radio');
+  const toDoAddButton = document.querySelector('#todo-add-button');
 
-    if (formActive == true) {
-        toDoAddButton.className = 'inactive';
-        checkedRadio.checked = true;
-        toDoForm.className = 'active';
-    } else {
-        toDoForm.className = 'inactive';
-        toDoAddButton.className = 'active';
-    }
+  if (formActive == true) {
+    toDoAddButton.className = 'inactive';
+    checkedRadio.checked = true;
+    toDoForm.className = 'active';
+  } else {
+    toDoForm.className = 'inactive';
+    toDoAddButton.className = 'active';
+  }
 };
 
 const addFormInputElement = (type, parent) => {
-    const input = document.createElement(type);
+  const input = document.createElement(type);
 
-    parent.appendChild(input);
-    return input;
+  parent.appendChild(input);
+  return input;
 };
 
 const addFormDateElements = (parent, min, max, value, id, name) => {
-    const dueDateLabel = addFormLabelElement(parent);
-    const dateInput = addFormInputElement('input', parent);
+  const dueDateLabel = addFormLabelElement(parent);
+  const dateInput = addFormInputElement('input', parent);
 
-    (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.setDateInputAttributes)(dateInput, dueDateLabel, min, max, value, id, name);
+  (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.setDateInputAttributes)(dateInput, dueDateLabel, min, max, value, id, name);
 };
 
 const addFormRadioElements = (parent, name, option) => {
-    const radioInput = document.createElement('input');
-    const label = document.createElement('label');
+  const radioInput = document.createElement('input');
+  const label = document.createElement('label');
 
-    (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.setRadioAttributes)(radioInput, label, name, option);
-    parent.appendChild(radioInput);
-    parent.appendChild(label);
+  (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.setRadioAttributes)(radioInput, label, name, option);
+  parent.appendChild(radioInput);
+  parent.appendChild(label);
 };
 
 const setRadioFormElements = (fieldset, name, optionsAr) => {
-    for (let i = 0; i < optionsAr.length; i++) {
-        const parentDiv = document.createElement('div');
-        fieldset.appendChild(parentDiv);
-        addFormRadioElements(parentDiv, name, optionsAr[i]);
-    }
+  for (let i = 0; i < optionsAr.length; i++) {
+    const parentDiv = document.createElement('div');
+    fieldset.appendChild(parentDiv);
+    addFormRadioElements(parentDiv, name, optionsAr[i]);
+  }
 };
 
 const createFieldset = (legendText) => {
-    const fieldset = document.createElement('fieldset');
-    const legend = document.createElement('legend');
+  const fieldset = document.createElement('fieldset');
+  const legend = document.createElement('legend');
 
-    fieldset.appendChild(legend);
-    legend.innerHTML = legendText;
-    return fieldset;
+  fieldset.appendChild(legend);
+  legend.innerHTML = legendText;
+  return fieldset;
 };
 
 const addFormLabelElement = (parent) => {
-    const label = document.createElement('label');
-    parent.appendChild(label);
-    return label;
+  const label = document.createElement('label');
+  parent.appendChild(label);
+  return label;
 };
+
 
 
 
@@ -8027,104 +8049,139 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 const addContent = (parent, text, className, elementType) => {
-    const element = document.createElement(elementType);
-    element.textContent = text;
-    element.classList.add(className);
-    parent.appendChild(element);
+  const element = document.createElement(elementType);
+  element.textContent = text;
+  element.classList.add(className);
+  parent.appendChild(element);
 };
 
 const addFolderContentElements = (contentItems, folderClass) => {
-    const folderParent = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)('', 'class', 'todo-folder', 'div');
-    folderParent.classList.add(folderClass);
-    contentItems.appendChild(folderParent);
-    return folderParent;
+  const folderParent = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)('', 'class', 'todo-folder', 'div');
+  folderParent.classList.add(folderClass);
+  contentItems.appendChild(folderParent);
+  return folderParent;
 };
 
 const addFolderSidebarElements = (folder, folderContentDiv, buttonClass) => {
-    const sidebarForm = document.querySelector('#sidebar-add-form');
-    const sidebarFolders = document.querySelector('#sidebar-folders');
-    const sidebarDiv = addAbove('sidebar-folder', 'div', sidebarFolders, sidebarForm);
-    const sidebarTitle = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)(folder.title, 'class', 'sidebar-folder-title', 'div');
-    const removeButton = addFolderClearButton(sidebarDiv, buttonClass);
+  const sidebarForm = document.querySelector('#sidebar-add-form');
+  const sidebarFolders = document.querySelector('#sidebar-folders');
+  const sidebarDiv = addAbove(
+    'sidebar-folder',
+    'div',
+    sidebarFolders,
+    sidebarForm,
+  );
+  const sidebarTitle = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)(
+    folder.title,
+    'class',
+    'sidebar-folder-title',
+    'div',
+  );
+  const removeButton = addFolderClearButton(sidebarDiv, buttonClass);
 
-    addSidebarFolderChildElements(sidebarDiv, sidebarTitle, removeButton);
-    (0,_user_input__WEBPACK_IMPORTED_MODULE_2__.registerRemoveFolderListener)(removeButton, folderContentDiv, sidebarDiv, folder);
-    return sidebarDiv;
+  addSidebarFolderChildElements(sidebarDiv, sidebarTitle, removeButton);
+  (0,_user_input__WEBPACK_IMPORTED_MODULE_2__.registerRemoveFolderListener)(
+    removeButton,
+    folderContentDiv,
+    sidebarDiv,
+    folder,
+  );
+  return sidebarDiv;
 };
 
 const addSidebarFolderChildElements = (parent, title, removeButton) => {
-    parent.appendChild(title);
-    parent.appendChild(removeButton);
+  parent.appendChild(title);
+  parent.appendChild(removeButton);
 };
 
 const formatToDoDate = (date) => {
-    const dateString = date.toString();
-    const parsedDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_3__["default"])(dateString, 'yyyy-MM-dd', new Date());
-    const formattedDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_4__["default"])(parsedDate, 'MMMM dd, yyyy');
+  const dateString = date.toString();
+  const parsedDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_3__["default"])(dateString, 'yyyy-MM-dd', new Date());
+  const formattedDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_4__["default"])(parsedDate, 'MMMM dd, yyyy');
 
-    return formattedDate;
+  return formattedDate;
 };
 
 const addToDoContent = (toDoItem) => {
-    const toDoContentDiv = document.createElement('div');
-    const dueDateDiv = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)('', 'class', 'due-date-div', 'div');
-    const dueDateLabel = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)('Due - ', 'class', 'duedate-label', 'div');
-    const formattedDate = formatToDoDate(toDoItem.dueDate);
-    const dueDateValue = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)(formattedDate, 'class', 'due-date', 'div');
-    const priorityDiv = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)('', 'class', 'priority-div', 'div');
-    const priorityLabel = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)('Priority - ', 'class', 'priority-label', 'div');
-    const priorityValue = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)(toDoItem.priority, 'class', 'priority', 'div');
-    const descDiv = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)(toDoItem.description, 'class', 'description', 'p');
+  const toDoContentDiv = document.createElement('div');
+  const dueDateDiv = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)('', 'class', 'due-date-div', 'div');
+  const dueDateLabel = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)('Due - ', 'class', 'duedate-label', 'div');
+  const formattedDate = formatToDoDate(toDoItem.dueDate);
+  const dueDateValue = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)(formattedDate, 'class', 'due-date', 'div');
+  const priorityDiv = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)('', 'class', 'priority-div', 'div');
+  const priorityLabel = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)(
+    'Priority - ',
+    'class',
+    'priority-label',
+    'div',
+  );
+  const priorityValue = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)(
+    toDoItem.priority,
+    'class',
+    'priority',
+    'div',
+  );
+  const descDiv = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)(
+    toDoItem.description,
+    'class',
+    'description',
+    'p',
+  );
 
-    toDoContentDiv.setAttribute('class', 'todo-content');
-    dueDateDiv.appendChild(dueDateLabel);
-    dueDateDiv.appendChild(dueDateValue);
-    priorityDiv.appendChild(priorityLabel);
-    priorityDiv.appendChild(priorityValue);
-    toDoContentDiv.appendChild(dueDateDiv);
-    toDoContentDiv.appendChild(priorityDiv);
-    toDoContentDiv.appendChild(descDiv);
-    return toDoContentDiv;
+  toDoContentDiv.setAttribute('class', 'todo-content');
+  dueDateDiv.appendChild(dueDateLabel);
+  dueDateDiv.appendChild(dueDateValue);
+  priorityDiv.appendChild(priorityLabel);
+  priorityDiv.appendChild(priorityValue);
+  toDoContentDiv.appendChild(dueDateDiv);
+  toDoContentDiv.appendChild(priorityDiv);
+  toDoContentDiv.appendChild(descDiv);
+  return toDoContentDiv;
 };
 
 const displayToDo = (toDoItem, folder) => {
-    const toDoInputs = document.querySelector('#todo-inputs');
-    const toDoParent = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)('', 'class', 'todo expand-mode', 'div');
-    const titleDiv = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)(toDoItem.title, 'class', 'title', 'div');
-    const toDoContentDiv = addToDoContent(toDoItem);
+  const toDoInputs = document.querySelector('#todo-inputs');
+  const toDoParent = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)('', 'class', 'todo expand-mode', 'div');
+  const titleDiv = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)(toDoItem.title, 'class', 'title', 'div');
+  const toDoContentDiv = addToDoContent(toDoItem);
 
-    folder.insertBefore(toDoParent, toDoInputs);
-    toDoParent.appendChild(titleDiv);
-    toDoParent.appendChild(toDoContentDiv);
-    (0,_to_do_mode__WEBPACK_IMPORTED_MODULE_0__.addToDoClickEventListener)(toDoParent, toDoItem);
+  folder.insertBefore(toDoParent, toDoInputs);
+  toDoParent.appendChild(titleDiv);
+  toDoParent.appendChild(toDoContentDiv);
+  (0,_to_do_mode__WEBPACK_IMPORTED_MODULE_0__.addToDoClickEventListener)(toDoParent, toDoItem);
 };
 
 const addAbove = (className, elementType, parent, lowerDiv) => {
-    const element = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)('', 'class', className, elementType);
-    parent.insertBefore(element, lowerDiv);
-    return element;
+  const element = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)('', 'class', className, elementType);
+  parent.insertBefore(element, lowerDiv);
+  return element;
 };
 
 const addButton = (parent, type, id, className, text) => {
-    const button = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)(text, 'id', id, 'button');
-    (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addButtonAttributes)(button, type, id, className, text);
-    parent.appendChild(button);
-    return button;
+  const button = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)(text, 'id', id, 'button');
+  (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addButtonAttributes)(button, type, id, className, text);
+  parent.appendChild(button);
+  return button;
 };
 
 const addFolderClearButton = (parent, activeClass) => {
-    const button = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)('X', 'class', 'remove-folder-button ' + activeClass, 'button');
-    parent.appendChild(button);
-    return button;
+  const button = (0,_attributes__WEBPACK_IMPORTED_MODULE_1__.addAttributes)(
+    'X',
+    'class',
+    'remove-folder-button ' + activeClass,
+    'button',
+  );
+  parent.appendChild(button);
+  return button;
 };
 
 const hideElements = (elements) => {
-    elements.forEach((element) => {
-        element.style.display = 'none';
-    });
+  elements.forEach((element) => {
+    element.style.display = 'none';
+  });
 };
+
 
 
 
@@ -8150,13 +8207,20 @@ __webpack_require__.r(__webpack_exports__);
 const sidebarFolders = document.querySelector('#sidebar-folders');
 
 const initSidebar = () => {
-    addSidebarInput();
+  addSidebarInput();
 };
 
 const addSidebarInput = () => {
-    const sidebarForm = (0,_form_dom__WEBPACK_IMPORTED_MODULE_2__.addSidebarForm)(sidebarFolders);
-    const sidebarButton = (0,_page_dom__WEBPACK_IMPORTED_MODULE_1__.addButton)(sidebarForm, 'submit', 'sidebar-add-button', 'active', '+ Folder');
+  const sidebarForm = (0,_form_dom__WEBPACK_IMPORTED_MODULE_2__.addSidebarForm)(sidebarFolders);
+  const sidebarButton = (0,_page_dom__WEBPACK_IMPORTED_MODULE_1__.addButton)(
+    sidebarForm,
+    'submit',
+    'sidebar-add-button',
+    'active',
+    '+ Folder',
+  );
 };
+
 
 
 
@@ -8191,254 +8255,253 @@ const folderCountKey = `${keyPrefix}folderCount`;
 const toDoCountKey = `${keyPrefix}toDoCount`;
 
 const getFolderCount = () => {
-    return localStorage.getItem(folderCountKey);
+  return localStorage.getItem(folderCountKey);
 };
 
 const getToDoCount = () => {
-    return localStorage.getItem(toDoCountKey);
+  return localStorage.getItem(toDoCountKey);
 };
 
 const checkIfStored = (key) => {
-    const value = localStorage.getItem(key);
-    if (value != null) {
-        return true;
-    } else {
-        return false;
-    }
+  const value = localStorage.getItem(key);
+  if (value != null) {
+    return true;
+  } else {
+    return false;
+  }
 };
 
 const initializeStorageCounts = () => {
-    localStorage.setItem(folderCountKey, 0);
-    localStorage.setItem(toDoCountKey, 0);
+  localStorage.setItem(folderCountKey, 0);
+  localStorage.setItem(toDoCountKey, 0);
 };
 
 const loadFolder = (index, buttonClass) => {
-    const folderKey = `${keyPrefix}folder${index}`;
-    const folderTitle = getFolderTitle(folderKey);
-    checkIfStored(folderKey);
-    if (checkIfStored(folderKey)) {
-        const toDoFolder = (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_0__.addToDoFolder)(folderTitle, buttonClass, folderKey);
-        toDoFolder.key = folderKey;
-    }
-    loadToDos(folderKey);
+  const folderKey = `${keyPrefix}folder${index}`;
+  const folderTitle = getFolderTitle(folderKey);
+  checkIfStored(folderKey);
+  if (checkIfStored(folderKey)) {
+    const toDoFolder = (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_0__.addToDoFolder)(folderTitle, buttonClass, folderKey);
+    toDoFolder.key = folderKey;
+  }
+  loadToDos(folderKey);
 };
 
 const loadFolders = () => {
-    const count = getFolderCount();
-    for (let i = 1; i < count; i++) {
-        loadFolder(i, 'active');
-    }
-    (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_0__.resetActiveFolder)('reset');
+  const count = getFolderCount();
+  for (let i = 1; i < count; i++) {
+    loadFolder(i, 'active');
+  }
+  (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_0__.resetActiveFolder)('reset');
 };
 
 const getFolderTitle = (folderKey) => {
-    const folderTitleKey = `${folderKey}title`;
-    const folderTitle = localStorage.getItem(folderTitleKey);
-    return folderTitle;
+  const folderTitleKey = `${folderKey}title`;
+  const folderTitle = localStorage.getItem(folderTitleKey);
+  return folderTitle;
 };
 
 const loadToDo = (index) => {
-    const toDoKey = `${keyPrefix}todo${index}`;
-    if (checkIfStored(toDoKey)) {
-        const title = getToDoTitle(toDoKey);
-        const dueDate = getToDoDueDate(toDoKey);
-        const priority = getToDoPriority(toDoKey);
-        const desc = getToDoDesc(toDoKey);
-        const toDoItem = (0,_to_do__WEBPACK_IMPORTED_MODULE_1__.addToDo)(title, dueDate, priority, desc);
-        toDoItem.key = toDoKey;
-    }
+  const toDoKey = `${keyPrefix}todo${index}`;
+  if (checkIfStored(toDoKey)) {
+    const title = getToDoTitle(toDoKey);
+    const dueDate = getToDoDueDate(toDoKey);
+    const priority = getToDoPriority(toDoKey);
+    const desc = getToDoDesc(toDoKey);
+    const toDoItem = (0,_to_do__WEBPACK_IMPORTED_MODULE_1__.addToDo)(title, dueDate, priority, desc);
+    toDoItem.key = toDoKey;
+  }
 };
 
 const getToDoTitle = (toDoKey) => {
-    const toDoTitleKey = `${toDoKey}title`;
-    const toDoTitle = localStorage.getItem(toDoTitleKey);
-    return toDoTitle;
+  const toDoTitleKey = `${toDoKey}title`;
+  const toDoTitle = localStorage.getItem(toDoTitleKey);
+  return toDoTitle;
 };
 
 const getToDoDueDate = (toDoKey) => {
-    const dueDateKey = `${toDoKey}duedate`;
-    const toDoDueDate = localStorage.getItem(dueDateKey);
-    return toDoDueDate;
+  const dueDateKey = `${toDoKey}duedate`;
+  const toDoDueDate = localStorage.getItem(dueDateKey);
+  return toDoDueDate;
 };
 
 const getToDoPriority = (toDoKey) => {
-    const priorityKey = `${toDoKey}priority`;
-    const toDoPriority = localStorage.getItem(priorityKey);
-    return toDoPriority;
+  const priorityKey = `${toDoKey}priority`;
+  const toDoPriority = localStorage.getItem(priorityKey);
+  return toDoPriority;
 };
 
 const getToDoDesc = (toDoKey) => {
-    const descKey = `${toDoKey}desc`;
-    const toDoDesc = localStorage.getItem(descKey);
-    return toDoDesc;
+  const descKey = `${toDoKey}desc`;
+  const toDoDesc = localStorage.getItem(descKey);
+  return toDoDesc;
 };
 
 const checkToDoFolderMatch = (index, folderKey) => {
-    const toDoFolderKey = generateToDoKey(index, 'folderkey');
-    const toDoFolder = localStorage.getItem(toDoFolderKey);
-    const folder = localStorage.getItem(folderKey);
+  const toDoFolderKey = generateToDoKey(index, 'folderkey');
+  const toDoFolder = localStorage.getItem(toDoFolderKey);
+  const folder = localStorage.getItem(folderKey);
 
-    if (toDoFolder === folder) {
-        return true;
-    } else {
-        return false;
-    }
+  if (toDoFolder === folder) {
+    return true;
+  } else {
+    return false;
+  }
 };
 
 const loadToDos = (folderKey) => {
-    let count = getToDoCount();
-    for (let i = 0; i < count; i++) {
-        if (checkToDoFolderMatch(i, folderKey)) {
-            loadToDo(i);
-        }
+  let count = getToDoCount();
+  for (let i = 0; i < count; i++) {
+    if (checkToDoFolderMatch(i, folderKey)) {
+      loadToDo(i);
     }
+  }
 };
 
 const loadStorage = () => {
-    loadFolders();
+  loadFolders();
 };
 
 const checkLocalStorage = () => {
-    if (localStorage.length === 0) {
-        initializeStorageCounts();
-        return false;
-    } else {
-        return true;
-    }
+  if (localStorage.length === 0) {
+    initializeStorageCounts();
+    return false;
+  } else {
+    return true;
+  }
 };
 
 /* Folder */
 
 const generateFolderKey = (folderNum, keyWord) => {
-    return `${keyPrefix}folder${folderNum}${keyWord}`;
+  return `${keyPrefix}folder${folderNum}${keyWord}`;
 };
 
 const getDefaultFolderKey = () => {
-    const defaultFolderKey = generateFolderKey('0', '');
-    return defaultFolderKey;
+  const defaultFolderKey = generateFolderKey('0', '');
+  return defaultFolderKey;
 };
 
 const getPrimaryFolderKey = () => {
-    const folderNum = getFolderCount();
-    return `${keyPrefix}folder${folderNum}`;
+  const folderNum = getFolderCount();
+  return `${keyPrefix}folder${folderNum}`;
 };
 
 const storeFolder = (folder) => {
-    let folderNum = getFolderCount();
+  let folderNum = getFolderCount();
 
-    storePrimaryFolderKey(folder, folderNum);
-    storeFolderTitle(folder.title, folderNum);
-    incrementFolderCount(folderNum);
+  storePrimaryFolderKey(folder, folderNum);
+  storeFolderTitle(folder.title, folderNum);
+  incrementFolderCount(folderNum);
 };
 
 const storePrimaryFolderKey = (folder, folderNum) => {
-    localStorage.setItem(folder.key, `folder${folderNum}`);
+  localStorage.setItem(folder.key, `folder${folderNum}`);
 };
 
 const storeFolderTitle = (title, folderNum) => {
-    const titleKey = generateFolderKey(folderNum, 'title');
-    localStorage.setItem(titleKey, title);
+  const titleKey = generateFolderKey(folderNum, 'title');
+  localStorage.setItem(titleKey, title);
 };
 
 const incrementFolderCount = (folderNum) => {
-    folderNum++;
-    localStorage.setItem(folderCountKey, folderNum);
+  folderNum++;
+  localStorage.setItem(folderCountKey, folderNum);
 };
 
 const removeFolderFromStorage = (folder) => {
-    const key = folder.key;
-    const titleKey = `${key}title`;
+  const key = folder.key;
+  const titleKey = `${key}title`;
 
-    removeFolderToDosFromStorage(key);
-    localStorage.removeItem(key);
-    localStorage.removeItem(titleKey);
+  removeFolderToDosFromStorage(key);
+  localStorage.removeItem(key);
+  localStorage.removeItem(titleKey);
 };
 
 /* To Do */
 
 const generateToDoKey = (toDoNum, keyWord) => {
-    return `${keyPrefix}todo${toDoNum}${keyWord}`;
+  return `${keyPrefix}todo${toDoNum}${keyWord}`;
 };
 
 const storeToDo = (toDoItem) => {
-    let toDoNum = getToDoCount();
-    const activeFolderValue = (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_0__.getActiveFolderKeyValue)();
+  let toDoNum = getToDoCount();
+  const activeFolderValue = (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_0__.getActiveFolderKeyValue)();
 
-    storePrimaryToDoKey(toDoItem, toDoNum);
-    storeToDoTitle(toDoItem, toDoNum);
-    storeToDoDueDate(toDoItem, toDoNum);
-    storeToDoPriority(toDoItem, toDoNum);
-    storeToDoDesc(toDoItem, toDoNum);
-    storeToDoFolderValue(activeFolderValue, toDoNum);
-    incrementToDoCount(toDoNum);
+  storePrimaryToDoKey(toDoItem, toDoNum);
+  storeToDoTitle(toDoItem, toDoNum);
+  storeToDoDueDate(toDoItem, toDoNum);
+  storeToDoPriority(toDoItem, toDoNum);
+  storeToDoDesc(toDoItem, toDoNum);
+  storeToDoFolderValue(activeFolderValue, toDoNum);
+  incrementToDoCount(toDoNum);
 };
 
 const storePrimaryToDoKey = (toDoItem, toDoNum) => {
-    toDoItem.key = `${keyPrefix}todo${toDoNum}`;
-    localStorage.setItem(toDoItem.key, `todo${toDoNum}`);
+  toDoItem.key = `${keyPrefix}todo${toDoNum}`;
+  localStorage.setItem(toDoItem.key, `todo${toDoNum}`);
 };
 
 const storeToDoTitle = (toDoItem, toDoNum) => {
-    const titleKey = generateToDoKey(toDoNum, 'title');
-    localStorage.setItem(titleKey, toDoItem.title);
+  const titleKey = generateToDoKey(toDoNum, 'title');
+  localStorage.setItem(titleKey, toDoItem.title);
 };
 
 const storeToDoDueDate = (toDoItem, toDoNum) => {
-    const dueDateKey = generateToDoKey(toDoNum, 'duedate');
-    localStorage.setItem(dueDateKey, toDoItem.dueDate);
+  const dueDateKey = generateToDoKey(toDoNum, 'duedate');
+  localStorage.setItem(dueDateKey, toDoItem.dueDate);
 };
 
 const storeToDoPriority = (toDoItem, toDoNum) => {
-    const priorityKey = generateToDoKey(toDoNum, 'priority');
-    localStorage.setItem(priorityKey, toDoItem.priority);
-
+  const priorityKey = generateToDoKey(toDoNum, 'priority');
+  localStorage.setItem(priorityKey, toDoItem.priority);
 };
 
 const storeToDoDesc = (toDoItem, toDoNum) => {
-    const descKey = generateToDoKey(toDoNum, 'desc');
-    localStorage.setItem(descKey, toDoItem.description);
+  const descKey = generateToDoKey(toDoNum, 'desc');
+  localStorage.setItem(descKey, toDoItem.description);
 };
 
 const storeToDoFolderValue = (activeFolderValue, toDoNum) => {
-    const toDoFolderKey = generateToDoKey(toDoNum, 'folderkey');
-    localStorage.setItem(toDoFolderKey, activeFolderValue);
+  const toDoFolderKey = generateToDoKey(toDoNum, 'folderkey');
+  localStorage.setItem(toDoFolderKey, activeFolderValue);
 };
 
 const incrementToDoCount = (toDoNum) => {
-    toDoNum++;
-    localStorage.setItem(toDoCountKey, toDoNum);
+  toDoNum++;
+  localStorage.setItem(toDoCountKey, toDoNum);
 };
 
 const removeToDoFromStorage = (key) => {
-    const titleKey = `${key}title`;
-    const dueDateKey = `${key}duedate`;
-    const priorityKey = `${key}priority`;
-    const descKey = `${key}desc`;
-    const folderKey = `${key}folderkey`;
+  const titleKey = `${key}title`;
+  const dueDateKey = `${key}duedate`;
+  const priorityKey = `${key}priority`;
+  const descKey = `${key}desc`;
+  const folderKey = `${key}folderkey`;
 
-    localStorage.removeItem(key);
-    localStorage.removeItem(titleKey);
-    localStorage.removeItem(dueDateKey);
-    localStorage.removeItem(priorityKey);
-    localStorage.removeItem(descKey);
-    localStorage.removeItem(folderKey);
-
+  localStorage.removeItem(key);
+  localStorage.removeItem(titleKey);
+  localStorage.removeItem(dueDateKey);
+  localStorage.removeItem(priorityKey);
+  localStorage.removeItem(descKey);
+  localStorage.removeItem(folderKey);
 };
 
 const removeFolderToDosFromStorage = (folderKey) => {
-    const toDoCount = getToDoCount();
-    const folderValue = localStorage.getItem(folderKey);
+  const toDoCount = getToDoCount();
+  const folderValue = localStorage.getItem(folderKey);
 
-    for (let i = 0; i < toDoCount; i++) {
-        let toDoKey = `${keyPrefix}todo${i}`;
-        let toDoFolderKey = `${toDoKey}folderkey`;
-        let toDoFolderValue = localStorage.getItem(toDoFolderKey);
+  for (let i = 0; i < toDoCount; i++) {
+    let toDoKey = `${keyPrefix}todo${i}`;
+    let toDoFolderKey = `${toDoKey}folderkey`;
+    let toDoFolderValue = localStorage.getItem(toDoFolderKey);
 
-        if (folderValue == toDoFolderValue) {
-            removeToDoFromStorage(toDoKey);
-        }
+    if (folderValue == toDoFolderValue) {
+      removeToDoFromStorage(toDoKey);
     }
+  }
 };
+
 
 
 
@@ -8474,96 +8537,103 @@ let activeFolder = null;
 let activeFolderKey = null;
 
 const folder = (title, key) => {
-    return {
-        title: title,
-        key: key,
-    };
+  return {
+    title: title,
+    key: key,
+  };
 };
 
 const initToDoFolders = () => {
-    const storageFilled = (0,_storage__WEBPACK_IMPORTED_MODULE_3__.checkLocalStorage)();
-    const initialFolder = addInitialFolder();
-    if (storageFilled) {
-        (0,_storage__WEBPACK_IMPORTED_MODULE_3__.loadStorage)();
-    } else {
-        (0,_storage__WEBPACK_IMPORTED_MODULE_3__.storeFolder)(initialFolder);
-    }
+  const storageFilled = (0,_storage__WEBPACK_IMPORTED_MODULE_3__.checkLocalStorage)();
+  const initialFolder = addInitialFolder();
+  if (storageFilled) {
+    (0,_storage__WEBPACK_IMPORTED_MODULE_3__.loadStorage)();
+  } else {
+    (0,_storage__WEBPACK_IMPORTED_MODULE_3__.storeFolder)(initialFolder);
+  }
 };
 
 const addInitialFolder = () => {
-    const key = (0,_storage__WEBPACK_IMPORTED_MODULE_3__.getDefaultFolderKey)();
-    const toDoFolder = addToDoFolder(defaultFolderTitle, 'inactive', key);
-    (0,_storage__WEBPACK_IMPORTED_MODULE_3__.loadToDos)(key);
-    defaultFolderDiv = document.querySelector('.todo-folder');
-    return toDoFolder;
+  const key = (0,_storage__WEBPACK_IMPORTED_MODULE_3__.getDefaultFolderKey)();
+  const toDoFolder = addToDoFolder(defaultFolderTitle, 'inactive', key);
+  (0,_storage__WEBPACK_IMPORTED_MODULE_3__.loadToDos)(key);
+  defaultFolderDiv = document.querySelector('.todo-folder');
+  return toDoFolder;
 };
 
 const addToDoFolder = (folderName, buttonClass, key) => {
-    const folderClass = folderName.replace(/\s/g, '-');
-    const toDoFolder = folder(folderName, key);
-    const folderContentDiv = (0,_page_dom__WEBPACK_IMPORTED_MODULE_1__.addFolderContentElements)(contentItems, folderClass);
-    const sidebarFolderDiv = (0,_page_dom__WEBPACK_IMPORTED_MODULE_1__.addFolderSidebarElements)(toDoFolder, folderContentDiv, buttonClass);
-    activeFolder = setActiveFolder(folderContentDiv, toDoFolder.title, toDoFolder.key);
-    setActiveFolderOnClick(sidebarFolderDiv, folderContentDiv, toDoFolder);
-    return toDoFolder;
+  const folderClass = folderName.replace(/\s/g, '-');
+  const toDoFolder = folder(folderName, key);
+  const folderContentDiv = (0,_page_dom__WEBPACK_IMPORTED_MODULE_1__.addFolderContentElements)(contentItems, folderClass);
+  const sidebarFolderDiv = (0,_page_dom__WEBPACK_IMPORTED_MODULE_1__.addFolderSidebarElements)(
+    toDoFolder,
+    folderContentDiv,
+    buttonClass,
+  );
+  activeFolder = setActiveFolder(
+    folderContentDiv,
+    toDoFolder.title,
+    toDoFolder.key,
+  );
+  setActiveFolderOnClick(sidebarFolderDiv, folderContentDiv, toDoFolder);
+  return toDoFolder;
 };
 
 const setActiveFolderOnClick = (sidebarFolderDiv, contentFolderDiv, folder) => {
-    const title = sidebarFolderDiv.querySelector('.sidebar-folder-title');
-    title.addEventListener('click', () => {
-        activeFolder = setActiveFolder(contentFolderDiv, folder.title, folder.key);
-    });
+  const title = sidebarFolderDiv.querySelector('.sidebar-folder-title');
+  title.addEventListener('click', () => {
+    activeFolder = setActiveFolder(contentFolderDiv, folder.title, folder.key);
+  });
 };
 
 const setActiveFolder = (toDoFolderDiv, folderTitle, key) => {
-    changeActiveFolder(toDoFolderDiv);
-    hideInactiveFolders(toDoFolderDiv);
-    changeToDoInputsFolder(toDoFolderDiv);
-    changeFolderHeading(folderTitle);
-    (0,_form_dom__WEBPACK_IMPORTED_MODULE_2__.toggleToDoFormVisible)(false);
-    setActiveFolderKey(key);
-    return activeFolder;
+  changeActiveFolder(toDoFolderDiv);
+  hideInactiveFolders(toDoFolderDiv);
+  changeToDoInputsFolder(toDoFolderDiv);
+  changeFolderHeading(folderTitle);
+  (0,_form_dom__WEBPACK_IMPORTED_MODULE_2__.toggleToDoFormVisible)(false);
+  setActiveFolderKey(key);
+  return activeFolder;
 };
 
 const changeActiveFolder = (toDoFolderDiv) => {
-    activeFolder = toDoFolderDiv;
+  activeFolder = toDoFolderDiv;
 };
 
 const getActiveFolder = () => {
-    return activeFolder;
+  return activeFolder;
 };
 
 const setActiveFolderKey = (key) => {
-    activeFolderKey = key;
+  activeFolderKey = key;
 };
 
 const getActiveFolderKeyValue = () => {
-    const folder = localStorage.getItem(activeFolderKey);
-    return folder;
+  const folder = localStorage.getItem(activeFolderKey);
+  return folder;
 };
 
 const changeToDoInputsFolder = (toDoFolderDiv) => {
-    const toDoInputs = document.querySelector('#todo-inputs');
-    toDoFolderDiv.appendChild(toDoInputs);
+  const toDoInputs = document.querySelector('#todo-inputs');
+  toDoFolderDiv.appendChild(toDoInputs);
 };
 
 const resetActiveFolder = (toDoFolder) => {
-    if (toDoFolder === activeFolder ||
-        typeof toDoFolder === 'string') {
-        const key = (0,_storage__WEBPACK_IMPORTED_MODULE_3__.getDefaultFolderKey)();
-        activeFolder = setActiveFolder(defaultFolderDiv, defaultFolderTitle, key);
-    }
+  if (toDoFolder === activeFolder || typeof toDoFolder === 'string') {
+    const key = (0,_storage__WEBPACK_IMPORTED_MODULE_3__.getDefaultFolderKey)();
+    activeFolder = setActiveFolder(defaultFolderDiv, defaultFolderTitle, key);
+  }
 };
 
 const hideInactiveFolders = (activeFolderDiv) => {
-    const folders = document.querySelectorAll('.todo-folder');
-    (0,_page_dom__WEBPACK_IMPORTED_MODULE_1__.hideElements)(folders);
-    activeFolderDiv.style.display = 'grid';
+  const folders = document.querySelectorAll('.todo-folder');
+  (0,_page_dom__WEBPACK_IMPORTED_MODULE_1__.hideElements)(folders);
+  activeFolderDiv.style.display = 'grid';
 };
 
 const changeFolderHeading = (folderTitle) => {
-    const folderHeading = document.querySelector('#active-folder-heading');
-    folderHeading.innerHTML = folderTitle;
+  const folderHeading = document.querySelector('#active-folder-heading');
+  folderHeading.innerHTML = folderTitle;
 };
 
 
@@ -8590,71 +8660,72 @@ const clearButton = document.querySelector('#todo-clear-mode-button');
 let clearMode = false;
 
 const toggleClearModeButtonStyle = (clearMode) => {
-    const onOff = clearButton.querySelector('.on-off');
-    if (clearMode) {
-        clearButton.className = 'active';
-        onOff.innerHTML = 'ON';
-    } else {
-        clearButton.className = 'inactive';
-        onOff.innerHTML = 'Off';
-    }
+  const onOff = clearButton.querySelector('.on-off');
+  if (clearMode) {
+    clearButton.className = 'active';
+    onOff.innerHTML = 'ON';
+  } else {
+    clearButton.className = 'inactive';
+    onOff.innerHTML = 'Off';
+  }
 };
 
 const toggleToDoModeStyle = (clearMode) => {
-    const toDos = document.querySelectorAll('.todo');
-    if (clearMode) {
-        toDos.forEach((toDo) => {
-            toDo.className = 'todo clear-mode';
-        });
-    } else {
-        toDos.forEach((toDo) => {
-            toDo.className = 'todo expand-mode';
-        });
-    }
+  const toDos = document.querySelectorAll('.todo');
+  if (clearMode) {
+    toDos.forEach((toDo) => {
+      toDo.className = 'todo clear-mode';
+    });
+  } else {
+    toDos.forEach((toDo) => {
+      toDo.className = 'todo expand-mode';
+    });
+  }
 };
 
 const toggleToDoExpand = (toDo) => {
-    if (toDo.className !== 'todo expanded') {
-        toggleToDoModeStyle(false);
-        toDo.className = 'todo expanded';
-    } else {
-        toDo.className = 'todo expand-mode';
-    }
+  if (toDo.className !== 'todo expanded') {
+    toggleToDoModeStyle(false);
+    toDo.className = 'todo expanded';
+  } else {
+    toDo.className = 'todo expand-mode';
+  }
 };
 
 const toggleToDoInputsDisplay = (clearMode) => {
-    const toDoInputs = document.querySelector('#todo-inputs');
-    if (clearMode) {
-        toDoInputs.style.display = 'none';
-    } else {
-        toDoInputs.style.display = 'grid';
-    }
+  const toDoInputs = document.querySelector('#todo-inputs');
+  if (clearMode) {
+    toDoInputs.style.display = 'none';
+  } else {
+    toDoInputs.style.display = 'grid';
+  }
 };
 
 const addToDoClickEventListener = (toDoParent, toDoItem) => {
-    toDoParent.addEventListener('click', () => {
-        if (clearMode) {
-            toDoParent.remove();
-            (0,_storage__WEBPACK_IMPORTED_MODULE_1__.removeToDoFromStorage)(toDoItem.key);
-        } else {
-            toggleToDoExpand(toDoParent);
-        }
-    });
+  toDoParent.addEventListener('click', () => {
+    if (clearMode) {
+      toDoParent.remove();
+      (0,_storage__WEBPACK_IMPORTED_MODULE_1__.removeToDoFromStorage)(toDoItem.key);
+    } else {
+      toggleToDoExpand(toDoParent);
+    }
+  });
 };
 
 clearButton.addEventListener('click', () => {
-    if (!clearMode) {
-        clearMode = true;
-        toggleClearModeButtonStyle(clearMode);
-        toggleToDoModeStyle(clearMode);
-        toggleToDoInputsDisplay(clearMode);
-    } else {
-        clearMode = false;
-        toggleClearModeButtonStyle(clearMode);
-        toggleToDoModeStyle(clearMode);
-        toggleToDoInputsDisplay(clearMode);
-    }
+  if (!clearMode) {
+    clearMode = true;
+    toggleClearModeButtonStyle(clearMode);
+    toggleToDoModeStyle(clearMode);
+    toggleToDoInputsDisplay(clearMode);
+  } else {
+    clearMode = false;
+    toggleClearModeButtonStyle(clearMode);
+    toggleToDoModeStyle(clearMode);
+    toggleToDoInputsDisplay(clearMode);
+  }
 });
+
 
 
 
@@ -8685,30 +8756,36 @@ __webpack_require__.r(__webpack_exports__);
 const toDoInputs = document.querySelector('#todo-inputs');
 
 const toDo = (title, dueDate, priority, description, key) => {
-    return {
-        title: title,
-        dueDate: dueDate,
-        priority: priority,
-        description: description,
-        key: key,
-    };
+  return {
+    title: title,
+    dueDate: dueDate,
+    priority: priority,
+    description: description,
+    key: key,
+  };
 };
 
 const addToDoButton = () => {
-    const addToDoButton = (0,_page_dom__WEBPACK_IMPORTED_MODULE_1__.addButton)(toDoInputs, 'button', 'todo-add-button', 'active', '+ To Do');
-    (0,_user_input__WEBPACK_IMPORTED_MODULE_2__.registerAddToDoListener)(addToDoButton);
+  const addToDoButton = (0,_page_dom__WEBPACK_IMPORTED_MODULE_1__.addButton)(
+    toDoInputs,
+    'button',
+    'todo-add-button',
+    'active',
+    '+ To Do',
+  );
+  (0,_user_input__WEBPACK_IMPORTED_MODULE_2__.registerAddToDoListener)(addToDoButton);
 };
 
 const addToDo = (title, dueDate, priority, description) => {
-    const toDoItem = toDo(title, dueDate, priority, description);
-    const folder = (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_3__.getActiveFolder)();
-    (0,_page_dom__WEBPACK_IMPORTED_MODULE_1__.displayToDo)(toDoItem, folder);
-    return toDoItem;
+  const toDoItem = toDo(title, dueDate, priority, description);
+  const folder = (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_3__.getActiveFolder)();
+  (0,_page_dom__WEBPACK_IMPORTED_MODULE_1__.displayToDo)(toDoItem, folder);
+  return toDoItem;
 };
 
 const initToDo = () => {
-    (0,_form_dom__WEBPACK_IMPORTED_MODULE_4__.addToDoForm)(toDoInputs);
-    addToDoButton();
+  (0,_form_dom__WEBPACK_IMPORTED_MODULE_4__.addToDoForm)(toDoInputs);
+  addToDoButton();
 };
 
 
@@ -8739,88 +8816,93 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 const getInput = (id) => {
-    return document.getElementById(id).value;
+  return document.getElementById(id).value;
 };
 
 const getRadioInput = (name) => {
-    const radios = document.getElementsByName(name);
+  const radios = document.getElementsByName(name);
 
-    for (let i = 0; i < radios.length; i++) {
-        if (radios[i].checked) {
-            return radios[i].value;
-        }
+  for (let i = 0; i < radios.length; i++) {
+    if (radios[i].checked) {
+      return radios[i].value;
     }
+  }
 };
 
 /* Sidebar/Folder */
 
 const getSidebarInput = () => {
-    const input = getInput('folder-title');
-    return input;
+  const input = getInput('folder-title');
+  return input;
 };
 
 const manageSidebarInput = () => {
-    const input = getSidebarInput();
-    const folderKey = (0,_storage__WEBPACK_IMPORTED_MODULE_3__.getPrimaryFolderKey)();
-    const folder = (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_0__.addToDoFolder)(input, 'active', folderKey);
-    (0,_storage__WEBPACK_IMPORTED_MODULE_3__.storeFolder)(folder);
+  const input = getSidebarInput();
+  const folderKey = (0,_storage__WEBPACK_IMPORTED_MODULE_3__.getPrimaryFolderKey)();
+  const folder = (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_0__.addToDoFolder)(input, 'active', folderKey);
+  (0,_storage__WEBPACK_IMPORTED_MODULE_3__.storeFolder)(folder);
 };
 
 const registerSidebarSubmitListener = (form) => {
-    form.addEventListener('submit', (event) => {
-        event.preventDefault();
-        manageSidebarInput();
-        form.reset();
-    });
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    manageSidebarInput();
+    form.reset();
+  });
 };
 
 const removeFolder = (folder, sidebarElement) => {
-    folder.remove();
-    sidebarElement.remove();
+  folder.remove();
+  sidebarElement.remove();
 };
 
-const registerRemoveFolderListener = (button, folderDiv, sidebarElement, folder) => {
-    button.addEventListener('click', () => {
-        (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_0__.resetActiveFolder)(folderDiv);
-        removeFolder(folderDiv, sidebarElement);
-        (0,_storage__WEBPACK_IMPORTED_MODULE_3__.removeFolderFromStorage)(folder);
-    });
+const registerRemoveFolderListener = (
+  button,
+  folderDiv,
+  sidebarElement,
+  folder,
+) => {
+  button.addEventListener('click', () => {
+    (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_0__.resetActiveFolder)(folderDiv);
+    removeFolder(folderDiv, sidebarElement);
+    (0,_storage__WEBPACK_IMPORTED_MODULE_3__.removeFolderFromStorage)(folder);
+  });
 };
 
 /* To Do */
 
 const addToDoInputs = () => {
-    const title = getInput('title-input');
-    const dueDate = getInput('duedate-input');
-    const priority = getRadioInput('priority-input');
-    const description = getInput('description-input');
-    const toDoItem = (0,_to_do__WEBPACK_IMPORTED_MODULE_1__.addToDo)(title, dueDate, priority, description);
-    (0,_storage__WEBPACK_IMPORTED_MODULE_3__.storeToDo)(toDoItem);
+  const title = getInput('title-input');
+  const dueDate = getInput('duedate-input');
+  const priority = getRadioInput('priority-input');
+  const description = getInput('description-input');
+  const toDoItem = (0,_to_do__WEBPACK_IMPORTED_MODULE_1__.addToDo)(title, dueDate, priority, description);
+  (0,_storage__WEBPACK_IMPORTED_MODULE_3__.storeToDo)(toDoItem);
 };
 
 const registerAddToDoListener = (button) => {
-    button.addEventListener('click', () => {
-        (0,_form_dom__WEBPACK_IMPORTED_MODULE_2__.toggleToDoFormVisible)(true);
-    });
+  button.addEventListener('click', () => {
+    (0,_form_dom__WEBPACK_IMPORTED_MODULE_2__.toggleToDoFormVisible)(true);
+  });
 };
 
 const registerToDoFormClearListener = (form, clearButton) => {
-    clearButton.addEventListener('click', () => {
-        (0,_form_dom__WEBPACK_IMPORTED_MODULE_2__.toggleToDoFormVisible)(false);
-        form.reset();
-    });
+  clearButton.addEventListener('click', () => {
+    (0,_form_dom__WEBPACK_IMPORTED_MODULE_2__.toggleToDoFormVisible)(false);
+    form.reset();
+  });
 };
 
 const registerToDoSubmitListener = (form) => {
-    form.addEventListener('submit', (event) => {
-        event.preventDefault();
-        addToDoInputs();
-        (0,_form_dom__WEBPACK_IMPORTED_MODULE_2__.toggleToDoFormVisible)(false);
-        form.reset();
-    });
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    addToDoInputs();
+    (0,_form_dom__WEBPACK_IMPORTED_MODULE_2__.toggleToDoFormVisible)(false);
+    form.reset();
+  });
 };
+
 
 
 

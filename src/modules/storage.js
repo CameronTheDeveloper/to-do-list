@@ -1,7 +1,7 @@
 import {
-    addToDoFolder,
-    getActiveFolderKeyValue,
-    resetActiveFolder
+  addToDoFolder,
+  getActiveFolderKeyValue,
+  resetActiveFolder,
 } from './to-do-folders';
 import { addToDo } from './to-do';
 const keyPrefix = 'toDoListProject_';
@@ -9,265 +9,263 @@ const folderCountKey = `${keyPrefix}folderCount`;
 const toDoCountKey = `${keyPrefix}toDoCount`;
 
 const getFolderCount = () => {
-    return localStorage.getItem(folderCountKey);
+  return localStorage.getItem(folderCountKey);
 };
 
 const getToDoCount = () => {
-    return localStorage.getItem(toDoCountKey);
+  return localStorage.getItem(toDoCountKey);
 };
 
 const checkIfStored = (key) => {
-    const value = localStorage.getItem(key);
-    if (value != null) {
-        return true;
-    } else {
-        return false;
-    }
+  const value = localStorage.getItem(key);
+  if (value != null) {
+    return true;
+  } else {
+    return false;
+  }
 };
 
 const initializeStorageCounts = () => {
-    localStorage.setItem(folderCountKey, 0);
-    localStorage.setItem(toDoCountKey, 0);
+  localStorage.setItem(folderCountKey, 0);
+  localStorage.setItem(toDoCountKey, 0);
 };
 
 const loadFolder = (index, buttonClass) => {
-    const folderKey = `${keyPrefix}folder${index}`;
-    const folderTitle = getFolderTitle(folderKey);
-    checkIfStored(folderKey);
-    if (checkIfStored(folderKey)) {
-        const toDoFolder = addToDoFolder(folderTitle, buttonClass, folderKey);
-        toDoFolder.key = folderKey;
-    }
-    loadToDos(folderKey);
+  const folderKey = `${keyPrefix}folder${index}`;
+  const folderTitle = getFolderTitle(folderKey);
+  checkIfStored(folderKey);
+  if (checkIfStored(folderKey)) {
+    const toDoFolder = addToDoFolder(folderTitle, buttonClass, folderKey);
+    toDoFolder.key = folderKey;
+  }
+  loadToDos(folderKey);
 };
 
 const loadFolders = () => {
-    const count = getFolderCount();
-    for (let i = 1; i < count; i++) {
-        loadFolder(i, 'active');
-    }
-    resetActiveFolder('reset');
+  const count = getFolderCount();
+  for (let i = 1; i < count; i++) {
+    loadFolder(i, 'active');
+  }
+  resetActiveFolder('reset');
 };
 
 const getFolderTitle = (folderKey) => {
-    const folderTitleKey = `${folderKey}title`;
-    const folderTitle = localStorage.getItem(folderTitleKey);
-    return folderTitle;
+  const folderTitleKey = `${folderKey}title`;
+  const folderTitle = localStorage.getItem(folderTitleKey);
+  return folderTitle;
 };
 
 const loadToDo = (index) => {
-    const toDoKey = `${keyPrefix}todo${index}`;
-    if (checkIfStored(toDoKey)) {
-        const title = getToDoTitle(toDoKey);
-        const dueDate = getToDoDueDate(toDoKey);
-        const priority = getToDoPriority(toDoKey);
-        const desc = getToDoDesc(toDoKey);
-        const toDoItem = addToDo(title, dueDate, priority, desc);
-        toDoItem.key = toDoKey;
-    }
+  const toDoKey = `${keyPrefix}todo${index}`;
+  if (checkIfStored(toDoKey)) {
+    const title = getToDoTitle(toDoKey);
+    const dueDate = getToDoDueDate(toDoKey);
+    const priority = getToDoPriority(toDoKey);
+    const desc = getToDoDesc(toDoKey);
+    const toDoItem = addToDo(title, dueDate, priority, desc);
+    toDoItem.key = toDoKey;
+  }
 };
 
 const getToDoTitle = (toDoKey) => {
-    const toDoTitleKey = `${toDoKey}title`;
-    const toDoTitle = localStorage.getItem(toDoTitleKey);
-    return toDoTitle;
+  const toDoTitleKey = `${toDoKey}title`;
+  const toDoTitle = localStorage.getItem(toDoTitleKey);
+  return toDoTitle;
 };
 
 const getToDoDueDate = (toDoKey) => {
-    const dueDateKey = `${toDoKey}duedate`;
-    const toDoDueDate = localStorage.getItem(dueDateKey);
-    return toDoDueDate;
+  const dueDateKey = `${toDoKey}duedate`;
+  const toDoDueDate = localStorage.getItem(dueDateKey);
+  return toDoDueDate;
 };
 
 const getToDoPriority = (toDoKey) => {
-    const priorityKey = `${toDoKey}priority`;
-    const toDoPriority = localStorage.getItem(priorityKey);
-    return toDoPriority;
+  const priorityKey = `${toDoKey}priority`;
+  const toDoPriority = localStorage.getItem(priorityKey);
+  return toDoPriority;
 };
 
 const getToDoDesc = (toDoKey) => {
-    const descKey = `${toDoKey}desc`;
-    const toDoDesc = localStorage.getItem(descKey);
-    return toDoDesc;
+  const descKey = `${toDoKey}desc`;
+  const toDoDesc = localStorage.getItem(descKey);
+  return toDoDesc;
 };
 
 const checkToDoFolderMatch = (index, folderKey) => {
-    const toDoFolderKey = generateToDoKey(index, 'folderkey');
-    const toDoFolder = localStorage.getItem(toDoFolderKey);
-    const folder = localStorage.getItem(folderKey);
+  const toDoFolderKey = generateToDoKey(index, 'folderkey');
+  const toDoFolder = localStorage.getItem(toDoFolderKey);
+  const folder = localStorage.getItem(folderKey);
 
-    if (toDoFolder === folder) {
-        return true;
-    } else {
-        return false;
-    }
+  if (toDoFolder === folder) {
+    return true;
+  } else {
+    return false;
+  }
 };
 
 const loadToDos = (folderKey) => {
-    let count = getToDoCount();
-    for (let i = 0; i < count; i++) {
-        if (checkToDoFolderMatch(i, folderKey)) {
-            loadToDo(i);
-        }
+  let count = getToDoCount();
+  for (let i = 0; i < count; i++) {
+    if (checkToDoFolderMatch(i, folderKey)) {
+      loadToDo(i);
     }
+  }
 };
 
 const loadStorage = () => {
-    loadFolders();
+  loadFolders();
 };
 
 const checkLocalStorage = () => {
-    if (localStorage.length === 0) {
-        initializeStorageCounts();
-        return false;
-    } else {
-        return true;
-    }
+  if (localStorage.length === 0) {
+    initializeStorageCounts();
+    return false;
+  } else {
+    return true;
+  }
 };
 
 /* Folder */
 
 const generateFolderKey = (folderNum, keyWord) => {
-    return `${keyPrefix}folder${folderNum}${keyWord}`;
+  return `${keyPrefix}folder${folderNum}${keyWord}`;
 };
 
 const getDefaultFolderKey = () => {
-    const defaultFolderKey = generateFolderKey('0', '');
-    return defaultFolderKey;
+  const defaultFolderKey = generateFolderKey('0', '');
+  return defaultFolderKey;
 };
 
 const getPrimaryFolderKey = () => {
-    const folderNum = getFolderCount();
-    return `${keyPrefix}folder${folderNum}`;
+  const folderNum = getFolderCount();
+  return `${keyPrefix}folder${folderNum}`;
 };
 
 const storeFolder = (folder) => {
-    let folderNum = getFolderCount();
+  let folderNum = getFolderCount();
 
-    storePrimaryFolderKey(folder, folderNum);
-    storeFolderTitle(folder.title, folderNum);
-    incrementFolderCount(folderNum);
+  storePrimaryFolderKey(folder, folderNum);
+  storeFolderTitle(folder.title, folderNum);
+  incrementFolderCount(folderNum);
 };
 
 const storePrimaryFolderKey = (folder, folderNum) => {
-    localStorage.setItem(folder.key, `folder${folderNum}`);
+  localStorage.setItem(folder.key, `folder${folderNum}`);
 };
 
 const storeFolderTitle = (title, folderNum) => {
-    const titleKey = generateFolderKey(folderNum, 'title');
-    localStorage.setItem(titleKey, title);
+  const titleKey = generateFolderKey(folderNum, 'title');
+  localStorage.setItem(titleKey, title);
 };
 
 const incrementFolderCount = (folderNum) => {
-    folderNum++;
-    localStorage.setItem(folderCountKey, folderNum);
+  folderNum++;
+  localStorage.setItem(folderCountKey, folderNum);
 };
 
 const removeFolderFromStorage = (folder) => {
-    const key = folder.key;
-    const titleKey = `${key}title`;
+  const key = folder.key;
+  const titleKey = `${key}title`;
 
-    removeFolderToDosFromStorage(key);
-    localStorage.removeItem(key);
-    localStorage.removeItem(titleKey);
+  removeFolderToDosFromStorage(key);
+  localStorage.removeItem(key);
+  localStorage.removeItem(titleKey);
 };
 
 /* To Do */
 
 const generateToDoKey = (toDoNum, keyWord) => {
-    return `${keyPrefix}todo${toDoNum}${keyWord}`;
+  return `${keyPrefix}todo${toDoNum}${keyWord}`;
 };
 
 const storeToDo = (toDoItem) => {
-    let toDoNum = getToDoCount();
-    const activeFolderValue = getActiveFolderKeyValue();
+  let toDoNum = getToDoCount();
+  const activeFolderValue = getActiveFolderKeyValue();
 
-    storePrimaryToDoKey(toDoItem, toDoNum);
-    storeToDoTitle(toDoItem, toDoNum);
-    storeToDoDueDate(toDoItem, toDoNum);
-    storeToDoPriority(toDoItem, toDoNum);
-    storeToDoDesc(toDoItem, toDoNum);
-    storeToDoFolderValue(activeFolderValue, toDoNum);
-    incrementToDoCount(toDoNum);
+  storePrimaryToDoKey(toDoItem, toDoNum);
+  storeToDoTitle(toDoItem, toDoNum);
+  storeToDoDueDate(toDoItem, toDoNum);
+  storeToDoPriority(toDoItem, toDoNum);
+  storeToDoDesc(toDoItem, toDoNum);
+  storeToDoFolderValue(activeFolderValue, toDoNum);
+  incrementToDoCount(toDoNum);
 };
 
 const storePrimaryToDoKey = (toDoItem, toDoNum) => {
-    toDoItem.key = `${keyPrefix}todo${toDoNum}`;
-    localStorage.setItem(toDoItem.key, `todo${toDoNum}`);
+  toDoItem.key = `${keyPrefix}todo${toDoNum}`;
+  localStorage.setItem(toDoItem.key, `todo${toDoNum}`);
 };
 
 const storeToDoTitle = (toDoItem, toDoNum) => {
-    const titleKey = generateToDoKey(toDoNum, 'title');
-    localStorage.setItem(titleKey, toDoItem.title);
+  const titleKey = generateToDoKey(toDoNum, 'title');
+  localStorage.setItem(titleKey, toDoItem.title);
 };
 
 const storeToDoDueDate = (toDoItem, toDoNum) => {
-    const dueDateKey = generateToDoKey(toDoNum, 'duedate');
-    localStorage.setItem(dueDateKey, toDoItem.dueDate);
+  const dueDateKey = generateToDoKey(toDoNum, 'duedate');
+  localStorage.setItem(dueDateKey, toDoItem.dueDate);
 };
 
 const storeToDoPriority = (toDoItem, toDoNum) => {
-    const priorityKey = generateToDoKey(toDoNum, 'priority');
-    localStorage.setItem(priorityKey, toDoItem.priority);
-
+  const priorityKey = generateToDoKey(toDoNum, 'priority');
+  localStorage.setItem(priorityKey, toDoItem.priority);
 };
 
 const storeToDoDesc = (toDoItem, toDoNum) => {
-    const descKey = generateToDoKey(toDoNum, 'desc');
-    localStorage.setItem(descKey, toDoItem.description);
+  const descKey = generateToDoKey(toDoNum, 'desc');
+  localStorage.setItem(descKey, toDoItem.description);
 };
 
 const storeToDoFolderValue = (activeFolderValue, toDoNum) => {
-    const toDoFolderKey = generateToDoKey(toDoNum, 'folderkey');
-    localStorage.setItem(toDoFolderKey, activeFolderValue);
+  const toDoFolderKey = generateToDoKey(toDoNum, 'folderkey');
+  localStorage.setItem(toDoFolderKey, activeFolderValue);
 };
 
 const incrementToDoCount = (toDoNum) => {
-    toDoNum++;
-    localStorage.setItem(toDoCountKey, toDoNum);
+  toDoNum++;
+  localStorage.setItem(toDoCountKey, toDoNum);
 };
 
 const removeToDoFromStorage = (key) => {
-    const titleKey = `${key}title`;
-    const dueDateKey = `${key}duedate`;
-    const priorityKey = `${key}priority`;
-    const descKey = `${key}desc`;
-    const folderKey = `${key}folderkey`;
+  const titleKey = `${key}title`;
+  const dueDateKey = `${key}duedate`;
+  const priorityKey = `${key}priority`;
+  const descKey = `${key}desc`;
+  const folderKey = `${key}folderkey`;
 
-    localStorage.removeItem(key);
-    localStorage.removeItem(titleKey);
-    localStorage.removeItem(dueDateKey);
-    localStorage.removeItem(priorityKey);
-    localStorage.removeItem(descKey);
-    localStorage.removeItem(folderKey);
-
+  localStorage.removeItem(key);
+  localStorage.removeItem(titleKey);
+  localStorage.removeItem(dueDateKey);
+  localStorage.removeItem(priorityKey);
+  localStorage.removeItem(descKey);
+  localStorage.removeItem(folderKey);
 };
 
 const removeFolderToDosFromStorage = (folderKey) => {
-    const toDoCount = getToDoCount();
-    const folderValue = localStorage.getItem(folderKey);
+  const toDoCount = getToDoCount();
+  const folderValue = localStorage.getItem(folderKey);
 
-    for (let i = 0; i < toDoCount; i++) {
-        let toDoKey = `${keyPrefix}todo${i}`;
-        let toDoFolderKey = `${toDoKey}folderkey`;
-        let toDoFolderValue = localStorage.getItem(toDoFolderKey);
+  for (let i = 0; i < toDoCount; i++) {
+    let toDoKey = `${keyPrefix}todo${i}`;
+    let toDoFolderKey = `${toDoKey}folderkey`;
+    let toDoFolderValue = localStorage.getItem(toDoFolderKey);
 
-        if (folderValue == toDoFolderValue) {
-            removeToDoFromStorage(toDoKey);
-        }
+    if (folderValue == toDoFolderValue) {
+      removeToDoFromStorage(toDoKey);
     }
+  }
 };
 
 export {
-    checkLocalStorage,
-    loadStorage,
-    generateFolderKey,
-    getDefaultFolderKey,
-    getPrimaryFolderKey,
-    storeFolder,
-    storeToDo,
-    removeFolderFromStorage,
-    removeFolderToDosFromStorage,
-    removeToDoFromStorage,
-    loadToDos,
+  checkLocalStorage,
+  loadStorage,
+  generateFolderKey,
+  getDefaultFolderKey,
+  getPrimaryFolderKey,
+  storeFolder,
+  storeToDo,
+  removeFolderFromStorage,
+  removeFolderToDosFromStorage,
+  removeToDoFromStorage,
+  loadToDos,
 };

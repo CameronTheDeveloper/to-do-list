@@ -57,6 +57,7 @@ const loadToDo = (index) => {
     const priority = getToDoPriority(toDoKey);
     const desc = getToDoDesc(toDoKey);
     const toDoItem = addToDo(title, dueDate, priority, desc);
+    toDoItem.key = toDoKey;
 };
 
 const getToDoTitle = (toDoKey) => {

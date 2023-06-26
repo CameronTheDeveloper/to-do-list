@@ -8243,6 +8243,7 @@ const loadToDo = (index) => {
     const priority = getToDoPriority(toDoKey);
     const desc = getToDoDesc(toDoKey);
     const toDoItem = (0,_to_do__WEBPACK_IMPORTED_MODULE_1__.addToDo)(title, dueDate, priority, desc);
+    toDoItem.key = toDoKey;
 };
 
 const getToDoTitle = (toDoKey) => {

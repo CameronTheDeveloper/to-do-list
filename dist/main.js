@@ -8183,6 +8183,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "storeToDo": () => (/* binding */ storeToDo)
 /* harmony export */ });
 /* harmony import */ var _to_do_folders__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./to-do-folders */ "./src/modules/to-do-folders.js");
+/* harmony import */ var _to_do__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./to-do */ "./src/modules/to-do.js");
 
 
 const keyPrefix = 'toDoListProject_';
@@ -8241,7 +8242,7 @@ const loadToDo = (index) => {
     const dueDate = getToDoDueDate(toDoKey);
     const priority = getToDoPriority(toDoKey);
     const desc = getToDoDesc(toDoKey);
-    //addToDo(title, duedate...)
+    (0,_to_do__WEBPACK_IMPORTED_MODULE_1__.addToDo)(title, dueDate, priority, desc);
 };
 
 const getToDoTitle = (toDoKey) => {

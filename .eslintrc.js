@@ -3,7 +3,8 @@ module.exports = {
         "browser": true,
         "es2021": true
     },
-    "extends": "eslint:recommended",
+    "extends": ["eslint:recommended", "plugin:prettier/recommended"],
+    "plugins": "prettier",
     "overrides": [
         {
             "env": {
@@ -22,5 +23,8 @@ module.exports = {
         "sourceType": "module"
     },
     "rules": {
+        "prettier/prettier": "error",
+        "no-unused-vars": "warn",
+        "no-console": "off"
     }
 }

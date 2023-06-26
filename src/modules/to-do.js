@@ -10,7 +10,6 @@ import {
 } from './user-input';
 import { getActiveFolder } from './to-do-folders';
 import { addToDoForm } from './form-dom';
-import { storeToDo } from './storage';
 
 const toDoInputs = document.querySelector('#todo-inputs');
 
@@ -33,8 +32,8 @@ const addToDoButton = () => {
 const addToDo = (title, dueDate, priority, description) => {
     const toDoItem = toDo(title, dueDate, priority, description);
     const folder = getActiveFolder();
-    storeToDo(toDoItem);
     displayToDo(toDoItem, folder);
+    return toDoItem;
 };
 
 const initToDo = () => {

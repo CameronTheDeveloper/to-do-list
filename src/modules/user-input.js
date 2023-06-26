@@ -6,6 +6,7 @@ import { addToDo } from "./to-do";
 import { toggleToDoFormVisible } from "./form-dom";
 import {
     removeFolderFromStorage,
+    storeToDo,
     storeFolder,
     getPrimaryFolderKey
 } from "./storage";
@@ -69,7 +70,9 @@ const addToDoInputs = () => {
     const priority = getRadioInput('priority-input');
     const description = getInput('description-input');
 
-    addToDo(title, dueDate, priority, description);
+    const toDoItem = addToDo(title, dueDate, priority, description);
+    storeToDo(toDoItem);
+
 };
 
 const registerAddToDoListener = (button) => {

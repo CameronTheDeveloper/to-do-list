@@ -49,17 +49,17 @@ const addSidebarForm = (parent) => {
 
 const addToDoForm = (parent) => {
     const form = addFormToDOM(parent, 'todo-add-form', 'inactive');
-    const titleDiv = addToDoTitleInput(form);
-    const dueDateDiv = addToDoDueDateInput(form);
-    const priorityDiv = addToDoPriorityInput(form);
-    const descDiv = addToDoDescInput(form);
+    const titleDiv = addToDoTitleInput();
+    const dueDateDiv = addToDoDueDateInput();
+    const priorityDiv = addToDoPriorityInput();
+    const descDiv = addToDoDescInput();
 
     setFormElementAttributes(form, '', 'post');
     addToDoFormDivs(form, titleDiv, dueDateDiv, priorityDiv, descDiv);
     addToDoFormButtons(form);
 };
 
-const addToDoTitleInput = (form) => {
+const addToDoTitleInput = () => {
     const titleDiv = addAttributes('', 'id', 'todo-form-title-parent', 'div');
     const titleLabel = addFormLabelElement(titleDiv);
     const title = addFormInputElement('input', titleDiv);
@@ -68,7 +68,7 @@ const addToDoTitleInput = (form) => {
     return titleDiv;
 };
 
-const addToDoDueDateInput = (form) => {
+const addToDoDueDateInput = () => {
     const dueDateDiv = addAttributes('', 'id', 'todo-form-duedate-parent', 'div');
     const today = new Date();
     const minDate = format(today, 'yyyy-MM-dd');
@@ -81,7 +81,7 @@ const addToDoDueDateInput = (form) => {
     return dueDateDiv;
 };
 
-const addToDoPriorityInput = (form) => {
+const addToDoPriorityInput = () => {
     const priorityDiv = addAttributes('', 'id', 'todo-form-priority-parent', 'div');
     const optionsAr = ['Low', 'Medium', 'High'];
     const fieldset = createFieldset('Priority');
@@ -91,7 +91,7 @@ const addToDoPriorityInput = (form) => {
     return priorityDiv;
 };
 
-const addToDoDescInput = (form) => {
+const addToDoDescInput = () => {
     const descDiv = addAttributes('', 'id', 'todo-form-desc-parent', 'div');
     const descLabel = addFormLabelElement(descDiv);
     const description = addFormInputElement('textarea', descDiv);

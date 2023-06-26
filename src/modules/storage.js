@@ -266,5 +266,6 @@ export {
     storeToDo,
     removeFolderFromStorage,
     removeFolderToDosFromStorage,
-    removeToDoFromStorage
+    removeToDoFromStorage,
+    loadToDos,
 };

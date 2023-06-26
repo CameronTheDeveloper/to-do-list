@@ -9,7 +9,8 @@ import {
     storeFolder,
     checkLocalStorage,
     loadStorage,
-    getDefaultFolderKey
+    getDefaultFolderKey,
+    loadToDos
 } from './storage';
 
 const contentItems = document.querySelector('#content-items');
@@ -38,6 +39,7 @@ const initToDoFolders = () => {
 const addInitialFolder = () => {
     const key = getDefaultFolderKey();
     const toDoFolder = addToDoFolder(defaultFolderTitle, 'inactive', key);
+    loadToDos(key);
     defaultFolderDiv = document.querySelector('.todo-folder');
     return toDoFolder;
 };

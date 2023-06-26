@@ -8175,6 +8175,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "getDefaultFolderKey": () => (/* binding */ getDefaultFolderKey),
 /* harmony export */   "getPrimaryFolderKey": () => (/* binding */ getPrimaryFolderKey),
 /* harmony export */   "loadStorage": () => (/* binding */ loadStorage),
+/* harmony export */   "loadToDos": () => (/* binding */ loadToDos),
 /* harmony export */   "removeFolderFromStorage": () => (/* binding */ removeFolderFromStorage),
 /* harmony export */   "removeFolderToDosFromStorage": () => (/* binding */ removeFolderToDosFromStorage),
 /* harmony export */   "removeToDoFromStorage": () => (/* binding */ removeToDoFromStorage),
@@ -8490,6 +8491,7 @@ const initToDoFolders = () => {
 const addInitialFolder = () => {
     const key = (0,_storage__WEBPACK_IMPORTED_MODULE_3__.getDefaultFolderKey)();
     const toDoFolder = addToDoFolder(defaultFolderTitle, 'inactive', key);
+    (0,_storage__WEBPACK_IMPORTED_MODULE_3__.loadToDos)(key);
     defaultFolderDiv = document.querySelector('.todo-folder');
     return toDoFolder;
 };

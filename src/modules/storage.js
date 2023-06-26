@@ -175,7 +175,6 @@ const storeToDo = (toDoItem) => {
     let toDoNum = getToDoCount();
     const activeFolderValue = getActiveFolderKeyValue();
 
-    toDoItem.folderValue = activeFolderValue;
     storePrimaryToDoKey(toDoItem, toDoNum);
     storeToDoTitle(toDoItem, toDoNum);
     storeToDoDueDate(toDoItem, toDoNum);

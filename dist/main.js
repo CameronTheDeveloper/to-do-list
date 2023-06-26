@@ -8361,7 +8361,6 @@ const storeToDo = (toDoItem) => {
     let toDoNum = getToDoCount();
     const activeFolderValue = (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_0__.getActiveFolderKeyValue)();
 
-    toDoItem.folderValue = activeFolderValue;
     storePrimaryToDoKey(toDoItem, toDoNum);
     storeToDoTitle(toDoItem, toDoNum);
     storeToDoDueDate(toDoItem, toDoNum);
@@ -8680,14 +8679,13 @@ __webpack_require__.r(__webpack_exports__);
 
 const toDoInputs = document.querySelector('#todo-inputs');
 
-const toDo = (title, dueDate, priority, description, key, folderValue) => {
+const toDo = (title, dueDate, priority, description, key) => {
     return {
         title: title,
         dueDate: dueDate,
         priority: priority,
         description: description,
         key: key,
-        folderValue: folderValue,
     };
 };
 

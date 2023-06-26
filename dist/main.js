@@ -8547,7 +8547,7 @@ const changeToDoInputsFolder = (toDoFolderDiv) => {
 
 const resetActiveFolder = (toDoFolder) => {
     if (toDoFolder === activeFolder ||
-        toDoFolder.toLowerCase() === 'reset') {
+        typeof toDoFolder === 'string') {
         const key = (0,_storage__WEBPACK_IMPORTED_MODULE_3__.getDefaultFolderKey)();
         activeFolder = setActiveFolder(defaultFolderDiv, defaultFolderTitle, key);
     }

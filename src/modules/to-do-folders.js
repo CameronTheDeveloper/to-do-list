@@ -95,7 +95,7 @@ const changeToDoInputsFolder = (toDoFolderDiv) => {
 
 const resetActiveFolder = (toDoFolder) => {
     if (toDoFolder === activeFolder ||
-        toDoFolder.toLowerCase() === 'reset') {
+        typeof toDoFolder === 'string') {
         const key = getDefaultFolderKey();
         activeFolder = setActiveFolder(defaultFolderDiv, defaultFolderTitle, key);
     }

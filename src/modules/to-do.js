@@ -30,12 +30,17 @@ const addToDoButton = () => {
     registerAddToDoListener(addToDoButton);
 };
 
-const addToDo = () => {
+const addToDoInputs = () => {
     const title = getInput('title-input');
     const dueDate = getInput('duedate-input');
     const priority = getRadioInput('priority-input');
     const description = getInput('description-input');
     const toDoItem = toDo(title, dueDate, priority, description);
+    return toDoItem;
+};
+
+const addToDo = () => {
+    const toDoItem = addToDoInputs();
     const folder = getActiveFolder();
     storeToDo(toDoItem);
     displayToDo(toDoItem, folder);

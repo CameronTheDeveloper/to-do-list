@@ -97,7 +97,7 @@ const checkToDoFolderMatch = (index, folderKey) => {
 
 const loadToDos = (folderKey) => {
     let count = getToDoCount();
-    for (let i = 0; i <= count; i++) {
+    for (let i = 0; i < count; i++) {
         if (checkToDoFolderMatch(i, folderKey)) {
             loadToDo(i);
         }

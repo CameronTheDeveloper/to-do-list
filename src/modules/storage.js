@@ -57,12 +57,14 @@ const getFolderTitle = (folderKey) => {
 
 const loadToDo = (index) => {
     const toDoKey = `${keyPrefix}todo${index}`;
-    const title = getToDoTitle(toDoKey);
-    const dueDate = getToDoDueDate(toDoKey);
-    const priority = getToDoPriority(toDoKey);
-    const desc = getToDoDesc(toDoKey);
-    const toDoItem = addToDo(title, dueDate, priority, desc);
-    toDoItem.key = toDoKey;
+    if (checkIfStored(toDoKey)) {
+        const title = getToDoTitle(toDoKey);
+        const dueDate = getToDoDueDate(toDoKey);
+        const priority = getToDoPriority(toDoKey);
+        const desc = getToDoDesc(toDoKey);
+        const toDoItem = addToDo(title, dueDate, priority, desc);
+        toDoItem.key = toDoKey;
+    }
 };
 
 const getToDoTitle = (toDoKey) => {

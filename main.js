@@ -8265,7 +8265,7 @@ const getToDoPriority = (toDoKey) => {
 
 const getToDoDesc = (toDoKey) => {
     const descKey = `${toDoKey}desc`;
-    const toDoDesc = `${descKey}desc`;
+    const toDoDesc = localStorage.getItem(descKey);
     return toDoDesc;
 };
 

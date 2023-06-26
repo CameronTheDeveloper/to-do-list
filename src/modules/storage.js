@@ -1,5 +1,5 @@
-import { getActiveFolderKeyValue } from "./to-do-folders";
-import { addToDoFolder } from "./to-do-folders";
+import { addToDoFolder, getActiveFolderKeyValue } from './to-do-folders';
+import { addToDo } from './to-do';
 const keyPrefix = 'toDoListProject_';
 const folderCountKey = `${keyPrefix}folderCount`;
 const toDoCountKey = `${keyPrefix}toDoCount`;
@@ -56,7 +56,7 @@ const loadToDo = (index) => {
     const dueDate = getToDoDueDate(toDoKey);
     const priority = getToDoPriority(toDoKey);
     const desc = getToDoDesc(toDoKey);
-    //addToDo(title, duedate...)
+    addToDo(title, dueDate, priority, desc);
 };
 
 const getToDoTitle = (toDoKey) => {

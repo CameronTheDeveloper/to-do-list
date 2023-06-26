@@ -35,12 +35,12 @@ const addToDoInputs = () => {
     const dueDate = getInput('duedate-input');
     const priority = getRadioInput('priority-input');
     const description = getInput('description-input');
-    const toDoItem = toDo(title, dueDate, priority, description);
-    return toDoItem;
+
+    addToDo(title, dueDate, priority, description);
 };
 
-const addToDo = () => {
-    const toDoItem = addToDoInputs();
+const addToDo = (title, dueDate, priority, description) => {
+    const toDoItem = toDo(title, dueDate, priority, description);
     const folder = getActiveFolder();
     storeToDo(toDoItem);
     displayToDo(toDoItem, folder);

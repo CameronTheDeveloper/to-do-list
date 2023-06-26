@@ -8239,12 +8239,14 @@ const getFolderTitle = (folderKey) => {
 
 const loadToDo = (index) => {
     const toDoKey = `${keyPrefix}todo${index}`;
-    const title = getToDoTitle(toDoKey);
-    const dueDate = getToDoDueDate(toDoKey);
-    const priority = getToDoPriority(toDoKey);
-    const desc = getToDoDesc(toDoKey);
-    const toDoItem = (0,_to_do__WEBPACK_IMPORTED_MODULE_1__.addToDo)(title, dueDate, priority, desc);
-    toDoItem.key = toDoKey;
+    if (checkIfStored(toDoKey)) {
+        const title = getToDoTitle(toDoKey);
+        const dueDate = getToDoDueDate(toDoKey);
+        const priority = getToDoPriority(toDoKey);
+        const desc = getToDoDesc(toDoKey);
+        const toDoItem = (0,_to_do__WEBPACK_IMPORTED_MODULE_1__.addToDo)(title, dueDate, priority, desc);
+        toDoItem.key = toDoKey;
+    }
 };
 
 const getToDoTitle = (toDoKey) => {

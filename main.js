@@ -8228,6 +8228,7 @@ const loadFolders = () => {
     for (let i = 1; i < count; i++) {
         loadFolder(i, 'active');
     }
+    (0,_to_do_folders__WEBPACK_IMPORTED_MODULE_0__.resetActiveFolder)('reset');
 };
 
 const getFolderTitle = (folderKey) => {
@@ -8544,7 +8545,8 @@ const changeToDoInputsFolder = (toDoFolderDiv) => {
 };
 
 const resetActiveFolder = (toDoFolder) => {
-    if (toDoFolder === activeFolder) {
+    if (toDoFolder === activeFolder ||
+        toDoFolder.toLowerCase() === 'reset') {
         const key = (0,_storage__WEBPACK_IMPORTED_MODULE_3__.getDefaultFolderKey)();
         activeFolder = setActiveFolder(defaultFolderDiv, defaultFolderTitle, key);
     }

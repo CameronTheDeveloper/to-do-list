@@ -1,4 +1,8 @@
-import { addToDoFolder, getActiveFolderKeyValue } from './to-do-folders';
+import {
+    addToDoFolder,
+    getActiveFolderKeyValue,
+    resetActiveFolder
+} from './to-do-folders';
 import { addToDo } from './to-do';
 const keyPrefix = 'toDoListProject_';
 const folderCountKey = `${keyPrefix}folderCount`;
@@ -42,6 +46,7 @@ const loadFolders = () => {
     for (let i = 1; i < count; i++) {
         loadFolder(i, 'active');
     }
+    resetActiveFolder('reset');
 };
 
 const getFolderTitle = (folderKey) => {
